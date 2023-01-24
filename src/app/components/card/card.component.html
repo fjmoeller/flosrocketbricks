@@ -1,0 +1,16 @@
+<div class="card" style="width: 16rem;">
+    <a class="m-0 p-0 text-decoration-none text-dark" [routerLink]="['/moc',id]" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <img src="{{coverPicture}}" class="card-img-top" alt="{{mocName}}">
+        <div class="card-body">
+            <h5 class="card-title">{{mocName}}</h5>
+            <div class="row">
+                <div class="col mx-auto"> 
+                    <h6 class="card-title text-center rounded-pill bg-secondary">{{scale}}</h6>
+                </div>
+                <div class="col mx-auto"> 
+                    <h6 class="card-title text-center rounded-pill bg-secondary">{{parts}} Parts</h6>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

@@ -1,0 +1,43 @@
+<div class="container-fluid siteHeader" style="max-height:100px">
+  <div class="row mx-0 w-100">
+
+    <a class="col-2 headerLogo p-0 overflow-hidden " routerLink="" routerLinkActive="active"
+      ariaCurrentWhenActive="page">
+      <img src="../../assets/logo.png" style="width:100%;max-height:100px" class="img-fluid" alt="FlosRocketBricks">
+    </a>
+
+    <div class="col-7 row">
+      <a class="col-2 headerLink text-light" routerLink="/search" [queryParams]="{ tags:'rocket' }"
+        routerLinkActive="active" ariaCurrentWhenActive="page">Rockets</a>
+
+      <a class="col-2 headerLink text-light" routerLink="/search" [queryParams]="{ tags:'launchpad' }"
+        routerLinkActive="active" ariaCurrentWhenActive="page">Launchpads</a>
+
+      <a class="col-2 headerLink text-light" routerLink="/search" [queryParams]="{ tags:'spacecraft' }"
+        routerLinkActive="active" ariaCurrentWhenActive="page">Spacecrafts</a>
+
+      <a class="col-2 headerLink text-light" routerLink="/search" [queryParams]="{ tags:'other' }"
+        routerLinkActive="active" ariaCurrentWhenActive="page">Other</a>
+
+      <a class="col-2 headerLink text-light" routerLink="/about" routerLinkActive="active"
+        ariaCurrentWhenActive="page">About</a>
+    </div>
+
+    <div class="col-3 m-auto">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+          [(ngModel)]="searchInput">
+        <button routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page"
+          [queryParams]="{q:searchInput}" class="btn" type="submit"
+          style="background:rgb(59, 59, 59); border-color: rgb(0, 0, 0);color:white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </button>
+      </form>
+    </div>
+
+  </div>
+</div>

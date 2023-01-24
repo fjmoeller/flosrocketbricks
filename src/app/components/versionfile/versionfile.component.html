@@ -1,0 +1,17 @@
+<div class="accordion-item bg-dark text-light">
+    <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#version" aria-controls="collapseOne">
+            <strong>{{version}}</strong>{{versionExtra}}
+        </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+        <div class="accordion-body">
+            <strong>Changelog:</strong> <br>
+            {{changelog}} <br>
+            <strong>Files:</strong>
+            <app-file *ngFor="let file of files"
+            [link]="file.link" [name]="file.name" [desc]="file.desc">
+            </app-file>
+        </div>
+    </div>
+</div>

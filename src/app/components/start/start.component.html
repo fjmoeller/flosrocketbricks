@@ -1,0 +1,29 @@
+<div class="container-fluid bg-dark text-light my-5">
+    <div class="row justify-content-center text-center">
+        <span>
+            <h1>Welcome to FlosRocketBricks</h1>
+        </span>
+        <span>Spaceflight related MOCs out of building blocks</span>
+    </div>
+    <div class="row justify-content-center text-center">
+        <p>
+        <h5>This website contains instructions and digital files of MOCs by me, completely for <strong>free</strong>!
+            <br>
+            You may use and distribute those files as long as they are not used for any commercial purposes :) 
+            <br><br>
+            If one of my models does not have pdf <strong>instructions</strong> yet, but you would like to have those, just write me an email!
+        </h5>
+    </div>
+    <div class="row bg-dark">
+        <div class="mt-5 mx-5">
+            <span>
+                <h3>Newest Mocs</h3>
+            </span>
+            <div class="card-group">
+                <app-card *ngFor="let moc of newestMocs" [pic]="moc.pictures[0]" [name]="moc.title" [parts]="moc.parts"
+                    [id]="moc.id">
+                </app-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DataMockupService } from '../../services/data-mockup.service';
+import { DataService } from '../../services/data.service';
 import { File, Version, Moc } from '../classes';
 
 @Component({
@@ -28,20 +29,25 @@ export class MocComponent implements OnInit {
   };
 
   moc: Moc = this._defaultMoc;
-
+  noError : boolean = true;
   id: number | null = null;
-  constructor(
-    private route: ActivatedRoute, private dataMockupService: DataMockupService
-  ) { }
+
+  constructor(private route: ActivatedRoute, private dataMockupService: DataMockupService, private dataService: DataService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
-      
+
       this.id = Number(paramMap.get('id')) || 0;
       //refresh this moc
-      console.log("MocComponent: Searching for MOC with ID: "+this.id);
+      console.log("MocComponent: Searching for MOC with ID: " + this.id);
 
-      if (this.id != null && (Number(this.id) || 0 )) {
+      /*
+      this.dataService.getMoc(this.id).subscribe({
+        next: (v) => {this.noError = true;this.moc=v},
+        error: (e) => {this.noError = false;console.error(e)}});
+      */
+
+      if (this.id != null && (Number(this.id) || 0)) {
         this.moc = this.dataMockupService.getMoc(this.id);
       }
       else {

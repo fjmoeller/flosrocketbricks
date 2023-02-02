@@ -26,7 +26,7 @@
     <div class="col-3 m-auto">
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-          [(ngModel)]="searchInput">
+          [(ngModel)]="searchInput" name="search">
         <button routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page"
           [queryParams]="{q:searchInput}" class="btn" type="submit"
           style="background:rgb(59, 59, 59); border-color: rgb(0, 0, 0);color:white">

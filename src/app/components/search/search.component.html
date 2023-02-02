@@ -19,7 +19,7 @@
                 </button>
             </div>
             <div class="card-group mt-4">
-                <app-card *ngFor="let moc of mocs" [pic]="moc.pictures[0]" [name]="moc.title" [parts]="moc.parts"
+                <app-card *ngFor="let moc of mocs | async" [pic]="moc.pictures[0]" [name]="moc.title" [parts]="moc.parts"
                     [id]="moc.id">
                 </app-card>
             </div>

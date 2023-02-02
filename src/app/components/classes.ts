@@ -3,26 +3,28 @@ import { NumberSymbol } from "@angular/common";
 export class File {
   link: string;
   name: string;
-  desc: string;
+  description: string;
 
-  constructor(link: string, name: string, desc: string) {
+  constructor(link: string, name: string, description: string) {
     this.link = link;
     this.name = name;
-    this.desc = desc;
+    this.description = description;
   }
 }
 
 export class Version {
   version: string;
+  versionId: number;
   versionExtra: string;
   changelog: string;
   files: File[];
 
-  constructor(version: string, versionExtra: string, changelog: string, files: File[]) {
+  constructor(versionId : number, version: string, versionExtra: string, changelog: string, files: File[]) {
     this.version = version;
     this.versionExtra = versionExtra;
     this.changelog = changelog;
     this.files = files;
+    this.versionId = versionId;
   }
 }
 

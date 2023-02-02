@@ -9,7 +9,7 @@ export class FileComponent implements OnInit {
 
   @Input('link') filelink = ""
   @Input('name') filename="V2.6.io"
-  @Input('desc') description="this is a file"
+  @Input('description') description="this is a file"
   
   constructor() { }
 

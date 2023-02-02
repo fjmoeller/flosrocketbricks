@@ -23,7 +23,7 @@ export class DataMockupService {
             tags: ["rocket", "launchpad"],
             related: [],
             description: "description",
-            versions: [{ version: "V0", versionExtra: "extra", changelog: "-", files: [{ link: "http.cat", name: "file", desc: "description" }] }]
+            versions: [{ versionId: 1,version: "V0", versionExtra: "extra", changelog: "-", files: [{ link: "http.cat", name: "file", description: "description" }] }]
         }, {
             id: 1,
             title: "Empty Moc 2",
@@ -39,8 +39,8 @@ export class DataMockupService {
             related: [],
             description: "description",
             versions: [
-                { version: "V1", versionExtra: "extra", changelog: "-", files: [{ link: "http.cat/200", name: "file", desc: "description" }] },
-                { version: "V2", versionExtra: "extra", changelog: "-", files: [{ link: "http.cat/200", name: "filee", desc: "description" }] }
+                {versionId: 3, version: "V1", versionExtra: "extra", changelog: "-", files: [{ link: "http.cat/200", name: "file", description: "description" }] },
+                {versionId: 4, version: "V2", versionExtra: "extra", changelog: "-", files: [{ link: "http.cat/200", name: "filee", description: "description" }] }
             ]
         }];
 
@@ -53,3 +53,5 @@ export class DataMockupService {
         return this.mocs.filter(moc => moc.id == id)[0];
     }
 }
+
+

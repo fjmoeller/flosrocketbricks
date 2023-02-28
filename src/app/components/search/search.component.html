@@ -1,26 +1,110 @@
 <div class="container my-4 text-light">
     <div class="row">
-        <div class="col-2">
-            <div class="row">
-                <h4 class="text-center">Filter</h4>
+        <div class="col-md-2">
+            <h4 class="row-12 text-center">Filter</h4>
+            <div class="row-12">
+                <input class="form-control row-11" type="search" placeholder="Search" aria-label="Search"
+                    [(ngModel)]="searchInput" (keyup.enter)="search()">
+            </div>
+            <span class="row-12">
+                <h5>General</h5>
+            </span>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" id="allTypesRadio" [checked]="tagType===''"
+                    (change)="tagTypeChange('')">
+                <label class="form-check-label px-2" for="allTypesRadio">All Types</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" id="rocketRadio" [checked]="tagType==='rocket'"
+                    (change)="tagTypeChange('rocket')">
+                <label class="form-check-label px-2" for="rocketRadio">Rocket</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" id="launchpadRadio" [checked]="tagType==='launchpad'"
+                    (change)="tagTypeChange('launchpad')">
+                <label class="form-check-label px-2" for="launchpadRadio">Launchpad</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" id="spacecraftRadio" [checked]="tagType==='spacecraft'"
+                    (change)="tagTypeChange('spacecraft')">
+                <label class="form-check-label px-2" for="spacecraftRadio">Spacecraft</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" id="spacestationRadio" [checked]="tagType==='spacestation'"
+                    (change)="tagTypeChange('spacestation')">
+                <label class="form-check-label px-2" for="spacestationRadio">Spacestation</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" id="otherRadio" [checked]="tagType==='other'"
+                    (change)="tagTypeChange('other')">
+                <label class="form-check-label px-2" for="otherRadio">Other</label>
+            </div>
+            <span class="row-12">
+                <h5>Regions</h5>
+            </span>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagRegion===''" id="allRegionsRadio"
+                    (change)="tagRegionChange('')">
+                <label class="form-check-label px-2" for="allRegionsRadio">All Regions</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagRegion==='USA'" id="usaRadio"
+                    (change)="tagRegionChange('USA')">
+                <label class="form-check-label px-2" for="usaRadio">USA</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagRegion==='Europe'" id="europeRadio"
+                    (change)="tagRegionChange('Europe')">
+                <label class="form-check-label px-2" for="europeRadio">Europe</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagRegion==='China'" id="chinaRadio"
+                    (change)="tagRegionChange('China')">
+                <label class="form-check-label px-2" for="chinaRadio">China</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagRegion==='Russia'" id="russiaRadio"
+                    (change)="tagRegionChange('Russia')">
+                <label class="form-check-label px-2" for="russiaRadio">Russia</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagRegion==='Ukraine'" id="ukraineRadio"
+                    (change)="tagRegionChange('Ukraine')">
+                <label class="form-check-label px-2" for="ukraineRadio">Ukraine</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagRegion==='New Zeeland'" id="newzeelandRadio"
+                    (change)="tagRegionChange('New Zeeland')">
+                <label class="form-check-label px-2" for="newzeelandRadio">New Zeeland</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagRegion==='South Korea'" id="southkoreaRadio"
+                    (change)="tagRegionChange('South Korea')">
+                <label class="form-check-label px-2" for="southkoreaRadio">South Korea</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagRegion==='Japan'" id="japanRadio"
+                    (change)="tagRegionChange('Japan')">
+                <label class="form-check-label px-2" for="japanRadio">Japan</label>
+            </div>
+            <span class="row-12">
+                <h5>Scale</h5>
+            </span>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagScale===''" id="allScalesRadio"
+                    (change)="tagScaleChange('')">
+                <label class="form-check-label px-2" for="allScalesRadio">All Scales</label>
+            </div>
+            <div class="row-12">
+                <input type="radio" class="form-check-input" [checked]="tagScale==='110'" id="110Radio"
+                    (change)="tagScaleChange('110')">
+                <label class="form-check-label px-2" for="110Radio">1:110</label>
             </div>
         </div>
-        <div class="col-10">
-            <div class="row">
-                <input class="form-control col" type="search" placeholder="Search" aria-label="Search"
-                    [(ngModel)]="searchInput">
-                <button ariaCurrentWhenActive="page" class="btn col-1" type="submit"
-                    style="background:rgb(59, 59, 59); border-color: rgb(0, 0, 0);color:white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-search" viewBox="0 0 16 16">
-                        <path
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>
-                </button>
-            </div>
+        <div class="col-md-10">
             <div class="card-group mt-4">
-                <app-card *ngFor="let moc of mocs | async" [pic]="moc.pictures[0]" [name]="moc.title" [parts]="moc.parts"
-                    [id]="moc.id">
+                <app-card class="col-md-3 col-4" *ngFor="let moc of mocs | async" [pic]="moc.smallCoverImage" [name]="moc.title"
+                    [parts]="moc.parts" [id]="moc.id">
                 </app-card>
             </div>
         </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataMockupService } from 'src/app/services/data-mockup.service';
-import {Moc } from '../classes';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { MocGrabberService } from 'src/app/services/moc-grabber.service';
+import { Moc } from '../classes';
 
 @Component({
   selector: 'app-start',
@@ -9,14 +11,18 @@ import {Moc } from '../classes';
 })
 export class StartComponent implements OnInit {
 
+  newestMocs!: Observable<Moc[]>;
 
-  dataService : DataMockupService;
-  newestMocs : Moc[] = [];
+  mocGrabberService: MocGrabberService;
 
-  constructor(private dataMockupService: DataMockupService) {this.dataService = new DataMockupService(); }
+  constructor(mocGrabberService: MocGrabberService) {
+    this.mocGrabberService = mocGrabberService;
+   }
 
   ngOnInit(): void {
-    this.newestMocs = this.dataMockupService.getMocs("",[]);
+    this.newestMocs = this.mocGrabberService.getAllMocs().pipe(
+      map((mocs:Moc[]) => mocs.sort((a : Moc, b : Moc) => Date.parse(b.dateCreated) - Date.parse(a.dateCreated) )),
+      map((mocs:Moc[]) => mocs.slice(0,6))
+    );
   }
-
 }

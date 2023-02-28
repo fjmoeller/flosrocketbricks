@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataMockupService } from '../../services/data-mockup.service';
-import { Moc } from '../classes';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
-import {connectFirestoreEmulator, getFirestore, provideFirestore} from '@angular/fire/firestore';
+import { Moc, Version } from '../classes';
 import { Observable } from 'rxjs';
+import { MocGrabberService } from 'src/app/services/moc-grabber.service';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-moc',
@@ -12,30 +11,26 @@ import { Observable } from 'rxjs';
   styleUrls: ['./moc.component.sass']
 })
 export class MocComponent implements OnInit {
-
-  private mocDoc!: AngularFirestoreDocument<Moc>;
-  moc!: Observable<Moc | null | undefined>;
+  moc!: Observable<Moc>;
 
   noError: boolean = true;
   id: number = 0;
 
-  constructor(private route: ActivatedRoute, private dataMockupService: DataMockupService, private firestore: AngularFirestore) { }
+  constructor(private route: ActivatedRoute, private mocGrabberService: MocGrabberService) { }
 
   async ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
-
       this.id = Number(paramMap.get('id')) || 0;
-      //refresh this moc
-      this.getMoc(this.id);
-
+      this.moc = this.mocGrabberService.getMoc(this.id);
     });
-  
   }
 
-  async getMoc(id : number): Promise<void>{
-    this.mocDoc = this.firestore.doc<Moc>('mocs/'+id.toString());
-    this.moc = this.mocDoc.valueChanges();
-    //TODO collections of versions
+  sortedVersions(versions: Version[] | undefined): Version[] {
+    if (!versions)
+      return [];
+    return versions.sort((a,b) => (a.version > b.version) ? -1 : ((b.version > a.version) ? 1 : 0));
   }
 
 }
+
+

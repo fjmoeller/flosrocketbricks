@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardComponent implements OnInit {
 
   @Input('pic') coverPicture = "https://pbs.twimg.com/profile_images/1557001528912842757/XujDja68_400x400.jpg"
-  @Input('name') mocName=" Super geile MOC"
+  @Input('name') mocName="Test MOC"
   @Input('scale') scale="1:110"
   @Input('parts') parts : number = 101
   @Input('id') id : number = 0;

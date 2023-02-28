@@ -1,30 +1,59 @@
-<div class="container-fluid siteHeader" style="max-height:100px">
-  <div class="row mx-0 w-100">
-
+<nav class="navbar navbar-expand-lg" style="background-color: rgba(0,0,0, .2)">
+  <div class="container-fluid">
     <a class="col-2 headerLogo p-0 overflow-hidden " routerLink="" routerLinkActive="active"
       ariaCurrentWhenActive="page">
       <img src="../../assets/logo.png" style="width:100%;max-height:100px" class="img-fluid" alt="FlosRocketBricks">
     </a>
+    <button class="navbar-toggler" style="background-color: rgba(0,0,0, .2)" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-list"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+      </svg>
+    </button>
+    <div class="collapse navbar-collapse me-auto mb-2 mb-lg-0 justify-content-center" id="navbarSupportedContent">
+      <ul class="col-md-9 navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
+        <li class="nav-item w-100">
+          <div>
+            <a class="nav-link headerLink text-light" routerLink="/search" [queryParams]="{ type:'rocket' }"
+              routerLinkActive="active" ariaCurrentWhenActive="page">Rockets</a>
+          </div>
+        </li>
+        <li class="nav-item w-100">
+          <div>
+            <a class="nav-link headerLink text-light" routerLink="/search" [queryParams]="{ type:'launchpad' }"
+              routerLinkActive="active" ariaCurrentWhenActive="page">Launchpads</a>
+          </div>
+        </li>
+        <li class="nav-item w-100">
+          <div>
+            <a class="nav-link headerLink text-light" routerLink="/search" [queryParams]="{ type:'spacecraft' }"
+              routerLinkActive="active" ariaCurrentWhenActive="page">Spacecrafts</a>
+          </div>
+        </li>
+        <li class="nav-item w-100">
+          <div>
+            <a class="nav-link headerLink text-light" routerLink="/search" [queryParams]="{ type:'spacestation' }"
+              routerLinkActive="active" ariaCurrentWhenActive="page">Spacestations</a>
+          </div>
+        </li>
+        <li class="nav-item w-100">
+          <div>
+            <a class="nav-link headerLink text-light" routerLink="/search" [queryParams]="{ type:'other' }"
+              routerLinkActive="active" ariaCurrentWhenActive="page">Other</a>
+          </div>
+        </li>
+        <li class="nav-item w-100">
+          <div>
+            <a class="nav-link headerLink text-light" routerLink="/about" routerLinkActive="active"
+              ariaCurrentWhenActive="page">About</a>
+          </div>
+        </li>
+      </ul>
 
-    <div class="col-7 row">
-      <a class="col-2 headerLink text-light" routerLink="/search" [queryParams]="{ tags:'rocket' }"
-        routerLinkActive="active" ariaCurrentWhenActive="page">Rockets</a>
-
-      <a class="col-2 headerLink text-light" routerLink="/search" [queryParams]="{ tags:'launchpad' }"
-        routerLinkActive="active" ariaCurrentWhenActive="page">Launchpads</a>
-
-      <a class="col-2 headerLink text-light" routerLink="/search" [queryParams]="{ tags:'spacecraft' }"
-        routerLinkActive="active" ariaCurrentWhenActive="page">Spacecrafts</a>
-
-      <a class="col-2 headerLink text-light" routerLink="/search" [queryParams]="{ tags:'other' }"
-        routerLinkActive="active" ariaCurrentWhenActive="page">Other</a>
-
-      <a class="col-2 headerLink text-light" routerLink="/about" routerLinkActive="active"
-        ariaCurrentWhenActive="page">About</a>
-    </div>
-
-    <div class="col-3 m-auto">
-      <form class="d-flex" role="search">
+      <form class="col-md-3 px-3 d-flex w-mg-100" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
           [(ngModel)]="searchInput" name="search">
         <button routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page"
@@ -38,6 +67,5 @@
         </button>
       </form>
     </div>
-
   </div>
-</div>
+</nav>

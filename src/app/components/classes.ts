@@ -26,6 +26,11 @@ export class Version {
   }
 }
 
+export class FrontTag {
+    tagId: string = "";
+    tagName: string = "";
+}
+
 export class Moc {
   id: number;
   internalColor: string;

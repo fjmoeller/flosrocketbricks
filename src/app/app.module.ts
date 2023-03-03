@@ -32,7 +32,7 @@ import { MocGrabberService } from './services/moc-grabber.service';
     FooterComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

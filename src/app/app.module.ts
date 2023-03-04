@@ -18,6 +18,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { NgbModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MocGrabberService } from './services/moc-grabber.service';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MocGrabberService } from './services/moc-grabber.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     NgbTooltipModule,
-    NgbModule
+    NgbModule,
+    ScullyLibModule
   ],
   providers: [MocGrabberService],
   bootstrap: [AppComponent]

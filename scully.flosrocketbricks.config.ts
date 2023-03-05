@@ -9,8 +9,13 @@ export const config: ScullyConfig = {
   // add spsModulePath when using de Scully Platform Server,
   outDir: './dist/static',
   routes: {
-    '/mocs/:id': {
-      type: firestorePlugin
+    '/moc/:id': {
+      //type: firestorePlugin
+      type: 'json',
+      id:{
+        url: 'http://localhost:4200/assets/mocs.json',
+        property: 'id'
+      }
     }
   }
 }

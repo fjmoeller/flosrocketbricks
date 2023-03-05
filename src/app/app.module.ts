@@ -13,8 +13,8 @@ import { AboutComponent } from './components/about/about.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireModule } from '@angular/fire/compat';
+//import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+//import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { NgbModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MocGrabberService } from './services/moc-grabber.service';
@@ -33,12 +33,12 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     FooterComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
+    //AngularFireModule.initializeApp(environment.firebase),
+    //AngularFirestoreModule,
     NgbTooltipModule,
     NgbModule,
     ScullyLibModule

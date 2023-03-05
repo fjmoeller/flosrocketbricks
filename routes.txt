@@ -1,3 +1,6 @@
+/
+/start
+/about
 /moc/0
 /moc/1
 /moc/2

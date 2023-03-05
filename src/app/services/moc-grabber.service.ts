@@ -13,8 +13,7 @@ export class MocGrabberService {
 
   constructor() {
     let parsedMocData: Moc[] = mocs;
-    console.log(parsedMocData[0])
-    this.mocs = of(parsedMocData).pipe(tap(moc => console.log("Mocs received:", moc.length)));
+    this.mocs = of(parsedMocData);
   }
 
 

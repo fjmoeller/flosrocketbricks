@@ -23,7 +23,7 @@ export class MocComponent implements OnInit {
       this.id = Number(paramMap.get('id')) || 0;
       this.moc = this.mocGrabberService.getMoc(this.id).pipe(tap(moc => {
         this.mocGrabberService.getMoc(this.id).subscribe(moc => {
-          this.metaService.setAllTags(moc.title+" - FlosRocketBricks",moc.description,"https://flosrocketbricks.com/moc/"+moc.id.toString(),moc.smallCoverImage[0]);
+          this.metaService.setAllTags(moc.title+" - FlosRocketBricks",moc.description,"https://flosrocketbricks.com/moc/"+moc.id.toString(),moc.smallCoverImage);
         });
       }));
     });

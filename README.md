@@ -1,4 +1,7 @@
 # flosrocketbricks
+This is the repository for https://flosrocketbricks.com .
+The website is made using Angular and deployed on cloudflare pages.
+Using Angular Universal it gets pre rendered at each deployment.
 
 ## How To Add A MOC
 1. upload images to bricksafe

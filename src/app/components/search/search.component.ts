@@ -13,6 +13,10 @@ import { MetaServiceService } from 'src/app/services/meta-service.service';
 export class SearchComponent implements OnInit {
 
   searchInput: string = "";
+
+  sortingCategory: string = "Date";
+  sortingDirection: number = 1;
+
   static Tag = class {
     tagIdentifier: string = "";
     tagTitle: string = "";
@@ -46,14 +50,23 @@ export class SearchComponent implements OnInit {
         }
         this.getMocs();
       });
-    this.metaService.setDefaultTags("Search - FlosRocketBricks","https://flosrocketbricks.com/search");
+    this.metaService.setDefaultTags("Search - FlosRocketBricks", "https://flosrocketbricks.com/search");
   }
 
-  search(): void {
+  changeSorting(category: string): void {
+    this.sortingCategory = category;
+    console.log("changed sorting category to:",this.sortingCategory)
+    this.getMocs();
+  }
+
+  changeSortingDirection(): void {
+    this.sortingDirection *= -1;
+    console.log("changed sorting direction to:",this.sortingDirection)
     this.getMocs();
   }
 
   getMocs(): void {
+    console.log("sorting to: "+this.sortingCategory+" with direction: "+this.sortingDirection);
     let tempMocs: Observable<Moc[]> = this.mocGrabberService.getAllMocs();
 
     if (this.tagRegion != "") {
@@ -66,8 +79,15 @@ export class SearchComponent implements OnInit {
       tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => moc.scale == this.tagScale)));
     }
     if (this.searchInput != "") {
-      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => moc.title.indexOf(this.searchInput) >= 0)));
+      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => moc.title.toLowerCase().indexOf(this.searchInput.toLowerCase()) >= 0)));
     }
+
+    switch (this.sortingCategory) {
+      case "Date": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.dateCreated > a.dateCreated ? 1 : -1)))); break;
+      case "Title": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.title > a.title ? 1 : -1)))); break;
+      case "Parts": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.parts > a.parts ? 1 : -1)))); break;
+    }
+
     this.mocs = tempMocs;
   }
 

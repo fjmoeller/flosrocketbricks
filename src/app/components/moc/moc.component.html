@@ -198,8 +198,13 @@
     </div>
     <div class="row m-4">
         <div class="col-md-6 bg-dark text-light">
+            <h4>About the Moc</h4>
             <p>
-                {{(moc | async)?.description}}
+                {{(moc | async)?.mocDescription}}
+            </p>
+            <h4>About the Rocket</h4>
+            <p>
+                {{(moc | async)?.rocketDescription}}
             </p>
         </div>
         <div class="col-md-6 bg-dark text-light">

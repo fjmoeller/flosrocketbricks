@@ -5,7 +5,8 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "description": "The OmegA rocket.",
+        "mocDescription": "The OmegA rocket.",
+        "rocketDescription":"",
         "stabilityExtra": "",
         "company": "",
         "difficulty": "Not checked",
@@ -29,6 +30,7 @@
                 "files": [
                     {
                         "description": "The digital io file",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/omega/v1.1/v1.1.io",
                         "name": "V1.1.io"
                     }
@@ -57,7 +59,8 @@
         "partsExtra": "",
         "designer": "SkySaac",
         "stability": "Not tested",
-        "description": "The never build Energia 2 rocket",
+        "mocDescription": "The never build Energia 2 rocket",
+        "rocketDescription":"",
         "typeExtra": "",
         "difficulty": "Not checked",
         "company": "",
@@ -69,16 +72,19 @@
                     {
                         "name": "Energia2_V1.io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_V1_pub.io",
+                        "type": "io",
                         "description": "The digital io file"
                     },
                     {
                         "name": "Boosters_V1.pdf",
                         "description": "The pdf instructions to the boosters",
+                        "type": "pdf",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia_2_Boosters_V1.pdf"
                     },
                     {
                         "description": "The pdf instructions to the core module",
                         "name": "Core_V1.pdf",
+                        "type": "pdf",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia_2_Core_V1.pdf"
                     }
                 ],
@@ -122,6 +128,7 @@
                     {
                         "name": "A1_V2.io",
                         "description": "The digital io file",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-1/v2.0/A1_V2.io"
                     }
                 ],
@@ -133,6 +140,7 @@
                     {
                         "name": "A1_V3.io",
                         "description": "The digital io file",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-1/v3.0/A1_V3.io"
                     }
                 ],
@@ -163,7 +171,8 @@
         "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-1/640x512.png",
         "internalColorExtra": "",
         "stabilityExtra": "",
-        "description": "The Ariane 1 rocket.",
+        "mocDescription": "The Ariane 1 rocket.",
+        "rocketDescription":"",
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-1/v3.0/A1_V3.png"
         ],
@@ -206,6 +215,7 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-2/v2.0/A2_V2.io",
                         "name": "A2_V2.io",
+                        "type": "io",
                         "description": "The digital io file"
                     }
                 ],
@@ -219,6 +229,7 @@
                 "files": [
                     {
                         "description": "",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-2/v3.0/A2_V3.io",
                         "name": "A2_V3.io"
                     }
@@ -234,7 +245,8 @@
         "id": 3,
         "title": "Ariane 2",
         "dateCreated": "2023-02-13",
-        "description": "The Ariane 2 rocket.",
+        "mocDescription": "The Ariane 2 rocket.",
+        "rocketDescription":"",
         "region": "Europe",
         "scale": "110",
         "dimensions": "6x6x44cm",
@@ -252,7 +264,8 @@
         "parts": 421,
         "stability": "Well, it holds together",
         "company": "",
-        "description": "The Ariane 3 rocket",
+        "mocDescription": "The Ariane 3 rocket",
+        "rocketDescription":"",
         "type": "rocket",
         "regionExtra": "",
         "companyExtra": "",
@@ -268,11 +281,13 @@
                     {
                         "name": "A3_V2.io",
                         "description": "The digital io file",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-3/v2.0/A3_V2.io"
                     },
                     {
                         "name": "A3_V2.pdf",
                         "description": "The pdf instructions",
+                        "type": "pdf",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-3/v2.0/a3_v2.pdf"
                     }
                 ]
@@ -284,6 +299,7 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-3/v3.0/A3_V3.io",
                         "description": "",
+                        "type": "io",
                         "name": "A3_V3.io"
                     }
                 ],
@@ -322,7 +338,8 @@
         "companyExtra": "",
         "partsExtra": "",
         "regionExtra": "",
-        "description": "The Long March 1B rocket was the first Chinese rocket that launched a satellite into orbit in 1970. It only flew two times in total.",
+        "mocDescription": "The Long March 1B rocket was the first Chinese rocket that launched a satellite into orbit in 1970. It only flew two times in total.",
+        "rocketDescription":"",
         "versions": [
             {
                 "versionExtra": "",
@@ -331,10 +348,12 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long--march-1b/v1/Long_March_1_V1.pdf",
                         "description": "The pdf instructions",
+                        "type": "pdf",
                         "name": "Long March 1B V1.pdf"
                     },
                     {
                         "name": "Long March 1B V1.io",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long--march-1b/v1/V1.io",
                         "description": "The digital io file"
                     }
@@ -349,11 +368,13 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long--march-1b/v2/Long_March_1B_V2.pdf",
                         "description": "The pdf instructions",
+                        "type": "pdf",
                         "name": "Long March 1B V2.pdf"
                     },
                     {
                         "description": "The digital io file",
                         "name": "Long March 1B V2.io",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long--march-1b/v2/V2_pub.io"
                     }
                 ]
@@ -409,6 +430,7 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/madv/v3.0/V3.io",
                         "name": "V3.io",
+                        "type": "io",
                         "description": "The digital io file"
                     }
                 ],
@@ -421,7 +443,8 @@
         "typeExtra": "",
         "stabilityExtra": "",
         "companyExtra": "",
-        "description": "The Mars Ascent/Descent Vehicle (MADV) is a proposal for a reusable martian lander by Lockheed Martin.",
+        "mocDescription": "The Mars Ascent/Descent Vehicle (MADV) is a proposal for a reusable martian lander by Lockheed Martin.",
+        "rocketDescription":"",
         "region": "USA",
         "id": 6,
         "fanPictures": [],
@@ -439,7 +462,8 @@
         "dateCreated": "2023-02-13",
         "designerExtra": "",
         "title": "ALPACA",
-        "description": "The Dynetics Autonomous Logistics Platform for All-Moon Cargo Access (ALPACA) is Dynetics design concept for NASAs HLS bid.",
+        "mocDescription": "The Dynetics Autonomous Logistics Platform for All-Moon Cargo Access (ALPACA) is Dynetics design concept for NASAs HLS bid.",
+        "rocketDescription":"",
         "dimensionsExtra": "",
         "region": "USA",
         "scale": "110",
@@ -457,10 +481,12 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/alpaca/v2/ALPACA%20V2%20pub.io",
                         "description": "The digital io file",
+                        "type": "io",
                         "name": "ALPACA_V2_pub.io"
                     },
                     {
                         "description": "The pdf instructions",
+                        "type": "pdf",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/alpaca/v2/ALPACA%20V2%20instructions.pdf",
                         "name": "ALPACA_V2_instructions.io"
                     }
@@ -499,16 +525,19 @@
                     {
                         "name": "V3.4_instructions.pdf",
                         "description": "The pdf instructions of the rocket",
+                        "type": "pdf",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.4/v3.4_instructions.pdf"
                     },
                     {
                         "name": "V3.4_pub.io",
                         "description": "The digital io file",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.4/V3.4_pub.io"
                     },
                     {
                         "name": "legs_instructions.png",
                         "description": "The instructions on how to open the legs",
+                        "type": "png",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.4/legs_instructions.png"
                     }
                 ],
@@ -526,7 +555,8 @@
         "company": "",
         "stability": "Not tested",
         "stabilityExtra": "",
-        "description": "The New Glenn rocket is currently being developed by Blue Origins. with 98 meters in height it will be one of the worlds largest rockets. The first stage will propulsively land to be reused for multiple launches.",
+        "mocDescription": "The New Glenn rocket is currently being developed by Blue Origins. with 98 meters in height it will be one of the worlds largest rockets. The first stage will propulsively land to be reused for multiple launches.",
+        "rocketDescription":"",
         "dimensionsExtra": "",
         "difficultyExtra": "",
         "type": "rocket",
@@ -584,12 +614,14 @@
                     {
                         "name": "V2.1.io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io",
+                        "type": "io",
                         "description": "The digital io file"
                     }
                 ]
             }
         ],
-        "description": "The Stoke rocket.",
+        "mocDescription": "The Stoke rocket.",
+        "rocketDescription":"",
         "dimensionsExtra": "",
         "region": "USA",
         "dimensions": "5x5.3x25.6cm"
@@ -608,7 +640,8 @@
         "regionExtra": "",
         "difficultyExtra": "",
         "scale": "110",
-        "description": "The Soyuz-FG MS rocket.",
+        "mocDescription": "The Soyuz-FG MS rocket.",
+        "rocketDescription":"",
         "dateCreated": "2023-02-20",
         "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/russia/soyuz/soyuz-fg-ms/640x512.png",
         "region": "Russia",
@@ -621,11 +654,13 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.1/v2.1_soyuz_fg.pdf",
                         "name": "V2.1_soyuz_fg.pdf",
+                        "type": "pdf",
                         "description": "The pdf instructions"
                     },
                     {
                         "name": "V2.1_soyuz_fg_pub.io",
                         "description": "The digital io file",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.1/V2.1_soyuz_fg_pub.io"
                     }
                 ]
@@ -679,11 +714,13 @@
                     {
                         "description": "The pdf instructions",
                         "name": "V2.1_soyuz_progress_instructions.pdf",
+                        "type": "pdf",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-progress/v2.1/v2.1_soyuz_progress_instructions.pdf"
                     },
                     {
                         "description": "The digital io file",
                         "name": "V2.1_soyuz_progress_pub.io",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-progress/v2.1/V2.1_soyuz_progress_pub.io"
                     }
                 ]
@@ -697,7 +734,8 @@
         "type": "rocket",
         "tags": [],
         "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/russia/soyuz/soyuz-progress/640x512.png",
-        "description": "The Soyuz rocket with the Progress spacecraft as payload.",
+        "mocDescription": "The Soyuz rocket with the Progress spacecraft as payload.",
+        "rocketDescription":"",
         "companyExtra": "",
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-progress/v2.1/V2.1_progress_cover_2.png",
@@ -734,6 +772,7 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/zq-2/v2.3/V2.3.io",
                         "description": "The digital io file",
+                        "type": "io",
                         "name": "V2.3.io"
                     }
                 ],
@@ -742,7 +781,8 @@
                 "changelog": ""
             }
         ],
-        "description": "The Zhuque 2 is the first methane powered rocket that made an attempt to reach orbit in 2022. It failed on it's first flight.",
+        "mocDescription": "The Zhuque 2 is the first methane powered rocket that made an attempt to reach orbit in 2022. It failed on it's first flight.",
+        "rocketDescription":"",
         "dimensions": "5x5x49cm",
         "regionExtra": "",
         "tags": [],
@@ -776,7 +816,8 @@
         "designerExtra": "",
         "parts": 977,
         "scale": "110",
-        "description": "The Atlas V rocket in its 541 configuration with the Mars 2020 payload and fairing. There are two variants of the rocket. One is the frosted version and one is the non-frosted one. The io files furthermore includes a small black stand for the rocket.",
+        "mocDescription": "The Atlas V rocket in its 541 configuration with the Mars 2020 payload and fairing. \n There are two variants of the rocket. One is the frosted version and one is the non-frosted one. The io files furthermore includes a small black stand for the rocket.",
+        "rocketDescription":"",
         "dimensionsExtra": "",
         "title": "Atlas V 541 Mars 2020",
         "dimensions": "7.8x7.3x55cm",
@@ -795,11 +836,13 @@
                     {
                         "description": "The digital io file of the frosted variant",
                         "name": " Atlas V 541 Mars 2020_V2.io",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.0/Atlas%20V%20541%20Mars%202020%20Frost%20V2.io"
                     },
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.0/Atlas%20V%20541%20Mars%202020_V2.io",
                         "name": " Atlas V 541 Mars 2020 Frost V2.io",
+                        "type": "io",
                         "description": "The digital io file of the non-frosted variant"
                     }
                 ],
@@ -812,11 +855,13 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20Frost%20V2.1.io",
                         "description": "The digital io file of the frosted variant",
+                        "type": "io",
                         "name": " Atlas V 541 Mars 2020 Frost V2.1.io"
                     },
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20V2.1.io",
                         "description": "The digital io file of the non-frosted variant",
+                        "type": "io",
                         "name": " Atlas V 541 Mars 2020 V2.1.io"
                     }
                 ],
@@ -856,6 +901,7 @@
                     {
                         "name": " Atlas V 551 Juno V2.io",
                         "description": "The digital io file",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/v2.0/Atlas%20V%20551%20Juno%20V2.io"
                     }
                 ],
@@ -869,11 +915,13 @@
                     {
                         "description": "The digital io file of the frosted variant",
                         "name": " Atlas V 551 Juno Frosted V2.1.io",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/v2.1/Atlas%20V%20551%20Juno%20Frosted%20V2.1.io"
                     },
                     {
                         "name": " Atlas V 551 Juno V2.1.io",
                         "description": "The digital io file of the non-frosted variant",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/v2.1/Atlas%20V%20551%20Juno%20V2.1.io"
                     }
                 ],
@@ -900,7 +948,8 @@
         "designer": "SkySaac",
         "regionExtra": "",
         "fanPictures": [],
-        "description": "The Atlas V rocket in its 551 configuration with the Juno payload and fairing. There are two variants of the rocket. One is the frosted version and one is the non-frosted one. The io files furthermore includes a small black stand for the rocket.",
+        "mocDescription": "The Atlas V rocket in its 551 configuration with the Juno payload and fairing. There are two variants of the rocket. One is the frosted version and one is the non-frosted one. The io files furthermore includes a small black stand for the rocket.",
+        "rocketDescription":"",
         "type": "rocket",
         "companyExtra": "",
         "typeExtra": "",
@@ -940,6 +989,7 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/dnepr/v2.1/V2.1.io",
                         "name": "V2.1.io",
+                        "type": "io",
                         "description": "The digital io file"
                     }
                 ],
@@ -954,6 +1004,7 @@
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/dnepr/v2.2/V2.2.io",
                         "description": "The digital io file",
+                        "type": "io",
                         "name": "V2.2.io"
                     }
                 ]
@@ -962,7 +1013,8 @@
         "dimensionsExtra": "",
         "difficulty": "Beginner",
         "tags": [],
-        "description": "The Dnepr rocket is a three staged launch vehicle converted from the R-36MU ICBM. The first launch was in 1999 and the last one in 2015. It launched a total of 22 times.",
+        "mocDescription": "The Dnepr rocket is a three staged launch vehicle converted from the R-36MU ICBM. The first launch was in 1999 and the last one in 2015. It launched a total of 22 times.",
+        "rocketDescription":"",
         "dimensions": "3.5x3.5x30.4cm",
         "companyExtra": "",
         "parts": 329,
@@ -984,7 +1036,8 @@
         "fanPictures": [],
         "companyExtra": "",
         "difficulty": "Not checked",
-        "description": "The Epsilon rocket launches from the Uchinoura Space Center in Japan. The launchpad has before been used for the M series of rockets.",
+        "mocDescription": "The Epsilon rocket launches from the Uchinoura Space Center in Japan. The launchpad has before been used for the M series of rockets.",
+        "rocketDescription":"",
         "related": [],
         "parts": 977,
         "id": 16,
@@ -1002,11 +1055,13 @@
                     {
                         "description": "The digital io file",
                         "name": " V2_pub.io",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/japan/epsilon/launchpad/V2_pub.io"
                     },
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/japan/epsilon/launchpad/v2.pdf",
                         "name": " v2.pdf",
+                        "type": "pdf",
                         "description": "The digital pdf instructions"
                     }
                 ]
@@ -1038,6 +1093,7 @@
                     {
                         "description": "",
                         "name": " Ariane_5_V1.9_pub.io",
+                        "type": "io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/normal/Ariane_5_V1.9_pub.io"
                     }
                 ],
@@ -1061,7 +1117,8 @@
         "designerExtra": "",
         "scale": "110",
         "partsExtra": "",
-        "description": "The Ariane 5 ECA (Evolution Cryotechnique Type A) is the latest version of the Ariane 5 launcher. It can launch up to 10.9 tons in GTO. It first flew in 2002 and will fly it's last flight in 2023. It is known for launching the James Webb Space Telscope as well as many communication satellites.",
+        "mocDescription": "The Ariane 5 ECA (Evolution Cryotechnique Type A) is the latest version of the Ariane 5 launcher. It can launch up to 10.9 tons in GTO. It first flew in 2002 and will fly it's last flight in 2023. It is known for launching the James Webb Space Telscope as well as many communication satellites.",
+        "rocketDescription":"",
         "parts": 1218,
         "region": "Europe",
         "difficulty": "Proficient",
@@ -1088,7 +1145,8 @@
         "difficulty": "Experienced",
         "region": "Russia",
         "designerExtra": "",
-        "description": "The MAKS spacecraft.",
+        "mocDescription": "The MAKS spacecraft.",
+        "rocketDescription":"",
         "difficultyExtra": "",
         "companyExtra": "",
         "regionExtra": "",
@@ -1104,7 +1162,8 @@
                     {
                         "description": "The digital io file",
                         "name": "V2.io",
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/maks/v2.0/V2.io"
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/maks/v2.0/V2.io",
+                        "type": "io"
                     }
                 ],
                 "version": "V2.0"

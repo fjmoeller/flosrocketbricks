@@ -9,4 +9,5 @@ Using Angular Universal it gets pre rendered at each deployment.
 3. put data into flosrocketcreator
 4. Add MOC json to src/assets/mocs.json
 5. Add "/moc/:id" entry to routes.txt
+7. Add the path & image to the sitemap
 6. Commit & Push

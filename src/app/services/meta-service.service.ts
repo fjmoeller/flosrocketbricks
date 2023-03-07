@@ -18,11 +18,11 @@ export class MetaServiceService {
     this.metaTagService.updateTag({ property: 'og:type', content: "website" });
     this.metaTagService.updateTag({ property: 'og:image', content: image });
 
-    this.metaTagService.updateTag({ property: 'twitter:title', content: title });
-    this.metaTagService.updateTag({ property: 'twitter:description', content: desc });
-    this.metaTagService.updateTag({ property: 'twitter:url', content: url });
-    this.metaTagService.updateTag({ property: 'twitter:card', content: "summary_large_image" });
-    this.metaTagService.updateTag({ property: 'twitter:image', content: image });
+    this.metaTagService.updateTag({ name: 'twitter:title', content: title });
+    this.metaTagService.updateTag({ name: 'twitter:description', content: desc });
+    this.metaTagService.updateTag({ name: 'twitter:url', content: url });
+    this.metaTagService.updateTag({ name: 'twitter:card', content: "summary_large_image" });
+    this.metaTagService.updateTag({ name: 'twitter:image', content: image });
   }
 
   setDefaultTags(title: string, url: string): void {
@@ -38,10 +38,10 @@ export class MetaServiceService {
     this.metaTagService.updateTag({ property: 'og:type', content: "website" });
     this.metaTagService.updateTag({ property: 'og:image', content: image });
 
-    this.metaTagService.updateTag({ property: 'twitter:title', content: title });
-    this.metaTagService.updateTag({ property: 'twitter:description', content: desc });
-    this.metaTagService.updateTag({ property: 'twitter:url', content: url });
-    this.metaTagService.updateTag({ property: 'twitter:card', content: "summary_large_image" });
-    this.metaTagService.updateTag({ property: 'twitter:image', content: image });
+    this.metaTagService.updateTag({ name: 'twitter:title', content: title });
+    this.metaTagService.updateTag({ name: 'twitter:description', content: desc });
+    this.metaTagService.updateTag({ name: 'twitter:url', content: url });
+    this.metaTagService.updateTag({ name: 'twitter:card', content: "summary_large_image" });
+    this.metaTagService.updateTag({ name: 'twitter:image', content: image });
   }
 }

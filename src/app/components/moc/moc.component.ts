@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Moc, Version } from '../classes';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
-import { Observable, tap } from 'rxjs';
+import { filter, map, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-moc',
@@ -12,6 +12,7 @@ import { Observable, tap } from 'rxjs';
 })
 export class MocComponent implements OnInit {
   moc!: Observable<Moc>;
+  relatedMocs!: Observable<Moc[]>;
 
   noError: boolean = true;
   id: number = 0;
@@ -22,20 +23,11 @@ export class MocComponent implements OnInit {
     this.route.paramMap.subscribe(paramMap => {
       this.id = Number(paramMap.get('id')) || 0;
       this.moc = this.mocGrabberService.getMoc(this.id).pipe(tap(moc => {
-        this.mocGrabberService.getMoc(this.id).subscribe(moc => {
-          this.metaService.setAllTags(moc.title+" - FlosRocketBricks",moc.description,"https://flosrocketbricks.com/moc/"+moc.id.toString(),moc.smallCoverImage);
-        });
+        this.metaService.setAllTags(moc.title + " - FlosRocketBricks", moc.description, "https://flosrocketbricks.com/moc/" + moc.id.toString(), moc.smallCoverImage);
+        this.relatedMocs = this.mocGrabberService.getAllMocs().pipe(map(relMocs => relMocs.filter(relMoc => moc.related.includes(relMoc.id))));
       }));
     });
   }
-
-  /*
-  public ngOnDestroy() {
-    this.metaTagService.removeTag('og:image');
-    this.metaTagService.removeTag('twitter:card');
-    this.metaTagService.removeTag('date');
-  }
-  */
 
   sortedVersions(versions: Version[] | undefined): Version[] {
     if (!versions)

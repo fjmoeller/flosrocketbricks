@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FrontTag, Moc } from '../classes';
-import { map, Observable } from 'rxjs';
+import { map, Observable, OperatorFunction } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
@@ -15,20 +15,12 @@ export class SearchComponent implements OnInit {
   searchInput: string = "";
 
   sortingCategory: string = "Date";
-  sortingDirection: number = 1;
+  sortingDirection: number = -1;
 
-  static Tag = class {
-    tagIdentifier: string = "";
-    tagTitle: string = "";
-  }
+  tagRegions: FrontTag[] = [{ tagId: "", tagName: "All Regions", selected: true }, { tagId: "China", tagName: "China", selected: false }, { tagId: "Europe", tagName: "Europe", selected: false }, { tagId: "Japan", tagName: "Japan", selected: false }, { tagId: "New Zeeland", tagName: "New Zeeland", selected: false }, { tagId: "Russia", tagName: "Russia", selected: false }, { tagId: "South Korea", tagName: "South Korea", selected: false }, { tagId: "Ukraine", tagName: "Ukraine", selected: false }, { tagId: "USA", tagName: "Usa", selected: false }];
+  tagTypes: FrontTag[] = [{ tagId: "", tagName: "All Types", selected: true }, { tagId: "rocket", tagName: "Rocket", selected: false }, { tagId: "launchpad", tagName: "Launchpad", selected: false }, { tagId: "spacecraft", tagName: "Spacecraft", selected: false }, { tagId: "spacestation", tagName: "Spacestation", selected: false }, { tagId: "other", tagName: "Other", selected: false }];
+  tagScales: FrontTag[] = [{ tagId: "", tagName: "All Scales", selected: true }, { tagId: "110", tagName: "1:110", selected: false }];
 
-  tagRegions: FrontTag[] = [{ tagId: "", tagName: "All Regions" }, { tagId: "China", tagName: "China" }, { tagId: "Europe", tagName: "Europe" }, { tagId: "Japan", tagName: "Japan" }, { tagId: "New Zeeland", tagName: "New Zeeland" }, { tagId: "Russia", tagName: "Russia" }, { tagId: "South Korea", tagName: "South Korea" }, { tagId: "Ukraine", tagName: "Ukraine" }, { tagId: "USA", tagName: "Usa" }];
-  tagTypes: FrontTag[] = [{ tagId: "", tagName: "All Types" }, { tagId: "rocket", tagName: "Rocket" }, { tagId: "launchpad", tagName: "Launchpad" }, { tagId: "spacecraft", tagName: "Spacecraft" }, { tagId: "spacestation", tagName: "Spacestation" }, { tagId: "other", tagName: "Other" }];
-  tagScales: FrontTag[] = [{ tagId: "", tagName: "All Scales" }, { tagId: "110", tagName: "1:110" }];
-
-  tagRegion: string = "";
-  tagType: string = "";
-  tagScale: string = "";
   mocs!: Observable<Moc[]>;
 
   constructor(private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
@@ -36,74 +28,115 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams
       .subscribe(params => {
+        this.clearTags();
         if (params['q']) {
           this.searchInput = params['q'];
         }
         if (params['type']) {
-          this.tagType = params['type'];
+          let ft: FrontTag | undefined = this.tagTypes.find(frontTag => frontTag.tagId == params['type']);
+          if (ft)
+            this.tagTypeChange(ft);
         }
-        else if (params['region']) {
-          this.tagRegion = params['region'];
+        if (params['region']) {
+          let ft: FrontTag | undefined = this.tagRegions.find(frontTag => frontTag.tagId == params['region']);
+          if (ft)
+            this.tagRegionChange(ft);
         }
-        else if (params['scale']) {
-          this.tagScale = params['scale'];
+        if (params['scale']) {
+          let ft: FrontTag | undefined = this.tagScales.find(frontTag => frontTag.tagId == params['scale']);
+          if (ft)
+            this.tagScaleChange(ft);
         }
         this.getMocs();
+
       });
     this.metaService.setDefaultTags("Search - FlosRocketBricks", "https://flosrocketbricks.com/search");
   }
 
   changeSorting(category: string): void {
     this.sortingCategory = category;
-    console.log("changed sorting category to:",this.sortingCategory)
     this.getMocs();
   }
 
   changeSortingDirection(): void {
     this.sortingDirection *= -1;
-    console.log("changed sorting direction to:",this.sortingDirection)
     this.getMocs();
   }
 
   getMocs(): void {
-    console.log("sorting to: "+this.sortingCategory+" with direction: "+this.sortingDirection);
     let tempMocs: Observable<Moc[]> = this.mocGrabberService.getAllMocs();
 
-    if (this.tagRegion != "") {
-      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => moc.region == this.tagRegion)));
+    if (!this.tagRegions[0].selected) {
+      let filteredTags: FrontTag[] = this.tagRegions.filter(tagRegion => tagRegion.selected);
+      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => filteredTags.some(tag => moc.region == tag.tagId))));
     }
-    if (this.tagType != "") {
-      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => moc.type == this.tagType)));
+
+    if (!this.tagTypes[0].selected) {
+      let filteredTags: FrontTag[] = this.tagTypes.filter(tagType => tagType.selected);
+      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => filteredTags.some(tag => moc.type == tag.tagId))));
     }
-    if (this.tagScale != "") {
-      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => moc.scale == this.tagScale)));
+
+    if (!this.tagScales[0].selected) {
+      let filteredTags: FrontTag[] = this.tagScales.filter(tagScale => tagScale.selected);
+      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => filteredTags.some(tag => moc.scale == tag.tagId))));
     }
+
     if (this.searchInput != "") {
       tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => moc.title.toLowerCase().indexOf(this.searchInput.toLowerCase()) >= 0)));
     }
 
     switch (this.sortingCategory) {
-      case "Date": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.dateCreated > a.dateCreated ? 1 : -1)))); break;
+      case "Date": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.id < a.id ? 1 : -1)))); break;
       case "Title": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.title > a.title ? 1 : -1)))); break;
-      case "Parts": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.parts > a.parts ? 1 : -1)))); break;
+      case "Parts": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.parts < a.parts ? 1 : -1)))); break;
     }
 
     this.mocs = tempMocs;
   }
 
-  tagTypeChange(val: string): void {
-    this.tagType = val;
-    console.log("change to", val);
+  clearTags() {
+    this.tagTypeChange(this.tagTypes[0]);
+    this.tagRegionChange(this.tagRegions[0]);
+    this.tagScaleChange(this.tagScales[0]);
+  }
+
+  tagTypeChange(fTag: FrontTag): void {
+    if (fTag.tagId === "") {
+      this.tagTypes.forEach(tagType => {
+        tagType.selected = false;
+      });
+      fTag.selected = true;
+    } else {
+      this.tagTypes[0].selected = false;
+      fTag.selected = !fTag.selected;
+    }
+
     this.getMocs();
   }
 
-  tagRegionChange(val: string): void {
-    this.tagRegion = val;
+  tagRegionChange(fTag: FrontTag): void {
+    if (fTag.tagId === "") {
+      this.tagRegions.forEach(tagRegion => {
+        tagRegion.selected = false;
+      });
+      fTag.selected = true;
+    } else {
+      this.tagRegions[0].selected = false;
+      fTag.selected = !fTag.selected;
+    }
     this.getMocs();
   }
 
-  tagScaleChange(val: string): void {
-    this.tagScale = val;
+  tagScaleChange(fTag: FrontTag): void {
+    if (fTag.tagId === "") {
+      this.tagScales.forEach(tagScale => {
+        tagScale.selected = false;
+      });
+      fTag.selected = true;
+    } else {
+      this.tagScales[0].selected = false;
+      fTag.selected = !fTag.selected;
+    }
     this.getMocs();
   }
 }

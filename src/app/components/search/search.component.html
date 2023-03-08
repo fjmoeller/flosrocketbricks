@@ -3,17 +3,18 @@
         <div class="col-md-2">
             <h3 class="row-12">Sorting</h3>
             <div class="dropdown">
-                <button class="btn text-light dropdown-toggle mx-1" style="background-color: rgb(26,30,33)" type="button"
-                    id="sortingDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                <button class="btn text-light dropdown-toggle mx-1" style="background-color: rgb(26,30,33)"
+                    type="button" id="sortingDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                    aria-expanded="false">
                     Sort by {{sortingCategory}}
                 </button>
                 <ul class="dropdown-menu" style="background-color: rgb(26,30,33)" aria-labelledby="sortingDropdown">
-                    <li><button class="dropdown-item text-light" style="background-color: rgb(26,30,33)"
-                            type="button" (click)="changeSorting('Date')">Date</button></li>
-                    <li><button class="dropdown-item text-light" style="background-color: rgb(26,30,33)"
-                            type="button" (click)="changeSorting('Parts')">Parts</button></li>
-                    <li><button class="dropdown-item text-light" style="background-color: rgb(26,30,33)"
-                            type="button" (click)="changeSorting('Title')">Title</button></li>
+                    <li><button class="dropdown-item text-light" style="background-color: rgb(26,30,33)" type="button"
+                            (click)="changeSorting('Date')">Date</button></li>
+                    <li><button class="dropdown-item text-light" style="background-color: rgb(26,30,33)" type="button"
+                            (click)="changeSorting('Parts')">Parts</button></li>
+                    <li><button class="dropdown-item text-light" style="background-color: rgb(26,30,33)" type="button"
+                            (click)="changeSorting('Title')">Title</button></li>
                 </ul>
                 <button class="btn mx-1" style="background-color: rgb(26,30,33)" type="button"
                     (click)="changeSortingDirection()">
@@ -38,26 +39,29 @@
             <span class="row-12 d-inline-block mt-2">
                 <h5>General</h5>
             </span>
-            <div class="row-12" *ngFor="let type of tagTypes">
-                <input type="radio" class="form-check-input" id="{{type.tagId}}radio" [checked]="tagType===type.tagId"
-                    (change)="tagTypeChange(type.tagId)">
-                <label class="form-check-label px-2" for="{{type.tagId}}radio">{{type.tagName}}</label>
+            <div class="form-check row-12" *ngFor="let type of tagTypes">
+                <input class="form-check-input" type="checkbox" id="{{type.tagId}}radio"
+                    [checked]="type.selected" (change)="tagTypeChange(type)">
+                <label class="form-check-label" for="{{type.tagId}}radio">{{type.tagName}}
+                </label>
             </div>
             <span class="row-12 d-inline-block mt-2">
                 <h5>Regions</h5>
             </span>
-            <div class="row-12" *ngFor="let type of tagRegions">
-                <input type="radio" class="form-check-input" id="{{type.tagId}}radio" [checked]="tagRegion===type.tagId"
-                    (change)="tagRegionChange(type.tagId)">
-                <label class="form-check-label px-2" for="{{type.tagId}}radio">{{type.tagName}}</label>
+            <div class="form-check row-12" *ngFor="let type of tagRegions">
+                <input class="form-check-input" type="checkbox" id="{{type.tagId}}radio"
+                    [checked]="type.selected" (change)="tagRegionChange(type)">
+                <label class="form-check-label" for="{{type.tagId}}radio">{{type.tagName}}
+                </label>
             </div>
             <span class="row-12 d-inline-block mt-2">
                 <h5>Scale</h5>
             </span>
-            <div class="row-12" *ngFor="let type of tagScales">
-                <input type="radio" class="form-check-input" id="{{type.tagId}}radio" [checked]="tagScale===type.tagId"
-                    (change)="tagScaleChange(type.tagId)">
-                <label class="form-check-label px-2" for="{{type.tagId}}radio">{{type.tagName}}</label>
+            <div class="form-check row-12" *ngFor="let type of tagScales">
+                <input class="form-check-input" type="checkbox" id="{{type.tagId}}radio"
+                    [checked]="type.selected" (change)="tagScaleChange(type)">
+                <label class="form-check-label" for="{{type.tagId}}radio">{{type.tagName}}
+                </label>
             </div>
         </div>
         <div class="col-md-10">

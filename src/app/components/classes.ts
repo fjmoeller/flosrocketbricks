@@ -31,6 +31,7 @@ export class Version {
 export class FrontTag {
   tagId: string = "";
   tagName: string = "";
+  selected: boolean = false;
 }
 
 export class Moc {

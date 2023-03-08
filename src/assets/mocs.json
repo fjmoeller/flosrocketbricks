@@ -16,10 +16,10 @@
         "scale": "110",
         "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/usa/terran/terran-1/640x512.png",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.0/V2.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.0/V2.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.0/V2.0_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.0/V2.0_4.png"
+            "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/V2.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/V2.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/V2.1_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/V2.1_4.png"
         ],
         "internalColorExtra": "",
         "scaleExtra": "",
@@ -43,6 +43,25 @@
                     }
                 ],
                 "version": "V2.0"
+            },
+            {
+                "changelog": "fixed slightly wrong height and improved details",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the small fairing variant",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/V2.1.io",
+                        "name": "V2.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the large fairing variant",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/V2.1_Big%20Fairing.io",
+                        "name": "V2.1_Big Fairing.io"
+                    }
+                ],
+                "version": "V2.1"
             }
         ],
         "dimensions": "2.6x2.4x30.2cm",

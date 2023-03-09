@@ -5,8 +5,10 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "mocDescription": "The MOC has two variants: one with the normal fairing and one with the large fairing. The first and second stage can be seperated. The big fairing has some space for a small payload in it.",
-        "rocketDescription": "The completely 3d-printed Terran 1 rocket is Relativity Spaces first rocket. It is fueled by liquid methane and liquid oxygen and has two stages. It has two fairing variants, one with the same diameter as the rest of the rocket tht will be used for the first launch and one that is larger.",
+        "rocketReadMoreLinks": [],
+
+        "mocDescription": "The MOC has two variants: one with the small fairing that is being used for the initial flight and one with the large fairing. The first and second stage can be seperated. The big fairing has some space for a small payload in it. The MOC can be completely build out of Lego parts, although it requires some rather rare printed parts for the first stage.",
+        "rocketDescription": "The (almost) completely 3d-printed Terran 1 rocket is Relativity Spaces first rocket. It is fueled by liquid methane and liquid oxygen and has two stages. It has two fairing variants, one with the same diameter as the rest of the rocket tht will be used for the first launch and one that is larger.",
         "stabilityExtra": "",
         "company": "Relativity",
         "difficulty": "Not checked",
@@ -85,8 +87,9 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "mocDescription": "The OmegA rocket.",
-        "rocketDescription": "",
+        "mocDescription": "The rocket stages of this can be seperated. The payload fiaring holds some space for a small payload inside. An additional stand for the rocket is recommended. This MOC can be completely build out of Lego bricks.",
+        "rocketDescription": "The OmegA rocket was a project by Northrop Grumman Space Systems. It consisted of mutiple solid stages and a cryogenic, RL-10 driven upper stage. The development ceised development in 2020. The rocket would have been 59.84 meters high with a diameter of 3.71 meters on the first two stages.",
+        "rocketReadMoreLinks": [],
         "stabilityExtra": "",
         "company": "",
         "difficulty": "Not checked",
@@ -139,6 +142,7 @@
         "related": [],
         "partsExtra": "",
         "designer": "SkySaac",
+        "rocketReadMoreLinks": [],
         "stability": "Not tested",
         "mocDescription": "The never build Energia 2 rocket",
         "rocketDescription": "",
@@ -202,6 +206,7 @@
         "region": "Russia"
     },
     {
+        "rocketReadMoreLinks": [],
         "versions": [
             {
                 "versionExtra": "",
@@ -271,6 +276,7 @@
     {
         "typeExtra": "",
         "updateMessage": "",
+        "rocketReadMoreLinks": [],
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-2/v3.0/A2_V3.png"
         ],
@@ -338,6 +344,7 @@
     {
         "designerExtra": "",
         "updateMessage": "",
+        "rocketReadMoreLinks": [],
         "difficultyExtra": "",
         "fanPictures": [],
         "internalColorExtra": "",
@@ -411,6 +418,7 @@
     {
         "designerExtra": "",
         "updateMessage": "",
+        "rocketReadMoreLinks": [],
         "stability": "Stable",
         "related": [],
         "scaleExtra": "",
@@ -487,6 +495,7 @@
     {
         "parts": 1071,
         "updateMessage": "",
+        "rocketReadMoreLinks": [],
         "lastupdate": "2023-03-06",
         "stability": "Not tested",
         "designerExtra": "",
@@ -540,6 +549,7 @@
     {
         "internalColor": "Green",
         "updateMessage": "",
+        "rocketReadMoreLinks": [],
         "parts": 188,
         "designer": "SkySaac",
         "fanPictures": [],
@@ -598,6 +608,7 @@
     {
         "related": [],
         "dimensions": "10.9x10.9x89cm",
+        "rocketReadMoreLinks": [],
         "updateMessage": "",
         "tags": [],
         "region": "USA",
@@ -663,6 +674,7 @@
     {
         "internalColor": "Green",
         "lastupdate": "2023-03-06",
+        "rocketReadMoreLinks": [],
         "updateMessage": "",
         "typeExtra": "",
         "scale": "110",
@@ -718,6 +730,7 @@
     {
         "companyExtra": "",
         "designerExtra": "",
+        "rocketReadMoreLinks": [],
         "typeExtra": "",
         "updateMessage": "",
         "designer": "SkySaac",
@@ -779,6 +792,7 @@
     },
     {
         "designer": "SkySaac",
+        "rocketReadMoreLinks": [],
         "related": [
             10
         ],
@@ -841,6 +855,7 @@
     },
     {
         "internalColor": "Green",
+        "rocketReadMoreLinks": [],
         "dateCreated": "2023-02-20",
         "updateMessage": "",
         "scaleExtra": "",
@@ -897,6 +912,7 @@
     {
         "fanPictures": [],
         "difficultyExtra": "",
+        "rocketReadMoreLinks": [],
         "company": "",
         "updateMessage": "",
         "regionExtra": "",
@@ -981,6 +997,7 @@
     {
         "dimensions": "7.8x7.0x55cm",
         "stability": "Stable",
+        "rocketReadMoreLinks": [],
         "difficultyExtra": "",
         "updateMessage": "",
         "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/640x512.png",
@@ -1059,6 +1076,7 @@
     {
         "region": "Ukraine",
         "designerExtra": "",
+        "rocketReadMoreLinks": [],
         "regionExtra": "",
         "internalColor": "Green",
         "updateMessage": "",
@@ -1126,6 +1144,7 @@
     {
         "dimensionsExtra": "",
         "stabilityExtra": "",
+        "rocketReadMoreLinks": [],
         "internalColorExtra": "",
         "updateMessage": "",
         "internalColor": "Bright Pink",
@@ -1186,6 +1205,7 @@
     {
         "designer": "SkySaac",
         "updateMessage": "",
+        "rocketReadMoreLinks": [],
         "versions": [
             {
                 "version": "V1.9",
@@ -1240,6 +1260,7 @@
     {
         "parts": 794,
         "lastupdate": "2023-03-06",
+        "rocketReadMoreLinks": [],
         "partsExtra": "",
         "updateMessage": "",
         "fanPictures": [],

@@ -41,6 +41,7 @@ export class Moc {
   title: string;
   pictures: string[];
   parts: number;
+  updateMessage: string;
   dimensions: string;
   scale: string;
   smallCoverImage: string;
@@ -75,9 +76,10 @@ export class Moc {
     mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],
     dateCreated: string, scaleExtra: string, partsExtra: string, dimensionsExtra: string,
     stabilityExtra: string, difficultyExtra: string, designerExtra: string, internalColorExtra: string,
-    company: string, regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
+    company: string,updateMessage:string, regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
     this.region = region;
     this.type = type;
+    this.updateMessage = updateMessage;
     this.versions = versions;
     this.id = id;
     this.title = title;

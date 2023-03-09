@@ -12,6 +12,7 @@
         "difficulty": "Not checked",
         "lastupdate": "2023-03-08",
         "related": [],
+        "updateMessage": "",
         "region": "USA",
         "scale": "110",
         "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/usa/terran/terran-1/640x512.png",
@@ -79,6 +80,7 @@
     },
     {
         "id": 0,
+        "updateMessage": "",
         "type": "rocket",
         "dimensionsExtra": "",
         "typeExtra": "",
@@ -131,6 +133,7 @@
     },
     {
         "id": 1,
+        "updateMessage": "If you intend to build this MOC, keep in mind that it will get an update in the next few weeks, that greatly improves the MOCs stability!",
         "regionExtra": "",
         "dimensionsExtra": "",
         "related": [],
@@ -232,6 +235,7 @@
         "company": "",
         "stability": "Well, it holds together",
         "parts": 372,
+        "updateMessage": "",
         "title": "Ariane 1",
         "scale": "110",
         "designerExtra": "",
@@ -266,6 +270,7 @@
     },
     {
         "typeExtra": "",
+        "updateMessage": "",
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-2/v3.0/A2_V3.png"
         ],
@@ -332,6 +337,7 @@
     },
     {
         "designerExtra": "",
+        "updateMessage": "",
         "difficultyExtra": "",
         "fanPictures": [],
         "internalColorExtra": "",
@@ -404,6 +410,7 @@
     },
     {
         "designerExtra": "",
+        "updateMessage": "",
         "stability": "Stable",
         "related": [],
         "scaleExtra": "",
@@ -479,6 +486,7 @@
     },
     {
         "parts": 1071,
+        "updateMessage": "",
         "lastupdate": "2023-03-06",
         "stability": "Not tested",
         "designerExtra": "",
@@ -531,6 +539,7 @@
     },
     {
         "internalColor": "Green",
+        "updateMessage": "",
         "parts": 188,
         "designer": "SkySaac",
         "fanPictures": [],
@@ -589,6 +598,7 @@
     {
         "related": [],
         "dimensions": "10.9x10.9x89cm",
+        "updateMessage": "",
         "tags": [],
         "region": "USA",
         "parts": 2081,
@@ -653,6 +663,7 @@
     {
         "internalColor": "Green",
         "lastupdate": "2023-03-06",
+        "updateMessage": "",
         "typeExtra": "",
         "scale": "110",
         "designer": "SkySaac",
@@ -708,6 +719,7 @@
         "companyExtra": "",
         "designerExtra": "",
         "typeExtra": "",
+        "updateMessage": "",
         "designer": "SkySaac",
         "title": "Soyuz-FG MS",
         "fanPictures": [],
@@ -770,6 +782,7 @@
         "related": [
             10
         ],
+        "updateMessage": "",
         "designerExtra": "",
         "scaleExtra": "",
         "dimensions": "9.3x9.3x42.4cm",
@@ -829,6 +842,7 @@
     {
         "internalColor": "Green",
         "dateCreated": "2023-02-20",
+        "updateMessage": "",
         "scaleExtra": "",
         "partsExtra": "",
         "difficulty": "Experienced",
@@ -884,6 +898,7 @@
         "fanPictures": [],
         "difficultyExtra": "",
         "company": "",
+        "updateMessage": "",
         "regionExtra": "",
         "id": 13,
         "internalColor": "Green",
@@ -967,6 +982,7 @@
         "dimensions": "7.8x7.0x55cm",
         "stability": "Stable",
         "difficultyExtra": "",
+        "updateMessage": "",
         "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/640x512.png",
         "partsExtra": "",
         "scaleExtra": "",
@@ -1045,6 +1061,7 @@
         "designerExtra": "",
         "regionExtra": "",
         "internalColor": "Green",
+        "updateMessage": "",
         "lastupdate": "2023-03-06",
         "scale": "110",
         "designer": "SkySaac",
@@ -1110,6 +1127,7 @@
         "dimensionsExtra": "",
         "stabilityExtra": "",
         "internalColorExtra": "",
+        "updateMessage": "",
         "internalColor": "Bright Pink",
         "regionExtra": "",
         "company": "",
@@ -1167,6 +1185,7 @@
     },
     {
         "designer": "SkySaac",
+        "updateMessage": "",
         "versions": [
             {
                 "version": "V1.9",
@@ -1222,6 +1241,7 @@
         "parts": 794,
         "lastupdate": "2023-03-06",
         "partsExtra": "",
+        "updateMessage": "",
         "fanPictures": [],
         "scaleExtra": "",
         "difficulty": "Experienced",

@@ -207,7 +207,12 @@
                 {{(moc | async)?.rocketDescription}}
             </p>
         </div>
-        <div class="col-md-6 bg-dark text-light">
+        <div class="col-md-6 bg-dark">
+            <div *ngIf="(moc | async)?.updateMessage!=''" class="row mt-1">
+                <h3 class="mx-auto text-center text-danger">
+                    {{(moc | async)?.updateMessage}}
+                </h3>
+            </div>
             <div class="row mt-1">
                 <h3 class="mx-auto text-center">
                     Instructions and digital files

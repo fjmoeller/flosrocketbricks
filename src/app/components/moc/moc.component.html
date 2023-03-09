@@ -219,20 +219,23 @@
                 </h3>
             </div>
             <div class="row">
-                <div class="accordion bg-dark text-light" id="accordion">
+                <div class="accordion text-light" id="accordion">
                     <div *ngFor="let version of sortedVersions((moc | async)?.versions)"
-                        class="accordion-item bg-dark text-light">
-                        <h2 class="accordion-header bg-dark text-light" [id]="'heading'+version.version">
-                            <button class="accordion-button bg-dark text-light" type="button" data-bs-toggle="collapse"
-                                [attr.data-bs-target]="'#'+version.version" [attr.aria-controls]="version.version">
+                        class="accordion-item text-light">
+                        <h2 class="accordion-header text-light" [id]="'heading'+version.version">
+                            <button class="accordion-button text-light" style="background-color: rgb(26,30,33)"
+                                type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+version.version"
+                                [attr.aria-controls]="version.version">
                                 {{version.version}} {{version.versionExtra}}
                             </button>
                         </h2>
-                        <div [id]="version.version" class="accordion-collapse collapse show bg-dark text-light"
-                            [attr.aria-labelledby]="'heading'+version.version">
+                        <div [id]="version.version" class="accordion-collapse collapse show text-light"
+                            style="background-color: rgb(26,30,33)" [attr.aria-labelledby]="'heading'+version.version">
                             <div class="accordion-body">
                                 <div *ngIf="version.changelog!=''"><strong>Changelog:</strong> <br>
                                     {{version.changelog}} <br></div>
+                                <hr class="my-2 d-inline-block mx-auto"
+                                    style="width: 100%; background-color: #7c4dff; height: 2px" />
                                 <strong>Files:</strong>
                                 <app-file *ngFor="let file of version.files" [link]="file.link" [name]="file.name"
                                     [description]="file.description">

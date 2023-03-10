@@ -4,8 +4,8 @@
             <div class="carousel-inner">
                 <div *ngFor="let picture of (moc | async)?.pictures; let index = index" [class.active]="index == 0"
                     class="carousel-item">
-                    <img src={{picture}} class="d-block w-100" alt={{(moc | async)?.title}} title={{(moc |
-                        async)?.title}}>
+                    <img src={{picture}} class="d-block w-100" alt="{{(moc | async)?.title}}"
+                        title="{{(moc | async)?.title}}">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#mocCarousel" data-bs-slide="prev">
@@ -36,8 +36,8 @@
                         <div class="row justify-content-center">
                             <strong>Parts:</strong>
                             <span>{{(moc | async)?.parts}} <svg placement="top" *ngIf="(moc | async)?.partsExtra != ''"
-                                    ngbTooltip={{(moc | async)?.partsExtra}} xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                    ngbTooltip="{{(moc | async)?.partsExtra}}" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
@@ -56,8 +56,8 @@
                         <div class="row justify-content-center">
                             <strong>Scale:</strong>
                             <span>{{(moc | async)?.scale}} <svg placement="top" *ngIf="(moc | async)?.scaleExtra != ''"
-                                    ngbTooltip={{(moc | async)?.scaleExtra}} xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                    ngbTooltip="{{(moc | async)?.scaleExtra}}" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
@@ -80,9 +80,10 @@
                         <div class="row justify-content-center">
                             <strong>Stability:</strong>
                             <span>{{(moc | async)?.stability}} <svg placement="top"
-                                    *ngIf="(moc | async)?.stabilityExtra != ''" ngbTooltip={{(moc |
-                                    async)?.stabilityExtra}} xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                                    *ngIf="(moc | async)?.stabilityExtra != ''"
+                                    ngbTooltip="{{(moc | async)?.stabilityExtra}}" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                    viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
@@ -116,9 +117,10 @@
                         <div class="row justify-content-center">
                             <strong>Dimensions:</strong>
                             <span>{{(moc | async)?.dimensions}} <svg placement="top"
-                                    *ngIf="(moc | async)?.dimensionsExtra != ''" ngbTooltip={{(moc |
-                                    async)?.dimensionsExtra}} xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                                    *ngIf="(moc | async)?.dimensionsExtra != ''"
+                                    ngbTooltip="{{(moc | async)?.dimensionsExtra}}" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                    viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
@@ -137,9 +139,9 @@
                         <div class="row justify-content-center">
                             <strong>Designers:</strong>
                             <span>{{(moc | async)?.designer}} <svg placement="top"
-                                    *ngIf="(moc | async)?.designerExtra != ''" ngbTooltip={{(moc |
-                                    async)?.designerExtra}} xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                                    *ngIf="(moc | async)?.designerExtra != ''" ngbTooltip="{{(moc | async)?.designerExtra}}"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
@@ -159,9 +161,10 @@
                         <div class="row justify-content-center">
                             <strong>Build difficulty:</strong>
                             <span>{{(moc | async)?.difficulty}} <svg placement="top"
-                                    *ngIf="(moc | async)?.difficultyExtra != ''" ngbTooltip={{(moc |
-                                    async)?.difficultyExtra}} xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                                    *ngIf="(moc | async)?.difficultyExtra != ''"
+                                    ngbTooltip="{{(moc | async)?.difficultyExtra}}" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                    viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
@@ -179,9 +182,9 @@
                         <div class="row justify-content-center">
                             <strong>Internal brick color:</strong>
                             <span>{{(moc | async)?.internalColor}} <svg placement="top"
-                                    *ngIf="(moc | async)?.internalColorExtra != ''" ngbTooltip={{(moc |
-                                    async)?.internalColorExtra}} xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                    *ngIf="(moc | async)?.internalColorExtra != ''"
+                                    ngbTooltip="{{(moc | async)?.internalColorExtra}}" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />

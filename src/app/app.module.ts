@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { NgbModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MocGrabberService } from './services/moc-grabber.service';
 import { RouterModule } from '@angular/router';
+import { MocProxyComponent } from './components/moc-proxy/moc-proxy.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RouterModule } from '@angular/router';
     CardComponent,
     StartComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    MocProxyComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

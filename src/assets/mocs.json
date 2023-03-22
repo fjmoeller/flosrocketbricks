@@ -1,5 +1,59 @@
 [
     {
+        "id": 22,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Dark Pink",
+        "rocketReadMoreLinks": [],
+        "mocDescription": "The three stages, as well as the two boosters can be seperated. On top of the transtage is the MOL mockup.",
+        "rocketDescription": "The Titan IIIC rocket with the MOL payload was launched in 1966 on the C-9 vehicle. It served as a mockup and was made out of a Titan propellant tank and a refurbished Gemini spacecraft. The laboratory mockup remained in orbit until 1967.",
+        "stabilityExtra": "",
+        "company": "NASA",
+        "difficulty": "Proficient",
+        "lastupdate": "2023-03-22",
+        "related": [21],
+        "updateMessage": "",
+        "region": "USA",
+        "scale": "110",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/mol/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_MOL_V2.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_MOL_V2.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_MOL_V2.0_3.png"
+        ],
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "fanPictures": [],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_V2.0_MOL.io",
+                        "name": "C_V2.0_MOL.io"
+                    }
+                ],
+                "version": "V2.0"
+            }
+        ],
+        "dimensions": "4.3x9.6x42.1cm",
+        "tags": [],
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "title": "Titan IIIC MOL",
+        "regionExtra": "",
+        "parts": 781,
+        "stability": "Good",
+        "difficultyExtra": "",
+        "designerExtra": "",
+        "companyExtra": "",
+        "dateCreated": "2023-03-22",
+        "designer": "SkySaac"
+    },
+    {
         "id": 21,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -12,7 +66,7 @@
         "company": "NASA",
         "difficulty": "Beginner",
         "lastupdate": "2023-03-19",
-        "related": [],
+        "related": [22],
         "updateMessage": "",
         "region": "USA",
         "scale": "110",
@@ -27,6 +81,19 @@
         "scaleExtra": "",
         "fanPictures": [],
         "versions": [
+            {
+                "changelog": "added a missing 1x1 plate",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/a/v3.1/A_V3.1.io",
+                        "name": "A_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",
@@ -46,7 +113,7 @@
         "partsExtra": "Can be build completely out of Lego bricks.",
         "title": "Titan IIIA",
         "regionExtra": "",
-        "parts": 291,
+        "parts": 292,
         "stability": "Good",
         "difficultyExtra": "",
         "designerExtra": "",

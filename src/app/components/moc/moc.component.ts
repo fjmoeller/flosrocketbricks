@@ -23,7 +23,7 @@ export class MocComponent implements OnInit {
     this.route.paramMap.subscribe(paramMap => {
       this.id = Number(paramMap.get('id')) || 0;
       this.moc = this.mocGrabberService.getMoc(this.id).pipe(tap(moc => {
-        this.metaService.setAllTags(moc.title + " - FlosRocketBricks", moc.mocDescription, "https://flosrocketbricks.com/moc/" + moc.id.toString(), moc.smallCoverImage);
+        this.metaService.setAllTags(moc.title + " - FlosRocketBricks", moc.mocDescription, "https://flosrocketbricks.com/moc/" + moc.id.toString() + "/" + moc.title.toLowerCase().split(' ').join('-'), moc.smallCoverImage);
         this.relatedMocs = this.mocGrabberService.getAllMocs().pipe(
           map(relMocs => relMocs.filter(relMoc => moc.related.includes(relMoc.id))),
           map((mocs: Moc[]) => mocs.slice(0, 6))

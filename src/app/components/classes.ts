@@ -4,11 +4,13 @@ export class File {
   link: string;
   name: string;
   description: string;
+  type: string;
 
-  constructor(link: string, name: string, description: string) {
+  constructor(link: string, name: string, description: string, type: string) {
     this.link = link;
     this.name = name;
     this.description = description;
+    this.type = type;
   }
 }
 
@@ -27,8 +29,9 @@ export class Version {
 }
 
 export class FrontTag {
-    tagId: string = "";
-    tagName: string = "";
+  tagId: string = "";
+  tagName: string = "";
+  selected: boolean = false;
 }
 
 export class Moc {
@@ -38,7 +41,9 @@ export class Moc {
   title: string;
   pictures: string[];
   parts: number;
+  updateMessage: string;
   dimensions: string;
+  rocketReadMoreLinks : string[];
   scale: string;
   smallCoverImage: string;
   designer: string;
@@ -47,7 +52,7 @@ export class Moc {
   lastupdate: string;
   fanPictures: string[];
   tags: string[];
-  description: string;
+  mocDescription: string;
   related: number[];
   region: string;
   dateCreated: string;
@@ -59,6 +64,7 @@ export class Moc {
   stabilityExtra: string;
   difficultyExtra: string;
   designerExtra: string;
+  rocketDescription: string;
   internalColorExtra: string;
   company: string;
   companyExtra: string;
@@ -68,12 +74,13 @@ export class Moc {
   constructor(internalColor: string, type: string, region: string, id: number, versions: Version[], title: string, pictures: string[],
     parts: NumberSymbol, dimensions: string, scale: string, designer: string,
     stability: string, difficulty: string, lastupdate: string, tags: string[],
-    description: string, related: number[], smallCoverImage: string, fanPictures: string[], 
+    mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],
     dateCreated: string, scaleExtra: string, partsExtra: string, dimensionsExtra: string,
     stabilityExtra: string, difficultyExtra: string, designerExtra: string, internalColorExtra: string,
-    company: string, regionExtra: string, typeExtra: string, companyExtra: string) {
+    company: string,updateMessage:string,rocketReadMoreLinks:string[], regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
     this.region = region;
     this.type = type;
+    this.updateMessage = updateMessage;
     this.versions = versions;
     this.id = id;
     this.title = title;
@@ -81,6 +88,7 @@ export class Moc {
     this.smallCoverImage = smallCoverImage;
     this.fanPictures = fanPictures;
     this.parts = parts;
+    this.rocketReadMoreLinks = rocketReadMoreLinks;
     this.dimensions = dimensions;
     this.dateCreated = dateCreated;
     this.scale = scale;
@@ -89,9 +97,10 @@ export class Moc {
     this.difficulty = difficulty;
     this.lastupdate = lastupdate;
     this.tags = tags;
-    this.description = description;
+    this.mocDescription = mocDescription;
     this.related = related;
     this.internalColor = internalColor;
+    this.rocketDescription = rocketDescription;
 
     this.scaleExtra = scaleExtra;
     this.partsExtra = partsExtra;

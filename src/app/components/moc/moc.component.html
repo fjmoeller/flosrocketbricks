@@ -36,7 +36,7 @@
                         <div class="row justify-content-center">
                             <strong>Parts:</strong>
                             <span>{{(moc | async)?.parts}} <svg placement="top" *ngIf="(moc | async)?.partsExtra != ''"
-                                    ngbTooltip="(moc | async)?.partsExtra" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    ngbTooltip="{{(moc | async)?.partsExtra}}" xmlns="http://www.w3.org/2000/svg" width="16"
                                     height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
@@ -56,7 +56,7 @@
                         <div class="row justify-content-center">
                             <strong>Scale:</strong>
                             <span>{{(moc | async)?.scale}} <svg placement="top" *ngIf="(moc | async)?.scaleExtra != ''"
-                                    ngbTooltip="(moc | async)?.scaleExtra" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    ngbTooltip="{{(moc | async)?.scaleExtra}}" xmlns="http://www.w3.org/2000/svg" width="16"
                                     height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
@@ -81,7 +81,7 @@
                             <strong>Stability:</strong>
                             <span>{{(moc | async)?.stability}} <svg placement="top"
                                     *ngIf="(moc | async)?.stabilityExtra != ''"
-                                    ngbTooltip="(moc | async)?.stabilityExtra" xmlns="http://www.w3.org/2000/svg"
+                                    ngbTooltip="{{(moc | async)?.stabilityExtra}}" xmlns="http://www.w3.org/2000/svg"
                                     width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
@@ -118,7 +118,7 @@
                             <strong>Dimensions:</strong>
                             <span>{{(moc | async)?.dimensions}} <svg placement="top"
                                     *ngIf="(moc | async)?.dimensionsExtra != ''"
-                                    ngbTooltip="(moc | async)?.dimensionsExtra" xmlns="http://www.w3.org/2000/svg"
+                                    ngbTooltip="{{(moc | async)?.dimensionsExtra}}" xmlns="http://www.w3.org/2000/svg"
                                     width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
@@ -139,7 +139,7 @@
                         <div class="row justify-content-center">
                             <strong>Designers:</strong>
                             <span>{{(moc | async)?.designer}} <svg placement="top"
-                                    *ngIf="(moc | async)?.designerExtra != ''" ngbTooltip="(moc | async)?.designerExtra"
+                                    *ngIf="(moc | async)?.designerExtra != ''" ngbTooltip="{{(moc | async)?.designerExtra}}"
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
                                     <path
@@ -162,7 +162,7 @@
                             <strong>Build difficulty:</strong>
                             <span>{{(moc | async)?.difficulty}} <svg placement="top"
                                     *ngIf="(moc | async)?.difficultyExtra != ''"
-                                    ngbTooltip="(moc | async)?.difficultyExtra" xmlns="http://www.w3.org/2000/svg"
+                                    ngbTooltip="{{(moc | async)?.difficultyExtra}}" xmlns="http://www.w3.org/2000/svg"
                                     width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
@@ -183,7 +183,7 @@
                             <strong>Internal brick color:</strong>
                             <span>{{(moc | async)?.internalColor}} <svg placement="top"
                                     *ngIf="(moc | async)?.internalColorExtra != ''"
-                                    ngbTooltip="(moc | async)?.internalColorExtra" xmlns="http://www.w3.org/2000/svg"
+                                    ngbTooltip="{{(moc | async)?.internalColorExtra}}" xmlns="http://www.w3.org/2000/svg"
                                     width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
@@ -198,29 +198,44 @@
     </div>
     <div class="row m-4">
         <div class="col-md-6 bg-dark text-light">
+            <h4>About the Moc</h4>
             <p>
-                {{(moc | async)?.description}}
+                {{(moc | async)?.mocDescription}}
+            </p>
+            <h4>About the Rocket</h4>
+            <p>
+                {{(moc | async)?.rocketDescription}}
             </p>
         </div>
-        <div class="col-md-6 bg-dark text-light">
+        <div class="col-md-6 bg-dark">
+            <div *ngIf="(moc | async)?.updateMessage!=''" class="row mt-1">
+                <h3 class="mx-auto text-center text-danger">
+                    {{(moc | async)?.updateMessage}}
+                </h3>
+            </div>
             <div class="row mt-1">
                 <h3 class="mx-auto text-center">
                     Instructions and digital files
                 </h3>
             </div>
             <div class="row">
-                <div class="accordion bg-dark text-light" id="accordion">
-                    <div *ngFor="let version of sortedVersions((moc | async)?.versions)" class="accordion-item bg-dark text-light">
-                        <h2 class="accordion-header bg-dark text-light" [id]="'heading'+version.version">
-                            <button class="accordion-button bg-dark text-light" type="button" data-bs-toggle="collapse"
-                                [attr.data-bs-target]="'#'+version.version" [attr.aria-controls]="version.version">
+                <div class="accordion text-light" id="accordion">
+                    <div *ngFor="let version of sortedVersions((moc | async)?.versions)"
+                        class="accordion-item text-light">
+                        <h2 class="accordion-header text-light" [id]="'heading'+version.version">
+                            <button class="accordion-button text-light" style="background-color: rgb(26,30,33)"
+                                type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+version.version"
+                                [attr.aria-controls]="version.version">
                                 {{version.version}} {{version.versionExtra}}
                             </button>
                         </h2>
-                        <div [id]="version.version" class="accordion-collapse collapse show bg-dark text-light" [attr.aria-labelledby]="'heading'+version.version">
+                        <div [id]="version.version" class="accordion-collapse collapse show text-light"
+                            style="background-color: rgb(26,30,33)" [attr.aria-labelledby]="'heading'+version.version">
                             <div class="accordion-body">
-                                <div *ngIf="version.changelog!=''"><strong>Changelog:</strong> <br> 
-                                {{version.changelog}} <br></div>
+                                <div *ngIf="version.changelog!=''"><strong>Changelog:</strong> <br>
+                                    {{version.changelog}} <br></div>
+                                <hr class="my-2 d-inline-block mx-auto"
+                                    style="width: 100%; background-color: #7c4dff; height: 2px" />
                                 <strong>Files:</strong>
                                 <app-file *ngFor="let file of version.files" [link]="file.link" [name]="file.name"
                                     [description]="file.description">
@@ -233,7 +248,20 @@
 
         </div>
     </div>
+    <div *ngIf="(moc|async)!.related.length > 0" class="row justify-content-center bg-dark m-4 text-light">
+        <div class="justify-content-center">
+            <span>
+                <h3>Related Mocs</h3>
+            </span>
+            <div class="card-group">
+                <app-card class="col-2" *ngFor="let relatedMoc of relatedMocs | async"
+                    [pic]="relatedMoc.smallCoverImage" [name]="relatedMoc.title" [parts]="relatedMoc.parts"
+                    [id]="relatedMoc.id">
+                </app-card>
+            </div>
+        </div>
+    </div>
 </div>
 <div *ngIf="noError==false" class="bg-dark pt-4 text-light">
-    <h2 class="text-center">404 - No MOC has been found :(</h2>
+    <h2 class="text-center">404 - No MOC has been found :/</h2>
 </div>

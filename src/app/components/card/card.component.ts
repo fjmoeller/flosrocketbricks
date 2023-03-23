@@ -13,9 +13,12 @@ export class CardComponent implements OnInit {
   @Input('parts') parts : number = 101
   @Input('id') id : number = 0;
 
+  linkName:string="Test MOC";
+
   constructor() { }
 
   ngOnInit(): void {
+    this.linkName = this.mocName.toLowerCase().split(' ').join('-');
   }
 
 }

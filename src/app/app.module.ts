@@ -13,11 +13,12 @@ import { AboutComponent } from './components/about/about.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-//import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-//import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { NgbModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MocGrabberService } from './services/moc-grabber.service';
+import { RouterModule } from '@angular/router';
+import { MocProxyComponent } from './components/moc-proxy/moc-proxy.component';
+import { MetaServiceService } from './services/meta-service.service';
 
 @NgModule({
   declarations: [
@@ -29,19 +30,21 @@ import { MocGrabberService } from './services/moc-grabber.service';
     CardComponent,
     StartComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    MocProxyComponent
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
-    //AngularFireModule.initializeApp(environment.firebase),
-    //AngularFirestoreModule,
+    HttpClientModule,
     NgbTooltipModule,
-    NgbModule
+    NgbModule,
+    RouterModule
   ],
-  providers: [MocGrabberService],
+  providers: [
+    MocGrabberService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

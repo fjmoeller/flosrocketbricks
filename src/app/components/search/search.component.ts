@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FrontTag, Moc } from '../classes';
-import { map, Observable, OperatorFunction } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
@@ -10,7 +10,7 @@ import { MetaServiceService } from 'src/app/services/meta-service.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.sass']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit,OnDestroy {
 
   searchInput: string = "";
 
@@ -51,6 +51,11 @@ export class SearchComponent implements OnInit {
 
       });
     this.metaService.setDefaultTags("Search - FlosRocketBricks", "https://flosrocketbricks.com/search");
+    this.metaService.updateCanonicalUrl("https://flosrocketbricks.com/search");
+  }
+
+  ngOnDestroy(): void {
+    this.metaService.removeCanonicalUrl();
   }
 
   changeSorting(category: string): void {

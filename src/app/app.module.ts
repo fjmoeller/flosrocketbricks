@@ -18,6 +18,7 @@ import { NgbModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MocGrabberService } from './services/moc-grabber.service';
 import { RouterModule } from '@angular/router';
 import { MocProxyComponent } from './components/moc-proxy/moc-proxy.component';
+import { MetaServiceService } from './services/meta-service.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { MocProxyComponent } from './components/moc-proxy/moc-proxy.component';
     NgbModule,
     RouterModule
   ],
-  providers: [MocGrabberService],
+  providers: [
+    MocGrabberService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

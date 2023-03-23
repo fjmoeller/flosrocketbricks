@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Injectable,Inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Injectable({
@@ -6,7 +7,27 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class MetaServiceService {
 
-  constructor(private metaTagService: Meta, private titleService : Title) { }
+  constructor(@Inject(DOCUMENT) private dom: Document,private metaTagService: Meta, private titleService : Title) { }
+
+  removeCanonicalUrl():void {
+    this.updateCanonicalUrl(null);
+  }
+
+  updateCanonicalUrl(url:string | null){
+    const head = this.dom.getElementsByTagName('head')[0];
+    var element: HTMLLinkElement | null= this.dom.querySelector(`link[rel='canonical']`) || null
+    if(url) {
+      if (element==null) {
+        element= this.dom.createElement('link') as HTMLLinkElement;
+        head.appendChild(element);
+      }
+      element.setAttribute('rel','canonical')
+      element.setAttribute('href',url)
+    }
+    else if(!url && element!=null){
+      head.removeChild(element);
+    }
+  }
 
   setAllTags(title: string, desc: string, url: string, image: string): void {
     this.titleService.setTitle(title);

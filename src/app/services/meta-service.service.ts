@@ -46,6 +46,8 @@ export class MetaServiceService {
     this.metaTagService.updateTag({ name: 'twitter:url', content: url });
     this.metaTagService.updateTag({ name: 'twitter:card', content: "summary_large_image" });
     this.metaTagService.updateTag({ name: 'twitter:image', content: image });
+
+    this.updateCanonicalUrl(url);
   }
 
   setDefaultTags(title: string, url: string): void {

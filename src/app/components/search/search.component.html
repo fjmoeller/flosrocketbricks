@@ -1,9 +1,12 @@
 <div class="container my-4 text-light">
+    <h1 class="row">Search</h1>
     <div class="row">
         <div class="col-md-2">
+            <hr class="row-12 mt-3 d-inline-block mx-auto"
+                    style="width: 100%; background-color: #7c4dff; height: 2px" />
             <h3 class="row-12">Sorting</h3>
             <div class="dropdown">
-                <button class="btn text-light dropdown-toggle mx-1" style="background-color: rgb(26,30,33)"
+                <button class="btn text-light dropdown-toggle mr-1" style="background-color: rgb(26,30,33)"
                     type="button" id="sortingDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                     aria-expanded="false">
                     Sort by {{sortingCategory}}
@@ -31,7 +34,10 @@
                 </button>
             </div>
 
-            <h3 class="row-12 mt-3">Filter</h3>
+            <hr class="row-12 mt-3 d-inline-block mx-auto"
+                    style="width: 100%; background-color: #7c4dff; height: 2px" />
+
+            <h3 class="row-12">Filter</h3>
             <div class="row-12">
                 <input class="form-control row-11" type="search" placeholder="Search" aria-label="Search"
                     [(ngModel)]="searchInput" (keyup.enter)="getMocs()">

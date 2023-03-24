@@ -1,5 +1,124 @@
 [
     {
+        "id": 24,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Dark Pink",
+        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Tsyklon-3","http://www.b14643.de/Spacerockets_1/East_Europe_2/Tsiklon/Description/Frame.htm"],
+        "mocDescription": "The first two of the three stages of the rocket can be seperated. The fairing does not hold any space for a payload due to the building techniques used.",
+        "rocketDescription": "The Tsyklon 3 rocket was a Ukrainian orbit rocket based on the R-36 ICBM. It first flew in 1977 and flew a total of 122 times. It had three stages and is about 40 meters tall. It can deliver up to 4.1 tons into LEO",
+        "stabilityExtra": "",
+        "company": "Yuzhmash",
+        "difficulty": "Easy",
+        "lastupdate": "2023-03-24",
+        "related": [23],
+        "updateMessage": "",
+        "region": "Ukraine",
+        "scale": "110",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/ukraine/tsyklon/3/640x512.png",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "dimensions": "4.0x4.0x35.5cm",
+        "tags": [],
+        "partsExtra": "This MOC requires a part in a color in which Lego doesn't have it: 3x 49307 in Dark Blue",
+        "title": "Tsyklon 3",
+        "regionExtra": "",
+        "parts": 287,
+        "stability": "Good",
+        "difficultyExtra": "",
+        "designerExtra": "",
+        "companyExtra": "",
+        "dateCreated": "2023-03-24",
+        "designer": "SkySaac",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/3/v1.1/Tskylon_3_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/3/v1.1/Tskylon_3_V1.1_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/3/v1.1/Tskylon%203_V1.1.io",
+                        "name": "Tskylon 3_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/3/v1.0/Tskylon%203_V1.io",
+                        "name": "Tskylon 3_V1.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Dark Pink",
+        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Tsyklon-2","http://www.b14643.de/Spacerockets_1/East_Europe_2/Tsiklon/Description/Frame.htm"],
+        "mocDescription": "Both rocket stages can be seperated. The fairing holds space for a small payload.",
+        "rocketDescription": "The Tsyklon 2 rocket was a Ukrainian orbit rocket based on the R-36 ICBM. It first flew in 1969 and flew a total of 106 times. It had two stages and is about 40 meters tall.",
+        "stabilityExtra": "",
+        "company": "Yuzhmash",
+        "difficulty": "Easy",
+        "lastupdate": "2023-03-23",
+        "related": [24],
+        "updateMessage": "",
+        "region": "Ukraine",
+        "scale": "110",
+        "smallCoverImage": "ttps://flosrocketbricks.com/assets/mocImages/110/ukraine/tsyklon/2/640x512.png",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "dimensions": "4.0x4.0x35.6cm",
+        "tags": [],
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "title": "Tsyklon 2",
+        "regionExtra": "",
+        "parts": 245,
+        "stability": "Good",
+        "difficultyExtra": "",
+        "designerExtra": "",
+        "companyExtra": "",
+        "dateCreated": "2023-03-23",
+        "designer": "SkySaac",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/2/v1.0/Tskylon_2_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/2/v1.0/Tskylon_2_V1.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/2/v1.0/Tskylon_2_V1.0.io",
+                        "name": "Tskylon_2_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
         "id": 22,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -17,14 +136,26 @@
         "region": "USA",
         "scale": "110",
         "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/mol/640x512.png",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "dimensions": "4.3x9.6x42.1cm",
+        "tags": [],
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "title": "Titan IIIC MOL",
+        "regionExtra": "",
+        "parts": 781,
+        "stability": "Good",
+        "difficultyExtra": "",
+        "designerExtra": "",
+        "companyExtra": "",
+        "dateCreated": "2023-03-22",
+        "designer": "SkySaac",
+        "fanPictures": [],
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_MOL_V2.0_1.png",
             "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_MOL_V2.0_2.png",
             "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_MOL_V2.0_3.png"
         ],
-        "internalColorExtra": "",
-        "scaleExtra": "",
-        "fanPictures": [],
         "versions": [
             {
                 "changelog": "",
@@ -39,19 +170,7 @@
                 ],
                 "version": "V2.0"
             }
-        ],
-        "dimensions": "4.3x9.6x42.1cm",
-        "tags": [],
-        "partsExtra": "Can be build completely out of Lego bricks.",
-        "title": "Titan IIIC MOL",
-        "regionExtra": "",
-        "parts": 781,
-        "stability": "Good",
-        "difficultyExtra": "",
-        "designerExtra": "",
-        "companyExtra": "",
-        "dateCreated": "2023-03-22",
-        "designer": "SkySaac"
+        ]
     },
     {
         "id": 21,

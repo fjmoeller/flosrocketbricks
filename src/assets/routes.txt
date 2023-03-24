@@ -23,5 +23,6 @@
 /moc/22/titan-iiic-mol
 /moc/23/tsyklon-2
 /moc/24/tsyklon-3
+/moc/25/tsyklon-4
 /
 /about

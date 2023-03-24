@@ -5,6 +5,59 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
+        "rocketReadMoreLinks": ["https://www.isaraerospace.com/spectrum"],
+        "mocDescription": "The first two rocket stages can be seperated. The fairing holds space for a small payload.",
+        "rocketDescription": "The Spectrum launch vehicle is a rocket developed by Germany based Isar Aerospace. The two stage rocket will stand 28 meters tall with a diameter of 2 meters. Both stages will run on propane and liquid oxygen. The rocket will be able to lift up to a ton into LEO.",
+        "stabilityExtra": "",
+        "company": "Isar Aerospace",
+        "difficulty": "Beginner",
+        "lastupdate": "2023-03-25",
+        "dateCreated": "2023-03-25",
+        "related": [],
+        "updateMessage": "",
+        "region": "Germany",
+        "scale": "110",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/germany/spectrum/640x512.png",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "dimensions": "2.7x2.1x24.5cm",
+        "tags": [],
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "title": "Spectrum",
+        "regionExtra": "",
+        "parts": 152,
+        "stability": "Good",
+        "difficultyExtra": "",
+        "designerExtra": "",
+        "companyExtra": "",
+        "designer": "SkySaac",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/germany/spectrum/v1.0/Spectrum_V1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/germany/spectrum/v1.0/Spectrum_V1_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/germany/spectrum/v1.0/Spectrum_V1.0.io",
+                        "name": "Spectrum_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
         "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Tsyklon-4","http://www.b14643.de/Spacerockets_1/East_Europe_2/Cyclone-4/Description/Frame.htm"],
         "mocDescription": "The first two rocket stages can be seperated. The fairing holds no space for a payload.",
         "rocketDescription": "The Tsyklon 4 rocket was an Ukrainian developed orbital rocket based on the Tsyklon 3 rocket, but it never flew. It was supposed to have two stages and is about 40 meters tall.",

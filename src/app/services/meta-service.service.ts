@@ -30,13 +30,16 @@ export class MetaServiceService {
   }
 
   setAllTags(title: string, desc: string, url: string, image: string): void {
+
+    let shortDesc : string= desc.length > 160 ? desc.substring(0, 159) : desc
+
     this.titleService.setTitle(title);
 
     this.metaTagService.updateTag({ name: 'title', content: title });
-    this.metaTagService.updateTag({ name: 'description', content: desc });
+    this.metaTagService.updateTag({ name: 'description', content: shortDesc });
 
     this.metaTagService.updateTag({ property: 'og:title', content: title });
-    this.metaTagService.updateTag({ property: 'og:description', content: desc });
+    this.metaTagService.updateTag({ property: 'og:description', content: shortDesc });
     this.metaTagService.updateTag({ property: 'og:url', content: url });
     this.metaTagService.updateTag({ property: 'og:type', content: "website" });
     this.metaTagService.updateTag({ property: 'og:image', content: image });

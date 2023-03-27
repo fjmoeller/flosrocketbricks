@@ -11,7 +11,7 @@ export class MocProxyComponent {
 
   constructor(private _router: Router, private _route: ActivatedRoute, private mocgrabber: MocGrabberService) {
     mocgrabber.getMoc(_route.snapshot.params['id']).subscribe(moc =>{
-      _router.navigate(['/moc/' + _route.snapshot.params['id'] +"/"+ moc.title.toLowerCase().split(' ').join('-') + "/"]);
+      _router.navigate(['/moc/' + _route.snapshot.params['id'] +"/"+ moc.title.toLowerCase().split(' ').join('-')]);
     }
     );
   }

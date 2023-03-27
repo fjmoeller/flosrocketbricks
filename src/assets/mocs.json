@@ -78,7 +78,7 @@
         "partsExtra": "This MOC requires a part in a color in which Lego doesn't have it: 1x 49307 in Dark Blue",
         "title": "Tsyklon 4",
         "regionExtra": "",
-        "parts": 348,
+        "parts": 384,
         "stability": "Good",
         "difficultyExtra": "",
         "designerExtra": "",
@@ -144,7 +144,7 @@
         ],
         "versions": [
             {
-                "changelog": "",
+                "changelog": "Added more details to the first and second stage. Added a second stage nozzle.",
                 "versionExtra": "",
                 "files": [
                     {

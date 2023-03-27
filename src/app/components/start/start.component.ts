@@ -18,7 +18,7 @@ export class StartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.metaService.setDefaultTags("Start - FlosRocketBricks","https://flosrocketbricks.com");
+    this.metaService.setDefaultTags("Start - FlosRocketBricks","https://flosrocketbricks.com/");
 
     this.newestMocs = this.mocGrabberService.getAllMocs().pipe(
       map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => Date.parse(b.dateCreated) - Date.parse(a.dateCreated))),

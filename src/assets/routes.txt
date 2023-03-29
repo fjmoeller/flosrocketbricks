@@ -25,5 +25,6 @@
 /moc/24/tsyklon-3/
 /moc/25/tsyklon-4/
 /moc/26/spectrum/
+/moc/27/ariane-5-eca-juice/
 /
 /about/

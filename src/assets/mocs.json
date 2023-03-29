@@ -1,5 +1,61 @@
 [
     {
+        "id": 27,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Dark Pink",
+        "rocketReadMoreLinks": ["https://www.esa.int/Science_Exploration/Space_Science/Juice","https://de.wikipedia.org/wiki/Ariane_5","https://space.skyrocket.de/doc_lau/ariane-5.htm"],
+        "mocDescription": "This Ariane 5 MOC has a small JUICE model under the payload fairing. The boosters as well as the upper stage of the rocket can be seperated. The payload fairing can also be opened to reveal the payload.",
+        "rocketDescription": "The JUICE spacecraft is planned to launch on the 13th April 2023 on the Ariane 5 ECA rocket. In 2031 it will arrive at Jupiter. It weighs around 6 tons and is solar powered.",
+        "stabilityExtra": "",
+        "company": "ArianeGroup",
+        "difficulty": "Proficient",
+        "lastupdate": "2023-03-29",
+        "dateCreated": "2023-03-29",
+        "related": [17],
+        "updateMessage": "",
+        "region": "Europe",
+        "scale": "110",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/eca/juice/640x512.png",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "dimensions": "5.9x11.2x49.3cm",
+        "tags": [],
+        "partsExtra": "Can be build completely out of Lego bricks. You will need to cut some hoses to the correct lengths though.",
+        "title": "Ariane 5 ECA Juice",
+        "regionExtra": "",
+        "parts": 1295,
+        "stability": "Good",
+        "difficultyExtra": "",
+        "designerExtra": "",
+        "companyExtra": "",
+        "designer": "SkySaac",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_pub.io",
+                        "name": "Ariane_5_ECA_JUICE_V2.0_pub.io"
+                    }
+                ],
+                "version": "V2.0"
+            }
+        ]
+    },
+    {
         "id": 26,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -1328,9 +1384,7 @@
         "typeExtra": "",
         "dateCreated": "2023-02-26",
         "type": "rocket",
-        "related": [
-            14
-        ],
+        "related": [14],
         "designerExtra": "",
         "parts": 977,
         "scale": "110",
@@ -1451,9 +1505,7 @@
         ],
         "internalColorExtra": "",
         "tags": [],
-        "related": [
-            13
-        ],
+        "related": [13],
         "scale": "110",
         "lastupdate": "2023-03-06",
         "pictures": [
@@ -1652,7 +1704,7 @@
         "difficulty": "Proficient",
         "internalColorExtra": "",
         "fanPictures": [],
-        "related": [],
+        "related": [27],
         "stabilityExtra": "",
         "lastupdate": "2023-03-06",
         "title": "Ariane 5 ECA",

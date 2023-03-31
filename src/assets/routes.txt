@@ -26,5 +26,11 @@
 /moc/25/tsyklon-4/
 /moc/26/spectrum/
 /moc/27/ariane-5-eca-juice/
+/moc/28/atlas-v-501/
+/moc/29/atlas-v-511/
+/moc/30/atlas-v-521/
+/moc/31/atlas-v-531/
+/moc/32/atlas-v-541/
+/moc/33/atlas-v-551/
 /
 /about/

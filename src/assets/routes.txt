@@ -34,5 +34,6 @@
 /moc/33/atlas-v-551/
 /moc/34/atlas-v-n22-starliner/
 /moc/35/atlas-v-heavy/
+/moc/36/soyuz-ms/
 /
 /about/

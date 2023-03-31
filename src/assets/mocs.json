@@ -1,5 +1,59 @@
 [
     {
+        "id": 36,
+        "type": "spacecraft",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "",
+        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Soyuz_MS"],
+        "mocDescription": "This is a MOC of the Soyuz MS spacecraft.",
+        "rocketDescription": "The Soyuz MS spacecraft is the newest variant of the family of Soyuz spacecrafts. It was first launched in 2016. It can carry up to three passengers.",
+        "stabilityExtra": "",
+        "company": "",
+        "difficulty": "Not tested",
+        "lastupdate": "2023-03-31",
+        "dateCreated": "2023-03-31",
+        "related": [],
+        "updateMessage": "",
+        "region": "Russia",
+        "scale": "110",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/russia/soyuz-spacecraft/soyuz-ms/640x512.png",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "dimensions": "4x9.8x7.4cm",
+        "tags": [],
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "title": "Soyuz MS",
+        "regionExtra": "",
+        "parts": 62,
+        "stability": "Not tested",
+        "difficultyExtra": "",
+        "designerExtra": "",
+        "companyExtra": "",
+        "designer": "SkySaac",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/russia/soyuz-spacecraft/soyuz-ms/v1.0/soyuz_spacecraft_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/soyuz-spacecraft/soyuz-ms/v1.0/soyuz_spacecraft_V1.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/soyuz-spacecraft/soyuz-ms/v1.0/soyuz_spacecraft_V1.0_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/soyuz-spacecraft/soyuz-ms/v1.0/Soyuz_V1.io",
+                        "name": "Soyuz_V1.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
         "id": 35,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -10,7 +64,7 @@
         "rocketDescription": "The Atlas V HLV is a never flown variant of the Atlas V rocket. It consists out of three Atlas V cores strapped together.",
         "stabilityExtra": "",
         "company": "ULA",
-        "difficulty": "Proficient",
+        "difficulty": "Not tested",
         "lastupdate": "2023-03-31",
         "dateCreated": "2023-03-31",
         "related": [],
@@ -26,7 +80,7 @@
         "title": "Atlas V HLV",
         "regionExtra": "",
         "parts": 1625,
-        "stability": "Good",
+        "stability": "Not tested",
         "difficultyExtra": "",
         "designerExtra": "",
         "companyExtra": "",

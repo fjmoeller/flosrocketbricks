@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/34/atlas-v-n22-starliner/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-n22-starliner/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/33/atlas-v-551/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/551/640x512.png</image:loc>

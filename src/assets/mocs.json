@@ -42,23 +42,55 @@
         ],
         "versions": [
             {
+                "changelog": "Updated the core stability and buildability",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the frosted version",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.1/Atlas_V_N22_Starliner_Frost_V2.1.io",
+                        "name": "Atlas_V_N22_Starliner_Frost_V2.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the normal version",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.1/Atlas_V_N22_Starliner_V2.1.io",
+                        "name": "Atlas_V_N22_Starliner_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
+            },
+            {
                 "changelog": "",
                 "versionExtra": "",
                 "files": [
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/551/v2.1/Atlas_V_551_Frost_V2.1.io",
-                        "name": "Atlas_V_551_Frost_V2.1.io"
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.0/Starliner%20N22%20V2%20Frost.io",
+                        "name": "Starliner N22 V2 Frost.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/551/v2.1/Atlas_V_551_V2.1.io",
-                        "name": "Atlas_V_551_V2.1.io"
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.0/Starliner%20N22%20V2%20No%20Frost.io",
+                        "name": "Starliner N22 V2 No Frost.io"
                     }
                 ],
-                "version": "V2.1"
+                "version": "V2.0"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v1.0/N22_V1.io",
+                        "name": "N22_V1.io"
+                    }
+                ],
+                "version": "V1.0"
             }
         ]
     },

@@ -71,7 +71,8 @@
             </div>
         </div>
         <div class="col-md-10">
-            <div class="card-group">
+            <span>{{(mocs | async)?.length}} Results</span>
+            <div class="mt-1 card-group">
                 <app-card class="col-md-3 col-4" *ngFor="let moc of mocs | async" [pic]="moc.smallCoverImage"
                     [name]="moc.title" [parts]="moc.parts" [id]="moc.id">
                 </app-card>

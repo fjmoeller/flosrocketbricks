@@ -1,31 +1,22 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import * as THREE from 'three';
 import { IoFileService } from 'src/app/services/io-file.service';
-import { Group } from 'three';
+import { AmbientLight, AxesHelper, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
 
 @Component({
   selector: 'app-viewer',
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.sass']
 })
-export class ViewerComponent implements OnInit, AfterViewInit {
+export class ViewerComponent {
 
   inputLink: string = "https://bricksafe.com/files/SkySaac/website/test/test.io";
 
-
   constructor(private ioFileService: IoFileService) { }
-
-  ngAfterViewInit(): void {
-  }
-
-  ngOnInit(): void {
-    
-  }
 
   async onFileSelected(event: any) {
     let ldrFile = await this.ioFileService.extractLdrFile(new Response(event.target.files[0]));
-    let group: Group = this.ioFileService.createMeshes(ldrFile).rotateOnWorldAxis(new THREE.Vector3(0, 0, 1), Math.PI);
+    let group: Group = this.ioFileService.createMeshes(ldrFile).rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
     this.createThreeJsBox(group);
   }
 
@@ -39,16 +30,16 @@ export class ViewerComponent implements OnInit, AfterViewInit {
 
     const canvas = document.getElementById('canvas-box');
 
-    const scene = new THREE.Scene();
+    const scene = new Scene();
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new AmbientLight(0xffffff, 0.5);
 
     scene.add(ambientLight);
 
-    const axesHelper = new THREE.AxesHelper( 5 );
+    const axesHelper = new AxesHelper( 5 );
     scene.add( axesHelper );
 
-    const pointLight = new THREE.PointLight(0xffffff, 0.5);
+    const pointLight = new PointLight(0xffffff, 0.5);
     pointLight.position.x = 2;
     pointLight.position.y = 4;
     pointLight.position.z = 2;
@@ -59,7 +50,7 @@ export class ViewerComponent implements OnInit, AfterViewInit {
       height: window.innerHeight / 2,
     };
 
-    const camera = new THREE.PerspectiveCamera(
+    const camera = new PerspectiveCamera(
       75,
       canvasSizes.width / canvasSizes.height,
       0.001,
@@ -75,7 +66,7 @@ export class ViewerComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    const renderer = new THREE.WebGLRenderer({
+    const renderer = new WebGLRenderer({
       canvas: canvas,
     });
     renderer.setClearColor(0xe232222, 1);
@@ -95,20 +86,7 @@ export class ViewerComponent implements OnInit, AfterViewInit {
     const controls = new OrbitControls(camera, renderer.domElement);
 
     controls.update();
-
-    const clock = new THREE.Clock();
-
     const animateGeometry = () => {
-      const elapsedTime = clock.getElapsedTime();
-
-      // Update animaiton objects
-      //box.rotation.x = elapsedTime;
-      //box.rotation.y = elapsedTime;
-      //box.rotation.z = elapsedTime;
-
-      //torus.rotation.x = -elapsedTime;
-      //torus.rotation.y = -elapsedTime;
-      //torus.rotation.z = -elapsedTime;
 
       controls.update();
 

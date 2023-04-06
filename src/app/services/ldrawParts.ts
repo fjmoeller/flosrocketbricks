@@ -1,13 +1,4 @@
-import { Matrix4, Triangle, Vector3 } from "three";
-
-export class LdrSub {
-    id: string;
-    parts: string[];
-    constructor(id: string, parts: string[]) {
-        this.id = id;
-        this.parts = parts;
-    }
-}
+import { Matrix4, Vector3 } from "three";
 
 export class LdrPart {
     name: string;
@@ -27,14 +18,6 @@ export class LdrPart {
     }
 }
 
-export class LdrObject {
-    id: string;
-    triangles: Triangle[];
-    constructor(id: string, triangles: Triangle[]) {
-        this.id = id;
-        this.triangles = triangles;
-    }
-}
 
 export class PartReference {
     name: string;

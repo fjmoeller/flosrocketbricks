@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/41/titan-iiic-vela-11-and-12/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/vela-11-12/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/40/titan-iiic-idcsp-8-to-15/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/idcsp-8-to-15/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/39/titan-iiic-idcsp-and-ggts-2/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/idcsp-ggts-2/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/38/titan-iiic-tacsat-1/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/tacsat-1/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/37/titan-iiic/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/transtage/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/36/soyuz-ms/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/russia/soyuz-spacecraft/soyuz-ms/640x512.png</image:loc>

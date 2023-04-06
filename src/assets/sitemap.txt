@@ -35,5 +35,10 @@ https://flosrocketbricks.com/moc/33/atlas-v-551/
 https://flosrocketbricks.com/moc/34/atlas-v-n22-starliner/
 https://flosrocketbricks.com/moc/35/atlas-v-heavy/
 https://flosrocketbricks.com/moc/36/soyuz-ms/
+https://flosrocketbricks.com/moc/37/titan-iiic/
+https://flosrocketbricks.com/moc/38/titan-iiic-tacsat-1/
+https://flosrocketbricks.com/moc/39/titan-iiic-idcsp-and-ggts-2/
+https://flosrocketbricks.com/moc/40/titan-iiic-idcsp-8-to-15/
+https://flosrocketbricks.com/moc/41/titan-iiic-vela-11-and-12/
 https://flosrocketbricks.com/
 https://flosrocketbricks.com/about/

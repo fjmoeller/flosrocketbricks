@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Moc, Version } from '../classes';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
-import { filter, map, Observable, tap } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-moc',

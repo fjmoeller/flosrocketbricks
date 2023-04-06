@@ -1,5 +1,3 @@
-import { NumberSymbol } from "@angular/common";
-
 export class File {
   link: string;
   name: string;
@@ -72,7 +70,7 @@ export class Moc {
   typeExtra: string;
 
   constructor(internalColor: string, type: string, region: string, id: number, versions: Version[], title: string, pictures: string[],
-    parts: NumberSymbol, dimensions: string, scale: string, designer: string,
+    parts: number, dimensions: string, scale: string, designer: string,
     stability: string, difficulty: string, lastupdate: string, tags: string[],
     mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],
     dateCreated: string, scaleExtra: string, partsExtra: string, dimensionsExtra: string,

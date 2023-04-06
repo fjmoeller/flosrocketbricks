@@ -19,7 +19,7 @@ import { MocGrabberService } from './services/moc-grabber.service';
 import { RouterModule } from '@angular/router';
 import { MocProxyComponent } from './components/moc-proxy/moc-proxy.component';
 import { MetaServiceService } from './services/meta-service.service';
-import { ViewerComponent } from './viewer/viewer.component';
+import { ViewerComponent } from './components/viewer/viewer.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogElementComponent } from './blog-element/blog-element.component';
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as zip from "@zip.js/zip.js";
+//import * as zip from "@zip.js/zip.js";
 import { BufferGeometry, Group, Matrix4, Mesh, MeshNormalMaterial, Vector3, Vector4 } from 'three';
 import { LdrPart, PartReference } from './ldrawParts';
 
@@ -22,7 +22,7 @@ export class IoFileService {
 
 
   async extractLdrFile(file: any): Promise<string> {
-    try {
+    try {/*
       console.log("starting!");
       const blob = await file.blob();
       const options = { password: "soho0909", filenameEncoding: "utf-8" };
@@ -34,7 +34,7 @@ export class IoFileService {
         const decompressedBlob = await model.getData(new zip.BlobWriter());
         console.log("extracted!");
         return decompressedBlob.text();
-      }
+      }*/
       return "";
     } catch (e) {
       console.log(e);

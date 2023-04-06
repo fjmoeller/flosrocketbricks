@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //import * from 'stream/web'
-import * as zip from "@zip.js/zip.js";
+//import * as zip from "@zip.js/zip.js";
 import { BufferGeometry, Group, Matrix4, Mesh, MeshNormalMaterial, Vector3, Vector4 } from 'three';
 import { LdrPart, PartReference } from './ldrawParts';
 
@@ -10,6 +10,7 @@ import { LdrPart, PartReference } from './ldrawParts';
 export class IoFileService {
 
   private backendUrl: string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
+  private saveForLater: string = '"@zip.js/zip.js": "^2.6.83"';
 
   constructor() { }
 
@@ -20,11 +21,9 @@ export class IoFileService {
     return this.createMeshes(ldrFile).rotateOnWorldAxis(new Vector3(0, 0, 1), 3.1416);
   }
 
-
-
   async extractLdrFile(file: any): Promise<string> {
     try {
-      console.log("starting!");
+      /*console.log("starting!");
       const blob = await file.blob();
       const options = { password: "soho0909", filenameEncoding: "utf-8" };
       const entries = await (new zip.ZipReader(new zip.BlobReader(blob), options)).getEntries();
@@ -35,7 +34,7 @@ export class IoFileService {
         const decompressedBlob = await model.getData(new zip.BlobWriter());
         console.log("extracted!");
         return decompressedBlob.text();
-      }
+      }*/
       return "";
     } catch (e) {
       console.log(e);

@@ -25,7 +25,6 @@ export class ViewerComponent {
     this.createThreeJsBox(group);
   }
 
-
   createThreeJsBox(group: Group): void {
 
     const canvas = document.getElementById('canvas-box');

@@ -57,4 +57,3 @@ import 'zone.js';  // Included with Angular CLI.
  */
 import 'zone.js/dist/task-tracking';
 import "web-streams-polyfill/ponyfill";
-import 'core-js/es6/promise';

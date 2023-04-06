@@ -37,3 +37,4 @@
 /moc/36/soyuz-ms/
 /
 /about/
+/viewer/

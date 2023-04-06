@@ -948,8 +948,8 @@
         "rocketDescription": "The Titan IIIC rocket with the MOL payload was launched in 1966 on the C-9 vehicle. It served as a mockup and was made out of a Titan propellant tank and a refurbished Gemini spacecraft. The laboratory mockup remained in orbit until 1967.",
         "stabilityExtra": "",
         "company": "NASA",
-        "difficulty": "Proficient",
-        "lastupdate": "2023-03-22",
+        "difficulty": "Not tested",
+        "lastupdate": "2023-04-06",
         "related": [21],
         "updateMessage": "",
         "region": "USA",
@@ -957,13 +957,13 @@
         "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/mol/640x512.png",
         "internalColorExtra": "",
         "scaleExtra": "",
-        "dimensions": "4.3x9.6x42.1cm",
+        "dimensions": "4.3x9.6x41.8cm",
         "tags": [],
         "partsExtra": "Can be build completely out of Lego bricks.",
         "title": "Titan IIIC MOL",
         "regionExtra": "",
-        "parts": 781,
-        "stability": "Good",
+        "parts": 902,
+        "stability": "Not tested",
         "difficultyExtra": "",
         "designerExtra": "",
         "companyExtra": "",
@@ -971,11 +971,24 @@
         "designer": "SkySaac",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_MOL_V2.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_MOL_V2.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_MOL_V2.0_3.png"
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v3.1/Titan_III_C_MOL_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v3.1/Titan_III_C_MOL_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v3.1/Titan_III_C_MOL_V3.1_3.png"
         ],
         "versions": [
+            {
+                "changelog": "improved boosters and core stability and looks",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v3.1/C_MOL_V3.1.io",
+                        "name": "C_MOL_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

@@ -41,3 +41,4 @@ testem.log
 Thumbs.db
 
 workerV1.txt
+src/app/services/io-file.service.ts

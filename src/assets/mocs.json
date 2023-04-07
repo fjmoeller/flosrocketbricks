@@ -1,5 +1,84 @@
 [
     {
+        "id": 47,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Dark Pink",
+        "rocketReadMoreLinks": ["https://space.skyrocket.de/doc_lau_det/titan-323c.htm"],
+        "mocDescription": "This is a MOC of the Titan III 23C rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The Transstage can also be seperated. The fairing holds space for a payload.",
+        "rocketDescription": "The Titan III 23C was an American expendable rocket. It was launched a total of 22 times between 1970 and 1982.",
+        "stabilityExtra": "",
+        "company": "",
+        "difficulty": "Not tested",
+        "lastupdate": "2023-04-07",
+        "dateCreated": "2023-04-07",
+        "related": [],
+        "updateMessage": "",
+        "region": "USA",
+        "scale": "110",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/23c/640x512.png",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "dimensions": "3.8x9.9x39.2cm",
+        "tags": [],
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "title": "Titan III 23C",
+        "regionExtra": "",
+        "parts": 809,
+        "stability": "Not tested",
+        "difficultyExtra": "",
+        "designerExtra": "",
+        "companyExtra": "",
+        "designer": "SkySaac",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/23c/v3.0/Titan_III_%2823%29_C_V3.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/23c/v3.0/Titan_III_%2823%29_C_V3.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/23c/v3.0/Titan_III_%2823%29_C_V3.0.io",
+                        "name": "Titan_III_(23)_C_V3.0.io"
+                    }
+                ],
+                "version": "V3.0"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/23c/v2.0/C%2B_V2.io",
+                        "name": "C+_V2.io"
+                    }
+                ],
+                "version": "V2.0"
+            }
+            ,{
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/23c/v1.0/C%2B.io",
+                        "name": "C+.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
         "id": 46,
         "type": "rocket",
         "dimensionsExtra": "",

@@ -45,5 +45,6 @@
 /moc/44/titan-iii-commercial-skynet-4a-and-jcsat-2/
 /moc/45/titan-iii-commercial-mars-observer/
 /moc/46/titan-iii-commercial-intelsat/
+/moc/47/titan-iii-23c/
 /
 /about/

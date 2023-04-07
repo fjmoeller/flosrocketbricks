@@ -40,5 +40,10 @@ https://flosrocketbricks.com/moc/38/titan-iiic-tacsat-1/
 https://flosrocketbricks.com/moc/39/titan-iiic-idcsp-and-ggts-2/
 https://flosrocketbricks.com/moc/40/titan-iiic-idcsp-8-to-15/
 https://flosrocketbricks.com/moc/41/titan-iiic-vela-11-and-12/
+https://flosrocketbricks.com/moc/42/titan-iiid/
+https://flosrocketbricks.com/moc/43/titan-iiie/
+https://flosrocketbricks.com/moc/44/titan-iii-commercial-skynet-4a-and-jcsat-2/
+https://flosrocketbricks.com/moc/45/titan-iii-commercial-mars-observer/
+https://flosrocketbricks.com/moc/46/titan-iii-commercial-intelsat/
 https://flosrocketbricks.com/
 https://flosrocketbricks.com/about/

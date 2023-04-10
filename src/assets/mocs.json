@@ -10,7 +10,7 @@
             "http://www.astronautix.com/t/titan4b.html"
         ],
         "mocDescription": "This is a MOC of the Titan IVB rocket. The boosters can be separated from the core stage and the second stage, which can also be separated from the core stage. The fairing holds space for a payload. The MOC also includes a black stand.\n There are five variants, each with a different fairing height and with either an IUS, a Centaur or no upper stage.",
-        "rocketDescription": "The Titan IVB was the last rocket of the Titan series. It was launched a total of 17 times between 1997 and 2005.",
+        "rocketDescription": "The Titan IVB was the last rocket of the Titan series. It was launched a total of 17 times between 1997 and 2005. It could carry an IUS or a Centaur upper stage.",
         "stabilityExtra": "",
         "company": "",
         "difficulty": "Not tested",

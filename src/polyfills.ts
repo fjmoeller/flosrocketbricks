@@ -56,4 +56,4 @@ import 'zone.js';  // Included with Angular CLI.
  * APPLICATION IMPORTS
  */
 import 'zone.js/dist/task-tracking';
-import "web-streams-polyfill/ponyfill";
+import { ReadableStream, WritableStream, TransformStream } from 'web-streams-polyfill';

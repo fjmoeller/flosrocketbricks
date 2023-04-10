@@ -2077,12 +2077,12 @@
         "typeExtra": "",
         "internalColor": "Green",
         "rocketReadMoreLinks": [],
-        "mocDescription": "The MOC has two variants: one with the small fairing that is being used for the initial flight and one with the large fairing. The first and second stage can be seperated. The big fairing has some space for a small payload in it. The MOC can be completely build out of Lego parts, although it requires some rather rare printed parts for the first stage.",
+        "mocDescription": "The MOC has two variants: one with the fairing used on the first flight and one with the normal fairing. The first and second stage can be seperated. The big fairing has some space for a small payload in it. The MOC can be completely build out of Lego parts, although it requires some rather rare printed parts for the first stage.",
         "rocketDescription": "The (almost) completely 3d-printed Terran 1 rocket is Relativity Spaces first rocket. It is fueled by liquid methane and liquid oxygen and has two stages. It has two fairing variants, one with the same diameter as the rest of the rocket tht will be used for the first launch and one that is larger.",
         "stabilityExtra": "",
         "company": "Relativity",
         "difficulty": "Not checked",
-        "lastupdate": "2023-03-08",
+        "lastupdate": "2023-04-10",
         "related": [],
         "updateMessage": "",
         "region": "USA",
@@ -2122,16 +2122,28 @@
                 "versionExtra": "",
                 "files": [
                     {
-                        "description": "The digital io file of the small fairing variant",
+                        "description": "The digital io file of the first flight variant",
                         "type": "io",
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/V2.1.io",
-                        "name": "V2.1.io"
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/Terran_1_first_flight_V2.1.io",
+                        "name": "Terran_1_first_flight_V2.1.io"
                     },
                     {
-                        "description": "The digital io file of the large fairing variant",
+                        "description": "The pdf instructions of the first flight variant",
+                        "type": "pdf",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/Terran_1_first_flight_V2.1_Instructions.pdf",
+                        "name": "Terran_1_first_flight_V2.1_Instructions.pdf"
+                    },
+                    {
+                        "description": "The digital io file of the normal variant",
                         "type": "io",
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/V2.1_Big%20Fairing.io",
-                        "name": "V2.1_Big Fairing.io"
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/Terran_1_V2.1.io",
+                        "name": "Terran_1_V2.1.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the normal variant",
+                        "type": "pdf",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/Terran_1_V2.1_Instructions.pdf",
+                        "name": "Terran_1_V2.1_Instructions.pdf"
                     }
                 ],
                 "version": "V2.1"

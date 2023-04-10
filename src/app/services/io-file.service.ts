@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-//import * from 'stream/web'
-import * as zip from "@zip.js/zip.js";
+//import * as zip from "@zip.js/zip.js";
 import { BufferGeometry, Group, LineBasicMaterial, LineSegments, Matrix4, Mesh, MeshNormalMaterial, Vector3, Vector4 } from 'three';
 import { LdrPart, PartReference } from './ldrawParts';
 
@@ -23,7 +22,7 @@ export class IoFileService {
 
   async extractLdrFile(file: any): Promise<string> {
     try {
-      console.log("starting!");
+      /*console.log("starting!");
       const blob = await file.blob();
       const options = { password: "soho0909", filenameEncoding: "utf-8" };
       const entries = await (new zip.ZipReader(new zip.BlobReader(blob), options)).getEntries();
@@ -32,7 +31,7 @@ export class IoFileService {
       if (model) {
         const decompressedBlob = await model.getData(new zip.BlobWriter());
         return decompressedBlob.text();
-      }
+      }*/
       return "";
     } catch (e) {
       console.log(e);
@@ -179,8 +178,16 @@ export class IoFileService {
       parseFloat(splittedLine[5]), parseFloat(splittedLine[8]), parseFloat(splittedLine[11]), parseFloat(splittedLine[2]),
       parseFloat(splittedLine[6]), parseFloat(splittedLine[9]), parseFloat(splittedLine[12]), parseFloat(splittedLine[3]),
       parseFloat(splittedLine[7]), parseFloat(splittedLine[10]), parseFloat(splittedLine[13]), parseFloat(splittedLine[4]),
-      0, 0, 0, 1
+      0.0, 0.0, 0.0, 1.0
     );
+
+    
+    /*transform.set(
+      parseFloat(splittedLine[5]), parseFloat(splittedLine[6]), parseFloat(splittedLine[7]), parseFloat(splittedLine[2]),
+      parseFloat(splittedLine[8]), parseFloat(splittedLine[9]), parseFloat(splittedLine[10]), parseFloat(splittedLine[3]),
+      parseFloat(splittedLine[11]), parseFloat(splittedLine[12]), parseFloat(splittedLine[13]), parseFloat(splittedLine[4]),
+      0, 0, 0, 1
+    );*/
 
     return new PartReference(splittedLine[splittedLine.length - 1], transform, parseInt(splittedLine[1]), invert);
   }
@@ -231,6 +238,7 @@ export class IoFileService {
       new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
       new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
 
+      //havent added BFC support yet, so I'll jsut add it double for now
       new Vector3(parseFloat(splitLine[4]), parseFloat(splitLine[3]), parseFloat(splitLine[2])),
       new Vector3(parseFloat(splitLine[7]), parseFloat(splitLine[6]), parseFloat(splitLine[5])),
       new Vector3(parseFloat(splitLine[10]), parseFloat(splitLine[9]), parseFloat(splitLine[8])),
@@ -251,6 +259,7 @@ export class IoFileService {
       new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13])),
       new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
 
+      //havent added BFC support yet, so I'll jsut add it double for now
       new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
       new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
       new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),

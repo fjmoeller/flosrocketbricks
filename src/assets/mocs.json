@@ -1,11 +1,131 @@
 [
     {
+        "id": 48,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Titan_IV",
+            "http://www.astronautix.com/t/titan4b.html"
+        ],
+        "mocDescription": "This is a MOC of the Titan IVB rocket. The boosters can be separated from the core stage and the second stage, which can also be separated from the core stage. The fairing holds space for a payload. The MOC also includes a black stand.\n There are five variants, each with a different fairing height and with either an IUS, a Centaur or no upper stage.",
+        "rocketDescription": "The Titan IVB was the last rocket of the Titan series. It was launched a total of 17 times between 1997 and 2005.",
+        "stabilityExtra": "",
+        "company": "",
+        "difficulty": "Not tested",
+        "lastupdate": "2023-04-10",
+        "dateCreated": "2023-04-10",
+        "related": [],
+        "updateMessage": "",
+        "region": "USA",
+        "scale": "110",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iv/b/640x512.png",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "dimensions": "8.8x15.2x54.9cm",
+        "tags": [],
+        "partsExtra": "866,918,934,965,981 parts depending on the fairing size. Can be build completely out of Lego bricks.",
+        "title": "Titan IVB",
+        "regionExtra": "",
+        "parts": 965,
+        "stability": "Not tested",
+        "difficultyExtra": "",
+        "designerExtra": "",
+        "companyExtra": "",
+        "designer": "SkySaac",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_V5.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_V5.0_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_V5.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_variations_V5.0.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The pdf instructions of the core stage",
+                        "type": "pdf",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_Core_Instructions_V5.0.pdf",
+                        "name": "Titan_IVB_Core_Instructions_V5.0.pdf"
+                    },
+                    {
+                        "description": "The digital io file of the 15 meter fairing variant",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_15M_V5.0.io",
+                        "name": "Titan_IVB_15M_V5.0.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the 15 meter fairing",
+                        "type": "pdf",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_15M_Instructions_V5.0.pdf",
+                        "name": "Titan_IVB_15M_Instructions_V5.0.pdf"
+                    },
+                    {
+                        "description": "The digital io file of the 17 meter fairing variant",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_17M_V5.0.io",
+                        "name": "Titan_IVB_17M_V5.0.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the 17 meter fairing",
+                        "type": "pdf",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_17M_Instructions_V5.0.pdf",
+                        "name": "Titan_IVB_17M_Instructions_V5.0.pdf"
+                    },
+                    {
+                        "description": "The digital io file of the 20 meter fairing variant",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_20M_V5.0.io",
+                        "name": "Titan_IVB_20M_V5.0.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the 20 meter fairing",
+                        "type": "pdf",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_20M_Instructions_V5.0.pdf",
+                        "name": "Titan_IVB_20M_Instructions_V5.0.pdf"
+                    },
+                    {
+                        "description": "The digital io file of the 23 meter fairing variant",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_23M_V5.0.io",
+                        "name": "Titan_IVB_23M_V5.0.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the 23 meter fairing",
+                        "type": "pdf",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_23M_Instructions_V5.0.pdf",
+                        "name": "Titan_IVB_23M_Instructions_V5.0.pdf"
+                    },
+                    {
+                        "description": "The digital io file of the 26 meter fairing variant",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_26M_V5.0.io",
+                        "name": "Titan_IVB_26M_V5.0.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the 26 meter fairing",
+                        "type": "pdf",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_26M_Instructions_V5.0.pdf",
+                        "name": "Titan_IVB_26M_Instructions_V5.0.pdf"
+                    }
+                ],
+                "version": "V5.0"
+            }
+        ]
+    },
+    {
         "id": 47,
         "type": "rocket",
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://space.skyrocket.de/doc_lau_det/titan-323c.htm"],
+        "rocketReadMoreLinks": [
+            "https://space.skyrocket.de/doc_lau_det/titan-323c.htm"
+        ],
         "mocDescription": "This is a MOC of the Titan III 23C rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The Transstage can also be seperated. The fairing holds space for a payload.",
         "rocketDescription": "The Titan III 23C was an American expendable rocket. It was launched a total of 22 times between 1970 and 1982.",
         "stabilityExtra": "",
@@ -62,8 +182,8 @@
                     }
                 ],
                 "version": "V2.0"
-            }
-            ,{
+            },
+            {
                 "changelog": "",
                 "versionExtra": "",
                 "files": [
@@ -84,7 +204,10 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Commercial_Titan_III","https://en.wikipedia.org/wiki/Intelsat_603"],
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Commercial_Titan_III",
+            "https://en.wikipedia.org/wiki/Intelsat_603"
+        ],
         "mocDescription": "This is a MOC of the Titan III Commercial rocket with the Intelsat 603/604 payload. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The fairing holds space for the Orbus-21S upper stage and the Intelsat spacecraft.",
         "rocketDescription": "The Titan III Commercial was an American expendable rocket. It was launched a total of 4 times between 1990 and 1992.",
         "stabilityExtra": "",
@@ -139,7 +262,10 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Commercial_Titan_III","https://en.wikipedia.org/wiki/Mars_Observer"],
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Commercial_Titan_III",
+            "https://en.wikipedia.org/wiki/Mars_Observer"
+        ],
         "mocDescription": "This is a MOC of the Titan III Commercial rocket with the Mars Observer payload. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The fairing holds space for the TOS upper stage and the Mars Observer spacecraft.",
         "rocketDescription": "The Titan III Commercial was an American expendable rocket. It was launched a total of 4 times between 1990 and 1992.",
         "stabilityExtra": "",
@@ -194,7 +320,9 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Commercial_Titan_III"],
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Commercial_Titan_III"
+        ],
         "mocDescription": "This is a MOC of the Titan III Commercial rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The fairing contains some space for the two payloads and upper stages.",
         "rocketDescription": "The Titan III Commercial was an American expendable rocket. It was launched a total of 4 times between 1990 and 1992.",
         "stabilityExtra": "",
@@ -249,7 +377,9 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Titan_IIIE"],
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Titan_IIIE"
+        ],
         "mocDescription": "This is a MOC of the Titan IIIE rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The fairing contains some space for a payload. The centaur upper stage does not fit inside though. It is available as an seperate MOC in the files section.",
         "rocketDescription": "The Titan IIIE was an American expendable rocket. It was launched a total of 7 times between 1974 and 1977. Its notable payloads were the two Voyager spacecrafts.",
         "stabilityExtra": "",
@@ -335,7 +465,9 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Titan_IIID"],
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Titan_IIID"
+        ],
         "mocDescription": "This is a MOC of the Titan IIID rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The fairing contains some space for a payload. There are two different fairing sizes.",
         "rocketDescription": "The Titan IIID was an American expendable rocket. It was launched a total of 22 times between 1971 and 1982.",
         "stabilityExtra": "",
@@ -421,7 +553,9 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Titan_IIIC"],
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Titan_IIIC"
+        ],
         "mocDescription": "This is a MOC of the Titan IIIC rocket as it looked like on its final flight with the Vela 11 and 12 satellites onboard. The boosters can be separated from the core stage. The second stage can be separated from the core stage and the third stage (transtage) can again be separated from the second stage. The fairing contains the included Vela 11 and 12 satellites.",
         "rocketDescription": "This final Titan IIIC was launched in 1970. The Titan IIIC rocket was manufactured by Martin. It was first launched in 1965 and its last launch was in 1970. The first stage is powered by a LR-87-AJ-9 rocket engine with two solid fuel boosters. The second stage is powered by a LR-91-AJ-9 and the third stage is the transtage which is powered by two AJ-10-138s.",
         "stabilityExtra": "",
@@ -475,7 +609,9 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Titan_IIIC"],
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Titan_IIIC"
+        ],
         "mocDescription": "This is a MOC of the Titan IIIC rocket as it looked like on its seventh flight with the IDCSP 8 to 15 satellites onboard. The boosters can be separated from the core stage. The second stage can be separated from the core stage and the third stage (transtage) can again be separated from the second stage. The fairing does not hold any space for a payload.",
         "rocketDescription": "This Titan IIIC was launched in 1966 and failed to reach orbit. The Titan IIIC rocket was manufactured by Martin. It was first launched in 1965 and its last launch was in 1970. The first stage is powered by a LR-87-AJ-9 rocket engine with two solid fuel boosters. The second stage is powered by a LR-91-AJ-9 and the third stage is the transtage which is powered by two AJ-10-138s.",
         "stabilityExtra": "",
@@ -529,7 +665,9 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Titan_IIIC"],
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Titan_IIIC"
+        ],
         "mocDescription": "This is a MOC of the Titan IIIC rocket as it looked like on its fifth flight with multiple IDCSP and the GGTS 2 satellite onboard. The boosters can be separated from the core stage. The second stage can be separated from the core stage and the third stage (transtage) can again be separated from the second stage. The fairing does not hold any space for a payload.",
         "rocketDescription": "This Titan IIIC was launched in 1966 and failed to reach orbit. The Titan IIIC rocket was manufactured by Martin. It was first launched in 1965 and its last launch was in 1970. The first stage is powered by a LR-87-AJ-9 rocket engine with two solid fuel boosters. The second stage is powered by a LR-91-AJ-9 and the third stage is the transtage which is powered by two AJ-10-138s.",
         "stabilityExtra": "",
@@ -583,7 +721,10 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/TACOMSAT","https://en.wikipedia.org/wiki/Titan_IIIC"],
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/TACOMSAT",
+            "https://en.wikipedia.org/wiki/Titan_IIIC"
+        ],
         "mocDescription": "This is a MOC of the Titan IIIC rocket as it looked like on its launch with the TacSat-1 satellite. The boosters can be separated from the core stage. The second stage can be separated from the core stage and the third stage (transtage) can again be separated from the second stage. The fairing contains the included TacSat-1 satellite.",
         "rocketDescription": "The Titan IIIC with TacSat-1 (also known as TACOMSAT) was launched in 1969. The Titan IIIC rocket was manufactured by Martin. It was first launched in 1965 and its last launch was in 1970. The first stage is powered by a LR-87-AJ-9 rocket engine with two solid fuel boosters. The second stage is powered by a LR-91-AJ-9 and the third stage is the transtage which is powered by two AJ-10-138s.",
         "stabilityExtra": "",
@@ -637,7 +778,9 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": ["https://en.wikipedia.org/wiki/Titan_IIIC"],
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Titan_IIIC"
+        ],
         "mocDescription": "This is a MOC of the Titan IIIC rocket as it looked like on its first flight. The boosters can be separated from the core stage. The second stage can be separated from the core stage and the third stage (transtage) can again be separated from the second stage. The fairing does not hold any space for a payload.",
         "rocketDescription": "The Titan IIIC rocket was manufactured by Martin. It was first launched in 1965 and its last launch was in 1970. The first stage is powered by a LR-87-AJ-9 rocket engine with two solid fuel boosters. The second stage is powered by a LR-91-AJ-9 and the third stage is the transtage which is powered by two AJ-10-138s.",
         "stabilityExtra": "",

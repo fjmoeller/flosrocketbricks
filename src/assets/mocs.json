@@ -8,7 +8,7 @@
             "https://www.esa.int/Science_Exploration/Space_Science/Juice",
             "https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer"
         ],
-        "mocDescription": "This is a MOC of the JUICE spacecraft in 1:40. It features a Jupiter themed stand and rotatable solar panels. I am not sure if the solar panels are stable enough, if not it will need some additional supports for them.",
+        "mocDescription": "This is a MOC of the JUICE spacecraft in 1:40. It features a Jupiter themed stand for the spacecraft and the solar panels.",
         "rocketDescription": "The JUICE spacecraft is a spacecraft developed by the European Space Agency. It is scheduled to launch on the 13th of April 2023 on an Ariane 5 ECA rocket. After flybys of the Moon, Earth and Venus, it will arrive at Jupiter in 2031.",
         "company": "",
         "companyExtra": "",
@@ -34,7 +34,7 @@
         "partsExtra": "Can be build completely out of Lego bricks. The MOC also requires some printed parts for the solar panels.",
         "title": "JUICE",
         "stability": "Not tested",
-        "stabilityExtra": "I am not sure about the solar panels stability, they might need some extra support, as they may be too heavy.",
+        "stabilityExtra": "",
         "designer": "SkySaac",
         "designerExtra": "",
         "fanPictures": [],

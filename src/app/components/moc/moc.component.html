@@ -214,11 +214,14 @@
                 </h3>
             </div>
             <div class="row mt-1">
-                <h3 class="mx-auto text-center">
+                <h3 class="mx-auto text-center text-light">
                     Instructions and digital files
                 </h3>
             </div>
-            <div class="row">
+            <div class="row mt-1">
+                <span class="text-center text-light">No pdf instructions for the MOC you want to build? No problem! Just contact me and I'll make them!</span>
+            </div>
+            <div class="row mt-1">
                 <div class="accordion text-light" id="accordion">
                     <div *ngFor="let version of sortedVersions((moc | async)?.versions)"
                         class="accordion-item text-light">
@@ -256,7 +259,7 @@
             <div class="card-group">
                 <app-card class="col-2" *ngFor="let relatedMoc of relatedMocs | async"
                     [pic]="relatedMoc.smallCoverImage" [name]="relatedMoc.title" [parts]="relatedMoc.parts"
-                    [id]="relatedMoc.id">
+                    [id]="relatedMoc.id" [scale]="relatedMoc.scale">
                 </app-card>
             </div>
         </div>

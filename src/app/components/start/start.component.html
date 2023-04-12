@@ -19,7 +19,7 @@
             </span>
             <div class="card-group">
                 <app-card class="col-2" *ngFor="let moc of newestMocs | async" [pic]="moc.smallCoverImage" [name]="moc.title"
-                    [parts]="moc.parts" [id]="moc.id">
+                    [parts]="moc.parts" [id]="moc.id" [scale]="moc.scale">
                 </app-card>
             </div>
         </div>

@@ -39,12 +39,25 @@
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.0/JUICE_V1.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.0/JUICE_V1.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.0/JUICE_V1.0_3.png",
-            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.0/JUICE_V1.0_4.png"
+            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.1/JUICE_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.1/JUICE_V1.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.1/JUICE_V1.1_3.png",
+            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.1/JUICE_V1.1_4.png"
         ],
         "versions": [
+            {
+                "changelog": "Add support for solar panels, as they are too heavy.",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.1/JUICE_V1.1.io",
+                        "name": "JUICE_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

@@ -1,5 +1,66 @@
 [
     {
+        "id": 49,
+        "type": "spacecraft",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://www.airbus.com/en/juice",
+            "https://www.esa.int/Science_Exploration/Space_Science/Juice",
+            "https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer"
+        ],
+        "mocDescription": "This is a MOC of the JUICE spacecraft in 1:40. It features a Jupiter themed stand and rotatable solar panels. I am not sure if the solar panels are stable enough, if not it will need some additional supports for them.",
+        "rocketDescription": "The JUICE spacecraft is a spacecraft developed by the European Space Agency. It is scheduled to launch on the 13th of April 2023 on an Ariane 5 ECA rocket. After flybys of the Moon, Earth and Venus, it will arrive at Jupiter in 2031.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": "Not tested",
+        "difficultyExtra": "",
+        "lastupdate": "2023-04-12",
+        "dateCreated": "2023-04-12",
+        "related": [
+            27
+        ],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "40",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/40/europe/juice/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "43.2x75.5x34.4cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 2031,
+        "partsExtra": "Can be build completely out of Lego bricks. The MOC also requires some printed parts for the solar panels.",
+        "title": "JUICE",
+        "stability": "Not tested",
+        "stabilityExtra": "I am not sure about the solar panels stability, they might need some extra support, as they may be too heavy.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.0/JUICE_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.0/JUICE_V1.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.0/JUICE_V1.0_3.png",
+            "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.0/JUICE_V1.0_4.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.0/JUICE_V1.0.io",
+                        "name": "JUICE_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
         "id": 48,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -1582,7 +1643,8 @@
         "lastupdate": "2023-03-29",
         "dateCreated": "2023-03-29",
         "related": [
-            17
+            17,
+            49
         ],
         "updateMessage": "",
         "region": "Europe",

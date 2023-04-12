@@ -16,7 +16,8 @@ export class ViewerComponent {
 
   async onFileSelected(event: any) {
     let ldrFile = await this.ioFileService.extractLdrFile(new Response(event.target.files[0]));
-    let group: Group = this.ioFileService.createMeshes(ldrFile).rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
+    //rotate .rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI)
+    let group: Group = this.ioFileService.createMeshes(ldrFile);
     this.createThreeJsBox(group);
   }
 

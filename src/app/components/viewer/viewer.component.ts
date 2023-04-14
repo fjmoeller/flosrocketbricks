@@ -16,8 +16,9 @@ export class ViewerComponent {
 
   async onFileSelected(event: any) {
     let ldrFile = await this.ioFileService.extractLdrFile(new Response(event.target.files[0]));
-    //rotate .rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI)
-    let group: Group = this.ioFileService.createMeshes(ldrFile);
+    //rotate 
+    let group: Group = await this.ioFileService.createMeshes2(ldrFile);
+    group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
     this.createThreeJsBox(group);
   }
 
@@ -32,7 +33,7 @@ export class ViewerComponent {
 
     const scene = new Scene();
 
-    const ambientLight = new AmbientLight(0xffffff, 0.5);
+    const ambientLight = new AmbientLight(0xfffff0, 0.2);
 
     scene.add(ambientLight);
 
@@ -40,9 +41,9 @@ export class ViewerComponent {
     scene.add( axesHelper );
 
     const pointLight = new PointLight(0xffffff, 0.5);
-    pointLight.position.x = 2;
-    pointLight.position.y = 4;
-    pointLight.position.z = 2;
+    pointLight.position.x = 10;
+    pointLight.position.y = 10;
+    pointLight.position.z = 10;
     scene.add(pointLight);
 
     const canvasSizes = {
@@ -56,7 +57,8 @@ export class ViewerComponent {
       0.001,
       1000
     );
-    camera.position.z = 30;
+
+    camera.position.z = 50;
     scene.add(camera);
 
     scene.add(group);
@@ -69,7 +71,7 @@ export class ViewerComponent {
     const renderer = new WebGLRenderer({
       canvas: canvas,
     });
-    renderer.setClearColor(0xe232222, 1);
+    renderer.setClearColor(0x19212D, 1);
     renderer.setSize(canvasSizes.width, canvasSizes.height);
 
     window.addEventListener('resize', () => {

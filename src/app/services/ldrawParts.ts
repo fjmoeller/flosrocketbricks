@@ -1,22 +1,43 @@
-import { Matrix4, Vector3 } from "three";
+import { Group, Matrix4, Vector3 } from "three";
 
 export class LdrPart {
     name: string;
-    isSubmodel: boolean;
-    isPart: boolean;
     isResolved: boolean = false;
-    points: Vector3[];
-    linePoints: Vector3[];
+    pointColorMap: Map<number, Vector3[]>;
     references: PartReference[];
     partIndex: number = 0;
 
-    constructor(name: string, isSubmodel: boolean, isPart: boolean, points: Vector3[], linePoints: Vector3[], references: PartReference[]) {
+    constructor(name: string, pointColorMap: Map<number, Vector3[]>, references: PartReference[]) {
         this.name = name;
-        this.isSubmodel = isSubmodel;
-        this.isPart = isPart;
-        this.points = points;
-        this.linePoints = linePoints;
+        this.pointColorMap = pointColorMap;
         this.references = references;
+    }
+}
+
+export class LdrColor{
+    name:string;
+    hex:string;
+    edgeHex:string;
+    code:number;
+    
+    constructor(name:string, hex:string,edgeHex:string,code:number) {
+        this.name = name;
+        this.hex = hex;
+        this.edgeHex = edgeHex;
+        this.code = code;
+    }
+}
+
+export class LdrSubmodel {
+    name: string;
+    references: PartReference[];
+    resolved = false;
+    group: Group;
+
+    constructor(name: string, references: PartReference[]) {
+        this.name = name;
+        this.references = references;
+        this.group = new Group();
     }
 }
 

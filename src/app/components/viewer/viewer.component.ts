@@ -30,13 +30,9 @@ export class ViewerComponent {
   createThreeJsBox(group: Group): void {
 
     const canvas = document.getElementById('canvas-box');
-
     const scene = new Scene();
 
-    const ambientLight = new AmbientLight(0xfffff0, 0.2);
-
-    scene.add(ambientLight);
-
+    //TODO remove
     const axesHelper = new AxesHelper( 5 );
     scene.add( axesHelper );
 
@@ -46,23 +42,23 @@ export class ViewerComponent {
     pointLight.position.z = 10;
     scene.add(pointLight);
 
+    const ambientLight = new AmbientLight(0xffffff, 0.2);
+    scene.add(ambientLight);
+
     const canvasSizes = {
       width: window.innerWidth / 2,
       height: window.innerHeight / 2,
     };
-
     const camera = new PerspectiveCamera(
       75,
       canvasSizes.width / canvasSizes.height,
       0.001,
       1000
     );
-
     camera.position.z = 50;
     scene.add(camera);
 
     scene.add(group);
-
 
     if (!canvas) {
       return;
@@ -87,6 +83,7 @@ export class ViewerComponent {
 
     const controls = new OrbitControls(camera, renderer.domElement);
 
+    //TODO improve
     controls.update();
     const animateGeometry = () => {
 

@@ -11,21 +11,22 @@ import { LdrawColorService } from './ldraw-color.service';
 })
 export class IoFileService {
 
+  //lists for lookups of partnames if a part type cant be identified by it's name
   private partsList: string[] = [];
   private primitiveList: string[] = [];
 
+  //buffer of finished parts to make less http requests
   private savedLdrParts = new Map<string, LdrPart>;
   private savedLdrSubParts = new Map<string, LdrPart>;
   private savedLdrPrimitives = new Map<string, LdrPart>;
   private savedLdrHighPrimitives = new Map<string, LdrPart>;
   private savedLdrLowPrimitives = new Map<string, LdrPart>;
 
-  private ldrUrl: string;
-
-  private saveForLater: string = '"@zip.js/zip.js": "^2.6.83"';
+  //base URL from where to fetch the part files
+  private ldrUrl: string = "assets/ldr/parts/";
 
   constructor(private httpClient: HttpClient, private ldrawColorService: LdrawColorService) {
-    this.ldrUrl = "assets/ldr/parts/";
+    //read in the partname lists at startup for later use for part lookup
     this.httpClient.get('assets/ldr/lists/partsList.txt', { responseType: 'text' })
       .subscribe(data =>
         this.partsList = data.split('\r\n'));
@@ -35,12 +36,13 @@ export class IoFileService {
   }
 
   async getModel(url: string): Promise<Group> {
-    console.log("Fetching:", url);
+    console.log("Fetching MOC:", url);
     const contents = await fetch(url);
     let ldrFile = await this.extractLdrFile(contents);
     return this.createMeshes2(ldrFile);
   }
 
+  //This functions extract the to be used ldr file from io file
   async extractLdrFile(file: any): Promise<string> {
     try {
       const blob = await file.blob();
@@ -58,6 +60,7 @@ export class IoFileService {
     }
   }
 
+  //This function creates the group of meshes for use of the 3d renderer out of a ldr file
   async createMeshes2(ldrFile: string): Promise<Group> {
     const ldrObjects = ldrFile.split("0 NOFILE");
 
@@ -66,14 +69,14 @@ export class IoFileService {
 
     let ldrSubModelMap = new Map<string, LdrSubmodel>;
     let ldrSubModelNames: string[] = [];
-    console.log("Total submodels in file:", ldrObjects.length);
-    //for each object inside ldr file
+
+    //for each submodel inside the ldr file
     ldrObjects.forEach(ldrObject => {
       let ldrLine = ldrObject.split("\n");
 
       let subModelName: string = "no name";
       let references: PartReference[] = [];
-      //iterate all lines of a ldr object
+      //iterate all lines of a ldr submodel and parse them
       ldrLine.forEach((ldrObjectLine, index) => {
         if (ldrObjectLine.endsWith("\r"))
           ldrObjectLine = ldrObjectLine.slice(0, ldrObjectLine.lastIndexOf("\r"));
@@ -94,17 +97,20 @@ export class IoFileService {
     });
     console.log("Now starting submodel resolving with the top submodel:", topLdrSubmodel.name);
 
+    //resolve all submodels starting from top to bottom
     return await this.resolveSubmodel(topLdrSubmodel, ldrSubModelNames, ldrSubModelMap);
   }
 
+  //This function resolves a submodel and returns a threejs group: that means that it takes all vertices of all parts and puts them into meshes and collects all groups of its submodels
   async resolveSubmodel(submodel: LdrSubmodel, ldrSubModelNames: string[], ldrSubModelMap: Map<string, LdrSubmodel>): Promise<Group> {
+    //if the submodel has already been worked with it is ready already
     if (submodel.resolved) {
       return submodel.group;
     }
-
+    //the group to collect all the meshes and other groups in
     let submodelGroup = new Group();
 
-    for (const reference of submodel.references) {
+    for (const reference of submodel.references) { //this loop goes through all references to other parts/submodels inside the current submodel
       let matchingSubmodel: LdrSubmodel | undefined = ldrSubModelMap.get(reference.name);
       if (matchingSubmodel) {// reference is a submodel
 
@@ -115,17 +121,18 @@ export class IoFileService {
       } else {// reference is a part
 
         let referenceSubmodelMap = await this.resolvePart(reference.name);
-        referenceSubmodelMap.forEach((points, color) => { //for each color of the part
+        referenceSubmodelMap.forEach((points, color) => { //for each color of the part an own mesh gets created
+
           let partGeometry = new BufferGeometry();
           partGeometry.setFromPoints(points);
-
           partGeometry.applyMatrix4(reference.transformMatrix);
           partGeometry.computeVertexNormals();
-          let material;
-          if (color != 24 && color != 16 && color != -1 && color != -2)
-            material = new MeshStandardMaterial({ color: this.ldrawColorService.resolveColor(color)});
+
+          let material; //TODO implement colors fully -> might have to remove resolved submodels to get color all the way to the bottom to each part that needs it
+          if (color == 24 || color == 16 || color == -1 || color == -2) //those are not valid colors or mean that the color gets resolved in a submodel above, not fully implemented yet
+            material = new MeshStandardMaterial({ color: this.ldrawColorService.resolveColor(reference.color) });
           else
-            material = new MeshStandardMaterial({ color: this.ldrawColorService.resolveColor(reference.color)});
+            material = new MeshStandardMaterial({ color: this.ldrawColorService.resolveColor(color) });
           submodelGroup.add(new Mesh(partGeometry, material));
         });
       }
@@ -137,6 +144,108 @@ export class IoFileService {
     return submodelGroup;
   }
 
+
+  //This function resolves ldr parts from their names and returns the vertices and their colors
+  async resolvePart(partName: string): Promise<Map<number, Vector3[]>> {
+    let ldrPart: LdrPart | undefined = undefined;
+
+    let fetchedPart;
+    //check which kind of part the part is
+    if (partName.startsWith("s\\"))  //subpart
+      fetchedPart = await this.fetchpart(this.savedLdrSubParts, "parts/s/" + partName.substring(2), partName, 1);
+    else if (partName.startsWith("48\\"))  //high primitive
+      fetchedPart = await this.fetchpart(this.savedLdrHighPrimitives, "p/48/" + partName.substring(3), partName, 2);
+    else if (partName.startsWith("8\\"))  //low primitive
+      fetchedPart = await this.fetchpart(this.savedLdrLowPrimitives, "p/8/" + partName.substring(2), partName, 3);
+    else if (this.partsList.includes(partName))  //part
+      fetchedPart = await this.fetchpart(this.savedLdrParts, "parts/" + partName, partName, 4);
+    else if (this.primitiveList.includes(partName))  //normal primitive
+      fetchedPart = await this.fetchpart(this.savedLdrPrimitives, "p/" + partName, partName, 5);
+    else //part is not known
+      throw ("ERROR: Part could not be found: " + partName);
+
+    if (fetchedPart.partLdr) // part is already resolved
+      return fetchedPart.partLdr.pointColorMap;
+    // part hasnt been resolved yet
+    ldrPart = this.parsePartLines(fetchedPart.partText);
+
+    // part hasnt been resolved yet and now will be added to the cache of parts
+    switch (fetchedPart.selectedMap) {
+      case 1: this.savedLdrSubParts.set(partName, ldrPart); break;
+      case 2: this.savedLdrHighPrimitives.set(partName, ldrPart); break;
+      case 3: this.savedLdrLowPrimitives.set(partName, ldrPart); break;
+      case 4: this.savedLdrParts.set(partName, ldrPart); break;
+      case 5: this.savedLdrPrimitives.set(partName, ldrPart); break;
+    }
+
+    //resolve this parts references to other parts
+    for (const reference of ldrPart.references) {
+      let referenceColorPointMap = await this.resolvePart(reference.name);
+
+      //for all colors and their vertices that the referenced part has
+      referenceColorPointMap.forEach((referencePoints, referenceColor) => {
+        let transformedPoints: Vector3[] = [];
+        //transform points with transformation matrix of the reference to the part
+        for (const referencePoint of referencePoints) {
+          let pointVector4: Vector4 = new Vector4(referencePoint.x, referencePoint.y, referencePoint.z, 1);
+          pointVector4 = pointVector4.applyMatrix4(reference.transformMatrix);
+          transformedPoints.push(new Vector3(pointVector4.x, pointVector4.y, pointVector4.z));
+        }
+        //append points of referenced part to the upper part to reduce the size of render hierachy
+        if (ldrPart?.pointColorMap.has(referenceColor)) {
+          let fullList = ldrPart?.pointColorMap.get(referenceColor)?.concat(transformedPoints)
+          ldrPart?.pointColorMap.set(referenceColor, fullList ? fullList : []);
+        } else
+          ldrPart?.pointColorMap.set(referenceColor, transformedPoints);
+      });
+    }
+
+    return ldrPart.pointColorMap;
+  }
+
+  //This function parses a ldr part from text
+  private parsePartLines(partText: string): LdrPart {
+    let partLines = partText.split("\n");
+
+    let partName: string = "ERROR FLO";
+    let references: PartReference[] = [];
+    let invertNext: boolean = false;
+    let pointColorMap = new Map<number, Vector3[]>;
+
+    //Go through all lines of text and parse them
+    partLines.forEach(partLine => {
+      if (partLine.endsWith("\r")) //removes annoying stuff
+        partLine = partLine.slice(0, partLine.lastIndexOf("\r"));
+      if (partLine.startsWith("1")) { //line is a reference
+        references.push(this.parseLineTypeOne(partLine, invertNext));
+        invertNext = false;
+      }
+      else if (partLine.startsWith("0 FILE")) { //line is a part name
+        partName = partLine.slice(7);
+        invertNext = false;
+      }
+      else if (partLine.startsWith("0 BFC")) //line enables BFC for the next line
+        invertNext = true;
+      else if (partLine.startsWith("3")) { //line is a triangle
+        let parsed = this.parseLineTypeThree(partLine, invertNext);
+        let entry = pointColorMap.get(parsed.color);
+        entry == undefined ? entry = [] : undefined;
+        pointColorMap.set(parsed.color, entry.concat(parsed.points));
+        invertNext = false;
+      }
+      else if (partLine.startsWith("4")) { //line is a rectangle
+        let parsed = this.parseLineTypeFour(partLine, invertNext);
+        let entry = pointColorMap.get(parsed.color);
+        entry == undefined ? entry = [] : undefined;
+        pointColorMap.set(parsed.color, entry.concat(parsed.points));
+        invertNext = false;
+      }
+    });
+
+    return new LdrPart(partName, pointColorMap, references);
+  }
+
+  //This function retrieves the part eitehr from the cache or fetches it new and then adds it to the cache
   async fetchpart(partMap: Map<string, LdrPart>, path: string, partName: string, selectedMap: number) {
     if (partMap.has(partName)) {
       console.log("Part: " + path + " has been detected in cache");
@@ -149,101 +258,8 @@ export class IoFileService {
     return { selectedMap: selectedMap, partText: partText };
   }
 
-  async resolvePart(partName: string): Promise<Map<number, Vector3[]>> {
-    let ldrPart: LdrPart | undefined = undefined;
-
-    let fetchedPart;
-    //check if part is already resolved
-    if (partName.startsWith("s\\"))  //subpart
-      fetchedPart = await this.fetchpart(this.savedLdrSubParts, "parts/s/" + partName.substring(2), partName, 1);
-    else if (partName.startsWith("48\\"))  //high primitive
-      fetchedPart = await this.fetchpart(this.savedLdrHighPrimitives, "p/48/" + partName.substring(3), partName, 2);
-    else if (partName.startsWith("8\\"))  //low primitive
-      fetchedPart = await this.fetchpart(this.savedLdrLowPrimitives, "p/8/" + partName.substring(2), partName, 3);
-    else if (this.partsList.includes(partName))  //part
-      fetchedPart = await this.fetchpart(this.savedLdrParts, "parts/" + partName, partName, 4);
-    else if (this.primitiveList.includes(partName))  //normal primitive
-      fetchedPart = await this.fetchpart(this.savedLdrPrimitives, "p/" + partName, partName, 5);
-    else
-      throw ("ERROR: Part could not be found: " + partName);
-
-    if (fetchedPart.partLdr) // part is already resolved
-      return fetchedPart.partLdr.pointColorMap;
-    // part hasnt been resolved yet
-    ldrPart = this.parsePartLines(fetchedPart.partText);
-
-    switch (fetchedPart.selectedMap) {
-      case 1: this.savedLdrSubParts.set(partName, ldrPart); break;
-      case 2: this.savedLdrHighPrimitives.set(partName, ldrPart); break;
-      case 3: this.savedLdrLowPrimitives.set(partName, ldrPart); break;
-      case 4: this.savedLdrParts.set(partName, ldrPart); break;
-      case 5: this.savedLdrPrimitives.set(partName, ldrPart); break;
-    }
-
-    //resolve part references
-    for (const reference of ldrPart.references) {
-      let referenceColorPointMap = await this.resolvePart(reference.name);
-      //for all colors that the subPart has
-      referenceColorPointMap.forEach((referencePoints, referenceColor) => {
-        let transformedPoints: Vector3[] = [];
-        //transform points with transformation matrix of reference
-        for (const referencePoint of referencePoints) {
-          let pointVector4: Vector4 = new Vector4(referencePoint.x, referencePoint.y, referencePoint.z, 1);
-          pointVector4 = pointVector4.applyMatrix4(reference.transformMatrix);
-          transformedPoints.push(new Vector3(pointVector4.x, pointVector4.y, pointVector4.z));
-        }
-        //append points of subPart to part
-        if (ldrPart?.pointColorMap.has(referenceColor)) {
-          let fullList = ldrPart?.pointColorMap.get(referenceColor)?.concat(transformedPoints)
-          ldrPart?.pointColorMap.set(referenceColor, fullList ? fullList : []);
-        } else
-          ldrPart?.pointColorMap.set(referenceColor, transformedPoints);
-      });
-    }
-    
-    return ldrPart.pointColorMap;
-  }
-
-  private parsePartLines(partText: string): LdrPart {
-    let partLines = partText.split("\n");
-
-    let partName: string = "ERROR FLO";
-    let references: PartReference[] = [];
-    let invertNext: boolean = false;
-    let pointColorMap = new Map<number, Vector3[]>;
-
-    partLines.forEach(partLine => {
-      if (partLine.endsWith("\r"))
-        partLine = partLine.slice(0, partLine.lastIndexOf("\r"));
-      if (partLine.startsWith("1")) {
-        references.push(this.parseLineTypeOne(partLine, invertNext));
-        invertNext = false;
-      }
-      else if (partLine.startsWith("0 FILE")) {
-        partName = partLine.slice(7);
-        invertNext = false;
-      }
-      else if (partLine.startsWith("0 BFC"))
-        invertNext = true;
-      else if (partLine.startsWith("3")) {
-        let parsed = this.parseLineTypeThree(partLine, invertNext);
-        let entry = pointColorMap.get(parsed.color);
-        entry == undefined ? entry = [] : undefined;
-        pointColorMap.set(parsed.color, entry.concat(parsed.points));
-        invertNext = false;
-      }
-      else if (partLine.startsWith("4")) {
-        let parsed = this.parseLineTypeFour(partLine, invertNext);
-        let entry = pointColorMap.get(parsed.color);
-        entry == undefined ? entry = [] : undefined;
-        pointColorMap.set(parsed.color, entry.concat(parsed.points));
-        invertNext = false;
-      }
-    });
-
-    return new LdrPart(partName, pointColorMap, references);
-  }
-
+  //This functions parses a line type one, which is a reference to a part or a submodel in a ldr file
+  //TODO add working bfc support
   private parseLineTypeOne(line: string, invert: boolean): PartReference {
     const splittedLine = this.splitter(line, " ", 14);
     let transform = new Matrix4();
@@ -283,6 +299,8 @@ export class IoFileService {
     return output;
   }
 
+  //This functions parses a line type three, which is a triangle
+  //TODO add working bfc support
   private parseLineTypeThree(line: string, invert: boolean) {
     let splitLine = line.split(" ");
     if (splitLine.length < 10) {
@@ -317,6 +335,8 @@ export class IoFileService {
     }
   }
 
+  //This functions parses a line type four, which is a rectangle, but i just split those into two triangles
+  //TODO add working bfc support
   private parseLineTypeFour(line: string, invert: boolean) {
     let splitLine = line.split(" ");
     if (splitLine.length < 13) {

@@ -37,7 +37,7 @@ export class LdrawColorService {
         g: parseInt(result[2], 16),
         b: parseInt(result[3], 16)
       }
-      return new Color(res.r, res.g, res.b);
+      return new Color(res.r/255, res.g/255, res.b/255);
     }
     return new Color("#fff000");
   }

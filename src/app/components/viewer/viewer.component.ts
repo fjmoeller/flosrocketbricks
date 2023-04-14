@@ -37,10 +37,16 @@ export class ViewerComponent {
     scene.add( axesHelper );
 
     const pointLight = new PointLight(0xffffff, 0.5);
-    pointLight.position.x = 10;
-    pointLight.position.y = 10;
-    pointLight.position.z = 10;
+    pointLight.position.x = 1000;
+    pointLight.position.y = 1000;
+    pointLight.position.z = 1000;
     scene.add(pointLight);
+
+    const pointLight2 = new PointLight(0xffffff, 0.5);
+    pointLight.position.x = -1000;
+    pointLight.position.y = 1000;
+    pointLight.position.z = -1000;
+    scene.add(pointLight2);
 
     const ambientLight = new AmbientLight(0xffffff, 0.2);
     scene.add(ambientLight);
@@ -53,7 +59,7 @@ export class ViewerComponent {
       75,
       canvasSizes.width / canvasSizes.height,
       0.001,
-      1000
+      100000
     );
     camera.position.z = 50;
     scene.add(camera);

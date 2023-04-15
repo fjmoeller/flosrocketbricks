@@ -206,7 +206,7 @@ export class IoFileService {
         }
         if (reference.invert) {
           transformedPoints = transformedPoints.reverse();
-          console.log("reversing reference: "+reference.name+" of ldrPart: "+ldrPart?.name);
+          console.log("reversing reference: " + reference.name + " of ldrPart: " + ldrPart?.name);
         }
 
         //append points of referenced part to the upper part to reduce the size of render hierachy
@@ -277,7 +277,6 @@ export class IoFileService {
   }
 
   //This functions parses a line type one, which is a reference to a part or a submodel in a ldr file
-  //TODO add working bfc support
   private parseLineTypeOne(line: string, invert: boolean): PartReference {
     const splittedLine = this.splitter(line, " ", 14);
     let transform = new Matrix4();
@@ -288,9 +287,6 @@ export class IoFileService {
       parseFloat(splittedLine[11]), parseFloat(splittedLine[12]), parseFloat(splittedLine[13]), parseFloat(splittedLine[4]),
       0, 0, 0, 1
     );
-
-    //if (invert) 
-    //transform.extractRotation(transform.invert());
 
     return new PartReference(splittedLine[splittedLine.length - 1], transform, parseInt(splittedLine[1]), invert);
   }
@@ -344,9 +340,9 @@ export class IoFileService {
       return {
         color: parseInt(splitLine[1]),
         points: [
-          new Vector3(parseFloat(splitLine[4]), parseFloat(splitLine[3]), parseFloat(splitLine[2])),
-          new Vector3(parseFloat(splitLine[7]), parseFloat(splitLine[6]), parseFloat(splitLine[5])),
-          new Vector3(parseFloat(splitLine[10]), parseFloat(splitLine[9]), parseFloat(splitLine[8])),
+          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
+          new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
+          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
           /*Bfc
           new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
           new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),

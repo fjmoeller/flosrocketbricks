@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { IoFileService } from 'src/app/services/io-file.service';
-import { AmbientLight, AxesHelper, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { AmbientLight, AxesHelper, Box3, BoxGeometry, DoubleSide, Group, Mesh, MeshBasicMaterial, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
 
 @Component({
   selector: 'app-viewer',
@@ -27,28 +27,24 @@ export class ViewerComponent {
     this.createThreeJsBox(group);
   }
 
-  createThreeJsBox(group: Group): void {
+  createThreeJsBox(mocGroup: Group): void {
 
     const canvas = document.getElementById('canvas-box');
     const scene = new Scene();
 
     //TODO remove
-    const axesHelper = new AxesHelper( 5 );
-    scene.add( axesHelper );
+    const axesHelper = new AxesHelper(5);
+    scene.add(axesHelper);
 
-    const pointLight = new PointLight(0xffffff, 0.5);
-    pointLight.position.x = 1000;
-    pointLight.position.y = 1000;
-    pointLight.position.z = 1000;
+    const pointLight = new PointLight(0xffffff, 0.8);
+    pointLight.position.add(new Vector3(1000,500,1000));
     scene.add(pointLight);
 
-    const pointLight2 = new PointLight(0xffffff, 0.5);
-    pointLight.position.x = -1000;
-    pointLight.position.y = 1000;
-    pointLight.position.z = -1000;
-    scene.add(pointLight2);
+    var boxMesh = new Mesh(new BoxGeometry(10, 10,10), new MeshBasicMaterial({ color: 0xff0000}));
+    boxMesh.position.add(new Vector3(1000,500,1000));
+    scene.add(boxMesh);
 
-    const ambientLight = new AmbientLight(0xffffff, 0.2);
+    const ambientLight = new AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
 
     const canvasSizes = {
@@ -64,7 +60,17 @@ export class ViewerComponent {
     camera.position.z = 50;
     scene.add(camera);
 
-    scene.add(group);
+    scene.add(mocGroup);
+
+    var geo = new PlaneGeometry(2000, 2000, 8, 8);
+    var mat = new MeshBasicMaterial({ color: 0x050505, side: DoubleSide });
+    var plane = new Mesh(geo, mat);
+    scene.add(plane);
+    plane.rotateX(- Math.PI / 2);
+
+
+    const mocBoundingBox = new Box3();
+    mocBoundingBox.setFromObject(mocGroup);
 
     if (!canvas) {
       return;

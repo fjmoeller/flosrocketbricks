@@ -7,13 +7,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FileComponent implements OnInit {
 
-  @Input('link') filelink = ""
-  @Input('name') filename="V2.6.io"
-  @Input('description') description="this is a file"
-  
+  @Input('link') filelink = "";
+  @Input('name') filename = "";
+  @Input('description') description = "";
+  @Input('type') type = "";
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  downloadXml(): void {
+
+  }
+
+  openViewer(): void {
+
+  }
+
+  downloadCsv():void{
+    
+  }
 }

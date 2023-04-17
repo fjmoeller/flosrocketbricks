@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { IoFileService } from 'src/app/services/io-file.service';
-import { AmbientLight, AxesHelper, Box3, BoxGeometry, DoubleSide, Group, Mesh, MeshBasicMaterial, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { AmbientLight, AxesHelper, BasicShadowMap, Box3, BoxGeometry, DoubleSide, Group, Mesh, MeshBasicMaterial, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
 
 @Component({
   selector: 'app-viewer',
@@ -24,6 +24,7 @@ export class ViewerComponent {
 
   async testIoExtracted() {
     let group: Group = await this.ioFileService.getModel(this.inputLink);
+    group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
     this.createThreeJsBox(group);
   }
 
@@ -36,16 +37,24 @@ export class ViewerComponent {
     const axesHelper = new AxesHelper(5);
     scene.add(axesHelper);
 
-    const pointLight = new PointLight(0xffffff, 0.8);
+    const pointLight = new PointLight(0xffffff, 0.2);
     pointLight.position.add(new Vector3(1000,500,1000));
+    pointLight.castShadow=true;
     scene.add(pointLight);
 
-    var boxMesh = new Mesh(new BoxGeometry(10, 10,10), new MeshBasicMaterial({ color: 0xff0000}));
-    boxMesh.position.add(new Vector3(1000,500,1000));
-    scene.add(boxMesh);
+    const pointLight2 = new PointLight(0xffffff, 0.2);
+    pointLight2.position.add(new Vector3(-1000,500,-1000));
+    pointLight2.castShadow=true;
+    scene.add(pointLight2);
 
-    const ambientLight = new AmbientLight(0xffffff, 0.8);
+    const ambientLight = new AmbientLight(0xffffff, 0.7);
     scene.add(ambientLight);
+
+    mocGroup.castShadow=true;
+    mocGroup.receiveShadow = true;
+    const mocBoundingBox = new Box3();
+    mocBoundingBox.setFromObject(mocGroup);
+    scene.add(mocGroup);
 
     const canvasSizes = {
       width: window.innerWidth / 2,
@@ -54,33 +63,26 @@ export class ViewerComponent {
     const camera = new PerspectiveCamera(
       75,
       canvasSizes.width / canvasSizes.height,
-      0.001,
-      100000
+      0.1,
+      10000
     );
-    camera.position.z = 50;
+
     scene.add(camera);
 
-    scene.add(mocGroup);
-
-    var geo = new PlaneGeometry(2000, 2000, 8, 8);
-    var mat = new MeshBasicMaterial({ color: 0x050505, side: DoubleSide });
-    var plane = new Mesh(geo, mat);
-    scene.add(plane);
-    plane.rotateX(- Math.PI / 2);
-
-
-    const mocBoundingBox = new Box3();
-    mocBoundingBox.setFromObject(mocGroup);
-
+    camera.position.x = (mocBoundingBox.max.x + mocBoundingBox.min.x) / 2;
+    camera.position.y = (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2;
+    camera.position.z = (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2;
+    //camera.translateZ(camera.position.z+200);
     if (!canvas) {
       return;
     }
 
-    const renderer = new WebGLRenderer({
-      canvas: canvas,
-    });
+    const renderer = new WebGLRenderer({ antialias: true, canvas:canvas});
     renderer.setClearColor(0x19212D, 1);
     renderer.setSize(canvasSizes.width, canvasSizes.height);
+    renderer.setPixelRatio( window.devicePixelRatio * 1.5 );
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = BasicShadowMap;
 
     window.addEventListener('resize', () => {
       canvasSizes.width = window.innerWidth / 2;

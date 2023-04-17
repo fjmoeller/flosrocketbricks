@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import * as zip from "@zip.js/zip.js";
-import { BufferGeometry, Group, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
+import { BufferGeometry, Group, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
 import { LdrPart, LdrSubmodel, PartReference } from './ldrawParts';
 import { HttpClient } from '@angular/common/http';
 import { LdrawColorService } from './ldraw-color.service';
-
+import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
 
 @Injectable({
   providedIn: 'root'
@@ -14,15 +14,19 @@ export class IoFileService {
   //lists for lookups of partnames if a part type cant be identified by it's name
   private partsList: string[] = [];
   private primitiveList: string[] = [];
+  private printMapping: Map<string, string> = new Map<string, string>;
 
   //buffer of finished parts to make less http requests
-  private savedLdrParts = new Map<string, LdrPart>;
-  private savedLdrSubParts = new Map<string, LdrPart>;
-  private savedLdrPrimitives = new Map<string, LdrPart>;
-  private savedLdrHighPrimitives = new Map<string, LdrPart>;
-  private savedLdrLowPrimitives = new Map<string, LdrPart>;
+  private savedLdrParts: Map<string, LdrPart> = new Map<string, LdrPart>;
+  private savedLdrSubParts: Map<string, LdrPart> = new Map<string, LdrPart>;
+  private savedLdrPrimitives: Map<string, LdrPart> = new Map<string, LdrPart>;
+  private savedLdrHighPrimitives: Map<string, LdrPart> = new Map<string, LdrPart>;
+  private savedLdrLowPrimitives: Map<string, LdrPart> = new Map<string, LdrPart>;
+  private savedLdrMappedPrintedParts: Map<string, LdrPart> = new Map<string, LdrPart>;
 
   //base URL from where to fetch the part files
+  private backendFetchUrl:string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
+
   private ldrUrl: string = "assets/ldr/parts/";
 
   constructor(private httpClient: HttpClient, private ldrawColorService: LdrawColorService) {
@@ -33,11 +37,19 @@ export class IoFileService {
     this.httpClient.get('assets/ldr/lists/primitiveList.txt', { responseType: 'text' })
       .subscribe(data =>
         this.primitiveList = data.split('\r\n'));
+    //read in printmapping file
+    this.httpClient.get('assets/ldr/lists/mappedPrintedList.txt', { responseType: 'text' })
+      .subscribe(data => {
+        data.split('\n').forEach(line => {
+          let lineSplit = line.split(",");
+          this.printMapping.set(lineSplit[0], lineSplit[1]);
+        })
+      });
   }
 
   async getModel(url: string): Promise<Group> {
-    console.log("Fetching MOC:", url);
-    const contents = await fetch(url);
+    console.log("Fetching MOC:", this.backendFetchUrl + url);
+    const contents = await fetch(this.backendFetchUrl + url);
     let ldrFile = await this.extractLdrFile(contents);
     let moc = await this.createMeshes2(ldrFile);
     return moc;
@@ -114,21 +126,25 @@ export class IoFileService {
     for (const reference of submodel.references) { //this loop goes through all references to other parts/submodels inside the current submodel
       let matchingSubmodel: LdrSubmodel | undefined = ldrSubModelMap.get(reference.name);
       if (matchingSubmodel) {// reference is a submodel
-
         let referenceSubmodelGroup = (await this.resolveSubmodel(matchingSubmodel, ldrSubModelNames, ldrSubModelMap)).clone();
         referenceSubmodelGroup.applyMatrix4(reference.transformMatrix);
         submodelGroup.add(referenceSubmodelGroup);
-
       } else {// reference is a part
-
         let referenceSubmodelMap = await this.resolvePart(reference.name);
         referenceSubmodelMap.forEach((points, color) => { //for each color of the part an own mesh gets created
-
           let partGeometry = new BufferGeometry();
           partGeometry.setFromPoints(points);
+
+          //FIX transformation matrix for 28192
+          if (reference.name == "28192.dat") {
+            partGeometry = partGeometry.rotateY(-Math.PI / 2);
+            partGeometry = partGeometry.translate(-10, -24, 0);
+          }
+
           partGeometry.applyMatrix4(reference.transformMatrix);
           partGeometry.computeVertexNormals();
           partGeometry.normalizeNormals();
+          partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
 
           let material; //TODO implement colors fully -> might have to remove resolved submodels to get color all the way to the bottom to each part that needs it
           if (color == 24 || color == 16 || color == -1 || color == -2) //those are not valid colors or mean that the color gets resolved in a submodel above, not fully implemented yet
@@ -159,6 +175,8 @@ export class IoFileService {
       fetchedPart = await this.fetchpart(this.savedLdrHighPrimitives, "p/48/" + partName.substring(3), partName, 2);
     else if (partName.startsWith("8\\"))  //low primitive
       fetchedPart = await this.fetchpart(this.savedLdrLowPrimitives, "p/8/" + partName.substring(2), partName, 3);
+    else if (this.printMapping.has(partName))  //some printed parts have a different name in ldr and bricklink so here is a map for that
+      fetchedPart = await this.fetchpart(this.savedLdrMappedPrintedParts, "parts/" + this.printMapping.get(partName), partName, 6);
     else if (this.partsList.includes(partName))  //part
       fetchedPart = await this.fetchpart(this.savedLdrParts, "parts/" + partName, partName, 4);
     else if (this.primitiveList.includes(partName))  //normal primitive
@@ -180,10 +198,17 @@ export class IoFileService {
       case 3: this.savedLdrLowPrimitives.set(partName, ldrPart); break;
       case 4: this.savedLdrParts.set(partName, ldrPart); break;
       case 5: this.savedLdrPrimitives.set(partName, ldrPart); break;
+      case 6: this.savedLdrMappedPrintedParts.set(partName, ldrPart); break;
       default: break;
     }
 
     //resolve this parts references to other parts
+    await this.resolvePartReferences(ldrPart);
+
+    return ldrPart.pointColorMap;
+  }
+
+  private async resolvePartReferences(ldrPart:LdrPart){
     for (const reference of ldrPart.references) {
       let referenceColorPointMap = await this.resolvePart(reference.name);
       if (reference.invert) {
@@ -206,7 +231,6 @@ export class IoFileService {
         }
         if (reference.invert) {
           transformedPoints = transformedPoints.reverse();
-          console.log("reversing reference: " + reference.name + " of ldrPart: " + ldrPart?.name);
         }
 
         //append points of referenced part to the upper part to reduce the size of render hierachy
@@ -217,8 +241,6 @@ export class IoFileService {
           ldrPart?.pointColorMap.set(referenceColor, transformedPoints);
       });
     }
-
-    return ldrPart.pointColorMap;
   }
 
   //This function parses a ldr part from text
@@ -266,11 +288,11 @@ export class IoFileService {
   //This function retrieves the part eitehr from the cache or fetches it new and then adds it to the cache
   async fetchpart(partMap: Map<string, LdrPart>, path: string, partName: string, selectedMap: number) {
     if (partMap.has(partName)) {
-      console.log("Part: " + path + " has been detected in cache");
+      //console.log("Part: " + path + " has been detected in cache");
       let ldrPart = partMap.get(partName);
       return { selectedMap: -1, partLdr: ldrPart, partText: "" };
     }
-    console.log("Part: " + path + " has not been detected in cache");
+    //console.log("Part: " + path + " has not been detected in cache");
     let url = this.ldrUrl + path;
     let partText = await ((await fetch(url)).text());
     return { selectedMap: selectedMap, partText: partText };
@@ -317,7 +339,6 @@ export class IoFileService {
   }
 
   //This functions parses a line type three, which is a triangle
-  //TODO add working bfc support
   private parseLineTypeThree(line: string, invert: boolean) {
     let splitLine = line.split(" ");
     if (splitLine.length < 10) {
@@ -330,10 +351,10 @@ export class IoFileService {
           new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
           new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
           new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          /*Bfc
-          new Vector3(parseFloat(splitLine[4]), parseFloat(splitLine[3]), parseFloat(splitLine[2])),
-          new Vector3(parseFloat(splitLine[7]), parseFloat(splitLine[6]), parseFloat(splitLine[5])),
-          new Vector3(parseFloat(splitLine[10]), parseFloat(splitLine[9]), parseFloat(splitLine[8]))*/
+          //Bfc
+          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
+          new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
+          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
         ]
       }
     } else {
@@ -343,17 +364,16 @@ export class IoFileService {
           new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
           new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
           new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          /*Bfc
+          //Bfc
           new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
           new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]))*/
+          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]))
         ]
       }
     }
   }
 
   //This functions parses a line type four, which is a rectangle, but i just split those into two triangles
-  //TODO add working bfc support
   private parseLineTypeFour(line: string, invert: boolean) {
     let splitLine = line.split(" ");
     if (splitLine.length < 13) {
@@ -369,13 +389,13 @@ export class IoFileService {
           new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
           new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13])),
           new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          /*Bfc
+          //Bfc
           new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
           new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
           new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
           new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
           new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13])),
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]))*/
+          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]))
         ]
       }
     } else {
@@ -388,13 +408,13 @@ export class IoFileService {
           new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
           new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13])),
           new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          /*Bfc
+          //Bfc
           new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
           new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
           new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
           new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
           new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13])),
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4]))*/
+          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4]))
         ]
       }
     }

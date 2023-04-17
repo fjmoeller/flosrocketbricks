@@ -14,8 +14,9 @@ Using Angular Universal it gets pre rendered at each deployment.
 
 ## How To Update LDR Parts
 1. Replace files
-2. Check logs for new files and add the ones not needed to notneeded2.io
-3. extract notneeded1.ldr and notneeded2.ldr from their io files
-4. run "notneededRemover.py notneeded1.ldr" and "notneededRemover.py notneeded2.ldr"
-5. Run the directoryListCreator script in the parts and the p directories
+2. Check logs for new files and add the ones not needed to notneeded2.io REMOVE
+3. extract notneeded1.ldr and notneeded2.ldr from their io files REMOVE
+4. run "notneededRemover.py notneeded1.ldr" and "notneededRemover.py notneeded2.ldr" REMOVE AND REPLACE WITH PYTHON SCRIPT TO RESOLVE ALL PARTS
+5. run "py printPartMapper.py parts/parts lists/mappedPrintedList.txt"
+5. Run the directoryListCreator.bat script in the parts and the p directories
 6. copy results into assets/ldr/lists

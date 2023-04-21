@@ -12,7 +12,7 @@ export class LdrawColorService {
 
   constructor(private httpClient: HttpClient) {
     this.httpClient.get('assets/ldr/lists/LDConfig.ldr', { responseType: 'text' })
-      .subscribe(data => this.parseColors(data.split('\r\n')));
+      .subscribe(data => this.parseColors(data.split("\r").join('').split('\n')));
   }
 
   private parseColors(text: string[]) {

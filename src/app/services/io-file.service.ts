@@ -25,7 +25,7 @@ export class IoFileService {
   private savedLdrMappedPrintedParts: Map<string, LdrPart> = new Map<string, LdrPart>;
 
   //base URL from where to fetch the part files
-  private backendFetchUrl:string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
+  private backendFetchUrl: string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
 
   private ldrUrl: string = "assets/ldr/parts/";
 
@@ -130,7 +130,7 @@ export class IoFileService {
         referenceSubmodelGroup.applyMatrix4(reference.transformMatrix);
         submodelGroup.add(referenceSubmodelGroup);
       } else {// reference is a part
-        let referenceSubmodelMap = await this.resolvePart(reference.name);
+        let referenceSubmodelMap = await this.getPart(reference.name);
         referenceSubmodelMap.forEach((points, color) => { //for each color of the part an own mesh gets created
           let partGeometry = new BufferGeometry();
           partGeometry.setFromPoints(points);
@@ -164,8 +164,7 @@ export class IoFileService {
 
 
   //This function resolves ldr parts from their names and returns the vertices and their colors
-  async resolvePart(partName: string): Promise<Map<number, Vector3[]>> {
-    let ldrPart: LdrPart | undefined = undefined;
+  async getPart(partName: string): Promise<Map<number, Vector3[]>> {
 
     let fetchedPart;
     //check which kind of part the part is
@@ -189,28 +188,23 @@ export class IoFileService {
     if (fetchedPart.partLdr) // part is already resolved
       return fetchedPart.partLdr.pointColorMap;
     // part hasnt been resolved yet
-    ldrPart = this.parsePartLines(fetchedPart.partText);
+    return await this.resolvePart(partName, fetchedPart.partText, fetchedPart.selectedMap);
+  }
 
-    // part hasnt been resolved yet and now will be added to the cache of parts
-    switch (fetchedPart.selectedMap) {
-      case 1: this.savedLdrSubParts.set(partName, ldrPart); break;
-      case 2: this.savedLdrHighPrimitives.set(partName, ldrPart); break;
-      case 3: this.savedLdrLowPrimitives.set(partName, ldrPart); break;
-      case 4: this.savedLdrParts.set(partName, ldrPart); break;
-      case 5: this.savedLdrPrimitives.set(partName, ldrPart); break;
-      case 6: this.savedLdrMappedPrintedParts.set(partName, ldrPart); break;
-      default: break;
-    }
+  private async resolvePart(partName: string, text: string, selectedMap: number): Promise<Map<number, Vector3[]>> {
+    // part hasnt been resolved yet
+    // parse part, add to map, resolve references -> recursion
+    let ldrPart = this.parsePartLines(text);
 
     //resolve this parts references to other parts
-    await this.resolvePartReferences(ldrPart);
+    await this.resolvePartReferences(ldrPart, partName, selectedMap);
 
     return ldrPart.pointColorMap;
   }
 
-  private async resolvePartReferences(ldrPart:LdrPart){
+  private async resolvePartReferences(ldrPart: LdrPart, partName: string, selectedMap: number) {
     for (const reference of ldrPart.references) {
-      let referenceColorPointMap = await this.resolvePart(reference.name);
+      let referenceColorPointMap = await this.getPart(reference.name);
       if (reference.invert) {
         referenceColorPointMap.forEach((referencePoints, referenceColor) => {
           referenceColorPointMap.set(referenceColor, referencePoints.reverse());
@@ -240,6 +234,16 @@ export class IoFileService {
         } else
           ldrPart?.pointColorMap.set(referenceColor, transformedPoints);
       });
+    }
+
+    switch (selectedMap) {
+      case 1: this.savedLdrSubParts.set(partName, ldrPart); break;
+      case 2: this.savedLdrHighPrimitives.set(partName, ldrPart); break;
+      case 3: this.savedLdrLowPrimitives.set(partName, ldrPart); break;
+      case 4: this.savedLdrParts.set(partName, ldrPart); break;
+      case 5: this.savedLdrPrimitives.set(partName, ldrPart); break;
+      case 6: this.savedLdrMappedPrintedParts.set(partName, ldrPart); break;
+      default: break;
     }
   }
 

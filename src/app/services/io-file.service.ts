@@ -5,7 +5,6 @@ import { LdrPart, LdrSubmodel, PartReference } from './ldrawParts';
 import { HttpClient } from '@angular/common/http';
 import { LdrawColorService } from './ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
-import { delay, firstValueFrom, map, pipe, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,12 +34,10 @@ export class IoFileService {
     this.httpClient.get('assets/ldr/lists/partsList.txt', { responseType: 'text' })
       .subscribe(data => {
         this.partsList = data.split("\r").join('').split('\n');
-        console.log("A total of " + this.partsList.length + " parts loaded!");
       });
     this.httpClient.get('assets/ldr/lists/primitiveList.txt', { responseType: 'text' })
       .subscribe(data => {
         this.primitiveList = data.split("\r").join('').split('\n');
-        console.log("A total of " + this.primitiveList.length + " primitives loaded!");
       });
     //read in printmapping file
     this.httpClient.get('assets/ldr/lists/mappedPrintedList.txt', { responseType: 'text' })
@@ -49,7 +46,6 @@ export class IoFileService {
           let lineSplit = line.split(",");
           this.printMapping.set(lineSplit[0], lineSplit[1]);
         })
-        console.log("A total of " + this.printMapping.size + " mapped parts loaded!");
       });
   }
 
@@ -112,9 +108,7 @@ export class IoFileService {
 
       ldrSubModelMap.set(subModelName, ldrSubmodel);
       ldrSubModelNames.push(subModelName);
-      console.log("Parsing submodel " + subModelName + " finished!");
     });
-    console.log("Now starting submodel resolving with the top submodel:", topLdrSubmodel.name);
 
     //resolve all submodels starting from top to bottom
     return await this.resolveSubmodel(topLdrSubmodel, ldrSubModelNames, ldrSubModelMap);
@@ -163,7 +157,6 @@ export class IoFileService {
     }
     submodel.group = submodelGroup;
     submodel.resolved = true;
-    console.log("Resolving submodel " + submodel.name + " has been finished!");
 
     return submodelGroup;
   }
@@ -313,7 +306,6 @@ export class IoFileService {
     let url = this.ldrUrl + path;
 
     let partText = await ((await fetch(url)).text());
-    console.log("Fetching: " + url)
 
     return { partText: partText };
   }

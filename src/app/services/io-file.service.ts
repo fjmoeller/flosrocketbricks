@@ -195,7 +195,7 @@ export class IoFileService {
       selectedMap = 5;
     }
     else { //part is not known
-      console.log("ERROR: Part could not be found: " + partName);
+      //console.log("ERROR: Part could not be found: " + partName);
       fetchedPart = { partText: ""};
     }
 
@@ -307,11 +307,8 @@ export class IoFileService {
     }
     let url = this.ldrUrl + path;
     
-    //let partText = await ((await fetch(url)).text());
-
-    console.log("Before delay");
-    let partText = await firstValueFrom(this.httpClient.get(url, { responseType: 'text' }).pipe(delay(200)))
-    console.log("After delay");
+    let partText = await ((await fetch(url)).text());
+    console.log("Fetching: "+url + " with result: "+partText)
 
     return { partText: partText };
   }

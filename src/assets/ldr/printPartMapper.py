@@ -5,7 +5,7 @@ import os
 found = 0
 # sys.argv[1] should be the notneeded1.ldr /parts/parts
 # sys.argv[2] should be the target folder /lists
-# py printPartMapper.py parts/parts lists/mappedPrintedList.txt
+# py printPartMapper.py origparts/parts lists/mappedPrintedList.txt
 
 res = "";
 

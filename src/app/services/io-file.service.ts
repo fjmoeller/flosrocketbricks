@@ -27,7 +27,7 @@ export class IoFileService {
   //base URL from where to fetch the part files
   private backendFetchUrl: string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
 
-  private ldrUrl: string = "assets/ldr/parts/";
+  private ldrUrl: string = "assets/ldr/usedparts/";
 
   constructor(private httpClient: HttpClient, private ldrawColorService: LdrawColorService) {
     //read in the partname lists at startup for later use for part lookup

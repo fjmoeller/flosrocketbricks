@@ -33,11 +33,15 @@ export class IoFileService {
   constructor(private httpClient: HttpClient, private ldrawColorService: LdrawColorService) {
     //read in the partname lists at startup for later use for part lookup
     this.httpClient.get('assets/ldr/lists/partsList.txt', { responseType: 'text' })
-      .subscribe(data =>
-        this.partsList = data.split('\r\n'));
+      .subscribe(data => {
+        this.partsList = data.split('\r\n');
+        console.log("A total of " + this.partsList.length + " parts loaded!");
+      });
     this.httpClient.get('assets/ldr/lists/primitiveList.txt', { responseType: 'text' })
-      .subscribe(data =>
-        this.primitiveList = data.split('\r\n'));
+      .subscribe(data => {
+        this.primitiveList = data.split('\r\n');
+        console.log("A total of " + this.primitiveList.length + " primitives loaded!");
+      });
     //read in printmapping file
     this.httpClient.get('assets/ldr/lists/mappedPrintedList.txt', { responseType: 'text' })
       .subscribe(data => {
@@ -45,6 +49,7 @@ export class IoFileService {
           let lineSplit = line.split(",");
           this.printMapping.set(lineSplit[0], lineSplit[1]);
         })
+        console.log("A total of " + this.printMapping.size + " mapped parts loaded!");
       });
   }
 
@@ -170,33 +175,33 @@ export class IoFileService {
     let fetchedPart;
     let selectedMap = -1;
     //check which kind of part the part is
-    if (partName.startsWith("s\\")){  //subpart
+    if (partName.startsWith("s\\")) {  //subpart
       fetchedPart = await this.fetchpart(this.savedLdrSubParts, "parts/s/" + partName.substring(2), partName);
       selectedMap = 1;
     }
-    else if (partName.startsWith("48\\")){ //high primitive
+    else if (partName.startsWith("48\\")) { //high primitive
       fetchedPart = await this.fetchpart(this.savedLdrHighPrimitives, "p/48/" + partName.substring(3), partName);
       selectedMap = 2;
-    } 
-    else if (partName.startsWith("8\\")){  //low primitive
+    }
+    else if (partName.startsWith("8\\")) {  //low primitive
       fetchedPart = await this.fetchpart(this.savedLdrLowPrimitives, "p/8/" + partName.substring(2), partName);
       selectedMap = 3;
     }
-    else if (this.printMapping.has(partName)){  //some printed parts have a different name in ldr and bricklink so here is a map for that
+    else if (this.printMapping.has(partName)) {  //some printed parts have a different name in ldr and bricklink so here is a map for that
       fetchedPart = await this.fetchpart(this.savedLdrMappedPrintedParts, "parts/" + this.printMapping.get(partName), partName);
       selectedMap = 6;
     }
-    else if (this.partsList.includes(partName)){  //part
+    else if (this.partsList.includes(partName)) {  //part
       fetchedPart = await this.fetchpart(this.savedLdrParts, "parts/" + partName, partName);
       selectedMap = 4;
     }
-    else if (this.primitiveList.includes(partName)){  //normal primitive
+    else if (this.primitiveList.includes(partName)) {  //normal primitive
       fetchedPart = await this.fetchpart(this.savedLdrPrimitives, "p/" + partName, partName);
       selectedMap = 5;
     }
     else { //part is not known
-      //console.log("ERROR: Part could not be found: " + partName);
-      fetchedPart = { partText: ""};
+      console.log("ERROR: Part could not be found: " + partName);
+      fetchedPart = { partText: "" };
     }
 
     if (fetchedPart.partLdr) // part is already resolved
@@ -306,9 +311,9 @@ export class IoFileService {
       return { partLdr: ldrPart, partText: "" };
     }
     let url = this.ldrUrl + path;
-    
+
     let partText = await ((await fetch(url)).text());
-    console.log("Fetching: "+url + " with result: "+partText)
+    console.log("Fetching: " + url)
 
     return { partText: partText };
   }

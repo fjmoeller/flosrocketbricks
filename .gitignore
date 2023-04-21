@@ -42,7 +42,5 @@ Thumbs.db
 
 workerV1.txt
 
-/src/assets/ldr/origParts/
-/src/assets/ldr/origParts/*
+/src/assets/ldr/origparts/
 /src/assets/ldr/deprecated/
-/src/assets/ldr/deprecated/*

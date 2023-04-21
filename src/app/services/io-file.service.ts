@@ -5,6 +5,7 @@ import { LdrPart, LdrSubmodel, PartReference } from './ldrawParts';
 import { HttpClient } from '@angular/common/http';
 import { LdrawColorService } from './ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
+import { delay, firstValueFrom, map, pipe, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -167,28 +168,41 @@ export class IoFileService {
   async getPart(partName: string): Promise<Map<number, Vector3[]>> {
 
     let fetchedPart;
+    let selectedMap = -1;
     //check which kind of part the part is
-    if (partName.startsWith("s\\"))  //subpart
-      fetchedPart = await this.fetchpart(this.savedLdrSubParts, "parts/s/" + partName.substring(2), partName, 1);
-    else if (partName.startsWith("48\\"))  //high primitive
-      fetchedPart = await this.fetchpart(this.savedLdrHighPrimitives, "p/48/" + partName.substring(3), partName, 2);
-    else if (partName.startsWith("8\\"))  //low primitive
-      fetchedPart = await this.fetchpart(this.savedLdrLowPrimitives, "p/8/" + partName.substring(2), partName, 3);
-    else if (this.printMapping.has(partName))  //some printed parts have a different name in ldr and bricklink so here is a map for that
-      fetchedPart = await this.fetchpart(this.savedLdrMappedPrintedParts, "parts/" + this.printMapping.get(partName), partName, 6);
-    else if (this.partsList.includes(partName))  //part
-      fetchedPart = await this.fetchpart(this.savedLdrParts, "parts/" + partName, partName, 4);
-    else if (this.primitiveList.includes(partName))  //normal primitive
-      fetchedPart = await this.fetchpart(this.savedLdrPrimitives, "p/" + partName, partName, 5);
+    if (partName.startsWith("s\\")){  //subpart
+      fetchedPart = await this.fetchpart(this.savedLdrSubParts, "parts/s/" + partName.substring(2), partName);
+      selectedMap = 1;
+    }
+    else if (partName.startsWith("48\\")){ //high primitive
+      fetchedPart = await this.fetchpart(this.savedLdrHighPrimitives, "p/48/" + partName.substring(3), partName);
+      selectedMap = 2;
+    } 
+    else if (partName.startsWith("8\\")){  //low primitive
+      fetchedPart = await this.fetchpart(this.savedLdrLowPrimitives, "p/8/" + partName.substring(2), partName);
+      selectedMap = 3;
+    }
+    else if (this.printMapping.has(partName)){  //some printed parts have a different name in ldr and bricklink so here is a map for that
+      fetchedPart = await this.fetchpart(this.savedLdrMappedPrintedParts, "parts/" + this.printMapping.get(partName), partName);
+      selectedMap = 6;
+    }
+    else if (this.partsList.includes(partName)){  //part
+      fetchedPart = await this.fetchpart(this.savedLdrParts, "parts/" + partName, partName);
+      selectedMap = 4;
+    }
+    else if (this.primitiveList.includes(partName)){  //normal primitive
+      fetchedPart = await this.fetchpart(this.savedLdrPrimitives, "p/" + partName, partName);
+      selectedMap = 5;
+    }
     else { //part is not known
       console.log("ERROR: Part could not be found: " + partName);
-      fetchedPart = { partText: "", selectedMap: -1 };
+      fetchedPart = { partText: ""};
     }
 
     if (fetchedPart.partLdr) // part is already resolved
       return fetchedPart.partLdr.pointColorMap;
     // part hasnt been resolved yet
-    return await this.resolvePart(partName, fetchedPart.partText, fetchedPart.selectedMap);
+    return await this.resolvePart(partName, fetchedPart.partText, selectedMap);
   }
 
   private async resolvePart(partName: string, text: string, selectedMap: number): Promise<Map<number, Vector3[]>> {
@@ -197,12 +211,6 @@ export class IoFileService {
     let ldrPart = this.parsePartLines(text);
 
     //resolve this parts references to other parts
-    await this.resolvePartReferences(ldrPart, partName, selectedMap);
-
-    return ldrPart.pointColorMap;
-  }
-
-  private async resolvePartReferences(ldrPart: LdrPart, partName: string, selectedMap: number) {
     for (const reference of ldrPart.references) {
       let referenceColorPointMap = await this.getPart(reference.name);
       if (reference.invert) {
@@ -245,6 +253,8 @@ export class IoFileService {
       case 6: this.savedLdrMappedPrintedParts.set(partName, ldrPart); break;
       default: break;
     }
+
+    return ldrPart.pointColorMap;
   }
 
   //This function parses a ldr part from text
@@ -290,16 +300,20 @@ export class IoFileService {
   }
 
   //This function retrieves the part eitehr from the cache or fetches it new and then adds it to the cache
-  async fetchpart(partMap: Map<string, LdrPart>, path: string, partName: string, selectedMap: number) {
+  async fetchpart(partMap: Map<string, LdrPart>, path: string, partName: string) {
     if (partMap.has(partName)) {
-      //console.log("Part: " + path + " has been detected in cache");
       let ldrPart = partMap.get(partName);
-      return { selectedMap: -1, partLdr: ldrPart, partText: "" };
+      return { partLdr: ldrPart, partText: "" };
     }
-    //console.log("Part: " + path + " has not been detected in cache");
     let url = this.ldrUrl + path;
-    let partText = await ((await fetch(url)).text());
-    return { selectedMap: selectedMap, partText: partText };
+    
+    //let partText = await ((await fetch(url)).text());
+
+    console.log("Before delay");
+    let partText = await firstValueFrom(this.httpClient.get(url, { responseType: 'text' }).pipe(delay(200)))
+    console.log("After delay");
+
+    return { partText: partText };
   }
 
   //This functions parses a line type one, which is a reference to a part or a submodel in a ldr file

@@ -1810,7 +1810,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer":true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/germany/spectrum/v1.0/Spectrum_V1.0.io",
                         "name": "Spectrum_V1.0.io"
                     }

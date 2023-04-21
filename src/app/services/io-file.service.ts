@@ -34,17 +34,13 @@ export class IoFileService {
     //read in the partname lists at startup for later use for part lookup
     this.httpClient.get('assets/ldr/lists/partsList.txt', { responseType: 'text' })
       .subscribe(data => {
-        this.partsList = data.split('\r\n');
+        this.partsList = data.split("\r").join('').split('\n');
         console.log("A total of " + this.partsList.length + " parts loaded!");
-        if (this.partsList.length == 1)
-          console.log("partslist: "+this.partsList);
       });
     this.httpClient.get('assets/ldr/lists/primitiveList.txt', { responseType: 'text' })
       .subscribe(data => {
-        this.primitiveList = data.split('\r\n');
+        this.primitiveList = data.split("\r").join('').split('\n');
         console.log("A total of " + this.primitiveList.length + " primitives loaded!");
-        if (this.primitiveList.length == 1)
-          console.log("primitivelist: "+this.primitiveList);
       });
     //read in printmapping file
     this.httpClient.get('assets/ldr/lists/mappedPrintedList.txt', { responseType: 'text' })

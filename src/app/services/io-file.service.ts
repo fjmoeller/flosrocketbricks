@@ -36,11 +36,15 @@ export class IoFileService {
       .subscribe(data => {
         this.partsList = data.split('\r\n');
         console.log("A total of " + this.partsList.length + " parts loaded!");
+        if (this.partsList.length == 1)
+          console.log("partslist: "+this.partsList);
       });
     this.httpClient.get('assets/ldr/lists/primitiveList.txt', { responseType: 'text' })
       .subscribe(data => {
         this.primitiveList = data.split('\r\n');
         console.log("A total of " + this.primitiveList.length + " primitives loaded!");
+        if (this.primitiveList.length == 1)
+          console.log("primitivelist: "+this.primitiveList);
       });
     //read in printmapping file
     this.httpClient.get('assets/ldr/lists/mappedPrintedList.txt', { responseType: 'text' })

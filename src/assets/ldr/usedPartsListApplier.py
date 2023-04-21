@@ -22,38 +22,38 @@ def addPart(filename):
             for line in file:
                 if line.startswith("1"):
                     addPart(line.split(" ", 14)[-1].replace("\n", "").replace("\r", "").replace("\t", ""))
-        shutil.copy2("origparts/p/48/"+filenameSplit, "usedparts/p/48/"+filenameSplit)
+        shutil.copy("origparts/p/48/"+filenameSplit, "usedparts/p/48/"+filenameSplit)
     elif filename.startswith("8\\") and not os.path.exists(os.path.join("usedparts","p","8", str(filenameSplit))):
         with open("origparts/p/8/"+filenameSplit, 'r', encoding="utf8") as file:
             for line in file:
                 if line.startswith("1"):
                     addPart(line.split(" ", 14)[-1].replace("\n", "").replace("\r", "").replace("\t", ""))
-        shutil.copy2("origparts/p/8/"+filenameSplit, "usedparts/p/8/"+filenameSplit)
+        shutil.copy("origparts/p/8/"+filenameSplit, "usedparts/p/8/"+filenameSplit)
     elif filename.startswith("s\\") and not os.path.exists(os.path.join("usedparts","parts","s", str(filenameSplit))):
         with open("origparts/parts/s/"+filenameSplit, 'r', encoding="utf8") as file:
             for line in file:
                 if line.startswith("1"):
                     addPart(line.split(" ", 14)[-1].replace("\n", "").replace("\r", "").replace("\t", ""))
-        shutil.copy2("origparts/parts/s/"+filenameSplit, "usedparts/parts/s/"+filenameSplit)
+        shutil.copy("origparts/parts/s/"+filenameSplit, "usedparts/parts/s/"+filenameSplit)
     elif filename in printedDict and os.path.exists(os.path.join("origparts","parts", printedDict[filename])) and not os.path.exists(os.path.join("usedparts","parts", printedDict[filename])):
                     # todo printed s\ und p\ ? 
         with open("origparts/parts/"+printedDict[filename], 'r', encoding="utf8") as file:
             for line in file:
                 if line.startswith("1"):
                     addPart(line.split(" ", 14)[-1].replace("\n", "").replace("\r", "").replace("\t", ""))
-        shutil.copy2("origparts/parts/"+printedDict[filename], "usedparts/parts/"+printedDict[filename])
+        shutil.copy("origparts/parts/"+printedDict[filename], "usedparts/parts/"+printedDict[filename])
     elif os.path.exists(os.path.join("origparts","p", str(filenameSplit))) and not os.path.exists(os.path.join("usedparts","p", str(filenameSplit))):
         with open("origparts/p/"+filenameSplit, 'r', encoding="utf8") as file:
             for line in file:
                 if line.startswith("1"):
                     addPart(line.split(" ", 14)[-1].replace("\n", "").replace("\r", "").replace("\t", ""))
-        shutil.copy2("origparts/p/"+filenameSplit, "usedparts/p/"+filenameSplit)
+        shutil.copy("origparts/p/"+filenameSplit, "usedparts/p/"+filenameSplit)
     elif os.path.exists(os.path.join("origparts","parts",str(filenameSplit))) and not os.path.exists(os.path.join("usedparts","parts", str(filenameSplit))):
         with open("origparts/parts/"+filenameSplit, 'r', encoding="utf8") as file:
             for line in file:
                 if line.startswith("1"):
                     addPart(line.split(" ", 14)[-1].replace("\n", "").replace("\r", "").replace("\t", ""))
-        shutil.copy2("origparts/parts/"+filenameSplit, "usedparts/parts/"+filenameSplit)
+        shutil.copy("origparts/parts/"+filenameSplit, "usedparts/parts/"+filenameSplit)
     else:
         print("Skipped: "+filename)
         return

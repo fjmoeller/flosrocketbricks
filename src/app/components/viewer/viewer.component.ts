@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { IoFileService } from 'src/app/services/io-file.service';
-import { AmbientLight, AxesHelper, BasicShadowMap, Box3, BoxGeometry, DoubleSide, Group, Mesh, MeshBasicMaterial, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { AmbientLight, BasicShadowMap, Box3, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
 
 @Component({
   selector: 'app-viewer',
@@ -10,19 +10,21 @@ import { AmbientLight, AxesHelper, BasicShadowMap, Box3, BoxGeometry, DoubleSide
 })
 export class ViewerComponent {
 
-  inputLink: string = "https://bricksafe.com/files/SkySaac/website/test/test.io";
+  @Input() inputLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.ldr";
+
+  _showViewer: boolean = false;
+  @Input()
+  set showViewer(showViewer: boolean) {
+    this._showViewer = showViewer;
+    console.log("showviewer: "+showViewer)
+    if (showViewer)
+      this.showViewerMoc();
+  }
+  get showViewer() { return this._showViewer; }
 
   constructor(private ioFileService: IoFileService) { }
 
-  async onFileSelected(event: any) {
-    let ldrFile = await this.ioFileService.extractLdrFile(new Response(event.target.files[0]));
-    //rotate 
-    let group: Group = await this.ioFileService.createMeshes2(ldrFile);
-    group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
-    this.createThreeJsBox(group);
-  }
-
-  async testIoExtracted() {
+  async showViewerMoc() {
     let group: Group = await this.ioFileService.getModel(this.inputLink);
     group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
     this.createThreeJsBox(group);
@@ -33,24 +35,20 @@ export class ViewerComponent {
     const canvas = document.getElementById('canvas-box');
     const scene = new Scene();
 
-    //TODO remove
-    const axesHelper = new AxesHelper(5);
-    scene.add(axesHelper);
-
     const pointLight = new PointLight(0xffffff, 0.2);
-    pointLight.position.add(new Vector3(1000,500,1000));
-    pointLight.castShadow=true;
+    pointLight.position.add(new Vector3(1000, 500, 1000));
+    pointLight.castShadow = true;
     scene.add(pointLight);
 
     const pointLight2 = new PointLight(0xffffff, 0.2);
-    pointLight2.position.add(new Vector3(-1000,500,-1000));
-    pointLight2.castShadow=true;
+    pointLight2.position.add(new Vector3(-1000, 500, -1000));
+    pointLight2.castShadow = true;
     scene.add(pointLight2);
 
     const ambientLight = new AmbientLight(0xffffff, 0.7);
     scene.add(ambientLight);
 
-    mocGroup.castShadow=true;
+    mocGroup.castShadow = true;
     mocGroup.receiveShadow = true;
     const mocBoundingBox = new Box3();
     mocBoundingBox.setFromObject(mocGroup);
@@ -77,10 +75,10 @@ export class ViewerComponent {
       return;
     }
 
-    const renderer = new WebGLRenderer({ antialias: true, canvas:canvas});
+    const renderer = new WebGLRenderer({ antialias: true, canvas: canvas });
     renderer.setClearColor(0x19212D, 1);
     renderer.setSize(canvasSizes.width, canvasSizes.height);
-    renderer.setPixelRatio( window.devicePixelRatio * 1.5 );
+    renderer.setPixelRatio(window.devicePixelRatio * 1.5);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = BasicShadowMap;
 

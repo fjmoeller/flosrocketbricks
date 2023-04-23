@@ -13,8 +13,10 @@ import { map, Observable, tap } from 'rxjs';
 export class MocComponent implements OnInit {
   moc!: Observable<Moc>;
   relatedMocs!: Observable<Moc[]>;
+  viewerLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io"; //default link
 
   noError: boolean = true;
+  showViewer: boolean = false;
   id: number = 0;
 
   constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) { }
@@ -30,6 +32,14 @@ export class MocComponent implements OnInit {
         );
       }));
     });
+  }
+
+  toggleViewer(url:any): void {
+    this.viewerLink = url;
+    this.showViewer = !this.showViewer;
+    //set viewer url
+    //set window size
+    //add missing isar part
   }
 
   sortedVersions(versions: Version[] | undefined): Version[] {

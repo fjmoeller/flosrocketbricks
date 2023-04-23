@@ -22,7 +22,7 @@
                         </svg>
                         Download {{type}} file
                     </a>
-                    <button class="botn btn btn-outline-dark bg-light text-decoration-none mx-auto text-align-center rounded p-1" *ngIf="type=='io'"
+                    <button class="botn btn btn-outline-dark bg-light text-decoration-none mx-auto text-align-center rounded p-1" *ngIf="type=='io'" [disabled]="!viewerAllowed"
                         (click)="openViewer()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-tv" viewBox="0 0 16 16">
@@ -31,7 +31,7 @@
                         </svg>
                         Open in 3D viewer
                     </button>
-                    <button class="botn btn btn-outline-dark bg-light text-decoration-none mx-auto text-align-center rounded p-1" *ngIf="type=='io'"
+                    <button disabled class="botn btn btn-outline-dark bg-light text-decoration-none mx-auto text-align-center rounded p-1" *ngIf="type=='io'"
                         (click)="downloadXml()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-filetype-xml" viewBox="0 0 16 16">
@@ -40,7 +40,7 @@
                         </svg>
                         Download .xml
                     </button>
-                    <button class="botn btn btn-outline-dark bg-light text-decoration-none mx-auto text-align-center rounded p-1" *ngIf="type=='io'"
+                    <button disabled class="botn btn btn-outline-dark bg-light text-decoration-none mx-auto text-align-center rounded p-1" *ngIf="type=='io'"
                         (click)="downloadCsv()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-filetype-csv" viewBox="0 0 16 16">

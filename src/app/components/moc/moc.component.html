@@ -199,6 +199,10 @@
     </div>
     <div class="row m-4">
         <div class="col-md-6 bg-dark text-light">
+            <div *ngIf="showViewer" class="bg-dark text-light">
+                <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer">
+                </app-viewer>
+            </div>
             <h4>About the Moc</h4>
             <p>
                 {{(moc | async)?.mocDescription}}
@@ -242,8 +246,8 @@
                                 <hr *ngIf="version.changelog!=''" class="my-2 d-inline-block mx-auto"
                                     style="width: 100%; background-color: #7c4dff; height: 2px" />
                                 <strong>Files:</strong>
-                                <app-file *ngFor="let file of version.files" [link]="file.link" [name]="file.name"
-                                    [description]="file.description" [type]="file.type">
+                                <app-file *ngFor="let file of version.files" (viewerEvent)="toggleViewer($event)" [link]="file.link" [name]="file.name"
+                                    [description]="file.description" [type]="file.type" [viewerAllowed]="file.allowViewer">
                                 </app-file>
                             </div>
                         </div>

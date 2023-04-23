@@ -3,12 +3,14 @@ export class File {
   name: string;
   description: string;
   type: string;
+  allowViewer: boolean;
 
-  constructor(link: string, name: string, description: string, type: string) {
+  constructor(link: string, name: string, description: string, type: string, allowViewer: boolean) {
     this.link = link;
     this.name = name;
     this.description = description;
     this.type = type;
+    this.allowViewer = allowViewer;
   }
 }
 
@@ -41,7 +43,7 @@ export class Moc {
   parts: number;
   updateMessage: string;
   dimensions: string;
-  rocketReadMoreLinks : string[];
+  rocketReadMoreLinks: string[];
   scale: string;
   smallCoverImage: string;
   designer: string;
@@ -75,7 +77,7 @@ export class Moc {
     mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],
     dateCreated: string, scaleExtra: string, partsExtra: string, dimensionsExtra: string,
     stabilityExtra: string, difficultyExtra: string, designerExtra: string, internalColorExtra: string,
-    company: string,updateMessage:string,rocketReadMoreLinks:string[], regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
+    company: string, updateMessage: string, rocketReadMoreLinks: string[], regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
     this.region = region;
     this.type = type;
     this.updateMessage = updateMessage;

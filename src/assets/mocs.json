@@ -2351,7 +2351,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer":true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/omega/v1.1/v1.1.io",
                         "name": "V1.1.io"
                     }
@@ -2396,7 +2396,7 @@
                         "name": "Energia2_V1.io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_V1_pub.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer":true,
                         "description": "The digital io file"
                     },
                     {
@@ -3246,7 +3246,6 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20V2.1.io",
                         "description": "The digital io file of the non-frosted variant",
                         "type": "io",
-                        "allowViewer":false,
                         "allowViewer":false,
                         "name": " Atlas V 541 Mars 2020 V2.1.io"
                     }

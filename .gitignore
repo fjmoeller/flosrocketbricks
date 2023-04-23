@@ -44,3 +44,5 @@ workerV1.txt
 
 /src/assets/ldr/origparts/
 /src/assets/ldr/deprecated/
+/src/assets/ldr/*.io
+/src/assets/ldr/*.ldr

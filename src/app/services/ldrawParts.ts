@@ -4,23 +4,25 @@ export class LdrPart {
     name: string;
     isResolved: boolean = false;
     pointColorMap: Map<number, Vector3[]>;
+    lineColorMap: Map<number, Vector3[]>;
     references: PartReference[];
     partIndex: number = 0;
 
-    constructor(name: string, pointColorMap: Map<number, Vector3[]>, references: PartReference[]) {
+    constructor(name: string, pointColorMap: Map<number, Vector3[]>, lineColorMap: Map<number, Vector3[]>, references: PartReference[]) {
         this.name = name;
         this.pointColorMap = pointColorMap;
+        this.lineColorMap = lineColorMap;
         this.references = references;
     }
 }
 
-export class LdrColor{
-    name:string;
-    hex:string;
-    edgeHex:string;
-    code:number;
-    
-    constructor(name:string, hex:string,edgeHex:string,code:number) {
+export class LdrColor {
+    name: string;
+    hex: string;
+    edgeHex: string;
+    code: number;
+
+    constructor(name: string, hex: string, edgeHex: string, code: number) {
         this.name = name;
         this.hex = hex;
         this.edgeHex = edgeHex;

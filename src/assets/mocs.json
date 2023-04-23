@@ -52,7 +52,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.1/JUICE_V1.1.io",
                         "name": "JUICE_V1.1.io"
                     }
@@ -66,7 +66,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/40/europe/juice/v1.0/JUICE_V1.0.io",
                         "name": "JUICE_V1.0.io"
                     }
@@ -125,77 +125,77 @@
                     {
                         "description": "The pdf instructions of the core stage",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_Core_Instructions_V5.0.pdf",
                         "name": "Titan_IVB_Core_Instructions_V5.0.pdf"
                     },
                     {
                         "description": "The digital io file of the 15 meter fairing variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_15M_V5.0.io",
                         "name": "Titan_IVB_15M_V5.0.io"
                     },
                     {
                         "description": "The pdf instructions of the 15 meter fairing",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_15M_Instructions_V5.0.pdf",
                         "name": "Titan_IVB_15M_Instructions_V5.0.pdf"
                     },
                     {
                         "description": "The digital io file of the 17 meter fairing variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_17M_V5.0.io",
                         "name": "Titan_IVB_17M_V5.0.io"
                     },
                     {
                         "description": "The pdf instructions of the 17 meter fairing",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_17M_Instructions_V5.0.pdf",
                         "name": "Titan_IVB_17M_Instructions_V5.0.pdf"
                     },
                     {
                         "description": "The digital io file of the 20 meter fairing variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_20M_V5.0.io",
                         "name": "Titan_IVB_20M_V5.0.io"
                     },
                     {
                         "description": "The pdf instructions of the 20 meter fairing",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_20M_Instructions_V5.0.pdf",
                         "name": "Titan_IVB_20M_Instructions_V5.0.pdf"
                     },
                     {
                         "description": "The digital io file of the 23 meter fairing variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_23M_V5.0.io",
                         "name": "Titan_IVB_23M_V5.0.io"
                     },
                     {
                         "description": "The pdf instructions of the 23 meter fairing",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_23M_Instructions_V5.0.pdf",
                         "name": "Titan_IVB_23M_Instructions_V5.0.pdf"
                     },
                     {
                         "description": "The digital io file of the 26 meter fairing variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_26M_V5.0.io",
                         "name": "Titan_IVB_26M_V5.0.io"
                     },
                     {
                         "description": "The pdf instructions of the 26 meter fairing",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iv/b/v5.0/Titan_IVB_26M_Instructions_V5.0.pdf",
                         "name": "Titan_IVB_26M_Instructions_V5.0.pdf"
                     }
@@ -251,7 +251,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/23c/v3.0/Titan_III_%2823%29_C_V3.0.io",
                         "name": "Titan_III_(23)_C_V3.0.io"
                     }
@@ -265,7 +265,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/23c/v2.0/C%2B_V2.io",
                         "name": "C+_V2.io"
                     }
@@ -279,7 +279,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/23c/v1.0/C%2B.io",
                         "name": "C+.io"
                     }
@@ -338,7 +338,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/commercial/intelsat/v3.0/Titan_III_Commercial_INTELSAT_VI_V3.0.io",
                         "name": "Titan_III_Commercial_INTELSAT_VI_V3.0.io"
                     }
@@ -397,7 +397,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/commercial/mars-observer/v3.0/Titan_III_Commercial_Mars_Observer_V3.0.io",
                         "name": "Titan_III_Commercial_Mars_Observer_V3.0.io"
                     }
@@ -455,7 +455,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/commercial/skynet-4a-and-jcsat-2/v3.0/Titan_III_Commercial_Skynet-IV_JCSAT_V3.0.io",
                         "name": "Titan_III_Commercial_Skynet-IV_JCSAT_V3.0.io"
                     }
@@ -512,14 +512,14 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v3.0/Titan_III_E_V3.0.io",
                         "name": "Titan_III_E_V3.0.io"
                     },
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v3.0/Titan_III_E_Centaur_V3.0.io",
                         "name": "Titan_III_E_Centaur_V3.0.io"
                     }
@@ -533,7 +533,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v2.0/E_V2.io",
                         "name": "E_V2.io"
                     }
@@ -547,7 +547,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v1.0/E.io",
                         "name": "E.io"
                     }
@@ -604,14 +604,14 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/d/v3.0/Titan_III_D_V3.0.io",
                         "name": "Titan_III_D_V3.0.io"
                     },
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/d/v3.0/Titan_III_D_Fairings_V3.0.io",
                         "name": "Titan_III_D_Fairings_V3.0.io"
                     }
@@ -625,7 +625,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/d/v2.0/D_V2.io",
                         "name": "D_V2.io"
                     }
@@ -639,7 +639,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/d/v1.0/D.io",
                         "name": "D.io"
                     }
@@ -696,7 +696,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/vela-11-12/v3.1/C_Vela_11_12_1_V3.1.io",
                         "name": "C_Vela_11_12_1_V3.1.io"
                     }
@@ -753,7 +753,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/idcsp-8-to-15/v3.1/C_IDCSP_8_15_V3.1.io",
                         "name": "C_IDCSP_8_15_V3.1.io"
                     }
@@ -810,7 +810,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/idcsp-ggts-2/v3.1/C_IDCSP_GGTS_2_V3.1.io",
                         "name": "C_IDCSP_GGTS_2_V3.1.io"
                     }
@@ -868,7 +868,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/tacsat-1/v3.1/C_TacSat_1_V3.1.io",
                         "name": "C_TacSat_1_V3.1.io"
                     }
@@ -925,7 +925,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/transtage/v3.1/C_V3.1.io",
                         "name": "C_V3.1.io"
                     }
@@ -982,7 +982,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/russia/soyuz-spacecraft/soyuz-ms/v1.0/Soyuz_V1.io",
                         "name": "Soyuz_V1.io"
                     }
@@ -1044,14 +1044,14 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-heavy/v2.1/Atlas_V_Heavy_Frost_V2.1.io",
                         "name": "Atlas_V_Heavy_Frost_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-heavy/v2.1/Atlas_V_Heavy_V2.1.io",
                         "name": "Atlas_V_Heavy_V2.1.io"
                     }
@@ -1065,14 +1065,14 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-heavy/v2.0/Atlas%20V%20Heavy%20Frost%20V2.io",
                         "name": "Atlas V Heavy Frost V2.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-heavy/v2.0/Atlas%20V%20Heavy%20V2.io",
                         "name": "Atlas V Heavy V2.io"
                     }
@@ -1086,14 +1086,14 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-heavy/v1.0/Atlas%20V%20Heavy%20Frost.io",
                         "name": "Atlas V Heavy Frost.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-heavy/v1.0/Atlas%20V%20Heavy.io",
                         "name": "Atlas V Heavy.io"
                     }
@@ -1156,14 +1156,14 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.1/Atlas_V_N22_Starliner_Frost_V2.1.io",
                         "name": "Atlas_V_N22_Starliner_Frost_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.1/Atlas_V_N22_Starliner_V2.1.io",
                         "name": "Atlas_V_N22_Starliner_V2.1.io"
                     }
@@ -1177,14 +1177,14 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.0/Starliner%20N22%20V2%20Frost.io",
                         "name": "Starliner N22 V2 Frost.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.0/Starliner%20N22%20V2%20No%20Frost.io",
                         "name": "Starliner N22 V2 No Frost.io"
                     }
@@ -1198,7 +1198,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v1.0/N22_V1.io",
                         "name": "N22_V1.io"
                     }
@@ -1266,21 +1266,21 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/551/v2.1/Atlas_V_551_Frost_V2.1.io",
                         "name": "Atlas_V_551_Frost_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/551/v2.1/Atlas_V_551_V2.1.io",
                         "name": "Atlas_V_551_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the fairing variants",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/551/v2.1/Atlas_V_Fairings_V2.1.io",
                         "name": "Atlas_V_Fairings_V2.1.io"
                     }
@@ -1348,21 +1348,21 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/541/v2.1/Atlas_V_541_Frost_V2.1.io",
                         "name": "Atlas_V_541_Frost_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/541/v2.1/Atlas_V_541_V2.1.io",
                         "name": "Atlas_V_541_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the fairing variants",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/541/v2.1/Atlas_V_Fairings_V2.1.io",
                         "name": "Atlas_V_Fairings_V2.1.io"
                     }
@@ -1430,21 +1430,21 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/531/v2.1/Atlas_V_531_Frost_V2.1.io",
                         "name": "Atlas_V_531_Frost_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/531/v2.1/Atlas_V_531_V2.1.io",
                         "name": "Atlas_V_531_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the fairing variants",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/531/v2.1/Atlas_V_Fairings_V2.1.io",
                         "name": "Atlas_V_Fairings_V2.1.io"
                     }
@@ -1512,21 +1512,21 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/521/v2.1/Atlas_V_521_Frost_V2.1.io",
                         "name": "Atlas_V_521_Frost_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/521/v2.1/Atlas_V_521_V2.1.io",
                         "name": "Atlas_V_521_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the fairing variants",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/521/v2.1/Atlas_V_Fairings_V2.1.io",
                         "name": "Atlas_V_Fairings_V2.1.io"
                     }
@@ -1594,21 +1594,21 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/511/v2.1/Atlas_V_511_Frost_V2.1.io",
                         "name": "Atlas_V_511_Frost_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/511/v2.1/Atlas_V_511_V2.1.io",
                         "name": "Atlas_V_511_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the fairing variants",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/511/v2.1/Atlas_V_Fairings_V2.1.io",
                         "name": "Atlas_V_Fairings_V2.1.io"
                     }
@@ -1676,21 +1676,21 @@
                     {
                         "description": "The digital io file of the frosted version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/501/v2.1/Atlas_V_501_Frost_V2.1.io",
                         "name": "Atlas_V_501_Frost_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the normal version",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/501/v2.1/Atlas_V_501_V2.1.io",
                         "name": "Atlas_V_501_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the fairing variants",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/501/v2.1/Atlas_V_Fairings_V2.1.io",
                         "name": "Atlas_V_Fairings_V2.1.io"
                     }
@@ -1754,7 +1754,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_pub.io",
                         "name": "Ariane_5_ECA_JUICE_V2.0_pub.io"
                     }
@@ -1810,7 +1810,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":true,
+                        "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/germany/spectrum/v1.0/Spectrum_V1.0.io",
                         "name": "Spectrum_V1.0.io"
                     }
@@ -1870,7 +1870,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/4/v1.0/Tskylon_4_V1.0.io",
                         "name": "Tskylon_4_V1.0.png"
                     }
@@ -1930,7 +1930,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/3/v1.1/Tskylon%203_V1.1.io",
                         "name": "Tskylon 3_V1.1.io"
                     }
@@ -1944,7 +1944,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/3/v1.0/Tskylon%203_V1.io",
                         "name": "Tskylon 3_V1.io"
                     }
@@ -2004,7 +2004,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/tsyklon/2/v1.0/Tskylon_2_V1.0.io",
                         "name": "Tskylon_2_V1.0.io"
                     }
@@ -2061,7 +2061,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v3.1/C_MOL_V3.1.io",
                         "name": "C_MOL_V3.1.io"
                     }
@@ -2075,7 +2075,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/c/mol/v2.0/C_V2.0_MOL.io",
                         "name": "C_V2.0_MOL.io"
                     }
@@ -2121,7 +2121,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/a/v3.1/A_V3.1.io",
                         "name": "A_V3.1.io"
                     }
@@ -2135,7 +2135,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/a/v3.0/A_V3.io",
                         "name": "A_V3.io"
                     }
@@ -2191,14 +2191,14 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/orion/icps/v2.0/V2_pub.io",
                         "name": "V2_pub.io"
                     },
                     {
                         "description": "The pdf instructions",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/orion/icps/v2.0/V2_instructions.pdf",
                         "name": "V2_instructions.pdf"
                     }
@@ -2254,14 +2254,14 @@
                     {
                         "description": "The digital io file of the normal fairing variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.0/V2.0.io",
                         "name": "V2.0.io"
                     },
                     {
                         "description": "The digital io file of the large fairing variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.0/V2.0_Big%20Fairing.io",
                         "name": "V2.0_Big Fairing.io"
                     }
@@ -2275,28 +2275,28 @@
                     {
                         "description": "The digital io file of the first flight variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/Terran_1_first_flight_V2.1.io",
                         "name": "Terran_1_first_flight_V2.1.io"
                     },
                     {
                         "description": "The pdf instructions of the first flight variant",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/Terran_1_first_flight_V2.1_Instructions.pdf",
                         "name": "Terran_1_first_flight_V2.1_Instructions.pdf"
                     },
                     {
                         "description": "The digital io file of the normal variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/Terran_1_V2.1.io",
                         "name": "Terran_1_V2.1.io"
                     },
                     {
                         "description": "The pdf instructions of the normal variant",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/terran/terran-1/v2.1/Terran_1_V2.1_Instructions.pdf",
                         "name": "Terran_1_V2.1_Instructions.pdf"
                     }
@@ -2351,7 +2351,7 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":true,
+                        "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/omega/v1.1/v1.1.io",
                         "name": "V1.1.io"
                     }
@@ -2396,21 +2396,21 @@
                         "name": "Energia2_V1.io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_V1_pub.io",
                         "type": "io",
-                        "allowViewer":true,
+                        "allowViewer": true,
                         "description": "The digital io file"
                     },
                     {
                         "name": "Boosters_V1.pdf",
                         "description": "The pdf instructions to the boosters",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia_2_Boosters_V1.pdf"
                     },
                     {
                         "description": "The pdf instructions to the core module",
                         "name": "Core_V1.pdf",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia_2_Core_V1.pdf"
                     }
                 ],
@@ -2456,7 +2456,7 @@
                         "name": "A1_V2.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-1/v2.0/A1_V2.io"
                     }
                 ],
@@ -2469,7 +2469,7 @@
                         "name": "A1_V3.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":true,
+                        "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-1/v3.0/A1_V3.io"
                     }
                 ],
@@ -2548,7 +2548,7 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-2/v2.0/A2_V2.io",
                         "name": "A2_V2.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "description": "The digital io file"
                     }
                 ],
@@ -2563,7 +2563,7 @@
                     {
                         "description": "",
                         "type": "io",
-                        "allowViewer":true,
+                        "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-2/v3.0/A2_V3.io",
                         "name": "A2_V3.io"
                     }
@@ -2618,14 +2618,14 @@
                         "name": "A3_V2.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-3/v2.0/A3_V2.io"
                     },
                     {
                         "name": "A3_V2.pdf",
                         "description": "The pdf instructions",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-3/v2.0/a3_v2.pdf"
                     }
                 ]
@@ -2638,7 +2638,7 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-3/v3.0/A3_V3.io",
                         "description": "",
                         "type": "io",
-                        "allowViewer":true,
+                        "allowViewer": true,
                         "name": "A3_V3.io"
                     }
                 ],
@@ -2690,13 +2690,13 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long--march-1b/v1/Long_March_1_V1.pdf",
                         "description": "The pdf instructions",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "name": "Long March 1B V1.pdf"
                     },
                     {
                         "name": "Long March 1B V1.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long--march-1b/v1/V1.io",
                         "description": "The digital io file"
                     }
@@ -2712,14 +2712,14 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long--march-1b/v2/Long_March_1B_V2.pdf",
                         "description": "The pdf instructions",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "name": "Long March 1B V2.pdf"
                     },
                     {
                         "description": "The digital io file",
                         "name": "Long March 1B V2.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long--march-1b/v2/V2_pub.io"
                     }
                 ]
@@ -2778,7 +2778,7 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/madv/v3.0/V3.io",
                         "name": "V3.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "description": "The digital io file"
                     }
                 ],
@@ -2832,13 +2832,13 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/alpaca/v2/ALPACA%20V2%20pub.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "name": "ALPACA_V2_pub.io"
                     },
                     {
                         "description": "The pdf instructions",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/alpaca/v2/ALPACA%20V2%20instructions.pdf",
                         "name": "ALPACA_V2_instructions.pdf"
                     }
@@ -2880,21 +2880,21 @@
                         "name": "V3.4_instructions.pdf",
                         "description": "The pdf instructions of the rocket",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.4/v3.4_instructions.pdf"
                     },
                     {
                         "name": "V3.4_pub.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.4/V3.4_pub.io"
                     },
                     {
                         "name": "legs_instructions.png",
                         "description": "The instructions on how to open the legs",
                         "type": "png",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.4/legs_instructions.png"
                     }
                 ],
@@ -2974,7 +2974,7 @@
                         "name": "V2.1.io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io",
                         "type": "io",
-                        "allowViewer":true,
+                        "allowViewer": true,
                         "description": "The digital io file"
                     }
                 ]
@@ -3017,14 +3017,14 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.1/v2.1_soyuz_fg.pdf",
                         "name": "V2.1_soyuz_fg.pdf",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "description": "The pdf instructions"
                     },
                     {
                         "name": "V2.1_soyuz_fg_pub.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.1/V2.1_soyuz_fg_pub.io"
                     }
                 ]
@@ -3081,14 +3081,14 @@
                         "description": "The pdf instructions",
                         "name": "V2.1_soyuz_progress_instructions.pdf",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-progress/v2.1/v2.1_soyuz_progress_instructions.pdf"
                     },
                     {
                         "description": "The digital io file",
                         "name": "V2.1_soyuz_progress_pub.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-progress/v2.1/V2.1_soyuz_progress_pub.io"
                     }
                 ]
@@ -3143,7 +3143,7 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/zq-2/v2.3/V2.3.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "name": "V2.3.io"
                     }
                 ],
@@ -3218,14 +3218,14 @@
                         "description": "The digital io file of the frosted variant",
                         "name": " Atlas V 541 Mars 2020_V2.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.0/Atlas%20V%20541%20Mars%202020%20Frost%20V2.io"
                     },
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.0/Atlas%20V%20541%20Mars%202020_V2.io",
                         "name": " Atlas V 541 Mars 2020 Frost V2.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "description": "The digital io file of the non-frosted variant"
                     }
                 ],
@@ -3239,14 +3239,14 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20Frost%20V2.1.io",
                         "description": "The digital io file of the frosted variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "name": " Atlas V 541 Mars 2020 Frost V2.1.io"
                     },
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20V2.1.io",
                         "description": "The digital io file of the non-frosted variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "name": " Atlas V 541 Mars 2020 V2.1.io"
                     }
                 ],
@@ -3289,7 +3289,7 @@
                         "name": " Atlas V 551 Juno V2.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/v2.0/Atlas%20V%20551%20Juno%20V2.io"
                     }
                 ],
@@ -3304,14 +3304,14 @@
                         "description": "The digital io file of the frosted variant",
                         "name": " Atlas V 551 Juno Frosted V2.1.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/v2.1/Atlas%20V%20551%20Juno%20Frosted%20V2.1.io"
                     },
                     {
                         "name": " Atlas V 551 Juno V2.1.io",
                         "description": "The digital io file of the non-frosted variant",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/v2.1/Atlas%20V%20551%20Juno%20V2.1.io"
                     }
                 ],
@@ -3390,7 +3390,7 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/dnepr/v2.1/V2.1.io",
                         "name": "V2.1.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "description": "The digital io file"
                     }
                 ],
@@ -3406,7 +3406,7 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/dnepr/v2.2/V2.2.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "name": "V2.2.io"
                     }
                 ]
@@ -3460,14 +3460,14 @@
                         "description": "The digital io file",
                         "name": " V2_pub.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/japan/epsilon/launchpad/V2_pub.io"
                     },
                     {
                         "link": "https://bricksafe.com/files/SkySaac/website/110/japan/epsilon/launchpad/v2.pdf",
                         "name": " v2.pdf",
                         "type": "pdf",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "description": "The digital pdf instructions"
                     }
                 ]
@@ -3502,7 +3502,7 @@
                         "description": "",
                         "name": " Ariane_5_V1.9_pub.io",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/normal/Ariane_5_V1.9_pub.io"
                     }
                 ],
@@ -3577,7 +3577,7 @@
                         "name": "V2.io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/russia/maks/v2.0/V2.io",
                         "type": "io",
-                        "allowViewer":false
+                        "allowViewer": false
                     }
                 ],
                 "version": "V2.0"

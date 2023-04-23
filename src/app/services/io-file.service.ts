@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BufferGeometry, Group, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
+import { BufferGeometry, Group, Line, LineBasicMaterial, LineSegments, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
 import { LdrPart, LdrSubmodel, PartReference } from './ldrawParts';
 import { LdrawColorService } from './ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
@@ -28,10 +28,11 @@ export class IoFileService {
   }
 
   async getModel(ioUrl: string): Promise<Group> {
-    let ldrUrl = ioUrl.slice(0,ioUrl.length-2) + "ldr"
+    let ldrUrl = ioUrl.slice(0, ioUrl.length - 2) + "ldr"
     //console.log("Fetching MOC:", this.backendFetchUrl + ldrUrl);
     const contents = await fetch(this.backendFetchUrl + ldrUrl);
     let moc = this.createMesh(await contents.text());
+    this.allPartsMap.clear();
     return moc;
   }
 
@@ -39,7 +40,7 @@ export class IoFileService {
   private createMesh(ldrFile: string): Group {
     const ldrObjects = ldrFile.split("0 NOSUBMODEL"); //0 = submodels, 1 = parts
 
-    if(ldrObjects.length != 2){
+    if (ldrObjects.length != 2) {
       console.log("Error: file is formated wrong, no submodel divider found");
       return new Group();
     }
@@ -112,8 +113,32 @@ export class IoFileService {
         referenceSubmodelGroup.applyMatrix4(reference.transformMatrix);
         submodelGroup.add(referenceSubmodelGroup);
       } else {// reference is a part
-        let partReferenceMap = this.getPart(reference.name);
-        partReferenceMap.forEach((points, color) => { //for each color of the part an own mesh gets created
+        let referencedPart = this.resolvePart(reference.name);
+        referencedPart.pointColorMap.forEach((points, color) => { //for each color of the part an own mesh gets created
+          let partGeometry = new BufferGeometry();
+          partGeometry.setFromPoints(points);
+
+          //FIX transformation matrix for 28192
+          if (reference.name == "28192.dat") {
+            partGeometry = partGeometry.rotateY(-Math.PI / 2);
+            partGeometry = partGeometry.translate(-10, -24, 0);
+          }
+
+          partGeometry.applyMatrix4(reference.transformMatrix);
+          partGeometry.computeVertexNormals();
+          partGeometry.computeBoundingBox();
+          partGeometry.normalizeNormals();
+          partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
+
+          let material; //TODO implement colors fully -> might have to remove resolved submodels to get color all the way to the bottom to each part that needs it
+          if (color == 24 || color == 16 || color == -1 || color == -2) //those are not valid colors or mean that the color gets resolved in a submodel above, not fully implemented yet
+            material = new MeshStandardMaterial({ color: this.ldrawColorService.resolveColor(reference.color) });
+          else
+            material = new MeshStandardMaterial({ color: this.ldrawColorService.resolveColor(color) });
+          submodelGroup.add(new Mesh(partGeometry, material));
+        });
+
+        referencedPart.lineColorMap.forEach((points, color) => { //for each color of the part an own mesh gets created
           let partGeometry = new BufferGeometry();
           partGeometry.setFromPoints(points);
 
@@ -130,10 +155,10 @@ export class IoFileService {
 
           let material; //TODO implement colors fully -> might have to remove resolved submodels to get color all the way to the bottom to each part that needs it
           if (color == 24 || color == 16 || color == -1 || color == -2) //those are not valid colors or mean that the color gets resolved in a submodel above, not fully implemented yet
-            material = new MeshStandardMaterial({ color: this.ldrawColorService.resolveColor(reference.color) });
+            material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(reference.color) });
           else
-            material = new MeshStandardMaterial({ color: this.ldrawColorService.resolveColor(color) });
-          submodelGroup.add(new Mesh(partGeometry, material));
+            material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(color) });
+          submodelGroup.add(new LineSegments(partGeometry, material));
         });
       }
     }
@@ -143,7 +168,7 @@ export class IoFileService {
     return submodelGroup;
   }
 
-  private getPart(partName: string): Map<number, Vector3[]> {
+  private resolvePart(partName: string): LdrPart {
     let ldrPart = this.allPartsMap.get(partName);
     if (ldrPart && !ldrPart.isResolved) {
       //resolve Part
@@ -151,14 +176,9 @@ export class IoFileService {
       ldrPart.references.forEach(partReference => {
         let referencedPart = this.allPartsMap.get(partReference.name)
         if (referencedPart) {
-          let referenceColorPointMap = this.getPart(partReference.name);
-          if (partReference.invert) {
-            referenceColorPointMap.forEach((referencePoints, referenceColor) => {
-              referenceColorPointMap.set(referenceColor, referencePoints.reverse());
-            });
-          }
+          let referencedPart = this.resolvePart(partReference.name);
           //for all colors and their vertices that the referenced part has
-          referenceColorPointMap.forEach((referencePoints, referenceColor) => {
+          referencedPart.pointColorMap.forEach((referencePoints, referenceColor) => {
             let transformedPoints: Vector3[] = [];
             //transform points with transformation matrix of the reference to the part
             for (const referencePoint of referencePoints) {
@@ -172,7 +192,6 @@ export class IoFileService {
             if (partReference.invert) {
               transformedPoints = transformedPoints.reverse();
             }
-
             //append points of referenced part to the upper part to reduce the size of render hierachy
             if (ldrPart?.pointColorMap.has(referenceColor)) {
               let fullList = ldrPart?.pointColorMap.get(referenceColor)?.concat(transformedPoints)
@@ -180,16 +199,37 @@ export class IoFileService {
             } else
               ldrPart?.pointColorMap.set(referenceColor, transformedPoints);
           });
+
+          referencedPart.lineColorMap.forEach((referencePoints, referenceColor) => {
+            let transformedPoints: Vector3[] = [];
+            //transform points with transformation matrix of the reference to the part
+            for (const referencePoint of referencePoints) {
+              let pointVector4: Vector4;
+
+              pointVector4 = new Vector4(referencePoint.x, referencePoint.y, referencePoint.z, 1);
+
+              pointVector4 = pointVector4.applyMatrix4(partReference.transformMatrix);
+              transformedPoints.push(new Vector3(pointVector4.x, pointVector4.y, pointVector4.z));
+            }
+            if (partReference.invert) {
+              transformedPoints = transformedPoints.reverse();
+            }
+            //append points of referenced part to the upper part to reduce the size of render hierachy
+            if (ldrPart?.lineColorMap.has(referenceColor)) {
+              let fullList = ldrPart?.lineColorMap.get(referenceColor)?.concat(transformedPoints)
+              ldrPart?.lineColorMap.set(referenceColor, fullList ? fullList : []);
+            } else
+              ldrPart?.lineColorMap.set(referenceColor, transformedPoints);
+          });
         }
       });
       ldrPart.isResolved = true;
-      return ldrPart.pointColorMap;
+      return ldrPart;
     }
     else {
-      let resolvedMap = ldrPart?.pointColorMap;
-      if (!resolvedMap)
-        return new Map<number, Vector3[]>;
-      return resolvedMap;
+      if (ldrPart)
+        return ldrPart;
+      throw ("Error: Part could not be found: " + partName);
     }
   }
 
@@ -201,6 +241,7 @@ export class IoFileService {
     let references: PartReference[] = [];
     let invertNext: boolean = false;
     let pointColorMap = new Map<number, Vector3[]>;
+    let lineColorMap = new Map<number, Vector3[]>;
 
     //Go through all lines of text and parse them
     partLines.forEach(partLine => {
@@ -230,9 +271,16 @@ export class IoFileService {
         pointColorMap.set(parsed.color, entry.concat(parsed.points));
         invertNext = false;
       }
+      else if (partLine.startsWith("2")) { //line is a line
+        let parsed = this.parseLineTypeTwo(partLine);
+        let entry = lineColorMap.get(parsed.color);
+        entry == undefined ? entry = [] : undefined;
+        lineColorMap.set(parsed.color, entry.concat(parsed.points));
+        invertNext = false;
+      }
     });
 
-    return new LdrPart(partName, pointColorMap, references);
+    return new LdrPart(partName, pointColorMap, lineColorMap, references);
   }
 
   //This functions parses a line type one, which is a reference to a part or a submodel in a ldr file
@@ -273,6 +321,39 @@ export class IoFileService {
     output.push(input.slice(finalIndex));
 
     return output;
+  }
+
+  //This functions parses a line type two, which is a line
+  private parseLineTypeTwo(line: string) {
+    let splitLine = line.split(" ");
+    if (splitLine.length < 8) {
+      throw "line with too few coordinates";
+    }
+
+    return {
+      color: parseInt(splitLine[1]),
+      points: [
+        new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
+        new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7]))
+      ]
+    }
+  }
+
+  //This functions parses a line type five, which is an optional line
+  private parseLineTypeFive(line: string) {
+    let splitLine = line.split(" ");
+    if (splitLine.length < 10) {
+      throw "optional line with too few coordinates";
+    }
+
+    return {
+      color: parseInt(splitLine[1]),
+      points: [
+        new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
+        new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
+        new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]))
+      ]
+    }
   }
 
   //This functions parses a line type three, which is a triangle

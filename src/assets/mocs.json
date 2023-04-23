@@ -2469,7 +2469,7 @@
                         "name": "A1_V3.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer":true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-1/v3.0/A1_V3.io"
                     }
                 ],
@@ -2563,7 +2563,7 @@
                     {
                         "description": "",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer":true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-2/v3.0/A2_V3.io",
                         "name": "A2_V3.io"
                     }
@@ -2638,7 +2638,7 @@
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-3/v3.0/A3_V3.io",
                         "description": "",
                         "type": "io",
-                        "allowViewer":false,
+                        "allowViewer":true,
                         "name": "A3_V3.io"
                     }
                 ],

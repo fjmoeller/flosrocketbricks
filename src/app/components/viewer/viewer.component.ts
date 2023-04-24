@@ -32,6 +32,7 @@ export class ViewerComponent {
   createThreeJsBox(mocGroup: Group): void {
 
     const canvas = document.getElementById('canvas-box');
+    const canvasDiv = document.getElementById('canvas-viewer');
     const scene = new Scene();
 
     const pointLight = new PointLight(0xffffff, 0.2);
@@ -52,29 +53,39 @@ export class ViewerComponent {
 
     scene.add(mocGroup);
 
-    const canvasSizes = {
-      width: window.innerWidth / 2,
-      height: window.innerHeight / 2,
+    let canvasSizes= {
+      width: window.innerWidth / 3,
+        height: window.innerWidth * (3 / 12),
     };
+    if (canvasDiv)
+      canvasSizes = {
+        width: canvasDiv.clientWidth,
+        height: canvasDiv.clientWidth * (3 / 4)
+      };
+
     const camera = new PerspectiveCamera(
       50,
       canvasSizes.width / canvasSizes.height,
       0.1,
       10000
     );
-    
+
+    if (!canvas || !canvasDiv) {
+      return;
+    }
+
+    console.log("Canvs: " + canvasSizes.width + "," + canvasSizes.height)
+
     const mocBoundingBox = new Box3();
     mocBoundingBox.setFromObject(mocGroup);
     camera.position.x = (mocBoundingBox.max.x + mocBoundingBox.min.x) / 2
     camera.position.y = (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2
-    camera.position.z =(mocBoundingBox.max.z + mocBoundingBox.min.z) / 2
+    camera.position.z = (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2
     camera.translateZ(200);
-    camera.lookAt(new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2,(mocBoundingBox.max.y + mocBoundingBox.min.y) / 2,(mocBoundingBox.max.z + mocBoundingBox.min.z) / 2));
+    camera.lookAt(new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2, (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2, (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2));
     scene.add(camera);
 
-    if (!canvas) {
-      return;
-    }
+
 
     const renderer = new WebGLRenderer({ antialias: true, canvas: canvas });
     renderer.setClearColor(0x19212D, 1);
@@ -84,8 +95,8 @@ export class ViewerComponent {
     renderer.shadowMap.type = BasicShadowMap;
 
     window.addEventListener('resize', () => {
-      canvasSizes.width = window.innerWidth / 3;
-      canvasSizes.height = window.innerHeight / 3;
+      canvasSizes.width = canvasDiv.clientWidth;
+      canvasSizes.height = canvasDiv.clientWidth * (3 / 4);
 
       camera.aspect = canvasSizes.width / canvasSizes.height;
       camera.updateProjectionMatrix();
@@ -95,19 +106,19 @@ export class ViewerComponent {
     });
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.target = new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2,(mocBoundingBox.max.y + mocBoundingBox.min.y) / 2,(mocBoundingBox.max.z + mocBoundingBox.min.z) / 2);
-    
+    controls.target = new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2, (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2, (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2);
+
     const animateGeometry = () => {
       controls.update();
       // Render
       renderer.render(scene, camera);
       // Call tick again on the next frame
-      if(this._showViewer)
+      if (this._showViewer)
         window.requestAnimationFrame(animateGeometry);
     };
     controls.update();
     renderer.render(scene, camera);
-    
+
     animateGeometry();
   }
 

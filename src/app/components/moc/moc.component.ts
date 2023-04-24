@@ -34,12 +34,15 @@ export class MocComponent implements OnInit {
     });
   }
 
-  toggleViewer(url:any): void {
-    this.viewerLink = url;
-    if(this.viewerLink == url)
+  toggleViewer(url: any): void {
+    if (this.viewerLink == url)
       this.showViewer = !this.showViewer;
-    else
+    else {
+      this.viewerLink = url;
       this.showViewer = true;
+    }
+
+
   }
 
   sortedVersions(versions: Version[] | undefined): Version[] {

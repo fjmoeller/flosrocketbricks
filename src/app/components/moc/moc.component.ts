@@ -36,10 +36,10 @@ export class MocComponent implements OnInit {
 
   toggleViewer(url:any): void {
     this.viewerLink = url;
-    this.showViewer = !this.showViewer;
-    //set viewer url
-    //set window size
-    //add missing isar part
+    if(this.viewerLink == url)
+      this.showViewer = !this.showViewer;
+    else
+      this.showViewer = true;
   }
 
   sortedVersions(versions: Version[] | undefined): Version[] {

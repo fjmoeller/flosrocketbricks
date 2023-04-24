@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class FileComponent implements OnInit {
 
   @Input('link') filelink = "";
+  @Input('descriptor') descriptor = "";
   @Input('name') filename = "";
   @Input('description') description = "";
   @Input('type') type = "";

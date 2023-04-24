@@ -229,25 +229,28 @@
             </div>
             <div class="row mt-1">
                 <div class="accordion text-light" id="accordion">
-                    <div *ngFor="let version of sortedVersions((moc | async)?.versions)"
+                    <div *ngFor="let version of sortedVersions((moc | async)?.versions);let indexOfelement=index;"
                         class="accordion-item text-light">
-                        <h2 class="accordion-header text-light" [id]="'heading'+version.version">
-                            <button class="accordion-button text-light collapsed" style="background-color: rgb(26,30,33)"
-                                type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+version.version"
-                                [attr.aria-controls]="version.version" aria-expanded="true">
+                        <h2 class="accordion-header text-light" [id]="'heading'+indexOfelement">
+                            <button class="accordion-button text-light collapsed"
+                                style="background-color: rgb(26,30,33)" type="button" data-bs-toggle="collapse"
+                                [attr.data-bs-target]="'#body'+indexOfelement"
+                                [attr.aria-controls]="'body'+indexOfelement" aria-expanded="true">
                                 {{version.version}} {{version.versionExtra}}
                             </button>
                         </h2>
-                        <div [id]="version.version" class="accordion-collapse collapse text-light"
-                            style="background-color: rgb(33,37,41)" [attr.aria-labelledby]="'heading'+version.version">
+                        <div [id]="'body'+indexOfelement" class="accordion-collapse collapse text-light"
+                            style="background-color: rgb(33,37,41)" [attr.aria-labelledby]="'heading'+indexOfelement">
                             <div class="accordion-body">
                                 <div *ngIf="version.changelog!=''"><strong>Changelog:</strong> <br>
                                     {{version.changelog}} <br></div>
                                 <hr *ngIf="version.changelog!=''" class="my-2 d-inline-block mx-auto"
                                     style="width: 100%; background-color: #7c4dff; height: 2px" />
                                 <strong>Files:</strong>
-                                <app-file *ngFor="let file of version.files" (viewerEvent)="toggleViewer($event)" [link]="file.link" [name]="file.name"
-                                    [description]="file.description" [type]="file.type" [viewerAllowed]="file.allowViewer">
+                                <app-file *ngFor="let file of version.files;let indexOfFile=index;"
+                                    (viewerEvent)="toggleViewer($event)" [link]="file.link" [name]="file.name"
+                                    [description]="file.description" [type]="file.type"
+                                    [viewerAllowed]="file.allowViewer" [descriptor]="indexOfelement+','+indexOfFile">
                                 </app-file>
                             </div>
                         </div>

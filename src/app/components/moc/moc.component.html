@@ -232,9 +232,9 @@
                     <div *ngFor="let version of sortedVersions((moc | async)?.versions)"
                         class="accordion-item text-light">
                         <h2 class="accordion-header text-light" [id]="'heading'+version.version">
-                            <button class="accordion-button text-light" style="background-color: rgb(26,30,33)"
+                            <button class="accordion-button text-light collapsed" style="background-color: rgb(26,30,33)"
                                 type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+version.version"
-                                [attr.aria-controls]="version.version">
+                                [attr.aria-controls]="version.version" aria-expanded="false">
                                 {{version.version}} {{version.versionExtra}}
                             </button>
                         </h2>

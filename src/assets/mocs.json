@@ -1206,7 +1206,7 @@
         "difficulty": "Proficient",
         "lastupdate": "2023-03-31",
         "dateCreated": "2023-03-31",
-        "related": [],
+        "related": [ 50 ],
         "updateMessage": "",
         "region": "USA",
         "scale": "110",
@@ -1316,7 +1316,8 @@
             29,
             28,
             14,
-            13
+            13,
+            50
         ],
         "updateMessage": "",
         "region": "USA",
@@ -1398,7 +1399,8 @@
             29,
             28,
             14,
-            13
+            13,
+            50
         ],
         "updateMessage": "",
         "region": "USA",
@@ -1480,7 +1482,8 @@
             29,
             28,
             14,
-            13
+            13,
+            50
         ],
         "updateMessage": "",
         "region": "USA",
@@ -1562,7 +1565,8 @@
             29,
             28,
             14,
-            13
+            13,
+            50
         ],
         "updateMessage": "",
         "region": "USA",
@@ -1644,7 +1648,8 @@
             30,
             28,
             14,
-            13
+            13,
+            50
         ],
         "updateMessage": "",
         "region": "USA",
@@ -1726,7 +1731,8 @@
             30,
             29,
             14,
-            13
+            13,
+            50
         ],
         "updateMessage": "",
         "region": "USA",
@@ -3277,7 +3283,8 @@
             30,
             29,
             28,
-            14
+            14,
+            50
         ],
         "designerExtra": "",
         "parts": 977,
@@ -3413,7 +3420,8 @@
             30,
             29,
             28,
-            13
+            13,
+            50
         ],
         "scale": "110",
         "lastupdate": "2023-03-06",

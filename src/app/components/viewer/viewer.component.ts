@@ -77,11 +77,8 @@ export class ViewerComponent {
       10000
     );
 
-    if (!canvas || !canvasDiv) {
+    if (!canvas || !canvasDiv)
       return;
-    }
-
-    console.log("Canvs: " + canvasSizes.width + "," + canvasSizes.height)
 
     const mocBoundingBox = new Box3();
     mocBoundingBox.setFromObject(mocGroup);
@@ -91,8 +88,6 @@ export class ViewerComponent {
     camera.translateZ(200);
     camera.lookAt(new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2, (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2, (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2));
     scene.add(camera);
-
-
 
     const renderer = new WebGLRenderer({ antialias: true, canvas: canvas });
     renderer.setClearColor(0x19212D, 1);

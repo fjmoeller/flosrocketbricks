@@ -1,5 +1,69 @@
 [
     {
+        "id": 52,
+        "type": "spacecraft",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)"
+        ],
+        "mocDescription": "This is a MOC of the Shenzhou spacecraft. Using the stand it can be docked to the front or back docking port of the Tiangong space station. Without the stand it can be docked to the bottom docking port.",
+        "rocketDescription": "The Shenzhou is a Chinese crewed spacecraft which can carry up to three people into low earth orbit. It first flew in 1999, weighs around 8 tons and is launched using a Long March 2F rocket from Jiuquan in China.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": "Not tested",
+        "difficultyExtra": "",
+        "lastupdate": "2023-04-28",
+        "dateCreated": "2022-02-12",
+        "related": [],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/china/shenzhou/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "7.3x16.2x2.4cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 67,
+        "partsExtra": "The stand has 51 parts. Both the spacecraft and the stand can be build completely out of Lego bricks, the spacecraft requires some printed pieces though.",
+        "title": "Shenzhou",
+        "stability": "Good",
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/shenzhou/v3.0/Shenzhou_V3.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/shenzhou/v3.0/Shenzhou_V3.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/shenzhou/v3.0/Shenzhou_V3.0_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/shenzhou/v3.0/Shenzhou_V3.0.io",
+                        "name": "Shenzhou_V3.0.io"
+                    },
+                    {
+                        "description": "The digital io file of the stand without the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/shenzhou/v3.0/Shenzhou_Stand_V3.0.io",
+                        "name": "Shenzhou_Stand_V3.0.io"
+                    }
+                ],
+                "version": "V3.0"
+            }
+        ]
+    },
+    {
         "id": 51,
         "type": "spacestation",
         "typeExtra": "",
@@ -12,7 +76,7 @@
         "companyExtra": "",
         "difficulty": "Not tested",
         "difficultyExtra": "",
-        "lastupdate": "2022-04-28",
+        "lastupdate": "2023-04-28",
         "dateCreated": "2022-11-03",
         "related": [],
         "updateMessage": "",

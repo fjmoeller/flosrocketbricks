@@ -34,6 +34,34 @@ export class FrontTag {
   selected: boolean = false;
 }
 
+export class Collection {
+  id: number;
+  name: string;
+  description: string;
+  subCollections: SubCollection[];
+
+  constructor(id: number, name: string, description: string, subCollections: SubCollection[]) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.subCollections = subCollections;
+  }
+}
+
+export class SubCollection {
+  id: number;
+  name: string;
+  description: string;
+  mocs: number[];
+
+  constructor(id: number, name: string, description: string, mocs: number[]) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.mocs = mocs;
+  }
+}
+
 export class Moc {
   id: number;
   internalColor: string;

@@ -49,5 +49,6 @@
 /moc/48/titan-ivb/
 /moc/49/juice/
 /moc/50/lc-41-atlas-v-transporter/
+/moc/51/tiangong-space-station/
 /
 /about/

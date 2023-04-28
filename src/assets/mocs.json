@@ -57,11 +57,25 @@
                     "name": "Launchpad_V3.2_pub.io"
                 },
                 {
-                    "description": "The digital io file",
+                    "description": "The digital pdf instructions",
                     "type": "pdf",
                     "allowViewer": false,
                     "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/lc-41/transporter/v3.2/LC_41_Atlas_V_Launchpad_instructions_V3.2.pdf",
                     "name": "LC_41_Atlas_V_Launchpad_instructions_V3.2.pdf"
+                },
+                {
+                    "description": "The instructions to the small stability upgrades that might be needed",
+                    "type": "png",
+                    "allowViewer": false,
+                    "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/lc-41/transporter/v3.2/Stability_Upgrade_Instructions.png",
+                    "name": "Stability_Upgrade_Instructions.png"
+                },
+                {
+                    "description": "The digital io file for the stability improvements",
+                    "type": "io",
+                    "allowViewer": false,
+                    "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/lc-41/transporter/v3.2/Stability_Upgrade_for_V3.2.io",
+                    "name": "Stability_Upgrade_for_V3.2.io"
                 }
             ],
             "version": "V3.2"

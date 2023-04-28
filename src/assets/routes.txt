@@ -51,5 +51,6 @@
 /moc/50/lc-41-atlas-v-transporter/
 /moc/51/tiangong-space-station/
 /moc/52/shenzhou/
+/moc/53/tianzhou/
 /
 /about/

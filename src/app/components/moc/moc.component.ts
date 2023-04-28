@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Moc, Version } from '../classes';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
@@ -10,7 +10,7 @@ import { map, Observable, tap } from 'rxjs';
   templateUrl: './moc.component.html',
   styleUrls: ['./moc.component.sass']
 })
-export class MocComponent implements OnInit {
+export class MocComponent implements OnInit,OnDestroy {
   moc!: Observable<Moc>;
   relatedMocs!: Observable<Moc[]>;
   viewerLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io"; //default link
@@ -41,8 +41,10 @@ export class MocComponent implements OnInit {
       this.viewerLink = url;
       this.showViewer = true;
     }
+  }
 
-
+  ngOnDestroy():void{
+    this.showViewer = false
   }
 
   sortedVersions(versions: Version[] | undefined): Version[] {

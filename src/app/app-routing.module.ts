@@ -9,7 +9,6 @@ import { ViewerComponent } from './components/viewer/viewer.component';
 
 const routes: Routes = [
   { path: 'moc/:id/:name', component: MocComponent },
-  { path: 'viewer', component: ViewerComponent },
   { path: 'moc/:id', component: MocProxyComponent },
   { path: 'about', component: AboutComponent },
   { path: 'search', component: SearchComponent },

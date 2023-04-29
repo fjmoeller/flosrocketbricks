@@ -56,5 +56,6 @@
 /moc/55/diamant-b/
 /moc/56/diamant-bp4/
 /moc/57/skylon/
+/moc/58/europa-1/
 /
 /about/

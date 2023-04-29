@@ -125,7 +125,6 @@ export class IoFileService {
           } //FIX transformation matrix for 37762
           else if (reference.name == "37762.dat") {
             partGeometry = partGeometry.translate(0, -8, 0);
-            console.log("Fixed candle")
           }
 
           partGeometry.applyMatrix4(reference.transformMatrix);
@@ -153,7 +152,6 @@ export class IoFileService {
           } //FIX transformation matrix for 37762
           else if (reference.name == "37762.dat") {
             partGeometry = partGeometry.translate(0, -8, 0);
-            console.log("Fixed candle")
           }
 
           partGeometry.applyMatrix4(reference.transformMatrix);

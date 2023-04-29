@@ -52,5 +52,8 @@
 /moc/51/tiangong-space-station/
 /moc/52/shenzhou/
 /moc/53/tianzhou/
+/moc/54/diamant-a/
+/moc/55/diamant-b/
+/moc/56/diamant-bp4/
 /
 /about/

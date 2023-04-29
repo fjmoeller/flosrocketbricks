@@ -122,6 +122,10 @@ export class IoFileService {
           if (reference.name == "28192.dat") {
             partGeometry = partGeometry.rotateY(-Math.PI / 2);
             partGeometry = partGeometry.translate(-10, -24, 0);
+          } //FIX transformation matrix for 37762
+          else if (reference.name == "37762.dat") {
+            partGeometry = partGeometry.translate(0, -8, 0);
+            console.log("Fixed candle")
           }
 
           partGeometry.applyMatrix4(reference.transformMatrix);
@@ -146,6 +150,10 @@ export class IoFileService {
           if (reference.name == "28192.dat") {
             partGeometry = partGeometry.rotateY(-Math.PI / 2);
             partGeometry = partGeometry.translate(-10, -24, 0);
+          } //FIX transformation matrix for 37762
+          else if (reference.name == "37762.dat") {
+            partGeometry = partGeometry.translate(0, -8, 0);
+            console.log("Fixed candle")
           }
 
           partGeometry.applyMatrix4(reference.transformMatrix);

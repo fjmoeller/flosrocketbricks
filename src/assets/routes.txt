@@ -57,5 +57,7 @@
 /moc/56/diamant-bp4/
 /moc/57/skylon/
 /moc/58/europa-1/
+/moc/59/long-march-7/
+/moc/60/long-march-7a/
 /
 /about/

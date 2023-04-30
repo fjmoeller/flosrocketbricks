@@ -1,5 +1,121 @@
 [
     {
+        "id": 60,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_7",
+            "https://space.skyrocket.de/doc_lau_det/cz-7a.htm"
+        ],
+        "mocDescription": "This is a MOC of the Long March 7A rocket. The four boosters can be seperated form the core. The second stage can be seperated from the core stage and the third stage can be seperated from the second stage. The payload fairing holds some space for a small payload.",
+        "rocketDescription": "The Long March 7A rocket (also known as LM-7A or CZ-7A) is a Chinese orbital rocket. It has four boosters and two stages fueled by RP-1/LOX and a third LH2/LOX fueled stage. It has a payload capacity of around 6 tons to GTO and first launched in 2020.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": "Not tested",
+        "difficultyExtra": "",
+        "lastupdate": "2023-04-30",
+        "dateCreated": "2021-12-23",
+        "related": [59],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-7/long-march-7a/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "9.1x9.1x54.2cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 1206,
+        "partsExtra": "The rocket can be build completely out of Lego bricks.",
+        "title": "Long March 7A",
+        "stability": "Not tested",
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7a/v3.1/Long_March_7A_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7a/v3.1/Long_March_7A_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7a/v3.1/Long_March_7A_V3.1_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7a/v3.1/Long_March_7A_V3.1.io",
+                        "name": "Long_March_7A_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
+        "id": 59,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_7",
+            "https://space.skyrocket.de/doc_lau/cz-7.htm"
+        ],
+        "mocDescription": "This is a MOC of the Long March 7 rocket. The four boosters can be seperated form the core. The second stage can be seperated from the core stage. The payload fairing holds some space for a small payload.",
+        "rocketDescription": "The Long March 7 rocket (also known as LM-7 or CZ-7) is a Chinese orbital rocket. It has four boosters and two stages, all fueled by RP-1/LOX. It has a payload capacity of around 13 tons to LEO and first launched in 2016.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": "Not tested",
+        "difficultyExtra": "",
+        "lastupdate": "2023-04-30",
+        "dateCreated": "2021-12-23",
+        "related": [60],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-7/long-march-7/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "9.1x9.1x48.6cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 1152,
+        "partsExtra": "The rocket can be build completely out of Lego bricks.",
+        "title": "Long March 7",
+        "stability": "Not tested",
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7/v3.1/Long_March_7_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7/v3.1/Long_March_7_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7/v3.1/Long_March_7_V3.1_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7/v3.1/Long_March_7_V3.1.io",
+                        "name": "Long_March_7_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
         "id": 58,
         "type": "rocket",
         "typeExtra": "",
@@ -143,7 +259,9 @@
         "difficultyExtra": "",
         "lastupdate": "2023-04-29",
         "dateCreated": "2022-02-06",
-        "related": [55.54],
+        "related": [
+            55.54
+        ],
         "updateMessage": "",
         "region": "France",
         "regionExtra": "",
@@ -198,7 +316,9 @@
         "difficultyExtra": "",
         "lastupdate": "2023-04-29",
         "dateCreated": "2022-02-06",
-        "related": [56.54],
+        "related": [
+            56.54
+        ],
         "updateMessage": "",
         "region": "France",
         "regionExtra": "",
@@ -253,7 +373,9 @@
         "difficultyExtra": "",
         "lastupdate": "2023-04-29",
         "dateCreated": "2022-02-06",
-        "related": [55.56],
+        "related": [
+            55.56
+        ],
         "updateMessage": "",
         "region": "France",
         "regionExtra": "",

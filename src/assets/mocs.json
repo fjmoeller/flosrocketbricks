@@ -2966,7 +2966,7 @@
     },
     {
         "id": 1,
-        "updateMessage": "If you intend to build this MOC, keep in mind that it will get an update in the next few weeks, that greatly improves the MOCs stability!",
+        "updateMessage": "",
         "regionExtra": "",
         "dimensionsExtra": "",
         "related": [],
@@ -2981,6 +2981,34 @@
         "company": "",
         "title": "Energia 2",
         "versions": [
+            {
+                "version": "V1.1",
+                "files": [
+                    {
+                        "name": "Energia 2_V1.1_pub.io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia%202_V1.1_pub.io",
+                        "type": "io",
+                        "allowViewer": true,
+                        "description": "The digital io file"
+                    },
+                    {
+                        "name": "Energia_2_Boosters_V1.1.pdf",
+                        "description": "The pdf instructions to the boosters",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia_2_Boosters_V1.1.pdf"
+                    },
+                    {
+                        "description": "The pdf instructions to the core module",
+                        "name": "Energia_2_Core_V1.1.pdf",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia_2_Core_V1.1.pdf"
+                    }
+                ],
+                "changelog": "",
+                "versionExtra": ""
+            },
             {
                 "version": "V1.0",
                 "files": [
@@ -3021,19 +3049,19 @@
         "scale": "110",
         "internalColorExtra": "",
         "type": "rocket",
-        "lastupdate": "2023-03-06",
+        "lastupdate": "2023-04-30",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_cover_final.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_5.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_6.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/energia/energia-2/v1.0/Energia%202_7.png"
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia%202_V1.1_0.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia%202_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia%202_V1.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia%202_V1.1_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia%202_V1.1_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia%202_V1.1_5.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia%202_V1.1_6.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-2/v1.1/Energia%202_V1.1_7.png"
         ],
         "designerExtra": "",
-        "parts": 3393,
+        "parts": 3417,
         "dimensions": "32x56.8x17.4cm",
         "difficultyExtra": "",
         "region": "Russia"

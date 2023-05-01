@@ -1,5 +1,121 @@
 [
     {
+        "id": 62,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_8",
+            "https://space.skyrocket.de/doc_lau_det/cz-8-2.htm"
+        ],
+        "mocDescription": "This is a MOC of the Long March 8 rocket with two boosters. The second stage and the two boosters can be seperated from the core stage. The payload fairing holds some space for a small payload.",
+        "rocketDescription": "The Long March 8 rocket (also known as LM-8 or CZ-8) is a Chinese orbital rocket. It has two stages ad two boosters. The first stage and the boosters are being fueled by RP1/LOX and the second stage by LH2/LOX. It has a payload capacity of around 5 tons to SSO and first launched in 2020.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": "Not tested",
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-01",
+        "dateCreated": "2021-12-23",
+        "related": [61],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-8/long-march-8-2b/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "9.4x8.7x45.4cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 824,
+        "partsExtra": "The rocket can be build completely out of Lego bricks.",
+        "title": "Long March 8",
+        "stability": "Not tested",
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1.io",
+                        "name": "Long_March_8_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
+        "id": 61,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_8",
+            "https://space.skyrocket.de/doc_lau_det/cz-8-1.htm"
+        ],
+        "mocDescription": "This is a MOC of the Long March 8 rocket. The second stage can be seperated from the core stage. The payload fairing holds some space for a small payload.",
+        "rocketDescription": "The Long March 8 rocket (also known as LM-8 or CZ-8) is a Chinese orbital rocket. It has two stages, the first being fueled by RP1/LOX and the second stage by LH2/LOX. It has a payload capacity of around 3 tons to SSO and first launched in 2022.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": "Not tested",
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-01",
+        "dateCreated": "2021-12-23",
+        "related": [62],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-8/long-march-8-0b/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "9.3x9.3x43cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 521,
+        "partsExtra": "The rocket can be build completely out of Lego bricks.",
+        "title": "Long March 8",
+        "stability": "Not tested",
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/0b/v3.1/Long_March_8_No_Booster_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/0b/v3.1/Long_March_8_No_Booster_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/0b/v3.1/Long_March_8_No_Booster_V3.1_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/0b/v3.1/Long_March_8_No_Booster_V3.1.io",
+                        "name": "Long_March_8_No_Booster_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
         "id": 60,
         "type": "rocket",
         "typeExtra": "",

@@ -59,5 +59,7 @@
 /moc/58/europa-1/
 /moc/59/long-march-7/
 /moc/60/long-march-7a/
+/moc/61/long-march-8/
+/moc/62/long-march-8/
 /
 /about/

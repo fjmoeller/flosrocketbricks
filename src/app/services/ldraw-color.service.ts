@@ -29,7 +29,7 @@ export class LdrawColorService {
   }
 
   resolveColor(id: number): ColorRepresentation {
-    console.log("Resolving color: "+id);
+    //console.log("Resolving color: "+id);
     let color = this.ldrColorList.get(id)?.hex;
     let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color ? color : "#fffff0");
     if (result) {

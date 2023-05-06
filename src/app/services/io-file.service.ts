@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BufferGeometry, Group, Line, LineBasicMaterial, LineSegments, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
+import { BufferGeometry, Group, Line, LineBasicMaterial, LineSegments, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
 import { LdrPart, LdrSubmodel, PartReference } from './ldrawParts';
 import { LdrawColorService } from './ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
@@ -352,11 +352,11 @@ export class IoFileService {
       0, 0, 0, 1
     );
 
-    let invertx = parseFloat(splittedLine[5])<-0.00001?-1:1 * parseFloat(splittedLine[8])<-0.00001?-1:1 * parseFloat(splittedLine[11])<-0.00001?-1:1;
-    let inverty = parseFloat(splittedLine[6])<-0.00001?-1:1 * parseFloat(splittedLine[9])<-0.00001?-1:1 * parseFloat(splittedLine[12])<-0.00001?-1:1;
-    let invertz = parseFloat(splittedLine[7])<-0.00001?-1:1 * parseFloat(splittedLine[10])<-0.00001?-1:1 * parseFloat(splittedLine[13])<-0.00001?-1:1;
+    let determinantMatrix = new Matrix3();
+    determinantMatrix.set(parseFloat(splittedLine[5]), parseFloat(splittedLine[6]), parseFloat(splittedLine[7]), parseFloat(splittedLine[8]), parseFloat(splittedLine[9]), parseFloat(splittedLine[10]), parseFloat(splittedLine[11]), parseFloat(splittedLine[12]), parseFloat(splittedLine[13]));
+    let determinant = determinantMatrix.determinant();
 
-    invert = inverty >0 ? !invert : invert;
+    invert = determinant > 0 ? invert : !invert;
 
     return new PartReference(splittedLine[splittedLine.length - 1], transform, parseInt(splittedLine[1]), invert);
   }

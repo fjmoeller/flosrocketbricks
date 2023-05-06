@@ -9,7 +9,7 @@ export class BlogComponent implements OnInit {
 
   showViewer = true;
 
-  viewerLink = "https://bricksafe.com/files/SkySaac/website/test/model.io";
+  viewerLink = "https://bricksafe.com/files/SkySaac/website/test/model11.io";
 
   constructor() { }
 

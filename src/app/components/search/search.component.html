@@ -43,7 +43,7 @@
                     [(ngModel)]="searchInput" (keyup.enter)="getMocs()">
             </div>
             <span class="row-12 d-inline-block mt-2">
-                <h5>General</h5>
+                <h5>Type</h5>
             </span>
             <div class="form-check row-12" *ngFor="let type of tagTypes">
                 <input class="form-check-input" type="checkbox" id="{{type.tagId}}radio"

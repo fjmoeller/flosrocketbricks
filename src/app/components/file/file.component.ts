@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-file',
@@ -7,13 +7,28 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FileComponent implements OnInit {
 
-  @Input('link') filelink = ""
-  @Input('name') filename="V2.6.io"
-  @Input('description') description="this is a file"
-  
+  @Input('link') filelink = "";
+  @Input('descriptor') descriptor = "";
+  @Input('name') filename = "";
+  @Input('description') description = "";
+  @Input('type') type = "";
+  @Input('viewerAllowed') viewerAllowed = false;
+
+  @Output() viewerEvent = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  downloadXml(): void {
+
+  }
+
+  openViewer(): void {
+    this.viewerEvent.emit(this.filelink);
+  }
+
+  downloadCsv():void{
+  }
 }

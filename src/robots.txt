@@ -1,0 +1,2 @@
+sitemap: https://flosrocketbricks.com/assets/sitemap.xml
+sitemap: https://flosrocketbricks.com/assets/sitemap.txt

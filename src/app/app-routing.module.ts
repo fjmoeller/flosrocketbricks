@@ -5,6 +5,7 @@ import { AboutComponent } from './components/about/about.component';
 import { SearchComponent } from './components/search/search.component';
 import { StartComponent } from './components/start/start.component';
 import { MocProxyComponent } from './components/moc-proxy/moc-proxy.component';
+import { ViewerComponent } from './components/viewer/viewer.component';
 
 const routes: Routes = [
   { path: 'moc/:id/:name', component: MocComponent },

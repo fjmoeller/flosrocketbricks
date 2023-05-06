@@ -18,10 +18,10 @@
             </button>
         </div>
         <div class="col-md-5 bg-dark text-light">
-            <div class="row justify-content-center text-center mb-5">
-                <h2>
+            <div class="row justify-content-center text-center my-3">
+                <h1>
                     {{(moc | async)?.title}}
-                </h2>
+                </h1>
             </div>
             <div class="container">
                 <div class="row py-3">
@@ -36,8 +36,8 @@
                         <div class="row justify-content-center">
                             <strong>Parts:</strong>
                             <span>{{(moc | async)?.parts}} <svg placement="top" *ngIf="(moc | async)?.partsExtra != ''"
-                                    ngbTooltip="{{(moc | async)?.partsExtra}}" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                    ngbTooltip="{{(moc | async)?.partsExtra}}" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
@@ -56,8 +56,8 @@
                         <div class="row justify-content-center">
                             <strong>Scale:</strong>
                             <span>{{(moc | async)?.scale}} <svg placement="top" *ngIf="(moc | async)?.scaleExtra != ''"
-                                    ngbTooltip="{{(moc | async)?.scaleExtra}}" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                    ngbTooltip="{{(moc | async)?.scaleExtra}}" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
@@ -139,9 +139,10 @@
                         <div class="row justify-content-center">
                             <strong>Designers:</strong>
                             <span>{{(moc | async)?.designer}} <svg placement="top"
-                                    *ngIf="(moc | async)?.designerExtra != ''" ngbTooltip="{{(moc | async)?.designerExtra}}"
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                                    *ngIf="(moc | async)?.designerExtra != ''"
+                                    ngbTooltip="{{(moc | async)?.designerExtra}}" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                    viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
@@ -183,9 +184,9 @@
                             <strong>Internal brick color:</strong>
                             <span>{{(moc | async)?.internalColor}} <svg placement="top"
                                     *ngIf="(moc | async)?.internalColorExtra != ''"
-                                    ngbTooltip="{{(moc | async)?.internalColorExtra}}" xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
-                                    viewBox="0 0 16 16">
+                                    ngbTooltip="{{(moc | async)?.internalColorExtra}}"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
@@ -198,11 +199,15 @@
     </div>
     <div class="row m-4">
         <div class="col-md-6 bg-dark text-light">
+            <div *ngIf="showViewer" class="bg-dark text-light">
+                <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer">
+                </app-viewer>
+            </div>
             <h4>About the Moc</h4>
             <p>
                 {{(moc | async)?.mocDescription}}
             </p>
-            <h4>About the Rocket</h4>
+            <h4>About the {{(moc | async)?.type}}</h4>
             <p>
                 {{(moc | async)?.rocketDescription}}
             </p>
@@ -214,31 +219,38 @@
                 </h3>
             </div>
             <div class="row mt-1">
-                <h3 class="mx-auto text-center">
+                <h3 class="mx-auto text-center text-light">
                     Instructions and digital files
                 </h3>
             </div>
-            <div class="row">
+            <div class="row mt-1">
+                <span class="text-center text-light">No pdf instructions for the MOC you want to build? No problem! Just
+                    contact me and I'll make them!</span>
+            </div>
+            <div class="row mt-1">
                 <div class="accordion text-light" id="accordion">
-                    <div *ngFor="let version of sortedVersions((moc | async)?.versions)"
+                    <div *ngFor="let version of sortedVersions((moc | async)?.versions);let indexOfelement=index;"
                         class="accordion-item text-light">
-                        <h2 class="accordion-header text-light" [id]="'heading'+version.version">
-                            <button class="accordion-button text-light" style="background-color: rgb(26,30,33)"
-                                type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+version.version"
-                                [attr.aria-controls]="version.version">
+                        <h2 class="accordion-header text-light" [id]="'heading'+indexOfelement">
+                            <button class="accordion-button text-light collapsed"
+                                style="background-color: rgb(26,30,33)" type="button" data-bs-toggle="collapse"
+                                [attr.data-bs-target]="'#body'+indexOfelement"
+                                [attr.aria-controls]="'body'+indexOfelement" aria-expanded="true">
                                 {{version.version}} {{version.versionExtra}}
                             </button>
                         </h2>
-                        <div [id]="version.version" class="accordion-collapse collapse show text-light"
-                            style="background-color: rgb(26,30,33)" [attr.aria-labelledby]="'heading'+version.version">
+                        <div [id]="'body'+indexOfelement" class="accordion-collapse collapse text-light"
+                            style="background-color: rgb(33,37,41)" [attr.aria-labelledby]="'heading'+indexOfelement">
                             <div class="accordion-body">
                                 <div *ngIf="version.changelog!=''"><strong>Changelog:</strong> <br>
                                     {{version.changelog}} <br></div>
-                                <hr class="my-2 d-inline-block mx-auto"
+                                <hr *ngIf="version.changelog!=''" class="my-2 d-inline-block mx-auto"
                                     style="width: 100%; background-color: #7c4dff; height: 2px" />
                                 <strong>Files:</strong>
-                                <app-file *ngFor="let file of version.files" [link]="file.link" [name]="file.name"
-                                    [description]="file.description">
+                                <app-file *ngFor="let file of version.files;let indexOfFile=index;"
+                                    (viewerEvent)="toggleViewer($event)" [link]="file.link" [name]="file.name"
+                                    [description]="file.description" [type]="file.type"
+                                    [viewerAllowed]="file.allowViewer" [descriptor]="indexOfelement+','+indexOfFile">
                                 </app-file>
                             </div>
                         </div>
@@ -256,7 +268,7 @@
             <div class="card-group">
                 <app-card class="col-2" *ngFor="let relatedMoc of relatedMocs | async"
                     [pic]="relatedMoc.smallCoverImage" [name]="relatedMoc.title" [parts]="relatedMoc.parts"
-                    [id]="relatedMoc.id">
+                    [id]="relatedMoc.id" [scale]="relatedMoc.scale">
                 </app-card>
             </div>
         </div>

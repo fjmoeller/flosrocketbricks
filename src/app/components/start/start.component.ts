@@ -18,10 +18,10 @@ export class StartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.metaService.setDefaultTags("Start - FlosRocketBricks","https://flosrocketbricks.com");
+    this.metaService.setDefaultTags("Start - FlosRocketBricks", "https://flosrocketbricks.com/");
 
     this.newestMocs = this.mocGrabberService.getAllMocs().pipe(
-      map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => Date.parse(b.dateCreated) - Date.parse(a.dateCreated))),
+      map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => b.id - a.id)),
       map((mocs: Moc[]) => mocs.slice(0, 6))
     );
   }

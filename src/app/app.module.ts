@@ -13,12 +13,13 @@ import { AboutComponent } from './components/about/about.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { environment } from '../environments/environment';
 import { NgbModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MocGrabberService } from './services/moc-grabber.service';
 import { RouterModule } from '@angular/router';
 import { MocProxyComponent } from './components/moc-proxy/moc-proxy.component';
-import { MetaServiceService } from './services/meta-service.service';
+import { ViewerComponent } from './components/viewer/viewer.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { BlogElementComponent } from './components/blog-element/blog-element.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,10 @@ import { MetaServiceService } from './services/meta-service.service';
     StartComponent,
     AboutComponent,
     FooterComponent,
-    MocProxyComponent
+    MocProxyComponent,
+    ViewerComponent,
+    BlogComponent,
+    BlogElementComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

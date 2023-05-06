@@ -1,16 +1,16 @@
-import { NumberSymbol } from "@angular/common";
-
 export class File {
   link: string;
   name: string;
   description: string;
   type: string;
+  allowViewer: boolean;
 
-  constructor(link: string, name: string, description: string, type: string) {
+  constructor(link: string, name: string, description: string, type: string, allowViewer: boolean) {
     this.link = link;
     this.name = name;
     this.description = description;
     this.type = type;
+    this.allowViewer = allowViewer;
   }
 }
 
@@ -34,6 +34,34 @@ export class FrontTag {
   selected: boolean = false;
 }
 
+export class Collection {
+  id: number;
+  name: string;
+  description: string;
+  subCollections: SubCollection[];
+
+  constructor(id: number, name: string, description: string, subCollections: SubCollection[]) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.subCollections = subCollections;
+  }
+}
+
+export class SubCollection {
+  id: number;
+  name: string;
+  description: string;
+  mocs: number[];
+
+  constructor(id: number, name: string, description: string, mocs: number[]) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.mocs = mocs;
+  }
+}
+
 export class Moc {
   id: number;
   internalColor: string;
@@ -43,7 +71,7 @@ export class Moc {
   parts: number;
   updateMessage: string;
   dimensions: string;
-  rocketReadMoreLinks : string[];
+  rocketReadMoreLinks: string[];
   scale: string;
   smallCoverImage: string;
   designer: string;
@@ -72,12 +100,12 @@ export class Moc {
   typeExtra: string;
 
   constructor(internalColor: string, type: string, region: string, id: number, versions: Version[], title: string, pictures: string[],
-    parts: NumberSymbol, dimensions: string, scale: string, designer: string,
+    parts: number, dimensions: string, scale: string, designer: string,
     stability: string, difficulty: string, lastupdate: string, tags: string[],
     mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],
     dateCreated: string, scaleExtra: string, partsExtra: string, dimensionsExtra: string,
     stabilityExtra: string, difficultyExtra: string, designerExtra: string, internalColorExtra: string,
-    company: string,updateMessage:string,rocketReadMoreLinks:string[], regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
+    company: string, updateMessage: string, rocketReadMoreLinks: string[], regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
     this.region = region;
     this.type = type;
     this.updateMessage = updateMessage;

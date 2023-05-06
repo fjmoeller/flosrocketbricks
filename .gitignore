@@ -38,9 +38,11 @@ testem.log
   
 # System Files  
 .DS_Store  
-Thumbs.db  
+Thumbs.db
 
-# Firebase
-.firebase
-*-debug.log
-.runtimeconfig.json
+workerV1.txt
+
+/src/assets/ldr/origparts/
+/src/assets/ldr/deprecated/
+/src/assets/ldr/*.io
+/src/assets/ldr/*.ldr

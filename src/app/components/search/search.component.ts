@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FrontTag, Moc } from '../classes';
 import { map, Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -10,16 +10,16 @@ import { MetaServiceService } from 'src/app/services/meta-service.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.sass']
 })
-export class SearchComponent implements OnInit,OnDestroy {
+export class SearchComponent implements OnInit {
 
   searchInput: string = "";
 
   sortingCategory: string = "Date";
   sortingDirection: number = -1;
 
-  tagRegions: FrontTag[] = [{ tagId: "", tagName: "All Regions", selected: true }, { tagId: "China", tagName: "China", selected: false }, { tagId: "Europe", tagName: "Europe", selected: false }, { tagId: "Japan", tagName: "Japan", selected: false }, { tagId: "New Zeeland", tagName: "New Zeeland", selected: false }, { tagId: "Russia", tagName: "Russia", selected: false }, { tagId: "South Korea", tagName: "South Korea", selected: false }, { tagId: "Ukraine", tagName: "Ukraine", selected: false }, { tagId: "USA", tagName: "USA", selected: false }];
-  tagTypes: FrontTag[] = [{ tagId: "", tagName: "All Types", selected: true }, { tagId: "rocket", tagName: "Rocket", selected: false }, { tagId: "launchpad", tagName: "Launchpad", selected: false }, { tagId: "spacecraft", tagName: "Spacecraft", selected: false }, { tagId: "spacestation", tagName: "Spacestation", selected: false }, { tagId: "other", tagName: "Other", selected: false }];
-  tagScales: FrontTag[] = [{ tagId: "", tagName: "All Scales", selected: true }, { tagId: "110", tagName: "1:110", selected: false }];
+  tagRegions: FrontTag[] = [{ tagId: "", tagName: "All Regions", selected: true }, { tagId: "China", tagName: "China", selected: false }, { tagId: "Europe", tagName: "Europe", selected: false },{ tagId: "France", tagName: "France", selected: false },{ tagId: "Germany", tagName: "Germany", selected: false }, { tagId: "Japan", tagName: "Japan", selected: false }, { tagId: "New Zeeland", tagName: "New Zeeland", selected: false }, { tagId: "Russia", tagName: "Russia", selected: false }, { tagId: "South Korea", tagName: "South Korea", selected: false }, { tagId: "Ukraine", tagName: "Ukraine", selected: false },{ tagId: "United Kingdom", tagName: "United Kingdom", selected: false }, { tagId: "USA", tagName: "USA", selected: false }];
+  tagTypes: FrontTag[] = [{ tagId: "", tagName: "All Types", selected: true }, { tagId: "rocket", tagName: "Rocket", selected: false }, { tagId: "launchpad", tagName: "Launchpad", selected: false }, { tagId: "spacecraft", tagName: "Spacecraft", selected: false }, { tagId: "spacestation", tagName: "Space Station", selected: false }, { tagId: "other", tagName: "Other", selected: false }];
+  tagScales: FrontTag[] = [{ tagId: "", tagName: "All Scales", selected: true }, { tagId: "110", tagName: "1:110", selected: false },{ tagId: "40", tagName: "1:40", selected: false }];
 
   mocs!: Observable<Moc[]>;
 
@@ -51,11 +51,6 @@ export class SearchComponent implements OnInit,OnDestroy {
 
       });
     this.metaService.setDefaultTags("Search - FlosRocketBricks", "https://flosrocketbricks.com/search");
-    this.metaService.updateCanonicalUrl("https://flosrocketbricks.com/search");
-  }
-
-  ngOnDestroy(): void {
-    this.metaService.removeCanonicalUrl();
   }
 
   changeSorting(category: string): void {

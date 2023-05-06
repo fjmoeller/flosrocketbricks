@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
+  showViewer = true;
+
+  viewerLink = "https://bricksafe.com/files/SkySaac/website/test/model.io";
+
   constructor() { }
 
   ngOnInit(): void {

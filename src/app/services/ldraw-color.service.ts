@@ -25,11 +25,13 @@ export class LdrawColorService {
         this.ldrColorList.set(code, new LdrColor(name, hex, edge, code));
       }
     }
+    console.log("Initital color parsing done: "+this.ldrColorList.size+" colors found");
   }
 
   resolveColor(id: number): ColorRepresentation {
+    console.log("Resolving color: "+id);
     let color = this.ldrColorList.get(id)?.hex;
-    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color ? color : "#fff000");
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color ? color : "#fffff0");
     if (result) {
       let res = {
         r: parseInt(result[1], 16),

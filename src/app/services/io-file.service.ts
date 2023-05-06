@@ -57,7 +57,7 @@ export class IoFileService {
     console.log("Now parsing submodels!");
     let topSubmodelSet: boolean = false;
     let topLdrSubmodel: LdrSubmodel = new LdrSubmodel("", []);
-    let ldrSubModelMap = new Map<string, LdrSubmodel>;
+    let ldrSubModelMap = new Map<string, LdrSubmodel>();
     let ldrSubModelNames: string[] = [];
     //for each submodel inside the ldr file
     submodels.forEach(submodel => {
@@ -98,8 +98,6 @@ export class IoFileService {
   //This function resolves a submodel and returns a threejs group: that means that it takes all vertices of all parts and puts them into meshes and collects all groups of its submodels
   private resolveSubmodel(submodel: LdrSubmodel, ldrSubModelNames: string[], ldrSubModelMap: Map<string, LdrSubmodel>): Group {
     //if the submodel has already been worked with it is ready already
-    //console.log("Now resolving submodel: "+submodel.name);
-
     if (submodel.resolved) {
       return submodel.group;
     }
@@ -114,9 +112,14 @@ export class IoFileService {
         submodelGroup.add(referenceSubmodelGroup);
       } else {// reference is a part
         let referencedPart = this.resolvePart(reference.name);
-        referencedPart.pointColorMap.forEach((points, color) => { //for each color of the part an own mesh gets created
+        referencedPart.verticesColorMap.forEach((vertices, color) => { //for each color of the part an own mesh gets created
           let partGeometry = new BufferGeometry();
-          partGeometry.setFromPoints(points);
+          partGeometry.setFromPoints(vertices);
+          let indicies = referencedPart.indexColorMap.get(color);
+          if (indicies)
+            partGeometry.setIndex(indicies);
+          else
+            throw "Color not found: verticies exist but no face to em";
 
           //FIX transformation matrix for 28192
           if (reference.name == "28192.dat") {
@@ -131,7 +134,7 @@ export class IoFileService {
           partGeometry.computeVertexNormals();
           partGeometry.computeBoundingBox();
           partGeometry.normalizeNormals();
-          partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
+          partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.01);
 
           let material; //TODO implement colors fully -> might have to remove resolved submodels to get color all the way to the bottom to each part that needs it
           if (color == 24 || color == 16 || color == -1 || color == -2) //those are not valid colors or mean that the color gets resolved in a submodel above, not fully implemented yet
@@ -161,9 +164,9 @@ export class IoFileService {
 
           let material; //TODO implement colors fully -> might have to remove resolved submodels to get color all the way to the bottom to each part that needs it
           if (color == 24 || color == 16 || color == -1 || color == -2) //those are not valid colors or mean that the color gets resolved in a submodel above, not fully implemented yet
-            material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(reference.color) });
+            material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(0) }); //reference.color
           else
-            material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(color) });
+            material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(0) }); //color
           submodelGroup.add(new LineSegments(partGeometry, material));
         });
       }
@@ -177,58 +180,83 @@ export class IoFileService {
   private resolvePart(partName: string): LdrPart {
     let ldrPart = this.allPartsMap.get(partName);
     if (ldrPart && !ldrPart.isResolved) {
-      //resolve Part
-      //console.log("Resolving part: "+partName);
-      ldrPart.references.forEach(partReference => {
+      //resolve references of part and add their vertices and indices to current part
+      for (const partReference of ldrPart.references) {
         let referencedPart = this.allPartsMap.get(partReference.name)
-        if (referencedPart) {
-          let referencedPart = this.resolvePart(partReference.name);
-          //for all colors and their vertices that the referenced part has
-          referencedPart.pointColorMap.forEach((referencePoints, referenceColor) => {
-            let transformedPoints: Vector3[] = [];
-            //transform points with transformation matrix of the reference to the part
-            for (const referencePoint of referencePoints) {
-              let pointVector4: Vector4;
-
-              pointVector4 = new Vector4(referencePoint.x, referencePoint.y, referencePoint.z, 1);
-
-              pointVector4 = pointVector4.applyMatrix4(partReference.transformMatrix);
-              transformedPoints.push(new Vector3(pointVector4.x, pointVector4.y, pointVector4.z));
-            }
-            if (partReference.invert) {
-              transformedPoints = transformedPoints.reverse();
-            }
-            //append points of referenced part to the upper part to reduce the size of render hierachy
-            if (ldrPart?.pointColorMap.has(referenceColor)) {
-              let fullList = ldrPart?.pointColorMap.get(referenceColor)?.concat(transformedPoints)
-              ldrPart?.pointColorMap.set(referenceColor, fullList ? fullList : []);
-            } else
-              ldrPart?.pointColorMap.set(referenceColor, transformedPoints);
-          });
-
-          referencedPart.lineColorMap.forEach((referencePoints, referenceColor) => {
-            let transformedPoints: Vector3[] = [];
-            //transform points with transformation matrix of the reference to the part
-            for (const referencePoint of referencePoints) {
-              let pointVector4: Vector4;
-
-              pointVector4 = new Vector4(referencePoint.x, referencePoint.y, referencePoint.z, 1);
-
-              pointVector4 = pointVector4.applyMatrix4(partReference.transformMatrix);
-              transformedPoints.push(new Vector3(pointVector4.x, pointVector4.y, pointVector4.z));
-            }
-            if (partReference.invert) {
-              transformedPoints = transformedPoints.reverse();
-            }
-            //append points of referenced part to the upper part to reduce the size of render hierachy
-            if (ldrPart?.lineColorMap.has(referenceColor)) {
-              let fullList = ldrPart?.lineColorMap.get(referenceColor)?.concat(transformedPoints)
-              ldrPart?.lineColorMap.set(referenceColor, fullList ? fullList : []);
-            } else
-              ldrPart?.lineColorMap.set(referenceColor, transformedPoints);
-          });
+        if (!referencedPart) {
+          throw "Referenced Part not found during resolving!";
         }
-      });
+
+        this.resolvePart(partReference.name);
+
+        let colorVertexIndexMap = new Map<number, Map<number, number>>(); //for each color indicies of vertices will be different so they need to be mapped to the actual ones
+
+        //transform and add all vertices
+        referencedPart.verticesColorMap.forEach((vertices, color) => { //for each color
+          let indexMap = new Map<number, number>();
+          for (let i = 0; i < vertices.length; i++) { //transform each vertex and see if it already exists
+            let pointVector4: Vector4 = new Vector4(vertices[i].x, vertices[i].y, vertices[i].z, 1);
+
+            pointVector4 = pointVector4.applyMatrix4(partReference.transformMatrix);
+
+            const pointVector3 = new Vector3(pointVector4.x, pointVector4.y, pointVector4.z);
+
+            if (ldrPart?.verticesColorMap.has(color) && !ldrPart?.verticesColorMap.get(color)?.find(v => v.equals(pointVector3))) { //part not in list already
+              const newVerticies = ldrPart?.verticesColorMap.get(color);
+              if (newVerticies != null) {
+                newVerticies.push(pointVector3);
+                indexMap.set(i, newVerticies.length - 1);
+              }
+              else
+                throw "Part or Color not found during adding referenced parts vertices";
+            }
+            else if (!ldrPart?.verticesColorMap.has(color)) { //color not found
+              ldrPart?.verticesColorMap.set(color, [pointVector3]);
+              indexMap.set(i, i);
+            } else { //vertex has already been added of this color
+              indexMap.set(i, ldrPart?.verticesColorMap.get(color)?.findIndex(v => v.equals(pointVector3)) ?? -1);
+            }
+          }
+          colorVertexIndexMap.set(color, indexMap);
+        });
+
+        //add all faces (made of indices of vertices)
+        referencedPart.indexColorMap.forEach((indices, color) => {
+          let newIndicies: number[] = []; // this will have the mapped indices
+          for (let i = 0; i < indices.length; i++) {
+            const mappedIndex = colorVertexIndexMap.get(color)?.get(indices[i]);
+            if (mappedIndex != null)
+              newIndicies.push(mappedIndex);
+            else
+              throw "Color or index not found during adding referenced parts indices";
+          }
+
+
+          //if to be inverted
+          if (partReference.invert)
+            newIndicies.reverse();
+
+          //add indices to map
+          ldrPart?.indexColorMap.set(color, (ldrPart?.indexColorMap.get(color) ?? []).concat(newIndicies));
+        });
+
+        //add all lines
+        referencedPart.lineColorMap.forEach((referencePoints, referenceColor) => {
+          let transformedPoints: Vector3[] = [];
+          //transform points with transformation matrix of the reference to the part
+          for (const referencePoint of referencePoints) {
+            let pointVector4: Vector4 = new Vector4(referencePoint.x, referencePoint.y, referencePoint.z, 1);
+            pointVector4 = pointVector4.applyMatrix4(partReference.transformMatrix);
+            transformedPoints.push(new Vector3(pointVector4.x, pointVector4.y, pointVector4.z));
+          }
+          //append points of referenced part to the upper part to reduce the size of render hierachy
+          if (ldrPart?.lineColorMap.has(referenceColor)) {
+            let fullList = ldrPart?.lineColorMap.get(referenceColor)?.concat(transformedPoints)
+            ldrPart?.lineColorMap.set(referenceColor, fullList ? fullList : []);
+          } else
+            ldrPart?.lineColorMap.set(referenceColor, transformedPoints);
+        });
+      }
       ldrPart.isResolved = true;
       return ldrPart;
     }
@@ -244,17 +272,18 @@ export class IoFileService {
     let partLines = partText.split("\n");
 
     let partName: string = "ERROR FLO";
-    let references: PartReference[] = [];
+    let partReferences: PartReference[] = [];
     let invertNext: boolean = false;
-    let pointColorMap = new Map<number, Vector3[]>;
-    let lineColorMap = new Map<number, Vector3[]>;
+    let partColorVertices = new Map<number, Vector3[]>();
+    let partColorIndicies = new Map<number, number[]>();
+    let lineColorMap = new Map<number, Vector3[]>();
 
     //Go through all lines of text and parse them
     partLines.forEach(partLine => {
       if (partLine.endsWith("\r")) //removes annoying stuff
         partLine = partLine.slice(0, partLine.lastIndexOf("\r"));
       if (partLine.startsWith("1")) { //line is a reference
-        references.push(this.parseLineTypeOne(partLine, invertNext));
+        partReferences.push(this.parseLineTypeOne(partLine, invertNext));
         invertNext = false;
       }
       else if (partLine.startsWith("0 FILE")) { //line is a part name
@@ -263,30 +292,52 @@ export class IoFileService {
       }
       else if (partLine.startsWith("0 BFC INVERTNEXT")) //line enables BFC for the next line
         invertNext = true;
-      else if (partLine.startsWith("3")) { //line is a triangle
-        let parsed = this.parseLineTypeThree(partLine, invertNext);
-        let entry = pointColorMap.get(parsed.color);
-        entry == undefined ? entry = [] : undefined;
-        pointColorMap.set(parsed.color, entry.concat(parsed.points));
-        invertNext = false;
-      }
-      else if (partLine.startsWith("4")) { //line is a rectangle
-        let parsed = this.parseLineTypeFour(partLine, invertNext);
-        let entry = pointColorMap.get(parsed.color);
-        entry == undefined ? entry = [] : undefined;
-        pointColorMap.set(parsed.color, entry.concat(parsed.points));
+      else if (partLine.startsWith("3") || partLine.startsWith("4")) { //line is a triangle or rectangle
+        if (partLine.startsWith("3"))
+          var parsed = this.parseLineTypeThree(partLine, invertNext);
+        else
+          var parsed = this.parseLineTypeFour(partLine, invertNext);
+
+        let partIndicies = partColorIndicies.get(parsed.color);
+        let partVerticies = partColorVertices.get(parsed.color);
+
+        let vertexIndexMap = new Map<number, number>(); //indicies of vertices will be different so they need to be mapped to the actual ones
+
+        //put all vertices into partVerticies and to the vertexIndexMap 
+        if (partVerticies) //The current part already knows this color
+          for (let i = 0; i < parsed.vertices.length; i++) {
+            let found = partVerticies.findIndex(p => p.equals(parsed.vertices[i]));
+
+            if (found != -1) //vertex already exists
+              vertexIndexMap.set(i, found);
+            else {
+              partVerticies.push(parsed.vertices[i]);
+              vertexIndexMap.set(i, partVerticies.length - 1);
+            }
+          }
+        else //The current part doesnt have the current color yet
+          partColorVertices.set(parsed.color, parsed.vertices);
+
+        let collectedIndices = [];
+        for (let i = 0; i < parsed.indicies.length; i += 3) { //map all indicies to their now referenced verticies
+          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i]) ?? parsed.indicies[i]);
+          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i + 1]) ?? parsed.indicies[i + 1]);
+          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i + 2]) ?? parsed.indicies[i + 2]);
+        }
+        partColorIndicies.set(parsed.color, (partIndicies ?? []).concat(collectedIndices));
+
         invertNext = false;
       }
       else if (partLine.startsWith("2")) { //line is a line
         let parsed = this.parseLineTypeTwo(partLine);
         let entry = lineColorMap.get(parsed.color);
         entry == undefined ? entry = [] : undefined;
-        lineColorMap.set(parsed.color, entry.concat(parsed.points));
+        lineColorMap.set(parsed.color, entry.concat(parsed.vertices));
         invertNext = false;
       }
     });
 
-    return new LdrPart(partName, pointColorMap, lineColorMap, references);
+    return new LdrPart(partName, partColorVertices, partColorIndicies, lineColorMap, partReferences);
   }
 
   //This functions parses a line type one, which is a reference to a part or a submodel in a ldr file
@@ -300,6 +351,12 @@ export class IoFileService {
       parseFloat(splittedLine[11]), parseFloat(splittedLine[12]), parseFloat(splittedLine[13]), parseFloat(splittedLine[4]),
       0, 0, 0, 1
     );
+
+    let invertx = parseFloat(splittedLine[5])<-0.00001?-1:1 * parseFloat(splittedLine[8])<-0.00001?-1:1 * parseFloat(splittedLine[11])<-0.00001?-1:1;
+    let inverty = parseFloat(splittedLine[6])<-0.00001?-1:1 * parseFloat(splittedLine[9])<-0.00001?-1:1 * parseFloat(splittedLine[12])<-0.00001?-1:1;
+    let invertz = parseFloat(splittedLine[7])<-0.00001?-1:1 * parseFloat(splittedLine[10])<-0.00001?-1:1 * parseFloat(splittedLine[13])<-0.00001?-1:1;
+
+    invert = inverty >0 ? !invert : invert;
 
     return new PartReference(splittedLine[splittedLine.length - 1], transform, parseInt(splittedLine[1]), invert);
   }
@@ -338,26 +395,9 @@ export class IoFileService {
 
     return {
       color: parseInt(splitLine[1]),
-      points: [
+      vertices: [
         new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
         new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7]))
-      ]
-    }
-  }
-
-  //This functions parses a line type five, which is an optional line
-  private parseLineTypeFive(line: string) {
-    let splitLine = line.split(" ");
-    if (splitLine.length < 10) {
-      throw "optional line with too few coordinates";
-    }
-
-    return {
-      color: parseInt(splitLine[1]),
-      points: [
-        new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-        new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
-        new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]))
       ]
     }
   }
@@ -368,33 +408,19 @@ export class IoFileService {
     if (splitLine.length < 10) {
       throw "Triangle with too few coordinates";
     }
-    if (!invert) {
-      return {
-        color: parseInt(splitLine[1]),
-        points: [
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          //Bfc
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-        ]
-      }
-    } else {
-      return {
-        color: parseInt(splitLine[1]),
-        points: [
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          //Bfc
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]))
-        ]
-      }
-    }
+    const color = parseInt(splitLine[1]);
+    const vertices = [
+      new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
+      new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
+      new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]))
+    ];
+    const indices = invert ? [2, 1, 0] : [0, 1, 2];
+
+    return {
+      color: color,
+      vertices: vertices,
+      indicies: indices
+    };
   }
 
   //This functions parses a line type four, which is a rectangle, but i just split those into two triangles
@@ -403,44 +429,34 @@ export class IoFileService {
     if (splitLine.length < 13) {
       throw "Rectangle with too few coordinates";
     }
-    if (!invert) {
-      return {
-        color: parseInt(splitLine[1]),
-        points: [
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13])),
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          //Bfc
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13])),
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]))
-        ]
+
+    const color = parseInt(splitLine[1]);
+    const vertices = [
+      new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
+      new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
+      new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
+      new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13]))
+    ];
+    const indices = invert ? [2, 1, 0, 0, 3, 2] : [0, 1, 2, 2, 3, 0];
+
+    return {
+      color: color,
+      vertices: vertices,
+      indicies: indices
+    };
+  }
+
+  private invertGeometry(geometry: BufferGeometry) {
+    if (geometry.index) {
+      const index = geometry.index.array;
+      const reversedIndex = [];
+      for (let i = 0, il = index.length / 3; i < il; i++) {
+        let x = index[i * 3]
+        reversedIndex[i * 3] = index[i * 3 + 2]
+        reversedIndex[i * 3 + 2] = x
       }
-    } else {
-      return {
-        color: parseInt(splitLine[1]),
-        points: [
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13])),
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          //Bfc
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4])),
-          new Vector3(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7])),
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
-          new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13])),
-          new Vector3(parseFloat(splitLine[2]), parseFloat(splitLine[3]), parseFloat(splitLine[4]))
-        ]
-      }
+      geometry.setIndex(reversedIndex);
+      geometry.index.needsUpdate = true;
     }
   }
 }

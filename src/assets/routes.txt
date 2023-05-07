@@ -61,5 +61,7 @@
 /moc/60/long-march-7a/
 /moc/61/long-march-8/
 /moc/62/long-march-8/
+/moc/63/long-march-4c/
+/moc/64/long-march-4a/
 /
 /about/

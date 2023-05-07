@@ -1,5 +1,65 @@
 [
     {
+        "id": 65,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://fr.wikipedia.org/wiki/Zhuque-1",
+            "https://space.skyrocket.de/doc_lau/zhuque-1.htm"
+        ],
+        "mocDescription": "This is a MOC of the Chinese Zhuque 1 rocket. The second stage can be seperated from the core stage and the third stage and the fairing can be seperated from the 2nd stage. The payload fairing holds no space for a payload.",
+        "rocketDescription": "The Zhuque 1 rocket (also known as ZQ-1) is a Chinese rocket by the company LandSpace. It has three stages, all of them being solid rocket boosters. Its only launch in 2018 resulted in a failure.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": "Not tested",
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-07",
+        "dateCreated": "2023-05-07",
+        "related": [
+            12
+        ],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/china/zhuque/zhuque-1/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "2.7x2.7x18.2cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 64,
+        "partsExtra": "The rocket can be build completely out of Lego bricks, but it needs some printed parts.",
+        "title": "Zhuque 1",
+        "stability": "Not tested",
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/zhuque/zhuque-1/v1.0/ZQ-1_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/zhuque/zhuque-1/v1.0/ZQ-1_V1.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/zhuque/zhuque-1/v1.0/ZQ-1_V1.0_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/zhuque/zhuque-1/v1.0/ZQ-1_V1.0.io",
+                        "name": "ZQ-1_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
         "id": 64,
         "type": "rocket",
         "typeExtra": "",
@@ -4124,7 +4184,9 @@
         "companyExtra": "",
         "company": "",
         "id": 12,
-        "related": [],
+        "related": [
+            65
+        ],
         "title": "Zhuque 2",
         "versions": [
             {

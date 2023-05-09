@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
-import { Moc } from '../classes';
+import { Moc } from '../../model/classes';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 
 @Component({

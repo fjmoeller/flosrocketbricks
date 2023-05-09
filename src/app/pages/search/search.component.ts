@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FrontTag, Moc } from '../classes';
+import { FrontTag, Moc } from '../../model/classes';
 import { map, Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';

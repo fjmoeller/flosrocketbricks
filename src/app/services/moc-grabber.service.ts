@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
-import { Moc } from '../components/classes';
+import { Moc } from '../model/classes';
 import mocs from '../../assets/mocs.json';
 import { of } from 'rxjs';
 

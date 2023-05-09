@@ -1,6 +1,6 @@
-import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Moc, Version } from '../classes';
+import { Moc, Version } from '../../model/classes';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 import { map, Observable, tap } from 'rxjs';

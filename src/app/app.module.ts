@@ -4,12 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { MocComponent } from './components/moc/moc.component';
+import { MocComponent } from './pages/moc/moc.component';
 import { FileComponent } from './components/file/file.component';
-import { SearchComponent } from './components/search/search.component';
+import { SearchComponent } from './pages/search/search.component';
 import { CardComponent } from './components/card/card.component';
-import { StartComponent } from './components/start/start.component';
-import { AboutComponent } from './components/about/about.component';
+import { StartComponent } from './pages/start/start.component';
+import { AboutComponent } from './pages/about/about.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +20,7 @@ import { MocProxyComponent } from './components/moc-proxy/moc-proxy.component';
 import { ViewerComponent } from './components/viewer/viewer.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogElementComponent } from './components/blog-element/blog-element.component';
+import { BlogOverviewComponent } from './pages/blog-overview/blog-overview.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { BlogElementComponent } from './components/blog-element/blog-element.com
     MocProxyComponent,
     ViewerComponent,
     BlogComponent,
+    BlogOverviewComponent,
     BlogElementComponent
   ],
   imports: [

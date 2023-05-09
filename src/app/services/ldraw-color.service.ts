@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LdrColor } from './ldrawParts';
+import { LdrColor } from '../model/ldrawParts';
 import { Color, ColorRepresentation } from 'three';
 
 @Injectable({

@@ -1526,14 +1526,14 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer": false,
+                        "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v3.0/Titan_III_E_V3.0.io",
                         "name": "Titan_III_E_V3.0.io"
                     },
                     {
                         "description": "The digital io file",
                         "type": "io",
-                        "allowViewer": false,
+                        "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v3.0/Titan_III_E_Centaur_V3.0.io",
                         "name": "Titan_III_E_Centaur_V3.0.io"
                     }

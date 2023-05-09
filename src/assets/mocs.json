@@ -1516,7 +1516,7 @@
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v3.0/Titan_III_E_V3.0_1.png",
             "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v3.0/Titan_III_E_V3.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/d/v3.0/Titan_III_E_V3.0_3.png"
+            "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v3.0/Titan_III_E_V3.0_3.png"
         ],
         "versions": [
             {
@@ -1611,6 +1611,27 @@
             "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/d/v3.0/Titan_III_D_V3.0_3.png"
         ],
         "versions": [
+            {
+                "changelog": "changed color of a wrong colored part",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/d/v3.1/Titan_III_D_V3.1.io",
+                        "name": "Titan_III_D_V3.1.io"
+                    },
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/d/v3.1/Titan_III_D_Fairings_V3.1.io",
+                        "name": "Titan_III_D_Fairings_V3.1.io"
+                    }
+                ],
+                "version": "V3.0"
+            },
             {
                 "changelog": "Improved stability and added more details to the core and the boosters",
                 "versionExtra": "",

@@ -127,7 +127,7 @@
             "https://en.wikipedia.org/wiki/Long_March_4C",
             "https://space.skyrocket.de/doc_lau_det/cz-4c.htm"
         ],
-        "mocDescription": "This is a MOC of the Long March 4C rocket. The second stage can be seperated from the core stage and the third stage can be seperated from the 2nd stage. The payload fairing holds some space for a small included satellite.",
+        "mocDescription": "This is a MOC of the Long March 4C rocket. The second stage can be seperated from the core stage and the third stage can be seperated from the 2nd stage. The payload fairing holds some space for a small included satellite. There are multiple fairing variants that can be build",
         "rocketDescription": "The Long March 4C rocket (also known as LM-4C or CZ-4C) is a Chinese orbital rocket. It has three stages, with all of them being fueled by NTO/UDMH. It has a payload capacity of around 4.2 tons to LEO and was first launched in 2006.",
         "company": "",
         "companyExtra": "",
@@ -161,7 +161,8 @@
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-4/long-march-4c/v3.5/Long_March_4C_V3.5_1.png",
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-4/long-march-4c/v3.5/Long_March_4C_V3.5_2.png",
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-4/long-march-4c/v3.5/Long_March_4C_V3.5_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-4/long-march-4c/v3.5/Long_March_4C_V3.5_4.png"
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-4/long-march-4c/v3.5/Long_March_4C_V3.5_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-4/long-march-4c/v3.5/Long_March_4C_V3.5_5.png"
         ],
         "versions": [
             {
@@ -174,6 +175,13 @@
                         "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-4/long-march-4c/v3.5/Long_March_4C_V3.5.io",
                         "name": "Long_March_4C_V3.5.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variants",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-4/long-march-4c/v3.5/Long_March_4C_Fairings_V3.5.io",
+                        "name": "Long_March_4C_Fairings_V3.5.io"
                     }
                 ],
                 "version": "V3.5"

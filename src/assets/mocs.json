@@ -3979,7 +3979,28 @@
                 ],
                 "versionExtra": "",
                 "version": "V3.4",
-                "changelog": "- added legs, improved the USA flag, improved the feather logo"
+                "changelog": "added legs, improved the USA flag, improved the feather logo"
+            },
+            {
+                "files": [
+                    {
+                        "name": "v3.2_instructions.pdf",
+                        "description": "The pdf instructions of the rocket",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.2/v3.2_instructions.pdf"
+                    },
+                    {
+                        "name": "V3.2_pub.io",
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.2/V3.2_pub.io"
+                    }
+                ],
+                "versionExtra": "",
+                "version": "V3.2",
+                "changelog": ""
             }
         ],
         "typeExtra": "",

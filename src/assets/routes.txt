@@ -64,5 +64,6 @@
 /moc/63/long-march-4c/
 /moc/64/long-march-4a/
 /moc/65/zhuque-1/
+/moc/66/zond/
 /
 /about/

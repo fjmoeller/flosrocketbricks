@@ -1,5 +1,62 @@
 [
     {
+        "id": 66,
+        "type": "spacecraft",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Zond_program",
+            "https://en.wikipedia.org/wiki/Soyuz_7K-L1"
+        ],
+        "mocDescription": "This is a MOC of the Zond spacecraft.",
+        "rocketDescription": "The Soyuz 7K-L1 'Zond', was a Soviet spacecraft to be used for manned lunar missions. It was launched on unmanned test flights to the moon on a Proton rocket and was eventually to be able to carry two people around the moon. It never flew any humans.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": "Easy",
+        "difficultyExtra": "",
+        "lastupdate": "2022-08-03",
+        "dateCreated": "2022-08-03",
+        "related": [],
+        "updateMessage": "",
+        "region": "Russia",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/russia/zond/640x512.png",
+        "internalColor": "-",
+        "internalColorExtra": "",
+        "dimensions": "9.4x5.0x2.7cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 60,
+        "partsExtra": "The rocket can be build completely out of Lego bricks.",
+        "title": "Zond",
+        "stability": "Good",
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/udssr/zond/v1.0/V1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/udssr/zond/v1.0/V1_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/zond/v1.0/V1.io",
+                        "name": "V1.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
         "id": 65,
         "type": "rocket",
         "typeExtra": "",

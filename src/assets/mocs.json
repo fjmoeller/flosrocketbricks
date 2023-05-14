@@ -1,5 +1,115 @@
 [
     {
+        "id": 67,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Energia_(rocket)",
+            "https://www.buran-energia.com/",
+            "http://www.buran.ru/htm/homepage.htm"
+        ],
+        "mocDescription": "This is a MOC of the Energia rocket with Buran as payload. The boosters and the orbiter can be seperated from the core stage. The Buran orbiter can open its paylaod bay and move its robotic arms. The orbiters tail is a bit longer than the rest of the stack, so if you want to display it it either needs a small elevated stand under the engines or needs to stand of the edge of the shelf.",
+        "rocketDescription": "The Energia Buran rocket stack was a Soviet launch vehicle that could deliver a reusable spaceplane into low earth orbit. In 1985 it flew it's only flight from pad 110/37 in Baikonur.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": "Hard",
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-14",
+        "dateCreated": "2021-10-29",
+        "related": [],
+        "updateMessage": "",
+        "region": "Russia",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/russia/energia/energia-buran/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "23.6x21.0x55.1cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 3934,
+        "partsExtra": "The rocket can be build completely out of Lego bricks, some hoses need to be cut for it though.",
+        "title": "Energia Buran",
+        "stability": "Medium",
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.6/Energia_Buran_V2.6_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.6/Energia_Buran_V2.6_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.6/Energia_Buran_V2.6_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.6/Energia_Buran_V2.6_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.6/Energia_Buran_V2.6_6.png"
+        ],
+        "versions": [
+            {
+                "changelog": "added core structure improvements and details",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.6/Energia_Buran_V2.6_pub.io",
+                        "name": "Energia_Buran_V2.6_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions for the core stage",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.6/Energia_V2.6_Core.pdf",
+                        "name": "Energia_V2.6_Core.pdf"
+                    },
+                    {
+                        "description": "The pdf instructions for the boosters",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.6/Energia_V2.6_Boosters.pdf",
+                        "name": "Energia_V2.6_Boosters.pdf"
+                    },
+                    {
+                        "description": "The pdf instructions for Buran orbiter",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.6/Buran_V2.6_instructions.pdf",
+                        "name": "Buran_V2.6_instructions.pdf"
+                    }
+                ],
+                "version": "V2.6"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.5.2/Energia_V2.5.2_pub.io",
+                        "name": "Energia_V2.5.2_pub.io"
+                    },
+                    {
+                        "description": "The digital io file",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.5.2/Energia_V2.5.2_instructions.pdf",
+                        "name": "Energia_V2.5.2_instructions.pdf"
+                    },
+                    {
+                        "description": "The digital pdf isntructions for the Buran orbiter",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/energia/energia-buran/v2.5.2/Buran%20v2.5.pdf",
+                        "name": "Buran v2.5.pdf"
+                    }
+                ],
+                "version": "V2.5.2"
+            }
+        ]
+    },
+    {
         "id": 66,
         "type": "spacecraft",
         "typeExtra": "",

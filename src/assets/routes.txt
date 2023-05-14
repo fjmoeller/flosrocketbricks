@@ -65,5 +65,6 @@
 /moc/64/long-march-4a/
 /moc/65/zhuque-1/
 /moc/66/zond/
+/moc/67/energia-buran/
 /
 /about/

@@ -16,28 +16,28 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MocGrabberService } from './services/moc-grabber.service';
 import { RouterModule } from '@angular/router';
-import { MocProxyComponent } from './components/moc-proxy/moc-proxy.component';
+import { MocProxyComponent } from './pages/moc-proxy/moc-proxy.component';
 import { ViewerComponent } from './components/viewer/viewer.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogElementComponent } from './components/blog-element/blog-element.component';
 import { BlogOverviewComponent } from './pages/blog-overview/blog-overview.component';
+import { IoFileService } from './services/io-file.service';
+import { FileExportService } from './services/file-export.service';
+import { LdrawColorService } from './services/ldraw-color.service';
+import { MetaServiceService } from './services/meta-service.service';
+import { CollectionComponent } from './pages/collection/collection.component';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     MocComponent,
-    FileComponent,
     SearchComponent,
-    CardComponent,
     StartComponent,
     AboutComponent,
-    FooterComponent,
     MocProxyComponent,
-    ViewerComponent,
-    BlogComponent,
     BlogOverviewComponent,
-    BlogElementComponent
+    CollectionComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -46,11 +46,16 @@ import { BlogOverviewComponent } from './pages/blog-overview/blog-overview.compo
     HttpClientModule,
     NgbTooltipModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    ComponentsModule
   ],
   providers: [
-    MocGrabberService
-],
+    MocGrabberService,
+    FileExportService,
+    IoFileService,
+    LdrawColorService,
+    MetaServiceService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

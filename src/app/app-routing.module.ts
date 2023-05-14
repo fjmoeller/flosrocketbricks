@@ -4,9 +4,9 @@ import { MocComponent} from './pages/moc/moc.component';
 import { AboutComponent } from './pages/about/about.component';
 import { SearchComponent } from './pages/search/search.component';
 import { StartComponent } from './pages/start/start.component';
-import { MocProxyComponent } from './components/moc-proxy/moc-proxy.component';
-import { ViewerComponent } from './components/viewer/viewer.component';
+import { MocProxyComponent } from './pages/moc-proxy/moc-proxy.component';
 import { BlogOverviewComponent } from './pages/blog-overview/blog-overview.component';
+import { CollectionComponent } from './pages/collection/collection.component';
 
 const routes: Routes = [
   { path: 'moc/:id/:name', component: MocComponent },
@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'start', component: StartComponent },
   { path: 'blogs', component: BlogOverviewComponent },
+  { path: 'collection/:id', component: CollectionComponent },
   { path: '**', component: StartComponent }
 ];
 

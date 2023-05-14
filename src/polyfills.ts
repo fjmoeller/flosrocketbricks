@@ -56,4 +56,3 @@ import 'zone.js';  // Included with Angular CLI.
  * APPLICATION IMPORTS
  */
 import 'zone.js/dist/task-tracking';
-import { ReadableStream, WritableStream, TransformStream } from 'web-streams-polyfill';

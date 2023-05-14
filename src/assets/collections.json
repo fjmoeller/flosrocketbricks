@@ -1,0 +1,80 @@
+[
+    {
+        "id": 0,
+        "name": "Long March Collection",
+        "description": "The Long March series of rockets!",
+        "subCollections": [
+            {
+                "id": 0,
+                "name": "Long March 1",
+                "description": "description",
+                "mocs": [
+                    5
+                ]
+            },
+            {
+                "id": 1,
+                "name": "Long March 4",
+                "description": "description",
+                "mocs": [
+                    64,63
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Long March 7",
+                "description": "description",
+                "mocs": [
+                    59,60,53
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Long March 8",
+                "description": "description",
+                "mocs": [
+                    61,62
+                ]
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Titan Collection",
+        "description": "The Titan series of rockets!",
+        "subCollections": [
+            {
+                "id": 0,
+                "name": "Titan III",
+                "description": "description",
+                "mocs": [
+                    21,42,43,47,48
+                ]
+            },
+            {
+                "id": 0,
+                "name": "Titan IIIC",
+                "description": "description",
+                "mocs": [
+                    37,38,39,40,41,22
+                ]
+            },
+            {
+                "id": 0,
+                "name": "Titan III Commercial",
+                "description": "description",
+                "mocs": [
+                    44,45,46
+                ]
+            },
+            {
+                "id": 1,
+                "name": "Titan IV",
+                "description": "description",
+                "mocs": [
+                    48
+                ]
+            }
+        ]
+    }
+]

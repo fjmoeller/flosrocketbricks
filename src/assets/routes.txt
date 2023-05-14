@@ -66,5 +66,6 @@
 /moc/65/zhuque-1/
 /moc/66/zond/
 /moc/67/energia-buran/
+/moc/68/buran/
 /
 /about/

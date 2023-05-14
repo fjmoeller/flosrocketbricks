@@ -1,5 +1,93 @@
 [
     {
+        "id": 68,
+        "type": "spacecraft",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Buran_programme",
+            "https://www.buran-energia.com/",
+            "http://www.buran.ru/htm/homepage.htm"
+        ],
+        "mocDescription": "This is a MOC of the Buran spacecraft. The dorrs can be opened.",
+        "rocketDescription": "The Buran spaceplane was a Soviet reusable spaceplane.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": "Easy",
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-14",
+        "dateCreated": "2021-10-29",
+        "related": [],
+        "updateMessage": "",
+        "region": "Russia",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/russia/buran/640x512.png",
+        "internalColor": "-",
+        "internalColorExtra": "",
+        "dimensions": "34.7x21x13.7cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 724,
+        "partsExtra": "The rocket can be build completely out of Lego bricks.",
+        "title": "Buran",
+        "stability": "Good",
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_pub.io",
+                        "name": "Buran_V2.6_pub.io"
+                    },
+                    {
+                        "description": "The pdf isntructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_instructions.pdf",
+                        "name": "Buran_V2.6_instructions.pdf"
+                    }
+                ],
+                "version": "V2.6"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.5/V2.5_pub.io",
+                        "name": "V2.5_pub.io"
+                    },
+                    {
+                        "description": "The pdf isntructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.5/Buran%20v2.5.pdf",
+                        "name": "Buran%20v2.5.pdf"
+                    }
+                ],
+                "version": "V2.5"
+            }
+        ]
+    },
+    {
         "id": 67,
         "type": "rocket",
         "typeExtra": "",

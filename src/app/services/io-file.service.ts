@@ -164,7 +164,7 @@ export class IoFileService {
           {
             //material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(reference.color) });
             if (reference.color == 0)
-              material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(72) });
+              material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(71) });
             else
               material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(0) });
           }

@@ -10,7 +10,8 @@ import { AmbientLight, BasicShadowMap, Box3, BoxHelper, Group, PerspectiveCamera
 })
 export class ViewerComponent {
 
-  _inputLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.ldr";
+  _inputLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io";
+  
   @Input()
   set inputLink(inputLink: string) {
     this._inputLink = inputLink;

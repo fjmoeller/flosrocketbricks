@@ -67,5 +67,6 @@
 /moc/66/zond/
 /moc/67/energia-buran/
 /moc/68/buran/
+/moc/69/ok-gli/
 /
 /about/

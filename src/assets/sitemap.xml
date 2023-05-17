@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/69/ok-gli/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/russia/buran/ok-gli/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/68/buran/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/russia/buran/640x512.png</image:loc>
@@ -56,7 +62,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://flosrocketbricks.com/moc/59/long-march-7//</loc>
+    <loc>https://flosrocketbricks.com/moc/59/long-march-7/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-7/long-march-7/640x512.png</image:loc>
     </image:image>

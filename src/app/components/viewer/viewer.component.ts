@@ -74,8 +74,8 @@ export class ViewerComponent {
     const camera = new PerspectiveCamera(
       50,
       canvasSizes.width / canvasSizes.height,
-      0.1,
-      10000
+      0.5,
+      5000
     );
 
     if (!canvas || !canvasDiv)
@@ -94,6 +94,7 @@ export class ViewerComponent {
     renderer.setClearColor(0x19212D, 1);
     renderer.setSize(canvasSizes.width, canvasSizes.height);
     renderer.setPixelRatio(window.devicePixelRatio * 1.5);
+    renderer.setClearColor("rgb(88,101,117)");
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = BasicShadowMap;
 

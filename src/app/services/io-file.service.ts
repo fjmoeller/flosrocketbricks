@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
-import { BufferGeometry, Group, Line, LineBasicMaterial, LineSegments, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
+import { BufferGeometry, Group, InstancedMesh, Line, LineBasicMaterial, LineSegments, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
 import { LdrPart, LdrSubmodel, PartReference } from '../model/ldrawParts';
 import { LdrawColorService } from './ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
+import e from 'express';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IoFileService {
 
-  //private printMapping: Map<string, string> = new Map<string, string>;
+  private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
 
-  private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>;
-
-  //base URL from where to fetch the part files
+  //base URL from where to fetch the part files to get around stuff
   private backendFetchUrl: string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
 
   constructor(private ldrawColorService: LdrawColorService) { }
@@ -48,7 +47,7 @@ export class IoFileService {
     console.log("Now parsing submodels!");
     let topSubmodelSet: boolean = false;
     let topLdrSubmodel: LdrSubmodel = new LdrSubmodel("", []);
-    const ldrSubModelMap = new Map<string, LdrSubmodel>;
+    const ldrSubModelMap = new Map<string, LdrSubmodel>();
     const ldrSubModelNames: string[] = [];
     //for each submodel inside the ldr file
     submodels.forEach(submodel => {
@@ -103,7 +102,9 @@ export class IoFileService {
         submodelGroup.add(referenceSubmodelGroup);
       } else {// reference is a part
         let referencedPart = this.resolvePart(reference.name);
+
         referencedPart.colorVertexMap.forEach((vertices, color) => { //for each color of the part an own mesh gets created
+
           let partGeometry = new BufferGeometry();
           partGeometry.setFromPoints(vertices);
           let indicies = referencedPart.colorIndexMap.get(color);
@@ -120,21 +121,20 @@ export class IoFileService {
           else if (reference.name == "37762.dat")
             partGeometry.translate(0, -8, 0);
 
-
           partGeometry.applyMatrix4(reference.transformMatrix);
 
-          partGeometry.computeBoundingBox();
           partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
+          partGeometry.computeBoundingBox();
           partGeometry.computeVertexNormals();
-          //partGeometry.normalizeNormals();
+          partGeometry.normalizeNormals();
 
-          const material = new MeshStandardMaterial(); //TODO implement colors fully -> might have to remove resolved submodels to get color all the way to the bottom to each part that needs it
-          const materialColor = (color == 24 || color == 16 || color == -1 || color == -2) ? reference.color : color;
-
-          const matertialValues = this.ldrawColorService.resolveColor(materialColor);
-
+          const material = new MeshStandardMaterial();
+          const matertialValues = this.ldrawColorService.resolveColor((color == 24 || color == 16 || color == -1 || color == -2) ? reference.color : color);
+          material.flatShading = true;
           material.setValues(matertialValues);
-          submodelGroup.add(new Mesh(partGeometry, material));
+
+          const mesh = new Mesh(partGeometry, material);
+          submodelGroup.add(mesh);
         });
 
         referencedPart.lineColorMap.forEach((points, color) => { //for each color of the part an own mesh gets created
@@ -152,9 +152,7 @@ export class IoFileService {
 
           partGeometry.applyMatrix4(reference.transformMatrix);
           partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
-          partGeometry.computeVertexNormals();
-          partGeometry.normalizeNormals();
-          
+
 
           let material; //TODO implement colors fully -> might have to remove resolved submodels to get color all the way to the bottom to each part that needs it
           if (color == 24 || color == 16 || color == -1 || color == -2) //those are not valid colors or mean that the color gets resolved in a submodel above, not fully implemented yet
@@ -458,7 +456,7 @@ export class IoFileService {
       new Vector3(parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10])),
       new Vector3(parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13]))
     ];
-    const indices = invert ? [2, 1, 0, 3,2,0] : [0, 1, 2, 0,2,3];
+    const indices = invert ? [2, 1, 0, 3, 2, 0] : [0, 1, 2, 0, 2, 3];
 
     return {
       color: color,

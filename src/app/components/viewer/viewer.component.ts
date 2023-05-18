@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { IoFileService } from 'src/app/services/io-file.service';
-import { AmbientLight, BasicShadowMap, Box3, BoxHelper, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { AmbientLight, BasicShadowMap, Box3, Group, Mesh, MeshBasicMaterial, MeshPhongMaterial, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { VertexNormalsHelper } from 'three/examples/jsm/helpers/VertexNormalsHelper.js';
 
 @Component({
   selector: 'app-viewer',
@@ -11,7 +12,7 @@ import { AmbientLight, BasicShadowMap, Box3, BoxHelper, Group, PerspectiveCamera
 export class ViewerComponent {
 
   _inputLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io";
-  
+
   @Input()
   set inputLink(inputLink: string) {
     this._inputLink = inputLink;
@@ -32,7 +33,7 @@ export class ViewerComponent {
   constructor(private ioFileService: IoFileService) { }
 
   async showViewerMoc() {
-    let group: Group = await this.ioFileService.getModel(this.inputLink);
+    let group: Group = await this.ioFileService.getModel(this.inputLink); //"https://bricksafe.com/files/SkySaac/website/test/model15.io"
     group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
     this.createThreeJsBox(group);
   }
@@ -45,42 +46,32 @@ export class ViewerComponent {
 
     const pointLight = new PointLight(0xffffff, 0.2);
     pointLight.position.add(new Vector3(1000, 500, 1000));
-    pointLight.castShadow = true;
     scene.add(pointLight);
 
     const pointLight2 = new PointLight(0xffffff, 0.2);
     pointLight2.position.add(new Vector3(-1000, 500, -1000));
-    pointLight2.castShadow = true;
     scene.add(pointLight2);
 
-    const ambientLight = new AmbientLight(0xffffff, 0.7);
+    const ambientLight = new AmbientLight(0xffffff, 0.9);
     scene.add(ambientLight);
-
-    mocGroup.castShadow = true;
-    mocGroup.receiveShadow = true;
 
     scene.add(mocGroup);
 
-    let canvasSizes= {
+    let canvasSizes = {
       width: window.innerWidth / 3,
-        height: window.innerWidth * (3 / 12),
+      height: window.innerWidth * (3 / 12),
     };
+
+    if (!canvas || !canvasDiv)
+      return;
+
     if (canvasDiv)
       canvasSizes = {
         width: canvasDiv.clientWidth,
         height: canvasDiv.clientWidth * (3 / 4)
       };
 
-    const camera = new PerspectiveCamera(
-      50,
-      canvasSizes.width / canvasSizes.height,
-      0.5,
-      5000
-    );
-
-    if (!canvas || !canvasDiv)
-      return;
-
+    const camera = new PerspectiveCamera(50, canvasSizes.width / canvasSizes.height, 0.5, 5000);
     const mocBoundingBox = new Box3();
     mocBoundingBox.setFromObject(mocGroup);
     camera.position.x = (mocBoundingBox.max.x + mocBoundingBox.min.x) / 2
@@ -95,8 +86,8 @@ export class ViewerComponent {
     renderer.setSize(canvasSizes.width, canvasSizes.height);
     renderer.setPixelRatio(window.devicePixelRatio * 1.5);
     renderer.setClearColor("rgb(88,101,117)");
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = BasicShadowMap;
+    /*renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = BasicShadowMap;*/
 
     window.addEventListener('resize', () => {
       canvasSizes.width = canvasDiv.clientWidth;
@@ -120,6 +111,7 @@ export class ViewerComponent {
       if (this._showViewer)
         window.requestAnimationFrame(animateGeometry);
     };
+
     controls.update();
     renderer.render(scene, camera);
 

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LdrColor } from '../model/ldrawParts';
-import { Color, ColorRepresentation } from 'three';
+import { Color } from 'three';
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +29,7 @@ export class LdrawColorService {
     }
   }
 
-  resolveColor(id: number): { color: ColorRepresentation, emissive: Color, opacity: number, metalness: number, roughness: number, transparent: boolean } {
-
+  resolveColor(id: number) {
     const ldrcolor = this.ldrColorList.get(id);
 
     const finalColor = this.getSimpleColor(id);
@@ -39,16 +38,17 @@ export class LdrawColorService {
 
     let metal = 0.0;
     let roughness = 0.8;
-    let emissive = new Color("#000000");
     if (ldrcolor) {
+      let emissive = new Color("#000000");
       switch (ldrcolor.material) {
-        case "METAL": metal = 0.6; roughness = 0.2; emissive = finalColor; break;
-        case "CHROME": metal = 0.7; roughness = 0.0; emissive = finalColor; break;
-        case "PEARLESCENT": metal = 0.2; roughness = 0.5; emissive = finalColor; break;
+        case "CHROME": return { metalness: 0.7, roughness: 0.1, emissive: new Color(finalColor.r - 0.1, finalColor.g - 0.1, finalColor.b - 0.1), color: finalColor, opacity: opacity, transparent: transparent };
+        case "PEARLESCENT": return { metalness: 0.9, roughness: 0.7, emissive: new Color(finalColor.r + 0.05, finalColor.g + 0.05, finalColor.b + 0.05), color: finalColor, opacity: opacity, transparent: transparent };
+        case "METAL": return { metalness: 0.3, roughness: 0.5, emissive: new Color(finalColor.r - 0.10, finalColor.g - 0.10, finalColor.b - 0.10), color: finalColor, opacity: opacity, transparent: transparent };
       }
+
     }
 
-    return { color: finalColor, opacity: opacity, metalness: metal, emissive: emissive, roughness: roughness, transparent: transparent }
+    return { color: finalColor, opacity: opacity, roughness: roughness, transparent: transparent }
   }
 
   getSimpleColor(id: number): Color {

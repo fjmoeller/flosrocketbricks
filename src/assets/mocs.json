@@ -5139,7 +5139,7 @@
                         "name": "V2.io",
                         "link": "https://bricksafe.com/files/SkySaac/website/110/russia/maks/v2.0/V2.io",
                         "type": "io",
-                        "allowViewer": false
+                        "allowViewer": true
                     }
                 ],
                 "version": "V2.0"

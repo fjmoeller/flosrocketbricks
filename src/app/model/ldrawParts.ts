@@ -3,14 +3,16 @@ import { Group, Matrix4, Vector3 } from "three";
 export class LdrPart {
     name: string;
     isResolved: boolean = false;
-    pointColorMap: Map<number, Vector3[]>;
+    colorVertexMap: Map<number,Vector3[]>;
+    colorIndexMap: Map<number, number[]>;
     lineColorMap: Map<number, Vector3[]>;
     references: PartReference[];
     partIndex: number = 0;
 
-    constructor(name: string, pointColorMap: Map<number, Vector3[]>, lineColorMap: Map<number, Vector3[]>, references: PartReference[]) {
+    constructor(name: string, colorVertexMap: Map<number, Vector3[]>, colorIndexMap: Map<number, number[]>, lineColorMap: Map<number, Vector3[]>, references: PartReference[]) {
         this.name = name;
-        this.pointColorMap = pointColorMap;
+        this.colorVertexMap = colorVertexMap;
+        this.colorIndexMap = colorIndexMap;
         this.lineColorMap = lineColorMap;
         this.references = references;
     }
@@ -21,12 +23,16 @@ export class LdrColor {
     hex: string;
     edgeHex: string;
     code: number;
+    alpha: number;
+    material: string;
 
-    constructor(name: string, hex: string, edgeHex: string, code: number) {
+    constructor(name: string, hex: string, edgeHex: string, code: number,alpha: number,material: string) {
         this.name = name;
         this.hex = hex;
         this.edgeHex = edgeHex;
         this.code = code;
+        this.alpha = alpha;
+        this.material = material;
     }
 }
 

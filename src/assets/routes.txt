@@ -70,5 +70,12 @@
 /moc/69/ok-gli/
 /moc/70/peregrine-lander/
 /moc/71/vulcan-centaur-2s-peregrine/
+/moc/72/atlas-v-401/
+/moc/73/atlas-v-411/
+/moc/74/atlas-v-421/
+/moc/75/atlas-v-431/
+/moc/76/atlas-v-401-lro-cross/
+/moc/77/atlas-v-411-solar-orbiter/
+/moc/78/atlas-v-401-jpss-2-loftid/
 /
 /about/

@@ -16,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MocGrabberService } from './services/moc-grabber.service';
 import { RouterModule } from '@angular/router';
-import { MocProxyComponent } from './pages/moc-proxy/moc-proxy.component';
 import { ViewerComponent } from './components/viewer/viewer.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogElementComponent } from './components/blog-element/blog-element.component';
@@ -27,15 +26,16 @@ import { LdrawColorService } from './services/ldraw-color.service';
 import { MetaServiceService } from './services/meta-service.service';
 import { CollectionComponent } from './pages/collection/collection.component';
 import { ComponentsModule } from './components/components.module';
+import { CollectionOverviewComponent } from './pages/collection-overview/collection-overview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MocComponent,
     SearchComponent,
+    CollectionOverviewComponent,
     StartComponent,
     AboutComponent,
-    MocProxyComponent,
     BlogOverviewComponent,
     CollectionComponent
   ],

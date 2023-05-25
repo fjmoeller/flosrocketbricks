@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
   tagTypes: FrontTag[] = [{ tagId: "", tagName: "All Types", selected: true }, { tagId: "rocket", tagName: "Rocket", selected: false }, { tagId: "launchpad", tagName: "Launchpad", selected: false }, { tagId: "spacecraft", tagName: "Spacecraft", selected: false }, { tagId: "spacestation", tagName: "Space Station", selected: false }, { tagId: "other", tagName: "Other", selected: false }];
   tagScales: FrontTag[] = [{ tagId: "", tagName: "All Scales", selected: true }, { tagId: "110", tagName: "1:110", selected: false },{ tagId: "40", tagName: "1:40", selected: false }];
 
-  mocs!: Observable<Moc[]>;
+  mocs: Moc[] = [];
 
   constructor(private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
 
@@ -64,31 +64,31 @@ export class SearchComponent implements OnInit {
   }
 
   getMocs(): void {
-    let tempMocs: Observable<Moc[]> = this.mocGrabberService.getAllMocs();
+    let tempMocs: Moc[] = this.mocGrabberService.getAllMocs();
 
     if (!this.tagRegions[0].selected) {
       let filteredTags: FrontTag[] = this.tagRegions.filter(tagRegion => tagRegion.selected);
-      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => filteredTags.some(tag => moc.region == tag.tagId))));
+      tempMocs = tempMocs.filter((moc: Moc) => filteredTags.some(tag => moc.region == tag.tagId));
     }
 
     if (!this.tagTypes[0].selected) {
       let filteredTags: FrontTag[] = this.tagTypes.filter(tagType => tagType.selected);
-      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => filteredTags.some(tag => moc.type == tag.tagId))));
+      tempMocs = tempMocs.filter((moc: Moc) => filteredTags.some(tag => moc.type == tag.tagId));
     }
 
     if (!this.tagScales[0].selected) {
       let filteredTags: FrontTag[] = this.tagScales.filter(tagScale => tagScale.selected);
-      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => filteredTags.some(tag => moc.scale == tag.tagId))));
+      tempMocs = tempMocs.filter((moc: Moc) => filteredTags.some(tag => moc.scale == tag.tagId));
     }
 
     if (this.searchInput != "") {
-      tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.filter((moc: Moc) => moc.title.toLowerCase().indexOf(this.searchInput.toLowerCase()) >= 0)));
+      tempMocs = tempMocs.filter((moc: Moc) => moc.title.toLowerCase().indexOf(this.searchInput.toLowerCase()) >= 0);
     }
 
     switch (this.sortingCategory) {
-      case "Date": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.id < a.id ? 1 : -1)))); break;
-      case "Title": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.title > a.title ? 1 : -1)))); break;
-      case "Parts": tempMocs = tempMocs.pipe(map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.parts < a.parts ? 1 : -1)))); break;
+      case "Date": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.id < a.id ? 1 : -1)); break;
+      case "Title": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.title > a.title ? 1 : -1)); break;
+      case "Parts": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.parts < a.parts ? 1 : -1)); break;
     }
 
     this.mocs = tempMocs;

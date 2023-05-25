@@ -5,18 +5,18 @@
     <p>
         {{collection.description}}
     </p>
-    <div *ngFor="let subcollection of collection.subCollections" class="pb-4">
+    <div *ngFor="let subcollection of collection.subCollections" class="pb-4" id="{{subcollection.name.toLowerCase().split(' ').join('-')}}">
         <hr class="mb-3 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px" />
         <div class="accordion text-light" id="accordion">
             <div class="accordion-item text-light">
                 <h2 class="accordion-header" [id]="'heading'+subcollection.id">
-                    <button class="text-light accordion-button" style="background-color: rgb(26,30,33)" type="button"
+                    <button class="text-light accordion-button p-3" style="background-color: rgb(26,30,33)" type="button"
                         data-bs-toggle="collapse" [attr.data-bs-target]="'#file'+subcollection.id"
                         [attr.aria-controls]="'file'+subcollection.id">
                         <h3>
                             {{subcollection.name}}
                         </h3>
-                        <span class="p-2">
+                        <span *ngIf="subcollection.description!=''" class="p-2">
                             {{subcollection.description}}
                         </span>
                     </button>

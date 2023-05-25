@@ -9,19 +9,18 @@ import { map, of } from 'rxjs';
 })
 export class CollectionGrabberService {
 
-  private collections!: Observable<Collection[]>;
+  private collections!: Collection[];
 
   constructor() {
     let parsedCollectionData: Collection[] = collections;
-    this.collections = of(parsedCollectionData);
+    this.collections = parsedCollectionData;
   }
 
-
-  getCollection(id: number): Observable<Collection> {
-    return this.collections.pipe(map(collections => collections.filter(collection => collection.id == id)[0]));
+  getCollection(id: number): Collection {
+    return this.collections.filter(collection => collection.id == id)[0];
   }
 
-  getAllCollections(): Observable<Collection[]> {
+  getAllCollections(): Collection[] {
     return this.collections;
   }
 }

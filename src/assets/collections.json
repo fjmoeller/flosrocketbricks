@@ -1,13 +1,14 @@
 [
     {
         "id": 0,
-        "name": "Long March Collection",
-        "description": "The Long March series of rockets!",
+        "name": "Long March",
+        "description": "The Long March series of rockets is a Chinese family of orbital rocket systems.",
+        "cover": "https://bricksafe.com/files/SkySaac/website/collection/long-march/Long_March_V1.png/640x512.png",
         "subCollections": [
             {
                 "id": 0,
                 "name": "Long March 1",
-                "description": "description",
+                "description": "The Long March 1 series of rockets included the first Chinese Orbital launch vehicle that launched the first Chinese Satellite in 1970.",
                 "mocs": [
                     5
                 ]
@@ -15,7 +16,7 @@
             {
                 "id": 1,
                 "name": "Long March 4",
-                "description": "description",
+                "description": "",
                 "mocs": [
                     64,63
                 ]
@@ -23,7 +24,7 @@
             {
                 "id": 2,
                 "name": "Long March 7",
-                "description": "description",
+                "description": "The Long March 7 series of rockets is one of the new series of Chinas space launch systems. The most notable payloads are the Tianzhou spacecrafts that resupply the Chinese Space Station.",
                 "mocs": [
                     59,60,53
                 ]
@@ -31,7 +32,7 @@
             {
                 "id": 3,
                 "name": "Long March 8",
-                "description": "description",
+                "description": "",
                 "mocs": [
                     61,62
                 ]
@@ -40,39 +41,96 @@
     },
     {
         "id": 1,
-        "name": "Titan Collection",
+        "name": "Titan",
         "description": "The Titan series of rockets!",
+        "cover": "https://bricksafe.com/files/SkySaac/website/collection/titan/Titan_V1.png/640x512.png",
         "subCollections": [
             {
                 "id": 0,
                 "name": "Titan III",
-                "description": "description",
+                "description": "",
                 "mocs": [
                     21,42,43,47,48
                 ]
             },
             {
-                "id": 0,
+                "id": 1,
                 "name": "Titan IIIC",
-                "description": "description",
+                "description": "",
                 "mocs": [
                     37,38,39,40,41,22
                 ]
             },
             {
-                "id": 0,
+                "id": 2,
                 "name": "Titan III Commercial",
-                "description": "description",
+                "description": "",
                 "mocs": [
                     44,45,46
                 ]
             },
             {
-                "id": 1,
+                "id": 3,
                 "name": "Titan IV",
-                "description": "description",
+                "description": "",
                 "mocs": [
                     48
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Atlas",
+        "description": "The Atlas series has a long history of American orbital rocket systems, that have been used from the beginning of the space age until today.",
+        "cover": "https://bricksafe.com/files/SkySaac/website/collection/atlas/Atlas_V1.png/640x512.png",
+        "subCollections": [
+            {
+                "id": 0,
+                "name": "Atlas V 500",
+                "description": "",
+                "mocs": [
+                    28,29,30,31,32,33
+                ]
+            },
+            {
+                "id": 1,
+                "name": "Atlas V 500 Missions",
+                "description": "",
+                "mocs": [
+                    13,14
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Atlas V 400",
+                "description": "",
+                "mocs": [
+                    72,73,74,75
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Atlas V 400 Missions",
+                "description": "",
+                "mocs": [
+                    76,77,78
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Other Atlas V variants",
+                "description": "",
+                "mocs": [
+                    34,35
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Atlas V Launchpad",
+                "description": "",
+                "mocs": [
+                    50
                 ]
             }
         ]

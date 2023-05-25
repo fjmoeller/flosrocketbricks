@@ -2,10 +2,9 @@
     <div class="row">
         <div id="mocCarousel" class="carousel slide col-md-7 mx-auto" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div *ngFor="let picture of (moc | async)?.pictures; let index = index" [class.active]="index == 0"
+                <div *ngFor="let picture of moc.pictures; let index = index" [class.active]="index == 0"
                     class="carousel-item">
-                    <img src={{picture}} class="d-block w-100" alt="{{(moc | async)?.title}}"
-                        title="{{(moc | async)?.title}}">
+                    <img [src]="picture" class="d-block w-100" [alt]="moc.title" [title]="moc.title">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#mocCarousel" data-bs-slide="prev">
@@ -20,7 +19,7 @@
         <div class="col-md-5 bg-dark text-light">
             <div class="row justify-content-center text-center my-3">
                 <h1>
-                    {{(moc | async)?.title}}
+                    {{moc.title}}
                 </h1>
             </div>
             <div class="container">
@@ -35,9 +34,9 @@
                         </div>
                         <div class="row justify-content-center">
                             <strong>Parts:</strong>
-                            <span>{{(moc | async)?.parts}} <svg placement="top" *ngIf="(moc | async)?.partsExtra != ''"
-                                    ngbTooltip="{{(moc | async)?.partsExtra}}" xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                            <span>{{moc.parts}} <svg placement="top" *ngIf="moc.partsExtra != ''"
+                                    [ngbTooltip]="moc.partsExtra" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
@@ -55,9 +54,9 @@
                         </div>
                         <div class="row justify-content-center">
                             <strong>Scale:</strong>
-                            <span>{{(moc | async)?.scale}} <svg placement="top" *ngIf="(moc | async)?.scaleExtra != ''"
-                                    ngbTooltip="{{(moc | async)?.scaleExtra}}" xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                            <span>{{moc.scale}} <svg placement="top" *ngIf="moc.scaleExtra != ''"
+                                    [ngbTooltip]="moc.scaleExtra" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
@@ -79,10 +78,32 @@
                         </div>
                         <div class="row justify-content-center">
                             <strong>Stability:</strong>
-                            <span>{{(moc | async)?.stability}} <svg placement="top"
-                                    *ngIf="(moc | async)?.stabilityExtra != ''"
-                                    ngbTooltip="{{(moc | async)?.stabilityExtra}}" xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                            <div>
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2,'brick-1-color': moc.stability==1}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                            </div>
+                            <span>{{getStabilityText(moc.stability)}}
+                                <svg placement="top" *ngIf="moc.stabilityExtra != ''"
+                                    [ngbTooltip]="moc.stabilityExtra" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
@@ -101,7 +122,7 @@
                             </svg>
                         </div>
                         <div class="row justify-content-center">
-                            <strong>Last updated:</strong> {{(moc | async)?.lastupdate}}
+                            <strong>Last updated:</strong> {{moc.lastupdate}}
                         </div>
                     </div>
                 </div>
@@ -116,10 +137,9 @@
                         </div>
                         <div class="row justify-content-center">
                             <strong>Dimensions:</strong>
-                            <span>{{(moc | async)?.dimensions}} <svg placement="top"
-                                    *ngIf="(moc | async)?.dimensionsExtra != ''"
-                                    ngbTooltip="{{(moc | async)?.dimensionsExtra}}" xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                            <span>{{moc.dimensions}} <svg placement="top" *ngIf="moc.dimensionsExtra != ''"
+                                    [ngbTooltip]="moc.dimensionsExtra" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
@@ -138,10 +158,9 @@
                         </div>
                         <div class="row justify-content-center">
                             <strong>Designers:</strong>
-                            <span>{{(moc | async)?.designer}} <svg placement="top"
-                                    *ngIf="(moc | async)?.designerExtra != ''"
-                                    ngbTooltip="{{(moc | async)?.designerExtra}}" xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                            <span>{{moc.designer}} <svg placement="top" *ngIf="moc.designerExtra != ''"
+                                    [ngbTooltip]="moc.designerExtra" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
@@ -161,10 +180,32 @@
                         </div>
                         <div class="row justify-content-center">
                             <strong>Build difficulty:</strong>
-                            <span>{{(moc | async)?.difficulty}} <svg placement="top"
-                                    *ngIf="(moc | async)?.difficultyExtra != ''"
-                                    ngbTooltip="{{(moc | async)?.difficultyExtra}}" xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                            <div>
+                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2,'brick-1-color': moc.difficulty==1}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                            </div>
+                            <span>{{getDifficultyText(moc.difficulty)}}
+                                <svg placement="top" *ngIf="moc.difficultyExtra != ''"
+                                    [ngbTooltip]="moc.difficultyExtra" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
@@ -182,11 +223,10 @@
                         </div>
                         <div class="row justify-content-center">
                             <strong>Internal brick color:</strong>
-                            <span>{{(moc | async)?.internalColor}} <svg placement="top"
-                                    *ngIf="(moc | async)?.internalColorExtra != ''"
-                                    ngbTooltip="{{(moc | async)?.internalColorExtra}}"
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                            <span>{{moc.internalColor}} <svg placement="top" *ngIf="moc.internalColorExtra != ''"
+                                    [ngbTooltip]="moc.internalColorExtra" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                    viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
@@ -205,17 +245,17 @@
             </div>
             <h4>About the Moc</h4>
             <p>
-                {{(moc | async)?.mocDescription}}
+                {{moc.mocDescription}}
             </p>
-            <h4>About the {{(moc | async)?.type}}</h4>
+            <h4>About the {{moc.type}}</h4>
             <p>
-                {{(moc | async)?.rocketDescription}}
+                {{moc.rocketDescription}}
             </p>
         </div>
         <div class="col-md-6 bg-dark">
-            <div *ngIf="(moc | async)?.updateMessage!=''" class="row mt-1">
+            <div *ngIf="moc.updateMessage!=''" class="row mt-1">
                 <h3 class="mx-auto text-center text-danger">
-                    {{(moc | async)?.updateMessage}}
+                    {{moc.updateMessage}}
                 </h3>
             </div>
             <div class="row mt-1">
@@ -237,7 +277,7 @@
             </div>
             <div class="row mt-1">
                 <div class="accordion text-light" id="accordion">
-                    <div *ngFor="let version of sortedVersions((moc | async)?.versions);let indexOfelement=index;"
+                    <div *ngFor="let version of sortedVersions(moc.versions);let indexOfelement=index;"
                         class="accordion-item text-light">
                         <h2 class="accordion-header text-light" [id]="'heading'+indexOfelement">
                             <button class="accordion-button text-light collapsed"
@@ -268,15 +308,15 @@
 
         </div>
     </div>
-    <div *ngIf="(moc|async)!.related.length > 0" class="row justify-content-center bg-dark m-4 text-light">
+    <div *ngIf="moc.related.length > 0" class="row justify-content-center bg-dark m-4 text-light">
         <div class="justify-content-center">
             <span>
                 <h3>Related Mocs</h3>
             </span>
             <div class="card-group">
-                <app-card class="col-2" *ngFor="let relatedMoc of relatedMocs | async"
-                    [pic]="relatedMoc.smallCoverImage" [name]="relatedMoc.title" [parts]="relatedMoc.parts"
-                    [id]="relatedMoc.id" [scale]="relatedMoc.scale">
+                <app-card class="col-2" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
+                    [name]="relatedMoc.title" [parts]="relatedMoc.parts" [id]="relatedMoc.id"
+                    [scale]="relatedMoc.scale">
                 </app-card>
             </div>
         </div>

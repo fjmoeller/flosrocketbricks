@@ -17,6 +17,12 @@
       <ul class="col-md-9 navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
         <li class="nav-item w-100">
           <div>
+            <a class="nav-link headerLink text-light" routerLink="/collections"
+              routerLinkActive="active" ariaCurrentWhenActive="page">Collections</a>
+          </div>
+        </li>
+        <li class="nav-item w-100">
+          <div>
             <a class="nav-link headerLink text-light" routerLink="/search" [queryParams]="{ type:'rocket' }"
               routerLinkActive="active" ariaCurrentWhenActive="page">Rockets</a>
           </div>

@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/78/atlas-v-401-jpss-2-loftid/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-jpss-2-loftid/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/77/atlas-v-411-solar-orbiter/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-411-solar-orbiter/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/76/atlas-v-401-lro-cross/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-lro-lcross/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/75/atlas-v-431/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/431/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/74/atlas-v-421/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/421/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/73/atlas-v-411/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/411/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/72/atlas-v-401/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/401/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/71/vulcan-centaur-2s-peregrine/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc2s/peregrine/640x512.png</image:loc>

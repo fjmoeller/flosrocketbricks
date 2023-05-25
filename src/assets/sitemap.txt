@@ -70,5 +70,12 @@ https://flosrocketbricks.com/moc/68/buran/
 https://flosrocketbricks.com/moc/69/ok-gli/
 https://flosrocketbricks.com/moc/70/peregrine-lander/
 https://flosrocketbricks.com/moc/71/vulcan-centaur-2s-peregrine/
+https://flosrocketbricks.com/moc/72/atlas-v-401/
+https://flosrocketbricks.com/moc/73/atlas-v-411/
+https://flosrocketbricks.com/moc/74/atlas-v-421/
+https://flosrocketbricks.com/moc/75/atlas-v-431/
+https://flosrocketbricks.com/moc/76/atlas-v-401-lro-cross/
+https://flosrocketbricks.com/moc/77/atlas-v-411-solar-orbiter/
+https://flosrocketbricks.com/moc/78/atlas-v-401-jpss-2-loftid/
 https://flosrocketbricks.com/
 https://flosrocketbricks.com/about/

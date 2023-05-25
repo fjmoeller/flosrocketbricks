@@ -10,27 +10,25 @@ import { map, Observable, tap } from 'rxjs';
   templateUrl: './moc.component.html',
   styleUrls: ['./moc.component.sass']
 })
-export class MocComponent implements OnInit,OnDestroy {
-  moc!: Observable<Moc>;
-  relatedMocs!: Observable<Moc[]>;
+export class MocComponent implements OnInit, OnDestroy {
+  moc: Moc;
+  relatedMocs: Moc[] = [];
   viewerLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io"; //default link
 
   noError: boolean = true;
   showViewer: boolean = false;
   id: number = 0;
 
-  constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) { }
+  constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) {
+    this.moc = new Moc("", "", "", -1, [], "", [], -1, "", "", "", -1, -1, "", [], "", [], "", [], "", "", "", "", "", "", "", "", "", "", [], "", "", "", "");
+  }
 
   async ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
       this.id = Number(paramMap.get('id')) || 0;
-      this.moc = this.mocGrabberService.getMoc(this.id).pipe(tap(moc => {
-        this.metaService.setAllTags(moc.title + " - FlosRocketBricks", moc.mocDescription, "https://flosrocketbricks.com/moc/" + moc.id.toString() + "/" + moc.title.toLowerCase().split(' ').join('-') + "/", moc.smallCoverImage);
-        this.relatedMocs = this.mocGrabberService.getAllMocs().pipe(
-          map(relMocs => relMocs.filter(relMoc => moc.related.includes(relMoc.id))),
-          map((mocs: Moc[]) => mocs.slice(0, 6))
-        );
-      }));
+      this.moc = this.mocGrabberService.getMoc(this.id);
+      this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription, "https://flosrocketbricks.com/moc/" + this.moc.id.toString() + "/" + this.moc.title.toLowerCase().split(' ').join('-') + "/", this.moc.smallCoverImage);
+      this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 6);
     });
   }
 
@@ -43,7 +41,7 @@ export class MocComponent implements OnInit,OnDestroy {
     }
   }
 
-  ngOnDestroy():void{
+  ngOnDestroy(): void {
     this.showViewer = false
   }
 
@@ -51,6 +49,28 @@ export class MocComponent implements OnInit,OnDestroy {
     if (!versions)
       return [];
     return versions.sort((a, b) => (a.version > b.version) ? -1 : ((b.version > a.version) ? 1 : 0));
+  }
+
+  getDifficultyText(val: number): string {
+    switch(val) {
+      case 1: return "Very Hard";
+      case 2: return "Hard";
+      case 3: return "Medium";
+      case 4: return "Easy";
+      case 5: return "Very Easy";
+      default: return "Not Tested";
+    }
+  }
+
+  getStabilityText(val: number): string {
+    switch(val) {
+      case 1: return "Very Unstable";
+      case 2: return "Unstable";
+      case 3: return "Medium Stable";
+      case 4: return "Stable";
+      case 5: return "Very Stable";
+      default: return "Not Tested";
+    }
   }
 
 }

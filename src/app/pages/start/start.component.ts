@@ -12,7 +12,7 @@ import { MetaServiceService } from 'src/app/services/meta-service.service';
 })
 export class StartComponent implements OnInit {
 
-  newestMocs!: Observable<Moc[]>;
+  newestMocs: Moc[] = [];
 
   constructor(private metaService: MetaServiceService, private mocGrabberService: MocGrabberService) {
   }
@@ -20,10 +20,7 @@ export class StartComponent implements OnInit {
   ngOnInit(): void {
     this.metaService.setDefaultTags("Start - FlosRocketBricks", "https://flosrocketbricks.com/");
 
-    this.newestMocs = this.mocGrabberService.getAllMocs().pipe(
-      map((mocs: Moc[]) => mocs.sort((a: Moc, b: Moc) => b.id - a.id)),
-      map((mocs: Moc[]) => mocs.slice(0, 6))
-    );
+    this.newestMocs = this.mocGrabberService.getAllMocs().sort((a: Moc, b: Moc) => b.id - a.id).slice(0, 6);
   }
 
 }

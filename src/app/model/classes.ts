@@ -38,12 +38,14 @@ export class Collection {
   id: number;
   name: string;
   description: string;
+  cover: string;
   subCollections: SubCollection[];
 
-  constructor(id: number, name: string, description: string, subCollections: SubCollection[]) {
+  constructor(id: number, name: string, description: string,cover:string, subCollections: SubCollection[]) {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.cover = cover;
     this.subCollections = subCollections;
   }
 }
@@ -75,8 +77,8 @@ export class Moc {
   scale: string;
   smallCoverImage: string;
   designer: string;
-  stability: string;
-  difficulty: string;
+  stability: number;
+  difficulty: number;
   lastupdate: string;
   fanPictures: string[];
   tags: string[];
@@ -101,7 +103,7 @@ export class Moc {
 
   constructor(internalColor: string, type: string, region: string, id: number, versions: Version[], title: string, pictures: string[],
     parts: number, dimensions: string, scale: string, designer: string,
-    stability: string, difficulty: string, lastupdate: string, tags: string[],
+    stability: number, difficulty: number, lastupdate: string, tags: string[],
     mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],
     dateCreated: string, scaleExtra: string, partsExtra: string, dimensionsExtra: string,
     stabilityExtra: string, difficultyExtra: string, designerExtra: string, internalColorExtra: string,

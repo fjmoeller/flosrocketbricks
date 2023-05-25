@@ -1,0 +1,23 @@
+<div class="text-light container">
+    <h1 class="py-2">
+        All Collections
+    </h1>
+    <div *ngFor="let collection of collections" >
+        <a routerLink="/collection/{{collection.id}}/{{collection.name.toLowerCase().split(' ').join('-')}}" class="container" style="text-decoration: none">
+            <hr class="mb-3 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px" />
+            <div class="text-light row">
+                <div class="col-md-auto">
+                    <img [src]="collection.cover" style="max-height:150px">
+                </div>
+                <div class="col-md-auto">
+                    <h2>
+                        {{collection.name}}
+                    </h2>
+                    <span>
+                        {{collection.description}}
+                    </span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

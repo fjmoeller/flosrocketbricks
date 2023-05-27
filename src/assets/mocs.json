@@ -1,5 +1,69 @@
 [
     {
+        "id": 80,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_3"
+        ],
+        "mocDescription": "This is a MOC of the Long March 3 rocket. It has a first, second and third stage which can all be seperated. There are two fairing variants available.",
+        "rocketDescription": "The Long March 3 rocket is the first rocket of the Long March 3 series of rockets. It had no boosters and three stages. It first launched in 1984 and flew until 2000 with a total of 13 launches. It was succeeded  by the Long March 3A.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-27",
+        "dateCreated": "2023-01-16",
+        "related": [],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "5.0x5.0x39.3cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 391,
+        "partsExtra": "This MOC can be completely build out of Lego parts.",
+        "title": "Long March 3",
+        "stability": -1,
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/v1.1/Long_March_3_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/v1.1/Long_March_3_V1.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/v1.1/Long_March_3_V1.1_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/v1.1/Long_March_3_V1.1.io",
+                        "name": "Long_March_3_V1.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variants",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/v1.1/Long_March_3_Fairings_V1.1.io",
+                        "name": "Long_March_3_Fairings_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            }
+        ]
+    },
+    {
         "id": 79,
         "type": "rocket",
         "typeExtra": "",

@@ -78,5 +78,6 @@
 /moc/77/atlas-v-411-solar-orbiter/
 /moc/78/atlas-v-401-jpss-2-loftid/
 /moc/79/ariane-5g/
+/moc/80/long-march-3/
 /
 /about/

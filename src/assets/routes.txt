@@ -77,5 +77,6 @@
 /moc/76/atlas-v-401-lro-cross/
 /moc/77/atlas-v-411-solar-orbiter/
 /moc/78/atlas-v-401-jpss-2-loftid/
+/moc/79/ariane-5g/
 /
 /about/

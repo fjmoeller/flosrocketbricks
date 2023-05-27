@@ -1,5 +1,95 @@
 [
     {
+        "id": 79,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Ariane_5",
+            "https://www.bernd-leitenberger.de/ariane5.shtml"
+        ],
+        "mocDescription": "This is a MOC of the Ariane 5G rocket. The second stage and the boosters can be seperated from the core stage. The fairing holds some space for a payload.",
+        "rocketDescription": "The Ariane 5G is a European orbital rocket system that is being launched from French Guiana. It was first launched in 1996. Since then the Ariane 5 series, which also includes the G+, ESV and ECA variants has launched 116 times with a last launch planned for 2023.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-27",
+        "dateCreated": "2022-11-23",
+        "related": [
+            17,
+            27
+        ],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/g/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "6.0x11.8x43.2cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 1257,
+        "partsExtra": "The MOC can be completely build out of Lego parts.",
+        "title": "Ariane 5G",
+        "stability": -1,
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.1/Ariane_5_G_V2.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.1/Ariane_5_G_V2.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.1/Ariane_5_G_V2.1_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.1/Ariane_5_G_V2.1_4.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.1/Ariane_5_G_V2.1_pub.io",
+                        "name": "Ariane_5_G_V2.1_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.1/Ariane_5_G_V2.1.pdf",
+                        "name": "Ariane_5_G_V2.1.pdf"
+                    }
+                ],
+                "version": "V2.1"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.0/Ariane_5_G_V2_pub.io",
+                        "name": "Ariane_5_G_V2_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.0/Ariane_5_G_V2.pdf",
+                        "name": "Ariane_5_G_V2.pdf"
+                    }
+                ],
+                "version": "V2.0"
+            }
+        ]
+    },
+    {
         "id": 78,
         "type": "rocket",
         "typeExtra": "",
@@ -3739,7 +3829,8 @@
         "dateCreated": "2023-03-29",
         "related": [
             17,
-            49
+            49,
+            79
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -5607,7 +5698,8 @@
         "internalColorExtra": "",
         "fanPictures": [],
         "related": [
-            27
+            27,
+            79
         ],
         "stabilityExtra": "",
         "lastupdate": "2023-03-06",

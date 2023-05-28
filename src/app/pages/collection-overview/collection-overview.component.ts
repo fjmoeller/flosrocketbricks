@@ -14,7 +14,7 @@ export class CollectionOverviewComponent implements OnInit {
   constructor(private collectionGrabberService: CollectionGrabberService) { }
 
   ngOnInit(): void {
-    this.collections = this.collectionGrabberService.getAllCollections();
+    this.collections = this.collectionGrabberService.getAllCollections().sort((a: Collection, b: Collection) => b.name < a.name ? 1 : -1);
   }
 
 }

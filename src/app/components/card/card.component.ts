@@ -18,7 +18,7 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.link = "/moc/" + this.id + "/" + this.mocName.toLowerCase().split(' ').join('-') + "/";
+    this.link = "/moc/" + this.id + "/" + this.mocName.toLowerCase().replace("/","-").split(' ').join('-') + "/";
   }
 
 }

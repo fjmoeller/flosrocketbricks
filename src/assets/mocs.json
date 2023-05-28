@@ -1,5 +1,174 @@
 [
     {
+        "id": 83,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_3C",
+            "https://space.skyrocket.de/doc_lau_det/cz-3cg2.htm"
+        ],
+        "mocDescription": "This is a MOC of the Long March 3C/E rocket. It has two seperatable boosters and a total of three stages. All of them can be seperated from each other. The fairing holds some space for a small payload.",
+        "rocketDescription": "The Long March 3C/E rocket is a chinese orbital launcher. It has 2 boosters and 3 stages. It first launched in 2014 and has launched 7 more times till then.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-28",
+        "dateCreated": "2021-07-22",
+        "related": [80,81,82],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/c-e/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "6.2x7.5x51.2cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 740,
+        "partsExtra": "This MOC can be completely build out of Lego parts.",
+        "title": "Long March 3C/E",
+        "stability": -1,
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/ce/v3.6/Long_March_3CE_V3.6_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/ce/v3.6/Long_March_3CE_V3.6_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/ce/v3.6/Long_March_3CE_V3.6.io",
+                        "name": "Long_March_3CE_V3.6.io"
+                    }
+                ],
+                "version": "V3.6"
+            }
+        ]
+    },
+    {
+        "id": 82,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_3B"
+        ],
+        "mocDescription": "This is a MOC of the Long March 3B/E rocket. It has four seperatable boosters and a total of three stages. All of them can be seperated from each other. The fairing holds some space for a small payload.",
+        "rocketDescription": "The Long March 3B/E rocket is a chinese orbital launcher. It has 4 boosters and 3 stages. It first launched in 2007 and has launched more than 75 times till then.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-28",
+        "dateCreated": "2021-07-21",
+        "related": [80,81,83],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/b-e/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "10.7x10.7x51.2cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 391,
+        "partsExtra": "This MOC can be completely build out of Lego parts.",
+        "title": "Long March 3B/E",
+        "stability": -1,
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/be/v3.7/Long_March_3BE_V3.7_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/be/v3.7/Long_March_3BE_V3.7_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/be/v3.7/Long_March_3BE_V3.7.io",
+                        "name": "Long_March_3BE_V3.7.io"
+                    }
+                ],
+                "version": "V3.7"
+            }
+        ]
+    },
+    {
+        "id": 81,
+        "type": "rocket",
+        "typeExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_3A"
+        ],
+        "mocDescription": "This is a MOC of the Long March 3A rocket. It has a first, second and third stage which can all be seperated. The fairing holds some space for a small payload.",
+        "rocketDescription": "The Long March 3A rocket is a Chinese orbital rocket. It has three stages. It first launched in 1994 and flew until 2018 with a total of 27 launches.",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-28",
+        "dateCreated": "2023-01-16",
+        "related": [80,82,83],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/a/640x512.png",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "dimensions": "7.0x7.0x47.8cm",
+        "dimensionsExtra": "",
+        "tags": [],
+        "parts": 555,
+        "partsExtra": "This MOC can be completely build out of Lego parts.",
+        "title": "Long March 3A",
+        "stability": -1,
+        "stabilityExtra": "",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/a/v1.1/Long_March_3A_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/a/v1.1/Long_March_3A_V1.1_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/a/v1.1/Long_March_3A_V1.1.io",
+                        "name": "Long_March_3A_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            }
+        ]
+    },
+    {
         "id": 80,
         "type": "rocket",
         "typeExtra": "",
@@ -14,7 +183,7 @@
         "difficultyExtra": "",
         "lastupdate": "2023-05-27",
         "dateCreated": "2023-01-16",
-        "related": [],
+        "related": [81,82,83],
         "updateMessage": "",
         "region": "China",
         "regionExtra": "",

@@ -12,11 +12,11 @@ export class CollectionOverviewComponent implements OnInit {
 
   collections: Collection[] = [];
 
-  constructor(private collectionGrabberService: CollectionGrabberService,private metaService: MetaServiceService) { }
+  constructor(private collectionGrabberService: CollectionGrabberService, private metaService: MetaServiceService) { }
 
   ngOnInit(): void {
     this.collections = this.collectionGrabberService.getAllCollections().sort((a: Collection, b: Collection) => b.name < a.name ? 1 : -1);
-    this.metaService.setDefaultTags("Collections - FlosRocketBricks","https://flosrocketbricks.com/collections/");
+    this.metaService.setDefaultTags("Collections - FlosRocketBricks", "https://flosrocketbricks.com/collections/");
   }
 
 }

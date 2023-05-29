@@ -1,5 +1,76 @@
 [
     {
+        "id": 85,
+        "type": "launchpad",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "-",
+        "rocketReadMoreLinks": [
+            "http://www.capcomespace.net/dossiers/espace_europeen/CSG/ELA3/table_lancement.htm"
+        ],
+        "mocDescription": "This is a MOC of the ELA 3 Launchtable. It is compatible with all of my 1:110 Ariane 5 rockets.",
+        "rocketDescription": "The ELA 3 Launchtable is the transporter and launchtable for the European Ariane 5 rocket.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-05-29",
+        "dateCreated": "2021-10-19",
+        "related": [
+            17,
+            27,
+            79,
+            84
+        ],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/ela-3/launchtable/640x512.png",
+        "dimensions": "23.2x19.1x55.6cm",
+        "tags": [],
+        "title": "ELA 3 Launchtable",
+        "parts": 1438,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_5.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_6.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_pub.io",
+                        "name": "ELA_3_Ariane_5_Launch_Table_V2.0_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_instructions.pdf",
+                        "name": "ELA_3_Ariane_5_Launch_Table_V2.0_instructions.pdf"
+                    }
+                ],
+                "version": "V2.0"
+            }
+        ]
+    },
+    {
         "id": 84,
         "type": "rocket",
         "dimensionsExtra": "",

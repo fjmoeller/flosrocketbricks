@@ -83,5 +83,6 @@
 /moc/82/long-march-3b-e/
 /moc/83/long-march-3c-e/
 /moc/84/ariane-5-eca-jwst/
+/moc/85/ela-3-launchtable/
 /
 /about/

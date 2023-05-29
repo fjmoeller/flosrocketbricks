@@ -1,5 +1,76 @@
 [
     {
+        "id": 84,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Dark Pink",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Ariane_5",
+            "https://space.skyrocket.de/doc_lau/ariane-5.htm"
+        ],
+        "mocDescription": "This is a MOC of the Ariane 5 ECA rocket with JWST. The fairing holds a small JWST model. The boosters as well as the upper stage of the rocket can be seperated.",
+        "rocketDescription": "The Ariane 5 ECA rocket is Europes heavy orbital launch vehicle. In 2021 it launches the James Webb Space Telescope.",
+        "stabilityExtra": "",
+        "company": "ArianeGroup",
+        "difficulty": -1,
+        "lastupdate": "2023-05-29",
+        "dateCreated": "2021-11-26",
+        "related": [
+            17,
+            27,
+            79
+        ],
+        "updateMessage": "",
+        "region": "Europe",
+        "scale": "110",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/eca/jwst/640x512.png",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "dimensions": "5.9x11.8x49.3cm",
+        "tags": [],
+        "partsExtra": "Can be build completely out of Lego bricks. You will need to cut some hoses to the correct lengths though.",
+        "title": "Ariane 5 ECA JWST",
+        "regionExtra": "",
+        "parts": 1308,
+        "stability": -1,
+        "difficultyExtra": "",
+        "designerExtra": "",
+        "companyExtra": "",
+        "designer": "SkySaac",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_pub.io",
+                        "name": "Ariane_5_JWST_V2.0_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0.pdf",
+                        "name": "Ariane_5_JWST_V2.0.pdf"
+                    }
+                ],
+                "version": "V2.0"
+            }
+        ]
+    },
+    {
         "id": 83,
         "type": "rocket",
         "typeExtra": "",
@@ -250,7 +321,8 @@
         "dateCreated": "2022-11-23",
         "related": [
             17,
-            27
+            27,
+            79
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -4063,7 +4135,8 @@
         "related": [
             17,
             49,
-            79
+            79,
+            84
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -5932,7 +6005,8 @@
         "fanPictures": [],
         "related": [
             27,
-            79
+            79,
+            84
         ],
         "stabilityExtra": "",
         "lastupdate": "2023-03-06",

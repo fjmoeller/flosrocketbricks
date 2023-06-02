@@ -6,18 +6,15 @@ import { Component, Inject } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass']
 })
-export class HeaderComponent {
+export class HeaderComponent{
 
   searchInput: string = "";
   tags: string = "";
 
   constructor(@Inject(DOCUMENT) document: Document) { }
-
-  public expandMenu() {
-    console.log("exp")
-    const el = document.getElementById("expandWrapper")
-    el!.classList.toggle('expanded')
-    el!.classList.toggle('collapsed')
+  
+  triggerSearch(e:Event){
+    document.getElementById("searchButton")?.click();
   }
 
 }

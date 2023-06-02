@@ -20,4 +20,5 @@ Using Angular Universal it gets pre rendered at each deployment.
 ## How To Update LDR Parts
 1. Replace files in src/assets/origParts
 2. run printPartMapper.py
-3. put new LDConfig.ldr into /lists 
+3. put manual printed mapped parts into printed part map
+4. put new LDConfig.ldr into /lists 

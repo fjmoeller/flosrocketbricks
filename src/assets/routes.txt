@@ -95,5 +95,7 @@
 /collection/2/atlas/
 /collection/0/long-march/
 /collection/1/titan/
+/moc/93/kslv-ii-nuri/
+/moc/94/chollima-1/
 /
 /about/

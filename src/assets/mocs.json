@@ -1,5 +1,119 @@
 [
     {
+        "id": 94,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "-",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://space.skyrocket.de/doc_lau/chollima-1.htm",
+            "http://www.b14643.de/Spacerockets_1/Rest_World/Chollima-1/Description/Frame.htm"
+        ],
+        "mocDescription": "This is a MOC of North Koreas Chollima-1 rocket. The three stages can be seoerated. The fairing holds no space for a payload.",
+        "rocketDescription": "Chollima-1 is North Koreas newest orbital rocket system. Its so far only launch ended in a failure in 2023. It probably consists out of three stages.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-02",
+        "dateCreated": "2023-06-02",
+        "related": [],
+        "updateMessage": "",
+        "region": "North Korea",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/north-korea/chollima-1/640x512.png",
+        "dimensions": "2.9x2.4x26.5cm",
+        "tags": [],
+        "title": "Chollima-1",
+        "parts": 150,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/north-korea/chollima-1/v1.0/Chollima-1_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/north-korea/chollima-1/v1.0/Chollima-1_V1.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/north-korea/chollima-1/v1.0/Chollima-1_V1.0.io",
+                        "name": "Chollima-1_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
+        "id": 93,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Nuri_(rocket)",
+            "https://space.skyrocket.de/doc_lau/kslv-2.htm"
+        ],
+        "mocDescription": "This a MOC of the Nuri rocket. All three stages can be seperated from another. The fairing holds no space for a payload though.",
+        "rocketDescription": "Nuri also known as KSLV-II is a South Korean orbital rocket. It has three stages and is able to lift up to 1.5 tons into a 700 sun-syncronous orbit. It first launched in 2021.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-02",
+        "dateCreated": "2022-09-27",
+        "related": [],
+        "updateMessage": "",
+        "region": "South Korea",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/south-korea/kslv-ii-nuri/640x512.png",
+        "dimensions": "3.7x3.7x42.4cm",
+        "tags": [],
+        "title": "KSLV-II Nuri",
+        "parts": 393,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/south-korea/kslv-ii-nuri/v3.1/KSLV-II_Nuri_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/south-korea/kslv-ii-nuri/v3.1/KSLV-II_Nuri_V3.1_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/south-korea/kslv-ii-nuri/v3.1/KSLV-II_Nuri_V3.1.io",
+                        "name": "KSLV-II_Nuri_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
         "id": 92,
         "type": "rocket",
         "dimensionsExtra": "",

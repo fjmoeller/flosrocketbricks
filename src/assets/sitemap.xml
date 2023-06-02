@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/collection/3/ariane/</loc>
+    <image:image>
+      <image:loc>https://bricksafe.com/files/SkySaac/website/collection/ariane/Ariane_V1.png/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/collection/2/atlas/</loc>
+    <image:image>
+      <image:loc>https://bricksafe.com/files/SkySaac/website/collection/atlas/Atlas_V1.png/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/collection/0/long-march/</loc>
+    <image:image>
+      <image:loc>https://bricksafe.com/files/SkySaac/website/collection/long-march/Long_March_V2.png/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/collection/1/titan/</loc>
+    <image:image>
+      <image:loc>https://bricksafe.com/files/SkySaac/website/collection/titan/Titan_V1.png/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/92/ariane-44p/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44p/640x512.png</image:loc>

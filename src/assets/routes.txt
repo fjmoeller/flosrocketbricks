@@ -91,5 +91,9 @@
 /moc/90/ariane-44l/
 /moc/91/ariane-44lp/
 /moc/92/ariane-44p/
+/collection/3/ariane/
+/collection/2/atlas/
+/collection/0/long-march/
+/collection/1/titan/
 /
 /about/

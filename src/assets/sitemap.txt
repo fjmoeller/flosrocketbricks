@@ -91,5 +91,9 @@ https://flosrocketbricks.com/moc/89/ariane-42p/
 https://flosrocketbricks.com/moc/90/ariane-44l/
 https://flosrocketbricks.com/moc/91/ariane-44lp/
 https://flosrocketbricks.com/moc/92/ariane-44p/
+https://flosrocketbricks.com/collection/3/ariane/
+https://flosrocketbricks.com/collection/2/atlas/
+https://flosrocketbricks.com/collection/0/long-march/
+https://flosrocketbricks.com/collection/1/titan/
 https://flosrocketbricks.com/
 https://flosrocketbricks.com/about/

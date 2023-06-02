@@ -85,5 +85,11 @@
 /moc/84/ariane-5-eca-jwst/
 /moc/85/ela-3-launchtable/
 /moc/86/venturestar/
+/moc/87/ariane-40/
+/moc/88/ariane-42l/
+/moc/89/ariane-42p/
+/moc/90/ariane-44l/
+/moc/91/ariane-44lp/
+/moc/92/ariane-44p/
 /
 /about/

@@ -1,5 +1,395 @@
 [
     {
+        "id": 92,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Ariane_4",
+            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+        ],
+        "mocDescription": "This is a MOC of an Ariane 4 rocket in the 44P configuration. The boosters and the three stages can be seperated from another. The fairing holds some space for a payload. Additionally there are more fairing options available.",
+        "rocketDescription": "The Ariane 4 rocket was an European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 44LP variant has four PAP boosters.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-02",
+        "dateCreated": "2022-02-09",
+        "related": [91,90,89,88,87],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44p/640x512.png",
+        "dimensions": "5.8x5.8x52.8cm",
+        "tags": [],
+        "title": "Ariane 44P",
+        "parts": 532,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-44p/v3.1/Ariane_44P_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-44p/v3.1/Ariane_44P_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-44p/v3.1/Ariane_44P_V3.1.io",
+                        "name": "Ariane_44P_V3.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variants",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.io",
+                        "name": "Ariane_4_Fairings_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
+        "id": 91,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Ariane_4",
+            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+        ],
+        "mocDescription": "This is a MOC of an Ariane 4 rocket in the 44LP configuration. The boosters and the three stages can be seperated from another. The fairing holds some space for a payload. Additionally there are more fairing options available.",
+        "rocketDescription": "The Ariane 4 rocket was an European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 44LP variant has two PAL and two PAP boosters.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-02",
+        "dateCreated": "2022-02-09",
+        "related": [92,90,89,88,87],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44lp/640x512.png",
+        "dimensions": "8.3x5.8x52.8cm",
+        "tags": [],
+        "title": "Ariane 44LP",
+        "parts": 644,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-44lp/v3.1/Ariane_44LP_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-44lp/v3.1/Ariane_44LP_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-44lp/v3.1/Ariane_44LP_V3.1.io",
+                        "name": "Ariane_44LP_V3.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variants",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.io",
+                        "name": "Ariane_4_Fairings_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
+        "id": 90,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Ariane_4",
+            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+        ],
+        "mocDescription": "This is a MOC of an Ariane 4 rocket in the 44L configuration. The boosters and the three stages can be seperated from another. The fairing holds some space for a payload. Additionally there are more fairing options available.",
+        "rocketDescription": "The Ariane 4 rocket was an European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 44L variant has four PAL boosters.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-02",
+        "dateCreated": "2022-02-09",
+        "related": [91,92,89,88,87],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44l/640x512.png",
+        "dimensions": "8.3x8.3x53.6cm",
+        "tags": [],
+        "title": "Ariane 44L",
+        "parts": 778,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-44l/v3.1/Ariane_44L_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-44l/v3.1/Ariane_44L_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-44l/v3.1/Ariane_44L_V3.1.io",
+                        "name": "Ariane_44L_V3.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variants",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.io",
+                        "name": "Ariane_4_Fairings_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
+        "id": 89,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Ariane_4",
+            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+        ],
+        "mocDescription": "This is a MOC of an Ariane 4 rocket in the 42P configuration. The boosters and the three stages can be seperated from another. The fairing holds some space for a payload. Additionally there are more fairing options available.",
+        "rocketDescription": "The Ariane 4 rocket was a European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 42P variant has two PAP boosters.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-02",
+        "dateCreated": "2022-02-09",
+        "related": [91,90,92,88,87],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/42p/640x512.png",
+        "dimensions": "5.0x5.8x51.2cm",
+        "tags": [],
+        "title": "Ariane 42P",
+        "parts": 486,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-42p/v3.1/Ariane_42P_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-42p/v3.1/Ariane_42P_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-42p/v3.1/Ariane_42P_V3.1.io",
+                        "name": "Ariane_42P_V3.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variants",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.io",
+                        "name": "Ariane_4_Fairings_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
+        "id": 88,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Ariane_4",
+            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+        ],
+        "mocDescription": "This is a MOC of an Ariane 4 rocket in the 42L configuration. The boosters and the three stages can be seperated from another. The fairing holds some space for a payload. Additionally there are more fairing options available.",
+        "rocketDescription": "The Ariane 4 rocket was a European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 42L variant has two PAL boosters.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-02",
+        "dateCreated": "2022-02-09",
+        "related": [91,90,89,92,87],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/42l/640x512.png",
+        "dimensions": "5.9x8.3x52cm",
+        "tags": [],
+        "title": "Ariane 42L",
+        "parts": 618,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-42l/v3.1/Ariane_42L_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-42l/v3.1/Ariane_42L_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-42l/v3.1/Ariane_42L_V3.1.io",
+                        "name": "Ariane_42L_V3.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variants",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.io",
+                        "name": "Ariane_4_Fairings_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
+        "id": 87,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Ariane_4",
+            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+        ],
+        "mocDescription": "This is a MOC of an Ariane 4 rocket in the 40 configuration. The three stages can be seperated from each other. The fairing holds some space for a payload. Additionally there are more fairing options available.",
+        "rocketDescription": "The Ariane 4 rocket was a European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 40 variant has no boosters.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-02",
+        "dateCreated": "2022-02-09",
+        "related": [91,90,89,88,92],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/40/640x512.png",
+        "dimensions": "5.0x5.0x50.4cm",
+        "tags": [],
+        "title": "Ariane 40",
+        "parts": 450,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-40/v3.1/Ariane_40_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-40/v3.1/Ariane_40_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/ariane-40/v3.1/Ariane_40_V3.1.io",
+                        "name": "Ariane_40_V3.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variants",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-4/fairing-variants/v3.1/Ariane_4_Fairings_V3.1.io",
+                        "name": "Ariane_4_Fairings_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            }
+        ]
+    },
+    {
         "id": 86,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -2533,7 +2923,7 @@
         "rocketDescription": "The JUICE spacecraft is a spacecraft developed by the European Space Agency. It is scheduled to launch on the 13th of April 2023 on an Ariane 5 ECA rocket. After flybys of the Moon, Earth and Venus, it will arrive at Jupiter in 2031.",
         "company": "",
         "companyExtra": "",
-        "difficulty": -1,
+        "difficulty": 4,
         "difficultyExtra": "",
         "lastupdate": "2023-04-12",
         "dateCreated": "2023-04-12",
@@ -2554,7 +2944,7 @@
         "parts": 2937,
         "partsExtra": "Can be build completely out of Lego bricks. The MOC also requires some printed parts for the solar panels.",
         "title": "JUICE",
-        "stability": -1,
+        "stability": 3,
         "stabilityExtra": "",
         "designer": "SkySaac",
         "designerExtra": "",
@@ -4264,7 +4654,7 @@
         "rocketDescription": "The JUICE spacecraft is planned to launch on the 13th April 2023 on the Ariane 5 ECA rocket. In 2031 it will arrive at Jupiter. It weighs around 6 tons and is solar powered.",
         "stabilityExtra": "",
         "company": "ArianeGroup",
-        "difficulty": -1,
+        "difficulty": 4,
         "lastupdate": "2023-03-29",
         "dateCreated": "2023-03-29",
         "related": [
@@ -4285,7 +4675,7 @@
         "title": "Ariane 5 ECA Juice",
         "regionExtra": "",
         "parts": 1295,
-        "stability": -1,
+        "stability": 3,
         "difficultyExtra": "",
         "designerExtra": "",
         "companyExtra": "",

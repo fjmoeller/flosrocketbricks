@@ -109,8 +109,16 @@ export class SearchComponent implements OnInit {
     } else {
       this.tagTypes[0].selected = false;
       fTag.selected = !fTag.selected;
-    }
 
+      //check if nothing is now selected
+      let noneSelected = true;
+      this.tagTypes.forEach(tagType => {
+        if(tagType.selected)
+          noneSelected = false;
+      });
+      if(noneSelected)
+        this.tagTypes[0].selected = true;
+    }
     this.getMocs();
   }
 
@@ -123,6 +131,15 @@ export class SearchComponent implements OnInit {
     } else {
       this.tagRegions[0].selected = false;
       fTag.selected = !fTag.selected;
+
+      //check if nothing is now selected
+      let noneSelected = true;
+      this.tagRegions.forEach(tagRegion => {
+        if(tagRegion.selected)
+          noneSelected = false;
+      });
+      if(noneSelected)
+        this.tagRegions[0].selected = true;
     }
     this.getMocs();
   }
@@ -136,6 +153,15 @@ export class SearchComponent implements OnInit {
     } else {
       this.tagScales[0].selected = false;
       fTag.selected = !fTag.selected;
+
+      //check if nothing is now selected
+      let noneSelected = true;
+      this.tagScales.forEach(tagScale => {
+        if(tagScale.selected)
+          noneSelected = false;
+      });
+      if(noneSelected)
+        this.tagScales[0].selected = true;
     }
     this.getMocs();
   }

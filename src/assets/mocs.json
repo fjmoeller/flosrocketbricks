@@ -1,5 +1,63 @@
 [
     {
+        "id": 95,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Bright Pink",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Zenit-2",
+            "http://www.astronautix.com/z/zenit-2.html",
+            "https://www.russianspaceweb.com/zenit.html"
+        ],
+        "mocDescription": "This is a MOC of Ukraines Zenit 2M rocket. The two stages can be seperated. The fairing holds space for a payload.",
+        "rocketDescription": "Zenit 2M was an Ukranian orbital rocket system. It launched a total of 24 times from 1990 to 2007.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-03",
+        "dateCreated": "2023-01-06",
+        "related": [],
+        "updateMessage": "",
+        "region": "Ukraine",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/ukraine/zenit/zenit-2/m/640x512.png",
+        "dimensions": "3.7x3.7x52.5cm",
+        "tags": [],
+        "title": "Zenit 2M",
+        "parts": 516,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/ukraine/zenit/zenit-2/m/v2.0/Zenit_2M_V2.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/ukraine/zenit/zenit-2/m/v2.0/Zenit_2M_V2.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/ukraine/zenit/zenit-2/m/v2.0/Zenit_2M_V2.0.io",
+                        "name": "Zenit_2M_V2.0.io"
+                    }
+                ],
+                "version": "V2.0"
+            }
+        ]
+    },
+    {
         "id": 94,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -10,7 +68,7 @@
             "https://space.skyrocket.de/doc_lau/chollima-1.htm",
             "http://www.b14643.de/Spacerockets_1/Rest_World/Chollima-1/Description/Frame.htm"
         ],
-        "mocDescription": "This is a MOC of North Koreas Chollima-1 rocket. The three stages can be seoerated. The fairing holds no space for a payload.",
+        "mocDescription": "This is a MOC of North Koreas Chollima-1 rocket. The three stages can be seperated. The fairing holds no space for a payload.",
         "rocketDescription": "Chollima-1 is North Koreas newest orbital rocket system. Its so far only launch ended in a failure in 2023. It probably consists out of three stages.",
         "stability": -1,
         "stabilityExtra": "",

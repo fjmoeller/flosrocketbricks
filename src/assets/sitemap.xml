@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/95/zenit-2m/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ukraine/zenit/zenit-2/m/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/94/chollima-1/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/north-korea/chollima-1/640x512.png</image:loc>

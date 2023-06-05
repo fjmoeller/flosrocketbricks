@@ -27,7 +27,7 @@ export class MocComponent implements OnInit, OnDestroy {
     this.route.paramMap.subscribe(paramMap => {
       this.id = Number(paramMap.get('id')) || 0;
       this.moc = this.mocGrabberService.getMoc(this.id);
-      this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription, "https://flosrocketbricks.com/moc/" + this.moc.id.toString() + "/" + this.moc.title.toLowerCase().split(' ').join('-') + "/", this.moc.smallCoverImage);
+      this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription, "https://flosrocketbricks.com/moc/" + this.moc.id.toString() + "/" + this.moc.title.toLowerCase().split(' ').join('-') + "/", "https://flosrocketbricks.com/" + this.moc.smallCoverImage);
       this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 6);
     });
   }
@@ -52,7 +52,7 @@ export class MocComponent implements OnInit, OnDestroy {
   }
 
   getDifficultyText(val: number): string {
-    switch(val) {
+    switch (val) {
       case 1: return "Very Hard";
       case 2: return "Hard";
       case 3: return "Medium";
@@ -63,7 +63,7 @@ export class MocComponent implements OnInit, OnDestroy {
   }
 
   getStabilityText(val: number): string {
-    switch(val) {
+    switch (val) {
       case 1: return "Very Unstable";
       case 2: return "Unstable";
       case 3: return "Medium Stable";

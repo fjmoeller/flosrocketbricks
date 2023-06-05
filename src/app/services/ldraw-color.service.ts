@@ -19,7 +19,7 @@ export class LdrawColorService {
     for (const line of text) {
       if (line.startsWith("0 !COLOUR")) {
         const name = line.substring(10, 64).trim().replace("_", " ");
-        const code = parseInt(line.substring(69, 72).trim());
+        const code = parseInt(line.substring(69, 73).trim());
         const hex = line.substring(81, 88);
         const edge = line.substring(96, 103);
         const alpha = Number(line.substring(112, 115)) || 0;
@@ -36,10 +36,8 @@ export class LdrawColorService {
     const opacity = ldrcolor ? ldrcolor.alpha / 255 : 0.0;
     const transparent = opacity > 0.001;
 
-    let metal = 0.0;
     let roughness = 0.8;
     if (ldrcolor) {
-      let emissive = new Color("#000000");
       switch (ldrcolor.material) {
         case "CHROME": return { metalness: 0.7, roughness: 0.1, emissive: new Color(finalColor.r - 0.1, finalColor.g - 0.1, finalColor.b - 0.1), color: finalColor, opacity: opacity, transparent: transparent };
         case "PEARLESCENT": return { metalness: 0.9, roughness: 0.7, emissive: new Color(finalColor.r + 0.05, finalColor.g + 0.05, finalColor.b + 0.05), color: finalColor, opacity: opacity, transparent: transparent };

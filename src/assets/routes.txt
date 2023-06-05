@@ -98,5 +98,6 @@
 /moc/93/kslv-ii-nuri/
 /moc/94/chollima-1/
 /moc/95/zenit-2m/
+/moc/96/ela-3-cazes/
 /
 /about/

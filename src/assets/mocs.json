@@ -1,5 +1,69 @@
 [
     {
+        "id": 96,
+        "type": "launchpad",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [],
+        "mocDescription": "This is a MOC of The CAZES tower. It can be combined with the launchtable to make a full ELA-3 launchpad.",
+        "rocketDescription": "The CAZES Tower is part of the ELA-3 launchpad that launches Ariane 5 rockets from French Guiana. It contains the liquid hydrogen and liquid oxygen equipment that is being used for fueling the rocket.",
+        "stability": 4,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": 4,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-05",
+        "dateCreated": "2021-11-05",
+        "related": [85,84,79,27,17],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/ela-3/cazes/640x512.png",
+        "dimensions": "27.2x50.4x47.7cm",
+        "tags": [],
+        "title": "ELA-3 CAZES",
+        "parts": 2466,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_pub.io",
+                        "name": "CAZES_V5.1_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1.pdf",
+                        "name": "CAZES_V5.1.pdf"
+                    }
+                ],
+                "version": "V5.1"
+            }
+        ]
+    },
+    {
         "id": 95,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -634,8 +698,8 @@
         "rocketReadMoreLinks": [
             "http://www.capcomespace.net/dossiers/espace_europeen/CSG/ELA3/table_lancement.htm"
         ],
-        "mocDescription": "This is a MOC of the ELA 3 Launchtable. It is compatible with all of my 1:110 Ariane 5 rockets.",
-        "rocketDescription": "The ELA 3 Launchtable is the transporter and launchtable for the European Ariane 5 rocket.",
+        "mocDescription": "This is a MOC of the ELA-3 Launchtable. It is compatible with all of my 1:110 Ariane 5 rockets.",
+        "rocketDescription": "The ELA-3 Launchtable is the transporter and launchtable for the European Ariane 5 rocket.",
         "stability": 3,
         "stabilityExtra": "",
         "company": "",
@@ -648,7 +712,8 @@
             17,
             27,
             79,
-            84
+            84,
+            96
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -658,7 +723,7 @@
         "smallCoverImage": "https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/ela-3/launchtable/640x512.png",
         "dimensions": "23.2x19.1x55.6cm",
         "tags": [],
-        "title": "ELA 3 Launchtable",
+        "title": "ELA-3 Launchtable",
         "parts": 1438,
         "partsExtra": "Can be build completely out of Lego bricks.",
         "designer": "SkySaac",
@@ -716,7 +781,9 @@
         "related": [
             17,
             27,
-            79
+            79,
+            85,
+            96
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -4833,7 +4900,8 @@
             17,
             49,
             79,
-            84
+            84,
+            96
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -6703,7 +6771,9 @@
         "related": [
             27,
             79,
-            84
+            84,
+            85,
+            97
         ],
         "stabilityExtra": "",
         "lastupdate": "2023-03-06",

@@ -1088,7 +1088,9 @@
         "related": [
             17,
             27,
-            79
+            79,
+            85,
+            96
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -6775,7 +6777,7 @@
             79,
             84,
             85,
-            97
+            96
         ],
         "stabilityExtra": "",
         "lastupdate": "2023-03-06",

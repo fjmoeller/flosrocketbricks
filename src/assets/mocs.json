@@ -6,7 +6,9 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [],
+        "rocketReadMoreLinks": [
+            "http://www.capcomespace.net/dossiers/espace_europeen/CSG/ELA3/tour_cazes.htm"
+        ],
         "mocDescription": "This is a MOC of The CAZES tower. It can be combined with the launchtable to make a full ELA-3 launchpad.",
         "rocketDescription": "The CAZES Tower is part of the ELA-3 launchpad that launches Ariane 5 rockets from French Guiana. It contains the liquid hydrogen and liquid oxygen equipment that is being used for fueling the rocket.",
         "stability": 4,

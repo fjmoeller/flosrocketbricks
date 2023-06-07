@@ -7,15 +7,15 @@
         "internalColor": "Green",
         "internalColorExtra": "",
         "rocketReadMoreLinks": [
-            "http://www.capcomespace.net/dossiers/espace_europeen/CSG/ELA3/tour_cazes.htm"
+            "https://en.wikipedia.org/wiki/Proton-M"
         ],
-        "mocDescription": "This is a MOC of The CAZES tower. It can be combined with the launchtable to make a full ELA-3 launchpad.",
-        "rocketDescription": "The CAZES Tower is part of the ELA-3 launchpad that launches Ariane 5 rockets from French Guiana. It contains the liquid hydrogen and liquid oxygen equipment that is being used for fueling the rocket.",
-        "stability": 4,
+        "mocDescription": "This is a MOC of the Russian Proton M rocket. The four stages can be seperated from one another. The fairings holds some space for a thin payload and can also be seperated from the upper stage.",
+        "rocketDescription": "The Proton M rocket is a Russian orbital rocket. It has three stages with an optional fourth stage. So far it has launched a total of 105 times.",
+        "stability": -1,
         "stabilityExtra": "",
         "company": "",
         "companyExtra": "",
-        "difficulty": 4,
+        "difficulty": -1,
         "difficultyExtra": "",
         "lastupdate": "2023-06-07",
         "dateCreated": "2022-01-08",

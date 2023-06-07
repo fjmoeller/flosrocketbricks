@@ -1,5 +1,62 @@
 [
     {
+        "id": 98,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Dark Pink",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "http://www.capcomespace.net/dossiers/espace_europeen/ariane/ariane6/developpement_2009-2013.htm"
+        ],
+        "mocDescription": "This is a MOC of a 2013 concept of the Ariane 6 rocket. The three stages can be seperated from one another, the third and second one aren't physically connected to another though.. The fairings holds some space for a payload.",
+        "rocketDescription": "This is a 2013 concept of a future Ariane 6 rocket. It features a tripple solid booster first stage, as well as another solid booster as 2nd stage and a hydrolox 3rd stage.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-07",
+        "dateCreated": "2023-03-24",
+        "related": [],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/concepts/2013/640x512.png",
+        "dimensions": "6.8x7.8x47.0cm",
+        "tags": [],
+        "title": "Ariane 6 2013 Concept",
+        "parts": 671,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/concept/2013/v1.1/Ariane_6_2013_Concept_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/concept/2013/v1.1/Ariane_6_2013_Concept_V1.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/concept/2013/v1.1/Ariane_6_2013_Concept_V1.1_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/concept/2013/v1.1/Ariane_6_2013_Concept_V1.1.io",
+                        "name": "Ariane_6_2013_Concept_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            }
+        ]
+    },
+    {
         "id": 97,
         "type": "rocket",
         "dimensionsExtra": "",

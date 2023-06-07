@@ -100,5 +100,6 @@
 /moc/95/zenit-2m/
 /moc/96/ela-3-cazes/
 /moc/97/proton-m/
+/moc/98/ariane-6-2013-concept/
 /
 /about/

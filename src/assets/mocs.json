@@ -1,5 +1,62 @@
 [
     {
+        "id": 97,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "http://www.capcomespace.net/dossiers/espace_europeen/CSG/ELA3/tour_cazes.htm"
+        ],
+        "mocDescription": "This is a MOC of The CAZES tower. It can be combined with the launchtable to make a full ELA-3 launchpad.",
+        "rocketDescription": "The CAZES Tower is part of the ELA-3 launchpad that launches Ariane 5 rockets from French Guiana. It contains the liquid hydrogen and liquid oxygen equipment that is being used for fueling the rocket.",
+        "stability": 4,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": 4,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-07",
+        "dateCreated": "2022-01-08",
+        "related": [],
+        "updateMessage": "",
+        "region": "Russia",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/russia/proton/m/640x512.png",
+        "dimensions": "7.2x7.1x52.3cm",
+        "tags": [],
+        "title": "Proton M",
+        "parts": 879,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/russia/proton/m/v2.0/Proton_M_V2.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/proton/m/v2.0/Proton_M_V2.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/russia/proton/m/v2.0/Proton_M_V2.0_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/russia/proton/m/v2.0/Proton_M_V2.0.io",
+                        "name": "Proton_M_V2.0.io"
+                    }
+                ],
+                "version": "V2.0"
+            }
+        ]
+    },
+    {
         "id": 96,
         "type": "launchpad",
         "dimensionsExtra": "",

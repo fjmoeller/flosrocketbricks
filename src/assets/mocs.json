@@ -1,5 +1,61 @@
 [
     {
+        "id": 99,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Dark Pink",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://www.ariane.group/en/commercial-launch-services/ariane-6/"
+        ],
+        "mocDescription": "This is a MOC of the Ariane 6 flight in its FM1 configuration based on ESA renders. The boosters can be seperated from the core stage. The second stage can be seperated from the first stage. The payload fairing holds some space for a payload.",
+        "rocketDescription": "This is MOC of Europes Ariane 6 rocket in the 62 configuration with the small payload fairing and the FM1 painting scheme as it's displayed in ESA renders. The Ariane 6 FM1 launch is scheduled for late 2023. The Ariane succeeds the Ariane 5 rocket. It can fly with either two or for boosters and have a 14 meter or 20 meter paylaod fairing.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-09",
+        "dateCreated": "2023-06-09",
+        "related": [],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/fm1/640x512.png",
+        "dimensions": "10.9x11.2x52.2cm",
+        "tags": [],
+        "title": "Ariane 6 FM1",
+        "parts": 1088,
+        "partsExtra": "Can be build completely out of Lego bricks. Some hoses need to be cut to the correct lengths as shown on the renders.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/fm1/v2.7/Ariane_6_FM1_V2.7_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/fm1/v2.7/Ariane_6_FM1_V2.7_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/fm1/v2.7/Ariane_6_FM1_V2.7_pub.io",
+                        "name": "Ariane_6_FM1_V2.7_pub.io"
+                    }
+                ],
+                "version": "V2.7"
+            }
+        ]
+    },
+    {
         "id": 98,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -1217,7 +1273,7 @@
         "dimensions": "6.0x11.8x43.2cm",
         "dimensionsExtra": "",
         "tags": [],
-        "parts": 1257,
+        "parts": 1256,
         "partsExtra": "The MOC can be completely build out of Lego parts.",
         "title": "Ariane 5G",
         "stability": -1,
@@ -1226,12 +1282,33 @@
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.1/Ariane_5_G_V2.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.21/Ariane_5_G_V2.2_1.png",
             "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.1/Ariane_5_G_V2.1_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.1/Ariane_5_G_V2.1_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.2/Ariane_5_G_V2.2_3.png",
             "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.1/Ariane_5_G_V2.1_4.png"
         ],
         "versions": [
+            {
+                "changelog": "remove an extra hose and remove some text in instructions",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.2/Ariane_5_G_V2.2_pub.io",
+                        "name": "Ariane_5_G_V2.2_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/g/v2.2/Ariane_5_G_V2.2.pdf",
+                        "name": "Ariane_5_G_V2.2.pdf"
+                    }
+                ],
+                "version": "V2.2"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

@@ -170,7 +170,23 @@
                 "name": "Ariane 5",
                 "description": "",
                 "mocs": [
-                    79,17,84,27,85,96
+                    79,17,84,27
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Ariane 5 Launchpad",
+                "description": "",
+                "mocs": [
+                    85,96
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Ariane 6",
+                "description": "",
+                "mocs": [
+                    98,99
                 ]
             }
         ]

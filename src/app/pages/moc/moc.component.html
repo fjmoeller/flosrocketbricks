@@ -239,6 +239,10 @@
     </div>
     <div class="row m-4">
         <div class="col-md-6 bg-dark text-light">
+            <div *ngIf="showViewer" class="row justify-content-between bg-dark text-light mx-1">
+                <button class="col botn btn btn-outline-dark bg-light text-decoration-none text-align-center rounded" (click)="toggleViewer(viewerLink)">Close Viewer</button>
+                <a class="col text-light text-center" href="https://www.ldraw.org/">This viewer has been created using LDraw</a>
+            </div>
             <div *ngIf="showViewer" class="bg-dark text-light">
                 <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer">
                 </app-viewer>

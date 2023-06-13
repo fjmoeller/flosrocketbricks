@@ -74,5 +74,3 @@ export class MocComponent implements OnInit, OnDestroy {
   }
 
 }
-
-

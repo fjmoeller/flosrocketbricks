@@ -20,13 +20,13 @@
         "difficultyExtra": "",
         "lastupdate": "2023-06-12",
         "dateCreated": "2023-06-12",
-        "related": [],
+        "related": [84,17,27,79,85,96],
         "updateMessage": "",
         "region": "Europe",
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/eca/v261/640x512.png",
+        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/eca/v261/640x512.png" ,
         "dimensions": "5.9x11.2x49.3cm",
         "tags": [],
         "title": "Ariane 5 V261",
@@ -250,7 +250,7 @@
         "difficultyExtra": "",
         "lastupdate": "2023-06-05",
         "dateCreated": "2021-11-05",
-        "related": [85,84,79,27,17],
+        "related": [85,84,79,27,17,100],
         "updateMessage": "",
         "region": "Europe",
         "regionExtra": "",
@@ -944,9 +944,9 @@
         "related": [
             17,
             27,
-            79,
             84,
-            96
+            96,
+            100
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -1016,7 +1016,8 @@
             27,
             79,
             85,
-            96
+            96,
+            100
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -1319,9 +1320,9 @@
         "related": [
             17,
             27,
-            79,
-            85,
-            96
+            84,
+            96,
+            100
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -5157,7 +5158,8 @@
             49,
             79,
             84,
-            96
+            96,
+            27
         ],
         "updateMessage": "",
         "region": "Europe",
@@ -7029,7 +7031,8 @@
             79,
             84,
             85,
-            96
+            96,
+            100
         ],
         "stabilityExtra": "",
         "lastupdate": "2023-03-06",

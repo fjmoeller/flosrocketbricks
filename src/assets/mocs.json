@@ -1,5 +1,66 @@
 [
     {
+        "id": 100,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Dark Pink",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Ariane_5",
+            "https://space.skyrocket.de/doc_lau/ariane-5.htm"
+        ],
+        "mocDescription": "This is a MOC of the Ariane 5 ECA rocket in its VA261 flight painting. Inside the fairings there are models of both satellites. The boosters as well as the upper stage of the rocket can be seperated.",
+        "rocketDescription": "The Ariane 5 ECA rocket is Europes heavy orbital launch vehicle. The VA261 is it's last launch ever. After that Ariane 6 will take its place. This launch will carry Syracuse 4B and Heinrich Hertz, a French and a German satellite.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-12",
+        "dateCreated": "2023-06-12",
+        "related": [],
+        "updateMessage": "",
+        "region": "Europe",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/eca/v261/640x512.png",
+        "dimensions": "5.9x11.2x49.3cm",
+        "tags": [],
+        "title": "Ariane 5 V261",
+        "parts": 1306,
+        "partsExtra": "Can be build completely out of Lego bricks. Some hoses need to be cut to the correct lengths as shown on the renders.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_5.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_6.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_pub.io",
+                        "name": "Ariane_5_VA261_V1.9_pub.io"
+                    }
+                ],
+                "version": "V1.9"
+            }
+        ]
+    },
+    {
         "id": 99,
         "type": "rocket",
         "dimensionsExtra": "",

@@ -359,7 +359,7 @@
         "type": "rocket",
         "dimensionsExtra": "",
         "typeExtra": "",
-        "internalColor": "-",
+        "internalColor": "Green",
         "internalColorExtra": "",
         "rocketReadMoreLinks": [
             "https://space.skyrocket.de/doc_lau/chollima-1.htm",
@@ -373,7 +373,7 @@
         "companyExtra": "",
         "difficulty": -1,
         "difficultyExtra": "",
-        "lastupdate": "2023-06-02",
+        "lastupdate": "2023-06-16",
         "dateCreated": "2023-06-02",
         "related": [],
         "updateMessage": "",
@@ -382,19 +382,33 @@
         "scale": "110",
         "scaleExtra": "",
         "smallCoverImage": "assets/mocImages/110/north-korea/chollima-1/640x512.png",
-        "dimensions": "2.9x2.4x26.5cm",
+        "dimensions": "3.8x3.8x30.2cm",
         "tags": [],
         "title": "Chollima-1",
-        "parts": 150,
+        "parts": 251,
         "partsExtra": "Can be build completely out of Lego bricks.",
         "designer": "SkySaac",
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/north-korea/chollima-1/v1.0/Chollima-1_V1.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/north-korea/chollima-1/v1.0/Chollima-1_V1.0_2.png"
+            "https://bricksafe.com/files/SkySaac/website/110/north-korea/chollima-1/v1.1/Chollima-1_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/north-korea/chollima-1/v1.1/Chollima-1_V1.1_2.png"
         ],
         "versions": [
+            {
+                "changelog": "Change dimensions based on the recovered hardware",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/north-korea/chollima-1/v1.1/Chollima-1_V1.1.io",
+                        "name": "Chollima-1_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            }
             {
                 "changelog": "",
                 "versionExtra": "",

@@ -1,5 +1,63 @@
 [
     {
+        "id": 101,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/H3_(rocket)",
+            "https://space.skyrocket.de/doc_lau/h-3.htm"
+        ],
+        "mocDescription": "This is a MOC of the H3 rocket in its frist flight (TF1) configuration. The second stage and the booster can be seperated from the core stage. The fairing holds almost no space",
+        "rocketDescription": "The H3 rocket is a Japanese orbital rocket. Its first flight TF1 resulted in a failure. The H3 rocket can have up to four solid boosters and either two or three engines on the first stage. The fairings are available in two sizes.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-18",
+        "dateCreated": "2023-06-18",
+        "related": [],
+        "updateMessage": "",
+        "region": "Japan",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/japan/h/h3/tf1/640x512.png" ,
+        "dimensions": "5.8x9.6x50.6cm",
+        "tags": [],
+        "title": "H3 TF1",
+        "parts": 1141,
+        "partsExtra": "Can be build completely out of Lego bricks. Some hoses need to be cut to the correct lengths as shown on the renders.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/japan/h/h3/tf1/v1.0/H3-TF1_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/japan/h/h3/tf1/v1.0/H3-TF1_V1.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/japan/h/h3/tf1/v1.0/H3-TF1_V1.0_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/japan/h/h3/tf1/v1.0/H3-TF1_V1.0_pub.io",
+                        "name": "H3-TF1_V1.0_pub.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
         "id": 100,
         "type": "rocket",
         "dimensionsExtra": "",

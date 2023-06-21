@@ -1,5 +1,69 @@
 [
     {
+        "id": 102,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Delta_III",
+            "http://www.astronautix.com/d/delta8930.html"
+        ],
+        "mocDescription": "This is a MOC of the Delta III rocket. The second stage can be seperated from the core stage but is not physically connected. The fairing holds some space for a spacecraft.",
+        "rocketDescription": "The Delta III was an American orbital rocket. It launched a total of three times. It has nine boosters and two stages.",
+        "stability": 3,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": 4,
+        "difficultyExtra": "",
+        "lastupdate": "2023-06-20",
+        "dateCreated": "2021-06-09",
+        "related": [],
+        "updateMessage": "",
+        "region": "USA",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/usa/delta/delta-iii/640x512.png" ,
+        "dimensions": "4.2x4.2x34.8cm",
+        "tags": [],
+        "title": "Delta III",
+        "parts": 462,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/usa/delta/delta-iii/v2.4/Delta_III_V2.4_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/delta/delta-iii/v2.4/Delta_III_V2.4_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/delta/delta-iii/v2.4/V2.4_pub.io",
+                        "name": "V2.4_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/delta/delta-iii/v2.4/Delta_III_V2.4_instructions.pdf",
+                        "name": "Delta_III_V2.4_instructions.pdf"
+                    }
+                ],
+                "version": "V2.4"
+            }
+        ]
+    },
+    {
         "id": 101,
         "type": "rocket",
         "dimensionsExtra": "",

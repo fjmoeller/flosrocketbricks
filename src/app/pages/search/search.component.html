@@ -79,7 +79,7 @@
         <div class="col-md-10">
             <span>{{mocs.length}} Results</span>
             <div class="mt-1 card-group">
-                <app-card class="col-md-3 col-4" *ngFor="let moc of mocs" [pic]="moc.smallCoverImage" [name]="moc.title"
+                <app-card style="width:16rem;" *ngFor="let moc of mocs" [pic]="moc.smallCoverImage" [name]="moc.title"
                     [parts]="moc.parts" [id]="moc.id" [scale]="moc.scale">
                 </app-card>
             </div>

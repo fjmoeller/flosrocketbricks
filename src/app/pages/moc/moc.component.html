@@ -318,7 +318,7 @@
                 <h3>Related Mocs</h3>
             </span>
             <div class="card-group">
-                <app-card class="col-2" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
+                <app-card style="width:12rem;" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
                     [name]="relatedMoc.title" [parts]="relatedMoc.parts" [id]="relatedMoc.id"
                     [scale]="relatedMoc.scale">
                 </app-card>

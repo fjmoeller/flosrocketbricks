@@ -26,7 +26,7 @@
                     <div class="accordion-body">
                         <div>
                             <div class="card-group">
-                                <app-card class="col-2" *ngFor="let moc of subCollectionMocs.get(subcollection.id)"
+                                <app-card style="width:12rem;" *ngFor="let moc of subCollectionMocs.get(subcollection.id)"
                                     [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts" [id]="moc.id"
                                     [scale]="moc.scale">
                                 </app-card>

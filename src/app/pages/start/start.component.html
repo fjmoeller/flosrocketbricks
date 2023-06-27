@@ -21,7 +21,7 @@
                 <h3>Newest Mocs</h3>
             </span>
             <div class="card-group">
-                <app-card class="col-2" *ngFor="let moc of newestMocs" [pic]="moc.smallCoverImage" [name]="moc.title"
+                <app-card style="width:12rem;" *ngFor="let moc of newestMocs" [pic]="moc.smallCoverImage" [name]="moc.title"
                     [parts]="moc.parts" [id]="moc.id" [scale]="moc.scale">
                 </app-card>
             </div>

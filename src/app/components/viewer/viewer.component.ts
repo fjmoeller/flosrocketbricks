@@ -44,15 +44,15 @@ export class ViewerComponent {
     const canvasDiv = document.getElementById('canvas-viewer');
     const scene = new Scene();
 
-    const pointLight = new PointLight(0xffffff, 0.2);
+    const pointLight = new PointLight(0xffffff, 0.3);
     pointLight.position.add(new Vector3(1000, 500, 1000));
     scene.add(pointLight);
 
-    const pointLight2 = new PointLight(0xffffff, 0.2);
+    const pointLight2 = new PointLight(0xffffff, 0.3);
     pointLight2.position.add(new Vector3(-1000, 500, -1000));
     scene.add(pointLight2);
 
-    const ambientLight = new AmbientLight(0xffffff, 0.9);
+    const ambientLight = new AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
 
     scene.add(mocGroup);

@@ -140,7 +140,7 @@
         "companyExtra": "",
         "difficulty": -1,
         "difficultyExtra": "",
-        "lastupdate": "2023-06-12",
+        "lastupdate": "2023-07-06",
         "dateCreated": "2023-06-12",
         "related": [84,17,27,79,85,96],
         "updateMessage": "",
@@ -152,20 +152,34 @@
         "dimensions": "5.9x11.2x49.3cm",
         "tags": [],
         "title": "Ariane 5 ECA VA261",
-        "parts": 1306,
+        "parts": 1309,
         "partsExtra": "Can be build completely out of Lego bricks. Some hoses need to be cut to the correct lengths as shown on the renders.",
         "designer": "SkySaac",
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_5.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9/Ariane_5_VA261_V1.9_6.png"
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9.1/Ariane_5_VA261_V1.9.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9.1/Ariane_5_VA261_V1.9.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9.1/Ariane_5_VA261_V1.9.1_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9.1/Ariane_5_VA261_V1.9.1_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9.1/Ariane_5_VA261_V1.9.1_5.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9.1/Ariane_5_VA261_V1.9.1_6.png"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/va621/v1.9.1/Ariane_5_VA261_V1.9.1_pub.io",
+                        "name": "Ariane_5_VA261_V1.9.1_pub.io"
+                    }
+                ],
+                "version": "V1.9.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",
@@ -6879,6 +6893,34 @@
                     }
                 ],
                 "version": "V2.1"
+            },
+            {
+                "changelog": "improved stability a bit",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.2/Atlas_V_541_Mars_2020_Frosted_V2.2_instructions.pdf",
+                        "description": "The pdf instructions of the frosted variant",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "name": "Atlas_V_541_Mars_2020_Frosted_V2.2_instructions.pdf"
+                    },
+                    {
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.2/Atlas_V_541_Mars_2020_Frosted_V2.2_pub.io",
+                        "description": "The digital io file of the frosted variant",
+                        "type": "io",
+                        "allowViewer": false,
+                        "name": "Atlas_V_541_Mars_2020_Frosted_V2.2_pub.io"
+                    },
+                    {
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.2/Atlas_V_541_Mars_2020_V2.2_pub.io",
+                        "description": "The digital io file of the non-frosted variant",
+                        "type": "io",
+                        "allowViewer": false,
+                        "name": "Atlas_V_541_Mars_2020_V2.2_pub.io"
+                    }
+                ],
+                "version": "V2.2"
             }
         ],
         "stability": 3,

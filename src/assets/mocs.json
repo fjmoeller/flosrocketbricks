@@ -1,5 +1,64 @@
 [
     {
+        "id": 105,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://space.skyrocket.de/doc_lau/kuaizhou-11.htm",
+            "http://www.b14643.de/Spacerockets_4/Expace_KZ-11/Description/Frame.htm"
+        ],
+        "mocDescription": "This is a MOC of the KZ-11 rocket. The first, second and third stage can be separated from one another. The fairing holds some space for a small payload. This MOC furthermore includes the launch stand of the rocket.",
+        "rocketDescription": "The KZ-11 rocket is a solid fueled Chinese orbital rocket. It has four stages and first launched in 2020, although this launch resulted in a failure. In 2022 it first reached orbit on its second try.",
+        "stability": 5,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": 5,
+        "difficultyExtra": "",
+        "lastupdate": "2023-07-31",
+        "dateCreated": "2022-12-17",
+        "related": [],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/china/kuaizhou/kuaizhou-11/640x512.png" ,
+        "dimensions": "5x5x25cm",
+        "tags": [], 
+        "altTitles": ["KZ-11"],
+        "title": "Kuaizhou-11",
+        "parts": 158,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-11/v1.0/KZ-11_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-11/v1.0/KZ-11_V1.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-11/v1.0/KZ-11_V1.0_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-11/v1.0/KZ-11_V1.0.io",
+                        "name": "KZ-11_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
         "id": 104,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -9,7 +68,7 @@
         "rocketReadMoreLinks": [
             "http://www.orienspace.com/productPage"
         ],
-        "mocDescription": "This is a MOC of the Gravity-1 rocket. the boosters and the second stage can be separated from the core stage. The fairing holds some space for a payload and can be separated from the payload adapter.",
+        "mocDescription": "This is a MOC of the Gravity-1 rocket. The boosters and the second stage can be separated from the core stage. The fairing holds some space for a payload and can be separated from the payload adapter.",
         "rocketDescription": "The Gravity-1 rocket is a solid fueled Chinese orbital rocket by the company Orienspace. It is able to lift up to 6.5 tons into low earth orbit. The boosters, the core stage and the second stage are all solid fueled.",
         "stability": -1,
         "stabilityExtra": "",
@@ -31,7 +90,7 @@
         "altTitles": [],
         "title": "Gravity-1",
         "parts": 643,
-        "partsExtra": "Can be build completely out of Lego bricks.",
+        "partsExtra": "This MOC needs some non Lego parts to be build as Lego doesn't have some in the correct colors.",
         "designer": "SkySaac",
         "designerExtra": "",
         "fanPictures": [],

@@ -84,6 +84,7 @@ export class Moc {
   tags: string[];
   mocDescription: string;
   related: number[];
+  altTitles: string[];
   region: string;
   dateCreated: string;
   type: string;
@@ -101,7 +102,7 @@ export class Moc {
   regionExtra: string;
   typeExtra: string;
 
-  constructor(internalColor: string, type: string, region: string, id: number, versions: Version[], title: string, pictures: string[],
+  constructor(altTitles:string[],internalColor: string, type: string, region: string, id: number, versions: Version[], title: string, pictures: string[],
     parts: number, dimensions: string, scale: string, designer: string,
     stability: number, difficulty: number, lastupdate: string, tags: string[],
     mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],
@@ -109,6 +110,7 @@ export class Moc {
     stabilityExtra: string, difficultyExtra: string, designerExtra: string, internalColorExtra: string,
     company: string, updateMessage: string, rocketReadMoreLinks: string[], regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
     this.region = region;
+    this.altTitles = altTitles;
     this.type = type;
     this.updateMessage = updateMessage;
     this.versions = versions;

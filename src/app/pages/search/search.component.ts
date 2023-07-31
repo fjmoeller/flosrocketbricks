@@ -82,7 +82,7 @@ export class SearchComponent implements OnInit {
     }
 
     if (this.searchInput != "") {
-      tempMocs = tempMocs.filter((moc: Moc) => moc.title.toLowerCase().indexOf(this.searchInput.toLowerCase()) >= 0);
+      tempMocs = tempMocs.filter((moc: Moc) => moc.title.toLowerCase().indexOf(this.searchInput.toLowerCase()) >= 0 || moc.altTitles.some(title => title.toLowerCase().indexOf(this.searchInput.toLowerCase())));
     }
 
     switch (this.sortingCategory) {

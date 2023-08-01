@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-<url>
+
+  <url>
+    <loc>https://flosrocketbricks.com/moc/107/antares-230+</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/antares/antares-230/plus/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/106/kuaizhou-11-transporter</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/kuaizhou/kuaizhou-11/transporter/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/105/kuaizhou-11</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/kuaizhou/kuaizhou-11/640x512.png</image:loc>

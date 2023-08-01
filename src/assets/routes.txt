@@ -108,5 +108,7 @@
 /moc/103/jielong-3
 /moc/104/gravity-1
 /moc/105/kuaizhou-11
+/moc/106/kuaizhou-11-transporter
+/moc/107/antares-230+
 /
 /about

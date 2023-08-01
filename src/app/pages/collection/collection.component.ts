@@ -38,7 +38,7 @@ export class CollectionComponent implements OnInit {
         this.subCollectionMocs.set(subCollection.id, mocList);
       }
 
-      this.metaService.setAllTags(this.collection.name + " - FlosRocketBricks", this.collection.description, "https://flosrocketbricks.com/collection/" + this.collection.id.toString() + "/" + this.collection.name.toLowerCase().split(' ').join('-') + "/", this.collection.cover);
+      this.metaService.setAllTags(this.collection.name + " - FlosRocketBricks", this.collection.description, "https://flosrocketbricks.com/collection/" + this.collection.id.toString() + "/" + this.collection.name.toLowerCase().split(' ').join('-'), this.collection.cover);
 
     });
   }

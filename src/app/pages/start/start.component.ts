@@ -20,7 +20,7 @@ export class StartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.metaService.setDefaultTags("Start - FlosRocketBricks", "https://flosrocketbricks.com/");
+    this.metaService.setDefaultTags("Start - FlosRocketBricks", "https://flosrocketbricks.com");
 
     this.newestMocs = this.mocGrabberService.getAllMocs().sort((a: Moc, b: Moc) => b.id - a.id).slice(0, 6);
     this.collections = this.collectionGrabberService.getAllCollections().sort((a: Collection, b: Collection) => b.id - a.id).slice(0, 6);

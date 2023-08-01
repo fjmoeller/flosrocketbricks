@@ -11,6 +11,6 @@ export class AboutComponent implements OnInit {
   constructor(private metaService: MetaServiceService) { }
 
   ngOnInit(): void {
-    this.metaService.setDefaultTags("About - FlosRocketBricks","https://flosrocketbricks.com/about/");
+    this.metaService.setDefaultTags("About - FlosRocketBricks","https://flosrocketbricks.com/about");
   }
 }

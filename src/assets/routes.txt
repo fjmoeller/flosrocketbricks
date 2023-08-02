@@ -110,5 +110,8 @@
 /moc/105/kuaizhou-11
 /moc/106/kuaizhou-11-transporter
 /moc/107/antares-230+
+/moc/108/cygnus
+/moc/109/cygnus-enhanced
+/moc/110/cygnus-enhanced
 /
 /about

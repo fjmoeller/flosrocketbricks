@@ -1,4 +1,174 @@
-[
+[{
+    "id": 110,
+    "type": "spacecraft",
+    "dimensionsExtra": "",
+    "typeExtra": "",
+    "internalColor": "-",
+    "internalColorExtra": "",
+    "rocketReadMoreLinks": [
+        "https://space.skyrocket.de/doc_sdat/cygnus-pcm-e.htm"
+    ],
+    "mocDescription": "This is a MOC of the Enhanced Cygnus spacecraft.",
+    "rocketDescription": "The Cygnus spacecraft is an American spacecraft used to deliver cargo to the ISS. It is launched by the Antares rocket. After a few launches the enhanced version of the spacecraft got a further upgrade, including radiators on the body and an advanced stay in orbit capability.",
+    "stability": -1,
+    "stabilityExtra": "",
+    "company": "",
+    "companyExtra": "",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "lastupdate": "2023-08-02",
+    "dateCreated": "2023-08-02",
+    "related": [108,109],
+    "updateMessage": "",
+    "region": "USA",
+    "regionExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "smallCoverImage": "assets/mocImages/110/usa/cygnus/enhanced/radiators/640x512.png" ,
+    "dimensions": "6x10.5x4.5cm",
+    "tags": [], 
+    "altTitles": [],
+    "title": "Cygnus Enhanced",
+    "parts": 89,
+    "partsExtra": "Can be build completely out of Lego bricks.",
+    "designer": "SkySaac",
+    "designerExtra": "",
+    "fanPictures": [],
+    "pictures": [
+        "https://bricksafe.com/files/SkySaac/website/110/usa/cygnus/enhanced/with-radiator/v1.1/Cygnus_Enhanced_Radiator_V1.1_1.png",
+        "https://bricksafe.com/files/SkySaac/website/110/usa/cygnus/enhanced/with-radiator/v1.1/Cygnus_Enhanced_Radiator_V1.1_2.png"
+    ],
+    "versions": [
+        {
+            "changelog": "",
+            "versionExtra": "",
+            "files": [
+                {
+                    "description": "The digital io file",
+                    "type": "io",
+                    "allowViewer": false,
+                    "link": "https://bricksafe.com/files/SkySaac/website/110/usa/cygnus/enhanced/with-radiator/v1.1/Cygnus_Enhanced_Radiator_V1.1.io",
+                    "name": "Cygnus_Enhanced_Radiator_V1.1.io"
+                }
+            ],
+            "version": "V1.1"
+        }
+    ]
+},
+    {
+        "id": 109,
+        "type": "spacecraft",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "-",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://space.skyrocket.de/doc_sdat/cygnus-pcm-e.htm"
+        ],
+        "mocDescription": "This is a MOC of the Enhanced Cygnus spacecraft.",
+        "rocketDescription": "The Cygnus spacecraft is an American spacecraft used to deliver cargo to the ISS. It is launched by the Antares rocket.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-08-02",
+        "dateCreated": "2023-08-02",
+        "related": [108,110],
+        "updateMessage": "",
+        "region": "USA",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/usa/cygnus/enhanced/640x512.png" ,
+        "dimensions": "6x10.5x4.5cm",
+        "tags": [], 
+        "altTitles": [],
+        "title": "Cygnus Enhanced",
+        "parts": 87,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/usa/cygnus/enhanced/v1.1/Cygnus_Enhanced_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/cygnus/enhanced/v1.1/Cygnus_Enhanced_V1.1_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/cygnus/enhanced/v1.1/Cygnus_Enhanced_V1.1.io",
+                        "name": "Cygnus_Enhanced_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            }
+        ]
+    },
+    {
+        "id": 108,
+        "type": "spacecraft",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "-",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://space.skyrocket.de/doc_sdat/cygnus-pcm.htm"
+        ],
+        "mocDescription": "This is a MOC of the Cygnus spacecraft.",
+        "rocketDescription": "The Cygnus spacecraft is an American spacecraft used to deliver cargo to the ISS. It is launched by the Antares rocket.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-08-02",
+        "dateCreated": "2023-08-02",
+        "related": [109,110],
+        "updateMessage": "",
+        "region": "USA",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/usa/cygnus/640x512.png" ,
+        "dimensions": "5x9.5x2.7cm",
+        "tags": [], 
+        "altTitles": [],
+        "title": "Cygnus",
+        "parts": 56,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/usa/cygnus/v1.1/Cygnus_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/cygnus/v1.1/Cygnus_V1.1_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/cygnus/v1.1/Cygnus_V1.1.io",
+                        "name": "Cygnus_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            }
+        ]
+    },
     {
         "id": 107,
         "type": "rocket",

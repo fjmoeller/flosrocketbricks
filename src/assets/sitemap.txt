@@ -109,6 +109,8 @@ https://flosrocketbricks.com/moc/107/antares-230+
 https://flosrocketbricks.com/moc/108/cygnus
 https://flosrocketbricks.com/moc/109/cygnus-enhanced
 https://flosrocketbricks.com/moc/110/cygnus-enhanced
+https://flosrocketbricks.com/moc/111/falcon-9-block-5-euclid
+https://flosrocketbricks.com/moc/112/euclid
 https://flosrocketbricks.com/collection/3/ariane
 https://flosrocketbricks.com/collection/2/atlas
 https://flosrocketbricks.com/collection/0/long-march

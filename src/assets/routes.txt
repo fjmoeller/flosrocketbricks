@@ -113,5 +113,7 @@
 /moc/108/cygnus
 /moc/109/cygnus-enhanced
 /moc/110/cygnus-enhanced
+/moc/111/falcon-9-block-5-euclid
+/moc/112/euclid
 /
 /about

@@ -72,7 +72,7 @@
             "https://space.skyrocket.de/doc_lau/cz-2.htm",
             "https://en.wikipedia.org/wiki/Long_March_2C"
         ],
-        "mocDescription": "This is a MOC of the Chinese Long March 2C rocket. The two stages can be separated from one another. The payload fairing holds some space for a potential payload.",
+        "mocDescription": "This is a MOC of the Chinese Long March 2C rocket. The two stages can be separated from one another. The payload fairing holds some space for a potential payload. The are three payload fairings available.",
         "rocketDescription": "The Long March 2C rocket is a Chinese two staged orbital launch vehicle. This version (which is also called Long March 2CS-4) has four fins on the first stage.",
         "stability": -1,
         "stabilityExtra": "",

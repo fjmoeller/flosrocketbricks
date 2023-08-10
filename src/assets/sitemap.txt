@@ -111,6 +111,10 @@ https://flosrocketbricks.com/moc/109/cygnus-enhanced
 https://flosrocketbricks.com/moc/110/cygnus-enhanced
 https://flosrocketbricks.com/moc/111/falcon-9-block-5-euclid
 https://flosrocketbricks.com/moc/112/euclid
+https://flosrocketbricks.com/moc/113/long-march-2c
+https://flosrocketbricks.com/moc/114/long-march-2c
+https://flosrocketbricks.com/moc/115/long-march-2c
+https://flosrocketbricks.com/moc/116/long-march-2c
 https://flosrocketbricks.com/collection/3/ariane
 https://flosrocketbricks.com/collection/2/atlas
 https://flosrocketbricks.com/collection/0/long-march

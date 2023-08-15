@@ -3,6 +3,12 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <url>
+    <loc>https://flosrocketbricks.com/moc/117/long-march-2d</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2d/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/116/long-march-2c</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4-gridfins/640x512.png</image:loc>

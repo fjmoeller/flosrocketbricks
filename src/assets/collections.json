@@ -14,6 +14,14 @@
                 ]
             },
             {
+                "id": 0,
+                "name": "Long March 2",
+                "description": "",
+                "mocs": [
+                    13,14,15,16
+                ]
+            },
+            {
                 "id": 1,
                 "name": "Long March 3",
                 "description": "",

@@ -119,5 +119,6 @@
 /moc/114/long-march-2c
 /moc/115/long-march-2c
 /moc/116/long-march-2c
+/moc/117/long-march-2d
 /
 /about

@@ -1,5 +1,152 @@
 [
     {
+        "id": 119,
+        "type": "spacecraft",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "-",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Chang%27e_3",
+            "https://www.bernd-leitenberger.de/chang-e-3.shtml"
+        ],
+        "mocDescription": "This is a MOC of the Chinese Chang'e 3 spacecraft. It includes the lander, the rover Yutu and a lunar landscape.",
+        "rocketDescription": "The Long March 2D rocket is a Chinese three staged orbital launch vehicle. It first flew in 1992 and so far has flown a total of 78 times with 77 successes.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-08-20",
+        "dateCreated": "2023-08-20",
+        "related": [],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/china/chang-e/chang-e-3/640x512.png",
+        "dimensions": "4.7x4.7x43.0cm",
+        "tags": [],
+        "altTitles": [],
+        "title": "Chang'e 3",
+        "parts": 106,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/change/change-3/v1.0/Chang%27e_3_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/change/change-3/v1.0/Chang%27e_3_V1.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/change/change-3/v1.0/Chang%27e_3_V1.0_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/change/change-3/v1.0/Chang%27e_3_V1.0_4.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/change/change-3/v1.0/Chang%27e_3_V1.0.io",
+                        "name": "Chang'e_3_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
+        "id": 118,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "Green",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://space.skyrocket.de/doc_lau/cz-2.htm",
+            "https://en.wikipedia.org/wiki/Long_March_2E"
+        ],
+        "mocDescription": "This is a MOC of the Chinese Long March 2E rocket. The three stages can be separated from one another. The payload fairing holds some space for a potential payload. There are different painted upper stages as well and multiple fairing variants.",
+        "rocketDescription": "The Long March 2D rocket is a Chinese three staged orbital launch vehicle. It first flew in 1992 and so far has flown a total of 78 times with 77 successes.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-08-16",
+        "dateCreated": "2022-09-15",
+        "related": [],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2e/640x512.png",
+        "dimensions": "4.7x4.7x43.0cm",
+        "tags": [],
+        "altTitles": ["CZ-2E","LM-2E","Chang Zheng 2E","Long March 2E"],
+        "title": "Long March 2E",
+        "parts": 574,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2e/v2.1/Long_March_2E_V2.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2e/v2.1/Long_March_2E_V2.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2e/v2.1/Long_March_2E_V2.1_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2e/v2.1/Long_March_2E_V2.1.io",
+                        "name": "Long_March_2E_V2.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variant",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2e/v2.1/Long_March_2E_V2.1_Fairings.io",
+                        "name": "Long_March_2E_V2.1_Fairings.io"
+                    }
+                ],
+                "version": "V2.1"
+            },
+            {
+                "changelog": "Improve first stage engines",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2e/v2.2/Long_March_2E_V2.2.io",
+                        "name": "Long_March_2E_V2.2.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variant",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2e/v2.2/Long_March_2E_V2.2_Fairings.io",
+                        "name": "Long_March_2E_V2.2_Fairings.io"
+                    }
+                ],
+                "version": "V2.2"
+            }
+        ]
+    },
+    {
         "id": 117,
         "type": "rocket",
         "dimensionsExtra": "",
@@ -3620,7 +3767,7 @@
         "dimensions": "2.7x2.7x18.2cm",
         "dimensionsExtra": "",
         "tags": [],
-        "altTitles": [],
+        "altTitles": ["ZQ-1"],
         "parts": 64,
         "partsExtra": "The rocket can be build completely out of Lego bricks, but it needs some printed parts.",
         "title": "Zhuque 1",
@@ -7913,7 +8060,7 @@
         "dimensions": "5x5x49cm",
         "regionExtra": "",
         "tags": [],
-        "altTitles": [],
+        "altTitles": ["ZQ-2"],
         "lastupdate": "2023-03-06",
         "region": "China",
         "internalColorExtra": "",

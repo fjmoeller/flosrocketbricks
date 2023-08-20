@@ -120,5 +120,7 @@
 /moc/115/long-march-2c
 /moc/116/long-march-2c
 /moc/117/long-march-2d
+/moc/118/long-march-2e
+/moc/119/chang-e-3
 /
 /about

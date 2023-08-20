@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Collection, Moc, SubCollection } from 'src/app/model/classes';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
-import { CardComponent } from '../../components/card/card.component';
 import { ActivatedRoute } from '@angular/router';
 import { CollectionGrabberService } from 'src/app/services/collection-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-collection',

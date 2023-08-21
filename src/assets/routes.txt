@@ -122,5 +122,9 @@
 /moc/117/long-march-2d
 /moc/118/long-march-2e
 /moc/119/chang-e-3
+/moc/120/ceres-1
+/moc/121/ceres-1-y1
+/moc/122/ceres-1-y2
+/moc/123/kuaizhou-1a
 /
 /about

@@ -1,5 +1,237 @@
 [
     {
+        "company": "",
+        "region": "China",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Kuaizhou",
+            "https://space.skyrocket.de/doc_lau_det/kuaizhou-1a.htm"
+        ],
+        "type": "rocket",
+        "id": 123,
+        "title": "Kuaizhou-1A",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-08-20",
+        "dateCreated": "2023-08-20",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Kuaizhou-1A rocket.",
+        "rocketDescription": "Kuaizhou-1A is a four stage Chinese orbital rocket. So far it launched a total of 22 times with two failures.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 58,
+        "dimensions": "2.8x2.8x17.4cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/china/kuaizhou/kuaizhou-1/kuaizhou-1a/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-1/kuaizhou-1a/v1.0/KZ-1A_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-1/kuaizhou-1a/v1.0/KZ-1A_V1.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-1/kuaizhou-1a/v1.0/KZ-1A_V1.0.io",
+                        "name": "KZ-1A_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "Galactic Energy",
+        "region": "China",
+        "rocketReadMoreLinks": [
+            "https://space.skyrocket.de/doc_lau/ceres-1.htm",
+            "https://www.galactic-energy.cn/index.php/En/List/cid/14"
+        ],
+        "type": "rocket",
+        "id": 122,
+        "title": "Ceres 1 Y2",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-08-20",
+        "dateCreated": "2023-08-20",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Ceres 1 rocket in its second launch configuration. The first three stages can be separated. The fairing holds no space for any kind of payload.",
+        "rocketDescription": "Ceres 1 is a four stage Chinese orbital rocket launched by Galactic Energy. The second launch happened in 2021.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 51,
+        "dimensions": "1.6x1.6x17.1cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/china/ceres/ceres-1/y2/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/y2/v1.0/Ceres_1_Y2_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/y2/v1.0/Ceres_1_Y2_V1.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/y2/v1.0/Ceres_1_Y2_V1.0.io",
+                        "name": "Ceres_1_Y2_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "id": 121,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "-",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://space.skyrocket.de/doc_lau/ceres-1.htm",
+            "https://www.galactic-energy.cn/index.php/En/List/cid/14"
+        ],
+        "mocDescription": "This is a MOC of the Ceres 1 rocket like it launched during its maiden launch. The first two stages can be separated. The fairing holds no space for any kind of payload.",
+        "rocketDescription": "Ceres 1 is a four stage Chinese orbital rocket launched by Galactic Energy. The first launch happened in 2020.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-08-20",
+        "dateCreated": "2023-08-20",
+        "related": [],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/china/ceres/ceres-1/y1/640x512.png",
+        "dimensions": "2.3x2.3x17cm",
+        "tags": [],
+        "altTitles": [],
+        "title": "Ceres 1 Y1",
+        "parts": 51,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/y1/v1.0/Ceres_1_Y1_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/y1/v1.0/Ceres_1_Y1_V1.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/y1/v1.0/Ceres_1_Y1_V1.0.io",
+                        "name": "Ceres_1_Y1_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
+        "id": 120,
+        "type": "rocket",
+        "dimensionsExtra": "",
+        "typeExtra": "",
+        "internalColor": "-",
+        "internalColorExtra": "",
+        "rocketReadMoreLinks": [
+            "https://space.skyrocket.de/doc_lau/ceres-1.htm",
+            "https://www.galactic-energy.cn/index.php/En/List/cid/14"
+        ],
+        "mocDescription": "This is a MOC of the Ceres 1 rocket like it launched from the third flight onwards. The first two stages can be separated. The fairing holds no space for any kind of payload.",
+        "rocketDescription": "Ceres 1 is a four stage Chinese orbital rocket launched by Galactic Energy. The first launch of this variant happened in 2022.",
+        "stability": -1,
+        "stabilityExtra": "",
+        "company": "",
+        "companyExtra": "",
+        "difficulty": -1,
+        "difficultyExtra": "",
+        "lastupdate": "2023-08-20",
+        "dateCreated": "2023-08-20",
+        "related": [],
+        "updateMessage": "",
+        "region": "China",
+        "regionExtra": "",
+        "scale": "110",
+        "scaleExtra": "",
+        "smallCoverImage": "assets/mocImages/110/china/ceres/ceres-1/640x512.png",
+        "dimensions": "1.6x1.6x17.4cm",
+        "tags": [],
+        "altTitles": [],
+        "title": "Ceres 1",
+        "parts": 49,
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "designer": "SkySaac",
+        "designerExtra": "",
+        "fanPictures": [],
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/v1.0/Ceres_1_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/v1.0/Ceres_1_V1.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/v1.0/Ceres_1_V1.0.io",
+                        "name": "Ceres_1_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ]
+    },
+    {
         "id": 119,
         "type": "spacecraft",
         "dimensionsExtra": "",
@@ -11,7 +243,7 @@
             "https://www.bernd-leitenberger.de/chang-e-3.shtml"
         ],
         "mocDescription": "This is a MOC of the Chinese Chang'e 3 spacecraft. It includes the lander, the rover Yutu and a lunar landscape.",
-        "rocketDescription": "The Long March 2D rocket is a Chinese three staged orbital launch vehicle. It first flew in 1992 and so far has flown a total of 78 times with 77 successes.",
+        "rocketDescription": "Chang'e 3 is a Chinese moonlander. Launched on a Long March 3B/E it successfully landed on the moon in 2013. It inlcudes a rover called Yutu.",
         "stability": -1,
         "stabilityExtra": "",
         "company": "",
@@ -20,7 +252,7 @@
         "difficultyExtra": "",
         "lastupdate": "2023-08-20",
         "dateCreated": "2023-08-20",
-        "related": [],
+        "related": [82],
         "updateMessage": "",
         "region": "China",
         "regionExtra": "",
@@ -2467,7 +2699,8 @@
         "related": [
             80,
             81,
-            83
+            83,
+            119
         ],
         "updateMessage": "",
         "region": "China",

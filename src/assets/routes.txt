@@ -126,5 +126,7 @@
 /moc/121/ceres-1-y1
 /moc/122/ceres-1-y2
 /moc/123/kuaizhou-1a
+/moc/124/kuaizhou-1-y1
+/moc/125/kuaizhou-1-y2
 /
 /about

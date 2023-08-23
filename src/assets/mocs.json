@@ -4,6 +4,120 @@
         "region": "China",
         "rocketReadMoreLinks": [
             "https://en.wikipedia.org/wiki/Kuaizhou",
+            "https://space.skyrocket.de/doc_lau_det/kuaizhou-1.htm"
+        ],
+        "type": "rocket",
+        "id": 125,
+        "title": "Kuaizhou-1 Y2",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-08-23",
+        "dateCreated": "2023-08-23",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Kuaizhou-1 rocket in its second flight configuration. The rocket can not be separated into its stages.",
+        "rocketDescription": "Kuaizhou-1 is a four stage Chinese orbital rocket. So far it launched a total of two times.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 61,
+        "dimensions": "2.8x2.8x16.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/china/kuaizhou/kuaizhou-1/kuaizhou-1/y2/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-1/y2/v1.0/KZ-1_Y2_V1.0_1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-1/y2/v1.0/KZ-1_Y2_V1.0.io",
+                        "name": "KZ-1_Y2_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "China",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Kuaizhou",
+            "https://space.skyrocket.de/doc_lau_det/kuaizhou-1.htm"
+        ],
+        "type": "rocket",
+        "id": 124,
+        "title": "Kuaizhou-1 Y1",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-08-23",
+        "dateCreated": "2023-08-23",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Kuaizhou-1 rocket its first flight configuration. The rocket can not be separated into its stages.",
+        "rocketDescription": "Kuaizhou-1 is a four stage Chinese orbital rocket. So far it launched a total of two times.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 48,
+        "dimensions": "2.3x2.3x16.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/china/kuaizhou/kuaizhou-1/kuaizhou-1/y1/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-1/y1/v1.0/KZ-1_Y1_V1.0_1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-1/y1/v1.0/KZ-1_Y1_V1.0.io",
+                        "name": "KZ-1_Y1_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "China",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Kuaizhou",
             "https://space.skyrocket.de/doc_lau_det/kuaizhou-1a.htm"
         ],
         "type": "rocket",
@@ -16,7 +130,7 @@
         "dateCreated": "2023-08-20",
         "related": [],
         "updateMessage": "",
-        "mocDescription": "This is a MOC of the Kuaizhou-1A rocket.",
+        "mocDescription": "This is a MOC of the Kuaizhou-1A rocket. The rocket can not be separated into its stages.",
         "rocketDescription": "Kuaizhou-1A is a four stage Chinese orbital rocket. So far it launched a total of 22 times with two failures.",
         "internalColor": "-",
         "scale": "110",

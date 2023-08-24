@@ -3,6 +3,137 @@
         "company": "",
         "region": "China",
         "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Taiyuan_Satellite_Launch_Center",
+            "http://www.astronautix.com/t/taiyuanlc16.html"
+        ],
+        "type": "launchpad",
+        "id": 129,
+        "title": "Taiyuan LC16",
+        "altTitles": [
+            "Long March 6 Launchpad",
+            "CZ-6 Launchpad",
+            "LM-6 Launchpad",
+            "Chang Zheng 6 Launchpad"
+        ],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-08-25",
+        "dateCreated": "2021-05-02",
+        "related": [
+            128
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Taiyuan LC16 launchpad which serves as Long March 6s launchpad. It includes the launchstand and the transporter. The Long March 6 MOC is compatible with this MOC.",
+        "rocketDescription": "Taiyuan LC16 is a launchapd of the Chinese Taiyuan spaceport. It is used for Long March 6 launches.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 502,
+        "dimensions": "12.8x38.4x24.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-6/taiyuan-lc16/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/taiyuan-lc16/v2.1/Long_March_6_Launchpad_V2.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/taiyuan-lc16/v2.1/Long_March_6_Launchpad_V2.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/taiyuan-lc16/v2.1/Long_March_6_Launchpad_V2.1_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/taiyuan-lc16/v2.1/Long_March_6_Launchpad_V2.1_4.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/taiyuan-lc16/v2.1/Long_March_6_Launchpad_V2.1.io",
+                        "name": "Long_March_6_Launchpad_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "China",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_6",
+            "https://space.skyrocket.de/doc_lau/cz-6.htm"
+        ],
+        "type": "rocket",
+        "id": 128,
+        "title": "Long March 6",
+        "altTitles": [
+            "CZ-6",
+            "LM-6",
+            "Chang Zheng 6"
+        ],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-08-25",
+        "dateCreated": "2021-05-02",
+        "related": [
+            129
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Long March 6 rocket. The first two stages can be separated from another. It is compatible with the Taiyuan LC16 launchpad MOC.",
+        "rocketDescription": "The Long March 6 is a small Chinese orbital rocket. The rocket has three stages. Since 2015 it has a launched a total of 13 times.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 227,
+        "dimensions": "3x3x26.4cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-6/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/v2.1/Long_March_6_V2.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/v2.1/Long_March_6_V2.1_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/v2.1/Long_March_6_V2.1.io",
+                        "name": "Long_March_6_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "China",
+        "rocketReadMoreLinks": [
             "https://en.wikipedia.org/wiki/Long_March_2F",
             "https://space.skyrocket.de/doc_lau_det/cz-2ft.htm"
         ],
@@ -17,7 +148,7 @@
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-08-24",
-        "dateCreated": "2023-08-23",
+        "dateCreated": "2022-01-02",
         "related": [
             126
         ],
@@ -83,7 +214,7 @@
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-08-24",
-        "dateCreated": "2023-08-23",
+        "dateCreated": "2022-01-02",
         "related": [
             52,
             127

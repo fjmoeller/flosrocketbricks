@@ -14,7 +14,7 @@
                 ]
             },
             {
-                "id": 0,
+                "id": 1,
                 "name": "Long March 2",
                 "description": "The Long March 2 series of rockets features a wide variety of rockets. From medium sized launch vehicles to crewed ones.",
                 "mocs": [
@@ -22,7 +22,7 @@
                 ]
             },
             {
-                "id": 1,
+                "id": 2,
                 "name": "Long March 3",
                 "description": "",
                 "mocs": [
@@ -30,7 +30,7 @@
                 ]
             },
             {
-                "id": 2,
+                "id": 3,
                 "name": "Long March 4",
                 "description": "",
                 "mocs": [
@@ -38,7 +38,15 @@
                 ]
             },
             {
-                "id": 3,
+                "id": 4,
+                "name": "Long March 6",
+                "description": "",
+                "mocs": [
+                    128,129
+                ]
+            },
+            {
+                "id": 5,
                 "name": "Long March 7",
                 "description": "The Long March 7 series of rockets is one of the new series of Chinas space launch systems. The most notable payloads are the Tianzhou spacecrafts that resupply the Chinese Space Station.",
                 "mocs": [
@@ -46,7 +54,7 @@
                 ]
             },
             {
-                "id": 4,
+                "id": 6,
                 "name": "Long March 8",
                 "description": "",
                 "mocs": [

@@ -9,12 +9,18 @@
         "type": "rocket",
         "id": 127,
         "title": "Long March 2F Tiangong",
-        "altTitles": ["CZ-2F","LM-2F","Chang Zheng 2F"],
+        "altTitles": [
+            "CZ-2F",
+            "LM-2F",
+            "Chang Zheng 2F"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-08-24",
         "dateCreated": "2023-08-23",
-        "related": [126],
+        "related": [
+            126
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Long March 2F rocket in its Tiangong configuration. The boosters and the second stage can be separated from the core stage. The fairings can be opened and hold some space for a potential payload.",
         "rocketDescription": "The Long March 2F rocket launched Chinas Tiangong space stations into low earth orbit. The rocket consists out of four boosters and two core stages. The first one flew in 2011 and the second one in 2016.",
@@ -69,12 +75,19 @@
         "type": "rocket",
         "id": 126,
         "title": "Long March 2F Shenzhou",
-        "altTitles": ["CZ-2F","LM-2F","Chang Zheng 2F"],
+        "altTitles": [
+            "CZ-2F",
+            "LM-2F",
+            "Chang Zheng 2F"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-08-24",
         "dateCreated": "2023-08-23",
-        "related": [52,127],
+        "related": [
+            52,
+            127
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Long March 2F rocket in its Shenzhou configuration. The boosters and the second stage can be separated from the core stage.",
         "rocketDescription": "The Long March 2F rocket launches Chinas crewed Shenzhou spacecraft into low earth orbit. The rocket consists out of four boosters and two core stages. This configuration of rocket has flown a total of 16 times since 1999.",
@@ -128,7 +141,9 @@
         "type": "rocket",
         "id": 125,
         "title": "Kuaizhou-1 Y2",
-        "altTitles": ["KZ-1"],
+        "altTitles": [
+            "KZ-1"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-08-23",
@@ -185,7 +200,9 @@
         "type": "rocket",
         "id": 124,
         "title": "Kuaizhou-1 Y1",
-        "altTitles": ["KZ-1"],
+        "altTitles": [
+            "KZ-1"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-08-23",
@@ -242,7 +259,9 @@
         "type": "rocket",
         "id": 123,
         "title": "Kuaizhou-1A",
-        "altTitles": ["KZ-1A"],
+        "altTitles": [
+            "KZ-1A"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-08-20",
@@ -485,7 +504,9 @@
         "difficultyExtra": "",
         "lastupdate": "2023-08-20",
         "dateCreated": "2023-08-20",
-        "related": [82],
+        "related": [
+            82
+        ],
         "updateMessage": "",
         "region": "China",
         "regionExtra": "",
@@ -554,7 +575,12 @@
         "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2e/640x512.png",
         "dimensions": "9.5x9.5x44.6cm",
         "tags": [],
-        "altTitles": ["CZ-2E","LM-2E","Chang Zheng 2E","Long March 2E"],
+        "altTitles": [
+            "CZ-2E",
+            "LM-2E",
+            "Chang Zheng 2E",
+            "Long March 2E"
+        ],
         "title": "Long March 2E",
         "parts": 856,
         "partsExtra": "Can be build completely out of Lego bricks.",
@@ -641,7 +667,12 @@
         "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2d/640x512.png",
         "dimensions": "4.7x4.7x43.0cm",
         "tags": [],
-        "altTitles": ["CZ-2D","LM-2D","Chang Zheng 2D","Long March 2D"],
+        "altTitles": [
+            "CZ-2D",
+            "LM-2D",
+            "Chang Zheng 2D",
+            "Long March 2D"
+        ],
         "title": "Long March 2D",
         "parts": 574,
         "partsExtra": "Can be build completely out of Lego bricks.",
@@ -719,7 +750,12 @@
         "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4-gridfins/640x512.png",
         "dimensions": "4.5x4.5x36.5cm",
         "tags": [],
-        "altTitles": ["CZ-2CS-4","LM-2CS-4","Chang Zheng 2CS-4","Long March 2CS-4"],
+        "altTitles": [
+            "CZ-2CS-4",
+            "LM-2CS-4",
+            "Chang Zheng 2CS-4",
+            "Long March 2CS-4"
+        ],
         "title": "Long March 2C",
         "parts": 430,
         "partsExtra": "Can be build completely out of Lego bricks.",
@@ -781,7 +817,12 @@
         "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/640x512.png",
         "dimensions": "4.5x4.5x36.5cm",
         "tags": [],
-        "altTitles": ["CZ-2CS-4","LM-2CS-4","Chang Zheng 2CS-4","Long March 2CS-4"],
+        "altTitles": [
+            "CZ-2CS-4",
+            "LM-2CS-4",
+            "Chang Zheng 2CS-4",
+            "Long March 2CS-4"
+        ],
         "title": "Long March 2C",
         "parts": 438,
         "partsExtra": "Can be build completely out of Lego bricks.",
@@ -793,7 +834,6 @@
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0_2.png",
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0_3.png",
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0_4.png"
-            
         ],
         "versions": [
             {
@@ -853,7 +893,12 @@
         "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs/640x512.png",
         "dimensions": "3.0x3.0x36.5cm",
         "tags": [],
-        "altTitles": ["CZ-2CS","LM-2CS","Chang Zheng 2CS","Long March 2CS"],
+        "altTitles": [
+            "CZ-2CS",
+            "LM-2CS",
+            "Chang Zheng 2CS",
+            "Long March 2CS"
+        ],
         "title": "Long March 2C",
         "parts": 399,
         "partsExtra": "Can be build completely out of Lego bricks.",
@@ -863,7 +908,6 @@
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs/v2.0/Long_March_2CS_V2.0_1.png",
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs/v2.0/Long_March_2CS_V2.0_2.png"
-            
         ],
         "versions": [
             {
@@ -916,7 +960,11 @@
         "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2c/640x512.png",
         "dimensions": "3.0x3.0x30.7cm",
         "tags": [],
-        "altTitles": ["CZ-2C","LM-2C","Chang Zheng 2C"],
+        "altTitles": [
+            "CZ-2C",
+            "LM-2C",
+            "Chang Zheng 2C"
+        ],
         "title": "Long March 2C",
         "parts": 311,
         "partsExtra": "Can be build completely out of Lego bricks.",
@@ -926,7 +974,6 @@
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/v2.0/Long_March_2C_V2.0_1.png",
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/v2.0/Long_March_2C_V2.0_2.png"
-            
         ],
         "versions": [
             {
@@ -986,7 +1033,6 @@
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/europe/euclid/v1.3/Euclid_V1.3_1.png",
             "https://bricksafe.com/files/SkySaac/website/110/europe/euclid/v1.3/Euclid_V1.3_2.png"
-            
         ],
         "versions": [
             {
@@ -4233,7 +4279,9 @@
         "dimensions": "2.7x2.7x18.2cm",
         "dimensionsExtra": "",
         "tags": [],
-        "altTitles": ["ZQ-1"],
+        "altTitles": [
+            "ZQ-1"
+        ],
         "parts": 64,
         "partsExtra": "The rocket can be build completely out of Lego bricks, but it needs some printed parts.",
         "title": "Zhuque 1",
@@ -5027,7 +5075,10 @@
         "difficultyExtra": "",
         "lastupdate": "2023-04-28",
         "dateCreated": "2022-02-12",
-        "related": [],
+        "related": [
+            126,
+            51
+        ],
         "updateMessage": "",
         "region": "China",
         "regionExtra": "",
@@ -8526,7 +8577,9 @@
         "dimensions": "5x5x49cm",
         "regionExtra": "",
         "tags": [],
-        "altTitles": ["ZQ-2"],
+        "altTitles": [
+            "ZQ-2"
+        ],
         "lastupdate": "2023-03-06",
         "region": "China",
         "internalColorExtra": "",

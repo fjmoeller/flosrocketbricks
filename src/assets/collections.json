@@ -16,9 +16,9 @@
             {
                 "id": 0,
                 "name": "Long March 2",
-                "description": "",
+                "description": "The Long March 2 series of rockets features a wide variety of rockets. From medium sized launch vehicles to crewed ones.",
                 "mocs": [
-                    113,114,115,116,117,118
+                    113,114,115,116,117,118,126,127
                 ]
             },
             {

@@ -3,6 +3,19 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
 
+
+<url>
+    <loc>https://flosrocketbricks.com/moc/127/long-march-2f-tiangong</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2f/tiangong/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/126/long-march-2f-shenzhou</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2f/shenzhou/640x512.png</image:loc>
+    </image:image>
+  </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/125/kuaizhou-1-y2</loc>
     <image:image>

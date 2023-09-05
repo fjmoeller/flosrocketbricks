@@ -104,7 +104,7 @@ export class SearchComponent implements OnInit {
   }
 
   tagTypeChange(fTag: FrontTag): void {
-    if (fTag.tagId === "") {
+    if (fTag.tagId === "") { //if "all types" is selected
       this.tagTypes.forEach(tagType => {
         tagType.selected = false;
       });

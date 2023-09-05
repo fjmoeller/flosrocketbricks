@@ -132,5 +132,7 @@
 /moc/127/long-march-2f-tiangong
 /moc/128/long-march-6
 /moc/129/taiyuan-lc16
+/moc/130/dragon
+/moc/131/dragon-reentry
 /
 /about

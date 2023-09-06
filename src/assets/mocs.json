@@ -31,10 +31,24 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/usa/dragon/reentry/640x512.png",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/dragon/reentry/v1.0/Dragon_Reentry_V1.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/dragon/reentry/v1.0/Dragon_Reentry_V1.0_2.png"
+            "https://bricksafe.com/files/SkySaac/website/110/usa/dragon/reentry/v1.1/Dragon_Reentry_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/dragon/reentry/v1.1/Dragon_Reentry_V1.1_2.png"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the reentry diorama",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/dragon/reentry/v1.1/Dragon_Reentry_V1.1.io",
+                        "name": "Dragon_Reentry_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",
@@ -93,9 +107,23 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/usa/dragon/spacecraft/640x512.png",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/dragon/spacecraft/v1.0/Dragon_Spacecraft_V1.0_1.png"
+            "https://bricksafe.com/files/SkySaac/website/110/usa/dragon/spacecraft/v1.1/Dragon_Spacecraft_V1.1_1.png"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/dragon/spacecraft/v1.1/Dragon_Spacecraft_V1.1.io",
+                        "name": "Dragon_Spacecraft_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

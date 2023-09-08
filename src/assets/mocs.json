@@ -3,6 +3,69 @@
         "company": "SpaceX",
         "region": "USA",
         "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Falcon_9_v1.0",
+            "https://space.skyrocket.de/doc_lau_det/falcon-9_v1-0.htm"
+        ],
+        "type": "rocket",
+        "id": 132,
+        "title": "Falcon 9 1.0",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-09-07",
+        "dateCreated": "2023-09-07",
+        "related": [
+            130,
+            131
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Falcon 9 1.0 rocket. The second stage and the first stage can be separated, they are only loosely connected. The Dragon spacecraft can also be separated from the upper stage.",
+        "rocketDescription": "Falcon 9 1.0 was the first iteration of Falcon 9 rockets by SpaceX. In total this version flew five times, at first being test launches and then launching actual Dragon spacecrafts to the ISS. The first launch happened in 2010 and the last one in 2013.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 519,
+        "dimensions": "5.0x5.0x43.2cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/falcon/falcon-9/1-0/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/1.0/v1.0/Falcon_9_Block_1.0_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/1.0/v1.0/Falcon_9_Block_1.0_V1.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/1.0/v1.0/Falcon_9_Block_1.0_V1.0_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/1.0/v1.0/Falcon_9_Block_1.0_V1.0_4.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the reentry diorama",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/1.0/v1.0/Falcon_9_Block_1.0_V1.0.io",
+                        "name": "Falcon_9_Block_1.0_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "SpaceX",
+        "region": "USA",
+        "rocketReadMoreLinks": [
             "https://en.wikipedia.org/wiki/SpaceX_Dragon_1",
             "https://space.skyrocket.de/doc_sdat/dragon.htm"
         ],
@@ -70,7 +133,7 @@
         "designerExtra": "",
         "internalColorExtra": "",
         "scaleExtra": "",
-        "partsExtra": "Requires two parts that aren't available by Lego in the correct color (32828) and two parts that soon will be available by Lego in the required color (3386).",
+        "partsExtra": "Can be build completely out of Lego bricks.",
         "dimensionsExtra": "",
         "stabilityExtra": "",
         "difficultyExtra": ""

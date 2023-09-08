@@ -131,6 +131,7 @@ https://flosrocketbricks.com/moc/129/taiyuan-lc16
 https://flosrocketbricks.com/moc/130/dragon
 https://flosrocketbricks.com/moc/131/dragon-reentry
 https://flosrocketbricks.com/moc/132/falcon-9-1-0
+https://flosrocketbricks.com/moc/133/falcon-9-block-4
 https://flosrocketbricks.com/collection/3/ariane
 https://flosrocketbricks.com/collection/2/atlas
 https://flosrocketbricks.com/collection/0/long-march

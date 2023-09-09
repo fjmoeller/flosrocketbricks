@@ -1,4 +1,4 @@
-<div *ngIf="noError" class="bg-dark container-fluid">
+<div *ngIf="noError" class="main-content container-fluid">
     <div class="row">
         <div id="mocCarousel" class="carousel slide col-md-7 mx-auto" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -16,7 +16,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="col-md-5 bg-dark text-light">
+        <div class="col-md-5 text-light">
             <div class="row justify-content-center text-center my-3">
                 <h1>
                     {{moc.title}}
@@ -32,16 +32,19 @@
                                     d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.459.459 0 0 0-.115.118.113.113 0 0 0-.012.025L6.5 4.5v.003l.003.01c.004.01.014.028.036.053a.86.86 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.86.86 0 0 0 .271-.194.213.213 0 0 0 .036-.054l.003-.01v-.008a.112.112 0 0 0-.012-.025.459.459 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.459.459 0 0 0 .115-.118.113.113 0 0 0 .012-.025L9.5 11.5v-.003l-.003-.01a.214.214 0 0 0-.036-.053.859.859 0 0 0-.27-.194C8.91 11.1 8.49 11 8 11c-.491 0-.912.1-1.19.24a.859.859 0 0 0-.271.194.214.214 0 0 0-.036.054l-.003.01v.002l.001.006a.113.113 0 0 0 .012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238l-.244-2.855z" />
                             </svg>
                         </div>
-                        <div class="row justify-content-center">
-                            <strong>Parts:</strong>
-                            <span>{{moc.parts}} <svg placement="top" *ngIf="moc.partsExtra != ''"
-                                    [ngbTooltip]="moc.partsExtra" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                        <div class="row justify-content-center popover-wrapper">
+                            <strong>Brick count:</strong>
+                            <span>{{moc.parts}}
+                                <svg placement="top" *ngIf="moc.partsExtra != ''" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
+                            <div class="popover-content">
+                                <p class="popover-content-text">{{moc.partsExtra}}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-6 justify-content-center text-center">
@@ -52,16 +55,19 @@
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                             </svg>
                         </div>
-                        <div class="row justify-content-center">
-                            <strong>Scale:</strong>
-                            <span>{{moc.scale}} <svg placement="top" *ngIf="moc.scaleExtra != ''"
-                                    [ngbTooltip]="moc.scaleExtra" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                        <div class="row justify-content-center popover-wrapper">
+                            <strong>Brick count:</strong>
+                            <span>{{moc.scale}}
+                                <svg placement="top" *ngIf="moc.scaleExtra != ''" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
+                            <div class="popover-content">
+                                <p class="popover-content-text">{{moc.scaleExtra}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,38 +82,49 @@
                                     d="M11.5 9c.653 0 1.273-.139 1.833-.39L12 5.5 11 3l3.826-1.53A4.5 4.5 0 0 0 7.29 6.092l-6.116 5.096a2.583 2.583 0 1 0 3.638 3.638L9.908 8.71A4.49 4.49 0 0 0 11.5 9Zm-1.292-4.361-.596.893.809-.27a.25.25 0 0 1 .287.377l-.596.893.809-.27.158.475-1.5.5a.25.25 0 0 1-.287-.376l.596-.893-.809.27a.25.25 0 0 1-.287-.377l.596-.893-.809.27-.158-.475 1.5-.5a.25.25 0 0 1 .287.376ZM3 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
                             </svg>
                         </div>
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center popover-wrapper">
                             <strong>Stability:</strong>
                             <div>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2,'brick-1-color': moc.stability==1}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2,'brick-1-color': moc.stability==1}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
                                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
                                 </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
                                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
                                 </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
                                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
                                 </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
                                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
                                 </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5}" class="brick-default-color"
+                                    width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
                                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
                                 </svg>
                             </div>
                             <span>{{getStabilityText(moc.stability)}}
-                                <svg placement="top" *ngIf="moc.stabilityExtra != ''"
-                                    [ngbTooltip]="moc.stabilityExtra" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                                <svg placement="top" *ngIf="moc.stabilityExtra != ''" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
+                                <div class="popover-content">
+                                    <p class="popover-content-text">{{moc.stabilityExtra}}</p>
+                                </div>
                             </span>
                         </div>
                     </div>
@@ -135,16 +152,19 @@
                                     d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z" />
                             </svg>
                         </div>
-                        <div class="row justify-content-center">
+
+                        <div class="row justify-content-center popover-wrapper">
                             <strong>Dimensions:</strong>
                             <span>{{moc.dimensions}} <svg placement="top" *ngIf="moc.dimensionsExtra != ''"
-                                    [ngbTooltip]="moc.dimensionsExtra" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
-                                    viewBox="0 0 16 16">
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
+                            <div class="popover-content">
+                                <p class="popover-content-text">{{moc.dimensionsExtra}}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-6 justify-content-center text-center py-auto">
@@ -156,16 +176,19 @@
                                     d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
                             </svg>
                         </div>
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center popover-wrapper">
                             <strong>Designers:</strong>
-                            <span>{{moc.designer}} <svg placement="top" *ngIf="moc.designerExtra != ''"
-                                    [ngbTooltip]="moc.designerExtra" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
+                            <span>{{moc.designer}}
+                                <svg placement="top" *ngIf="moc.designerExtra != ''" xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
+                            <div class="popover-content">
+                                <p class="popover-content-text">{{moc.designerExtra}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,39 +201,50 @@
                                     d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                             </svg>
                         </div>
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center popover-wrapper">
                             <strong>Build difficulty:</strong>
                             <div>
-                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2,'brick-1-color': moc.difficulty==1}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2,'brick-1-color': moc.difficulty==1}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
                                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
                                 </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
                                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
                                 </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
                                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
                                 </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
                                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
                                 </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5}" class="brick-default-color" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5}" class="brick-default-color"
+                                    width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
                                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
                                 </svg>
                             </div>
                             <span>{{getDifficultyText(moc.difficulty)}}
                                 <svg placement="top" *ngIf="moc.difficultyExtra != ''"
-                                    [ngbTooltip]="moc.difficultyExtra" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
-                                    viewBox="0 0 16 16">
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
+                            <div class="popover-content">
+                                <p class="popover-content-text">{{moc.difficultyExtra}}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-6 justify-content-center text-center py-auto">
@@ -221,16 +255,18 @@
                                     d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                             </svg>
                         </div>
-                        <div class="row justify-content-center">
-                            <strong>Internal brick color:</strong>
+                        <div class="row justify-content-center popover-wrapper">
+                            <strong>Placeholder color:</strong>
                             <span>{{moc.internalColor}} <svg placement="top" *ngIf="moc.internalColorExtra != ''"
-                                    [ngbTooltip]="moc.internalColorExtra" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" fill="currentColor" class="bi bi-exclamation-circle-fill"
-                                    viewBox="0 0 16 16">
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
+                            <div class="popover-content">
+                                <p class="popover-content-text">{{moc.internalColorExtra}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -238,12 +274,14 @@
         </div>
     </div>
     <div class="row m-4">
-        <div class="col-md-6 bg-dark text-light">
-            <div *ngIf="showViewer" class="row justify-content-between bg-dark text-light mx-1">
-                <button class="col botn btn btn-outline-dark bg-light text-decoration-none text-align-center rounded" (click)="toggleViewer(viewerLink)">Close Viewer</button>
-                <a class="col text-light text-center" href="https://www.ldraw.org/">This viewer has been created using LDraw</a>
+        <div class="col-md-6 text-light">
+            <div *ngIf="showViewer" class="row justify-content-between text-light mx-1">
+                <button class="col botn btn btn-outline-dark bg-light text-decoration-none text-align-center rounded"
+                    (click)="toggleViewer(viewerLink)">Close Viewer</button>
+                <a class="col text-light text-center" href="https://www.ldraw.org/">This viewer has been created using
+                    LDraw</a>
             </div>
-            <div *ngIf="showViewer" class="bg-dark text-light">
+            <div *ngIf="showViewer" class="text-light">
                 <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer">
                 </app-viewer>
             </div>
@@ -256,14 +294,13 @@
                 {{moc.rocketDescription}}
             </p>
         </div>
-        <div class="col-md-6 bg-dark">
+        <div class="col-md-6">
             <div *ngIf="moc.updateMessage!=''" class="row mt-1">
-                <h3 class="mx-auto text-center text-danger">
+                <h4 class="mx-auto text-center text-danger p-1 update-message-container">
                     {{moc.updateMessage}}
-                </h3>
+                </h4>
             </div>
             <div class="row mt-1">
-
                 <h3 class="mx-auto text-center text-light">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-download mr-2" viewBox="0 0 16 16">
@@ -276,28 +313,27 @@
                 </h3>
             </div>
             <div class="row mt-1">
-                <span class="text-center text-light">No pdf instructions for the MOC you want to build? No problem! Just
-                    contact me and I'll make them!</span>
+                <span class="text-center text-light">No pdf instructions for this MOC available?<br>
+                    Just contact me and I'll make them!</span>
             </div>
             <div class="row mt-1">
                 <div class="accordion text-light" id="accordion">
                     <div *ngFor="let version of sortedVersions(moc.versions);let indexOfelement=index;"
                         class="accordion-item text-light">
                         <h2 class="accordion-header text-light" [id]="'heading'+indexOfelement">
-                            <button class="accordion-button text-light collapsed"
-                                style="background-color: rgb(26,30,33)" type="button" data-bs-toggle="collapse"
-                                [attr.data-bs-target]="'#body'+indexOfelement"
+                            <button class="accordion-button text-light collapsed version-expand-button" type="button"
+                                data-bs-toggle="collapse" [attr.data-bs-target]="'#body'+indexOfelement"
                                 [attr.aria-controls]="'body'+indexOfelement" aria-expanded="true">
                                 {{version.version}} {{version.versionExtra}}
                             </button>
                         </h2>
-                        <div [id]="'body'+indexOfelement" class="accordion-collapse collapse text-light"
-                            style="background-color: rgb(33,37,41)" [attr.aria-labelledby]="'heading'+indexOfelement">
+                        <div [id]="'body'+indexOfelement"
+                            class="accordion-collapse collapse text-light version-expand-content"
+                            [attr.aria-labelledby]="'heading'+indexOfelement">
                             <div class="accordion-body">
                                 <div *ngIf="version.changelog!=''"><strong>Changelog:</strong> <br>
                                     {{version.changelog}} <br></div>
-                                <hr *ngIf="version.changelog!=''" class="my-2 d-inline-block mx-auto"
-                                    style="width: 100%; background-color: #7c4dff; height: 2px" />
+                                <hr *ngIf="version.changelog!=''" class="my-2 d-inline-block mx-auto divider-hr" />
                                 <strong>Files:</strong>
                                 <app-file *ngFor="let file of version.files;let indexOfFile=index;"
                                     (viewerEvent)="toggleViewer($event)" [link]="file.link" [name]="file.name"
@@ -309,16 +345,15 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-    <div *ngIf="moc.related.length > 0" class="row justify-content-center bg-dark m-4 text-light">
+    <div *ngIf="moc.related.length > 0" class="row justify-content-center m-4 text-light">
         <div class="justify-content-center">
             <span>
                 <h3>Related Mocs</h3>
             </span>
             <div class="card-group">
-                <app-card style="width:12rem;" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
+                <app-card class="moc-card" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
                     [name]="relatedMoc.title" [parts]="relatedMoc.parts" [id]="relatedMoc.id"
                     [scale]="relatedMoc.scale">
                 </app-card>
@@ -326,6 +361,6 @@
         </div>
     </div>
 </div>
-<div *ngIf="noError==false" class="bg-dark pt-4 text-light">
+<div *ngIf="noError==false" class="pt-4 text-light">
     <h2 class="text-center">404 - No MOC has been found :/</h2>
 </div>

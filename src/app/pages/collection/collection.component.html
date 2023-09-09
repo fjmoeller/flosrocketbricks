@@ -6,11 +6,11 @@
         {{collection.description}}
     </p>
     <div *ngFor="let subcollection of collection.subCollections" class="pb-4" id="{{subcollection.name.toLowerCase().split(' ').join('-')}}">
-        <hr class="mb-3 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px" />
+        <hr class="mb-3 mt-0 d-inline-block mx-auto divider-hr"/>
         <div class="accordion text-light" id="accordion">
             <div class="accordion-item text-light">
-                <h2 class="accordion-header" [id]="'heading'+subcollection.id">
-                    <button class="text-light accordion-button p-3" style="background-color: rgb(26,30,33)" type="button"
+                <h2 class="accordion-header text-light" [id]="'heading'+subcollection.id">
+                    <button class="text-light accordion-button p-3 subcollection-header" type="button"
                         data-bs-toggle="collapse" [attr.data-bs-target]="'#file'+subcollection.id"
                         [attr.aria-controls]="'file'+subcollection.id">
                         <h3>
@@ -21,12 +21,12 @@
                         </span>
                     </button>
                 </h2>
-                <div [id]="'file'+subcollection.id" class="accordion-collapse collapse show text-light"
-                    style="background-color: rgb(33,37,41)" [attr.aria-labelledby]="'heading'+subcollection.id">
+                <div [id]="'file'+subcollection.id" class="accordion-collapse collapse show text-light subcollection-content"
+                    [attr.aria-labelledby]="'heading'+subcollection.id">
                     <div class="accordion-body">
                         <div>
                             <div class="card-group">
-                                <app-card style="width:12rem;" *ngFor="let moc of subCollectionMocs.get(subcollection.id)"
+                                <app-card class="moc-card" *ngFor="let moc of subCollectionMocs.get(subcollection.id)"
                                     [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts" [id]="moc.id"
                                     [scale]="moc.scale">
                                 </app-card>

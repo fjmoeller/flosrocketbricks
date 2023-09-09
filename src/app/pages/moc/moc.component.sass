@@ -1,7 +1,7 @@
 .accodion-button.collapsed::after
     filter: brightness(0%) invert(70%)
 
-.accordion-button:after 
+.accordion-button:after
     filter: brightness(0%) invert(70%)
 
 .brick-default-color
@@ -23,12 +23,54 @@
     color: #11fa05
 
 .scroller
-    display:flex
+    display: flex
     background-color: #08c708
     max-height: 200px
     overflow: auto
     white-space: nowrap
-    
+
 .botn:hover
     color: #000000
     text-decoration: none
+
+.update-message-container
+    border-style: solid
+    border-color: red
+    border-radius: 25px
+
+.popover-wrapper
+    position: relative
+
+.popover-content
+    opacity: 0
+    visibility: hidden
+    position: absolute
+    margin-top: 50px
+    transform: translate(0, 10px)
+    padding: 0.5rem
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26)
+    width: auto
+    background: var(--bg-hl-color)
+
+.popover-wrapper:hover .popover-content
+    z-index: 10
+    opacity: 1
+    visibility: visible
+    transform: translate(0, 10px)
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97)
+
+.popover-content-text
+    margin: 5px
+
+.moc-card
+    width: 12rem
+    margin: 10px
+
+.version-expand-button
+    background-color: var(--bg-hl-color)
+
+.version-expand-content
+    background-color: var(--bg-color)
+
+.main-content
+    background-color: var(--bg-color)

@@ -1,22 +1,35 @@
+.header-content
+    background-color: var(--bg-hl-color)
+
 .headerLink
-    text-decoration: none
     text-align: center
-    width:95%
-    height:90%
+    width: 95%
+    height: 90%
     display: flex
     align-items: center
     justify-content: center
+    background-color: var(--interact-color)
 
 .headerClick
     text-decoration: none
     text-align: center
 
 .headerLink:hover
-    background-color: rgba(0,0,0, 0.5)
+    background-color: var(--interact-hl-color)
+    transition: background-color 100ms linear
 
 .headerSearch
     display: flex
     justify-content: center
 
 .siteHeader
-    background: rgba(#15171f, 1.0)
+    background: var(--bg-color)
+
+.logoimage
+    max-height: 150px
+    object-fit: cover
+
+.headerSearchButton
+    color: var(--hl-color-new)
+    border-color: rgb(0, 0, 0)
+    background-color: var(--interact-color)

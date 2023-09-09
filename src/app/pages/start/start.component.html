@@ -1,4 +1,4 @@
-<div class="container-fluid bg-dark text-light pb-2">
+<div class="container-fluid text-light pb-2">
     <div class="row justify-content-center text-center">
         <span>
             <h1>Welcome to FlosRocketBricks</h1>
@@ -7,21 +7,19 @@
     </div>
     <div class="row justify-content-center text-center">
         <p>
-        <h5>A website containing instructions and digital files of MOCs by me, completely for <strong>free</strong>!
+        <h5>A website with instructions and digital files of space MOCs completely for <strong>free</strong>!
             <br>
-            Most MOCs can be completely build out of Lego parts.
+            Most of these MOCs can be completely build out of Lego parts.
             <br>
-            I am still in the process of adding all the MOCs that I made to this website.
-            <br>
-            You can expect some to be added every few days :&#041;
+            You can expect me to be adding MOCs every few days :&#041;
         </h5>
     </div>
-    <div class="row justify-content-center bg-dark mt-5 mx-5">
+    <div class="row mt-5 mx-5">
             <span>
                 <h3>Newest Mocs</h3>
             </span>
             <div class="card-group">
-                <app-card style="width:12rem;" *ngFor="let moc of newestMocs" [pic]="moc.smallCoverImage" [name]="moc.title"
+                <app-card class="moc-card" *ngFor="let moc of newestMocs" [pic]="moc.smallCoverImage" [name]="moc.title"
                     [parts]="moc.parts" [id]="moc.id" [scale]="moc.scale">
                 </app-card>
             </div>

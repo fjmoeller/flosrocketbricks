@@ -163,11 +163,11 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/usa/falcon/falcon-9/block-4/640x512.png",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/Falcon_9_Block_4_V1.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/Falcon_9_Block_4_V1.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/Falcon_9_Block_4_V1.0_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/Falcon_9_Block_4_V1.0_4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/Falcon_9_Block_4_V1.0_5.png"
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/v1.0/Falcon_9_Block_4_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/v1.0/Falcon_9_Block_4_V1.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/v1.0/Falcon_9_Block_4_V1.0_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/v1.0/Falcon_9_Block_4_V1.0_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/v1.0/Falcon_9_Block_4_V1.0_5.png"
         ],
         "versions": [
             {
@@ -178,7 +178,7 @@
                         "description": "The digital io file of the reentry diorama",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/Falcon_9_Block_4_V1.0.io",
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-4/v1.0/Falcon_9_Block_4_V1.0.io",
                         "name": "Falcon_9_Block_4_V1.0.io"
                     }
                 ],

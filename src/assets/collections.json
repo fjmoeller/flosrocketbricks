@@ -39,6 +39,14 @@
             },
             {
                 "id": 4,
+                "name": "Long March 5",
+                "description": "",
+                "mocs": [
+                    134,135
+                ]
+            },
+            {
+                "id": 5,
                 "name": "Long March 6",
                 "description": "",
                 "mocs": [
@@ -46,7 +54,7 @@
                 ]
             },
             {
-                "id": 5,
+                "id": 6,
                 "name": "Long March 7",
                 "description": "The Long March 7 series of rockets is one of the new series of Chinas space launch systems. The most notable payloads are the Tianzhou spacecrafts that resupply the Chinese Space Station.",
                 "mocs": [
@@ -54,7 +62,7 @@
                 ]
             },
             {
-                "id": 6,
+                "id": 7,
                 "name": "Long March 8",
                 "description": "",
                 "mocs": [

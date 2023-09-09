@@ -1,5 +1,137 @@
 [
     {
+        "company": "",
+        "region": "China",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_5",
+            "https://space.skyrocket.de/doc_lau_det/cz-5b.htm"
+        ],
+        "type": "rocket",
+        "id": 135,
+        "title": "Long March 5B",
+        "altTitles": [
+            "CZ-5B",
+            "LM-5B",
+            "Chang Zheng 5B"
+        ],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-09-09",
+        "dateCreated": "2021-21-09",
+        "related": [
+            134,
+            51
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Long March 5B rocket. The boosters can be separated from the core stage. The fairings can also be separated from the core stage and hold some space for a payload.",
+        "rocketDescription": "The Long March 5B rocket is a Chinese orbital rocket. It has four boosters and a core stage. It is optimised for lifting heavy payloads into LEO. The core stage and the boosters are the same as the ones from the normal Long March 5 rocket. So far it has launched a total of four times, with all launches being successful. The most notable payloads were the modules for the Chinese Space Station.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1857,
+        "dimensions": "11.2x11.2x48.6cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-5/b/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/5b/v3.5/Long_March_5B_V3.5_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/5b/v3.5/Long_March_5B_V3.5_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/5b/v3.5/Long_March_5B_V3.5_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the reentry diorama",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/5b/v3.5/Long_March_5B_V3.5.io",
+                        "name": "Long_March_5B_V3.5.io"
+                    }
+                ],
+                "version": "V3.5"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "China",
+        "rocketReadMoreLinks": [
+            "https://en.wikipedia.org/wiki/Long_March_5",
+            "https://www.cnsa.gov.cn/english/n6465715/n6465718/c6476925/content.html",
+            "https://space.skyrocket.de/doc_lau_det/cz-5.htm"
+        ],
+        "type": "rocket",
+        "id": 134,
+        "title": "Long March 5",
+        "altTitles": [
+            "CZ-5",
+            "LM-5",
+            "Chang Zheng 5"
+        ],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-09-09",
+        "dateCreated": "2021-21-09",
+        "related": [
+            135
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Long March 5 rocket. The boosters and the upper stage can be separated from the core stage. The fairings can be separated from the upper stage and hold some space for a payload.",
+        "rocketDescription": "The Long March 5 rocket is a Chinese orbital rocket. It has four boosters, a core stage and an upper stage. The first launch in 2017 resulted in a failure. Since then it has launched another three times with all launches being successful.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 2050,
+        "dimensions": "11.2x11.2x51.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-5/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the reentry diorama",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5.io",
+                        "name": "Long_March_5_V3.5.io"
+                    }
+                ],
+                "version": "V3.5"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks. You will need to cut a hose to the correct length though.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "SpaceX",
         "region": "USA",
         "rocketReadMoreLinks": [
@@ -8,7 +140,10 @@
         "type": "rocket",
         "id": 133,
         "title": "Falcon 9 Block 4",
-        "altTitles": ["Falcon 9 Full Thrust","Falcon 9 1.2"],
+        "altTitles": [
+            "Falcon 9 Full Thrust",
+            "Falcon 9 1.2"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-09-08",
@@ -71,7 +206,9 @@
         "type": "rocket",
         "id": 132,
         "title": "Falcon 9 1.0",
-        "altTitles": ["Falcon 9 Block 1"],
+        "altTitles": [
+            "Falcon 9 Block 1"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-09-07",
@@ -5051,7 +5188,8 @@
         "lastupdate": "2023-04-30",
         "dateCreated": "2021-12-23",
         "related": [
-            60
+            60,
+            53
         ],
         "updateMessage": "",
         "region": "China",
@@ -5418,7 +5556,10 @@
         "difficultyExtra": "",
         "lastupdate": "2023-04-28",
         "dateCreated": "2022-05-01",
-        "related": [],
+        "related": [
+            51,
+            59
+        ],
         "updateMessage": "",
         "region": "China",
         "regionExtra": "",
@@ -5551,7 +5692,11 @@
         "difficultyExtra": "",
         "lastupdate": "2023-04-28",
         "dateCreated": "2022-11-03",
-        "related": [],
+        "related": [
+            135,
+            52,
+            53
+        ],
         "updateMessage": "",
         "region": "China",
         "regionExtra": "",

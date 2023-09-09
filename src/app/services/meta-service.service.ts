@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Injectable, Inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { Moc } from '../model/classes';
 
 @Injectable({
   providedIn: 'root'
@@ -55,5 +56,13 @@ export class MetaServiceService {
     let image: string = "https://flosrocketbricks.com/assets/logo.png";
 
     this.setAllTags(title, desc, url, image);
+  }
+
+  getPageMocLink(id:number,mocTitle:string): string {
+    return "/moc/" + id.toString() + "/" + mocTitle.toLowerCase().replace("/", "-").replace("'", "-").split(" ").join("-").replace(".", "-");
+  }
+
+  getTotalMocLink(moc: Moc): string {
+    return "https://flosrocketbricks.com" + this.getPageMocLink(moc.id,moc.title);
   }
 }

@@ -3,36 +3,37 @@
     <div class="col-lg-9 mx-auto row">
       <div class="col-3 col-lg-3 px-0">
         <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
-          <img src="/assets/logo.png" class="img-fluid logoimage"
-            alt="FlosRocketBricks">
+          <img src="/assets/logo.png" class="img-fluid logoimage" alt="FlosRocketBricks">
         </a>
       </div>
-      <div class="col-3 col-lg px-0">
-        <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/collections" routerLinkActive="active"
-          ariaCurrentWhenActive="page">Collections</a>
+      <div
+        class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkCollections">
+        <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/collections"
+          routerLinkActive="active" ariaCurrentWhenActive="page">Collections</a>
       </div>
-      <div class="col-3 col-lg px-0">
-        <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/search" [queryParams]="{ type:'rocket' }"
-          routerLinkActive="active" ariaCurrentWhenActive="page">Rockets</a>
+      <div
+        class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkRockets">
+        <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/search"
+          [queryParams]="{ type:'rocket' }" routerLinkActive="active" ariaCurrentWhenActive="page">Rockets</a>
       </div>
-      <div class="col-3 col-lg px-0">
-        <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/search" [queryParams]="{ type:'launchpad' }"
-          routerLinkActive="active" ariaCurrentWhenActive="page">Launchpads</a>
+      <div class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkLaunchpads">
+        <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/search"
+          [queryParams]="{ type:'launchpad' }" routerLinkActive="active" ariaCurrentWhenActive="page">Launchpads</a>
       </div>
-      <div class="col-3 col-lg px-0">
-        <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/search" [queryParams]="{ type:'spacecraft' }"
-          routerLinkActive="active" ariaCurrentWhenActive="page">Spacecraft</a>
+      <div class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkSpacecraft">
+        <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/search"
+          [queryParams]="{ type:'spacecraft' }" routerLinkActive="active" ariaCurrentWhenActive="page">Spacecraft</a>
       </div>
-      <div class="col-3 col-lg px-0">
+      <div class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkSpaceStation">
         <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/search"
           [queryParams]="{ type:'spacestation' }" routerLinkActive="active" ariaCurrentWhenActive="page">Space
           Stations</a>
       </div>
-      <div class="col-3 col-lg px-0">
-        <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/search" [queryParams]="{ type:'other' }"
-          routerLinkActive="active" ariaCurrentWhenActive="page">Other</a>
+      <div class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkOther">
+        <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/search"
+          [queryParams]="{ type:'other' }" routerLinkActive="active" ariaCurrentWhenActive="page">Other</a>
       </div>
-      <div class="col-3 col-lg px-0">
+      <div class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkAbout">
         <a class="headerLink py-4 text-light rounded p-auto no-dec-a" routerLink="/about" routerLinkActive="active"
           ariaCurrentWhenActive="page">About</a>
       </div>

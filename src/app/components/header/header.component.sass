@@ -1,29 +1,63 @@
 .header-content
     background-color: var(--bg-hl-color)
 
+.headerLinkWrapper
+    align-items: center
+    justify-content: center
+    position: relative
+
+.headerLinkCollections:before
+    background-image: var(--header-image-collection)
+
+.headerLinkRockets:before
+    background-image: var(--header-image-rocket)
+
+.headerLinkLaunchpads:before
+    background-image: var(--header-image-launchpad)
+
+.headerLinkSpacecraft:before
+    background-image: var(--header-image-spacecraft)
+
+.headerLinkSpaceStation:before
+    background-image: var(--header-image-spacestation)
+
+.headerLinkOther:before
+    background-image: var(--header-image-other)
+
+.headerLinkAbout:before
+    background-image: var(--header-image-about)
+
+.headerLinkWrapper:before
+    content: ""
+    background-size: cover
+    background-position: center
+    position: absolute
+    top: 0px
+    right: 0px
+    bottom: 0px
+    left: 0px
+    opacity: 0
+
+.headerLinkWrapper:hover::before
+    opacity: 0.3
+    transition: opacity 500ms linear
+
 .headerLink
+    position: relative
     text-align: center
     width: 95%
     height: 90%
     display: flex
     align-items: center
     justify-content: center
-    background-color: var(--interact-color)
 
 .headerClick
     text-decoration: none
     text-align: center
 
-.headerLink:hover
-    background-color: var(--interact-hl-color)
-    transition: background-color 100ms linear
-
 .headerSearch
     display: flex
     justify-content: center
-
-.siteHeader
-    background: var(--bg-color)
 
 .logoimage
     max-height: 150px
@@ -32,4 +66,5 @@
 .headerSearchButton
     color: var(--hl-color-new)
     border-color: rgb(0, 0, 0)
+    boder: 2px
     background-color: var(--interact-color)

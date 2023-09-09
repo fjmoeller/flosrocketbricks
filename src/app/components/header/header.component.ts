@@ -12,8 +12,8 @@ export class HeaderComponent{
   tags: string = "";
 
   constructor(@Inject(DOCUMENT) document: Document) { }
-  
-  triggerSearch(e:Event){
+
+  triggerSearch(e: Event) {
     document.getElementById("searchButton")?.click();
   }
 

@@ -2633,7 +2633,7 @@
         "dateCreated": "2023-01-06",
         "related": [],
         "updateMessage": "",
-        "region": "Ukraine",
+        "region": "USSR",
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
@@ -7642,11 +7642,11 @@
         "designer": "SkySaac",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_5.png"
+            "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_1.png",
+            "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_2.png",
+            "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_3.png",
+            "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_4.png",
+            "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_5.png"
         ],
         "versions": [
             {
@@ -7657,7 +7657,7 @@
                         "description": "The digital io file",
                         "type": "io",
                         "allowViewer": false,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_pub.io",
+                        "link": "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_pub.io",
                         "name": "Ariane_5_ECA_JUICE_V2.0_pub.io"
                     }
                 ],
@@ -7804,7 +7804,7 @@
             25
         ],
         "updateMessage": "",
-        "region": "Ukraine",
+        "region": "USSR",
         "scale": "110",
         "smallCoverImage": "assets/mocImages/110/ukraine/tsyklon/3/640x512.png",
         "internalColorExtra": "",
@@ -7879,7 +7879,7 @@
             25
         ],
         "updateMessage": "",
-        "region": "Ukraine",
+        "region": "USSR",
         "scale": "110",
         "smallCoverImage": "assets/mocImages/110/ukraine/tsyklon/2/640x512.png",
         "internalColorExtra": "",
@@ -8384,7 +8384,7 @@
         "parts": 3417,
         "dimensions": "32x56.8x17.4cm",
         "difficultyExtra": "",
-        "region": "Russia"
+        "region": "USSR"
     },
     {
         "rocketReadMoreLinks": [],

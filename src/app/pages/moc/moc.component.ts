@@ -28,7 +28,8 @@ export class MocComponent implements OnInit, OnDestroy {
     this.route.paramMap.subscribe(paramMap => {
       this.id = Number(paramMap.get('id')) || 0;
       this.moc = this.mocGrabberService.getMoc(this.id);
-      this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription, this.metaService.getTotalMocLink(this.moc), "https://flosrocketbricks.com/" + this.moc.smallCoverImage);
+      //this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription, this.metaService.getTotalMocLink(this.moc), "https://flosrocketbricks.com/" + this.moc.smallCoverImage);
+      this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription, this.metaService.getTotalMocLink(this.moc), this.moc.pictures[0]);
       this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 6);
     });
   }

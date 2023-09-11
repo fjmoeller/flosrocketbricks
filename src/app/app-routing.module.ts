@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MocComponent} from './pages/moc/moc.component';
+import { MocComponent } from './pages/moc/moc.component';
 import { AboutComponent } from './pages/about/about.component';
 import { SearchComponent } from './pages/search/search.component';
 import { StartComponent } from './pages/start/start.component';
@@ -21,8 +21,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-})],
+    initialNavigation: 'enabledBlocking', scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

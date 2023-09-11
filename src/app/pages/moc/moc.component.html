@@ -293,6 +293,12 @@
             <p>
                 {{moc.rocketDescription}}
             </p>
+            <h4 *ngIf="moc.links.length > 0" class="pt-2">Useful links</h4>
+            <ul *ngIf="moc.links.length > 0">
+                <li *ngFor="let link of moc.links">
+                    <a class="text-coloring" href="{{link}}" target="_blank" rel="noopener">{{link}}</a>
+                </li>
+            </ul>
         </div>
         <div class="col-md-6">
             <div *ngIf="moc.updateMessage!=''" class="row mt-1">

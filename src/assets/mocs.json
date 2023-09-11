@@ -2,7 +2,7 @@
     {
         "company": "",
         "region": "China",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_5",
             "https://space.skyrocket.de/doc_lau_det/cz-5b.htm"
         ],
@@ -68,7 +68,7 @@
     {
         "company": "",
         "region": "China",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_5",
             "https://www.cnsa.gov.cn/english/n6465715/n6465718/c6476925/content.html",
             "https://space.skyrocket.de/doc_lau_det/cz-5.htm"
@@ -134,7 +134,7 @@
     {
         "company": "SpaceX",
         "region": "USA",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Falcon_9_Full_Thrust#Block_4"
         ],
         "type": "rocket",
@@ -199,7 +199,7 @@
     {
         "company": "SpaceX",
         "region": "USA",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Falcon_9_v1.0",
             "https://space.skyrocket.de/doc_lau_det/falcon-9_v1-0.htm"
         ],
@@ -265,7 +265,7 @@
     {
         "company": "SpaceX",
         "region": "USA",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/SpaceX_Dragon_1",
             "https://space.skyrocket.de/doc_sdat/dragon.htm"
         ],
@@ -341,7 +341,7 @@
     {
         "company": "SpaceX",
         "region": "USA",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/SpaceX_Dragon_1",
             "https://space.skyrocket.de/doc_sdat/dragon.htm"
         ],
@@ -416,7 +416,7 @@
     {
         "company": "",
         "region": "China",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Taiyuan_Satellite_Launch_Center",
             "http://www.astronautix.com/t/taiyuanlc16.html"
         ],
@@ -483,7 +483,7 @@
     {
         "company": "",
         "region": "China",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_6",
             "https://space.skyrocket.de/doc_lau/cz-6.htm"
         ],
@@ -547,7 +547,7 @@
     {
         "company": "",
         "region": "China",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_2F",
             "https://space.skyrocket.de/doc_lau_det/cz-2ft.htm"
         ],
@@ -613,7 +613,7 @@
     {
         "company": "",
         "region": "China",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_2F",
             "https://www.cnsa.gov.cn/english/n6465715/n6465718/c6476863/content.html"
         ],
@@ -679,7 +679,7 @@
     {
         "company": "",
         "region": "China",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Kuaizhou",
             "https://space.skyrocket.de/doc_lau_det/kuaizhou-1.htm"
         ],
@@ -738,7 +738,7 @@
     {
         "company": "",
         "region": "China",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Kuaizhou",
             "https://space.skyrocket.de/doc_lau_det/kuaizhou-1.htm"
         ],
@@ -797,7 +797,7 @@
     {
         "company": "",
         "region": "China",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Kuaizhou",
             "https://space.skyrocket.de/doc_lau_det/kuaizhou-1a.htm"
         ],
@@ -857,7 +857,7 @@
     {
         "company": "Galactic Energy",
         "region": "China",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/ceres-1.htm",
             "https://www.galactic-energy.cn/index.php/En/List/cid/14"
         ],
@@ -919,7 +919,7 @@
         "typeExtra": "",
         "internalColor": "-",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/ceres-1.htm",
             "https://www.galactic-energy.cn/index.php/En/List/cid/14"
         ],
@@ -977,7 +977,7 @@
         "typeExtra": "",
         "internalColor": "-",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/ceres-1.htm",
             "https://www.galactic-energy.cn/index.php/En/List/cid/14"
         ],
@@ -1035,7 +1035,7 @@
         "typeExtra": "",
         "internalColor": "-",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Chang%27e_3",
             "https://www.bernd-leitenberger.de/chang-e-3.shtml"
         ],
@@ -1097,7 +1097,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/cz-2.htm",
             "https://en.wikipedia.org/wiki/Long_March_2E"
         ],
@@ -1189,7 +1189,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/cz-2.htm",
             "https://en.wikipedia.org/wiki/Long_March_2D"
         ],
@@ -1268,7 +1268,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/cz-2.htm",
             "https://en.wikipedia.org/wiki/Long_March_2C"
         ],
@@ -1335,7 +1335,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/cz-2.htm",
             "https://en.wikipedia.org/wiki/Long_March_2C"
         ],
@@ -1411,7 +1411,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/cz-2.htm",
             "https://en.wikipedia.org/wiki/Long_March_2C"
         ],
@@ -1478,7 +1478,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/cz-2.htm",
             "https://en.wikipedia.org/wiki/Long_March_2C"
         ],
@@ -1544,7 +1544,7 @@
         "typeExtra": "",
         "internalColor": "-",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.esa.int/Science_Exploration/Space_Science/Euclid"
         ],
         "mocDescription": "This is a MOC of the Euclid spacecraft.",
@@ -1603,7 +1603,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau_det/falcon-9_v1-2_b5.htm",
             "https://www.esa.int/Science_Exploration/Space_Science/Euclid"
         ],
@@ -1667,7 +1667,7 @@
         "typeExtra": "",
         "internalColor": "-",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_sdat/cygnus-pcm-e.htm"
         ],
         "mocDescription": "This is a MOC of the Enhanced Cygnus spacecraft.",
@@ -1727,7 +1727,7 @@
         "typeExtra": "",
         "internalColor": "-",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_sdat/cygnus-pcm-e.htm"
         ],
         "mocDescription": "This is a MOC of the Enhanced Cygnus spacecraft.",
@@ -1787,7 +1787,7 @@
         "typeExtra": "",
         "internalColor": "-",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_sdat/cygnus-pcm.htm"
         ],
         "mocDescription": "This is a MOC of the Cygnus spacecraft.",
@@ -1847,7 +1847,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/antares_osc.htm",
             "http://www.b14643.de/Spacerockets_2/United_States_2/Antares/Description/Frame.htm"
         ],
@@ -1907,7 +1907,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/kuaizhou-11.htm",
             "http://www.b14643.de/Spacerockets_4/Expace_KZ-11/Description/Frame.htm"
         ],
@@ -1968,7 +1968,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/kuaizhou-11.htm",
             "http://www.b14643.de/Spacerockets_4/Expace_KZ-11/Description/Frame.htm"
         ],
@@ -2031,7 +2031,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "http://www.orienspace.com/productPage"
         ],
         "mocDescription": "This is a MOC of the Gravity-1 rocket. The boosters and the second stage can be separated from the core stage. The fairing holds some space for a payload and can be separated from the payload adapter.",
@@ -2089,7 +2089,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/jielong-3.htm"
         ],
         "mocDescription": "This is a MOC of the Jielong 3 rocket. The stages can not be seperated. The fairing holds some space for a small spacecraft.",
@@ -2162,7 +2162,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Delta_III",
             "http://www.astronautix.com/d/delta8930.html"
         ],
@@ -2227,7 +2227,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/H3_(rocket)",
             "https://space.skyrocket.de/doc_lau/h-3.htm"
         ],
@@ -2286,7 +2286,7 @@
         "typeExtra": "",
         "internalColor": "Dark Pink",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Ariane_5",
             "https://space.skyrocket.de/doc_lau/ariane-5.htm"
         ],
@@ -2369,7 +2369,7 @@
         "typeExtra": "",
         "internalColor": "Dark Pink",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.ariane.group/en/commercial-launch-services/ariane-6/"
         ],
         "mocDescription": "This is a MOC of the Ariane 6 flight in its FM1 configuration based on ESA renders. The boosters can be seperated from the core stage. The second stage can be seperated from the first stage. The payload fairing holds some space for a payload.",
@@ -2426,7 +2426,7 @@
         "typeExtra": "",
         "internalColor": "Dark Pink",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "http://www.capcomespace.net/dossiers/espace_europeen/ariane/ariane6/developpement_2009-2013.htm"
         ],
         "mocDescription": "This is a MOC of a 2013 concept of the Ariane 6 rocket. The three stages can be seperated from one another, the third and second one aren't physically connected to another though.. The fairings holds some space for a payload.",
@@ -2484,7 +2484,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Proton-M"
         ],
         "mocDescription": "This is a MOC of the Russian Proton M rocket. The four stages can be seperated from one another. The fairings holds some space for a thin payload and can also be seperated from the upper stage.",
@@ -2542,7 +2542,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "http://www.capcomespace.net/dossiers/espace_europeen/CSG/ELA3/tour_cazes.htm"
         ],
         "mocDescription": "This is a MOC of The CAZES tower. It can be combined with the launchtable to make a full ELA-3 launchpad.",
@@ -2616,7 +2616,7 @@
         "typeExtra": "",
         "internalColor": "Bright Pink",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Zenit-2",
             "http://www.astronautix.com/z/zenit-2.html",
             "https://www.russianspaceweb.com/zenit.html"
@@ -2675,7 +2675,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau/chollima-1.htm",
             "http://www.b14643.de/Spacerockets_1/Rest_World/Chollima-1/Description/Frame.htm"
         ],
@@ -2747,7 +2747,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Nuri_(rocket)",
             "https://space.skyrocket.de/doc_lau/kslv-2.htm"
         ],
@@ -2805,7 +2805,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
             "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
@@ -2877,7 +2877,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
             "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
@@ -2949,7 +2949,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
             "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
@@ -3021,7 +3021,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
             "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
@@ -3093,7 +3093,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
             "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
@@ -3165,7 +3165,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
             "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
@@ -3237,7 +3237,7 @@
         "typeExtra": "",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/VentureStar"
         ],
         "mocDescription": "This is a MOC of the the VentureStar. It has a openable payload compartment. The wings are hinged and can be moved around.",
@@ -3301,7 +3301,7 @@
         "typeExtra": "",
         "internalColor": "-",
         "internalColorExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "http://www.capcomespace.net/dossiers/espace_europeen/CSG/ELA3/table_lancement.htm"
         ],
         "mocDescription": "This is a MOC of the ELA-3 Launchtable. It is compatible with all of my 1:110 Ariane 5 rockets.",
@@ -3374,7 +3374,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Ariane_5",
             "https://space.skyrocket.de/doc_lau/ariane-5.htm"
         ],
@@ -3447,7 +3447,7 @@
         "id": 83,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_3C",
             "https://space.skyrocket.de/doc_lau_det/cz-3cg2.htm"
         ],
@@ -3509,7 +3509,7 @@
         "id": 82,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_3B"
         ],
         "mocDescription": "This is a MOC of the Long March 3B/E rocket. It has four seperatable boosters and a total of three stages. All of them can be seperated from each other. The fairing holds some space for a small payload.",
@@ -3571,7 +3571,7 @@
         "id": 81,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_3A"
         ],
         "mocDescription": "This is a MOC of the Long March 3A rocket. It has a first, second and third stage which can all be seperated. The fairing holds some space for a small payload.",
@@ -3632,7 +3632,7 @@
         "id": 80,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_3"
         ],
         "mocDescription": "This is a MOC of the Long March 3 rocket. It has a first, second and third stage which can all be seperated. There are two fairing variants available.",
@@ -3701,7 +3701,7 @@
         "id": 79,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Ariane_5",
             "https://www.bernd-leitenberger.de/ariane5.shtml"
         ],
@@ -3816,7 +3816,7 @@
         "id": 78,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Atlas_V",
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://space.skyrocket.de/doc_lau_det/atlas-5-401.htm",
@@ -3885,7 +3885,7 @@
         "id": 77,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Atlas_V",
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://space.skyrocket.de/doc_lau_det/atlas-5-411.htm",
@@ -3954,7 +3954,7 @@
         "id": 76,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Atlas_V",
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://space.skyrocket.de/doc_lau_det/atlas-5-401.htm",
@@ -4026,7 +4026,7 @@
         "id": 75,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Atlas_V",
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://space.skyrocket.de/doc_lau_det/atlas-5-431.htm"
@@ -4102,7 +4102,7 @@
         "id": 74,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Atlas_V",
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://space.skyrocket.de/doc_lau_det/atlas-5-421.htm"
@@ -4178,7 +4178,7 @@
         "id": 73,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Atlas_V",
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://space.skyrocket.de/doc_lau_det/atlas-5-411.htm"
@@ -4254,7 +4254,7 @@
         "id": 72,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Atlas_V",
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://space.skyrocket.de/doc_lau_det/atlas-5-401.htm"
@@ -4330,7 +4330,7 @@
         "id": 71,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Vulcan_Centaur",
             "https://www.ulalaunch.com/rockets/vulcan-centaur"
         ],
@@ -4399,7 +4399,7 @@
         "id": 70,
         "type": "spacecraft",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Astrobotic_Technology#Peregrine_lander",
             "https://www.astrobotic.com/lunar-delivery/landers/"
         ],
@@ -4458,7 +4458,7 @@
         "id": 69,
         "type": "other",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/OK-GLI",
             "https://en.wikipedia.org/wiki/Buran_programme",
             "https://www.buran-energia.com/",
@@ -4535,7 +4535,7 @@
         "id": 68,
         "type": "spacecraft",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Buran_programme",
             "https://www.buran-energia.com/",
             "http://www.buran.ru/htm/homepage.htm"
@@ -4627,7 +4627,7 @@
         "id": 67,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Energia_(rocket)",
             "https://www.buran-energia.com/",
             "http://www.buran.ru/htm/homepage.htm"
@@ -4740,7 +4740,7 @@
         "id": 66,
         "type": "spacecraft",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Zond_program",
             "https://en.wikipedia.org/wiki/Soyuz_7K-L1"
         ],
@@ -4798,7 +4798,7 @@
         "id": 65,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://fr.wikipedia.org/wiki/Zhuque-1",
             "https://space.skyrocket.de/doc_lau/zhuque-1.htm"
         ],
@@ -4861,7 +4861,7 @@
         "id": 64,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_4A",
             "https://space.skyrocket.de/doc_lau_det/cz-4.htm"
         ],
@@ -4922,7 +4922,7 @@
         "id": 63,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_4C",
             "https://space.skyrocket.de/doc_lau_det/cz-4c.htm"
         ],
@@ -4992,7 +4992,7 @@
         "id": 62,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_8",
             "https://space.skyrocket.de/doc_lau_det/cz-8-2.htm"
         ],
@@ -5053,7 +5053,7 @@
         "id": 61,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_8",
             "https://space.skyrocket.de/doc_lau_det/cz-8-1.htm"
         ],
@@ -5114,7 +5114,7 @@
         "id": 60,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_7",
             "https://space.skyrocket.de/doc_lau_det/cz-7a.htm"
         ],
@@ -5175,7 +5175,7 @@
         "id": 59,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Long_March_7",
             "https://space.skyrocket.de/doc_lau/cz-7.htm"
         ],
@@ -5237,7 +5237,7 @@
         "id": 58,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Europa_(rocket)",
             "https://www.deutsches-museum.de/en/flugwerft-schleissheim/exhibition/aero-engines-and-rockets/europa-rocket",
             "http://www.astronautix.com/e/europai.html"
@@ -5295,7 +5295,7 @@
         "id": 57,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Skylon_(spacecraft)"
         ],
         "mocDescription": "This is a MOC of the Skylon spaceplane/rocket. It has a payload bay where an upper stage and paylaod can be put in. The upper stage is an extra MOC available in the files section. The Skylon has landing gear which can be taken of. The MOC also includes a white stand as the ladning gear can't hold the MOC upright by itself.",
@@ -5368,7 +5368,7 @@
         "id": 56,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Diamant"
         ],
         "mocDescription": "This is a MOC of the Diamant BP4 rocket.",
@@ -5427,7 +5427,7 @@
         "id": 55,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Diamant"
         ],
         "mocDescription": "This is a MOC of the Diamant B rocket.",
@@ -5486,7 +5486,7 @@
         "id": 54,
         "type": "rocket",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Diamant"
         ],
         "mocDescription": "This is a MOC of the Diamant A rocket.",
@@ -5545,7 +5545,7 @@
         "id": 53,
         "type": "spacecraft",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)"
         ],
         "mocDescription": "This is a MOC of the Tianzhou spacecraft. Using the stand it can be docked to the front or back docking port of the Tiangong space station.",
@@ -5613,7 +5613,7 @@
         "id": 52,
         "type": "spacecraft",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)"
         ],
         "mocDescription": "This is a MOC of the Shenzhou spacecraft. Using the stand it can be docked to the front or back docking port of the Tiangong space station. Without the stand it can be docked to the bottom docking port.",
@@ -5681,7 +5681,7 @@
         "id": 51,
         "type": "spacestation",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Tiangong_space_station"
         ],
         "mocDescription": "This is a MOC of the Tiangong Space Station. A shenzhou spacecraft can be put on the lower docking port and with a stand another Shenzhou or Tianzhou spacecraft can be put on the other docking ports.",
@@ -5744,7 +5744,7 @@
         "id": 50,
         "type": "launchpad",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Launch_Complex_41",
             "http://www.astronautix.com/c/capecanaverallc41.html"
         ],
@@ -5849,7 +5849,7 @@
         "id": 49,
         "type": "spacecraft",
         "typeExtra": "",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.airbus.com/en/juice",
             "https://www.esa.int/Science_Exploration/Space_Science/Juice",
             "https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer"
@@ -5928,7 +5928,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Titan_IV",
             "http://www.astronautix.com/t/titan4b.html"
         ],
@@ -6058,7 +6058,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://space.skyrocket.de/doc_lau_det/titan-323c.htm"
         ],
         "mocDescription": "This is a MOC of the Titan III 23C rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The Transstage can also be seperated. The fairing holds space for a payload.",
@@ -6143,7 +6143,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Commercial_Titan_III",
             "https://en.wikipedia.org/wiki/Intelsat_603"
         ],
@@ -6203,7 +6203,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Commercial_Titan_III",
             "https://en.wikipedia.org/wiki/Mars_Observer"
         ],
@@ -6263,7 +6263,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Commercial_Titan_III"
         ],
         "mocDescription": "This is a MOC of the Titan III Commercial rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The fairing contains some space for the two payloads and upper stages.",
@@ -6322,7 +6322,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Titan_IIIE"
         ],
         "mocDescription": "This is a MOC of the Titan IIIE rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The fairing contains some space for a payload. The centaur upper stage does not fit inside though. It is available as an seperate MOC in the files section.",
@@ -6415,7 +6415,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Titan_IIID"
         ],
         "mocDescription": "This is a MOC of the Titan IIID rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The fairing contains some space for a payload. There are two different fairing sizes.",
@@ -6529,7 +6529,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Titan_IIIC"
         ],
         "mocDescription": "This is a MOC of the Titan IIIC rocket as it looked like on its final flight with the Vela 11 and 12 satellites onboard. The boosters can be separated from the core stage. The second stage can be separated from the core stage and the third stage (transtage) can again be separated from the second stage. The fairing contains the included Vela 11 and 12 satellites.",
@@ -6587,7 +6587,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Titan_IIIC"
         ],
         "mocDescription": "This is a MOC of the Titan IIIC rocket as it looked like on its seventh flight with the IDCSP 8 to 15 satellites onboard. The boosters can be separated from the core stage. The second stage can be separated from the core stage and the third stage (transtage) can again be separated from the second stage. The fairing does not hold any space for a payload.",
@@ -6645,7 +6645,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Titan_IIIC"
         ],
         "mocDescription": "This is a MOC of the Titan IIIC rocket as it looked like on its fifth flight with multiple IDCSP and the GGTS 2 satellite onboard. The boosters can be separated from the core stage. The second stage can be separated from the core stage and the third stage (transtage) can again be separated from the second stage. The fairing does not hold any space for a payload.",
@@ -6703,7 +6703,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/TACOMSAT",
             "https://en.wikipedia.org/wiki/Titan_IIIC"
         ],
@@ -6762,7 +6762,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Titan_IIIC"
         ],
         "mocDescription": "This is a MOC of the Titan IIIC rocket as it looked like on its first flight. The boosters can be separated from the core stage. The second stage can be separated from the core stage and the third stage (transtage) can again be separated from the second stage. The fairing does not hold any space for a payload.",
@@ -6820,7 +6820,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "-",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Soyuz_MS"
         ],
         "mocDescription": "This is a MOC of the Soyuz MS spacecraft.",
@@ -6878,7 +6878,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.boeing.com/space/starliner/",
             "https://de.wikipedia.org/wiki/CST-100_Starliner",
             "https://www.ulalaunch.com/rockets/atlas-v",
@@ -6990,7 +6990,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.boeing.com/space/starliner/",
             "https://de.wikipedia.org/wiki/CST-100_Starliner",
             "https://www.ulalaunch.com/rockets/atlas-v",
@@ -7098,7 +7098,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://en.wikipedia.org/wiki/Atlas_V"
         ],
@@ -7182,7 +7182,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://en.wikipedia.org/wiki/Atlas_V"
         ],
@@ -7266,7 +7266,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://en.wikipedia.org/wiki/Atlas_V"
         ],
@@ -7350,7 +7350,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://en.wikipedia.org/wiki/Atlas_V"
         ],
@@ -7434,7 +7434,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://en.wikipedia.org/wiki/Atlas_V"
         ],
@@ -7518,7 +7518,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.ulalaunch.com/rockets/atlas-v",
             "https://en.wikipedia.org/wiki/Atlas_V"
         ],
@@ -7602,7 +7602,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.esa.int/Science_Exploration/Space_Science/Juice",
             "https://en.wikipedia.org/wiki/Ariane_5",
             "https://space.skyrocket.de/doc_lau/ariane-5.htm"
@@ -7671,7 +7671,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://www.isaraerospace.com/spectrum"
         ],
         "mocDescription": "The first two rocket stages can be seperated. The fairing holds space for a small payload.",
@@ -7728,7 +7728,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Tsyklon-4",
             "http://www.b14643.de/Spacerockets_1/East_Europe_2/Cyclone-4/Description/Frame.htm"
         ],
@@ -7789,7 +7789,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Tsyklon-3",
             "http://www.b14643.de/Spacerockets_1/East_Europe_2/Tsiklon/Description/Frame.htm"
         ],
@@ -7864,7 +7864,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [
+        "links": [
             "https://en.wikipedia.org/wiki/Tsyklon-2",
             "http://www.b14643.de/Spacerockets_1/East_Europe_2/Tsiklon/Description/Frame.htm"
         ],
@@ -7925,7 +7925,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "mocDescription": "The three stages, as well as the two boosters can be seperated. On top of the transtage is the MOL mockup.",
         "rocketDescription": "The Titan IIIC rocket with the MOL payload was launched in 1966 on the C-9 vehicle. It served as a mockup and was made out of a Titan propellant tank and a refurbished Gemini spacecraft. The laboratory mockup remained in orbit until 1967.",
         "stabilityExtra": "",
@@ -7997,7 +7997,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Dark Pink",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "mocDescription": "All three stages of the MOC can be seperated. The payload fairing has no space for a payload though.",
         "rocketDescription": "The Titan IIIA rocket was the first rocket out of the Titan III series of expendable launch vehicles. It launched a total of four times, with three being successful launches. The first launch happened in 1964 and the last one in 1965. All three stages are used N2O4 and Aerozine 50 as fuel and oxidizer.",
         "stabilityExtra": "",
@@ -8070,7 +8070,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "mocDescription": "The Orion spacecraft and ICPS can be seperated. This MOC furthermore includes a display stand. If you intend to build this MOC, I recommend buying good quality bricks and some parts benefit greatly by having bricks with high clutch power and accurate casts due to the techniques used.",
         "rocketDescription": "The Orion spacecraft was launches on the SLS rocket around the moon in December 2022. The ICPS (Interim Cryogenic Propulsion Stage) functioned as an upper stage to boost Orion into Orbit and to the moon. It uses a snigle RL-10 engine and runs on liquid hydrogen and liquid oxygen. The ICPS is a stretched version of the Delta Cryogenic Second Stage which is being used on the Delta IV rocket.",
         "stabilityExtra": "",
@@ -8134,7 +8134,7 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "mocDescription": "The MOC has two variants: one with the fairing used on the first flight and one with the normal fairing. The first and second stage can be seperated. The big fairing has some space for a small payload in it. The MOC can be completely build out of Lego parts, although it requires some rather rare printed parts for the first stage.",
         "rocketDescription": "The (almost) completely 3d-printed Terran 1 rocket is Relativity Spaces first rocket. It is fueled by liquid methane and liquid oxygen and has two stages. It has two fairing variants, one with the same diameter as the rest of the rocket tht will be used for the first launch and one that is larger.",
         "stabilityExtra": "",
@@ -8236,7 +8236,7 @@
         "internalColor": "Green",
         "mocDescription": "The rocket stages of this can be seperated. The payload fiaring holds some space for a small payload inside. An additional stand for the rocket is recommended. This MOC can be completely build out of Lego bricks.",
         "rocketDescription": "The OmegA rocket was a project by Northrop Grumman Space Systems. It consisted of mutiple solid stages and a cryogenic, RL-10 driven upper stage. The development ceised development in 2020. The rocket would have been 59.84 meters high with a diameter of 3.71 meters on the first two stages.",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "stabilityExtra": "",
         "company": "",
         "difficulty": -1,
@@ -8291,7 +8291,7 @@
         "related": [],
         "partsExtra": "",
         "designer": "SkySaac",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "stability": 3,
         "mocDescription": "The never build Energia 2 rocket",
         "rocketDescription": "",
@@ -8387,7 +8387,7 @@
         "region": "USSR"
     },
     {
-        "rocketReadMoreLinks": [],
+        "links": [],
         "versions": [
             {
                 "versionExtra": "",
@@ -8460,7 +8460,7 @@
     {
         "typeExtra": "",
         "updateMessage": "",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-2/v3.0/A2_V3.png"
         ],
@@ -8531,7 +8531,7 @@
     {
         "designerExtra": "",
         "updateMessage": "",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "difficultyExtra": "",
         "fanPictures": [],
         "internalColorExtra": "",
@@ -8609,7 +8609,7 @@
     {
         "designerExtra": "",
         "updateMessage": "",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "stability": 5,
         "related": [],
         "scaleExtra": "",
@@ -8691,7 +8691,7 @@
     {
         "parts": 1071,
         "updateMessage": "",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "lastupdate": "2023-03-06",
         "stability": -1,
         "designerExtra": "",
@@ -8747,7 +8747,7 @@
     {
         "internalColor": "Green",
         "updateMessage": "",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "parts": 188,
         "designer": "SkySaac",
         "fanPictures": [],
@@ -8809,7 +8809,7 @@
     {
         "related": [],
         "dimensions": "10.9x10.9x89cm",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "updateMessage": "",
         "tags": [],
         "altTitles": [],
@@ -8900,7 +8900,7 @@
     {
         "internalColor": "Green",
         "lastupdate": "2023-03-06",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "updateMessage": "",
         "typeExtra": "",
         "scale": "110",
@@ -8958,7 +8958,7 @@
     {
         "companyExtra": "",
         "designerExtra": "",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "typeExtra": "",
         "updateMessage": "",
         "designer": "SkySaac",
@@ -9023,7 +9023,7 @@
     },
     {
         "designer": "SkySaac",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "related": [
             10
         ],
@@ -9089,7 +9089,7 @@
     },
     {
         "internalColor": "Green",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "dateCreated": "2023-02-20",
         "updateMessage": "",
         "scaleExtra": "",
@@ -9152,7 +9152,7 @@
     {
         "fanPictures": [],
         "difficultyExtra": "",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "company": "",
         "updateMessage": "",
         "regionExtra": "",
@@ -9277,7 +9277,7 @@
     {
         "dimensions": "7.8x7.0x55cm",
         "stability": -1,
-        "rocketReadMoreLinks": [],
+        "links": [],
         "difficultyExtra": "",
         "updateMessage": "",
         "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/640x512.png",
@@ -9367,7 +9367,7 @@
     {
         "region": "Ukraine",
         "designerExtra": "",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "regionExtra": "",
         "internalColor": "Green",
         "updateMessage": "",
@@ -9438,7 +9438,7 @@
     {
         "dimensionsExtra": "",
         "stabilityExtra": "",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "internalColorExtra": "",
         "updateMessage": "",
         "internalColor": "Bright Pink",
@@ -9502,7 +9502,7 @@
     {
         "designer": "SkySaac",
         "updateMessage": "",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "versions": [
             {
                 "version": "V1.9",
@@ -9566,7 +9566,7 @@
     {
         "parts": 794,
         "lastupdate": "2023-03-06",
-        "rocketReadMoreLinks": [],
+        "links": [],
         "partsExtra": "Can be build completely out of Lego bricks.",
         "updateMessage": "",
         "fanPictures": [],

@@ -73,7 +73,7 @@ export class Moc {
   parts: number;
   updateMessage: string;
   dimensions: string;
-  rocketReadMoreLinks: string[];
+  links: string[];
   scale: string;
   smallCoverImage: string;
   designer: string;
@@ -108,7 +108,7 @@ export class Moc {
     mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],
     dateCreated: string, scaleExtra: string, partsExtra: string, dimensionsExtra: string,
     stabilityExtra: string, difficultyExtra: string, designerExtra: string, internalColorExtra: string,
-    company: string, updateMessage: string, rocketReadMoreLinks: string[], regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
+    company: string, updateMessage: string, links: string[], regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
     this.region = region;
     this.altTitles = altTitles;
     this.type = type;
@@ -120,7 +120,7 @@ export class Moc {
     this.smallCoverImage = smallCoverImage;
     this.fanPictures = fanPictures;
     this.parts = parts;
-    this.rocketReadMoreLinks = rocketReadMoreLinks;
+    this.links = links;
     this.dimensions = dimensions;
     this.dateCreated = dateCreated;
     this.scale = scale;

@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
+import { Moc } from 'src/app/model/classes';
 import { CollectionGrabberService } from 'src/app/services/collection-grabber.service';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
 
@@ -13,32 +14,51 @@ export class HeaderComponent implements OnInit {
   searchInput: string = "";
   tags: string = "";
 
+  allCollections: string[] = [];
+  allRockets: string[] = [];
+  allLaunchpads: string[] = [];
+  allSpacecrafts: string[] = [];
+  allSpaceStations: string[] = [];
+  allOther: string[] = [];
+
   constructor(@Inject(DOCUMENT) document: Document, private mocGrabberService: MocGrabberService, private collectionGrabberService: CollectionGrabberService) { }
   ngOnInit(): void {
-    
-    const randomCol = this.collectionGrabberService.getAllCollections()[Math.floor(Math.random() * this.collectionGrabberService.getAllCollections().length)];
-    document.documentElement.style.setProperty("--header-image-collection", "url('" + randomCol.cover + "')");
+    this.allCollections = this.collectionGrabberService.getAllCollections().map(col => col.cover);
+    this.allRockets = this.mocGrabberService.getAllMocs().filter(moc => moc.type == "rocket").map(moc => moc.smallCoverImage);
+    this.allLaunchpads = this.mocGrabberService.getAllMocs().filter(moc => moc.type == "launchpad").map(moc => moc.smallCoverImage);
+    this.allSpacecrafts = this.mocGrabberService.getAllMocs().filter(moc => moc.type == "spacecraft").map(moc => moc.smallCoverImage);
+    this.allSpaceStations = this.mocGrabberService.getAllMocs().filter(moc => moc.type == "spacestation").map(moc => moc.smallCoverImage);
+    this.allOther = this.mocGrabberService.getAllMocs().filter(moc => moc.type == "other").map(moc => moc.smallCoverImage);
+  }
 
-    const allRockets = this.mocGrabberService.getAllMocs().filter(moc => moc.type=="rocket");
-    const randomRock = allRockets[Math.floor(Math.random() * allRockets.length)];
-    document.documentElement.style.setProperty("--header-image-rocket", "url('https://flosrocketbricks.com/" + randomRock.smallCoverImage + "')");
+  setRandomCollection(): void {
+    const randomCol = this.allCollections[Math.floor(Math.random() * this.allCollections.length)];
+    document.documentElement.style.setProperty("--header-image-collection", "url('" + randomCol + "')");
+  }
 
-    const allLaunchpads = this.mocGrabberService.getAllMocs().filter(moc => moc.type=="launchpad");
-    const randomLaunch = allLaunchpads[Math.floor(Math.random() * allLaunchpads.length)];
-    document.documentElement.style.setProperty("--header-image-launchpad", "url('https://flosrocketbricks.com/" + randomLaunch.smallCoverImage + "')");
+  setRandomRocket(): void {
+    const randomRock = this.allRockets[Math.floor(Math.random() * this.allRockets.length)];
+    document.documentElement.style.setProperty("--header-image-rocket", "url('https://flosrocketbricks.com/" + randomRock + "')");
+  }
 
-    const allSpacecrafts = this.mocGrabberService.getAllMocs().filter(moc => moc.type=="spacecraft");
-    const randomSpacecraft = allSpacecrafts[Math.floor(Math.random() * allSpacecrafts.length)];
-    document.documentElement.style.setProperty("--header-image-spacecraft", "url('https://flosrocketbricks.com/" + randomSpacecraft.smallCoverImage + "')");
+  setRandomLaunchpad(): void {
+    const randomLaunch = this.allLaunchpads[Math.floor(Math.random() * this.allLaunchpads.length)];
+    document.documentElement.style.setProperty("--header-image-launchpad", "url('https://flosrocketbricks.com/" + randomLaunch + "')");
+  }
 
-    const allsSpaceStations = this.mocGrabberService.getAllMocs().filter(moc => moc.type=="spacestation");
-    const randomSpaceStation = allsSpaceStations[Math.floor(Math.random() * allsSpaceStations.length)];
-    document.documentElement.style.setProperty("--header-image-spacestation", "url('https://flosrocketbricks.com/" + randomSpaceStation.smallCoverImage + "')");
+  setRandomSpacecraft(): void {
+    const randomSpacecraft = this.allSpacecrafts[Math.floor(Math.random() * this.allSpacecrafts.length)];
+    document.documentElement.style.setProperty("--header-image-spacecraft", "url('https://flosrocketbricks.com/" + randomSpacecraft + "')");
+  }
 
-    const allOther = this.mocGrabberService.getAllMocs().filter(moc => moc.type=="other");
-    const randomOther = allOther[Math.floor(Math.random() * allOther.length)];
-    document.documentElement.style.setProperty("--header-image-other", "url('https://flosrocketbricks.com/" + randomOther.smallCoverImage + "')");
+  setRandomSpacestation(): void {
+    const randomSpaceStation = this.allSpaceStations[Math.floor(Math.random() * this.allSpaceStations.length)];
+    document.documentElement.style.setProperty("--header-image-spacestation", "url('https://flosrocketbricks.com/" + randomSpaceStation + "')");
+  }
 
+  setRandomOther(): void {
+    const randomOther = this.allOther[Math.floor(Math.random() * this.allOther.length)];
+    document.documentElement.style.setProperty("--header-image-other", "url('https://flosrocketbricks.com/" + randomOther + "')");
   }
 
   triggerSearch(e: Event) {

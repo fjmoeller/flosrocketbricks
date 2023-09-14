@@ -16,7 +16,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="col-md-5 text-light">
+        <div class="col-md-5 text-coloring">
             <div class="row justify-content-center text-center my-3">
                 <h1>
                     {{moc.title}}
@@ -274,14 +274,15 @@
         </div>
     </div>
     <div class="row m-4">
-        <div class="col-md-6 text-light">
-            <div *ngIf="showViewer" class="row justify-content-between text-light mx-1">
-                <button class="col botn btn btn-outline-dark bg-light text-decoration-none text-align-center rounded"
+        <div class="col-md-6 text-coloring">
+            <div *ngIf="showViewer" class="row justify-content-between text-coloring mx-1">
+                <button class="col botn btn btn-outline-dark inv-int-col text-decoration-none text-align-center rounded"
                     (click)="toggleViewer(viewerLink)">Close Viewer</button>
-                <a class="col text-light text-center" href="https://www.ldraw.org/">This viewer has been created using
+                <a class="col text-coloring text-center" href="https://www.ldraw.org/">This viewer has been created
+                    using
                     LDraw</a>
             </div>
-            <div *ngIf="showViewer" class="text-light">
+            <div *ngIf="showViewer" class="text-coloring">
                 <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer">
                 </app-viewer>
             </div>
@@ -307,7 +308,7 @@
                 </h4>
             </div>
             <div class="row mt-1">
-                <h3 class="mx-auto text-center text-light">
+                <h3 class="mx-auto text-center text-coloring">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-download mr-2" viewBox="0 0 16 16">
                         <path
@@ -319,41 +320,37 @@
                 </h3>
             </div>
             <div class="row mt-1">
-                <span class="text-center text-light">No pdf instructions for this MOC available?<br>
+                <span class="text-center text-coloring">No pdf instructions for this MOC available?<br>
                     Just contact me and I'll make them!</span>
             </div>
             <div class="row mt-1">
-                <div class="accordion text-light" id="accordion">
-                    <div *ngFor="let version of sortedVersions(moc.versions);let indexOfelement=index;"
-                        class="accordion-item text-light">
-                        <h2 class="accordion-header text-light" [id]="'heading'+indexOfelement">
-                            <button class="accordion-button text-light collapsed version-expand-button" type="button"
-                                data-bs-toggle="collapse" [attr.data-bs-target]="'#body'+indexOfelement"
-                                [attr.aria-controls]="'body'+indexOfelement" aria-expanded="true">
-                                {{version.version}} {{version.versionExtra}}
-                            </button>
-                        </h2>
-                        <div [id]="'body'+indexOfelement"
-                            class="accordion-collapse collapse text-light version-expand-content"
-                            [attr.aria-labelledby]="'heading'+indexOfelement">
-                            <div class="accordion-body">
-                                <div *ngIf="version.changelog!=''"><strong>Changelog:</strong> <br>
-                                    {{version.changelog}} <br></div>
-                                <hr *ngIf="version.changelog!=''" class="my-2 d-inline-block mx-auto divider-hr" />
-                                <strong>Files:</strong>
-                                <app-file *ngFor="let file of version.files;let indexOfFile=index;"
-                                    (viewerEvent)="toggleViewer($event)" [link]="file.link" [name]="file.name"
-                                    [description]="file.description" [type]="file.type"
-                                    [viewerAllowed]="file.allowViewer" [descriptor]="indexOfelement+','+indexOfFile">
-                                </app-file>
-                            </div>
+                <div *ngFor="let version of sortedVersions(moc.versions);let indexOfelement=index;"
+                    class="border bordered-content rounded-3 mt-3 m-0 p-1">
+                    <button class="btn text-coloring w-100 justify-content-left d-flex question-expand-button"
+                        type="button" data-bs-toggle="collapse" aria-expanded="false"
+                        [attr.data-bs-target]="'#body'+indexOfelement" [attr.aria-controls]="'body'+indexOfelement">
+                        <div>
+                            {{version.version}} {{version.versionExtra}}
                         </div>
+                    </button>
+                    <div class="collapse dark-bg border-top text-coloring" [id]="'body'+indexOfelement">
+                        <p *ngIf="version.changelog!=''">
+                            <strong>Changelog:</strong> <br>
+                            {{version.changelog}} <br>
+                        </p>
+                        <hr *ngIf="version.changelog!=''" class="my-2 d-inline-block mx-auto divider-hr" />
+                        <span class="pt-2 pl-2"><strong>Files:</strong></span>
+                        <app-file *ngFor="let file of version.files;let indexOfFile=index;"
+                            (viewerEvent)="toggleViewer($event)" [link]="file.link" [name]="file.name"
+                            [description]="file.description" [type]="file.type" [viewerAllowed]="file.allowViewer"
+                            [descriptor]="indexOfelement+','+indexOfFile">
+                        </app-file>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div *ngIf="moc.related.length > 0" class="row justify-content-center m-4 text-light">
+    <div *ngIf="moc.related.length > 0" class="row justify-content-center m-4 text-coloring">
         <div class="justify-content-center">
             <span>
                 <h3>Related Mocs</h3>
@@ -367,6 +364,6 @@
         </div>
     </div>
 </div>
-<div *ngIf="noError==false" class="pt-4 text-light">
+<div *ngIf="noError==false" class="pt-4 text-coloring">
     <h2 class="text-center">404 - No MOC has been found :/</h2>
 </div>

@@ -3,7 +3,6 @@ import { BufferGeometry, Group, InstancedMesh, Line, LineBasicMaterial, LineSegm
 import { LdrPart, LdrSubmodel, PartReference } from '../model/ldrawParts';
 import { LdrawColorService } from './ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
-import e from 'express';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +17,10 @@ export class IoFileService {
   constructor(private ldrawColorService: LdrawColorService) { }
 
   async getModel(ioUrl: string): Promise<Group> {
-    let ldrUrl = ioUrl.slice(0, ioUrl.length - 2) + "ldr"
+    const ldrUrl = ioUrl.slice(0, ioUrl.length - 2) + "ldr"
     //console.log("Fetching MOC:", this.backendFetchUrl + ldrUrl);
     const contents = await fetch(this.backendFetchUrl + ldrUrl);
-    let moc = this.createMesh(await contents.text());
+    const moc = this.createMesh(await contents.text());
     this.allPartsMap.clear();
     return moc;
   }
@@ -120,6 +119,8 @@ export class IoFileService {
           } //FIX transformation matrix for 37762
           else if (reference.name == "37762.dat")
             partGeometry.translate(0, -8, 0);
+          else if (reference.name == "68013.dat")
+            partGeometry.rotateY(-Math.PI);
 
           partGeometry.applyMatrix4(reference.transformMatrix);
 
@@ -146,9 +147,10 @@ export class IoFileService {
             partGeometry.rotateY(-Math.PI / 2);
             partGeometry.translate(-10, -24, 0);
           } //FIX transformation matrix for 37762
-          else if (reference.name == "37762.dat") {
+          else if (reference.name == "37762.dat")
             partGeometry.translate(0, -8, 0);
-          }
+          else if (reference.name == "68013.dat")
+            partGeometry.rotateY(-Math.PI);
 
           partGeometry.applyMatrix4(reference.transformMatrix);
           partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
@@ -267,7 +269,7 @@ export class IoFileService {
   }
 
   //This function parses a ldr part from text
-  private parsePartLines(partText: string): LdrPart {
+  parsePartLines(partText: string): LdrPart {
     const partLines = partText.split("\n");
 
     let partName: string = "ERROR FLO";
@@ -343,7 +345,7 @@ export class IoFileService {
   }
 
   //This functions parses a line type one, which is a reference to a part or a submodel in a ldr file
-  private parseLineTypeOne(line: string, invert: boolean): PartReference {
+  parseLineTypeOne(line: string, invert: boolean): PartReference {
     const splittedLine = this.splitter(line, " ", 14);
     const transform = new Matrix4();
 

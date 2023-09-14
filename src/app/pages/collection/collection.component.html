@@ -1,4 +1,4 @@
-<div class="text-light container">
+<div class="text-coloring container">
     <h1 class="py-2">
         {{collection.name}}
     </h1>
@@ -7,10 +7,10 @@
     </p>
     <div *ngFor="let subcollection of collection.subCollections" class="pb-4" id="{{subcollection.name.toLowerCase().split(' ').join('-')}}">
         <hr class="mb-3 mt-0 d-inline-block mx-auto divider-hr"/>
-        <div class="accordion text-light" id="accordion">
-            <div class="accordion-item text-light">
-                <h2 class="accordion-header text-light" [id]="'heading'+subcollection.id">
-                    <button class="text-light accordion-button p-3 subcollection-header shadow-none" type="button"
+        <div class="accordion text-coloring" id="accordion">
+            <div class="accordion-item text-coloring">
+                <h2 class="accordion-header text-coloring" [id]="'heading'+subcollection.id">
+                    <button class="text-coloring accordion-button p-3 subcollection-header shadow-none" type="button"
                         data-bs-toggle="collapse" [attr.data-bs-target]="'#file'+subcollection.id"
                         [attr.aria-controls]="'file'+subcollection.id">
                         <h3>
@@ -21,7 +21,7 @@
                         </span>
                     </button>
                 </h2>
-                <div [id]="'file'+subcollection.id" class="accordion-collapse collapse show text-light subcollection-content"
+                <div [id]="'file'+subcollection.id" class="accordion-collapse collapse show text-coloring subcollection-content"
                     [attr.aria-labelledby]="'heading'+subcollection.id">
                     <div class="accordion-body">
                         <div>

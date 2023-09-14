@@ -1,17 +1,16 @@
-<div class="bg-light rounded mt-2">
-    <div class="accordion text-light" id="accordion">
-        <div class="accordion-item text-light">
+<div class="inv-int-col rounded mt-2">
+    <div class="accordion" id="accordion">
+        <div class="accordion-item">
             <h2 class="accordion-header"  [id]="'heading'+descriptor">
-                <button class="text-light accordion-button" style="background-color: rgb(26,30,33)" type="button"
+                <button class="accordion-button hl-bg" type="button"
                     data-bs-toggle="collapse" [attr.data-bs-target]="'#file'+descriptor" [attr.aria-controls]="'file'+descriptor">
-                    <p class="rounded p-1 m-0" style="background-color: rgb(78, 82, 100)">{{filename}}:</p>
-                    <p class="rounded p-1 m-0">{{description}}</p>
+                    <p class="rounded p-1 m-0 text-coloring" style="background-color: rgb(78, 82, 100)">{{filename}}</p>
+                    <p class="rounded p-1 m-0 text-coloring">{{description}}</p>
                 </button>
             </h2>
-            <div [id]="'file'+descriptor" class="accordion-collapse collapse show text-light"
-                style="background-color: rgb(33,37,41)" [attr.aria-labelledby]="'heading'+descriptor">
+            <div [id]="'file'+descriptor" class="accordion-collapse collapse show normal-bg" [attr.aria-labelledby]="'heading'+descriptor">
                 <div class="accordion-body">
-                    <a class="botn btn btn-outline-dark bg-light text-dark text-decoration-none mx-auto text-align-center rounded p-1"
+                    <a class="btn btn-outline-dark inv-int-col text-coloring-inv text-decoration-none mx-auto text-align-center rounded p-1" style="background-color: rgb(78, 82, 100)"
                         href="{{filelink}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-download" viewBox="0 0 16 16">
@@ -22,7 +21,7 @@
                         </svg>
                         Download {{type}} file
                     </a>
-                    <button class="botn btn btn-outline-dark bg-light text-decoration-none mx-auto text-align-center rounded p-1" *ngIf="type=='io'" [disabled]="!viewerAllowed"
+                    <button class="btn btn-outline-dark inv-int-col text-decoration-none mx-auto text-align-center rounded p-1" style="background-color: rgb(78, 82, 100)" *ngIf="type=='io'" [disabled]="!viewerAllowed"
                         (click)="openViewer()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-tv" viewBox="0 0 16 16">
@@ -31,7 +30,7 @@
                         </svg>
                         Open in 3D viewer
                     </button>
-                    <button disabled class="botn btn btn-outline-dark bg-light text-decoration-none mx-auto text-align-center rounded p-1" *ngIf="type=='io'"
+                    <button disabled class="btn btn-outline-dark inv-int-col text-decoration-none mx-auto text-align-center rounded p-1" style="background-color: rgb(78, 82, 100)" *ngIf="type=='io'"
                         (click)="downloadXml()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-filetype-xml" viewBox="0 0 16 16">
@@ -40,7 +39,7 @@
                         </svg>
                         Download .xml
                     </button>
-                    <button disabled class="botn btn btn-outline-dark bg-light text-decoration-none mx-auto text-align-center rounded p-1" *ngIf="type=='io'"
+                    <button disabled class="btn btn-outline-dark inv-int-col text-decoration-none mx-auto text-align-center rounded p-1" style="background-color: rgb(78, 82, 100)" *ngIf="type=='io'"
                         (click)="downloadCsv()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-filetype-csv" viewBox="0 0 16 16">

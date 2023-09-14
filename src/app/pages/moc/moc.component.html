@@ -329,9 +329,9 @@
                     <button class="btn text-coloring w-100 justify-content-left d-flex question-expand-button"
                         type="button" data-bs-toggle="collapse" aria-expanded="false"
                         [attr.data-bs-target]="'#body'+indexOfelement" [attr.aria-controls]="'body'+indexOfelement">
-                        <div>
+                        <span>
                             {{version.version}} {{version.versionExtra}}
-                        </div>
+                        </span>
                     </button>
                     <div class="collapse dark-bg border-top text-coloring" [id]="'body'+indexOfelement">
                         <p *ngIf="version.changelog!=''">

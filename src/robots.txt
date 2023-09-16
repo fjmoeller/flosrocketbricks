@@ -1,5 +1,8 @@
-sitemap: https://flosrocketbricks.com/assets/sitemap.xml
-sitemap: https://flosrocketbricks.com/assets/sitemap.txt
-
+User-agent: *
 Disallow: /search?*
+
+User-agent: *
 Disallow: /search
+
+Sitemap: https://flosrocketbricks.com/assets/sitemap.xml
+Sitemap: https://flosrocketbricks.com/assets/sitemap.txt

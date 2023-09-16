@@ -320,8 +320,10 @@
                 </h3>
             </div>
             <div class="row mt-1">
-                <span class="text-center text-coloring">No pdf instructions for this MOC available?<br>
-                    Just contact me and I'll make them!</span>
+                <span class="text-center text-coloring">
+                    No pdf instructions for this MOC available?<br>
+                    Just contact me and I'll make them!
+                </span>
             </div>
             <div class="row mt-1">
                 <div *ngFor="let version of sortedVersions(moc.versions);let indexOfelement=index;"
@@ -333,14 +335,15 @@
                             {{version.version}} {{version.versionExtra}}
                         </span>
                     </button>
-                    <div class="collapse dark-bg border-top text-coloring" [id]="'body'+indexOfelement">
-                        <p *ngIf="version.changelog!=''">
-                            <strong>Changelog:</strong> <br>
-                            {{version.changelog}} <br>
+                    <div class="collapse border-top text-coloring" [id]="'body'+indexOfelement">
+                        <p *ngIf="version.changelog!=''" class="m-3 mb-0">
+                            <strong>Changelog:</strong><br>
+                            {{version.changelog}}<br>
                         </p>
-                        <hr *ngIf="version.changelog!=''" class="my-2 d-inline-block mx-auto divider-hr" />
-                        <span class="pt-2 pl-2"><strong>Files:</strong></span>
-                        <app-file *ngFor="let file of version.files;let indexOfFile=index;"
+                        <hr *ngIf="version.changelog!=''" class="d-inline-block mx-auto divider-hr"
+                            style="margin-top: 0;margin-bottom: 0;" />
+                        <strong class="m-3">Files:</strong>
+                        <app-file class="mx-3" *ngFor="let file of version.files;let indexOfFile=index;"
                             (viewerEvent)="toggleViewer($event)" [link]="file.link" [name]="file.name"
                             [description]="file.description" [type]="file.type" [viewerAllowed]="file.allowViewer"
                             [descriptor]="indexOfelement+','+indexOfFile">

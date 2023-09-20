@@ -1,13 +1,14 @@
 <div class="moc-card card">
-    <a class="m-0 p-0 text-decoration-none" routerLink="{{link}}" routerLinkActive="active" ariaCurrentWhenActive="page" >
+    <a class="m-0 p-0 text-decoration-none" routerLink="{{link}}" routerLinkActive="active" ariaCurrentWhenActive="page"
+        [attr.rel]="followRel ? null:'nofollow'">
         <img loading="lazy" src="{{coverPicture}}" class="card-img-top moc-card-image" alt="{{scale}} {{mocName}}">
         <div class="card-body">
             <h5 class="card-title moc-card-title text-coloring">{{mocName}}</h5>
             <div class="row">
-                <div class="col mx-auto" alt="MOC scale"> 
+                <div class="col mx-auto" alt="MOC scale">
                     <h6 class="card-title text-center rounded stat-bg text-coloring text-coloring">1:{{scale}}</h6>
                 </div>
-                <div class="col mx-auto" alt="Part count"> 
+                <div class="col mx-auto" alt="Part count">
                     <h6 class="card-title text-center rounded stat-bg text-coloring text-coloring">{{parts}} Parts</h6>
                 </div>
             </div>

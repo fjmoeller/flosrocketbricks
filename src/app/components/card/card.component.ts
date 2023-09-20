@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   @Input('scale') scale = "110"
   @Input('parts') parts: number = 101
   @Input('id') id: number = 0;
+  @Input('followRel') followRel?: boolean = true;
 
   link: string = "/";
 

@@ -20,7 +20,7 @@
             </span>
             <div class="card-group">
                 <app-card class="moc-card" *ngFor="let moc of newestMocs" [pic]="moc.smallCoverImage" [name]="moc.title"
-                    [parts]="moc.parts" [id]="moc.id" [scale]="moc.scale">
+                    [parts]="moc.parts" [id]="moc.id" [scale]="moc.scale" [followRel]="false">
                 </app-card>
             </div>
     </div>

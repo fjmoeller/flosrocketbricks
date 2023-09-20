@@ -1616,17 +1616,17 @@
         "difficulty": -1,
         "difficultyExtra": "",
         "lastupdate": "2023-08-05",
-        "dateCreated": "2023-08-05",
+        "dateCreated": "2023-09-19",
         "related": [
             112
         ],
-        "updateMessage": "I am currently making an improved version which should be available in the next few days.",
+        "updateMessage": "",
         "region": "USA",
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
         "smallCoverImage": "assets/mocImages/110/usa/falcon/falcon-9/block-5/euclid/640x512.png",
-        "dimensions": "6.9x6.9x63.4cm",
+        "dimensions": "5.7x5.7x63.4cm",
         "tags": [],
         "altTitles": [],
         "title": "Falcon 9 Block 5 Euclid",
@@ -1636,14 +1636,30 @@
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.0/Falcon_9_Euclid_V3.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.0/Falcon_9_Euclid_V3.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.0/Falcon_9_Euclid_V3.0_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.0/Falcon_9_Euclid_V3.0_4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.0/Falcon_9_Euclid_V3.0_5.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.0/Falcon_9_Euclid_V3.0_6.png"
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.1/Falcon_9_Euclid_V3.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.1/Falcon_9_Euclid_V3.1_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.1/Falcon_9_Euclid_V3.1_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.1/Falcon_9_Euclid_V3.1_4.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.1/Falcon_9_Euclid_V3.1_5.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.1/Falcon_9_Euclid_V3.1_6.png",
+            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.1/Falcon_9_Euclid_V3.1_7.png"
+
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-9/block-5/euclid/v3.1/Falcon_9_Euclid_V3.1.io",
+                        "name": "Falcon_9_Euclid_V3.0.io"
+                    }
+                ],
+                "version": "V3.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

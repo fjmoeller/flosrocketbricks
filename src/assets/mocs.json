@@ -1,6 +1,6 @@
 [
     {
-        "company": "",
+        "company": "RFA",
         "region": "Europe",
         "links": [
             "https://europeanspaceflight.com/rfa-led-consortium-submit-argo-for-esa-commercial-cargo-initiative/",
@@ -20,14 +20,14 @@
         "rocketDescription": "The Argo is a spacecraft submitted for the European Space Agency's Commercial Cargo Transportation Initiative by a consortium led by Rocket Factory Augsburg. It has a payload capacity of 3.4 tons and a total pressurized volume of 13 cubic metres.",
         "internalColor": "-",
         "scale": "110",
-        "parts": 96,
-        "dimensions": "8.1x7.7x8.4cm",
+        "parts": 83,
+        "dimensions": "7.8x8.3x7.6cm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/europe/argo/640x512.png",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.0/Argo_V1.0_1.png"
+            "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.1/Argo_V1.1_1.png"
         ],
         "versions": [
             {
@@ -50,6 +50,27 @@
                     }
                 ],
                 "version": "V1.0"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.1/Argo_V1.1_pub.io",
+                        "name": "Argo_V1.1_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.1/Argo_V1.1_instructions.pdf",
+                        "name": "Argo_V1.1_instructions.pdf"
+                    }
+                ],
+                "version": "V1.1"
             }
         ],
         "companyExtra": "",

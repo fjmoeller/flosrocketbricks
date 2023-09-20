@@ -1,6 +1,70 @@
 [
     {
         "company": "",
+        "region": "Europe",
+        "links": [
+            "https://europeanspaceflight.com/rfa-led-consortium-submit-argo-for-esa-commercial-cargo-initiative/",
+            "https://www.rfa.space/"
+        ],
+        "type": "spacecraft",
+        "id": 136,
+        "title": "Argo",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-09-20",
+        "dateCreated": "2023-09-20",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Argo spacecraft. I will update this MOC as we get more renders and specifications of the planned spacecraft.",
+        "rocketDescription": "The Argo is a spacecraft submitted for the European Space Agency's Commercial Cargo Transportation Initiative by a consortium led by Rocket Factory Augsburg. It has a payload capacity of 3.4 tons and a total pressurized volume of 13 cubic metres.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 96,
+        "dimensions": "8.1x7.7x8.4cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/europe/argo/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.0/Argo_V1.0_1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.0/Argo_V1.0_pub.io",
+                        "name": "Argo_V1.0_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.0/Argo_V1.0_instructions.pdf",
+                        "name": "Argo_V1.0_instructions.pdf"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks, but it requires some printed parts.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
         "region": "China",
         "links": [
             "https://en.wikipedia.org/wiki/Long_March_5",
@@ -17,7 +81,7 @@
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-09-09",
-        "dateCreated": "2021-21-09",
+        "dateCreated": "2021-09-21",
         "related": [
             134,
             51
@@ -84,7 +148,7 @@
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-09-09",
-        "dateCreated": "2021-21-09",
+        "dateCreated": "2021-09-21",
         "related": [
             135
         ],

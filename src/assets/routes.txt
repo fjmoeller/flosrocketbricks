@@ -138,5 +138,6 @@
 /moc/133/falcon-9-block-4
 /moc/134/long-march-5
 /moc/135/long-march-5b
+/moc/136/argo
 /
 /about

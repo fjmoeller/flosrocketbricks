@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+  <url>
+    <loc>https://flosrocketbricks.com/moc/136/argo</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/argo/640x512.png</image:loc>
+    </image:image>
+  </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/135/long-march-5b</loc>
     <image:image>

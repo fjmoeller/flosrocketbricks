@@ -361,7 +361,7 @@
             <div class="card-group">
                 <app-card class="moc-card" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
                     [name]="relatedMoc.title" [parts]="relatedMoc.parts" [id]="relatedMoc.id"
-                    [scale]="relatedMoc.scale">
+                    [scale]="relatedMoc.scale" [followRel]="false">
                 </app-card>
             </div>
         </div>

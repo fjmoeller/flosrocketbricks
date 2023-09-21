@@ -20,14 +20,16 @@
         "rocketDescription": "The Argo is a spacecraft submitted for the European Space Agency's Commercial Cargo Transportation Initiative by a consortium led by Rocket Factory Augsburg. It has a payload capacity of 3.4 tons and a total pressurized volume of 13 cubic metres.",
         "internalColor": "-",
         "scale": "110",
-        "parts": 83,
-        "dimensions": "7.8x8.3x7.6cm",
+        "parts": 114,
+        "dimensions": "8.1x9.1x7.6cm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/europe/argo/640x512.png",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.1/Argo_V1.1_1.png"
+            "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.2/Argo_V1.2_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.2/Argo_V1.2_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.2/Argo_V1.2_3.png"
         ],
         "versions": [
             {
@@ -71,6 +73,27 @@
                     }
                 ],
                 "version": "V1.1"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.2/Argo_V1.2_pub.io",
+                        "name": "Argo_V1.2_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.2/Argo_V1.2_instructions.pdf",
+                        "name": "Argo_V1.2_instructions.pdf"
+                    }
+                ],
+                "version": "V1.2"
             }
         ],
         "companyExtra": "",

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BlogComponent } from './blog/blog.component';
 import { BlogElementComponent } from './blog-element/blog-element.component';
 import { CardComponent } from './card/card.component';
-import { FileComponent } from './file/file.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ViewerComponent } from './viewer/viewer.component';
@@ -19,7 +18,6 @@ import { AppRoutingModule } from '../app-routing.module';
     BlogComponent,
     BlogElementComponent,
     CardComponent,
-    FileComponent,
     FooterComponent,
     HeaderComponent,
     ViewerComponent
@@ -35,7 +33,6 @@ import { AppRoutingModule } from '../app-routing.module';
     BlogComponent,
     BlogElementComponent,
     CardComponent,
-    FileComponent,
     FooterComponent,
     HeaderComponent,
     ViewerComponent

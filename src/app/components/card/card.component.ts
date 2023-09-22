@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-card',

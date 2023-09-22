@@ -21,7 +21,7 @@ export class MocComponent implements OnInit, OnDestroy {
 
   constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) {
     //default moc
-    this.moc = new Moc([],"", "", "", -1, [], "", [], -1, "", "", "", -1, -1, "", [], "", [], "", [], "", "", "", "", "", "", "", "", "", "", [], "", "", "", "");
+    this.moc = new Moc([], "", "", "", -1, [], "", [], -1, "", "", "", -1, -1, "", [], "", [], "", [], "", "", "", "", "", "", "", "", "", "", [], "", "", "", "");
   }
 
   async ngOnInit() {
@@ -35,12 +35,21 @@ export class MocComponent implements OnInit, OnDestroy {
   }
 
   toggleViewer(url: any): void {
+
     if (this.viewerLink == url)
       this.showViewer = !this.showViewer;
     else {
       this.viewerLink = url;
       this.showViewer = true;
     }
+  }
+
+  downloadXml() {
+
+  }
+
+  downloadCsv() {
+
   }
 
   ngOnDestroy(): void {

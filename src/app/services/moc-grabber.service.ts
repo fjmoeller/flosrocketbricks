@@ -14,6 +14,9 @@ export class MocGrabberService {
     
   }
 
+  getEmptyMoc(): Moc{
+    return new Moc([], "", "", "", -1, [], "", [], -1, "", "", "", -1, -1, "", [], "", [], "", [], "", "", "", "", "", "", "", "", "", "", [], "", "", "", "")
+  }
 
   getMoc(id: number): Moc {
     return this.mocs.filter(moc => moc.id == id)[0];

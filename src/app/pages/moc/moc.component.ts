@@ -21,7 +21,7 @@ export class MocComponent implements OnInit, OnDestroy {
 
   constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) {
     //default moc
-    this.moc = new Moc([], "", "", "", -1, [], "", [], -1, "", "", "", -1, -1, "", [], "", [], "", [], "", "", "", "", "", "", "", "", "", "", [], "", "", "", "");
+    this.moc = this.mocGrabberService.getEmptyMoc();
   }
 
   async ngOnInit() {

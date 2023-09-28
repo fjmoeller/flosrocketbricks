@@ -50,7 +50,7 @@ export class SearchComponent implements OnInit {
         this.getMocs();
 
       });
-    this.metaService.setDefaultTags("Search - FlosRocketBricks", "https://flosrocketbricks.com/search");
+    this.metaService.setDefaultTags("Search - FlosRocketBricks", "https://flosrocketbricks.com/search/");
   }
 
   changeSorting(category: string): void {

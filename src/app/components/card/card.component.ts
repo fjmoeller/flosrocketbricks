@@ -21,7 +21,7 @@ export class CardComponent implements OnInit {
   constructor(private metaService: MetaServiceService) { }
 
   ngOnInit(): void {
-    this.link = this.metaService.getPageMocLink(this.id,this.mocName);
+    this.link = this.metaService.getPageMocLink(this.id,this.mocName)+".";
   }
 
 }

@@ -4,7 +4,7 @@
     </h1>
     <div *ngFor="let collection of collections" >
         <hr class="my-0 d-inline-block mx-auto divider-hr"/>
-        <a routerLink="/collection/{{collection.id}}/{{collection.name.toLowerCase().split(' ').join('-')}}" class="container no-dec-a">
+        <a routerLink="/collection/{{collection.id}}/{{collection.name.toLowerCase().split(' ').join('-')}}/." class="container no-dec-a">
             <div class="text-coloring row">
                 <div class="col-md-auto">
                     <img [src]="collection.cover" class="collection-cover-image">

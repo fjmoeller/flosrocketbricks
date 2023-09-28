@@ -7,15 +7,25 @@ import { StartComponent } from './pages/start/start.component';
 import { BlogOverviewComponent } from './pages/blog-overview/blog-overview.component';
 import { CollectionComponent } from './pages/collection/collection.component';
 import { CollectionOverviewComponent } from './pages/collection-overview/collection-overview.component';
+import { Location } from '@angular/common';
+
+const __stripTrailingSlash = (Location as any).stripTrailingSlash;
+(Location as any).stripTrailingSlash = function _stripTrailingSlash(url: string): string {
+  const queryString$ = url.match(/([^?]*)?(.*)/);
+  if (queryString$ != null && queryString$[2].length > 0) {
+    return /[^\/]\/$/.test(queryString$[1]) ? queryString$[1] + '.' + queryString$[2] : __stripTrailingSlash(url);
+  }
+  return /[^\/]\/$/.test(url) ? url + '.' : __stripTrailingSlash(url);
+};
 
 const routes: Routes = [
-  { path: 'moc/:id/:name', component: MocComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'search', component: SearchComponent },
-  { path: 'start', component: StartComponent },
-  { path: 'blogs', component: BlogOverviewComponent },
-  { path: 'collections', component: CollectionOverviewComponent },
-  { path: 'collection/:id/:name', component: CollectionComponent },
+  { path: 'moc/:id/:name/.', component: MocComponent },
+  { path: 'about/.', component: AboutComponent },
+  { path: 'search/.', component: SearchComponent },
+  { path: 'start/.', component: StartComponent },
+  { path: 'blogs/.', component: BlogOverviewComponent },
+  { path: 'collections/.', component: CollectionOverviewComponent },
+  { path: 'collection/:id/:name/.', component: CollectionComponent },
   { path: '**', component: StartComponent }
 ];
 

@@ -59,10 +59,10 @@ export class MetaServiceService {
   }
 
   getPageMocLink(id:number,mocTitle:string): string {
-    return "/moc/" + id.toString() + "/" + mocTitle.toLowerCase().replace("/", "-").replace("'", "-").split(" ").join("-").replace(".", "-");
+    return "/moc/" + id.toString() + "/" + mocTitle.toLowerCase().replace("/", "-").replace("'", "-").split(" ").join("-").replace(".", "-")+ "/";
   }
 
   getTotalMocLink(moc: Moc): string {
-    return "https://flosrocketbricks.com" + this.getPageMocLink(moc.id,moc.title);
+    return "https://flosrocketbricks.com" + this.getPageMocLink(moc.id,moc.title)+ "/";
   }
 }

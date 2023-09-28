@@ -1,8 +1,8 @@
 User-agent: *
-Disallow: /search?*
+Disallow: /search/?*
 
 User-agent: *
-Disallow: /search
+Disallow: /search/
 
 Sitemap: https://flosrocketbricks.com/assets/sitemap.xml
 Sitemap: https://flosrocketbricks.com/assets/sitemap.txt

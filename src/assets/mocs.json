@@ -1,5 +1,63 @@
 [
     {
+        "company": "",
+        "region": "Germany",
+        "links": [
+            "https://v2rockethistory.com/",
+            "https://en.wikipedia.org/wiki/V-2_rocket"
+        ],
+        "type": "rocket",
+        "id": 137,
+        "title": "Aggregat 4",
+        "altTitles": ["V2","V-2","A4","A-4"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-09-28",
+        "dateCreated": "2023-09-28",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Aggregat 4 rocket. I tried to find the painting scheme of the first flight to space (MW 18012, not MW 18014 as often said), but I couldn't find a picture of it, so I just chose a painting scheme that worked well.",
+        "rocketDescription": "The Aggregat 4, also known sa the V2 was a german ballistic missile that was used during the second world war. On the 18th of June 1944 it became the first man made object in space as it reached a height of 127 kilometers.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 63,
+        "dimensions": "3x3x12.5cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/germany/aggregat/4/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/germany/aggregat/4/v1.0/Aggregat_4_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/germany/aggregat/4/v1.0/Aggregat_4_V1.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/germany/aggregat/4/v1.0/Aggregat_4_V1.0.io",
+                        "name": "Aggregat_4_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "RFA",
         "region": "Europe",
         "links": [

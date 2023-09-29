@@ -2,15 +2,19 @@
     width:12rem
     margin: 10px
 
-.mocpopup
-    position: absolute
+.mocpopup-wrapper
     top: 25%
-    right: 25%
-    width:50%
+    position: absolute
+    z-index: 1000000
+    width: 100%
+    top: 25%
+    left: 0
+
+.mocpopup
     background-color: var(--bg-color)
     border: 1rem solid var(--bg-hl-color)
-    z-index: 1000000
     border-radius: 25px
+    box-shadow: 0px 0px 32px 10px rgba(0,0,0,0.66)
 
 .mocpopup-card-wrapper
     width:12rem

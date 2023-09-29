@@ -63,6 +63,6 @@ export class MetaServiceService {
   }
 
   getTotalMocLink(moc: Moc): string {
-    return "https://flosrocketbricks.com" + this.getPageMocLink(moc.id,moc.title)+ "/";
+    return "https://flosrocketbricks.com" + this.getPageMocLink(moc.id,moc.title);
   }
 }

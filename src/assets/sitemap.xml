@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://flosrocketbricks.com/moc/139/firefly-alpha-flta002/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/firefly-alpha/flta002/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/138/firefly-alpha-flta001/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/firefly-alpha/flta001/640x512.png</image:loc>
+    </image:image>
+  </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/137/aggregat-4/</loc>
     <image:image>

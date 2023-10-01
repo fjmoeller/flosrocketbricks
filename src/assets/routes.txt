@@ -140,5 +140,7 @@
 /moc/135/long-march-5b/
 /moc/136/argo/
 /moc/137/aggregat-4/
+/moc/138/firefly-alpha-flta001/
+/moc/139/firefly-alpha-flta002/
 /
 /about/

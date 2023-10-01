@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BufferGeometry, Group, InstancedMesh, Line, LineBasicMaterial, LineSegments, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
+import { BufferGeometry, Group, LineBasicMaterial, LineSegments, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
 import { LdrPart, LdrSubmodel, PartReference } from '../model/ldrawParts';
 import { LdrawColorService } from './ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
@@ -16,17 +16,17 @@ export class IoFileService {
 
   constructor(private ldrawColorService: LdrawColorService) { }
 
-  async getModel(ioUrl: string): Promise<Group> {
+  async getModel(ioUrl: string, placeHolderColor: string): Promise<Group> {
     const ldrUrl = ioUrl.slice(0, ioUrl.length - 2) + "ldr"
     //console.log("Fetching MOC:", this.backendFetchUrl + ldrUrl);
     const contents = await fetch(this.backendFetchUrl + ldrUrl);
-    const moc = this.createMesh(await contents.text());
+    const moc = this.createMesh(await contents.text(), placeHolderColor);
     this.allPartsMap.clear();
     return moc;
   }
 
   //This function creates the group of meshes for use of the 3d renderer out of a ldr file
-  private createMesh(ldrFile: string): Group {
+  private createMesh(ldrFile: string, placeHolderColor: string): Group {
     const ldrObjects = ldrFile.split("0 NOSUBMODEL"); //0 = submodels, 1 = parts
 
     if (ldrObjects.length != 2) {
@@ -37,9 +37,15 @@ export class IoFileService {
     const submodels = this.parseSubmodels(ldrObjects[0].split("0 NOFILE"));
     this.parseParts(ldrObjects[1].split("0 NOFILE"));
 
+    
+    //get the id of the color that is just a placeholder color and therefore doesnt need to be rendered
+    const placeholderColorCode = this.ldrawColorService.getPlaceholderColorCode(placeHolderColor);
+    console.log("placeholdercolorcode: "+placeholderColorCode+", placeholdercolor: "+placeHolderColor)
+
+
     console.log("Now resolving the model!")
     //resolve all submodels starting from top to bottom
-    return this.resolveSubmodel(submodels.topLdrSubmodel, submodels.submodelNames, submodels.submodelMap);
+    return this.resolveSubmodel(submodels.topLdrSubmodel, submodels.submodelNames, submodels.submodelMap, placeholderColorCode);
   }
 
   private parseSubmodels(submodels: string[]) {
@@ -85,7 +91,7 @@ export class IoFileService {
   }
 
   //This function resolves a submodel and returns a threejs group: that means that it takes all vertices of all parts and puts them into meshes and collects all groups of its submodels
-  private resolveSubmodel(submodel: LdrSubmodel, ldrSubModelNames: string[], ldrSubModelMap: Map<string, LdrSubmodel>): Group {
+  private resolveSubmodel(submodel: LdrSubmodel, ldrSubModelNames: string[], ldrSubModelMap: Map<string, LdrSubmodel>, placeholderColorCode: number): Group {
     //if the submodel has already been worked with it is ready already
     if (submodel.resolved) {
       return submodel.group;
@@ -96,10 +102,15 @@ export class IoFileService {
     for (const reference of submodel.references) { //this loop goes through all references to other parts/submodels inside the current submodel
       const matchingSubmodel: LdrSubmodel | undefined = ldrSubModelMap.get(reference.name);
       if (matchingSubmodel) {// reference is a submodel
-        const referenceSubmodelGroup = (this.resolveSubmodel(matchingSubmodel, ldrSubModelNames, ldrSubModelMap)).clone();
+        const referenceSubmodelGroup = (this.resolveSubmodel(matchingSubmodel, ldrSubModelNames, ldrSubModelMap, placeholderColorCode)).clone();
         referenceSubmodelGroup.applyMatrix4(reference.transformMatrix);
         submodelGroup.add(referenceSubmodelGroup);
       } else {// reference is a part
+
+        //skip if the part is just a placeholder that doesn't need to be rendered
+        if (reference.color == placeholderColorCode)
+          continue;
+
         let referencedPart = this.resolvePart(reference.name);
 
         referencedPart.colorVertexMap.forEach((vertices, color) => { //for each color of the part an own mesh gets created

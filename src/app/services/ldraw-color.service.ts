@@ -29,6 +29,16 @@ export class LdrawColorService {
     }
   }
 
+  getPlaceholderColorCode(colorName: string): number {
+    let newColorName = colorName.split(' ').join('_');
+    for (let key of this.ldrColorList.keys()) {
+      if (this.ldrColorList.get(key)?.name == newColorName) {
+        return key;
+      }
+    }
+    return -1;
+  }
+
   resolveColor(id: number) {
     const ldrcolor = this.ldrColorList.get(id);
 
@@ -43,9 +53,7 @@ export class LdrawColorService {
         case "PEARLESCENT": return { metalness: 0.9, roughness: 0.7, emissive: new Color(finalColor.r + 0.05, finalColor.g + 0.05, finalColor.b + 0.05), color: finalColor, opacity: opacity, transparent: transparent };
         case "METAL": return { metalness: 0.3, roughness: 0.5, emissive: new Color(finalColor.r - 0.10, finalColor.g - 0.10, finalColor.b - 0.10), color: finalColor, opacity: opacity, transparent: transparent };
       }
-
     }
-
     return { color: finalColor, opacity: opacity, roughness: roughness, transparent: transparent }
   }
 

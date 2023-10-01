@@ -1,39 +1,35 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { IoFileService } from 'src/app/services/io-file.service';
-import { AmbientLight, BasicShadowMap, Box3, Group, Mesh, MeshBasicMaterial, MeshPhongMaterial, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
-import { VertexNormalsHelper } from 'three/examples/jsm/helpers/VertexNormalsHelper.js';
+import { AmbientLight, Box3, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
 
 @Component({
   selector: 'app-viewer',
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.sass']
 })
-export class ViewerComponent {
+export class ViewerComponent implements OnInit{
 
   _inputLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io";
 
-  @Input()
-  set inputLink(inputLink: string) {
-    this._inputLink = inputLink;
-    if (this._showViewer)
-      this.showViewerMoc();
-  }
-  get inputLink() { return this._inputLink; }
+  @Input('placeHolderColor')
+  placeHolderColor: string = "";
 
-  _showViewer: boolean = false;
-  @Input()
-  set showViewer(showViewer: boolean) {
-    this._showViewer = showViewer;
-    if (showViewer)
-      this.showViewerMoc();
-  }
-  get showViewer() { return this._showViewer; }
+  @Input('inputLink')
+  inputLink: string = "";
+
+  @Input('showViewer')
+  showViewer: boolean = false;
 
   constructor(private ioFileService: IoFileService) { }
 
+  ngOnInit(): void {
+    if (this.showViewer)
+      this.showViewerMoc();
+  }
+
   async showViewerMoc() {
-    let group: Group = await this.ioFileService.getModel(this.inputLink); //"https://bricksafe.com/files/SkySaac/website/test/model15.io"
+    let group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor); //"https://bricksafe.com/files/SkySaac/website/test/model15.io"
     group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
     this.createThreeJsBox(group);
   }
@@ -108,7 +104,7 @@ export class ViewerComponent {
       // Render
       renderer.render(scene, camera);
       // Call tick again on the next frame
-      if (this._showViewer)
+      if (this.showViewer)
         window.requestAnimationFrame(animateGeometry);
     };
 

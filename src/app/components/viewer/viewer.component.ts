@@ -8,18 +8,19 @@ import { AmbientLight, Box3, Group, PerspectiveCamera, PointLight, Scene, Vector
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.sass']
 })
-export class ViewerComponent implements OnInit{
-
-  _inputLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io";
+export class ViewerComponent implements OnInit {
 
   @Input('placeHolderColor')
   placeHolderColor: string = "";
 
   @Input('inputLink')
-  inputLink: string = "";
+  inputLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io";
 
   @Input('showViewer')
   showViewer: boolean = false;
+
+  //determines if the loading icon will be shown
+  loadingFinished: boolean = true;
 
   constructor(private ioFileService: IoFileService) { }
 
@@ -29,9 +30,11 @@ export class ViewerComponent implements OnInit{
   }
 
   async showViewerMoc() {
-    let group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor); //"https://bricksafe.com/files/SkySaac/website/test/model15.io"
+    this.loadingFinished = false;
+    let group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor);
     group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
     this.createThreeJsBox(group);
+    this.loadingFinished = true;
   }
 
   createThreeJsBox(mocGroup: Group): void {

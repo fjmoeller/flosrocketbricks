@@ -34,7 +34,6 @@ export class ViewerComponent implements OnInit {
     let group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor);
     group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
     this.createThreeJsBox(group);
-    this.loadingFinished = true;
   }
 
   createThreeJsBox(mocGroup: Group): void {
@@ -61,8 +60,10 @@ export class ViewerComponent implements OnInit {
       height: window.innerWidth * (3 / 12),
     };
 
-    if (!canvas || !canvasDiv)
+    if (!canvas || !canvasDiv){
+      console.log("Error: no canvas found");
       return;
+    }
 
     if (canvasDiv)
       canvasSizes = {
@@ -113,6 +114,8 @@ export class ViewerComponent implements OnInit {
 
     controls.update();
     renderer.render(scene, camera);
+
+    this.loadingFinished = true;
 
     animateGeometry();
   }

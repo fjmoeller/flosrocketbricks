@@ -3,6 +3,12 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
+    <loc>https://flosrocketbricks.com/moc/140/wenchang-lc-101-launchtable/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/wenchang/lc-101/lm-5-launchtable/640x512.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/139/firefly-alpha-flta002/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/firefly-alpha/flta002/640x512.png</image:loc>

@@ -138,6 +138,7 @@ https://flosrocketbricks.com/moc/136/argo/
 https://flosrocketbricks.com/moc/137/aggregat-4/
 https://flosrocketbricks.com/moc/138/firefly-alpha-flta001/
 https://flosrocketbricks.com/moc/139/firefly-alpha-flta002/
+https://flosrocketbricks.com/moc/140/wenchang-lc-101-launchtable/
 https://flosrocketbricks.com/collection/3/ariane/
 https://flosrocketbricks.com/collection/2/atlas/
 https://flosrocketbricks.com/collection/0/long-march/

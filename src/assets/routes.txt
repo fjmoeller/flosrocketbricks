@@ -142,5 +142,6 @@
 /moc/137/aggregat-4/
 /moc/138/firefly-alpha-flta001/
 /moc/139/firefly-alpha-flta002/
+/moc/140/wenchang-lc-101-launchtable/
 /
 /about/

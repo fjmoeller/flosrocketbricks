@@ -5,7 +5,7 @@
         <div class="card-body">
             <h5 class="card-title moc-card-title text-coloring">{{mocName}}</h5>
             <div class="row">
-                <div class="col mx-auto" alt="MOC scale">
+                <div class="col mx-auto" alt="MOC scale" *ngIf="scale!=''&&scale!='-'">
                     <h6 class="card-title text-center rounded stat-bg text-coloring text-coloring">1:{{scale}}</h6>
                 </div>
                 <div class="col mx-auto" alt="Part count">

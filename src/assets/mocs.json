@@ -1,5 +1,67 @@
 [
     {
+        "company": "Arianespace",
+        "region": "Europe",
+        "links": [
+            "https://en.wikipedia.org/wiki/Ariane_6",
+            "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_6",
+            "https://www.ariane.group/de/weltraumstartdienste/ariane-6/"
+        ],
+        "type": "rocket",
+        "id": 144,
+        "title": "Ariane 64",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-03",
+        "dateCreated": "2023-10-03",
+        "related": [
+            99,98
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Ariane 6 rocket in its 64 configuration and with a large payload fairing. The boosters and the second stage can be separated from the core stage. Further the payload fairings can be separated form the upper stage and hold space for a potential payload.",
+        "rocketDescription": "The Ariane 6 rocket is an orbital rocket by Arianegroup. It has four solid boosters and a hydrolox core and upper stage. The 64 variant has four boosters. The first launch is expected to happen in 2024.",
+        "internalColor": "Dark Pink",
+        "scale": "110",
+        "parts": 1478,
+        "dimensions": "10x10.3x57cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/64/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7.io",
+                        "name": "Ariane_64_V2.7.io"
+                    }
+                ],
+                "version": "V2.7"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks. Also requires some printed parts.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "Maiaspace",
         "region": "France",
         "links": [
@@ -37,7 +99,7 @@
                 "versionExtra": "",
                 "files": [
                     {
-                        "description": "The digital io file of the logo",
+                        "description": "The digital io file of the rocket",
                         "type": "io",
                         "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/europe/maiaspace/maiaspace-rocket/v1.0/Maiaspace_V1.0.io",
@@ -2963,7 +3025,7 @@
         "difficultyExtra": "",
         "lastupdate": "2023-06-09",
         "dateCreated": "2023-06-09",
-        "related": [],
+        "related": [144,98],
         "updateMessage": "",
         "region": "Europe",
         "regionExtra": "",
@@ -3020,7 +3082,7 @@
         "difficultyExtra": "",
         "lastupdate": "2023-06-07",
         "dateCreated": "2023-03-24",
-        "related": [],
+        "related": [99,144],
         "updateMessage": "",
         "region": "Europe",
         "regionExtra": "",

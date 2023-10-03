@@ -1,5 +1,127 @@
 [
     {
+        "company": "Arianespace",
+        "region": "Europe",
+        "links": [
+            "https://www.arianespace.com/",
+            "https://www.ariane.group/en/"
+        ],
+        "type": "other",
+        "id": 142,
+        "title": "Arianespace Logo",
+        "altTitles": [
+            "Arianegroup Logo"
+        ],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-03",
+        "dateCreated": "2022-02-07",
+        "related": [
+            141
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Arianespace/Arianegroup logo. But in black and white!",
+        "rocketDescription": "Arianespace is an European company for commercial rocket launches. It was founded in 1980 and has its headquarters in Évry in France.",
+        "internalColor": "Red",
+        "scale": "-",
+        "parts": 468,
+        "dimensions": "22.4x39.2x1.1cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/europe/arianegroup/logo/blacknwhite/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/arianegroup/logo/black-white/v2.1/Arianegroup_Logo_BnW_V2.1_1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the logo",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/arianegroup/logo/black-white/v2.1/Arianegroup_Logo_BnW_V2.1.io",
+                        "name": "Arianegroup_Logo_BnW_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "Arianespace",
+        "region": "Europe",
+        "links": [
+            "https://www.arianespace.com/",
+            "https://www.ariane.group/en/"
+        ],
+        "type": "other",
+        "id": 141,
+        "title": "Arianespace Logo",
+        "altTitles": [
+            "Arianegroup Logo"
+        ],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-03",
+        "dateCreated": "2022-02-07",
+        "related": [
+            142
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Arianespace/Arianegroup logo. That's it.",
+        "rocketDescription": "Arianespace is an European company for commercial rocket launches. It was founded in 1980 and has its headquarters in Évry in France.",
+        "internalColor": "Red",
+        "scale": "-",
+        "parts": 471,
+        "dimensions": "22.4x39.2x1.1cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/europe/arianegroup/logo/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/arianegroup/logo/v2.1/Arianegroup_Logo_V2.1_1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the logo",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/arianegroup/logo/v2.1/Arianegroup_Logo_V2.1.io",
+                        "name": "Arianegroup_Logo_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "",
         "region": "China",
         "links": [
@@ -68,7 +190,7 @@
         "designerExtra": "",
         "internalColorExtra": "",
         "scaleExtra": "",
-        "partsExtra": "Can be build completely out of Lego bricks. A lot of hoses need to be cut for this MOC.",
+        "partsExtra": "Can be build completely out of Lego bricks with a very few exceptions. A lot of hoses need to be cut for this MOC.",
         "dimensionsExtra": "",
         "stabilityExtra": "I haven't tested out if the launchtable can hold the weight of my Long March 5 and 5B rocket.",
         "difficultyExtra": ""
@@ -2971,7 +3093,9 @@
         "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/ela-3/cazes/640x512.png",
         "dimensions": "27.2x50.4x47.7cm",
         "tags": [],
-        "altTitles": ["Ariane 5 Launchpad tower"],
+        "altTitles": [
+            "Ariane 5 Launchpad tower"
+        ],
         "title": "ELA-3 CAZES",
         "parts": 2466,
         "partsExtra": "Can be build completely out of Lego bricks.",
@@ -3729,7 +3853,10 @@
         "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/ela-3/launchtable/640x512.png",
         "dimensions": "23.2x19.1x55.6cm",
         "tags": [],
-        "altTitles": ["Ariane 5 Launchpad","Ariane 5 Launchtable"],
+        "altTitles": [
+            "Ariane 5 Launchpad",
+            "Ariane 5 Launchtable"
+        ],
         "title": "ELA-3 Launchtable",
         "parts": 1438,
         "partsExtra": "Can be build completely out of Lego bricks.",

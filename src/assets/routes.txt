@@ -143,5 +143,7 @@
 /moc/138/firefly-alpha-flta001/
 /moc/139/firefly-alpha-flta002/
 /moc/140/wenchang-lc-101-launchtable/
+/moc/141/arianespace-logo/
+/moc/142/arianespace-logo/
 /
 /about/

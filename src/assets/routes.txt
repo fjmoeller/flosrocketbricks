@@ -145,5 +145,6 @@
 /moc/140/wenchang-lc-101-launchtable/
 /moc/141/arianespace-logo/
 /moc/142/arianespace-logo/
+/moc/143/maiaspace-rocket/
 /
 /about/

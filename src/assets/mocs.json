@@ -1,5 +1,64 @@
 [
     {
+        "company": "Maiaspace",
+        "region": "France",
+        "links": [
+            "https://maia-space.com/",
+            "https://fr.wikipedia.org/wiki/MaiaSpace"
+        ],
+        "type": "rocket",
+        "id": 143,
+        "title": "Maiaspace Rocket",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-03",
+        "dateCreated": "2023-10-03",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of Maiaspaces rocket. The two stages can be separated form one another. The first stage has four landing legs that can be extended. The paylaod fairing holds osme space for a payload.",
+        "rocketDescription": "Maiaspace is a French company that is developing an orbital partially reusable rocket. That rocket does not have a name yet. It is supposed to have two stages with the first stage being reusable.",
+        "internalColor": "Dark Pink",
+        "scale": "110",
+        "parts": 151,
+        "dimensions": "3x2.7x22.9cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/europe/maiaspace/rocket/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/maiaspace/maiaspace-rocket/v1.0/Maiaspace_V1.0_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/maiaspace/maiaspace-rocket/v1.0/Maiaspace_V1.0_2.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/maiaspace/maiaspace-rocket/v1.0/Maiaspace_V1.0_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the logo",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/maiaspace/maiaspace-rocket/v1.0/Maiaspace_V1.0.io",
+                        "name": "Maiaspace_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "Arianespace",
         "region": "Europe",
         "links": [

@@ -18,7 +18,6 @@ export class IoFileService {
 
   async getModel(ioUrl: string, placeHolderColor: string): Promise<Group> {
     const ldrUrl = ioUrl.slice(0, ioUrl.length - 2) + "ldr"
-    //console.log("Fetching MOC:", this.backendFetchUrl + ldrUrl);
     const contents = await fetch(this.backendFetchUrl + ldrUrl);
     const moc = this.createMesh(await contents.text(), placeHolderColor);
     this.allPartsMap.clear();
@@ -37,11 +36,8 @@ export class IoFileService {
     const submodels = this.parseSubmodels(ldrObjects[0].split("0 NOFILE"));
     this.parseParts(ldrObjects[1].split("0 NOFILE"));
 
-    
     //get the id of the color that is just a placeholder color and therefore doesnt need to be rendered
     const placeholderColorCode = this.ldrawColorService.getPlaceholderColorCode(placeHolderColor);
-    console.log("placeholdercolorcode: "+placeholderColorCode+", placeholdercolor: "+placeHolderColor)
-
 
     console.log("Now resolving the model!")
     //resolve all submodels starting from top to bottom

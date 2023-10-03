@@ -89,7 +89,9 @@
         "designer": "SkySaac",
         "lastupdate": "2023-10-01",
         "dateCreated": "2022-11-09",
-        "related": [],
+        "related": [
+            138
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Firefly Alpha rocket with the first stage looking like the second flight FLTA002. The two stages can be separated from one another.",
         "rocketDescription": "The Firefly Alpha rocket is a small liquid fueled orbital rocket developed by Firefly Alpha. It has two stages, both are fueled by RP-1 and liquid oxygen. The first launch in 2021 resulted in a failure. On its second launch in October 2022 it finally reached low earth orbit for the first time.",
@@ -156,7 +158,9 @@
         "designer": "SkySaac",
         "lastupdate": "2023-10-01",
         "dateCreated": "2022-11-09",
-        "related": [],
+        "related": [
+            139
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Firefly Alpha rocket with the first stage looking like the first flight FLTA001. The two stages can be separated from one another.",
         "rocketDescription": "The Firefly Alpha rocket is a small liquid fueled orbital rocket developed by Firefly Alpha. It has two stages, both are fueled by RP-1 and liquid oxygen. The first launch in 2021 resulted in a failure. On its second launch in October 2022 it finally reached low earth orbit for the first time.",
@@ -2967,7 +2971,7 @@
         "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/ela-3/cazes/640x512.png",
         "dimensions": "27.2x50.4x47.7cm",
         "tags": [],
-        "altTitles": [],
+        "altTitles": ["Ariane 5 Launchpad tower"],
         "title": "ELA-3 CAZES",
         "parts": 2466,
         "partsExtra": "Can be build completely out of Lego bricks.",
@@ -3725,7 +3729,7 @@
         "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/ela-3/launchtable/640x512.png",
         "dimensions": "23.2x19.1x55.6cm",
         "tags": [],
-        "altTitles": [],
+        "altTitles": ["Ariane 5 Launchpad","Ariane 5 Launchtable"],
         "title": "ELA-3 Launchtable",
         "parts": 1438,
         "partsExtra": "Can be build completely out of Lego bricks.",

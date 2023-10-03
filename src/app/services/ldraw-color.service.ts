@@ -30,9 +30,8 @@ export class LdrawColorService {
   }
 
   getPlaceholderColorCode(colorName: string): number {
-    let newColorName = colorName.split(' ').join('_');
     for (let key of this.ldrColorList.keys()) {
-      if (this.ldrColorList.get(key)?.name == newColorName) {
+      if (this.ldrColorList.get(key)?.name == colorName) {
         return key;
       }
     }

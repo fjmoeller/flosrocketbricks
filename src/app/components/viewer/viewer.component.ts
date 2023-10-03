@@ -38,8 +38,6 @@ export class ViewerComponent implements OnInit {
 
   createThreeJsBox(mocGroup: Group): void {
 
-    const canvas = document.getElementById('canvas-box');
-    const canvasDiv = document.getElementById('canvas-viewer');
     const scene = new Scene();
 
     const pointLight = new PointLight(0xffffff, 0.3);
@@ -59,6 +57,9 @@ export class ViewerComponent implements OnInit {
       width: window.innerWidth / 3,
       height: window.innerWidth * (3 / 12),
     };
+
+    const canvas = document.getElementById('canvas-box');
+    const canvasDiv = document.getElementById('canvas-viewer');
 
     if (!canvas || !canvasDiv){
       console.log("Error: no canvas found");

@@ -1,5 +1,64 @@
 [
     {
+        "company": "",
+        "region": "USSR",
+        "links": [
+            "https://en.wikipedia.org/wiki/Sputnik_(rocket)",
+            "https://www.russianspaceweb.com/sputnik_lv.html"
+        ],
+        "type": "rocket",
+        "id": 145,
+        "title": "Sputnik",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-03",
+        "dateCreated": "2023-10-03",
+        "related": [
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Sputnik rocket as was used to launch Sputnik 1.",
+        "rocketDescription": "Sputnik was a R-7 rocket carrying the Sputnik 1 satellite, which was the first satellite to orbit the earth.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 620,
+        "dimensions": "9.3x9.3x26.4cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/ussr/sputnik/rocket/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/udssr/sputnik/rocket/v1.2/R7_Sputnik_V1.2_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/udssr/sputnik/rocket/v1.2/R7_Sputnik_V1.2_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/sputnik/rocket/v1.2/R7_Sputnik_V1.2.io",
+                        "name": "R7_Sputnik_V1.2.io"
+                    }
+                ],
+                "version": "V1.2"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "Arianespace",
         "region": "Europe",
         "links": [

@@ -149,5 +149,6 @@
 /moc/144/ariane-64/
 /moc/145/sputnik/
 /moc/146/space-alpaca/
+/moc/147/ariane-62/
 /
 /about/

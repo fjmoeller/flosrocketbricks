@@ -32,8 +32,11 @@ export class StartComponent implements OnInit {
       try {
         if (url.length==3 && url[0].toString()=="moc") {
           const redirectMocId = Number(url[url.length - 2].toString());
-          this.redirectmoc = this.mocGrabberService.getMoc(redirectMocId);
-          this.showRedirect = true;
+          const foundMoc = this.mocGrabberService.getMoc(redirectMocId);
+          if(foundMoc != undefined && foundMoc != null){
+            this.showRedirect = true;
+            this.redirectmoc = foundMoc;
+          }
         }
       }
       catch (e) { }

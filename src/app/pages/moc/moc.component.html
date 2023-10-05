@@ -402,7 +402,7 @@
     <div *ngIf="moc.related.length > 0" class="row justify-content-center m-4 text-coloring">
         <div class="justify-content-center">
             <span>
-                <h3>This and Related Mocs</h3>
+                <h3>This and related Mocs</h3>
             </span>
             <div class="card-group">
                 <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
@@ -416,6 +416,6 @@
         </div>
     </div>
 </div>
-<div *ngIf="noError==false" class="pt-4 text-coloring">
+<div *ngIf="!noError" class="pt-4 text-coloring">
     <h2 class="text-center">404 - No MOC has been found :/</h2>
 </div>

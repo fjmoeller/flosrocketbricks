@@ -18,7 +18,7 @@ export class MocGrabberService {
     return new Moc([], "", "", "", -1, [], "", [], -1, "", "", "", -1, -1, "", [], "", [], "", [], "", "", "", "", "", "", "", "", "", "", [], "", "", "", "")
   }
 
-  getMoc(id: number): Moc {
+  getMoc(id: number): Moc | undefined {
     return this.mocs.filter(moc => moc.id == id)[0];
   }
 

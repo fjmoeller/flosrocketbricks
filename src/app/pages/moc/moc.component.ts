@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Moc, Version } from '../../model/classes';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
-import { map, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-moc',
@@ -17,7 +16,6 @@ export class MocComponent implements OnInit, OnDestroy {
 
   noError: boolean = true;
   showViewer: boolean = false;
-  id: number = 0;
 
   constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) {
     //default moc
@@ -26,11 +24,18 @@ export class MocComponent implements OnInit, OnDestroy {
 
   async ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
-      this.id = Number(paramMap.get('id')) || 0;
-      this.moc = this.mocGrabberService.getMoc(this.id);
-      //this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription, this.metaService.getTotalMocLink(this.moc), "https://flosrocketbricks.com/" + this.moc.smallCoverImage);
-      this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription, this.metaService.getTotalMocLink(this.moc), this.moc.pictures[0]);
-      this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 6);
+      const id = Number(paramMap.get('id')) || 0;
+      const foundMoc = this.mocGrabberService.getMoc(id);
+      if (foundMoc != undefined && this.moc != null) {
+        this.moc = foundMoc;
+        this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
+        this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 6);
+        this.noError = true;
+      }
+      else {
+        this.noError = false;
+        console.log("Moc with id %s not found", id);
+      }
     });
   }
 

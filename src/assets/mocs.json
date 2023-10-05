@@ -1,6 +1,63 @@
 [
     {
         "company": "",
+        "region": "-",
+        "links": [
+            "https://en.wikipedia.org/wiki/Alpaca"
+        ],
+        "type": "other",
+        "id": 146,
+        "title": "Space Alpaca",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-03",
+        "dateCreated": "2023-10-03",
+        "related": [
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of an alpaca in a spacesuit, that's it.",
+        "rocketDescription": "",
+        "internalColor": "-",
+        "scale": "-",
+        "parts": 10,
+        "dimensions": "1.4x2.7x2.7cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/no-scale/space-alpaca/640x512.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/no-scale/space-alpaca/v1.0/Space_Alpaca_V1.0_1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the alpaca",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/no-scale/space-alpaca/v1.0/Space_Alpaca_V1.0.io",
+                        "name": "Space_Alpaca_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
         "region": "USSR",
         "links": [
             "https://en.wikipedia.org/wiki/Sputnik_(rocket)",

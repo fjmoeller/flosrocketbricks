@@ -291,8 +291,8 @@
             <p>
                 {{moc.mocDescription}}
             </p>
-            <h4 class="pt-2">About the {{moc.type}}</h4>
-            <p>
+            <h4 class="pt-2" *ngIf="moc.rocketDescription!=''">About the {{moc.type}}</h4>
+            <p *ngIf="moc.type!=''">
                 {{moc.rocketDescription}}
             </p>
             <h4 *ngIf="moc.links.length > 0" class="pt-2">Useful links</h4>
@@ -334,13 +334,14 @@
                         type="button" data-bs-toggle="collapse" aria-expanded="false"
                         [attr.data-bs-target]="'#body'+indexOfelement" [attr.aria-controls]="'body'+indexOfelement">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
-                            style="vertical-align: baseline; margin-right: 10px;"
-                            class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            style="vertical-align: baseline; margin-right: 10px;" class="bi bi-chevron-down"
+                            viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                         </svg>
                         {{version.version}}
-                        <span style="color:red;margin-right:1rem;margin-left:1rem;" *ngIf="indexOfelement==0 && moc.versions.length>1">Newest version!</span>
+                        <span style="color:red;margin-right:1rem;margin-left:1rem;"
+                            *ngIf="indexOfelement==0 && moc.versions.length>1">Newest version!</span>
                         {{version.versionExtra}}
                     </button>
                     <div class="collapse text-coloring" [id]="'body'+indexOfelement">
@@ -348,7 +349,7 @@
                             <strong>Changelog:</strong><br>
                             {{version.changelog}}<br>
                         </p>
-                        <hr *ngIf="version.changelog!=''" class="mt-3 mb-1 d-inline-block divider-hr"/>
+                        <hr *ngIf="version.changelog!=''" class="mt-3 mb-1 d-inline-block divider-hr" />
                         <div *ngFor="let file of version.files;let indexOfFile=index;"
                             class="rounded-3 mx-3 py-1 text-coloring d-flex align-items-center">
                             {{file.name}}
@@ -400,9 +401,12 @@
     <div *ngIf="moc.related.length > 0" class="row justify-content-center m-4 text-coloring">
         <div class="justify-content-center">
             <span>
-                <h3>Related Mocs</h3>
+                <h3>This and Related Mocs</h3>
             </span>
             <div class="card-group">
+                <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
+                    [id]="moc.id" [scale]="moc.scale" [followRel]="false">
+                </app-card>
                 <app-card class="moc-card" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
                     [name]="relatedMoc.title" [parts]="relatedMoc.parts" [id]="relatedMoc.id" [scale]="relatedMoc.scale"
                     [followRel]="false">

@@ -148,5 +148,6 @@
 /moc/143/maiaspace-rocket/
 /moc/144/ariane-64/
 /moc/145/sputnik/
+/moc/146/space-alpaca/
 /
 /about/

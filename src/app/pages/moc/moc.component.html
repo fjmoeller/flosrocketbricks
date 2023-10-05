@@ -43,7 +43,7 @@
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
-                            <div class="popover-content" *ngIf="moc.partsExtra!=''">
+                            <div class="popover-content" *ngIf="moc.partsExtra!= ''&&moc.partsExtra!= '-'">
                                 <p class="popover-content-text">{{moc.partsExtra}}</p>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
-                            <div class="popover-content" *ngIf="moc.scaleExtra!=''">
+                            <div class="popover-content" *ngIf="moc.scaleExtra!= ''&&moc.scaleExtra!= '-'">
                                 <p class="popover-content-text">{{moc.scaleExtra}}</p>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
-                                <div class="popover-content" *ngIf="moc.stabilityExtra!=''">
+                                <div class="popover-content" *ngIf="moc.stabilityExtra!= ''&&moc.stabilityExtra!= '-'">
                                     <p class="popover-content-text">{{moc.stabilityExtra}}</p>
                                 </div>
                             </span>
@@ -187,7 +187,7 @@
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
-                            <div class="popover-content" *ngIf="moc.designerExtra!=''">
+                            <div class="popover-content" *ngIf="moc.designerExtra!= ''&&moc.designerExtra!= '-'">
                                 <p class="popover-content-text">{{moc.designerExtra}}</p>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
-                            <div class="popover-content">
+                            <div class="popover-content" *ngIf="moc.difficultyExtra != ''">
                                 <p class="popover-content-text">{{moc.difficultyExtra}}</p>
                             </div>
                         </div>
@@ -265,7 +265,8 @@
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
                             </span>
-                            <div class="popover-content">
+                            <div class="popover-content"
+                                *ngIf="moc.internalColorExtra != ''&&moc.internalColorExtra != '-'">
                                 <p class="popover-content-text">{{moc.internalColorExtra}}</p>
                             </div>
                         </div>

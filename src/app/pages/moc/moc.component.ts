@@ -29,7 +29,7 @@ export class MocComponent implements OnInit, OnDestroy {
       if (foundMoc != undefined && this.moc != null) {
         this.moc = foundMoc;
         this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
-        this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 6);
+        this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 5);
         this.noError = true;
       }
       else {

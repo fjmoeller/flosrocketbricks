@@ -58,7 +58,7 @@ export class MocComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.showViewer = false
+    this.showViewer = false;
   }
 
   sortedVersions(versions: Version[] | undefined): Version[] {

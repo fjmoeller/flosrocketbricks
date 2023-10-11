@@ -150,5 +150,7 @@
 /moc/145/sputnik/
 /moc/146/space-alpaca/
 /moc/147/ariane-62/
+/moc/148/susie/
+/moc/149/ariane-64-susie/
 /
 /about/

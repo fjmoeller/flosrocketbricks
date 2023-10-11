@@ -3,6 +3,122 @@
         "company": "Arianespace",
         "region": "Europe",
         "links": [
+            ""
+        ],
+        "type": "rocket",
+        "id": 149,
+        "title": "Ariane 64 SUSIE",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-11",
+        "dateCreated": "2022-10-11",
+        "related": [144,148],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Ariane 64 rocket with the SUSIE spacecraft. The payload doors of SUSIE can be opened. The boosters and the upper stage can be separated fro mthe core stage. The SUSIE spacecraft can be separated from the upper stage.",
+        "rocketDescription": "SUSIE is a concept of a reusable spacecraft by Arianegroup, which would be launched on an Ariane 64.",
+        "internalColor": "Dark Pink",
+        "scale": "110",
+        "parts": 1805,
+        "dimensions": "10x10.3x55.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/susie/110-ariane-64-susie-v2.7.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/susie/Ariane_64_SUSIE_V2.7_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/susie/Ariane_64_SUSIE_V2.7_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/susie/Ariane_64_SUSIE_V2.7.io",
+                        "name": "Ariane_64_SUSIE_V2.7.io"
+                    }
+                ],
+                "version": "V2.7"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "Arianespace",
+        "region": "Europe",
+        "links": [
+            ""
+        ],
+        "type": "spacecraft",
+        "id": 148,
+        "title": "SUSIE",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-10",
+        "dateCreated": "2022-09-27",
+        "related": [144,149],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the SUSIE spacecraft. Its legs can be manually attached and the payload doors can be opened. The payload doors can also be replaced with opened ones that have solar panels.",
+        "rocketDescription": "SUSIE is a concept of a reusable spacecraft by Arianegroup, which would be launched on an Ariane 64.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 608,
+        "dimensions": "6.2x6.2x17.6cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/europe/susie/110-susie-v1.1.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/europe/susie/v1.1/SUSIE_V1.1_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/susie/v1.1/SUSIE_V1.1_3.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/susie/v1.1/SUSIE_V1.1_5.png",
+            "https://bricksafe.com/files/SkySaac/website/110/europe/susie/v1.1/SUSIE_V1.1_7.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/susie/v1.1/SUSIE_V1.1.io",
+                        "name": "SUSIE_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "Arianespace",
+        "region": "Europe",
+        "links": [
             "https://en.wikipedia.org/wiki/Ariane_6",
             "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_6",
             "https://www.ariane.group/de/weltraumstartdienste/ariane-6/"

@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
+<url>
+    <loc>https://flosrocketbricks.com/moc/149/ariane-64-susie/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/susie/110-ariane-64-susie-v2.7.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/148/susie/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/susie/110-susie-v1.1.png</image:loc>
+    </image:image>
+  </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/147/ariane-62/</loc>
     <image:image>

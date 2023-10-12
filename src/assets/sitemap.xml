@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-<url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/150/ait-250/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/ela-4/ait-250/110-ait-250-v3.1.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/149/ariane-64-susie/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/susie/110-ariane-64-susie-v2.7.png</image:loc>

@@ -152,5 +152,6 @@
 /moc/147/ariane-62/
 /moc/148/susie/
 /moc/149/ariane-64-susie/
+/moc/150/ait-250/
 /
 /about/

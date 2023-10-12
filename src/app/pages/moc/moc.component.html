@@ -280,7 +280,7 @@
             <div *ngIf="showViewer" class="row d-flex justify-content-between text-coloring m-2 align-items-center">
                 <button class="col btn inv-interact-button text-decoration-none text-align-center rounded"
                     (click)="toggleViewer(viewerLink)">Close Viewer</button>
-                <a class="col text-coloring text-center" href="https://www.ldraw.org/">
+                <a class="col text-coloring text-center" href="https://www.ldraw.org/" target="_blank">
                     This viewer has been created using LDraw
                 </a>
             </div>
@@ -299,7 +299,7 @@
             <h4 *ngIf="moc.links.length > 0" class="pt-2">Useful links</h4>
             <ul *ngIf="moc.links.length > 0">
                 <li *ngFor="let link of moc.links">
-                    <a class="text-coloring" href="{{link}}" target="_blank" rel="noopener">{{link}}</a>
+                    <a class="text-coloring" href="{{link}}" target="_blank" rel="noreferrer noopener">{{link}}</a>
                 </li>
             </ul>
         </div>

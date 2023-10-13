@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Moc, Version } from '../../model/classes';
 import { MocGrabberService } from 'src/app/services/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { FileExportService } from 'src/app/services/file-export.service';
+
 
 @Component({
   selector: 'app-moc',
@@ -17,8 +19,7 @@ export class MocComponent implements OnInit, OnDestroy {
   noError: boolean = true;
   showViewer: boolean = false;
 
-  constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) {
-    //default moc
+  constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
   }
 
@@ -50,12 +51,22 @@ export class MocComponent implements OnInit, OnDestroy {
     }
   }
 
-  downloadXml() {
-
+  async downloadXml(filelink: string, filename: string) {
+    const data = await this.fileExportService.getXml(filelink);
+    const blob = new Blob([ data ], { type: 'application/xml' });
+    const a = document.createElement('a');
+    a.href = window.URL.createObjectURL(blob);
+    a.download = filename.split(".io")[0]+".xml";
+    a.click();
   }
 
-  downloadCsv() {
-
+  async downloadCsv(filelink: string, filename: string) {
+    const data = await this.fileExportService.getCsv(filelink);
+    const blob = new Blob([ data ], { type: 'text/csv' });
+    const a = document.createElement('a');
+    a.href = window.URL.createObjectURL(blob);
+    a.download = filename.split(".io")[0]+".csv";
+    a.click();
   }
 
   ngOnDestroy(): void {

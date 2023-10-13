@@ -3,105 +3,112 @@ import { Group, Matrix4, Vector3 } from 'three';
 import * as zip from "@zip.js/zip.js";
 import { LdrPart, LdrSubmodel, PartReference } from '../model/ldrawParts';
 import { IoFileService } from './io-file.service';
+import { SimpleLdrSubmodel, SimpleReference } from '../model/simpleLdrawParts';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileExportService {
 
+  private splitString: string = "###";
+
   private backendFetchUrl: string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
 
-  private countedPartMap: Map<PartReference, number> = new Map<PartReference, number>();
+  private countedPartMap: Map<string, number> = new Map<string, number>();
 
   constructor(private ioFileService: IoFileService) { }
 
-  async getXml(url: string): Promise<String> {
+  async getXml(url: string): Promise<string> {
 
-    const partAmountMap: Map<PartReference, number> = await this.getPartCount(url);
-    //TODO create XML out of it
+    this.countedPartMap.clear();
+    await this.collectParts(url);
 
-    return "not implemented";
+    let xml = "<INVENTORY>\n";
+    for (let key of this.countedPartMap.keys()) {
+      const splitted = key.split(this.splitString);
+      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + splitted[1].split(".dat")[0] + "</ITEMID>\n		<COLOR>" + splitted[0] + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>"
+    }
+    xml += "</INVENTORY>";
+
+    this.countedPartMap.clear();
+
+    return xml;
   }
 
-  async getBricklink(url: string): Promise<String> {
-    return "not implemented";
+  async getCsv(url: string): Promise<string> {
+    this.countedPartMap.clear();
+    await this.collectParts(url);
+
+    let csv = "BLItemNo,LDrawColorId,Qty\n";
+    for (let key of this.countedPartMap.keys()) {
+      const splitted = key.split(this.splitString);
+      csv += splitted[1].split(".dat")[0] + "," + splitted[0] + "," + this.countedPartMap.get(key) + "\n"
+    }
+
+    this.countedPartMap.clear();
+
+    return csv;
   }
 
-  async getPartCount(url: string): Promise<Map<PartReference, number>> {
+  private async collectParts(url: string): Promise<void> {
     console.log("Fetching MOC:", this.backendFetchUrl + url);
     const content = await fetch(this.backendFetchUrl + url);
     const ldrFile = await this.extractLdrFile(content);
 
-    const ldrEntities = ldrFile.split("0 NOSUBMODEL"); //0 = submodels, 1 = parts
+    //go through all things => collect submodels and parts
 
-    if (ldrEntities.length != 2) {
-      console.log("Error: file is formated wrong, no submodel divider found");
-      return new Map<PartReference, number>;
-    }
-
-    const submodels = this.parseSubmodels(ldrEntities[0].split("0 NOFILE"));
+    const submodels = this.parseSubmodels(ldrFile.split("0 NOFILE"));
     const firstSubmodel = submodels.topLdrSubmodel;
     const allSubmodels = submodels.submodelMap;
-    const allPartsMap = this.parseParts(ldrEntities[1].split("0 NOFILE"));
 
     this.countedPartMap.clear();
-    //map with parts to amount
-    //return this.countParts(firstSubmodel, allSubmodels, allPartsMap);
 
-    return new Map<PartReference, number>;
-  
+    this.countParts(firstSubmodel, allSubmodels);
+
   }
 
-  countParts(currentSubmodel: LdrSubmodel, allSubmodels: Map<string, LdrSubmodel>, allPartsMap: Map<string, LdrPart>) {
-
+  private countParts(currentSubmodel: SimpleLdrSubmodel, allSubmodels: Map<string, SimpleLdrSubmodel>) {
     currentSubmodel.references.forEach(
       reference => {
-
-        const referencedPart = allPartsMap.get(reference.name);
         const referencedSubmodel = allSubmodels.get(reference.name);
-
-        if (referencedPart) {//if is part
-          
+        if (referencedSubmodel)//if is submodel
+          this.countParts(referencedSubmodel, allSubmodels);
+        else { //if is part
+          const id = reference.color + this.splitString + reference.name;
+          this.countedPartMap.set(id, (this.countedPartMap.get(id) ?? 0) + 1);
         }
-        else if (referencedSubmodel)//if is submodel
-          this.countParts(referencedSubmodel, allSubmodels, allPartsMap);
-        else {
-          console.log("Part not found: " + reference.name);
-        }
-
-        //this.countParts(...,+1,...,...)
       }
     );
   }
 
-  async extractLdrFile(file: any): Promise<string> {
+  private async extractLdrFile(file: any): Promise<string> {
     try {
       const blob = await file.blob();
       const options = { password: "soho0909", filenameEncoding: "utf-8" };
       const entries = await (new zip.ZipReader(new zip.BlobReader(blob), options)).getEntries();
-      const model = entries.find(e => e.filename === "model.ldr");
+      const model = entries.find(e => e.filename == "model.ldr");
       if (model) {
         const decompressedBlob = await model.getData(new zip.BlobWriter());
         return decompressedBlob.text();
       }
-      return "";
     } catch (e) {
+      console.log("Error extracting ldr from io file!");
       console.log(e);
-      return "";
     }
+    return "";
   }
 
   private parseSubmodels(submodels: string[]) {
     console.log("Now parsing submodels!");
-    const ldrSubModelMap = new Map<string, LdrSubmodel>();
+    const ldrSubModelMap = new Map<string, SimpleLdrSubmodel>();
     let topSubmodelSet: boolean = false;
-    let topLdrSubmodel: LdrSubmodel = new LdrSubmodel("", []);
+    let topLdrSubmodel: SimpleLdrSubmodel = new SimpleLdrSubmodel("", []);
     //for each submodel inside the ldr file
     submodels.forEach(submodel => {
       const submodelLines = submodel.split("\n");
 
       let partName: string = "no name";
-      const references: PartReference[] = [];
+      const references: SimpleReference[] = [];
       //iterate all lines of a ldr submodel and parse them
       submodelLines.forEach(submodelLine => {
         if (submodelLine.endsWith("\r"))
@@ -113,7 +120,7 @@ export class FileExportService {
         else if (submodelLine.startsWith("0 Name:") && partName == "no name") //backup in case no name got set which can happen
           partName = submodelLine.slice(9).toLowerCase();
       });
-      const ldrSubmodel = new LdrSubmodel(partName, references);
+      const ldrSubmodel = new SimpleLdrSubmodel(partName, references);
 
       if (!topSubmodelSet) { topLdrSubmodel = ldrSubmodel; topSubmodelSet = true; }
 
@@ -123,46 +130,8 @@ export class FileExportService {
     return { "submodelMap": ldrSubModelMap, "topLdrSubmodel": topLdrSubmodel };
   }
 
-  private parseParts(parts: string[]): Map<string, LdrPart> {
-    let allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
-    console.log("Now parsing parts!");
-    parts.forEach(partLines => {
-      const parsedPart: LdrPart = this.parsePartLines(partLines);
-      allPartsMap.set(parsedPart.name, parsedPart);
-    });
-
-    return allPartsMap;
-  }
-
-  private parsePartLines(partText: string): LdrPart {
-    const partLines = partText.split("\n");
-
-    let partName: string = "ERROR FLO";
-    const references: PartReference[] = [];
-
-    //Go through all lines of text and parse them
-    partLines.forEach(partLine => {
-      if (partLine.endsWith("\r")) //removes annoying stuff
-        partLine = partLine.slice(0, partLine.lastIndexOf("\r"));
-      if (partLine.startsWith("1")) { //line is a reference
-        references.push(this.parseLineTypeOne(partLine));
-      }
-      else if (partLine.startsWith("0 FILE")) { //line is a part name
-        partName = partLine.slice(7);
-      }
-    });
-
-    return new LdrPart(partName, new Map<number, Vector3[]>, new Map<number, number[]>, new Map<number, Vector3[]>, references);
-  }
-
   private parseLineTypeOne(line: string): PartReference {
     const splittedLine = this.ioFileService.splitter(line, " ", 14);
     return new PartReference(splittedLine[splittedLine.length - 1], new Matrix4(), parseInt(splittedLine[1]), false);
   }
-
-  getCsv() {
-
-  }
-
-
 }

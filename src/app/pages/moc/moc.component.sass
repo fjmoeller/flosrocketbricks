@@ -52,6 +52,25 @@
 .popover-content-text
     margin: 5px
 
+.popover-download-wrapper
+    position: relative
+
+.popover-download-content
+    opacity: 0
+    visibility: hidden
+    position: absolute
+    transform: translate(0, 10px)
+    padding: 0.5rem
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26)
+    background: var(--bg-hl-color)
+
+.popover-download-wrapper:hover .popover-download-content
+    z-index: 10
+    opacity: 1
+    visibility: visible
+    transform: translate(0, 10px)
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97)
+
 .moc-card
     max-width: 12rem
     margin: 10px

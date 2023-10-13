@@ -7858,7 +7858,9 @@
         "difficulty": -1,
         "lastupdate": "2023-03-31",
         "dateCreated": "2023-03-31",
-        "related": [],
+        "related": [
+            10
+        ],
         "updateMessage": "",
         "region": "Russia",
         "scale": "110",
@@ -9994,18 +9996,34 @@
         "fanPictures": [],
         "type": "rocket",
         "internalColor": "Green",
-        "difficulty": 3,
+        "difficulty": -1,
         "tags": [],
-        "altTitles": [],
+        "altTitles": [
+            "Soyuz FG MS"
+        ],
         "regionExtra": "",
         "difficultyExtra": "",
         "scale": "110",
-        "mocDescription": "The Soyuz-FG MS rocket.",
+        "mocDescription": "This is a MOC of the Soyuz-FG rocket in it's crew carrying configuration. The boosters and the second stage can be separated from the core stage.",
         "rocketDescription": "",
         "dateCreated": "2023-02-20",
-        "smallCoverImage": "assets/mocImages/110/russia/soyuz/soyuz-fg-ms/110-soyuz-fg-ms-v2.1.png",
+        "smallCoverImage": "assets/mocImages/110/russia/soyuz/soyuz-fg-ms/110-soyuz-fg-ms-v2.3.png",
         "region": "Russia",
         "versions": [
+            {
+                "versionExtra": "",
+                "version": "V2.3",
+                "changelog": "Improved all kinds of stuff",
+                "files": [
+                    {
+                        "name": "Soyuz_FG_V2.3.io",
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.3/Soyuz_FG_V2.3.io"
+                    }
+                ]
+            },
             {
                 "versionExtra": "",
                 "version": "V2.1",
@@ -10034,19 +10052,18 @@
         "company": "",
         "dimensionsExtra": "",
         "dimensions": "9.2x9.2x46.6cm",
-        "partsExtra": "Can be build completely out of Lego bricks.",
+        "partsExtra": "This MOC needs some parts that aren't available by Lego in the correct colors.",
         "scaleExtra": "",
-        "stability": 3,
-        "parts": 787,
-        "lastupdate": "2023-03-06",
+        "stability": -1,
+        "parts": 771,
+        "lastupdate": "2023-10-13",
         "related": [
-            11
+            11,
+            36
         ],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.1/V2.1_soyuz_cover_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.1/V2.1_soyuz.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.1/V2.1_soyuz_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.1/V2.1_soyuz_3.png"
+            "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.3/Soyuz_FG_V2.3_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.3/Soyuz_FG_V2.3_2.png"
         ]
     },
     {

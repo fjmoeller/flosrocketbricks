@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Group, Matrix4, Vector3 } from 'three';
+import { Matrix4 } from 'three';
 import * as zip from "@zip.js/zip.js";
-import { LdrPart, LdrSubmodel, PartReference } from '../model/ldrawParts';
+import { PartReference } from '../model/ldrawParts';
 import { IoFileService } from './io-file.service';
+import { LdrawColorService } from './ldraw-color.service';
 import { SimpleLdrSubmodel, SimpleReference } from '../model/simpleLdrawParts';
 
 @Injectable({
@@ -10,43 +11,56 @@ import { SimpleLdrSubmodel, SimpleReference } from '../model/simpleLdrawParts';
 })
 export class FileExportService {
 
+  private replaceColor: boolean = true;
+
   private splitString: string = "###";
 
   private backendFetchUrl: string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
 
   private countedPartMap: Map<string, number> = new Map<string, number>();
 
-  constructor(private ioFileService: IoFileService) { }
+  constructor(private ioFileService: IoFileService, private ldrawColorService: LdrawColorService) { }
 
-  async getXml(url: string): Promise<string> {
-
+  async getXml(url: string, colorName: string): Promise<string> {
     this.countedPartMap.clear();
     await this.collectParts(url);
+
+    const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(colorName);
 
     let xml = "<INVENTORY>\n";
     for (let key of this.countedPartMap.keys()) {
       const splitted = key.split(this.splitString);
-      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + splitted[1].split(".dat")[0] + "</ITEMID>\n		<COLOR>" + splitted[0] + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>"
+      if (this.replaceColor && placeHolderColorcode == Number(splitted[0])) {
+        xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + splitted[1].split(".dat")[0] + "</ITEMID>\n		<COLOR>0</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>"
+      }
+      else {
+        let color = splitted[0];
+        color = "" + this.ldrawColorService.getBricklinkColorOf(color);
+        xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + splitted[1].split(".dat")[0] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>"
+      }
     }
     xml += "</INVENTORY>";
 
     this.countedPartMap.clear();
-
     return xml;
   }
 
-  async getCsv(url: string): Promise<string> {
+  async getCsv(url: string, colorName: string): Promise<string> {
     this.countedPartMap.clear();
     await this.collectParts(url);
+
+    const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(colorName);
 
     let csv = "BLItemNo,LDrawColorId,Qty\n";
     for (let key of this.countedPartMap.keys()) {
       const splitted = key.split(this.splitString);
-      csv += splitted[1].split(".dat")[0] + "," + splitted[0] + "," + this.countedPartMap.get(key) + "\n"
+      if (this.replaceColor && placeHolderColorcode == Number(splitted[0]))
+        csv += splitted[1].split(".dat")[0] + ",9999," + this.countedPartMap.get(key) + "\n"
+      else
+        csv += splitted[1].split(".dat")[0] + "," + splitted[0] + "," + this.countedPartMap.get(key) + "\n"
     }
 
     this.countedPartMap.clear();
-
     return csv;
   }
 

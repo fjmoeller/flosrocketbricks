@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LdrColor } from '../model/ldrawParts';
 import { Color } from 'three';
+import rebr_colors from '../../assets/ldr/lists/rebr_colors.json';
 
 @Injectable({
   providedIn: 'root'
@@ -68,5 +69,16 @@ export class LdrawColorService {
       return new Color(res.r / 255, res.g / 255, res.b / 255);
     }
     return new Color("#fff000");
+  }
+
+  getBricklinkColorOf(ldrawIdString: string): number {
+    const ldrawId = Number(ldrawIdString);
+
+    let foundColors = rebr_colors.filter(color => color.external_ids.LDraw?.ext_ids.includes(ldrawId));
+
+    if(foundColors.length != 1)
+      console.log("Error finding color %s",ldrawIdString);
+
+    return foundColors[0].external_ids.BrickLink?.ext_ids[0] ?? -1;
   }
 }

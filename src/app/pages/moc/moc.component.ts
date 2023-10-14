@@ -52,7 +52,7 @@ export class MocComponent implements OnInit, OnDestroy {
   }
 
   async downloadXml(filelink: string, filename: string) {
-    const data = await this.fileExportService.getXml(filelink);
+    const data = await this.fileExportService.getXml(filelink,this.moc.internalColor);
     const blob = new Blob([ data ], { type: 'application/xml' });
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);
@@ -61,7 +61,7 @@ export class MocComponent implements OnInit, OnDestroy {
   }
 
   async downloadCsv(filelink: string, filename: string) {
-    const data = await this.fileExportService.getCsv(filelink);
+    const data = await this.fileExportService.getCsv(filelink,this.moc.internalColor);
     const blob = new Blob([ data ], { type: 'text/csv' });
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);

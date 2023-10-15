@@ -10012,6 +10012,27 @@
         "versions": [
             {
                 "versionExtra": "",
+                "version": "V2.4",
+                "changelog": "Fixed loose parts",
+                "files": [
+                    {
+                        "name": "Soyuz_FG_MS_V2.4_pub.io",
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.4/Soyuz_FG_MS_V2.4_pub.io"
+                    },
+                    {
+                        "name": "Soyuz_FG_MS_V2.4_instructions.pdf",
+                        "description": "The pdf instructions for the rocket",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.4/Soyuz_FG_MS_V2.4_instructions.pdf"
+                    }
+                ]
+            },
+            {
+                "versionExtra": "",
                 "version": "V2.3",
                 "changelog": "Improved all kinds of stuff",
                 "files": [
@@ -10055,15 +10076,15 @@
         "partsExtra": "This MOC needs some parts that aren't available by Lego in the correct colors.",
         "scaleExtra": "",
         "stability": -1,
-        "parts": 771,
-        "lastupdate": "2023-10-13",
+        "parts": 767,
+        "lastupdate": "2023-10-15",
         "related": [
             11,
             36
         ],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.3/Soyuz_FG_V2.3_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.3/Soyuz_FG_V2.3_2.png"
+            "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.4/Soyuz_FG_MS_V2.4_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/udssr/soyuz/soyuz-fg-ms/v2.4/Soyuz_FG_MS_V2.4_2.png"
         ]
     },
     {

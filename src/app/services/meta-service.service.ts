@@ -58,11 +58,11 @@ export class MetaServiceService {
     this.setAllTags(title, desc, url, image);
   }
 
-  getPageMocLink(id:number,mocTitle:string): string {
-    return "/moc/" + id.toString() + "/" + mocTitle.toLowerCase().replace("/", "-").replace("'", "-").split(" ").join("-").replace(".", "-")+ "/";
+  getPageMocLink(id: number, mocTitle: string): string {
+    return "/moc/" + id.toString() + "/" + mocTitle.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("") + "/";
   }
 
   getTotalMocLink(moc: Moc): string {
-    return "https://flosrocketbricks.com" + this.getPageMocLink(moc.id,moc.title);
+    return "https://flosrocketbricks.com" + this.getPageMocLink(moc.id, moc.title);
   }
 }

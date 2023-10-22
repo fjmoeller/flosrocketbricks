@@ -7,6 +7,69 @@
             "https://www.russianspaceweb.com/zond5.html",
             "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1968-076A"
         ],
+        "type": "rocket",
+        "id": 153,
+        "title": "Proton K Zond",
+        "altTitles": [
+            "Proton K 7K-L1"
+        ],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-21",
+        "dateCreated": "2022-01-28",
+        "related": [
+            66,152
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Proton K rocket in the Zond confirguration. The first three stages of the rocket can be separated. The fourth stage is inside the cylinder on top of the third stage.",
+        "rocketDescription": "Proton K was a Soviet launch vehicle. The Proton K Zond variant launched a number of Zond spacecrafts into sapce and around the moon.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 814,
+        "dimensions": "7.2x6.8x53.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/ussr/proton/proton-k/zond/110-proton-k-zond-v1.3.png",
+        "pictures": [
+            "https://bricksafe.com/files/SkySaac/website/110/udssr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3_1.png",
+            "https://bricksafe.com/files/SkySaac/website/110/udssr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3.io",
+                        "name": "Proton_K_Zond_5_V1.3.io"
+                    }
+                ],
+                "version": "V1.3"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "USSR",
+        "links": [
+            "https://en.wikipedia.org/wiki/Zond_5",
+            "https://www.russianspaceweb.com/zond5.html",
+            "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1968-076A"
+        ],
         "type": "spacecraft",
         "id": 152,
         "title": "Zond 5",
@@ -5906,7 +5969,7 @@
         "lastupdate": "2022-08-03",
         "dateCreated": "2022-08-03",
         "related": [
-            152
+            152,153
         ],
         "updateMessage": "",
         "region": "USSR",

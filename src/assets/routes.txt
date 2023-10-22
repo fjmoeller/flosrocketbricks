@@ -155,4 +155,5 @@
 /moc/150/ait-250/
 /moc/151/falcon-heavy-em-1/
 /moc/152/zond-5/
+/moc/153/proton-k-zond/
 /about/

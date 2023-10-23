@@ -68,6 +68,14 @@
                 "mocs": [
                     61,62
                 ]
+            },
+            {
+                "id": 8,
+                "name": "Long March 9",
+                "description": "",
+                "mocs": [
+                    154
+                ]
             }
         ]
     },

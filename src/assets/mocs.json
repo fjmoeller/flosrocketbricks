@@ -1,6 +1,66 @@
 [
     {
         "company": "",
+        "region": "USSR",
+        "links": [
+            "https://socks-studio.com/2011/04/11/vostok-spacecraft-modules/",
+            "https://en.wikipedia.org/wiki/Vostok_(rocket_family)",
+            "https://space.skyrocket.de/doc_lau/vostok.htm"
+        ],
+        "type": "rocket",
+        "id": 155,
+        "title": "Vostok-K Vostok 1",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-25",
+        "dateCreated": "2022-03-04",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vostok-K rocket as it launched the Vostok 1 mission. The MOC has four boosters, a core stage and an upper stage, all of which can be separated form one another. There is no spacecraft included.",
+        "rocketDescription": "The Vostok-K rocket was a R-7 derived orbital launch vehicle. Its first launch was in 1960 and over its lifespan it launched a total of 13 times, six of them were crewed flights, including Vostok 1 in 1961.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 662,
+        "dimensions": "9.3x9.3x34.6cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/ussr/vostok/vostok-k/vostok-1/110-vostok-k-vostok-1-v2.2.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/ussr/vostok/vostok-k/vostok-1/v2.2/Vostok-K_Vostok_1_V2.2_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/vostok/vostok-k/vostok-1/v2.2/Vostok-K_Vostok_1_V2.2_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/vostok/vostok-k/vostok-1/v2.2/Vostok-K_Vostok_1_V2.2_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/vostok/vostok-k/vostok-1/v2.2/Vostok-K_Vostok_1_V2.2.io",
+                        "name": "Vostok-K_Vostok_1_V2.2.io"
+                    }
+                ],
+                "version": "V2.2"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
         "region": "China",
         "links": [
             "https://rebrickable.com/mocs/MOC-68391/SkySaac/1110-long-march-9/#details",

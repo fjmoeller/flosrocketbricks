@@ -157,4 +157,5 @@
 /moc/152/zond-5/
 /moc/153/proton-k-zond/
 /moc/154/long-march-9-2016-concept/
+/moc/155/vostok-k-vostok-1/
 /about/

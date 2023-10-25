@@ -31,9 +31,9 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-9/2016-concept/110-long-march-9-2016-concept-v4.0.png",
         "pictures": [
-            "https://flosrocketbackend.com/mocs/110/china/long-march/long-march-9/2016-concept/v4.0/Long_March_9_2016_Concept_V4.0_1.png",
-            "https://flosrocketbackend.com/mocs/110/china/long-march/long-march-9/2016-concept/v4.0/Long_March_9_2016_Concept_V4.0_2.png",
-            "https://flosrocketbackend.com/mocs/110/china/long-march/long-march-9/2016-concept/v4.0/Long_March_9_2016_Concept_V4.0_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-9/2016-concept/v4.0/Long_March_9_2016_Concept_V4.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-9/2016-concept/v4.0/Long_March_9_2016_Concept_V4.0_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-9/2016-concept/v4.0/Long_March_9_2016_Concept_V4.0_3.png"
         ],
         "versions": [
             {
@@ -44,14 +44,14 @@
                         "description": "The digital io file of the rocket",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://flosrocketbackend.com/mocs/110/china/long-march/long-march-9/2016-concept/v4.0/Long_march_9_early_concept_V4.0_pub.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-9/2016-concept/v4.0/Long_march_9_early_concept_V4.0_pub.io",
                         "name": "Long_march_9_early_concept_V4.0_pub.io"
                     },
                     {
                         "description": "The pdf instructions of the rocket",
                         "type": "pdf",
                         "allowViewer": false,
-                        "link": "https://flosrocketbackend.com/mocs/110/china/long-march/long-march-9/2016-concept/v4.0/Long_March_9_2016_Concept_V4.0_instructions.pdf",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-9/2016-concept/v4.0/Long_March_9_2016_Concept_V4.0_instructions.pdf",
                         "name": "Long_March_9_2016_Concept_V4.0_instructions.pdf"
                     }
                 ],
@@ -8936,11 +8936,11 @@
         "designer": "SkySaac",
         "fanPictures": [],
         "pictures": [
-            "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_1.png",
-            "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_2.png",
-            "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_3.png",
-            "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_4.png",
-            "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_5.png"
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_5.png"
         ],
         "versions": [
             {
@@ -8951,7 +8951,7 @@
                         "description": "The digital io file",
                         "type": "io",
                         "allowViewer": false,
-                        "link": "https://flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_pub.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_pub.io",
                         "name": "Ariane_5_ECA_JUICE_V2.0_pub.io"
                     }
                 ],

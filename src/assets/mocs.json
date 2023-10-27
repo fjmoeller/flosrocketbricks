@@ -1231,8 +1231,8 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/germany/aggregat/4/110-aggregat-4-v1.0.png",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/germany/aggregat/4/v1.0/Aggregat_4_V1.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/germany/aggregat/4/v1.0/Aggregat_4_V1.0_2.png"
+            "https://files.flosrocketbackend.com/mocs/110/germany/aggregat/4/v1.0/Aggregat_4_V1.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/germany/aggregat/4/v1.0/Aggregat_4_V1.0_2.png"
         ],
         "versions": [
             {
@@ -1243,7 +1243,7 @@
                         "description": "The digital io file",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/germany/aggregat/4/v1.0/Aggregat_4_V1.0.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/aggregat/4/v1.0/Aggregat_4_V1.0.io",
                         "name": "Aggregat_4_V1.0.io"
                     }
                 ],
@@ -9113,8 +9113,8 @@
         "designer": "SkySaac",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/germany/spectrum/v1.0/Spectrum_V1_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/germany/spectrum/v1.0/Spectrum_V1_2.png"
+            "https://files.flosrocketbackend.com/mocs/110/germany/spectrum/v1.0/Spectrum_V1_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/germany/spectrum/v1.0/Spectrum_V1_2.png"
         ],
         "versions": [
             {
@@ -9125,7 +9125,7 @@
                         "description": "The digital io file",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/germany/spectrum/v1.0/Spectrum_V1.0.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/spectrum/v1.0/Spectrum_V1.0.io",
                         "name": "Spectrum_V1.0.io"
                     }
                 ],

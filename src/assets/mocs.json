@@ -1,6 +1,63 @@
 [
     {
         "company": "",
+        "region": "Europe",
+        "links": [
+            "https://www.arianespace.com/vehicle/vega/",
+            "https://en.wikipedia.org/wiki/Vega_(rocket)"
+        ],
+        "type": "rocket",
+        "id": 156,
+        "title": "Vega",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-10-26",
+        "dateCreated": "2021-10-28",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vega rocket. The stages can not be separated and the payload fairing holds no space for a payload.",
+        "rocketDescription": "The Vega rocket is a European rocket manufactured by Avio and launched by Arianespace from French Guiana. It has four stages, with the first three being solid and the last one liquid fueled. It first launched in 2012 and has launched a total of 21 times since.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 143,
+        "dimensions": "2.7x2.7x27.2cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/europe/vega/110-vega-v1.1.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/europe/vega/v1.1/Vega_V1.1_1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/vega/v1.1/Vega_V1.1.io",
+                        "name": "Vega_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
         "region": "USSR",
         "links": [
             "https://socks-studio.com/2011/04/11/vostok-spacecraft-modules/",

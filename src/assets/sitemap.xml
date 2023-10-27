@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/156/vega/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/vega/110-vega-v1.1.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/155/vostok-k-vostok-1/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/vostok/vostok-k/vostok-1/110-vostok-k-vostok-1-v2.2.png</image:loc>

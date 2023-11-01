@@ -1,45 +1,36 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { IoFileService } from 'src/app/services/file/io-file.service';
-import { AmbientLight, Box3, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { PerspectiveCamera } from 'three/src/cameras/PerspectiveCamera';
+import { AmbientLight } from 'three/src/lights/AmbientLight';
+import { PointLight } from 'three/src/lights/PointLight';
+import { Box3 } from 'three/src/math/Box3';
+import { Vector3 } from 'three/src/math/Vector3';
+import { Group } from 'three/src/objects/Group';
+import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer';
+import { Scene } from 'three/src/scenes/Scene';
 
 @Component({
-  selector: 'app-viewer',
-  templateUrl: './viewer.component.html',
-  styleUrls: ['./viewer.component.sass']
+  selector: 'app-orbiter',
+  templateUrl: './orbiter.component.html',
+  styleUrls: ['./orbiter.component.sass']
 })
-export class ViewerComponent implements OnInit {
-
-  @Input('placeHolderColor')
-  placeHolderColor: string = "";
-
-  @Input('inputLink')
-  inputLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io";
-
-  @Input('showViewer')
-  showViewer: boolean = false;
+export class OrbiterComponent implements OnInit {
 
   //determines if the loading icon will be shown
   loadingFinished: boolean = true;
 
-  constructor(private ioFileService: IoFileService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    if (this.showViewer)
-      this.showViewerMoc();
   }
 
-  async showViewerMoc() {
+  loadModel() {
     this.loadingFinished = false;
-    let group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor);
-    group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
-    this.createThreeJsBox(group);
+    let group: Group = new Group();
+    this.createScene(group);
   }
 
-  createThreeJsBox(mocGroup: Group): void {
-
-    const scene = new Scene();
-
+  addLights(scene: Scene) {
     const pointLight = new PointLight(0xffffff, 0.3);
     pointLight.position.add(new Vector3(1000, 500, 1000));
     scene.add(pointLight);
@@ -50,6 +41,13 @@ export class ViewerComponent implements OnInit {
 
     const ambientLight = new AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
+  }
+
+  createScene(mocGroup: Group): void {
+
+    const scene = new Scene();
+
+    this.addLights(scene);
 
     scene.add(mocGroup);
 
@@ -109,8 +107,7 @@ export class ViewerComponent implements OnInit {
       // Render
       renderer.render(scene, camera);
       // Call tick again on the next frame
-      if (this.showViewer)
-        window.requestAnimationFrame(animateGeometry);
+      window.requestAnimationFrame(animateGeometry);
     };
 
     controls.update();

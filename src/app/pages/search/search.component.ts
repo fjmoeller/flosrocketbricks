@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FrontTag, Moc } from '../../model/classes';
 import { map, Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { MocGrabberService } from 'src/app/services/moc-grabber.service';
+import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 
 @Component({

@@ -1,8 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Moc } from 'src/app/model/classes';
-import { CollectionGrabberService } from 'src/app/services/collection-grabber.service';
-import { MocGrabberService } from 'src/app/services/moc-grabber.service';
+import { CollectionGrabberService } from 'src/app/services/grabber/collection-grabber.service';
+import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 
 @Component({
   selector: 'app-header',

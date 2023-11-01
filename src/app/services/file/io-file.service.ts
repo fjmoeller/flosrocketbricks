@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BufferGeometry, Group, LineBasicMaterial, LineSegments, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
-import { LdrPart, LdrSubmodel, PartReference } from '../model/ldrawParts';
+import { LdrPart, LdrSubmodel, PartReference } from '../../model/ldrawParts';
 import { LdrawColorService } from './ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
 

@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Moc, Version } from '../../model/classes';
-import { MocGrabberService } from 'src/app/services/moc-grabber.service';
+import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
-import { FileExportService } from 'src/app/services/file-export.service';
+import { FileExportService } from 'src/app/services/file/file-export.service';
 
 
 @Component({

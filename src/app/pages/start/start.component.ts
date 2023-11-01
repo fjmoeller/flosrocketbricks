@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { MocGrabberService } from 'src/app/services/moc-grabber.service';
+import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { Collection, Moc } from '../../model/classes';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
-import { CollectionGrabberService } from 'src/app/services/collection-grabber.service';
+import { CollectionGrabberService } from 'src/app/services/grabber/collection-grabber.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

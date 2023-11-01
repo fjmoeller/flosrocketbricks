@@ -8,6 +8,7 @@ import { BlogOverviewComponent } from './pages/blog-overview/blog-overview.compo
 import { CollectionComponent } from './pages/collection/collection.component';
 import { CollectionOverviewComponent } from './pages/collection-overview/collection-overview.component';
 import { Location } from '@angular/common';
+import { OrbiterComponent } from './pages/orbiter/orbiter.component';
 
 const __stripTrailingSlash = (Location as any).stripTrailingSlash;
 (Location as any).stripTrailingSlash = function _stripTrailingSlash(url: string): string {
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'blogs/.', component: BlogOverviewComponent },
   { path: 'collections/.', component: CollectionOverviewComponent },
   { path: 'collection/:id/:name/.', component: CollectionComponent },
+  { path: 'orbiter/.', component: OrbiterComponent },
   { path: '**', component: StartComponent }
 ];
 

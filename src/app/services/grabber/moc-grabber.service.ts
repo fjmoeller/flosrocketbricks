@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Moc } from '../model/classes';
-import mocs from '../../assets/mocs.json';
+import { Moc } from '../../model/classes';
+import mocs from '../../../assets/mocs.json';
 
 @Injectable({
   providedIn: 'root'

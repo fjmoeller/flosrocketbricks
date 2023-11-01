@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Matrix4 } from 'three';
 import * as zip from "@zip.js/zip.js";
-import { PartReference } from '../model/ldrawParts';
+import { PartReference } from '../../model/ldrawParts';
 import { IoFileService } from './io-file.service';
 import { LdrawColorService } from './ldraw-color.service';
-import { SimpleLdrSubmodel, SimpleReference } from '../model/simpleLdrawParts';
+import { SimpleLdrSubmodel, SimpleReference } from '../../model/simpleLdrawParts';
 
 @Injectable({
   providedIn: 'root'

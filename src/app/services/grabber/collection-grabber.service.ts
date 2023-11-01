@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import collections from '../../assets/collections.json';
+import collections from '../../../assets/collections.json';
 import { Observable } from 'rxjs/internal/Observable';
-import { Collection } from '../model/classes';
+import { Collection } from '../../model/classes';
 import { map, of } from 'rxjs';
 
 @Injectable({

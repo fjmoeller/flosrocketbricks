@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LdrColor } from '../model/ldrawParts';
+import { LdrColor } from '../../model/ldrawParts';
 import { Color } from 'three';
-import rebr_colors from '../../assets/ldr/lists/rebr_colors.json';
+import rebr_colors from '../../../assets/ldr/lists/rebr_colors.json';
 
 @Injectable({
   providedIn: 'root'

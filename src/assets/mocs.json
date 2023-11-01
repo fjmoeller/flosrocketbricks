@@ -3,10 +3,10 @@
         "company": "",
         "region": "USA",
         "links": [
-            "https://www.arianespace.com/vehicle/vega/",
-            "https://en.wikipedia.org/wiki/Vega_(rocket)"
+            "https://en.wikipedia.org/wiki/Dream_Chaser",
+            "https://www.sierraspace.com/dream-chaser-spaceplane/"
         ],
-        "type": "rocket",
+        "type": "spacecraft",
         "id": 157,
         "title": "Dream Chaser",
         "altTitles": [],
@@ -16,8 +16,8 @@
         "dateCreated": "2023-11-01",
         "related": [],
         "updateMessage": "",
-        "mocDescription": "This is a MOC of the Vega rocket. The stages can not be separated and the payload fairing holds no space for a payload.",
-        "rocketDescription": "The Vega rocket is a European rocket manufactured by Avio and launched by Arianespace from French Guiana. It has four stages, with the first three being solid and the last one liquid fueled. It first launched in 2012 and has launched a total of 21 times since.",
+        "mocDescription": "This is a MOC of the Dream Chaser spacecraft. The spacecraft and the service module can be separated. The solar arrays can be turned.",
+        "rocketDescription": "Dream Chaser is a spaceplane by Sierra Space, a US company. It is designed to bring cargo to and from the ISS. Eventually it is supposed to carry humans as well. It consist out of the spaceplane itself and the service module which is called Shooting Star.",
         "internalColor": "-",
         "scale": "110",
         "parts": 91,

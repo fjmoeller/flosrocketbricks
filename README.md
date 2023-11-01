@@ -1,7 +1,8 @@
 # flosrocketbricks
+
 This is the repository for https://flosrocketbricks.com .
 The website is made using Angular and deployed on cloudflare pages.
-Using Angular Universal it gets pre rendered at each deployment.
+Using Angular Universal some pages get pre-rendered.
 
 ## How To Add A MOC
 1. upload images to bricksafe/Bucket
@@ -14,6 +15,7 @@ Using Angular Universal it gets pre rendered at each deployment.
 
 ## How To Update LDR Parts
 1. Replace files in src/assets/origParts
-2. run printPartMapper.py
-3. put manual printed mapped parts into printed part map
+2. run `py printPartMapper.py origparts/parts lists/mappedPrintedList.txt`
+3. also put manual printed mapped parts into mappedPrintedList.txt
 4. put new LDConfig.ldr into /lists 
+### Current local part list is on this version: Parts Update 2023-05

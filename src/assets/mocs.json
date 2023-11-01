@@ -40,7 +40,7 @@
                     {
                         "description": "The digital io file of the rocket",
                         "type": "io",
-                        "allowViewer": true,
+                        "allowViewer": false,
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/dream-chaser/v2.0/Dream_Chaser_V2.0.io",
                         "name": "Dream_Chaser_V2.0.io"
                     }

@@ -1,6 +1,66 @@
 [
     {
         "company": "",
+        "region": "USA",
+        "links": [
+            "https://www.arianespace.com/vehicle/vega/",
+            "https://en.wikipedia.org/wiki/Vega_(rocket)"
+        ],
+        "type": "rocket",
+        "id": 157,
+        "title": "Dream Chaser",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-11-01",
+        "dateCreated": "2023-11-01",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vega rocket. The stages can not be separated and the payload fairing holds no space for a payload.",
+        "rocketDescription": "The Vega rocket is a European rocket manufactured by Avio and launched by Arianespace from French Guiana. It has four stages, with the first three being solid and the last one liquid fueled. It first launched in 2012 and has launched a total of 21 times since.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 91,
+        "dimensions": "15.4x10.2x3.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/dream-chaser/110-dream-chaser-v2.0.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/dream-chaser/v2.0/Dream_Chaser_V2.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/dream-chaser/v2.0/Dream_Chaser_V2.0_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/dream-chaser/v2.0/Dream_Chaser_V2.0_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/dream-chaser/v2.0/Dream_Chaser_V2.0_4.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/dream-chaser/v2.0/Dream_Chaser_V2.0.io",
+                        "name": "Dream_Chaser_V2.0.io"
+                    }
+                ],
+                "version": "V2.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
         "region": "Europe",
         "links": [
             "https://www.arianespace.com/vehicle/vega/",

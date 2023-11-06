@@ -119,15 +119,16 @@ export class IoFileService {
           else
             throw "Color not found: verticies exist but no face to em";
 
-          //FIX transformation matrix for 28192
           if (reference.name == "28192.dat") {
             partGeometry.rotateY(-Math.PI / 2);
             partGeometry.translate(-10, -24, 0);
-          } //FIX transformation matrix for 37762
+          }
           else if (reference.name == "37762.dat")
             partGeometry.translate(0, -8, 0);
           else if (reference.name == "68013.dat")
             partGeometry.rotateY(-Math.PI);
+          else if (reference.name == "70681.dat")
+            partGeometry.translate(0, 0, 20);
 
           partGeometry.applyMatrix4(reference.transformMatrix);
 
@@ -149,15 +150,16 @@ export class IoFileService {
           let partGeometry = new BufferGeometry();
           partGeometry.setFromPoints(points);
 
-          //FIX transformation matrix for 28192
           if (reference.name == "28192.dat") {
             partGeometry.rotateY(-Math.PI / 2);
             partGeometry.translate(-10, -24, 0);
-          } //FIX transformation matrix for 37762
+          }
           else if (reference.name == "37762.dat")
             partGeometry.translate(0, -8, 0);
           else if (reference.name == "68013.dat")
             partGeometry.rotateY(-Math.PI);
+          else if (reference.name == "70681.dat")
+            partGeometry.translate(0, 0, 20);
 
           partGeometry.applyMatrix4(reference.transformMatrix);
           partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);

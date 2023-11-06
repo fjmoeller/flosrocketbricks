@@ -160,4 +160,6 @@
 /moc/155/vostok-k-vostok-1/
 /moc/156/vega/
 /moc/157/dream-chaser/
+/moc/158/x-33/
+/moc/159/x-33-launchpad/
 /about/

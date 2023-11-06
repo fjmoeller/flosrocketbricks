@@ -3,6 +3,138 @@
         "company": "",
         "region": "USA",
         "links": [
+            "https://www.aftc.af.mil/News/On-This-Day-in-Test-History/Article-Display-Test-History/Article/2381665/november-14-1997-x-33-launch-pad-construction-began/",
+            "https://www.wikiarchives.space/index.php?/category/3788",
+            "https://twitter.com/DutchSpace/status/1567145182277107712",
+            "https://twitter.com/DutchSpace/status/1572313714195398660",
+            "https://www.nasaspaceflight.com/2006/01/x-33venturestar-what-really-happened/"
+        ],
+        "type": "launchpad",
+        "id": 159,
+        "title": "X-33 Launchpad",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-11-05",
+        "dateCreated": "2023-11-05",
+        "related": [158],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the X-33 launchpad. It is compatible with my X-33 spaceplane MOC. The launcherector and the launchtable for the X-33 can be independently errected (the erector does need the table to be deployed too though).",
+        "rocketDescription": "The X-33 launchpad is a site at Edwards Air Force Base in California.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 751,
+        "dimensions": "17.6x32.8x21.2cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/venturestar/x-33/launchpad/110-x-33-launchpad-v1.3.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3_5.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3_6.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3_7.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3_8.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3_9.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3_10.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the launchpad",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3.io",
+                        "name": "X-33_Launchpad_V1.3.io"
+                    }
+                ],
+                "version": "V1.3"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "USA",
+        "links": [
+            "https://en.wikipedia.org/wiki/Lockheed_Martin_X-33",
+            "https://www.nasa.gov/image-article/lockheed-martin-x-33/",
+            "https://space.skyrocket.de/doc_lau/x33.htm",
+            "https://www.nasaspaceflight.com/2006/01/x-33venturestar-what-really-happened/"
+        ],
+        "type": "rocket",
+        "id": 158,
+        "title": "X-33",
+        "altTitles": ["VentureStar Demonstrator"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-11-05",
+        "dateCreated": "2023-11-05",
+        "related": [159,86],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the X-33 spaceplane. The different flaps can be moved. The small payload compartment doors can be opened. A few tiles can be taken of to revela the landing gear.",
+        "rocketDescription": "The X-33 was a proposed suborbital demonstrator for the VentureStare SSTO. Unlike VentureStar it was only supposed to fly suborbital trajectories. It was cancelled inthe early 2000s.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 528,
+        "dimensions": "19.7x20.2x6.4cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/venturestar/x-33/110-x-33-v1.0.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.0/X-33_V1.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.0/X-33_V1.0_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.0/X-33_V1.0_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.0/X-33_V1.0_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.0/X-33_V1.0_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.0/X-33_V1.0.io",
+                        "name": "X-33_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "USA",
+        "links": [
             "https://en.wikipedia.org/wiki/Dream_Chaser",
             "https://www.sierraspace.com/dream-chaser-spaceplane/"
         ],
@@ -38,7 +170,7 @@
                 "versionExtra": "",
                 "files": [
                     {
-                        "description": "The digital io file of the rocket",
+                        "description": "The digital io file of the spacecraft",
                         "type": "io",
                         "allowViewer": false,
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/dream-chaser/v2.0/Dream_Chaser_V2.0.io",
@@ -4714,7 +4846,7 @@
         "difficultyExtra": "",
         "lastupdate": "2023-05-31",
         "dateCreated": "2022-04-03",
-        "related": [],
+        "related": [158],
         "updateMessage": "",
         "region": "USA",
         "regionExtra": "",

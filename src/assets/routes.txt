@@ -14,7 +14,7 @@
 /moc/13/atlas-v-541-mars-2020/
 /moc/14/atlas-v-551-juno/
 /moc/15/dnepr/
-/moc/16/epsilon-launchpad/
+/moc/16/uchinoura-mu-pad/
 /moc/17/ariane-5-eca/
 /moc/18/maks/
 /moc/19/terran-1/
@@ -162,4 +162,5 @@
 /moc/157/dream-chaser/
 /moc/158/x-33/
 /moc/159/x-33-launchpad/
+/moc/160/epsilon/
 /about/

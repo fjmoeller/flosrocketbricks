@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/160/epsilon/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/epsilon/epsilon-2/110-epsilon-v1.0.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/159/x-33-launchpad/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/venturestar/x-33/launchpad/110-x-33-launchpad-v1.0.png</image:loc>
@@ -884,9 +890,9 @@
     </image:image>
   </url>
   <url>
-    <loc>https://flosrocketbricks.com/moc/16/epsilon-launchpad/</loc>
+    <loc>https://flosrocketbricks.com/moc/16/uchinoura-mu-pad/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/epsilon/launchpad/110-epsilon-launchpad-v2.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/epsilon/launchpad/110-uchinoura-mu-pad-v3.0.png</image:loc>
     </image:image>
   </url>
   <url>

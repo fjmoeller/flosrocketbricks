@@ -39,7 +39,7 @@
                     {
                         "description": "The digital io file of the rocket",
                         "type": "io",
-                        "allowViewer": false,
+                        "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/epsilon-2/v1.0/Epsilon_Enhanced_V1.0.io",
                         "name": "Epsilon_Enhanced_V1.0.io"
                     }

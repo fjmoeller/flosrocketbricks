@@ -1,6 +1,63 @@
 [
     {
         "company": "",
+        "region": "USA",
+        "links": [
+            "https://en.wikipedia.org/wiki/Boeing_X-37"
+        ],
+        "type": "spacecraft",
+        "id": 161,
+        "title": "X-37B",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-11-16",
+        "dateCreated": "2023-11-16",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "",
+        "rocketDescription": "The X-37B is an American reusable spaceplane. It is currently operated by the US Air Force",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 32,
+        "dimensions": "7.7x3.4x2.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/x-37b/110-x-37b-v1.0.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.0/X-37B_V1.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.0/X-37B_V1.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.0/X-37B_V1.0.io",
+                        "name": "X-37B_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
         "region": "Japan",
         "links": [
             "https://global.jaxa.jp/projects/rockets/epsilon/",

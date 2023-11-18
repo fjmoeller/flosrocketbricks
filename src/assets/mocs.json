@@ -724,16 +724,30 @@
         "scale": "35",
         "parts": 575,
         "dimensions": "13x22.9x14.8cm",
-        "stability": -1,
-        "difficulty": -1,
+        "stability": 3,
+        "difficulty": 4,
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/35/ussr/zond/zond-5/spacecraft/35-zond-5-v2.1.png",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/35/ussr/zond/zond-5/v2.1/Zond_Spacecraft_V2.1_1.png",
-            "https://bricksafe.com/files/SkySaac/website/35/ussr/zond/zond-5/v2.1/Zond_Spacecraft_V2.1_2.png",
-            "https://bricksafe.com/files/SkySaac/website/35/ussr/zond/zond-5/v2.1/Zond_Spacecraft_V2.1_3.png"
+            "https://files.flosrocketbackend.com/mocs/35/ussr/zond/zond-5/v2.1/Zond_Spacecraft_V2.1_1.png",
+            "https://files.flosrocketbackend.com/mocs/35/ussr/zond/zond-5/v2.1/Zond_Spacecraft_V2.1_2.png",
+            "https://files.flosrocketbackend.com/mocs/35/ussr/zond/zond-5/v2.1/Zond_Spacecraft_V2.1_3.png"
         ],
         "versions": [
+            {
+                "changelog": "Change length of used hoses",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/35/ussr/zond/zond-5/v2.2/Zond_Spacecraft_V2.2.io",
+                        "name": "Zond_Spacecraft_V2.2.io"
+                    }
+                ],
+                "version": "V2.2"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",
@@ -742,7 +756,7 @@
                         "description": "The digital io file of the spacecraft",
                         "type": "io",
                         "allowViewer": false,
-                        "link": "https://bricksafe.com/files/SkySaac/website/35/ussr/zond/zond-5/v2.1/Zond_Spacecraft_V2.1.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/35/ussr/zond/zond-5/v2.1/Zond_Spacecraft_V2.1.io",
                         "name": "Zond_Spacecraft_V2.1.io"
                     }
                 ],

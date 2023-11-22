@@ -162,6 +162,8 @@ https://flosrocketbricks.com/moc/160/epsilon/
 https://flosrocketbricks.com/moc/161/x-37b/
 https://flosrocketbricks.com/moc/162/orion/
 https://flosrocketbricks.com/moc/163/cst-100-starliner/
+https://flosrocketbricks.com/moc/164/h-iia-2024/
+https://flosrocketbricks.com/moc/165/h-iia-2040/
 https://flosrocketbricks.com/collection/3/ariane/
 https://flosrocketbricks.com/collection/2/atlas/
 https://flosrocketbricks.com/collection/0/long-march/

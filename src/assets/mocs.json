@@ -7,6 +7,126 @@
             "https://global.jaxa.jp/projects/rockets/h2a/"
         ],
         "type": "rocket",
+        "id": 167,
+        "title": "H-IIA 2022",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-11-26",
+        "dateCreated": "2021-12-23",
+        "related": [164,165,166],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the H-IIA 2022 rocket. The four boosters can be separated from the core stage. The second stage can also be separated from the core stage. The payload fairings holds space for a potential payload.",
+        "rocketDescription": "The H-IIA 2022 rocket is a Japanese orbital rocket. The 2022 variant of the H-IIA rocket has two SRB-As and two SSBs. It first launched in 2005 with its latest launch happening in 2007.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 786,
+        "dimensions": "6.7x8.2x51cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/japan/h/h-ii/h-iia/2022/110-h-iia-2022-v3.0.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2022/v3.0/H-IIA 2022_V3.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2022/v3.0/H-IIA 2022_V3.0_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2022/v3.0/H-IIA 2022_V3.0_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2022/v3.0/H-IIA 2022_V3.0_4.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2022/v3.0/H-IIA 2022_V3.0.io",
+                        "name": "H-IIA 2022_V3.0.io"
+                    }
+                ],
+                "version": "V3.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "Japan",
+        "links": [
+            "https://en.wikipedia.org/wiki/H-IIA",
+            "https://global.jaxa.jp/projects/rockets/h2a/"
+        ],
+        "type": "rocket",
+        "id": 166,
+        "title": "H-IIA 2020",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-11-26",
+        "dateCreated": "2021-12-23",
+        "related": [164,165,167],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the H-IIA 2020 rocket. The two boosters can be separated from the core stage. The second stage can also be separated from the core stage. The payload fairings holds space for a potential payload.",
+        "rocketDescription": "The H-IIA 2020 rocket is a Japanese orbital rocket. The 2020 variant of the H-IIA rocket has two SRB-As. It first launched in 2001 with its latest launch happening in 2023.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 729,
+        "dimensions": "4.2x8.2x49.3cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/japan/h/h-ii/h-iia/2020/110-h-iia-2020-v3.0.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2020/v3.0/H-IIA 2020_V3.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2020/v3.0/H-IIA 2020_V3.0_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2020/v3.0/H-IIA 2020_V3.0_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2020/v3.0/H-IIA 2020_V3.0_4.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2020/v3.0/H-IIA 2020_V3.0.io",
+                        "name": "H-IIA 2020_V3.0.io"
+                    }
+                ],
+                "version": "V3.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "Japan",
+        "links": [
+            "https://en.wikipedia.org/wiki/H-IIA",
+            "https://global.jaxa.jp/projects/rockets/h2a/"
+        ],
+        "type": "rocket",
         "id": 165,
         "title": "H-IIA 2040",
         "altTitles": [],
@@ -14,7 +134,7 @@
         "designer": "SkySaac",
         "lastupdate": "2023-11-21",
         "dateCreated": "2021-12-23",
-        "related": [164],
+        "related": [164,166,167],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the H-IIA 2040 rocket. The four boosters can be separated from the core stage. The second stage can also be separated from the core stage. The payload fairings holds space for a potential payload.",
         "rocketDescription": "The H-IIA 2040 rocket is a Japanese orbital rocket. The 2040 variant of the H-IIA rocket has four SRB-As. It first launched in 2006 with its latest launch happening in 2021.",
@@ -74,25 +194,39 @@
         "designer": "SkySaac",
         "lastupdate": "2023-11-21",
         "dateCreated": "2021-12-23",
-        "related": [165],
+        "related": [165,166,167],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the H-IIA 2024 rocket. The six boosters can be separated from the core stage. The second stage can also be separated from the core stage. The payload fairings holds space for a potential payload.",
         "rocketDescription": "The H-IIA 2024 rocket is a Japanese orbital rocket. The 2024 variant of the H-IIA rocket has two SRB-As and four SSBs. It first launched in 2002 with its latest launch happening in 2008.",
         "internalColor": "Green",
         "scale": "110",
-        "parts": 798,
-        "dimensions": "6.6x8.2x46.9cm",
+        "parts": 834,
+        "dimensions": "6.6x8.2x51cm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/japan/h/h-ii/h-iia/2024/110-h-iia-2024-v3.0.png",
+        "smallCoverImage": "assets/mocImages/110/japan/h/h-ii/h-iia/2024/110-h-iia-2024-v3.1.png",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2024/v3.0/H-IIA_2024_V3.0_1.png",
-            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2024/v3.0/H-IIA_2024_V3.0_2.png",
-            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2024/v3.0/H-IIA_2024_V3.0_3.png",
-            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2024/v3.0/H-IIA_2024_V3.0_4.png"
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2024/v3.1/H-IIA_2024_V3.1_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2024/v3.1/H-IIA_2024_V3.1_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2024/v3.1/H-IIA_2024_V3.1_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2024/v3.1/H-IIA_2024_V3.1_4.png"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/japan/h-ii/h-iia/2024/v3.1/H-IIA_2024_V3.1.io",
+                        "name": "H-IIA_2024_V3.1.io"
+                    }
+                ],
+                "version": "V3.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

@@ -168,4 +168,6 @@
 /moc/163/cst-100-starliner/
 /moc/164/h-iia-2024/
 /moc/165/h-iia-2040/
+/moc/166/h-iia-2020/
+/moc/167/h-iia-2022/
 /about/

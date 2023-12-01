@@ -1,6 +1,186 @@
 [
     {
         "company": "",
+        "region": "USSR",
+        "links": [
+            "https://en.wikipedia.org/wiki/Energia_(rocket)",
+            "https://en.wikipedia.org/wiki/Polyus_(spacecraft)",
+            "https://www.buran-energia.com/polious/polious-desc.php",
+            "https://space.skyrocket.de/doc_sdat/polyus.htm"
+        ],
+        "type": "rocket",
+        "id": 170,
+        "title": "Energia Polyus",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-11-26",
+        "dateCreated": "2021-12-23",
+        "related": [169],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Energia rocket with the Polyus spacecraft. The boosters of the Energia rocket can beseparated from the core stage. The Polyus spacecraft can be separated from the Energia rocket.",
+        "rocketDescription": "The Energia rocket launched with Polyus in 1987 on it's maiden flight. Although the rocket launched successfully, the spacecraft failed and burned up in the atmosphere.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 3695,
+        "dimensions": "13.5x16x53cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/ussr/energia/energia-polyus/110-energia-polyus-v3.0.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/ussr/energia/energia-polyus/v3.0/Energia_Polyus_V3.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/energia/energia-polyus/v3.0/Energia_Polyus_V3.0_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/energia/energia-polyus/v3.0/Energia_Polyus_V3.0_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/energia/energia-polyus/v3.0/Energia_Polyus_V3.0.io",
+                        "name": "Energia_Polyus_V3.0.io"
+                    }
+                ],
+                "version": "V3.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "USSR",
+        "links": [
+            "https://en.wikipedia.org/wiki/Polyus_(spacecraft)",
+            "https://www.buran-energia.com/polious/polious-desc.php",
+            "https://space.skyrocket.de/doc_sdat/polyus.htm"
+        ],
+        "type": "spacecraft",
+        "id": 169,
+        "title": "Polyus",
+        "altTitles": ["Skif-DM"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-11-30",
+        "dateCreated": "2021-08-06",
+        "related": [170],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Polyus spacecraft. It is compatible with my Energia rocket.",
+        "rocketDescription": "The Polyus spacecraft was a Soviet satellite that was launched onthe first flight of the Energia rocket. The spacecraft failed to reach orbit.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 443,
+        "dimensions": "7.5x34.1x4.3cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/ussr/polyus/110-polyus-v2.0.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/ussr/polyus/v2.0/Polyus_V2.0_1.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/polyus/v2.0/Polyus_V2.0.io",
+                        "name": "Polyus_V2.0.io"
+                    }
+                ],
+                "version": "V2.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "North Korea",
+        "links": [
+            "https://m-en.yna.co.kr/view/AEN20231123006551315?section=national/politics",
+            "https://www.youtube.com/watch?v=PEW5Wl3UK68",
+            "https://en.wikipedia.org/wiki/Sohae_Satellite_Launching_Station"
+        ],
+        "type": "launchpad",
+        "id": 168,
+        "title": "Sohae Chollima-1 Launchpad",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-11-30",
+        "dateCreated": "2023-11-30",
+        "related": [94],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the launchpad of the Sohae Satellite Launching Station. The erector can be erected and is compatible with my Chollima-1 rocket.",
+        "rocketDescription": "This is a MOC of the launchpad of the North Korean Chollima-1 rocket at the Sohae Satellite Launching Station.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 754,
+        "dimensions": "14.4x40x26.2cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/north-korea/chollima-1/launchpad/110-sohae-chollima-1-launchpad-v1.0.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/north-korea/chollima/chollima-1/launchpad/Sohae_Chollima-1_Launchpad_V1.0_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/north-korea/chollima/chollima-1/launchpad/Sohae_Chollima-1_Launchpad_V1.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/north-korea/chollima/chollima-1/launchpad/Sohae_Chollima-1_Launchpad_V1.0_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/north-korea/chollima/chollima-1/launchpad/Sohae_Chollima-1_Launchpad_V1.0_3.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the launchpad",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/north-korea/chollima/chollima-1/launchpad/Sohae_Chollima-1_Launchpad_V1.0.io",
+                        "name": "Sohae_Chollima-1_Launchpad_V1.0.io"
+                    }
+                ],
+                "version": "V3.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
         "region": "Japan",
         "links": [
             "https://en.wikipedia.org/wiki/H-IIA",

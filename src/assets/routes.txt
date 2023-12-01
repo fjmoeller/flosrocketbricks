@@ -170,4 +170,7 @@
 /moc/165/h-iia-2040/
 /moc/166/h-iia-2020/
 /moc/167/h-iia-2022/
+/moc/168/sohae-chollima-1-launchpad/
+/moc/169/polyus/
+/moc/170/energia-polyus/
 /about/

@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/170/energia-polyus/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/energia/energia-polyus/110-energia-polyus-v3.0.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/169/polyus/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/polyus/110-polyus-v2.0.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/168/sohae-chollima-1-launchpad/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h-ii/h-iia/2040/110-h-iia-2040-v3.0.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/167/h-iia-2022/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h/h-ii/h-iia/2022/110-h-iia-2022-v3.0.png</image:loc>

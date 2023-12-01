@@ -84,8 +84,8 @@
         "scale": "110",
         "parts": 443,
         "dimensions": "7.5x34.1x4.3cm",
-        "stability": -1,
-        "difficulty": -1,
+        "stability": 4,
+        "difficulty": 4,
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/ussr/polyus/110-polyus-v2.0.png",
         "pictures": [

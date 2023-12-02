@@ -169,6 +169,14 @@ https://flosrocketbricks.com/moc/167/h-iia-2022/
 https://flosrocketbricks.com/moc/168/sohae-chollima-1-launchpad/
 https://flosrocketbricks.com/moc/169/polyus/
 https://flosrocketbricks.com/moc/170/energia-polyus/
+https://flosrocketbricks.com/moc/171/vulcan-centaur-0s/
+https://flosrocketbricks.com/moc/172/vulcan-centaur-0l/
+https://flosrocketbricks.com/moc/173/vulcan-centaur-2s/
+https://flosrocketbricks.com/moc/174/vulcan-centaur-2l/
+https://flosrocketbricks.com/moc/175/vulcan-centaur-4s/
+https://flosrocketbricks.com/moc/176/vulcan-centaur-4l/
+https://flosrocketbricks.com/moc/177/vulcan-centaur-6s/
+https://flosrocketbricks.com/moc/178/vulcan-centaur-6l/
 https://flosrocketbricks.com/collection/3/ariane/
 https://flosrocketbricks.com/collection/2/atlas/
 https://flosrocketbricks.com/collection/0/long-march/

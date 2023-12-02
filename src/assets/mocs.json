@@ -1,5 +1,493 @@
 [
     {
+        "company": "United Launch Alliance",
+        "region": "USA",
+        "links": [
+            "https://www.ulalaunch.com/rockets/vulcan-centaur",
+            "https://en.wikipedia.org/wiki/Vulcan_Centaur"
+        ],
+        "type": "rocket",
+        "id": 178,
+        "title": "Vulcan Centaur 6L",
+        "altTitles": ["VC6L"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-02",
+        "dateCreated": "2021-12-02",
+        "related": [171,172,173,174,175,176,177],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vulcan Centaur 6L rocket. It has six solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
+        "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1374,
+        "dimensions": "8.9x6.4x62.2cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc6l/110-vulcan-centaur-6l-v2.9.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6l/v2.9/Vulcan_Centaur_6L_V2.9_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6l/v2.9/Vulcan_Centaur_6L_V2.9_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6l/v2.9/Vulcan_Centaur_6L_V2.9_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6l/v2.9/Vulcan_Centaur_6L_V2.9_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6l/v2.9/Vulcan_Centaur_6L_V2.9_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6l/v2.9/Vulcan_Centaur_6L_V2.9.io",
+                        "name": "Vulcan_Centaur_6L_V2.9.io"
+                    }
+                ],
+                "version": "V2.9"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "United Launch Alliance",
+        "region": "USA",
+        "links": [
+            "https://www.ulalaunch.com/rockets/vulcan-centaur",
+            "https://en.wikipedia.org/wiki/Vulcan_Centaur"
+        ],
+        "type": "rocket",
+        "id": 177,
+        "title": "Vulcan Centaur 6S",
+        "altTitles": ["VC6S"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-02",
+        "dateCreated": "2021-12-02",
+        "related": [171,172,173,174,175,176,178],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vulcan Centaur 6S rocket. It has six solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
+        "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1334,
+        "dimensions": "8.9x6.4x56.6cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc6s/110-vulcan-centaur-6s-v2.9.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6s/v2.9/Vulcan_Centaur_6S_V2.9_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6s/v2.9/Vulcan_Centaur_6S_V2.9_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6s/v2.9/Vulcan_Centaur_6S_V2.9_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6s/v2.9/Vulcan_Centaur_6S_V2.9_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc6s/v2.9/Vulcan_Centaur_6S_V2.9_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v2.9/Vulcan_Centaur_2S_V2.9.io",
+                        "name": "Vulcan_Centaur_6S_V2.9.io"
+                    }
+                ],
+                "version": "V2.9"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "United Launch Alliance",
+        "region": "USA",
+        "links": [
+            "https://www.ulalaunch.com/rockets/vulcan-centaur",
+            "https://en.wikipedia.org/wiki/Vulcan_Centaur"
+        ],
+        "type": "rocket",
+        "id": 176,
+        "title": "Vulcan Centaur 4L",
+        "altTitles": ["VC4L"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-02",
+        "dateCreated": "2021-12-02",
+        "related": [171,172,173,174,175,177,178],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vulcan Centaur 4L rocket. It has four solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
+        "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1279,
+        "dimensions": "6.8x6.4x62.2cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc4l/110-vulcan-centaur-4l-v2.9.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v2.9/Vulcan_Centaur_4L_V2.9_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v2.9/Vulcan_Centaur_4L_V2.9_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v2.9/Vulcan_Centaur_4L_V2.9_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v2.9/Vulcan_Centaur_4L_V2.9_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v2.9/Vulcan_Centaur_4L_V2.9_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v2.9/Vulcan_Centaur_4L_V2.9.io",
+                        "name": "Vulcan_Centaur_4L_V2.9.io"
+                    }
+                ],
+                "version": "V2.9"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "United Launch Alliance",
+        "region": "USA",
+        "links": [
+            "https://www.ulalaunch.com/rockets/vulcan-centaur",
+            "https://en.wikipedia.org/wiki/Vulcan_Centaur"
+        ],
+        "type": "rocket",
+        "id": 175,
+        "title": "Vulcan Centaur 4S",
+        "altTitles": ["VC4S"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-02",
+        "dateCreated": "2021-12-02",
+        "related": [171,172,173,174,176,177,178],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vulcan Centaur 4S rocket. It has four solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
+        "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1239,
+        "dimensions": "6.8x6.4x56.6cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc4s/110-vulcan-centaur-4s-v2.9.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4s/v2.9/Vulcan_Centaur_4S_V2.9_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4s/v2.9/Vulcan_Centaur_4S_V2.9_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4s/v2.9/Vulcan_Centaur_4S_V2.9_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4s/v2.9/Vulcan_Centaur_4S_V2.9_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4s/v2.9/Vulcan_Centaur_4S_V2.9_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4s/v2.9/Vulcan_Centaur_4S_V2.9.io",
+                        "name": "Vulcan_Centaur_4S_V2.9.io"
+                    }
+                ],
+                "version": "V2.9"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "United Launch Alliance",
+        "region": "USA",
+        "links": [
+            "https://www.ulalaunch.com/rockets/vulcan-centaur",
+            "https://en.wikipedia.org/wiki/Vulcan_Centaur"
+        ],
+        "type": "rocket",
+        "id": 174,
+        "title": "Vulcan Centaur 2L",
+        "altTitles": ["VC2L"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-02",
+        "dateCreated": "2021-12-02",
+        "related": [171,172,173,175,176,177,178],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vulcan Centaur 2L rocket. It has two solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
+        "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1181,
+        "dimensions": "8.9x6.4x62.2cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc2l/110-vulcan-centaur-2l-v2.9.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2l/v2.9/Vulcan_Centaur_2L_V2.9_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2l/v2.9/Vulcan_Centaur_2L_V2.9_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2l/v2.9/Vulcan_Centaur_2L_V2.9_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2l/v2.9/Vulcan_Centaur_2L_V2.9_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2l/v2.9/Vulcan_Centaur_2L_V2.9_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2l/v2.9/Vulcan_Centaur_2L_V2.9.io",
+                        "name": "Vulcan_Centaur_2L_V2.9.io"
+                    }
+                ],
+                "version": "V2.9"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "United Launch Alliance",
+        "region": "USA",
+        "links": [
+            "https://www.ulalaunch.com/rockets/vulcan-centaur",
+            "https://en.wikipedia.org/wiki/Vulcan_Centaur"
+        ],
+        "type": "rocket",
+        "id": 173,
+        "title": "Vulcan Centaur 2S",
+        "altTitles": ["VC2S"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-02",
+        "dateCreated": "2021-12-02",
+        "related": [71,171,172,174,175,176,177,178],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vulcan Centaur 2S rocket. It has two solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
+        "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1141,
+        "dimensions": "8.9x6.4x56.6cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc2s/110-vulcan-centaur-0s-v2.9.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v2.9/Vulcan_Centaur_2S_V2.9_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v2.9/Vulcan_Centaur_2S_V2.9_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v2.9/Vulcan_Centaur_2S_V2.9_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v2.9/Vulcan_Centaur_2S_V2.9_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v2.9/Vulcan_Centaur_2S_V2.9_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v2.9/Vulcan_Centaur_2S_V2.9.io",
+                        "name": "Vulcan_Centaur_2S_V2.9.io"
+                    }
+                ],
+                "version": "V2.9"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "United Launch Alliance",
+        "region": "USA",
+        "links": [
+            "https://www.ulalaunch.com/rockets/vulcan-centaur",
+            "https://en.wikipedia.org/wiki/Vulcan_Centaur"
+        ],
+        "type": "rocket",
+        "id": 172,
+        "title": "Vulcan Centaur 0L",
+        "altTitles": ["VC0L"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-02",
+        "dateCreated": "2021-12-02",
+        "related": [171,173,174,175,176,177,178],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vulcan Centaur 0L rocket. It has no solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
+        "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1077,
+        "dimensions": "6.4x6.4x62.2cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc0l/110-vulcan-centaur-0l-v2.9.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0l/v2.9/Vulcan_Centaur_0L_V2.9_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0l/v2.9/Vulcan_Centaur_0L_V2.9_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0l/v2.9/Vulcan_Centaur_0L_V2.9_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0l/v2.9/Vulcan_Centaur_0L_V2.9_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0l/v2.9/Vulcan_Centaur_0L_V2.9_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0l/v2.9/Vulcan_Centaur_0L_V2.9.io",
+                        "name": "Vulcan_Centaur_0L_V2.9.io"
+                    }
+                ],
+                "version": "V2.9"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "United Launch Alliance",
+        "region": "USA",
+        "links": [
+            "https://www.ulalaunch.com/rockets/vulcan-centaur",
+            "https://en.wikipedia.org/wiki/Vulcan_Centaur"
+        ],
+        "type": "rocket",
+        "id": 171,
+        "title": "Vulcan Centaur 0S",
+        "altTitles": ["VC0S"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-02",
+        "dateCreated": "2021-12-02",
+        "related": [172,173,174,175,176,177,178],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Vulcan Centaur 0S rocket. It has no solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
+        "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1037,
+        "dimensions": "6.4x6.4x56.6cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc0s/110-vulcan-centaur-0s-v2.9.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0s/v2.9/Vulcan_Centaur_0S_V2.9_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0s/v2.9/Vulcan_Centaur_0S_V2.9_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0s/v2.9/Vulcan_Centaur_0S_V2.9_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0s/v2.9/Vulcan_Centaur_0S_V2.9_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0s/v2.9/Vulcan_Centaur_0S_V2.9_5.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc0s/v2.9/Vulcan_Centaur_0S_V2.9.io",
+                        "name": "Vulcan_Centaur_0S_V2.9.io"
+                    }
+                ],
+                "version": "V2.9"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "",
         "region": "USSR",
         "links": [
@@ -6643,9 +7131,9 @@
         "lastupdate": "2023-05-18",
         "dateCreated": "2022-01-26",
         "related": [
-            70
+            70,173
         ],
-        "updateMessage": "",
+        "updateMessage": "This MOC will get a small update soon!",
         "region": "USA",
         "regionExtra": "",
         "scale": "110",

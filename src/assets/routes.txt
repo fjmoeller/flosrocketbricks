@@ -173,4 +173,12 @@
 /moc/168/sohae-chollima-1-launchpad/
 /moc/169/polyus/
 /moc/170/energia-polyus/
+/moc/171/vulcan-centaur-0s/
+/moc/172/vulcan-centaur-0l/
+/moc/173/vulcan-centaur-2s/
+/moc/174/vulcan-centaur-2l/
+/moc/175/vulcan-centaur-4s/
+/moc/176/vulcan-centaur-4l/
+/moc/177/vulcan-centaur-6s/
+/moc/178/vulcan-centaur-6l/
 /about/

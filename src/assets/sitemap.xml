@@ -2,6 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/178/vulcan-centaur-6l/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc6l/110-vulcan-centaur-6l-v2.9.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/177/vulcan-centaur-6s/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc6s/110-vulcan-centaur-6s-v2.9.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/176/vulcan-centaur-4l/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc4l/110-vulcan-centaur-4l-v2.9.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/175/vulcan-centaur-4l/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc4s/110-vulcan-centaur-4s-v2.9.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/174/vulcan-centaur-2l/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc2l/110-vulcan-centaur-2l-v2.9.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/173/vulcan-centaur-2s/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc2s/110-vulcan-centaur-2s-v2.9.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/172/vulcan-centaur-0l/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc0l/110-vulcan-centaur-0l-v2.9.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/171/vulcan-centaur-0s/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc0s/110-vulcan-centaur-0s-v2.9.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/170/energia-polyus/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/energia/energia-polyus/110-energia-polyus-v3.0.png</image:loc>

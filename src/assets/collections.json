@@ -179,7 +179,7 @@
         "id": 3,
         "name": "Ariane",
         "description": "The Ariane series features European orbital launch vehicles.",
-        "cover": "https://bricksafe.com/files/SkySaac/website/collection/ariane/Ariane_V1.png/640x512.png",
+        "cover": "https://flosrocketbricks.com/assets/collections/3/ariane/Ariane_Family_V2.0.jpg",
         "subCollections": [
             {
                 "id": 0,
@@ -202,7 +202,7 @@
                 "name": "Ariane 5",
                 "description": "",
                 "mocs": [
-                    79,17,84,27
+                    79,17,84,27,100
                 ]
             },
             {

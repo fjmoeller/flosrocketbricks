@@ -33,7 +33,7 @@ https://flosrocketbricks.com/moc/31/atlas-v-531/
 https://flosrocketbricks.com/moc/32/atlas-v-541/
 https://flosrocketbricks.com/moc/33/atlas-v-551/
 https://flosrocketbricks.com/moc/34/atlas-v-n22-starliner/
-https://flosrocketbricks.com/moc/35/atlas-v-heavy/
+https://flosrocketbricks.com/moc/35/atlas-v-hlv/
 https://flosrocketbricks.com/moc/36/soyuz-ms/
 https://flosrocketbricks.com/moc/37/titan-iiic/
 https://flosrocketbricks.com/moc/38/titan-iiic-tacsat-1/
@@ -74,7 +74,7 @@ https://flosrocketbricks.com/moc/72/atlas-v-401/
 https://flosrocketbricks.com/moc/73/atlas-v-411/
 https://flosrocketbricks.com/moc/74/atlas-v-421/
 https://flosrocketbricks.com/moc/75/atlas-v-431/
-https://flosrocketbricks.com/moc/76/atlas-v-401-lro-cross/
+https://flosrocketbricks.com/moc/76/atlas-v-401-lro-lcross/
 https://flosrocketbricks.com/moc/77/atlas-v-411-solar-orbiter/
 https://flosrocketbricks.com/moc/78/atlas-v-401-jpss-2-loftid/
 https://flosrocketbricks.com/moc/79/ariane-5g/

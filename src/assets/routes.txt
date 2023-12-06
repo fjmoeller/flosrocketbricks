@@ -145,7 +145,7 @@
 /moc/140/wenchang-lc-101-launchtable/
 /moc/141/arianespace-logo/
 /moc/142/arianespace-logo/
-/moc/143/maiaspace-rocket/
+/moc/143/maia/
 /moc/144/ariane-64/
 /moc/145/sputnik/
 /moc/146/space-alpaca/

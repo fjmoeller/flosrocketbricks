@@ -1,5 +1,63 @@
 [
     {
+        "company": "HyImpulse",
+        "region": "Germany",
+        "links": [
+            "https://www.hyimpulse.de/en/",
+            "https://de.wikipedia.org/wiki/SL1"
+        ],
+        "type": "rocket",
+        "id": 179,
+        "title": "SL1",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-06",
+        "dateCreated": "2021-12-06",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the SL1 rocket by HyImpulse. The first three stages of the rocket can be separated from one another. ",
+        "rocketDescription": "SL1 is a small orbital rocket that is being developed by the German company HyImpulse. It has three stages which are all being powered using hybrid propulsion with paraffin and liquid oxygen.",
+        "internalColor": "Dark Pink",
+        "scale": "110",
+        "parts": 132,
+        "dimensions": "2.4x2.4x24.2cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/germany/hyimpulse/sl1/110-sl1-v1.0.png",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/germany/hyimpulse/sl1/v1.0/SL1_V1.0.png",
+            "https://files.flosrocketbackend.com/mocs/110/germany/hyimpulse/sl1/v1.0/SL1_V1.0_2.png"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/hyimpulse/sl1/v1.0/SL1_V1.0.io",
+                        "name": "SL1_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "United Launch Alliance",
         "region": "USA",
         "links": [

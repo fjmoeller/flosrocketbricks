@@ -1,5 +1,186 @@
 [
     {
+        "company": "",
+        "region": "USA",
+        "links": [
+            "https://en.wikipedia.org/wiki/Delta_II",
+            "https://www.raumfahrer.net/delta-ii/",
+            "http://www.b14643.de/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm",
+            "https://www.spaceline.org/cape-canaveral-rocket-missile-program/delta-ii-6000-series/"
+        ],
+        "type": "rocket",
+        "id": 182,
+        "title": "Delta II 6925 Palapa B2R",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-07",
+        "dateCreated": "2021-12-07",
+        "related": [181,180],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Delta II 6925 rocket with the Palapa B2R painting scheme. The boosters can not be separated from the core stage. The second stage can be separated from the core stage. The third stage is included inside the fairing. The fairing holds some space for a payload, Palapa B2R is not included in it though.",
+        "rocketDescription": "The Delta II 6925 rocket was an American orbital rocket. It used nine solid rocket motors and a kerolox core and second stage as well as a solid third stage.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 346,
+        "dimensions": "4.4x4.3x35.3cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/delta/delta-ii/6000/6925/palapa-b2r/110-delta-ii-6925-palapa-b2r-v2.1.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/6000/delta-ii-6925-palapa-b2r/v2.1/Delta_II_6925_Palapa_B2R_V2.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/6000/delta-ii-6925-palapa-b2r/v2.1/Delta_II_6925_Palapa_B2R_V2.1_2.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/6000/delta-ii-6925-palapa-b2r/v2.1/Delta_II_6925_Palapa_B2R_V2.1.io",
+                        "name": "Delta_II_6925_Palapa_B2R_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "USA",
+        "links": [
+            "https://en.wikipedia.org/wiki/Delta_II",
+            "https://www.raumfahrer.net/delta-ii/",
+            "http://www.b14643.de/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm",
+            "https://www.spaceline.org/cape-canaveral-rocket-missile-program/delta-ii-6000-series/"
+        ],
+        "type": "rocket",
+        "id": 181,
+        "title": "Delta II 6925 GPS-2",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-07",
+        "dateCreated": "2021-12-07",
+        "related": [182,180],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Delta II 6925 rocket with the GPS-2 painting scheme. The boosters can not be separated from the core stage. The second stage can be separated from the core stage. The third stage is not included. The fairing holds no space for a payload.",
+        "rocketDescription": "The Delta II 6925 rocket was an American orbital rocket. It used nine solid rocket motors and a kerolox core and second stage as well as a solid third stage.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 359,
+        "dimensions": "4.4x4.3x35.9cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/delta/delta-ii/6000/6925/gps-2/110-delta-ii-6925-gps-2-v2.1.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/6000/delta-ii-6925-gps-2/v2.1/Delta_II_6925_GPS-2_V2.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/6000/delta-ii-6925-gps-2/v2.1/Delta_II_6925_GPS-2_V2.1_2.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/6000/delta-ii-6925-gps-2/v2.1/Delta_II_6925_GPS-2_V2.1.io",
+                        "name": "Delta_II_6925_GPS-2_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "USA",
+        "links": [
+            "https://en.wikipedia.org/wiki/Delta_II",
+            "https://en.wikipedia.org/wiki/ROSAT",
+            "https://www.raumfahrer.net/delta-ii/",
+            "http://www.b14643.de/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm",
+            "https://www.spaceline.org/cape-canaveral-rocket-missile-program/delta-ii-6000-series/"
+        ],
+        "type": "rocket",
+        "id": 180,
+        "title": "Delta II 6920 ROSAT",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-07",
+        "dateCreated": "2021-12-07",
+        "related": [181,182],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Delta II 6920 rocket with the ROSAT satellite painting scheme. The boosters can not be separated from the core stage. The second stage can be separated from the core stage. The fairing holds some space for a payload, the ROSAT satellite is not in this MOC though.",
+        "rocketDescription": "The Delta II 6920 rocket was an American orbital rocket. It used nine solid rocket motors and a kerolox core and second stage. The ROSAT satellite was launched in 1990 by this rocket.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 380,
+        "dimensions": "4.4x4.3x35.5cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/delta/delta-ii/6000/6920/rosat/110-delta-ii-6920-rosat-v2.1.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/6000/delta-ii-6920-rosat/v2.1/Delta_II_6920_ROSAT_V2.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/6000/delta-ii-6920-rosat/v2.1/Delta_II_6920_ROSAT_V2.1_2.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/6000/delta-ii-6920-rosat/v2.1/Delta_II_6920_ROSAT_V2.1.io",
+                        "name": "Delta_II_6920_ROSAT_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "HyImpulse",
         "region": "Germany",
         "links": [

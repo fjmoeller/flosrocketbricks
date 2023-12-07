@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/182/delta-ii-6925-palapa-b2r/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/6000/6925/palapa-b2r/110-delta-ii-6925-palapa-b2r-v2.1.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/181/delta-ii-6925-gps-2/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/6000/6925/gps-2/110-delta-ii-6925-gps-2-v2.1.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/180/delta-ii-6920-rosat/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/6000/6920/rosat/110-delta-ii-6920-rosat-v2.1.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/179/sl1/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/germany/hyimpulse/sl1/110-sl1-v1.0.png</image:loc>

@@ -178,6 +178,9 @@ https://flosrocketbricks.com/moc/176/vulcan-centaur-4l/
 https://flosrocketbricks.com/moc/177/vulcan-centaur-6s/
 https://flosrocketbricks.com/moc/178/vulcan-centaur-6l/
 https://flosrocketbricks.com/moc/179/sl1/
+https://flosrocketbricks.com/moc/180/delta-ii-6920-rosat/
+https://flosrocketbricks.com/moc/181/delta-ii-6925-gps-2/
+https://flosrocketbricks.com/moc/182/delta-ii-6925-palapa-b2r/
 https://flosrocketbricks.com/collection/3/ariane/
 https://flosrocketbricks.com/collection/2/atlas/
 https://flosrocketbricks.com/collection/0/long-march/

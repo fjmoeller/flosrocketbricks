@@ -5,6 +5,65 @@
         "links": [
             "https://en.wikipedia.org/wiki/Delta_II",
             "https://www.raumfahrer.net/delta-ii/",
+            "http://www.b14643.de/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm"
+        ],
+        "type": "rocket",
+        "id": 183,
+        "title": "Delta II 7925 GPS-2R",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-07",
+        "dateCreated": "2021-12-07",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Delta II 6925 rocket with the Palapa B2R painting scheme. The boosters can not be separated from the core stage. The second stage can be separated from the core stage. The third stage is included inside the fairing. The fairing holds some space for a payload, Palapa B2R is not included in it though.",
+        "rocketDescription": "The Delta II 6925 rocket was an American orbital rocket. It used nine solid rocket motors and a kerolox core and second stage as well as a solid third stage.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 384,
+        "dimensions": "4.4x4.3x39.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/delta/delta-ii/7000/7925/gps-2r/110-delta-ii-7925-gps-2r-v2.1.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/7000/7925/gps-2r/v2.1/Delta_II_7925_GPS-2R_V2.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/7000/7925/gps-2r/v2.1/Delta_II_7925_GPS-2R_V2.1_2.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/delta/delta-ii/7000/7925/gps-2r/v2.1/Delta_II_7925_GPS-2R_V2.1.io",
+                        "name": "Delta_II_7925_GPS-2R_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks, except for one part that isn't available in the correct color by Lego.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "USA",
+        "links": [
+            "https://en.wikipedia.org/wiki/Delta_II",
+            "https://www.raumfahrer.net/delta-ii/",
             "http://www.b14643.de/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm",
             "https://www.spaceline.org/cape-canaveral-rocket-missile-program/delta-ii-6000-series/"
         ],
@@ -54,7 +113,7 @@
         "designerExtra": "",
         "internalColorExtra": "",
         "scaleExtra": "",
-        "partsExtra": "Can be build completely out of Lego bricks.",
+        "partsExtra": "Can be build completely out of Lego bricks, except for one part that isn't available in the correct color by Lego.",
         "dimensionsExtra": "",
         "stabilityExtra": "",
         "difficultyExtra": ""
@@ -114,7 +173,7 @@
         "designerExtra": "",
         "internalColorExtra": "",
         "scaleExtra": "",
-        "partsExtra": "Can be build completely out of Lego bricks.",
+        "partsExtra": "Can be build completely out of Lego bricks, except for one part that isn't available in the correct color by Lego.",
         "dimensionsExtra": "",
         "stabilityExtra": "",
         "difficultyExtra": ""
@@ -175,7 +234,7 @@
         "designerExtra": "",
         "internalColorExtra": "",
         "scaleExtra": "",
-        "partsExtra": "Can be build completely out of Lego bricks.",
+        "partsExtra": "Can be build completely out of Lego bricks, except for one part that isn't available in the correct color by Lego.",
         "dimensionsExtra": "",
         "stabilityExtra": "",
         "difficultyExtra": ""

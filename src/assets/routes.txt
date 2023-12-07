@@ -185,4 +185,5 @@
 /moc/180/delta-ii-6920-rosat/
 /moc/181/delta-ii-6925-gps-2/
 /moc/182/delta-ii-6925-palapa-b2r/
+/moc/183/delta-ii-7925-gps-2r/
 /about/

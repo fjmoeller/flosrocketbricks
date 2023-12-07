@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <url>
+    <loc>https://flosrocketbricks.com/moc/183/delta-ii-7925-gps-2r/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/7000/7925/gps-2r/110-delta-ii-7925-gps-2r-v2.1.jpg</image:loc>
+    </image:image>
+  </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/182/delta-ii-6925-palapa-b2r/</loc>
     <image:image>

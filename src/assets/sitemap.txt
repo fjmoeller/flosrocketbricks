@@ -182,6 +182,7 @@ https://flosrocketbricks.com/moc/180/delta-ii-6920-rosat/
 https://flosrocketbricks.com/moc/181/delta-ii-6925-gps-2/
 https://flosrocketbricks.com/moc/182/delta-ii-6925-palapa-b2r/
 https://flosrocketbricks.com/moc/183/delta-ii-7925-gps-2r/
+https://flosrocketbricks.com/moc/184/zephyr/
 https://flosrocketbricks.com/collection/3/ariane/
 https://flosrocketbricks.com/collection/2/atlas/
 https://flosrocketbricks.com/collection/0/long-march/

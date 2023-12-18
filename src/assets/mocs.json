@@ -2825,9 +2825,9 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/usa/firefly-alpha/flta002/110-firefly-alpha-flta002-v2.2.png",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/alpha/flight-2/v2.2/Firefly_Alpha_FLTA002_V2.2_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/alpha/flight-2/v2.2/Firefly_Alpha_FLTA002_V2.2_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/alpha/flight-2/v2.2/Firefly_Alpha_FLTA002_V2.2_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/firefly/alpha/flta002/v2.2/Firefly_Alpha_FLTA002_V2.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/firefly/alpha/flta002/v2.2/Firefly_Alpha_FLTA002_V2.2_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/firefly/alpha/flta002/v2.2/Firefly_Alpha_FLTA002_V2.2_3.jpg"
         ],
         "versions": [
             {
@@ -2838,15 +2838,29 @@
                         "description": "The digital io file of the rocket",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/alpha/flight-2/v2.2/Firefly_Alpha_FLTA002_V2.2.io",
-                        "name": "Firefly_Alpha_FLTA002_V2.0.io"
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/firefly/alpha/flta002/v2.2/Firefly_Alpha_FLTA002_V2.2.io",
+                        "name": "Firefly_Alpha_FLTA002_V2.2.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the rocket",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/firefly/alpha/flta002/v2.2/Firefly_Alpha_FLTA002_V2.2.pdf",
+                        "name": "Firefly_Alpha_FLTA002_V2.2.pdf"
                     },
                     {
                         "description": "The digital io file of the rocket in the frosted variant",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/alpha/flight-2/v2.2/Firefly_Alpha_FLTA002_Frost_V2.2.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/firefly/alpha/flta002/v2.2/Firefly_Alpha_FLTA002_Frost_V2.2.io",
                         "name": "Firefly_Alpha_FLTA002_Frost_V2.2.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the rocket in the frosted variant",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/firefly/alpha/flta002/v2.2/Firefly_Alpha_FLTA002_V2.2_Frost.pdf",
+                        "name": "Firefly_Alpha_FLTA002_V2.2_Frost.pdf"
                     }
                 ],
                 "version": "V2.2"

@@ -7491,13 +7491,13 @@
             "https://en.wikipedia.org/wiki/Vulcan_Centaur",
             "https://www.ulalaunch.com/rockets/vulcan-centaur"
         ],
-        "mocDescription": "This is a MOC of the Vulcan Centaur 2S Peregrine rocket. The boosters can be seperated from the core stage. The Centaur second stagte can be seperated from the core stage. The payload fairings can be split in two and hold space for the included peregrine lander. The MOC also includes a small stand for the rocket for vertical display.",
+        "mocDescription": "This is a MOC of the Vulcan Centaur 2S Peregrine rocket. The boosters can be seperated from the core stage. The Centaur second stagte can be seperated from the core stage. The payload fairings can be split in two and hold space for the included Peregrine lander. The MOC also includes a small stand for the rocket for vertical display.",
         "rocketDescription": "The Vulcan Centaur 2S is ULAs newest rocket. The first flight is planned for 2023 with Astrobotics Peregrine lunar lander as its payload. The rocket has two solid boosters on its side and a short payload fairing as well as the Centaur V upper stage.",
-        "company": "",
+        "company": "United Launch Alliance",
         "companyExtra": "",
-        "difficulty": 4,
+        "difficulty": -1,
         "difficultyExtra": "",
-        "lastupdate": "2023-12-03",
+        "lastupdate": "2023-12-20",
         "dateCreated": "2022-01-26",
         "related": [
             70,173
@@ -7507,29 +7507,50 @@
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc2s/peregrine/110-vulcan-centaur-2s-peregrine-v3.0.png",
+        "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc2s/peregrine/110-vulcan-centaur-2s-peregrine-v3.1.jpg",
         "internalColor": "Green",
         "internalColorExtra": "",
         "dimensions": "8.9x5.4x56.6cm",
         "dimensionsExtra": "",
         "tags": [],
         "altTitles": ["VC2S Astrobotics"],
-        "parts": 1211,
+        "parts": 1220,
         "partsExtra": "The MOC can be completely build out of Lego parts.",
         "title": "Vulcan Centaur 2S Peregrine",
-        "stability": 4,
+        "stability": -1,
         "stabilityExtra": "",
         "designer": "SkySaac",
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/V3.0/Vulcan_Centaur_2S_Astrobotics_V3.0_1.png",
-            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/V3.0/Vulcan_Centaur_2S_Astrobotics_V3.0_2.png",
-            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/V3.0/Vulcan_Centaur_2S_Astrobotics_V3.0_3.png",
-            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/V3.0/Vulcan_Centaur_2S_Astrobotics_V3.0_4.png",
-            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/V3.0/Vulcan_Centaur_2S_Astrobotics_V3.0_5.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/v3.1/Vulcan_Centaur_Astrobotic_V3.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/v3.1/Vulcan_Centaur_Astrobotic_V3.1_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/v3.1/Vulcan_Centaur_Astrobotic_V3.1_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/v3.1/Vulcan_Centaur_Astrobotic_V3.1_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/v3.1/Vulcan_Centaur_Astrobotic_V3.1_5.jpg"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/v3.1/Vulcan_Centaur_Astrobotic_V3.1_pub.io",
+                        "name": "Vulcan_Centaur_Astrobotic_V3.1_pub.io"
+                    },
+                    {
+                        "description": "The digital pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/v3.1/Vulcan_Centaur_Astrobotics_V3.1_instructions.pdf",
+                        "name": "Vulcan_Centaur_Astrobotics_V3.1_instructions.pdf"
+                    }
+                ],
+                "version": "V3.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

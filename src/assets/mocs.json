@@ -1,5 +1,64 @@
 [
     {
+        "company": "Maiaspace",
+        "region": "France",
+        "links": [
+            "https://maia-space.com/",
+            "https://fr.wikipedia.org/wiki/MaiaSpace"
+        ],
+        "type": "rocket",
+        "id": 185,
+        "title": "Maia",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2023-12-22",
+        "dateCreated": "2023-12-22",
+        "related": [143],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of Maiaspaces Maia rocket. The two stages can be separated from one another. The first stage has four landing legs that can be extended. The second stage can be separated from the first stage. The payload fairing holds some space for a small payload.",
+        "rocketDescription": "Maiaspace is a French company that is developing an orbital partially reusable rocket called Maia. It is supposed to have two stages with the first stage being reusable.",
+        "internalColor": "Dark Pink",
+        "scale": "220",
+        "parts": 148,
+        "dimensions": "3.2x3.2x22.9cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/220/france/maia/220-maia-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/220/france/maia/v1.0/Maia_V1.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/220/france/maia/v1.0/Maia_V1.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/220/france/maia/v1.0/Maia_V1.0_1.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/220/france/maia/v1.0/Maia_V1.0.io",
+                        "name": "Maia_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "Latitude",
         "region": "France",
         "links": [
@@ -2552,26 +2611,47 @@
         "altTitles": [],
         "tags": [],
         "designer": "SkySaac",
-        "lastupdate": "2023-10-03",
+        "lastupdate": "2023-12-22",
         "dateCreated": "2023-10-03",
-        "related": [],
-        "updateMessage": "Will be updated soon.",
-        "mocDescription": "This is a MOC of Maiaspaces Maia rocket. The two stages can be separated form one another. The first stage has four landing legs that can be extended. The paylaod fairing holds osme space for a payload.",
-        "rocketDescription": "Maiaspace is a French company that is developing an orbital partially reusable rocket caled Maia. It is supposed to have two stages with the first stage being reusable.",
+        "related": [185],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of Maiaspaces Maia rocket. The two stages can be separated from one another. The first stage has four landing legs that can not be extended. The second stage only sits on the first stage loosely. The payload fairing holds space for a payload.",
+        "rocketDescription": "Maiaspace is a French company that is developing an orbital partially reusable rocket called Maia. It is supposed to have two stages with the first stage being reusable.",
         "internalColor": "Dark Pink",
         "scale": "110",
-        "parts": 151,
-        "dimensions": "3x2.7x22.9cm",
+        "parts": 450,
+        "dimensions": "6.7x6.7x42.2cm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/europe/maiaspace/rocket/110-maiaspace-rocket-v1.0.png",
+        "smallCoverImage": "assets/mocImages/110/france/maia/110-maia-v1.1.jpg",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/europe/maiaspace/maiaspace-rocket/v1.0/Maiaspace_V1.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/maiaspace/maiaspace-rocket/v1.0/Maiaspace_V1.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/maiaspace/maiaspace-rocket/v1.0/Maiaspace_V1.0_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/france/maia/v1.1/Maiaspace_V1.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/france/maia/v1.1/Maiaspace_V1.1_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/france/maia/v1.1/Maiaspace_V1.1_3.jpg"
         ],
         "versions": [
+            {
+                "changelog": "Fix the total dimensions of the rocket. V1.0 will be added as a moc of a small scale.",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/france/maia/v1.1/Maiaspace_V1.1_pub.io",
+                        "name": "Maiaspace_V1.1_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the rocket",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/france/maia/v1.1/Maiaspace_V1.1_instructions.pdf",
+                        "name": "Maiaspace_V1.1_instructions.pdfo"
+                    }
+                ],
+                "version": "V1.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

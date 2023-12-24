@@ -9046,7 +9046,7 @@
             "http://www.astronautix.com/c/capecanaverallc41.html"
         ],
         "mocDescription": "An Atlas V rocket can be placed on top of it (I haven't tested it so it might need a few extra bricks to hold it up). The MOC does not include the Atlas V rocket. The Train carts are not connected to the main structure.",
-        "rocketDescription": "This is a MOC of the Atlas V transporter as it's being used at the Space Launch Complex 41 at the Cape Canaveral Space Force Station to launch Atlas V rockets. Before Atlas V it has launched Titan IIIC, Titan IIIE and Titan IV rockets and is planned to launch ULAs Vulcan rocket in the future. The transporter holds the rocket as it's transported from the Vertical Integration Building all the way to launch.",
+        "rocketDescription": "This is a MOC of the Atlas V Mobile Launch Platform as it's being used at the Space Launch Complex 41 at the Cape Canaveral Space Force Station to launch Atlas V rockets. Before Atlas V it has launched Titan IIIC, Titan IIIE and Titan IV rockets and is planned to launch ULAs Vulcan rocket in the future. The transporter holds the rocket as it's transported from the Vertical Integration Building all the way to launch.",
         "company": "",
         "companyExtra": "",
         "difficulty": -1,
@@ -9076,7 +9076,7 @@
         "altTitles": [],
         "parts": 2451,
         "partsExtra": "Can be build completely out of Lego bricks.",
-        "title": "LC-41 Atlas V Transporter",
+        "title": "LC-41 Atlas V Mobile Launch Platform",
         "stability": -1,
         "stabilityExtra": "I am really not sure how stable the whole thing actually is and if it can hold an Atlas V or if that needs some extra bricks below.",
         "designer": "SkySaac",

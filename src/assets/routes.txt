@@ -48,7 +48,7 @@
 /moc/47/titan-iii-23c/
 /moc/48/titan-ivb/
 /moc/49/juice/
-/moc/50/lc-41-atlas-v-transporter/
+/moc/50/lc-41-atlas-v-mobile-launch-platform/
 /moc/51/tiangong-space-station/
 /moc/52/shenzhou/
 /moc/53/tianzhou/

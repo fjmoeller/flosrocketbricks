@@ -4,7 +4,8 @@
         "region": "France",
         "links": [
             "https://maia-space.com/",
-            "https://fr.wikipedia.org/wiki/MaiaSpace"
+            "https://fr.wikipedia.org/wiki/MaiaSpace",
+            "https://www.linkedin.com/company/maiaspace/"
         ],
         "type": "rocket",
         "id": 185,
@@ -14,7 +15,9 @@
         "designer": "SkySaac",
         "lastupdate": "2023-12-22",
         "dateCreated": "2023-12-22",
-        "related": [143],
+        "related": [
+            143
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of Maiaspaces Maia rocket. The two stages can be separated from one another. The first stage has four landing legs that can be extended. The second stage can be separated from the first stage. The payload fairing holds some space for a small payload.",
         "rocketDescription": "Maiaspace is a French company that is developing an orbital partially reusable rocket called Maia. It is supposed to have two stages with the first stage being reusable.",
@@ -63,7 +66,8 @@
         "region": "France",
         "links": [
             "https://www.latitude.eu/zephyr",
-            "https://europeanspaceflight.com/latitude-announces-new-variant-of-its-zephyr-launch-vehicle/"
+            "https://europeanspaceflight.com/latitude-announces-new-variant-of-its-zephyr-launch-vehicle/",
+            "https://www.linkedin.com/company/latitude-eu/"
         ],
         "type": "rocket",
         "id": 184,
@@ -74,7 +78,7 @@
         "lastupdate": "2023-12-12",
         "dateCreated": "2021-12-12",
         "related": [],
-        "updateMessage": "This MOCs dimensions are outdated. It will get an update in the future!",
+        "updateMessage": "This MOCs dimensions are outdated.\nIt will get an update in the future!",
         "mocDescription": "This is a MOC of the Zephyr rocket. The first and second stage can be separated from one another.",
         "rocketDescription": "The Zephyr rocket is a liquid propelled orbital rocet that is being by the French company Latitude. It is supposed to have two stages and bring up to 100kg into low earth orbit.",
         "internalColor": "-",
@@ -192,7 +196,10 @@
         "designer": "SkySaac",
         "lastupdate": "2023-12-07",
         "dateCreated": "2021-12-07",
-        "related": [181,180],
+        "related": [
+            181,
+            180
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Delta II 6925 rocket with the Palapa B2R painting scheme. The boosters can not be separated from the core stage. The second stage can be separated from the core stage. The third stage is included inside the fairing. The fairing holds some space for a payload, Palapa B2R is not included in it though.",
         "rocketDescription": "The Delta II 6925 rocket was an American orbital rocket. It used nine solid rocket motors and a kerolox core and second stage as well as a solid third stage.",
@@ -252,7 +259,10 @@
         "designer": "SkySaac",
         "lastupdate": "2023-12-07",
         "dateCreated": "2021-12-07",
-        "related": [182,180],
+        "related": [
+            182,
+            180
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Delta II 6925 rocket with the GPS-2 painting scheme. The boosters can not be separated from the core stage. The second stage can be separated from the core stage. The third stage is not included. The fairing holds no space for a payload.",
         "rocketDescription": "The Delta II 6925 rocket was an American orbital rocket. It used nine solid rocket motors and a kerolox core and second stage as well as a solid third stage.",
@@ -313,7 +323,10 @@
         "designer": "SkySaac",
         "lastupdate": "2023-12-07",
         "dateCreated": "2021-12-07",
-        "related": [181,182],
+        "related": [
+            181,
+            182
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Delta II 6920 rocket with the ROSAT satellite painting scheme. The boosters can not be separated from the core stage. The second stage can be separated from the core stage. The fairing holds some space for a payload, the ROSAT satellite is not in this MOC though.",
         "rocketDescription": "The Delta II 6920 rocket was an American orbital rocket. It used nine solid rocket motors and a kerolox core and second stage. The ROSAT satellite was launched in 1990 by this rocket.",
@@ -361,7 +374,8 @@
         "region": "Germany",
         "links": [
             "https://www.hyimpulse.de/en/",
-            "https://de.wikipedia.org/wiki/SL1"
+            "https://de.wikipedia.org/wiki/SL1",
+            "https://www.linkedin.com/company/hyimpulse/"
         ],
         "type": "rocket",
         "id": 179,
@@ -424,12 +438,22 @@
         "type": "rocket",
         "id": 178,
         "title": "Vulcan Centaur 6L",
-        "altTitles": ["VC6L"],
+        "altTitles": [
+            "VC6L"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-12-02",
         "dateCreated": "2021-12-02",
-        "related": [171,172,173,174,175,176,177],
+        "related": [
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Vulcan Centaur 6L rocket. It has six solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
         "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
@@ -485,12 +509,22 @@
         "type": "rocket",
         "id": 177,
         "title": "Vulcan Centaur 6S",
-        "altTitles": ["VC6S"],
+        "altTitles": [
+            "VC6S"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-12-02",
         "dateCreated": "2021-12-02",
-        "related": [171,172,173,174,175,176,178],
+        "related": [
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            178
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Vulcan Centaur 6S rocket. It has six solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
         "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
@@ -546,12 +580,22 @@
         "type": "rocket",
         "id": 176,
         "title": "Vulcan Centaur 4L",
-        "altTitles": ["VC4L"],
+        "altTitles": [
+            "VC4L"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-12-02",
         "dateCreated": "2021-12-02",
-        "related": [171,172,173,174,175,177,178],
+        "related": [
+            171,
+            172,
+            173,
+            174,
+            175,
+            177,
+            178
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Vulcan Centaur 4L rocket. It has four solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
         "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
@@ -607,12 +651,22 @@
         "type": "rocket",
         "id": 175,
         "title": "Vulcan Centaur 4S",
-        "altTitles": ["VC4S"],
+        "altTitles": [
+            "VC4S"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-12-02",
         "dateCreated": "2021-12-02",
-        "related": [171,172,173,174,176,177,178],
+        "related": [
+            171,
+            172,
+            173,
+            174,
+            176,
+            177,
+            178
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Vulcan Centaur 4S rocket. It has four solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
         "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
@@ -668,12 +722,22 @@
         "type": "rocket",
         "id": 174,
         "title": "Vulcan Centaur 2L",
-        "altTitles": ["VC2L"],
+        "altTitles": [
+            "VC2L"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-12-02",
         "dateCreated": "2021-12-02",
-        "related": [171,172,173,175,176,177,178],
+        "related": [
+            171,
+            172,
+            173,
+            175,
+            176,
+            177,
+            178
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Vulcan Centaur 2L rocket. It has two solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
         "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
@@ -729,12 +793,23 @@
         "type": "rocket",
         "id": 173,
         "title": "Vulcan Centaur 2S",
-        "altTitles": ["VC2S"],
+        "altTitles": [
+            "VC2S"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-12-02",
         "dateCreated": "2021-12-02",
-        "related": [71,171,172,174,175,176,177,178],
+        "related": [
+            71,
+            171,
+            172,
+            174,
+            175,
+            176,
+            177,
+            178
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Vulcan Centaur 2S rocket. It has two solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
         "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
@@ -790,12 +865,22 @@
         "type": "rocket",
         "id": 172,
         "title": "Vulcan Centaur 0L",
-        "altTitles": ["VC0L"],
+        "altTitles": [
+            "VC0L"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-12-02",
         "dateCreated": "2021-12-02",
-        "related": [171,173,174,175,176,177,178],
+        "related": [
+            171,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Vulcan Centaur 0L rocket. It has no solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
         "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
@@ -851,12 +936,22 @@
         "type": "rocket",
         "id": 171,
         "title": "Vulcan Centaur 0S",
-        "altTitles": ["VC0S"],
+        "altTitles": [
+            "VC0S"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-12-02",
         "dateCreated": "2021-12-02",
-        "related": [172,173,174,175,176,177,178],
+        "related": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Vulcan Centaur 0S rocket. It has no solid rocket motors attached. The Centaur upper stage can be seprated from the Vulcan first stage. The fairing can be split in two parts and holds space for a payload.",
         "rocketDescription": "Vulcan Centaur is an American rocket made by ULA. The first stage uses two BE-4 engines fueled with liquid methane and liquid oxygen. The second stage (Centaur) is powered by two RL-10 engines and uses hyrolox. The rocket has two different fairing sizes and the core stage can feature additional solid rocket motors, either 0, 2, 4 or 6 of them.",
@@ -919,7 +1014,9 @@
         "designer": "SkySaac",
         "lastupdate": "2023-11-26",
         "dateCreated": "2021-12-23",
-        "related": [169],
+        "related": [
+            169
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Energia rocket with the Polyus spacecraft. The boosters of the Energia rocket can beseparated from the core stage. The Polyus spacecraft can be separated from the Energia rocket.",
         "rocketDescription": "The Energia rocket launched with Polyus in 1987 on it's maiden flight. Although the rocket launched successfully, the spacecraft failed and burned up in the atmosphere.",
@@ -974,12 +1071,16 @@
         "type": "spacecraft",
         "id": 169,
         "title": "Polyus",
-        "altTitles": ["Skif-DM"],
+        "altTitles": [
+            "Skif-DM"
+        ],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2023-11-30",
         "dateCreated": "2021-08-06",
-        "related": [170],
+        "related": [
+            170
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Polyus spacecraft. It is compatible with my Energia rocket.",
         "rocketDescription": "The Polyus spacecraft was a Soviet satellite that was launched onthe first flight of the Energia rocket. The spacecraft failed to reach orbit.",
@@ -1037,7 +1138,9 @@
         "designer": "SkySaac",
         "lastupdate": "2023-11-30",
         "dateCreated": "2023-11-30",
-        "related": [94],
+        "related": [
+            94
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the launchpad of the Sohae Satellite Launching Station. The erector can be erected and is compatible with my Chollima-1 rocket.",
         "rocketDescription": "This is a MOC of the launchpad of the North Korean Chollima-1 rocket at the Sohae Satellite Launching Station.",
@@ -1097,7 +1200,11 @@
         "designer": "SkySaac",
         "lastupdate": "2023-11-26",
         "dateCreated": "2021-12-23",
-        "related": [164,165,166],
+        "related": [
+            164,
+            165,
+            166
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the H-IIA 2022 rocket. The four boosters can be separated from the core stage. The second stage can also be separated from the core stage. The payload fairings holds space for a potential payload.",
         "rocketDescription": "The H-IIA 2022 rocket is a Japanese orbital rocket. The 2022 variant of the H-IIA rocket has two SRB-As and two SSBs. It first launched in 2005 with its latest launch happening in 2007.",
@@ -1157,7 +1264,11 @@
         "designer": "SkySaac",
         "lastupdate": "2023-11-26",
         "dateCreated": "2021-12-23",
-        "related": [164,165,167],
+        "related": [
+            164,
+            165,
+            167
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the H-IIA 2020 rocket. The two boosters can be separated from the core stage. The second stage can also be separated from the core stage. The payload fairings holds space for a potential payload.",
         "rocketDescription": "The H-IIA 2020 rocket is a Japanese orbital rocket. The 2020 variant of the H-IIA rocket has two SRB-As. It first launched in 2001 with its latest launch happening in 2023.",
@@ -1217,7 +1328,11 @@
         "designer": "SkySaac",
         "lastupdate": "2023-11-21",
         "dateCreated": "2021-12-23",
-        "related": [164,166,167],
+        "related": [
+            164,
+            166,
+            167
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the H-IIA 2040 rocket. The four boosters can be separated from the core stage. The second stage can also be separated from the core stage. The payload fairings holds space for a potential payload.",
         "rocketDescription": "The H-IIA 2040 rocket is a Japanese orbital rocket. The 2040 variant of the H-IIA rocket has four SRB-As. It first launched in 2006 with its latest launch happening in 2021.",
@@ -1277,7 +1392,11 @@
         "designer": "SkySaac",
         "lastupdate": "2023-11-21",
         "dateCreated": "2021-12-23",
-        "related": [165,166,167],
+        "related": [
+            165,
+            166,
+            167
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the H-IIA 2024 rocket. The six boosters can be separated from the core stage. The second stage can also be separated from the core stage. The payload fairings holds space for a potential payload.",
         "rocketDescription": "The H-IIA 2024 rocket is a Japanese orbital rocket. The 2024 variant of the H-IIA rocket has two SRB-As and four SSBs. It first launched in 2002 with its latest launch happening in 2008.",
@@ -2126,7 +2245,9 @@
         "designer": "SkySaac",
         "lastupdate": "2023-10-15",
         "dateCreated": "2023-10-15",
-        "related": [162],
+        "related": [
+            162
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Falcon Heavy rocket with Orion and ICPS as its payload. The boosters, the core stage, the 2nd stage, the ICPS, Orion and the LES can all be separated from one another.",
         "rocketDescription": "The Falcon Heavy is a rocekt by SpaceX. The Falcon Heavy EM-1 was a (not really serious) proposal on flying the EM-1 mission on an expendable Falcon Heavy.",
@@ -2614,7 +2735,9 @@
         "designer": "SkySaac",
         "lastupdate": "2023-12-22",
         "dateCreated": "2023-10-03",
-        "related": [185],
+        "related": [
+            185
+        ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of Maiaspaces Maia rocket. The two stages can be separated from one another. The first stage has four landing legs that can not be extended. The second stage only sits on the first stage loosely. The payload fairing holds space for a payload.",
         "rocketDescription": "Maiaspace is a French company that is developing an orbital partially reusable rocket called Maia. It is supposed to have two stages with the first stage being reusable.",
@@ -5922,7 +6045,9 @@
         "difficultyExtra": "",
         "lastupdate": "2023-06-16",
         "dateCreated": "2023-06-02",
-        "related": [168],
+        "related": [
+            168
+        ],
         "updateMessage": "",
         "region": "North Korea",
         "regionExtra": "",
@@ -7581,7 +7706,8 @@
         "lastupdate": "2023-12-20",
         "dateCreated": "2022-01-26",
         "related": [
-            70,173
+            70,
+            173
         ],
         "updateMessage": "",
         "region": "USA",
@@ -7594,7 +7720,9 @@
         "dimensions": "8.9x5.4x56.6cm",
         "dimensionsExtra": "",
         "tags": [],
-        "altTitles": ["VC2S Astrobotics"],
+        "altTitles": [
+            "VC2S Astrobotics"
+        ],
         "parts": 1220,
         "partsExtra": "The MOC can be completely build out of Lego parts.",
         "title": "Vulcan Centaur 2S Peregrine",
@@ -7706,7 +7834,9 @@
         "dimensions": "3.6x3.2x3.2cm",
         "dimensionsExtra": "",
         "tags": [],
-        "altTitles": ["Astrobotic Lander"],
+        "altTitles": [
+            "Astrobotic Lander"
+        ],
         "parts": 30,
         "partsExtra": "The MOC can be completely build out of Lego parts.",
         "title": "Peregrine Lander",
@@ -10304,7 +10434,8 @@
         "lastupdate": "2023-03-31",
         "dateCreated": "2023-03-31",
         "related": [
-            50,163
+            50,
+            163
         ],
         "updateMessage": "",
         "region": "USA",
@@ -11377,7 +11508,9 @@
         "company": "NASA",
         "difficulty": 3,
         "lastupdate": "2023-03-10",
-        "related": [162],
+        "related": [
+            162
+        ],
         "updateMessage": "",
         "region": "USA",
         "scale": "110",
@@ -12596,7 +12729,11 @@
     {
         "designerExtra": "",
         "updateMessage": "",
-        "links": [],
+        "links": [
+            "https://en.wikipedia.org/wiki/Ariane_3",
+            "http://www.astronautix.com/a/ariane3.html",
+            "http://www.capcomespace.net/dossiers/espace_europeen/ariane/ariane2-3/caracteristiques.htm"
+        ],
         "difficultyExtra": "",
         "fanPictures": [],
         "internalColorExtra": "",
@@ -12674,7 +12811,11 @@
     {
         "typeExtra": "",
         "updateMessage": "",
-        "links": [],
+        "links": [
+            "https://en.wikipedia.org/wiki/Ariane_2",
+            "http://www.astronautix.com/a/ariane2.html",
+            "http://www.capcomespace.net/dossiers/espace_europeen/ariane/index.htm"
+        ],
         "pictures": [
             "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-2/v3.0/A2_V3.png"
         ],
@@ -12743,7 +12884,12 @@
         "stabilityExtra": ""
     },
     {
-        "links": [],
+        "links": [
+            "https://en.wikipedia.org/wiki/Ariane_1",
+            "https://www.bernd-leitenberger.de/ariane.shtml",
+            "http://www.astronautix.com/a/ariane1.html",
+            "http://www.capcomespace.net/dossiers/espace_europeen/ariane/index.htm"
+        ],
         "versions": [
             {
                 "versionExtra": "",
@@ -12821,7 +12967,10 @@
         "related": [],
         "partsExtra": "",
         "designer": "SkySaac",
-        "links": [],
+        "links": [
+            "https://en.wikipedia.org/wiki/Energia_(rocket)",
+            "http://www.buran.ru/htm/41-3.htm"
+        ],
         "stability": 3,
         "mocDescription": "The never build Energia 2 rocket",
         "rocketDescription": "",
@@ -12925,7 +13074,10 @@
         "internalColor": "Green",
         "mocDescription": "The rocket stages of this can be seperated. The payload fiaring holds some space for a small payload inside. An additional stand for the rocket is recommended. This MOC can be completely build out of Lego bricks.",
         "rocketDescription": "The OmegA rocket was a project by Northrop Grumman Space Systems. It consisted of mutiple solid stages and a cryogenic, RL-10 driven upper stage. The development ceised development in 2020. The rocket would have been 59.84 meters high with a diameter of 3.71 meters on the first two stages.",
-        "links": [],
+        "links": [
+            "https://en.wikipedia.org/wiki/OmegA",
+            "https://www.bernd-leitenberger.de/omegA.shtml"
+        ],
         "stabilityExtra": "",
         "company": "",
         "difficulty": -1,

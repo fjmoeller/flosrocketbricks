@@ -62,7 +62,8 @@
         "company": "Latitude",
         "region": "France",
         "links": [
-            "https://www.latitude.eu/zephyr"
+            "https://www.latitude.eu/zephyr",
+            "https://europeanspaceflight.com/latitude-announces-new-variant-of-its-zephyr-launch-vehicle/"
         ],
         "type": "rocket",
         "id": 184,
@@ -73,7 +74,7 @@
         "lastupdate": "2023-12-12",
         "dateCreated": "2021-12-12",
         "related": [],
-        "updateMessage": "",
+        "updateMessage": "This MOCs dimensions are outdated. It will get an update in the future!",
         "mocDescription": "This is a MOC of the Zephyr rocket. The first and second stage can be separated from one another.",
         "rocketDescription": "The Zephyr rocket is a liquid propelled orbital rocet that is being by the French company Latitude. It is supposed to have two stages and bring up to 100kg into low earth orbit.",
         "internalColor": "-",

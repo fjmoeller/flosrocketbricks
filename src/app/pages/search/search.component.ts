@@ -17,9 +17,9 @@ export class SearchComponent implements OnInit {
   sortingCategory: string = "Date";
   sortingDirection: number = -1;
 
-  tagRegions: FrontTag[] = [{ tagId: "", tagName: "All Regions", selected: true }, { tagId: "China", tagName: "China", selected: false }, { tagId: "Europe", tagName: "Europe", selected: false }, { tagId: "France", tagName: "France", selected: false }, { tagId: "Germany", tagName: "Germany", selected: false }, { tagId: "Japan", tagName: "Japan", selected: false }, { tagId: "New Zeeland", tagName: "New Zeeland", selected: false }, { tagId: "North Korea", tagName: "North Korea", selected: false }, { tagId: "Russia", tagName: "Russia", selected: false }, { tagId: "South Korea", tagName: "South Korea", selected: false },{ tagId: "USSR", tagName: "USSR", selected: false }, { tagId: "Ukraine", tagName: "Ukraine", selected: false }, { tagId: "United Kingdom", tagName: "United Kingdom", selected: false }, { tagId: "USA", tagName: "USA", selected: false }];
+  tagRegions: FrontTag[] = [{ tagId: "", tagName: "All Regions", selected: true }, { tagId: "Australia", tagName: "Australia", selected: false }, { tagId: "China", tagName: "China", selected: false }, { tagId: "Europe", tagName: "Europe", selected: false }, { tagId: "France", tagName: "France", selected: false }, { tagId: "Germany", tagName: "Germany", selected: false }, { tagId: "Japan", tagName: "Japan", selected: false }, { tagId: "New Zeeland", tagName: "New Zeeland", selected: false }, { tagId: "North Korea", tagName: "North Korea", selected: false }, { tagId: "Russia", tagName: "Russia", selected: false }, { tagId: "South Korea", tagName: "South Korea", selected: false }, { tagId: "USSR", tagName: "USSR", selected: false }, { tagId: "Ukraine", tagName: "Ukraine", selected: false }, { tagId: "United Kingdom", tagName: "United Kingdom", selected: false }, { tagId: "USA", tagName: "USA", selected: false }];
   tagTypes: FrontTag[] = [{ tagId: "", tagName: "All Types", selected: true }, { tagId: "rocket", tagName: "Rocket", selected: false }, { tagId: "launchpad", tagName: "Launchpad", selected: false }, { tagId: "spacecraft", tagName: "Spacecraft", selected: false }, { tagId: "spacestation", tagName: "Space Station", selected: false }, { tagId: "other", tagName: "Other", selected: false }];
-  tagScales: FrontTag[] = [{ tagId: "", tagName: "All Scales", selected: true }, { tagId: "35", tagName: "1:35", selected: false },{ tagId: "40", tagName: "1:40", selected: false },{ tagId: "110", tagName: "1:110", selected: false },{ tagId: "220", tagName: "1:220", selected: false }, { tagId: "350", tagName: "1:350", selected: false }];
+  tagScales: FrontTag[] = [{ tagId: "", tagName: "All Scales", selected: true }, { tagId: "35", tagName: "1:35", selected: false }, { tagId: "40", tagName: "1:40", selected: false }, { tagId: "110", tagName: "1:110", selected: false }, { tagId: "220", tagName: "1:220", selected: false }, { tagId: "350", tagName: "1:350", selected: false }];
 
   mocs: Moc[] = [];
 
@@ -84,7 +84,7 @@ export class SearchComponent implements OnInit {
     if (this.searchInput != "") {
       tempMocs = tempMocs.filter((moc: Moc) =>
         moc.title.toLowerCase().indexOf(this.searchInput.toLowerCase()) >= 0
-        || moc.altTitles.some(title => title.toLowerCase().indexOf(this.searchInput.toLowerCase()) >= 0 )
+        || moc.altTitles.some(title => title.toLowerCase().indexOf(this.searchInput.toLowerCase()) >= 0)
       );
     }
 

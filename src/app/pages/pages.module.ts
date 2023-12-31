@@ -12,12 +12,14 @@ import { AboutComponent } from './about/about.component';
 import { BlogOverviewComponent } from './blog-overview/blog-overview.component';
 import { CollectionComponent } from './collection/collection.component';
 import { OrbiterComponent } from './orbiter/orbiter.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
 @NgModule({
   declarations: [
-    OrbiterComponent
+    OrbiterComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

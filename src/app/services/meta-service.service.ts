@@ -53,7 +53,7 @@ export class MetaServiceService {
 
   setDefaultTags(title: string, url: string): void {
     let desc: string = "A website containing instructions and digital files of MOCs by me, completely for free!";
-    let image: string = "https://flosrocketbricks.com/assets/logo.png";
+    let image: string = "assets/logo.png";
 
     this.setAllTags(title, desc, url, image);
   }

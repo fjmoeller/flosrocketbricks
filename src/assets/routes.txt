@@ -190,3 +190,4 @@
 /moc/185/maia/
 /moc/186/eris-block-1/
 /about/
+/404/

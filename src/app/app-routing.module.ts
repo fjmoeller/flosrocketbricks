@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'collections/.', component: CollectionOverviewComponent },
   { path: 'collection/:id/:name/.', component: CollectionComponent },
   { path: 'orbiter/.', component: OrbiterComponent },
+  { path: '404/.', component: NotFoundComponent },
   { path: '', component: StartComponent },
   { path: '**', component: NotFoundComponent }
 ];

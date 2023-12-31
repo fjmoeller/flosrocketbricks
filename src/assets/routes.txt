@@ -188,4 +188,5 @@
 /moc/183/delta-ii-7925-gps-2r/
 /moc/184/zephyr/
 /moc/185/maia/
+/moc/186/eris-block-1/
 /about/

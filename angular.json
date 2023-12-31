@@ -25,7 +25,8 @@
             "inlineStyleLanguage": "sass",
             "assets": [
               "src/assets",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/favicon.png"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",

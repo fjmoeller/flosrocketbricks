@@ -20,7 +20,6 @@ const __stripTrailingSlash = (Location as any).stripTrailingSlash;
 };
 
 const routes: Routes = [
-  { path: 'moc/:id/:name', component: BlogOverviewComponent },
   { path: 'moc/:id/:name/.', component: MocComponent },
   { path: 'about/.', component: AboutComponent },
   { path: 'search/.', component: SearchComponent },

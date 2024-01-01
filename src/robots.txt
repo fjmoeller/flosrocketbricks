@@ -1,9 +1,5 @@
 User-agent: *
 Disallow: /search
-Disallow: /moc
-Allow: /moc/*/*/
-Disallow: /collection
-Allow: /collection/*/*/
 
 Sitemap: https://flosrocketbricks.com/assets/sitemap.xml
 Sitemap: https://flosrocketbricks.com/assets/sitemap.txt

@@ -11,7 +11,7 @@
         "type": "rocket",
         "id": 187,
         "title": "Proton-K Kristal Module",
-        "altTitles": [],
+        "altTitles": ["Proton K Kristal Module"],
         "tags": [],
         "designer": "SkySaac",
         "lastupdate": "2024-01-01",
@@ -2223,9 +2223,9 @@
         ],
         "type": "rocket",
         "id": 153,
-        "title": "Proton K Zond",
+        "title": "Proton-K Zond",
         "altTitles": [
-            "Proton K 7K-L1"
+            "Proton-K 7K-L1","Proton K Zond","Proton K 7K-L1"
         ],
         "tags": [],
         "designer": "SkySaac",
@@ -2236,8 +2236,8 @@
             152
         ],
         "updateMessage": "",
-        "mocDescription": "This is a MOC of the Proton K rocket in the Zond confirguration. The first three stages of the rocket can be separated. The fourth stage is inside the cylinder on top of the third stage.",
-        "rocketDescription": "Proton K was a Soviet launch vehicle. The Proton K Zond variant launched a number of Zond spacecrafts into space and around the moon.",
+        "mocDescription": "This is a MOC of the Proton-K rocket in the Zond confirguration. The first three stages of the rocket can be separated. The fourth stage is inside the cylinder on top of the third stage.",
+        "rocketDescription": "Proton-K was a Soviet launch vehicle. The Proton-K Zond variant launched a number of Zond spacecrafts into space and around the moon.",
         "internalColor": "Green",
         "scale": "110",
         "parts": 814,

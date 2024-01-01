@@ -12,7 +12,7 @@ export class IoFileService {
   private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
 
   //base URL from where to fetch the part files to get around stuff
-  private backendFetchUrl: string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
+  private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
 
   constructor(private ldrawColorService: LdrawColorService) { }
 

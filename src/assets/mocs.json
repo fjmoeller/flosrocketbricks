@@ -1702,7 +1702,7 @@
         "difficultyExtra": ""
     },
     {
-        "company": "",
+        "company": "Boeing",
         "region": "USA",
         "links": [
             "https://en.wikipedia.org/wiki/Boeing_X-37",
@@ -1714,7 +1714,7 @@
         "altTitles": [],
         "tags": [],
         "designer": "SkySaac",
-        "lastupdate": "2023-11-16",
+        "lastupdate": "2024-01-08",
         "dateCreated": "2023-11-16",
         "related": [],
         "updateMessage": "",
@@ -1727,12 +1727,26 @@
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/usa/x-37b/110-x-37b-v1.0.png",
+        "smallCoverImage": "assets/mocImages/110/usa/x-37b/110-x-37b-v1.1.png",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.0/X-37B_V1.0_1.png",
-            "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.0/X-37B_V1.0_2.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.1/X-37B_V1.1_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.1/X-37B_V1.1_2.png"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.1/X-37B_V1.1.io",
+                        "name": "X-37B_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

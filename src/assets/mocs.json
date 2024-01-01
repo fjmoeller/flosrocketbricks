@@ -1,6 +1,73 @@
 [
     {
         "company": "",
+        "region": "USSR",
+        "links": [
+            "http://www.b14643.de/Spacerockets_1/East_Europe_2/Proton/Description/Frame.htm",
+            "https://en.wikipedia.org/wiki/Proton_(rocket_family)",
+            "https://www.russianspaceweb.com/proton.html",
+            "http://www.astronautix.com/p/proton.html"
+        ],
+        "type": "rocket",
+        "id": 187,
+        "title": "Proton-K Kristal Module",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-01-01",
+        "dateCreated": "2022-01-08",
+        "related": [97],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Proton-K rocket with the fairing of MIRs Kristal module on top. The three stages of the rocket can be separated from one another. The fairing holds just a little bit of space inside for something to fit in, it's not much though.",
+        "rocketDescription": "The Proton-K rocket was a Soviet and now is a Russian orbital launch vehicle with quite a long history. With the first orbital flight being in 1965 it has been flying to space to this day, although it has seen multiple upgrades over the years. The Proton rocket used for MIRs Kristal module was a normal Proton-K rocket without any special upper stages.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 857,
+        "dimensions": "7.2x7.1x51.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/ussr/proton/110-proton-mir-module-v2.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/ussr/proton/mir/v2.0/Proton_MIR_Module_V2.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/proton/mir/v2.0/Proton_MIR_Module_V2.0_2.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/proton/mir/v2.0/Proton_MIR_Module_V2.0_pub.io",
+                        "name": "Proton_MIR_Module_V2.0_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the rocket",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/proton/mir/v2.0/Proton_MIR_Module_V2.0_instructions.pdf",
+                        "name": "Proton_MIR_Module_V2.0_instructions.pdf"
+                    }
+                ],
+                "version": "V2.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
         "region": "Australia",
         "links": [
             "https://www.gspace.com/launch",
@@ -2170,7 +2237,7 @@
         ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Proton K rocket in the Zond confirguration. The first three stages of the rocket can be separated. The fourth stage is inside the cylinder on top of the third stage.",
-        "rocketDescription": "Proton K was a Soviet launch vehicle. The Proton K Zond variant launched a number of Zond spacecrafts into sapce and around the moon.",
+        "rocketDescription": "Proton K was a Soviet launch vehicle. The Proton K Zond variant launched a number of Zond spacecrafts into space and around the moon.",
         "internalColor": "Green",
         "scale": "110",
         "parts": 814,

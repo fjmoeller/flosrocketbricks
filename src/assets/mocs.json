@@ -1727,10 +1727,10 @@
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/usa/x-37b/110-x-37b-v1.1.png",
+        "smallCoverImage": "assets/mocImages/110/usa/x-37b/110-x-37b-v1.1.jpg",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.1/X-37B_V1.1_1.png",
-            "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.1/X-37B_V1.1_2.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.1/X-37B_V1.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/x-37b/v1.1/X-37B_V1.1_2.jpg"
         ],
         "versions": [
             {

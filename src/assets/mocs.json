@@ -2137,6 +2137,13 @@
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/ussr/vostok/vostok-k/vostok-1/v2.2/Vostok-K_Vostok_1_V2.2.io",
                         "name": "Vostok-K_Vostok_1_V2.2.io"
+                    },
+                    {
+                        "description": "The PDF instructions of the rocket",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/vostok/vostok-k/vostok-1/v2.2/Vostok-K_Vostok_1_V2.2_instructions.pdf",
+                        "name": "Vostok-K_Vostok_1_V2.2_instructions.pdf"
                     }
                 ],
                 "version": "V2.2"

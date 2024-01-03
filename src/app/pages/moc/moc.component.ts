@@ -26,7 +26,7 @@ export class MocComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
       this.showViewer = false;
-      const id = Number(paramMap.get('id')) || 0;
+      const id = Number(paramMap.get('id')) || -1;
       const foundMoc = this.mocGrabberService.getMoc(id);
       if (foundMoc != undefined && this.moc != null) {
         this.moc = foundMoc;

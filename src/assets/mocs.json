@@ -11946,14 +11946,28 @@
         "related": [
             160
         ],
-        "parts": 867,
+        "parts": 871,
         "id": 16,
         "stability": -1,
-        "lastupdate": "2023-11-07",
+        "lastupdate": "2024-01-05",
         "difficultyExtra": "",
         "type": "launchpad",
         "partsExtra": "Can be build completely out of Lego bricks.",
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "version": "V3.1",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "name": "Epsilon_Launchpad_V3.1.io",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/launchpad/v3.1/Epsilon_Launchpad_V3.1.io"
+                    }
+                ]
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

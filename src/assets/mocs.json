@@ -5374,8 +5374,8 @@
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/antares/antares-230/plus/v2.0/Antares_230_V2.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/antares/antares-230/plus/v2.0/Antares_230_V2.0_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/antares/230/plus/v2.0/Antares_230_V2.0_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/antares/230/plus/v2.0/Antares_230_V2.0_3.png"
         ],
         "versions": [
             {
@@ -5386,8 +5386,15 @@
                         "description": "The digital io file",
                         "type": "io",
                         "allowViewer": false,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/antares/antares-230/plus/v2.0/Antares_230_V2.0.io",
-                        "name": "Antares_230_V2.0.io"
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/antares/230/plus/v2.0/Antares_230_V2.0_pub.io",
+                        "name": "Antares_230_V2.0_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/antares/230/plus/v2.0/Antares_230_V2.0_instructions.pdf",
+                        "name": "Antares_230_V2.0_instructions.pdf"
                     }
                 ],
                 "version": "V2.0"

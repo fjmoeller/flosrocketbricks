@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'orbiter/.', component: OrbiterComponent },
   { path: '404/.', component: NotFoundComponent },
   { path: '', component: StartComponent },
-  { path: '**', redirectTo: '/404' }
+  { path: '**', redirectTo: '/404/.' }
 ];
 
 @NgModule({

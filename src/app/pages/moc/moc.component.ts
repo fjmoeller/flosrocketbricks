@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Moc, Version } from '../../model/classes';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
@@ -19,7 +19,7 @@ export class MocComponent implements OnInit, OnDestroy {
   noError: boolean = true;
   showViewer: boolean = false;
 
-  constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
+  constructor(private router: Router,private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
   }
 
@@ -32,11 +32,10 @@ export class MocComponent implements OnInit, OnDestroy {
         this.moc = foundMoc;
         this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription + " " +this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
         this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 5);
-        this.noError = true;
       }
       else {
-        this.noError = false;
         console.log("Moc with id %s not found", id);
+        this.router.navigate(['/404/']);
       }
     });
   }

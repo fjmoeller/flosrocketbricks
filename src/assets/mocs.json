@@ -2641,7 +2641,7 @@
             144,
             99
         ],
-        "updateMessage": "Small update coming soon",
+        "updateMessage": "",
         "mocDescription": "This is a MOC of the Ariane 6 rocket in its 62 configuration and with a small payload fairing, the same configuration as will be used for the first launch.",
         "rocketDescription": "The Ariane 6 rocket is an orbital rocket by Arianegroup. It has up to four solid boosters and a hydrolox core and upper stage. The 62 variant has two boosters. The first launch is expected to happen in 2024.",
         "internalColor": "Green",
@@ -12730,7 +12730,7 @@
     },
     {
         "internalColor": "Green",
-        "updateMessage": "",
+        "updateMessage": "This MOC will get an update once we know what the final flight hardware will look like!",
         "links": [],
         "parts": 188,
         "designer": "SkySaac",

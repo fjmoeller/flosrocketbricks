@@ -1,6 +1,7 @@
 import shutil
 import os
 import sys
+from zipfile import ZipFile
 
 parts = {}
 submodels = []
@@ -46,17 +47,38 @@ def collectParts(filepath):
     return "".join(fileContent)
 
 
-collectParts(sys.argv[1])
+if len(sys.argv) == 1 or sys.argv[1] == None or sys.argv[1] == "":
+    current_dir = os.getcwd()
+    for file in os.listdir(current_dir):
+        if file.endswith(".io"):
+            print("io file found: "+file)
+            filepath = os.path.join(current_dir, file)
+            with ZipFile(filepath, 'r') as zObject:
+                zObject.extract("model.ldr", path=os.getcwd())
+            collectParts("model.ldr")
+            print("Total amount of "+str(len(parts))+ " parts found.")
+            actualParts = ["\n0 NOSUBMODEL\n"]
+            for part in parts:
+                if not part in submodels:
+                    actualParts.append("0 FILE "+part+"\n") #todo is part right here?
+                    actualParts.append(parts[part])
+                    actualParts.append("0 NOFILE\n")
+                    print("Added: "+part+" to file")
+            with open(file[:-2]+"ldr", 'a', encoding="utf8") as ldrmoc:
+                ldrmoc.write("\n".join(actualParts))
+            os.remove("model.ldr")
+            parts = {}
+            submodels = []
+else:
+    collectParts(sys.argv[1])
+    print("Total amount of "+str(len(parts))+ " parts found.")
+    actualParts = ["\n0 NOSUBMODEL\n"]
+    for part in parts:
+        if not part in submodels:
+            actualParts.append("0 FILE "+part+"\n") #todo is part right here?
+            actualParts.append(parts[part])
+            actualParts.append("0 NOFILE\n")
+            print("Added: "+part+" to file")
 
-print("Total amount of "+str(len(parts))+ " parts found.")
-
-actualParts = ["\n0 NOSUBMODEL\n"]
-for part in parts:
-    if not part in submodels:
-        actualParts.append("0 FILE "+part+"\n") #todo is part right here?
-        actualParts.append(parts[part])
-        actualParts.append("0 NOFILE\n")
-        print("Added: "+part+" to file")
-
-with open(sys.argv[1], 'a', encoding="utf8") as ldrmoc:
-    ldrmoc.write("\n".join(actualParts))
+    with open(sys.argv[1], 'a', encoding="utf8") as ldrmoc:
+        ldrmoc.write("\n".join(actualParts))

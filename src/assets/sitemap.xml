@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/189/h-iib/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h/h-ii/h-iib/110-h-iib-v2.2.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/188/m-v/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/mu/m-v/110-m-v-v3.2.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/187/proton-k-kristal-module/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/proton/proton-k/mir/kristal/110-proton-mir-module-v2.0.jpg</image:loc>

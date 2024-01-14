@@ -190,5 +190,7 @@
 /moc/185/maia/
 /moc/186/eris-block-1/
 /moc/187/proton-k-kristal-module/
+/moc/188/m-v/
+/moc/189/h-iib/
 /about/
 /404/

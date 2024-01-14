@@ -186,6 +186,8 @@ https://flosrocketbricks.com/moc/184/zephyr/
 https://flosrocketbricks.com/moc/185/maia/
 https://flosrocketbricks.com/moc/186/eris-block-1/
 https://flosrocketbricks.com/moc/187/proton-k-kristal-module/
+https://flosrocketbricks.com/moc/188/m-v/
+https://flosrocketbricks.com/moc/189/h-iib/
 https://flosrocketbricks.com/collection/3/ariane/
 https://flosrocketbricks.com/collection/2/atlas/
 https://flosrocketbricks.com/collection/0/long-march/

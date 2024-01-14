@@ -1,6 +1,127 @@
 [
     {
         "company": "",
+        "region": "Japan",
+        "links": [
+            "https://en.wikipedia.org/wiki/H-IIB",
+            "https://www.raumfahrer.net/h-iib/",
+            "https://global.jaxa.jp/projects/rockets/h2b/",
+            "http://www.b14643.de/Spacerockets_1/Japan/H-IIB/Description/Frame.htm"
+        ],
+        "type": "rocket",
+        "id": 189,
+        "title": "H-IIB",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-01-14",
+        "dateCreated": "2021-12-23",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the H-IIB rocket. The second stage and the boosters can be separated from the core stage. The two fairing halfes contain space for a payload.",
+        "rocketDescription": "The H-IIB rocket is a Japanese orbital rocket that has flown a total of nine times. The core and the second stage are hydrolox fueled. It has four solid fueled boosters. The first launch happened in 2009 and the last one in 2020. This rocket was only used the transport the Japanese HTV vehicle to the space station. It has now been replaced by the H3 rocket.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1270,
+        "dimensions": "9.6x9.6x52.3cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/japan/h/h-ii/h-iib/110-h-iib-v2.2.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/japan/h/h-ii/h-iib/v2.2/H-IIB_V2.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h/h-ii/h-iib/v2.2/H-IIB_V2.2_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h/h-ii/h-iib/v2.2/H-IIB_V2.2_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/japan/h/h-ii/h-iib/v2.2/H-IIB_V2.2_4.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/japan/h/h-ii/h-iib/v2.2/H-IIB_V2.2.io",
+                        "name": "H-IIB_V2.2.io"
+                    }
+                ],
+                "version": "V2.2"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": "Japan",
+        "links": [
+            "https://en.wikipedia.org/wiki/M-V",
+            "https://www.isas.jaxa.jp/en/missions/launch_vehicles/m-v.html",
+            "https://global.jaxa.jp/projects/rockets/m_v/index.html"
+        ],
+        "type": "rocket",
+        "id": 188,
+        "title": "M-V",
+        "altTitles": ["Mu-5"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-01-14",
+        "dateCreated": "2024-01-14",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the M-V rocket. The three stages can be seperated from one another. The optional fourth stage is not included in this MOC. The fairing has no space for a payload.",
+        "rocketDescription": "The M-V rocket was a Japanese orbital rocket which was first launched in 1997 and with its last launch happening in 2006. It flew a total of 7 missions with one failure and the rest being successful. The M-V rocket has three solid fueled stages as well as an optional fourth stage.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 157,
+        "dimensions": "4.3x4.3x28.3cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/japan/mu/m-v/110-m-v-v3.2.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/japan/mu/m-v/v3.2/M-V_V3.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/japan/mu/m-v/v3.2/M-V_V3.2_2.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/japan/mu/m-v/v3.2/M-V_V3.2.io",
+                        "name": "M-V_V3.2.io"
+                    }
+                ],
+                "version": "V3.2"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
         "region": "USSR",
         "links": [
             "http://www.b14643.de/Spacerockets_1/East_Europe_2/Proton/Description/Frame.htm",

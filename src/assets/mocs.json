@@ -12733,7 +12733,28 @@
         "company": "",
         "versions": [
             {
-                "changelog": "- added internal color",
+                "changelog": "",
+                "versionExtra": "",
+                "version": "V2.2",
+                "files": [
+                    {
+                        "name": "Nova_V2.2_pub.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/nova/v2.2/Nova_V2.2_pub.io",
+                        "type": "io",
+                        "allowViewer": true,
+                        "description": "The digital io file"
+                    },
+                    {
+                        "name": "Nova_V2.2_instructions.pdf",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/nova/v2.2/Nova_V2.2_instructions.pdf",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "description": "The digital io file"
+                    }
+                ]
+            },
+            {
+                "changelog": "",
                 "versionExtra": "",
                 "version": "V2.1",
                 "files": [

@@ -12693,7 +12693,7 @@
     },
     {
         "internalColor": "Green",
-        "lastupdate": "2023-03-06",
+        "lastupdate": "2024-01-16",
         "links": [
             "https://en.wikipedia.org/wiki/Stoke_Space",
             "https://www.stokespace.com/rocket/",
@@ -12741,7 +12741,7 @@
                         "name": "Nova_V2.2_pub.io",
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/nova/v2.2/Nova_V2.2_pub.io",
                         "type": "io",
-                        "allowViewer": true,
+                        "allowViewer": false,
                         "description": "The digital io file"
                     },
                     {

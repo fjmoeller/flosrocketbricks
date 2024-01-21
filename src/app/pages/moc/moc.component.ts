@@ -26,9 +26,9 @@ export class MocComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
       this.showViewer = false;
-      const id = Number(paramMap.get('id')) || -1;
+      const id = Number(paramMap.get('id')) || 0;
       const foundMoc = this.mocGrabberService.getMoc(id);
-      if (foundMoc != undefined && this.moc != null) {
+      if (foundMoc != undefined) {
         this.moc = foundMoc;
         this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription + " " +this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
         this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 5);

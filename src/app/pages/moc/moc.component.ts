@@ -19,7 +19,7 @@ export class MocComponent implements OnInit, OnDestroy {
   noError: boolean = true;
   showViewer: boolean = false;
 
-  constructor(private router: Router,private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
+  constructor(private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
   }
 
@@ -30,7 +30,7 @@ export class MocComponent implements OnInit, OnDestroy {
       const foundMoc = this.mocGrabberService.getMoc(id);
       if (foundMoc != undefined) {
         this.moc = foundMoc;
-        this.metaService.setAllTags(this.moc.title + " - FlosRocketBricks", this.moc.mocDescription + " " +this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
+        this.metaService.setAllTags(this.moc.title + " 1:" + this.moc.scale + " - FlosRocketBricks", this.moc.mocDescription + " " + this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
         this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 5);
       }
       else {
@@ -51,20 +51,20 @@ export class MocComponent implements OnInit, OnDestroy {
   }
 
   async downloadXml(filelink: string, filename: string) {
-    const data = await this.fileExportService.getXml(filelink,this.moc.internalColor);
-    const blob = new Blob([ data ], { type: 'application/xml' });
+    const data = await this.fileExportService.getXml(filelink, this.moc.internalColor);
+    const blob = new Blob([data], { type: 'application/xml' });
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);
-    a.download = filename.split(".io")[0]+".xml";
+    a.download = filename.split(".io")[0] + ".xml";
     a.click();
   }
 
   async downloadCsv(filelink: string, filename: string) {
-    const data = await this.fileExportService.getCsv(filelink,this.moc.internalColor);
-    const blob = new Blob([ data ], { type: 'text/csv' });
+    const data = await this.fileExportService.getCsv(filelink, this.moc.internalColor);
+    const blob = new Blob([data], { type: 'text/csv' });
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);
-    a.download = filename.split(".io")[0]+".csv";
+    a.download = filename.split(".io")[0] + ".csv";
     a.click();
   }
 

@@ -1,5 +1,63 @@
 [
     {
+        "company": "Intuitive Machines",
+        "region": "USA",
+        "links": [
+            "https://www.intuitivemachines.com/im-1",
+            "https://en.wikipedia.org/wiki/Intuitive_Machines",
+            "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=IM-1-NOVA"
+        ],
+        "type": "spacecraft",
+        "id": 190,
+        "title": "Nova-C",
+        "altTitles": ["IM-1"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-02-15",
+        "dateCreated": "2024-02-15",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Nova-C moon lander.",
+        "rocketDescription": "The Nova-C lander is a moon lander by the American company Intuitive Machines. The first mission IM-1 is planned to land on the moon on the 22nd of February 2024.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 34,
+        "dimensions": "3.4x3.9x4.6cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/nova-c/im-1/110-nova-c-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/nova-c/im-1/v1.0/Nova-C_V1.0.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/nova-c/im-1/v1.0/Nova-C_V1.0.io",
+                        "name": "Nova-C_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "",
         "region": "Japan",
         "links": [

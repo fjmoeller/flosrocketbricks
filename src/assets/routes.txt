@@ -192,5 +192,6 @@
 /moc/187/proton-k-kristal-module/
 /moc/188/m-v/
 /moc/189/h-iib/
+/moc/190/nova-c/
 /about/
 /404/

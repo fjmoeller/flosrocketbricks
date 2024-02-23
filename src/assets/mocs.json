@@ -12,7 +12,7 @@
         "title": "Nova-C",
         "altTitles": ["IM-1"],
         "tags": [],
-        "designer": "SkySaac",
+        "designer": "SkySaac, Adam Wilde",
         "lastupdate": "2024-02-23",
         "dateCreated": "2024-02-15",
         "related": [],
@@ -52,7 +52,7 @@
                     {
                         "description": "The digital io file of the spacecraft",
                         "type": "io",
-                        "allowViewer": true,
+                        "allowViewer": false,
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/nova-c/im-1/v1.1/Nova-C_V1.1.io",
                         "name": "Nova-C_V1.1.io"
                     }

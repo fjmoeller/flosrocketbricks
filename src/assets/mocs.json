@@ -13,22 +13,22 @@
         "altTitles": ["IM-1"],
         "tags": [],
         "designer": "SkySaac",
-        "lastupdate": "2024-02-15",
+        "lastupdate": "2024-02-23",
         "dateCreated": "2024-02-15",
         "related": [],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Nova-C moon lander.",
-        "rocketDescription": "Nova-C is a moon lander by the private American company Intuitive Machines. The first mission IM-1 is planned to land on the moon on the 22nd of February 2024. It has been launched using a Falcon 9 on the 15th of February 2024.",
+        "rocketDescription": "Nova-C is a moon lander by the private American company Intuitive Machines. The first mission IM-1 successfully landed on the moon on February 22nd after being launched using a Falcon 9 on the 15th of February.",
         "internalColor": "-",
         "scale": "110",
-        "parts": 34,
-        "dimensions": "3.4x3.9x4.6cm",
+        "parts": 38,
+        "dimensions": "3.4x3.9x5.2cm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/usa/nova-c/im-1/110-nova-c-v1.0.jpg",
+        "smallCoverImage": "assets/mocImages/110/usa/nova-c/im-1/110-nova-c-v1.1.jpg",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/usa/nova-c/im-1/v1.0/Nova-C_V1.0.jpg"
+            "https://files.flosrocketbackend.com/mocs/110/usa/nova-c/im-1/v1.1/Nova-C_V1.1_1.jpg"
         ],
         "versions": [
             {
@@ -44,6 +44,20 @@
                     }
                 ],
                 "version": "V1.0"
+            },
+            {
+                "changelog": "Improved details on the lander such as the tilted solar panel at the top.",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/nova-c/im-1/v1.1/Nova-C_V1.1.io",
+                        "name": "Nova-C_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
             }
         ],
         "companyExtra": "",

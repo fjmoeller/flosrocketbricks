@@ -2140,8 +2140,8 @@
             86
         ],
         "updateMessage": "",
-        "mocDescription": "This is a MOC of the X-33 spaceplane. The different flaps can be moved. The small payload compartment doors can be opened. A few tiles can be taken of to revela the landing gear.",
-        "rocketDescription": "The X-33 was a proposed suborbital demonstrator for the VentureStare SSTO. Unlike VentureStar it was only supposed to fly suborbital trajectories. It was cancelled inthe early 2000s.",
+        "mocDescription": "This is a MOC of the X-33 spaceplane. The different flaps can be moved. The small payload compartment doors can be opened. A few tiles on the bottom can be taken of to reveal the landing gear.",
+        "rocketDescription": "The X-33 was a proposed suborbital demonstrator for the VentureStare SSTO. Unlike VentureStar it was only supposed to fly suborbital trajectories. It was cancelled in the early 2000s.",
         "internalColor": "-",
         "scale": "110",
         "parts": 528,

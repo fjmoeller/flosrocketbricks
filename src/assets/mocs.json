@@ -6029,7 +6029,7 @@
         "title": "Ariane 5 ECA VA261",
         "parts": 1309,
         "partsExtra": "Can be build completely out of Lego bricks. Some hoses need to be cut to the correct lengths as shown on the renders.",
-        "designer": "SkySaac",
+        "designer": "SkySaac, MoppeW40k",
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
@@ -7134,7 +7134,7 @@
         "difficultyExtra": "",
         "designerExtra": "",
         "companyExtra": "",
-        "designer": "SkySaac",
+        "designer": "SkySaac, MoppeW40k",
         "fanPictures": [],
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_1.png",
@@ -7461,7 +7461,7 @@
         "title": "Ariane 5G",
         "stability": -1,
         "stabilityExtra": "",
-        "designer": "SkySaac",
+        "designer": "SkySaac, MoppeW40k",
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
@@ -11431,7 +11431,7 @@
         "difficultyExtra": "",
         "designerExtra": "",
         "companyExtra": "",
-        "designer": "SkySaac",
+        "designer": "SkySaac, MoppeW40k",
         "fanPictures": [],
         "pictures": [
             "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_1.png",
@@ -12079,7 +12079,7 @@
         "stability": 3
     },
     {
-        "designer": "SkySaac",
+        "designer": "SkySaac, MoppeW40k",
         "updateMessage": "",
         "links": [],
         "versions": [

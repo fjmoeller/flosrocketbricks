@@ -65,7 +65,8 @@ if len(sys.argv) == 1 or sys.argv[1] == None or sys.argv[1] == "":
                     actualParts.append("0 NOFILE\n")
                     print("Added: "+part+" to file")
             with open(file[:-2]+"ldr", 'a', encoding="utf8") as ldrmoc:
-                ldrmoc.write("\n".join(actualParts))
+                with open("model.ldr", 'r', encoding="utf8") as origfile:
+                    ldrmoc.write(origfile.read() + "\n".join(actualParts))
             os.remove("model.ldr")
             parts = {}
             submodels = []

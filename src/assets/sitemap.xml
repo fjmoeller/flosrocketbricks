@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/193/kairos/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/kairos/110-kairos-v1.0.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/192/helios/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/helios/110-helios-v1.0.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/191/rfa-one/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/germany/rfa/rfa-one/110-rfa-one-v1.2.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/190/nova-c/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/nova-c/im-1/110-nova-c-v1.1.jpg</image:loc>
@@ -856,7 +874,7 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/52/shenzhou/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/shenzhou/110-shenzhou-v3.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/shenzhou/110-shenzhou-v3.1.jpg</image:loc>
     </image:image>
   </url>
   <url>

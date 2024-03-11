@@ -193,5 +193,8 @@
 /moc/188/m-v/
 /moc/189/h-iib/
 /moc/190/nova-c/
+/moc/191/rfa-one/
+/moc/192/helios/
+/moc/193/kairos/
 /about/
 /404/

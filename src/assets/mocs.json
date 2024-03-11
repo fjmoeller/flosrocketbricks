@@ -1,5 +1,185 @@
 [
     {
+        "company": "Space One",
+        "region": "Japan",
+        "links": [
+            "https://www.space-one.co.jp/index_e.html",
+            "https://en.wikipedia.org/wiki/KAIROS_(rocket)"
+        ],
+        "type": "rocket",
+        "id": 193,
+        "title": "Kairos",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-03-11",
+        "dateCreated": "2024-03-11",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Kairos rocket.",
+        "rocketDescription": "Kairos is a smallsat launcher developed by the Japanese company Space One. It has three solid fueled stages and can get up to 250kg of payload into LEO. The first launch is planned for early 2024.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 58,
+        "dimensions": "2.3x2.3x16.3cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/japan/kairos/110-kairos-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/japan/kairos/v1.0/Kairos_V1.0_1.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/japan/kairos/v1.0/Kairos_V1.0.io",
+                        "name": "Nova-C_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "Impulse Space",
+        "region": "USA",
+        "links": [
+            "https://www.impulsespace.com/helios"
+        ],
+        "type": "spacecraft",
+        "id": 192,
+        "title": "Helios",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-03-05",
+        "dateCreated": "2024-03-05",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Helios kick-stage.",
+        "rocketDescription": "It is developed by Impulse Space and is designed to fly on vehicles such as the Falcon 9. It is still in development and is supposed to debut in 2026.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 44,
+        "dimensions": "3.7x3.0x4.7cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/helios/110-helios-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/helios/v1.0/Helios_V1.0_1.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/helios/v1.0/Helios_V1.0.io",
+                        "name": "Helios_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "Rocket Factory Augsburg",
+        "region": "Germany",
+        "links": [
+            "https://www.rfa.space/rfa-one/",
+            "https://de.wikipedia.org/wiki/RFA_One",
+            "https://www.raumfahrer.net/tag/rfa-one/"
+        ],
+        "type": "rocket",
+        "id": 191,
+        "title": "RFA One",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-02-29",
+        "dateCreated": "2024-02-29",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the RFA One rocket. The first two stages can be staged. The fairing holds some space for a small payload.",
+        "rocketDescription": "RFA One is a smallsat launcher by the German company Rocket Factory Augsburg. It has three stages and is able to lift 1300kg into SSO. It is currently planned to launch in Q4 2024.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 167,
+        "dimensions": "2.4x2.6x28.3cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/germany/rfa/rfa-one/110-rfa-one-v1.2.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.2/RFA_One_V1.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.2/RFA_One_V1.2_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.2/RFA_One_V1.2_3.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.2/RFA_One_V1.2.io",
+                        "name": "RFA_One_V1.2.io"
+                    },
+                    {
+                        "description": "The digital io file of the frosted rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.2/RFA_One_Frosted_V1.2.io",
+                        "name": "RFA_One_Frosted_V1.2.io"
+                    }
+                ],
+                "version": "V1.2"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks. The frosted version has 169 parts.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "Intuitive Machines",
         "region": "USA",
         "links": [
@@ -9409,9 +9589,9 @@
         "rocketDescription": "The Shenzhou is a Chinese crewed spacecraft which can carry up to three people into low earth orbit. It first flew in 1999, weighs around 8 tons and is launched using a Long March 2F rocket from Jiuquan in China.",
         "company": "",
         "companyExtra": "",
-        "difficulty": 4,
+        "difficulty": 5,
         "difficultyExtra": "",
-        "lastupdate": "2023-04-28",
+        "lastupdate": "2024-03-10",
         "dateCreated": "2022-02-12",
         "related": [
             126,
@@ -9422,14 +9602,14 @@
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/china/shenzhou/110-shenzhou-v3.0.png",
-        "internalColor": "Green",
+        "smallCoverImage": "assets/mocImages/110/china/shenzhou/110-shenzhou-v3.1.jpg",
+        "internalColor": "-",
         "internalColorExtra": "",
-        "dimensions": "7.3x16.2x2.4cm",
+        "dimensions": "7.3x15.2x2.4cm",
         "dimensionsExtra": "",
         "tags": [],
         "altTitles": [],
-        "parts": 67,
+        "parts": 80,
         "partsExtra": "The stand has 51 parts. Both the spacecraft and the stand can be build completely out of Lego bricks, the spacecraft requires some printed pieces though.",
         "title": "Shenzhou",
         "stability": 4,
@@ -9438,9 +9618,9 @@
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/china/shenzhou/v3.0/Shenzhou_V3.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/china/shenzhou/v3.0/Shenzhou_V3.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/china/shenzhou/v3.0/Shenzhou_V3.0_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/china/shenzhou/v3.1/Shenzhou_V3.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/china/shenzhou/v3.1/Shenzhou_V3.1_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/china/shenzhou/v3.1/Shenzhou_V3.1_3.jpg"
         ],
         "versions": [
             {
@@ -9463,6 +9643,27 @@
                     }
                 ],
                 "version": "V3.0"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/shenzhou/v3.1/Shenzhou_V3.1.io",
+                        "name": "Shenzhou_V3.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the stand without the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/shenzhou/v3.0/Shenzhou_Stand_V3.0.io",
+                        "name": "Shenzhou_Stand_V3.0.io"
+                    }
+                ],
+                "version": "V3.1"
             }
         ]
     },

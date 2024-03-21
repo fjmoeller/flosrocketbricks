@@ -3752,7 +3752,7 @@
         "region": "Europe",
         "links": [
             "https://europeanspaceflight.com/rfa-led-consortium-submit-argo-for-esa-commercial-cargo-initiative/",
-            "https://www.rfa.space/"
+            "https://www.rfa.space/argo/"
         ],
         "type": "spacecraft",
         "id": 136,
@@ -3760,24 +3760,25 @@
         "altTitles": [],
         "tags": [],
         "designer": "SkySaac",
-        "lastupdate": "2023-09-20",
+        "lastupdate": "2024-03-21",
         "dateCreated": "2023-09-20",
         "related": [],
         "updateMessage": "",
-        "mocDescription": "This is a MOC of the Argo spacecraft. I will update this MOC as we get more renders and specifications of the planned spacecraft.",
-        "rocketDescription": "The Argo is a spacecraft submitted for the European Space Agency's Commercial Cargo Transportation Initiative by a consortium led by Rocket Factory Augsburg. It has a payload capacity of 3.4 tons and a total pressurized volume of 13 cubic metres.",
-        "internalColor": "-",
+        "mocDescription": "This is a MOC of the Argo spacecraft. There are three different stands compatible with this moc which are also provided in the files section. I will update this MOC as we get more renders and specifications of the planned spacecraft.",
+        "rocketDescription": "The Argo is a spacecraft submitted for the European Space Agencys Commercial Cargo Transportation Initiative by a consortium led by Rocket Factory Augsburg. It is supposed to be fully recoverable using an inflating heatshield on the back.",
+        "internalColor": "Green",
         "scale": "110",
-        "parts": 114,
-        "dimensions": "8.1x9.1x7.6cm",
+        "parts": 131,
+        "dimensions": "7.5x8x12.3cm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/europe/argo/110-argo-v1.2.png",
+        "smallCoverImage": "assets/mocImages/110/europe/argo/110-argo-v1.3.jpg",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.2/Argo_V1.2_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.2/Argo_V1.2_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/argo/v1.2/Argo_V1.2_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/germany/rfa/argo/v1.3/Argo_V1.3_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/germany/rfa/argo/v1.3/Argo_V1.3_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/germany/rfa/argo/v1.3/Argo_V1.3_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/germany/rfa/argo/v1.3/Argo_V1.3_4.jpg"
         ],
         "versions": [
             {
@@ -3842,6 +3843,41 @@
                     }
                 ],
                 "version": "V1.2"
+            },
+            {
+                "changelog": "Updated to the new spacecraft design",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/argo/v1.3/Argo_V1.3.io",
+                        "name": "Argo_V1.3.io"
+                    },
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/argo/v1.3/Argo_Germany_Stand_V1.3.io",
+                        "name": "Argo_Germany_Stand_V1.3.io"
+                    },
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/argo/v1.3/Argo_Europe_Stand_V1.3.io",
+                        "name": "Argo_Europe_Stand_V1.3.io"
+                    },
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/argo/v1.3/Argo_RFA_Stand_V1.3.io",
+                        "name": "Argo_RFA_Stand_V1.3.io"
+                    }
+                ],
+                "version": "V1.3"
             }
         ],
         "companyExtra": "",

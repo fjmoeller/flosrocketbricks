@@ -1,5 +1,61 @@
 [
     {
+        "company": "Rocket Factory Augsburg",
+        "region": "Germany",
+        "links": [
+            "https://www.rfa.space/"
+        ],
+        "type": "other",
+        "id": 194,
+        "title": "RFA Logo",
+        "altTitles": ["Rocket Factory Augsburg Logo"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-03-21",
+        "dateCreated": "2024-03-21",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the logo of Rocket Factory Augsburg (RFA).",
+        "rocketDescription": "",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 66,
+        "dimensions": "14.4x7.2x1.3cm",
+        "stability": 5,
+        "difficulty": 5,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/germany/rfa/logo/rfa-logo-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/germany/rfa/logo/v1.0/RFA_Logo_V1.0.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/logo/v1.0/RFA_Logo_V1.0.io",
+                        "name": "RFA_Logo_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "Space One",
         "region": "Japan",
         "links": [
@@ -3749,7 +3805,7 @@
     },
     {
         "company": "RFA",
-        "region": "Europe",
+        "region": "Germany",
         "links": [
             "https://europeanspaceflight.com/rfa-led-consortium-submit-argo-for-esa-commercial-cargo-initiative/",
             "https://www.rfa.space/argo/"
@@ -3765,7 +3821,7 @@
         "related": [],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Argo spacecraft. There are three different stands compatible with this moc which are also provided in the files section. I will update this MOC as we get more renders and specifications of the planned spacecraft.",
-        "rocketDescription": "The Argo is a spacecraft submitted for the European Space Agencys Commercial Cargo Transportation Initiative by a consortium led by Rocket Factory Augsburg. It is supposed to be fully recoverable using an inflating heatshield on the back.",
+        "rocketDescription": "Argo is a spacecraft submitted for the European Space Agencys Commercial Cargo Transportation Initiative by a consortium led by Rocket Factory Augsburg. It is supposed to be fully recoverable using an inflating heatshield on the back.",
         "internalColor": "Green",
         "scale": "110",
         "parts": 131,
@@ -3886,7 +3942,7 @@
         "designerExtra": "",
         "internalColorExtra": "",
         "scaleExtra": "",
-        "partsExtra": "Can be build completely out of Lego bricks, but it requires some printed parts.",
+        "partsExtra": "Can be build completely out of Lego bricks, the metallic silver parts are very expensive though, replace with light bluish grey parts to make it cheaper.",
         "dimensionsExtra": "",
         "stabilityExtra": "",
         "difficultyExtra": ""

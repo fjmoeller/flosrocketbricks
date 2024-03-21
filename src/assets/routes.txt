@@ -196,5 +196,6 @@
 /moc/191/rfa-one/
 /moc/192/helios/
 /moc/193/kairos/
+/moc/194/rfa-logo/
 /about/
 /404/

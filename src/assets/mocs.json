@@ -2115,8 +2115,8 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/usa/orion/110-orion-v2.2.jpg",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/usa/orion/v2.1/Orion_V2.1_1.png",
-            "https://files.flosrocketbackend.com/mocs/110/usa/orion/v2.1/Orion_V2.1_2.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/orion/v2.2/Orion_V2.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/orion/v2.2/Orion_V2.2_2.jpg"
         ],
         "versions": [
             {
@@ -2141,7 +2141,7 @@
                         "description": "The digital io file of the spacecraft",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Forion%2Fv2.2%2FOrion_V2.2.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/orion/v2.2/Orion_V2.2.io",
                         "name": "Orion_V2.2.io"
                     }
                 ],
@@ -2847,22 +2847,22 @@
         "altTitles": [],
         "tags": [],
         "designer": "SkySaac",
-        "lastupdate": "2023-10-15",
+        "lastupdate": "2024-03-22",
         "dateCreated": "2023-10-15",
         "related": [
             162,151,20
         ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Falcon Heavy rocket with Orion and ICPS as its payload. The boosters, the core stage, the 2nd stage, the ICPS, Orion and the LES can all be separated from one another.",
-        "rocketDescription": "The Falcon Heavy is a rocekt by SpaceX. The Falcon Heavy EM-1 was a (not really serious) proposal on flying the EM-1 mission on an expendable Falcon Heavy.",
+        "rocketDescription": "The Falcon Heavy is a rocket by SpaceX. The Falcon Heavy EM-1 was a (not really serious) proposal on flying the EM-1 mission on an expendable Falcon Heavy.",
         "internalColor": "Green",
         "scale": "110",
         "parts": 1846,
-        "dimensions": "5.8x11.7x82.7cm",
+        "dimensions": "5.8x11.7x82.9cm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/usa/falcon/falcon-heavy/em-1/110-falcon-heavy-em-1-v2.0.png",
+        "smallCoverImage": "assets/mocImages/110/usa/falcon/falcon-heavy/em-1/110-falcon-heavy-em-1-v2.1.jpg",
         "pictures": [
             "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-heavy/em-1/v2.0/Falcon_Heavy_EM1_V2.0_1.png",
             "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-heavy/em-1/v2.0/Falcon_Heavy_EM1_V2.0_2.png",
@@ -2884,6 +2884,20 @@
                     }
                 ],
                 "version": "V2.0"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-heavy/em-1/v2.0/Falcon_Heavy_EM1_V2.0.io",
+                        "name": "Falcon_Heavy_EM1_V2.0.io"
+                    }
+                ],
+                "version": "V2.1"
             }
         ],
         "companyExtra": "",

@@ -2097,7 +2097,7 @@
         "altTitles": [],
         "tags": [],
         "designer": "SkySaac",
-        "lastupdate": "2023-11-17",
+        "lastupdate": "2024-03-22",
         "dateCreated": "2022-05-09",
         "related": [
             20,
@@ -2108,12 +2108,12 @@
         "rocketDescription": "The Orion spacecraft is an American/European spacecraft. The capsule itself is made American and the Service module is European. The Orion spacecraft is able to carry multiple humans into deep space. It is launched on an American SLS rocket.",
         "internalColor": "Green",
         "scale": "110",
-        "parts": 133,
+        "parts": 141,
         "dimensions": "12.8x14.7x7.0xcm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/usa/orion/110-orion-v2.1.png",
+        "smallCoverImage": "assets/mocImages/110/usa/orion/110-orion-v2.2.jpg",
         "pictures": [
             "https://files.flosrocketbackend.com/mocs/110/usa/orion/v2.1/Orion_V2.1_1.png",
             "https://files.flosrocketbackend.com/mocs/110/usa/orion/v2.1/Orion_V2.1_2.png"
@@ -2132,6 +2132,20 @@
                     }
                 ],
                 "version": "V2.1"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Forion%2Fv2.2%2FOrion_V2.2.io",
+                        "name": "Orion_V2.2.io"
+                    }
+                ],
+                "version": "V2.2"
             }
         ],
         "companyExtra": "",

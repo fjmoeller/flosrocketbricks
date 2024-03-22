@@ -2864,11 +2864,11 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/usa/falcon/falcon-heavy/em-1/110-falcon-heavy-em-1-v2.1.jpg",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-heavy/em-1/v2.0/Falcon_Heavy_EM1_V2.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-heavy/em-1/v2.0/Falcon_Heavy_EM1_V2.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-heavy/em-1/v2.0/Falcon_Heavy_EM1_V2.0_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-heavy/em-1/v2.0/Falcon_Heavy_EM1_V2.0_4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-heavy/em-1/v2.0/Falcon_Heavy_EM1_V2.0_5.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-heavy/em-1/v2.1/Falcon_Heavy_EM1_V2.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-heavy/em-1/v2.1/Falcon_Heavy_EM1_V2.1_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-heavy/em-1/v2.1/Falcon_Heavy_EM1_V2.1_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-heavy/em-1/v2.1/Falcon_Heavy_EM1_V2.1_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-heavy/em-1/v2.1/Falcon_Heavy_EM1_V2.1_5.jpg"
         ],
         "versions": [
             {
@@ -2893,8 +2893,8 @@
                         "description": "The digital io file of the rocket",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/falcon/falcon-heavy/em-1/v2.0/Falcon_Heavy_EM1_V2.0.io",
-                        "name": "Falcon_Heavy_EM1_V2.0.io"
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-heavy/em-1/v2.1/Falcon_Heavy_EM1_V2.1.io",
+                        "name": "Falcon_Heavy_EM1_V2.1.io"
                     }
                 ],
                 "version": "V2.1"

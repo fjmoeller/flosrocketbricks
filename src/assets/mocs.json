@@ -2989,7 +2989,7 @@
             144,
             148
         ],
-        "updateMessage": "Small update coming soon",
+        "updateMessage": "Small update coming soon!",
         "mocDescription": "This is a MOC of the Ariane 64 rocket with the SUSIE spacecraft. The payload doors of SUSIE can be opened. The boosters and the upper stage can be separated fro mthe core stage. The SUSIE spacecraft can be separated from the upper stage.",
         "rocketDescription": "SUSIE is a concept of a reusable spacecraft by Arianegroup, which would be launched on an Ariane 64.",
         "internalColor": "Dark Pink",
@@ -3295,7 +3295,7 @@
             99,
             98
         ],
-        "updateMessage": "Small update is coming very soon!",
+        "updateMessage": "Small update is coming soon!",
         "mocDescription": "This is a MOC of the Ariane 6 rocket in its 64 configuration and with a large payload fairing. The boosters and the second stage can be separated from the core stage. Further the payload fairings can be separated form the upper stage and hold space for a potential payload.",
         "rocketDescription": "The Ariane 6 rocket is an orbital rocket by Arianegroup. It has four solid boosters and a hydrolox core and upper stage. The 64 variant has four boosters. The first launch is expected to happen in 2024.",
         "internalColor": "Dark Pink",

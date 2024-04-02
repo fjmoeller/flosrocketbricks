@@ -12185,23 +12185,23 @@
         "internalColor": "Green",
         "links": [],
         "mocDescription": "The Orion spacecraft and ICPS can be seperated. This MOC furthermore includes a display stand. If you intend to build this MOC, I recommend buying good quality bricks and some parts benefit greatly by having bricks with high clutch power and accurate casts due to the techniques used.",
-        "rocketDescription": "The Orion spacecraft was launches on the SLS rocket around the moon in December 2022. The ICPS (Interim Cryogenic Propulsion Stage) functioned as an upper stage to boost Orion into Orbit and to the moon. It uses a snigle RL-10 engine and runs on liquid hydrogen and liquid oxygen. The ICPS is a stretched version of the Delta Cryogenic Second Stage which is being used on the Delta IV rocket.",
+        "rocketDescription": "The Orion spacecraft was launched on the SLS rocket around the moon in December 2022. The ICPS (Interim Cryogenic Propulsion Stage) functioned as an upper stage to boost Orion into Orbit and to the moon. It uses a snigle RL-10 engine and runs on liquid hydrogen and liquid oxygen. The ICPS is a stretched version of the Delta Cryogenic Second Stage which is being used on the Delta IV rocket.",
         "stabilityExtra": "",
         "company": "NASA",
         "difficulty": 3,
-        "lastupdate": "2023-03-10",
+        "lastupdate": "2024-04-02",
         "related": [
             162,151
         ],
         "updateMessage": "",
         "region": "USA",
         "scale": "110",
-        "smallCoverImage": "assets/mocImages/110/usa/orion/icps/110-orion-with-icps-v2.0.png",
+        "smallCoverImage": "assets/mocImages/110/usa/orion/icps/110-orion-with-icps-v2.1.jpg",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/orion/icps/v2.0/V2.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/orion/icps/v2.0/V2.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/orion/icps/v2.0/V2.0_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/orion/icps/v2.0/V2.0_4.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/orion/icps/v2.1/V2.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/orion/icps/v2.1/V2.1_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/orion/icps/v2.1/V2.1_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/orion/icps/v2.1/V2.1_4.jpg"
         ],
         "internalColorExtra": "",
         "scaleExtra": "",
@@ -12227,6 +12227,20 @@
                     }
                 ],
                 "version": "V2.0"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/orion/icps/v2.1/Orion_ICPS_V2.1.io",
+                        "name": "Orion_ICPS_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
             }
         ],
         "dimensions": "12.1x18.8x12.9cm",
@@ -12235,7 +12249,7 @@
         "partsExtra": "Can be build completely out of Lego bricks.",
         "title": "Orion with ICPS",
         "regionExtra": "",
-        "parts": 384,
+        "parts": 399,
         "stability": 3,
         "difficultyExtra": "I strongly recommend using high quality parts for this MOC!",
         "designerExtra": "",

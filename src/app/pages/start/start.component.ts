@@ -15,6 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 export class StartComponent implements OnInit {
 
   newestMocs: Moc[] = [];
+  newestUpdates: Moc[] = [];
   collections: Collection[] = [];
 
   constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private collectionGrabberService: CollectionGrabberService) {
@@ -24,6 +25,7 @@ export class StartComponent implements OnInit {
     this.metaService.setDefaultTags("Start - FlosRocketBricks", "https://flosrocketbricks.com/");
 
     this.newestMocs = this.mocGrabberService.getAllMocs().sort((a: Moc, b: Moc) => b.id - a.id).slice(0, 6);
+    this.newestUpdates = this.mocGrabberService.getAllMocs().sort((a: Moc, b: Moc) => b.lastupdate > a.lastupdate? 1 : -1).slice(0, 6);
     this.collections = this.collectionGrabberService.getAllCollections().sort((a: Collection, b: Collection) => b.id - a.id).slice(0, 6);
   }
 

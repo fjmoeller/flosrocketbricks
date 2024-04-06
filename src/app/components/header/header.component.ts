@@ -65,4 +65,9 @@ export class HeaderComponent implements OnInit {
     document.getElementById("searchButton")?.click();
   }
 
+  clearSearch(){
+    console.log("clicked");
+    this.searchInput = "";
+  }
+
 }

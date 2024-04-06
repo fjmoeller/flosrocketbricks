@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
 
   searchInput: string = "";
 
-  sortingCategory: string = "Date";
+  sortingCategory: string = "Added";
   sortingDirection: number = -1;
 
   tagRegions: FrontTag[] = [{ tagId: "", tagName: "All Regions", selected: true }, { tagId: "Australia", tagName: "Australia", selected: false }, { tagId: "China", tagName: "China", selected: false }, { tagId: "Europe", tagName: "Europe", selected: false }, { tagId: "France", tagName: "France", selected: false }, { tagId: "Germany", tagName: "Germany", selected: false }, { tagId: "Japan", tagName: "Japan", selected: false }, { tagId: "New Zeeland", tagName: "New Zeeland", selected: false }, { tagId: "North Korea", tagName: "North Korea", selected: false }, { tagId: "Russia", tagName: "Russia", selected: false }, { tagId: "South Korea", tagName: "South Korea", selected: false }, { tagId: "USSR", tagName: "USSR", selected: false }, { tagId: "Ukraine", tagName: "Ukraine", selected: false }, { tagId: "United Kingdom", tagName: "United Kingdom", selected: false }, { tagId: "USA", tagName: "USA", selected: false }];
@@ -31,6 +31,8 @@ export class SearchComponent implements OnInit {
         this.clearTags();
         if (params['q']) {
           this.searchInput = params['q'];
+        }else{
+          this.searchInput = "";
         }
         if (params['type']) {
           let ft: FrontTag | undefined = this.tagTypes.find(frontTag => frontTag.tagId == params['type']);
@@ -89,7 +91,8 @@ export class SearchComponent implements OnInit {
     }
 
     switch (this.sortingCategory) {
-      case "Date": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.id < a.id ? 1 : -1)); break;
+      case "Added": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.id < a.id ? 1 : -1)); break;
+      case "Updated": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.lastupdate < a.lastupdate ? 1 : -1)); break;
       case "Title": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.title > a.title ? 1 : -1)); break;
       case "Parts": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.parts < a.parts ? 1 : -1)); break;
     }

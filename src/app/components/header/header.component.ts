@@ -66,7 +66,6 @@ export class HeaderComponent implements OnInit {
   }
 
   clearSearch(){
-    console.log("clicked");
     this.searchInput = "";
   }
 

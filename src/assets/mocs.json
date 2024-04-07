@@ -13338,7 +13338,7 @@
             "https://www.nasaspaceflight.com/tag/new-glenn/",
             "https://forum.nasaspaceflight.com/index.php?board=78.0"
         ],
-        "updateMessage": "",
+        "updateMessage": "Will get an update within the next few days!",
         "tags": [],
         "altTitles": [],
         "region": "USA",
@@ -13346,7 +13346,7 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/usa/new-glenn/110-new-glenn-v3.6.jpg",
         "regionExtra": "",
-        "partsExtra": "Can not be build completely out of Lego bricks as two pieces are not available in the correct colors, replace them with lbg if needed.",
+        "partsExtra": "Two parts 2x98100 are not available in DBG by Lego. Either buy them non-Lego or chagne the color to LBG.",
         "internalColorExtra": "",
         "versions": [
             {
@@ -13451,7 +13451,7 @@
     {
         "id": 7,
         "internalColor": "Green",
-        "updateMessage": "This MOC will get an update once we know what the final flight hardware will look like!",
+        "updateMessage": "",
         "links": [],
         "parts": 188,
         "designer": "SkySaac",

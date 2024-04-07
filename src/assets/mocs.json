@@ -13330,7 +13330,7 @@
     {
         "id": 8,
         "related": [],
-        "dimensions": "10.9x10.9x89cm",
+        "dimensions": "10.9x10.9x87.8cm",
         "links": [
             "https://en.wikipedia.org/wiki/New_Glenn",
             "https://www.blueorigin.com/new-glenn",
@@ -13342,13 +13342,34 @@
         "tags": [],
         "altTitles": [],
         "region": "USA",
-        "parts": 2081,
+        "parts": 2255,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/usa/new-glenn/110-new-glenn-v3.4.png",
+        "smallCoverImage": "assets/mocImages/110/usa/new-glenn/110-new-glenn-v3.6.jpg",
         "regionExtra": "",
-        "partsExtra": "Can be build completely out of Lego bricks.",
+        "partsExtra": "Can not be build completely out of Lego bricks as two pieces are not available in the correct colors, replace them with lbg if needed.",
         "internalColorExtra": "",
         "versions": [
+            {
+                "files": [
+                    {
+                        "name": "New_Glenn_V3.6_instructions.pdf",
+                        "description": "The pdf instructions for the rocket",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_instructions.pdf"
+                    },
+                    {
+                        "name": "New_Glenn_V3.6_pub.io",
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_pub.io"
+                    }
+                ],
+                "versionExtra": "",
+                "version": "V3.6",
+                "changelog": ""
+            },
             {
                 "files": [
                     {
@@ -13404,25 +13425,28 @@
         "designer": "SkySaac",
         "scale": "110",
         "internalColor": "Green",
-        "company": "",
+        "company": "Blue Origin",
         "stability": 4,
         "stabilityExtra": "",
-        "mocDescription": "The New Glenn rocket is currently being developed by Blue Origins. with 98 meters in height it will be one of the worlds largest rockets. The first stage will propulsively land to be reused for multiple launches.",
-        "rocketDescription": "",
+        "mocDescription": "This is a MOC of New Glenn. The two stages can be separated. The fairings hold some space for a payload. The legs of the first stage can be extended and be reinforced with the bars in order to make the first stage stand on its legs.",
+        "rocketDescription": "The New Glenn rocket is currently being developed by Blue Origins. With 98 meters in height it will be one of the worlds largest rockets. The first stage will propulsively land to be reused for multiple launches.",
         "dimensionsExtra": "",
         "difficultyExtra": "",
         "type": "rocket",
         "designerExtra": "",
         "dateCreated": "2023-02-13",
+        "lastupdate": "2024-04-07",
         "difficulty": 3,
         "companyExtra": "",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.4/V3.4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.4/V3.4_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/new-glenn/v3.4/V3.4_3.png"
+            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_1.jpg",
+            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_2.jpg",
+            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_3.jpg",
+            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_4.jpg",
+            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_5.jpg",
+            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_6.jpg"
         ],
-        "title": "New Glenn",
-        "lastupdate": "2023-03-06"
+        "title": "New Glenn"
     },
     {
         "id": 7,

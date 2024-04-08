@@ -197,5 +197,6 @@
 /moc/192/helios/
 /moc/193/kairos/
 /moc/194/rfa-logo/
+/moc/195/blue-moon-mark-1/
 /about/
 /404/

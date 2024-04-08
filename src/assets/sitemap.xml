@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-        
+  <url>
+    <loc>https://flosrocketbricks.com/moc/195/blue-moon-mark-1/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/blue-moon/mk1/110-blue-moon-mark-1-v1.1.jpg</image:loc>
+    </image:image>
+  </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/194/rfa-logo/</loc>
     <image:image>

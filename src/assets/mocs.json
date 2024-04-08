@@ -1,5 +1,73 @@
 [
     {
+        "company": "Blue Origin",
+        "region": "USA",
+        "links": [
+            "https://www.blueorigin.com/blue-moon/mark-1",
+            "https://forum.nasaspaceflight.com/index.php?topic=59772"
+        ],
+        "type": "spacecraft",
+        "id": 195,
+        "title": "Blue Moon Mark 1",
+        "altTitles": [
+            "MK1"
+        ],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-04-08",
+        "dateCreated": "2024-04-08",
+        "related": [8],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Blue Moon Mark 1 lunar lander. It fits (without the antenna) into my New Glenns fairing.",
+        "rocketDescription": "The Blue Moon Mark 1 (also called MK1) is a one way lunar lander by Blue Origin that can deliver up to three tons to the lunar surface. It is supposed to be launched using New Glenn.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 139,
+        "dimensions": "5.9x6.3x7.9cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/blue-moon/mk1/110-blue-moon-mark-1-v1.1.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.1/MK1_V1.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.1/MK1_V1.1_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.1/MK1_V1.1_3.jpg",
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.1/MK1_V1.1_pub.io",
+                        "name": "MK1_V1.1_pub.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the spacecraft",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.1/MK1_V1.1_instructions.pdf",
+                        "name": "MK1_V1.1_instructions.pdf"
+                    }
+                ],
+                "version": "V1.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "Can be build completely out of Lego bricks.",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "Rocket Factory Augsburg",
         "region": "Germany",
         "links": [
@@ -36,7 +104,7 @@
                 "versionExtra": "",
                 "files": [
                     {
-                        "description": "The digital io file of the rocket",
+                        "description": "The digital io file of the logo",
                         "type": "io",
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/logo/v1.0/RFA_Logo_V1.0.io",
@@ -13329,7 +13397,7 @@
     },
     {
         "id": 8,
-        "related": [],
+        "related": [195],
         "dimensions": "10.9x10.9x87.8cm",
         "links": [
             "https://en.wikipedia.org/wiki/New_Glenn",

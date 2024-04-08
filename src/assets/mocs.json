@@ -1213,10 +1213,10 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc4l/110-vulcan-centaur-4l-v3.2.jpg",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc4l%2Fv3.2%2FVulcan_Centaur_4L_V3.2_1.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc4l%2Fv3.2%2FVulcan_Centaur_4L_V3.2_2.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc4l%2Fv3.2%2FVulcan_Centaur_4L_V3.2_3.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc4l%2Fv3.2%2FVulcan_Centaur_4L_V3.2_4.jpg"
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v3.2/Vulcan_Centaur_4L_V3.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v3.2/Vulcan_Centaur_4L_V3.2_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v3.2/Vulcan_Centaur_4L_V3.2_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v3.2/Vulcan_Centaur_4L_V3.2_4.jpg"
         ],
         "versions": [
         {
@@ -1227,7 +1227,7 @@
                     "description": "The digital io file of the rocket",
                     "type": "io",
                     "allowViewer": true,
-                    "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc4l%2Fv3.2%2FVulcan_Centaur_4L_V3.2.io",
+                    "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc4l/v3.2/Vulcan_Centaur_4L_V3.2.io",
                     "name": "Vulcan_Centaur_4L_V3.2.io"
                 }
             ],
@@ -1395,7 +1395,7 @@
                         "description": "The digital io file of the rocket",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc2l%2Fv3.2%2FVulcan_Centaur_2L_V3.2.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2l/v3.2/Vulcan_Centaur_2L_V3.2.io",
                         "name": "Vulcan_Centaur_2L_V3.2.io"
                     }
                 ],
@@ -1466,10 +1466,10 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/usa/vulcan/vc2s/110-vulcan-centaur-2s-v3.2.jpg",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc2s%2Fv3.2%2FVulcan_Centaur_2S_V3.2_1.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc2s%2Fv3.2%2FVulcan_Centaur_2S_V3.2_2.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc2s%2Fv3.2%2FVulcan_Centaur_2S_V3.2_3.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc2s%2Fv3.2%2FVulcan_Centaur_2S_V3.2_4.jpg"
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v3.2/Vulcan_Centaur_2S_V3.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v3.2/Vulcan_Centaur_2S_V3.2_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v3.2/Vulcan_Centaur_2S_V3.2_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v3.2/Vulcan_Centaur_2S_V3.2_4.jpg"
         ],
         "versions": [
             {
@@ -1480,7 +1480,7 @@
                         "description": "The digital io file of the rocket",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc2s%2Fv3.2%2FVulcan_Centaur_2S_V3.2.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/v3.2/Vulcan_Centaur_2S_V3.2.io",
                         "name": "Vulcan_Centaur_2S_V3.2.io"
                     }
                 ],
@@ -8525,7 +8525,7 @@
                         "description": "The digital io file",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fvulcan%2Fvulcan-centaur%2Fvc2s%2Fperegrine%2Fv3.2%2FVulcan_Centaur_Astrobotic_V3.2.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/v3.2/Vulcan_Centaur_Astrobotic_V3.2.io",
                         "name": "Vulcan_Centaur_Astrobotic_V3.2.io"
                     }
                 ],
@@ -13338,13 +13338,13 @@
             "https://www.nasaspaceflight.com/tag/new-glenn/",
             "https://forum.nasaspaceflight.com/index.php?board=78.0"
         ],
-        "updateMessage": "Will get an update within the next few days!",
+        "updateMessage": "",
         "tags": [],
         "altTitles": [],
         "region": "USA",
-        "parts": 2255,
+        "parts": 2234,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/usa/new-glenn/110-new-glenn-v3.6.jpg",
+        "smallCoverImage": "assets/mocImages/110/usa/new-glenn/110-new-glenn-v3.7.jpg",
         "regionExtra": "",
         "partsExtra": "Two parts (2x 98100) are not available in DBG by Lego. Either buy them non-Lego or change the color to LBG.",
         "internalColorExtra": "",
@@ -13352,18 +13352,39 @@
             {
                 "files": [
                     {
+                        "name": "New_Glenn_V3.7_instructions.pdf",
+                        "description": "The pdf instructions for the rocket",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.7/New_Glenn_V3.7_instructions.pdf"
+                    },
+                    {
+                        "name": "New_Glenn_V3.7_pub.io",
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.7/New_Glenn_V3.7_pub.io"
+                    }
+                ],
+                "versionExtra": "",
+                "version": "V3.7",
+                "changelog": ""
+            },
+            {
+                "files": [
+                    {
                         "name": "New_Glenn_V3.6_instructions.pdf",
                         "description": "The pdf instructions for the rocket",
                         "type": "pdf",
                         "allowViewer": false,
-                        "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_instructions.pdf"
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.6/New_Glenn_V3.6_instructions.pdf"
                     },
                     {
                         "name": "New_Glenn_V3.6_pub.io",
                         "description": "The digital io file",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_pub.io"
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.6/New_Glenn_V3.6_pub.io"
                     }
                 ],
                 "versionExtra": "",
@@ -13435,16 +13456,16 @@
         "type": "rocket",
         "designerExtra": "",
         "dateCreated": "2023-02-13",
-        "lastupdate": "2024-04-07",
+        "lastupdate": "2024-04-08",
         "difficulty": 3,
         "companyExtra": "",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_1.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_2.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_3.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_4.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_5.jpg",
-            "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fnew-glenn%2Fv3.6%2FNew_Glenn_V3.6_6.jpg"
+            "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.7/New_Glenn_V3.7_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.7/New_Glenn_V3.7_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.7/New_Glenn_V3.7_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.7/New_Glenn_V3.7_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.7/New_Glenn_V3.7_5.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.7/New_Glenn_V3.7_6.jpg"
         ],
         "title": "New Glenn"
     },

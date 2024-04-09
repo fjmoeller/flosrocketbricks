@@ -8717,7 +8717,7 @@
                         "description": "The pdf instructions for the lander",
                         "type": "pdf",
                         "allowViewer": false,
-                        "link": "https://files.flosrocketbackend.com/mocs%2F110%2Fusa%2Fastrobotics%2Fperegrine%2Fv3.1%2FPeregrine_Lander_V3.1.pdf",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/astrobotics/peregrine/v3.1/Peregrine_Lander_V3.1.pdf",
                         "name": "Peregrine_Lander_V3.1.pdf"
                     },
                     {

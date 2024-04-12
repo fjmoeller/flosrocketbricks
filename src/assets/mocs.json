@@ -10064,13 +10064,13 @@
             "https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Launch_Complex_41",
             "http://www.astronautix.com/c/capecanaverallc41.html"
         ],
-        "mocDescription": "An Atlas V rocket can be placed on top of it (I haven't tested it so it might need a few extra bricks to hold it up). The MOC does not include the Atlas V rocket. The Train carts are not connected to the main structure.",
-        "rocketDescription": "This is a MOC of the Atlas V Mobile Launch Platform as it's being used at the Space Launch Complex 41 at the Cape Canaveral Space Force Station to launch Atlas V rockets. Before Atlas V it has launched Titan IIIC, Titan IIIE and Titan IV rockets and is planned to launch ULAs Vulcan rocket in the future. The transporter holds the rocket as it's transported from the Vertical Integration Building all the way to launch.",
+        "mocDescription": "An Atlas V rocket (which are also available on this website) can be placed on top of it, but is not included. The train carts are not connected to the main structure.",
+        "rocketDescription": "This is a MOC of the Atlas V Mobile Launch Platform as it's being used at the Space Launch Complex 41 at the Cape Canaveral Space Force Station to launch Atlas V rockets. Before Atlas V, the launchpad has supported Titan IIIC, Titan IIIE and Titan IV rockets and is currently also used for the Vulcan Centaur rocket. The transporter holds the rocket as it's transported from the Vertical Integration Building all the way to launch.",
         "company": "",
         "companyExtra": "",
         "difficulty": -1,
         "difficultyExtra": "",
-        "lastupdate": "2023-04-27",
+        "lastupdate": "2024-04-12",
         "dateCreated": "2022-10-28",
         "related": [
             34,
@@ -10081,35 +10081,57 @@
             32,
             33
         ],
-        "updateMessage": "This MOC will get an update soon!",
+        "updateMessage": "",
         "region": "USA",
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/lc-41-atlas-v-transporter/110-lc-41-atlas-v-transporter-v3.2.png",
+        "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/lc-41-atlas-v-transporter/110-lc-41-atlas-v-transporter-v3.3.jpg",
         "internalColor": "Green",
         "internalColorExtra": "",
         "dimensions": "14.4x97x51.7cm",
         "dimensionsExtra": "",
         "tags": [],
         "altTitles": [],
-        "parts": 2451,
+        "parts": 2456,
         "partsExtra": "Can be build completely out of Lego bricks.",
         "title": "LC-41 Atlas V Mobile Launch Platform",
         "stability": -1,
-        "stabilityExtra": "I am really not sure how stable the whole thing actually is and if it can hold an Atlas V or if that needs some extra bricks below.",
+        "stabilityExtra": "",
         "designer": "SkySaac",
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/lc-41/transporter/v3.2/Launchpad_V3.2_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/lc-41/transporter/v3.2/Launchpad_V3.2_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/lc-41/transporter/v3.2/Launchpad_V3.2_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/lc-41/transporter/v3.2/Launchpad_V3.2_4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/lc-41/transporter/v3.2/Launchpad_V3.2_5.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/lc-41/transporter/v3.2/Launchpad_V3.2_6.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/lc-41/launchplatform/v3.3/Launchpad_V3.3_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/lc-41/launchplatform/v3.3/Launchpad_V3.3_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/lc-41/launchplatform/v3.3/Launchpad_V3.3_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/lc-41/launchplatform/v3.3/Launchpad_V3.3_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/lc-41/launchplatform/v3.3/Launchpad_V3.3_5.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/lc-41/launchplatform/v3.3/Launchpad_V3.3_6.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/lc-41/launchplatform/v3.3/Launchpad_V3.3_7.jpg"
         ],
         "versions": [
+            {
+                "changelog": "Improve instructions and remove useless parts",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The pdf instructions to the launchpad",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/lc-41/launchplatform/v3.3/LC_41_Launchpad_V3.3_instructions.pdf",
+                        "name": "LC_41_Launchpad_V3.3_instructions.pdf"
+                    },
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/lc-41/launchplatform/v3.3/LC_41_Launchpad_V3.3_pub.io",
+                        "name": "LC_41_Launchpad_V3.3_pub.io"
+                    }
+                ],
+                "version": "V3.3"
+            },
             {
                 "changelog": "Fix some smaller instabilities and added instructions.",
                 "versionExtra": "",

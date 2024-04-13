@@ -198,5 +198,6 @@
 /moc/193/kairos/
 /moc/194/rfa-logo/
 /moc/195/blue-moon-mark-1/
+/moc/196/nasa-worm-logo/
 /about/
 /404/

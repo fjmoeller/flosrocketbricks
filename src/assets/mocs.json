@@ -34,7 +34,7 @@
                 "versionExtra": "",
                 "files": [
                     {
-                        "description": "The digital io file of the spacecraft",
+                        "description": "The digital io file of the logo",
                         "type": "io",
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/nasa/logo/worm/v1.1/NASA_Worm_V1.1.io",

@@ -10056,32 +10056,32 @@
         "links": [
             "https://en.wikipedia.org/wiki/Tiangong_space_station"
         ],
-        "mocDescription": "This is a MOC of the Tiangong Space Station. A shenzhou spacecraft can be put on the lower docking port and with a stand another Shenzhou or Tianzhou spacecraft can be put on the other docking ports.",
-        "rocketDescription": "The Tiangong Space Station is Chinas newest low earth orbit space station. It is currently made out of three modules: Tianhe, Wentian, Mengtian. Its has an operational height of 400 kilometers and three docking ports to allow different spacecraft to dock.",
+        "mocDescription": "This is a MOC of the Tiangong Space Station. A Shenzhou spacecraft can be put on the lower docking port and with a stand another Shenzhou or Tianzhou spacecraft can be put on the other docking ports.",
+        "rocketDescription": "The Tiangong Space Station is Chinas newest low earth orbit space station. It is currently made out of three modules: Tianhe, Wentian and Mengtian. Its has an operational height of around 400 kilometers and three docking ports to allow different spacecraft to dock.",
         "company": "",
         "companyExtra": "",
         "difficulty": -1,
         "difficultyExtra": "",
-        "lastupdate": "2023-04-28",
+        "lastupdate": "2024-04-14",
         "dateCreated": "2022-11-03",
         "related": [
             135,
             52,
             53
         ],
-        "updateMessage": "A small update is coming soon!",
+        "updateMessage": "",
         "region": "China",
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/china/tiangong/tiangong-space-station/110-tiangong-space-station-v1.0.png",
+        "smallCoverImage": "assets/mocImages/110/china/tiangong/tiangong-space-station/110-tiangong-space-station-v1.1.jpg",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "dimensions": "51.1x36.1x11.6cm",
+        "dimensions": "51.1x36.9x11.6cm",
         "dimensionsExtra": "",
         "tags": [],
         "altTitles": [],
-        "parts": 1323,
+        "parts": 1333,
         "partsExtra": "Can be build completely out of Lego bricks.",
         "title": "Tiangong Space Station",
         "stability": -1,
@@ -10090,12 +10090,26 @@
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/china/tiangong/tiangong-space-station/v1.0/Tiangong_Space_Station_V1.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/china/tiangong/tiangong-space-station/v1.0/Tiangong_Space_Station_V1.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/china/tiangong/tiangong-space-station/v1.0/Tiangong_Space_Station_V1.0_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/china/tiangong/tiangong-space-station/v1.0/Tiangong_Space_Station_V1.0_4.png"
+            "https://files.flosrocketbackend.com/mocs/110/china/tiangong/tiangong-space-station/v1.1/Tiangong_Space_Station_V1.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/china/tiangong/tiangong-space-station/v1.1/Tiangong_Space_Station_V1.1_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/china/tiangong/tiangong-space-station/v1.1/Tiangong_Space_Station_V1.1_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/china/tiangong/tiangong-space-station/v1.1/Tiangong_Space_Station_V1.1_4.jpg"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/tiangong/tiangong-space-station/v1.1/Tiangong_Space_Station_V1.1.io",
+                        "name": "Tiangong_Space_Station_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

@@ -9912,7 +9912,7 @@
         "companyExtra": "",
         "difficulty": 5,
         "difficultyExtra": "",
-        "lastupdate": "2023-04-28",
+        "lastupdate": "2024-04-15",
         "dateCreated": "2022-05-01",
         "related": [
             51,
@@ -9923,15 +9923,15 @@
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/china/tianzhou/110-tianzhou-v2.0.png",
+        "smallCoverImage": "assets/mocImages/110/china/tianzhou/110-tianzhou-v2.1.jpg",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "dimensions": "9.4x16.8x4.4cm",
+        "dimensions": "13.6x9.4x4.4cm",
         "dimensionsExtra": "",
         "tags": [],
         "altTitles": [],
-        "parts": 135,
-        "partsExtra": "The stand has 49 parts. Both the spacecraft and the stand can be build completely out of Lego bricks, the spacecraft requires some printed pieces though.",
+        "parts": 141,
+        "partsExtra": "The stand has 51 parts. Both the spacecraft and the stand can be build completely out of Lego bricks.",
         "title": "Tianzhou",
         "stability": 4,
         "stabilityExtra": "",
@@ -9939,11 +9939,31 @@
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/china/tianzhou/v2.0/Tianzhou_V2.0_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/china/tianzhou/v2.0/Tianzhou_V2.0_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/china/tianzhou/v2.0/Tianzhou_V2.0_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/china/tianzhou/v2.1/Tianzhou_V2.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/china/tianzhou/v2.1/Tianzhou_V2.1_2.jpg"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/tianzhou/v2.1/Tianzhou_V2.1.io",
+                        "name": "Tianzhou_V2.1.io"
+                    },
+                    {
+                        "description": "The digital io file of the stand",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/tianzhou/v2.1/Tianzhou_Stand_V2.1.io",
+                        "name": "Tianzhou_Stand_V2.1.io"
+                    }
+                ],
+                "version": "V2.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

@@ -10048,8 +10048,8 @@
                         "description": "The digital io file of the stand without the spacecraft",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/china/shenzhou/v3.0/Shenzhou_Stand_V3.0.io",
-                        "name": "Shenzhou_Stand_V3.0.io"
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/shenzhou/v3.1/Shenzhou_Stand_V3.1.io",
+                        "name": "Shenzhou_Stand_V3.1.io"
                     }
                 ],
                 "version": "V3.1"

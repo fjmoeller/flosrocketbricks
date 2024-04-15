@@ -8777,6 +8777,13 @@
                         "name": "Peregrine_Lander_V3.1.pdf"
                     },
                     {
+                        "description": "A list of parts as bricklink xml list",
+                        "type": "xml",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/astrobotics/peregrine/v3.1/Peregrine_Lander_V3.1_bricklink.xml",
+                        "name": "Peregrine_Lander_V3.1_bricklink.xml"
+                    },
+                    {
                         "description": "The digital io file for the lander",
                         "type": "io",
                         "allowViewer": true,
@@ -13463,6 +13470,13 @@
                         "type": "io",
                         "allowViewer": false,
                         "description": "The digital io file"
+                    },
+                    {
+                        "name": "Nova_V2.2_bricklink.xml",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/nova/v2.2/Nova_V2.2_bricklink.xml",
+                        "type": "xml",
+                        "allowViewer": false,
+                        "description": "A list of parts as bricklink xml list"
                     },
                     {
                         "name": "Nova_V2.2_instructions.pdf",

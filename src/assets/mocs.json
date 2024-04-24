@@ -3597,7 +3597,7 @@
             99,
             98
         ],
-        "updateMessage": "Small update is coming soon!",
+        "updateMessage": "",
         "mocDescription": "This is a MOC of the Ariane 6 rocket in its 64 configuration and with a large payload fairing. The boosters and the second stage can be separated from the core stage. Further the payload fairings can be separated form the upper stage and hold space for a potential payload.",
         "rocketDescription": "The Ariane 6 rocket is an orbital rocket by Arianegroup. It has four solid boosters and a hydrolox core and upper stage. The 64 variant has four boosters. The first launch is expected to happen in 2024.",
         "internalColor": "Dark Pink",
@@ -3609,9 +3609,9 @@
         "fanPictures": [],
         "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/64/110-ariane-64-v2.7.png",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_3.png"
         ],
         "versions": [
             {
@@ -3622,8 +3622,15 @@
                         "description": "The digital io file of the rocket",
                         "type": "io",
                         "allowViewer": true,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7.io",
                         "name": "Ariane_64_V2.7.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the rocket",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_instructions.pdf",
+                        "name": "Ariane_64_V2.7_instructions.pdf"
                     }
                 ],
                 "version": "V2.7"
@@ -8463,10 +8470,10 @@
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-400-normal/atlas-v-421/v2.1/Atlas_V_421_Frost_V2.1_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-400-normal/atlas-v-421/v2.1/Atlas_V_421_Frost_V2.1_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-400-normal/atlas-v-421/v2.1/Atlas_V_421_Frost_V2.1_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-400-normal/atlas-v-421/v2.1/Atlas_V_421_Frost_V2.1_4.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/421/v2.1/Atlas_V_421_Frost_V2.1_1.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/421/v2.1/Atlas_V_421_Frost_V2.1_2.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/421/v2.1/Atlas_V_421_Frost_V2.1_3.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/421/v2.1/Atlas_V_421_Frost_V2.1_4.png",
             "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-400-normal/atlas-v-400-fairings/v2.1/Atlas_V_400_Fairings_V2.1.png"
         ],
         "versions": [
@@ -8478,15 +8485,29 @@
                         "description": "The digital io file of the frosted variant",
                         "type": "io",
                         "allowViewer": false,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-400-normal/atlas-v-421/v2.1/Atlas_V_421_Frost_V2.1.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/421/v2.1/Atlas_V_421_Frost_V2.1.io",
                         "name": "Atlas_V_421_Frost_V2.1.io"
                     },
                     {
                         "description": "The digital io file of the non frosted variant",
                         "type": "io",
                         "allowViewer": false,
-                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-400-normal/atlas-v-421/v2.1/Atlas_V_421_V2.1.io",
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/421/v2.1/Atlas_V_421_V2.1.io",
                         "name": "Atlas_V_421_V2.1.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the frosted variant",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/421/v2.1/Atlas_V_Frost_421_V2.1_instructions.pdf",
+                        "name": "Atlas_V_Frost_421_V2.1_instructions.pdf"
+                    },
+                    {
+                        "description": "The pdf instructions of the non frosted variant",
+                        "type": "pdf",
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/421/v2.1/Atlas_V_421_V2.1_instructions.pdf",
+                        "name": "Atlas_V_421_V2.1_instructions.pdf"
                     },
                     {
                         "description": "The digital io file of the different fairing variants",

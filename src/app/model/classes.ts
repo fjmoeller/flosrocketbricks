@@ -85,7 +85,7 @@ export class Moc {
   mocDescription: string;
   related: number[];
   altTitles: string[];
-  region: string;
+  region: string[];
   dateCreated: string;
   type: string;
 
@@ -102,7 +102,7 @@ export class Moc {
   regionExtra: string;
   typeExtra: string;
 
-  constructor(altTitles:string[],internalColor: string, type: string, region: string, id: number, versions: Version[], title: string, pictures: string[],
+  constructor(altTitles:string[],internalColor: string, type: string, region: string[], id: number, versions: Version[], title: string, pictures: string[],
     parts: number, dimensions: string, scale: string, designer: string,
     stability: number, difficulty: number, lastupdate: string, tags: string[],
     mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],

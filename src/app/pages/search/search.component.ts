@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FrontTag, Moc } from '../../model/classes';
-import { map, Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
@@ -70,7 +69,7 @@ export class SearchComponent implements OnInit {
 
     if (!this.tagRegions[0].selected) {
       let filteredTags: FrontTag[] = this.tagRegions.filter(tagRegion => tagRegion.selected);
-      tempMocs = tempMocs.filter((moc: Moc) => filteredTags.some(tag => moc.region == tag.tagId));
+      tempMocs = tempMocs.filter((moc: Moc) => filteredTags.some(tag => moc.region.includes(tag.tagId)));
     }
 
     if (!this.tagTypes[0].selected) {

@@ -1,50 +1,50 @@
 <div class="container text-center text-coloring w-100 header-content">
   <div class="row pt-2">
-    <div class="col-lg-9 mx-auto row">
-      <div class="col-3 col-lg-3 px-0">
+    <div class="col-lg-9 justify-content-center mx-auto row">
+      <div class="col-md-3 col-lg-3 px-0">
         <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
           <img src="https://files.flosrocketbackend.com/images/logo_small.png" class="img-fluid logoimage" alt="FlosRocketBricks">
         </a>
       </div>
       <div
-        class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkCollections"
+        class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkCollections"
         (mouseenter)='setRandomCollection()'>
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/collections/."
           routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Collections</a>
       </div>
       <div
-        class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkRockets"
+        class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkRockets"
         (mouseenter)='setRandomRocket()'>
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/search/." rel="nofollow"
           [queryParams]="{ type:'rocket' }" routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Rockets</a>
       </div>
       <div
-        class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkLaunchpads"
+        class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkLaunchpads"
         (mouseenter)='setRandomLaunchpad()'>
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/search/." rel="nofollow"
           [queryParams]="{ type:'launchpad' }" routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Launchpads</a>
       </div>
       <div
-        class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkSpacecraft"
+        class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkSpacecraft"
         (mouseenter)='setRandomSpacecraft()'>
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/search/." rel="nofollow"
           [queryParams]="{ type:'spacecraft' }" routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Spacecrafts</a>
       </div>
       <div
-        class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkSpaceStation"
+        class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkSpaceStation"
         (mouseenter)='setRandomSpacestation()'>
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/search/." rel="nofollow"
           [queryParams]="{ type:'spacestation' }" routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Space
           Stations</a>
       </div>
       <div
-        class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkOther"
+        class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkOther"
         (mouseenter)='setRandomOther()'>
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/search/." rel="nofollow"
           [queryParams]="{ type:'other' }" routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Other</a>
       </div>
       <div
-        class="col-3 col-lg px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkAbout">
+        class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkAbout">
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/about/." routerLinkActive="active" (click)="clearSearch()"
           ariaCurrentWhenActive="page">About</a>
       </div>

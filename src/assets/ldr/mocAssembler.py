@@ -56,14 +56,14 @@ if len(sys.argv) == 1 or sys.argv[1] == None or sys.argv[1] == "":
             with ZipFile(filepath, 'r') as zObject:
                 zObject.extract("model.ldr", path=os.getcwd())
             collectParts("model.ldr")
-            print("Total amount of "+str(len(parts))+ " parts found.")
+            #print("Total amount of "+str(len(parts))+ " parts found.")
             actualParts = ["\n0 NOSUBMODEL\n"]
             for part in parts:
                 if not part in submodels:
                     actualParts.append("0 FILE "+part+"\n") #todo is part right here?
                     actualParts.append(parts[part])
                     actualParts.append("0 NOFILE\n")
-                    print("Added: "+part+" to file")
+                    #print("Added: "+part+" to file")
             with open(file[:-2]+"ldr", 'a', encoding="utf8") as ldrmoc:
                 with open("model.ldr", 'r', encoding="utf8") as origfile:
                     ldrmoc.write(origfile.read() + "\n".join(actualParts))
@@ -72,7 +72,7 @@ if len(sys.argv) == 1 or sys.argv[1] == None or sys.argv[1] == "":
             submodels = []
 else:
     collectParts(sys.argv[1])
-    print("Total amount of "+str(len(parts))+ " parts found.")
+    #print("Total amount of "+str(len(parts))+ " parts found.")
     actualParts = ["\n0 NOSUBMODEL\n"]
     for part in parts:
         if not part in submodels:

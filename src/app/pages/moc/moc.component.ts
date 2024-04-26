@@ -30,7 +30,8 @@ export class MocComponent implements OnInit, OnDestroy {
       const foundMoc = this.mocGrabberService.getMoc(id);
       if (foundMoc != undefined) {
         this.moc = foundMoc;
-        this.metaService.setAllTags(this.moc.title + " 1:" + this.moc.scale + " - FlosRocketBricks", this.moc.mocDescription + " " + this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
+        const scaleText: string = (this.moc.scale != "-" && this.moc.scale != "") ? (" 1:" + this.moc.scale + " ") : ("");
+        this.metaService.setAllTags(this.moc.title + scaleText + " - FlosRocketBricks", this.moc.mocDescription + " " + this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
         this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 5);
       }
       else {

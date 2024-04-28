@@ -15,7 +15,7 @@ export class FileExportService {
 
   private splitString: string = "###";
 
-  private backendFetchUrl: string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
+  private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
 
   private countedPartMap: Map<string, number> = new Map<string, number>();
 
@@ -29,15 +29,16 @@ export class FileExportService {
 
     let xml = "<INVENTORY>\n";
     for (let key of this.countedPartMap.keys()) {
-      const splitted = key.split(this.splitString);
-      if (this.replaceColor && placeHolderColorcode == Number(splitted[0])) {
-        xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + splitted[1].split(".dat")[0] + "</ITEMID>\n		<COLOR>0</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>"
+      const splitted = key.split(this.splitString); //1sr part contains color, 2nd the id
+      let color = "0";
+      if (!this.replaceColor || placeHolderColorcode != Number(splitted[0])) { //if the color is not the to be replaced one
+        color = "" + this.ldrawColorService.getBricklinkColorOf(splitted[0]);
       }
-      else {
-        let color = splitted[0];
-        color = "" + this.ldrawColorService.getBricklinkColorOf(color);
-        xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + splitted[1].split(".dat")[0] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>"
-      }
+      //replace list has item if ldraw has multiple bricklink/rebrickable ids or if ldraw has no bricklink/rebrickable ids
+      //l=...;r=...;b=...;\n
+      //TODO: if replace list contains ldraw?? wtih same color then replace partnumber with new number+color
+      //TODO: use for p of parts: if p.l.contains(splitted[1].split(".dat")[0]) then return bricklink number
+      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + splitted[1].split(".dat")[0] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
     }
     xml += "</INVENTORY>";
 
@@ -65,7 +66,6 @@ export class FileExportService {
   }
 
   private async collectParts(url: string): Promise<void> {
-    console.log("Fetching MOC:", this.backendFetchUrl + url);
     const content = await fetch(this.backendFetchUrl + url);
     const ldrFile = await this.extractLdrFile(content);
 

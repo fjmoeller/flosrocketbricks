@@ -51,7 +51,7 @@ if len(sys.argv) == 1 or sys.argv[1] == None or sys.argv[1] == "":
     current_dir = os.getcwd()
     for file in os.listdir(current_dir):
         if file.endswith(".io"):
-            print("io file found: "+file)
+            print("io file "+file)
             filepath = os.path.join(current_dir, file)
             with ZipFile(filepath, 'r') as zObject:
                 zObject.extract("model.ldr", path=os.getcwd())

@@ -4,13 +4,15 @@ export class File {
   description: string;
   type: string;
   allowViewer: boolean;
+  allowExport: boolean;
 
-  constructor(link: string, name: string, description: string, type: string, allowViewer: boolean) {
+  constructor(link: string, name: string, description: string, type: string, allowViewer: boolean, allowExport:boolean) {
     this.link = link;
     this.name = name;
     this.description = description;
     this.type = type;
     this.allowViewer = allowViewer;
+    this.allowExport = allowExport;
   }
 }
 

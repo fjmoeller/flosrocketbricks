@@ -34,6 +34,13 @@ export class FileExportService {
       if (!this.replaceColor || placeHolderColorcode != Number(splitted[0])) { //if the color is not the to be replaced one
         color = "" + this.ldrawColorService.getBricklinkColorOf(splitted[0]);
       }
+      //check manually mapped export
+      //check mapped printed
+      //check parts list json
+      
+
+
+
       //replace list has item if ldraw has multiple bricklink/rebrickable ids or if ldraw has no bricklink/rebrickable ids
       //l=...;r=...;b=...;\n
       //TODO: if replace list contains ldraw?? wtih same color then replace partnumber with new number+color

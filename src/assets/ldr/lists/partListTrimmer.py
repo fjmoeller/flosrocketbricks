@@ -2,7 +2,7 @@ import requests
 import json
 import time
 
-api_key = "88a4920d8c0a00736abde4058721864a"
+api_key = ""
 api_link = "https://rebrickable.com/api/v3/lego/parts/"
 not_allowed_part_cats = [66,58,17,48,42,50,24,62,63,64,57,43]
 

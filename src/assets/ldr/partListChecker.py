@@ -39,6 +39,7 @@ for mocfile in os.listdir(os.getcwd()):
     problemCounter = 0
     mocParts = set()
     if mocfile.endswith(".io"):
+        customParts = 0
         print("io file "+mocfile)
         with ZipFile(os.path.join(os.getcwd(), mocfile), 'r') as iofile:
             iofile.extract("model.ldr", path=os.getcwd())
@@ -54,6 +55,7 @@ for mocfile in os.listdir(os.getcwd()):
                         mocParts.add(line.split(".dat")[0].split(" ")[-1])
                     if line[2:8] == "String" or line[2:6] == "Hose": # start of custom hose or string -> skip following lines
                         skipcurrently = True
+                        customParts += 1
             os.remove("model.ldr")
         with open("lists/parts-list.json","r") as partsmappingfile:
             partsmapping = json.load(partsmappingfile)
@@ -75,6 +77,8 @@ for mocfile in os.listdir(os.getcwd()):
                     else:
                         print("Problem found with Part l:" +mocPart+ " r:[] b:[]")
                         problemCounter += 1
+        if customParts > 0:
+            print("Warning: a total of "+str(customParts)+" custom parts found!")
         if problemCounter > 0:
             print("Total of " +str(problemCounter)+ " problems found!")
         else:

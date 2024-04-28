@@ -396,6 +396,27 @@
                         "description": "The digital io file of the rocket",
                         "type": "io",
                         "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.3/RFA_One_V1.3.io",
+                        "name": "RFA_One_V1.3.io"
+                    },
+                    {
+                        "description": "The digital io file of the frosted rocket",
+                        "type": "io",
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.3/RFA_One_Frosted_V1.3.io",
+                        "name": "RFA_One_Frosted_V1.3.io"
+                    }
+                ],
+                "version": "V1.3"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.2/RFA_One_V1.2.io",
                         "name": "RFA_One_V1.2.io"
                     },

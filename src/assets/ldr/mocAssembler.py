@@ -1,16 +1,22 @@
 import shutil
 import os
 import sys
+import json
 from zipfile import ZipFile
 
 parts = {}
 submodels = []
 
 printedDict = {}
-with open("lists/mappedPrintedList.txt", 'r', encoding="utf8") as mapfile:
-    for line in mapfile:
-        mappedPart = line.replace("\n", "").replace("\r", "").replace("\t", "").split(",")
-        printedDict[mappedPart[0]] = mappedPart[1]
+#with open("lists/mappedPrintedList.txt", 'r', encoding="utf8") as mapfile:
+#    for line in mapfile:
+#        mappedPart = line.replace("\n", "").replace("\r", "").replace("\t", "").split(",")
+#        printedDict[mappedPart[0]] = mappedPart[1]
+#print("PrintedMapperFile read with total entries: "+str(len(printedDict.keys())))
+with open("lists/mappedPrintedList.json", 'r', encoding="utf8") as mapfile:
+    printPartMappings = json.load(mapfile)
+    for partMapping in printPartMappings:
+        printedDict[partMapping["l"]] = partMapping["b"]
 print("PrintedMapperFile read with total entries: "+str(len(printedDict.keys())))
 
 def collectParts(filepath):

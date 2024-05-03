@@ -39,7 +39,7 @@ while response.status_code != 404:
     response = requests.get(api_link,params={"key": api_key,"page":api_page_counter,"page_size":1000})
 
 #Finished downloading all the parts from rebrickable
-with open("parts-list.json", "w") as f:
+with open("partsList.json", "w") as f:
     f.write("["+",".join(part_mappings)+"]")
 
 print("Finished with a part count of "+str(len(part_mappings)))

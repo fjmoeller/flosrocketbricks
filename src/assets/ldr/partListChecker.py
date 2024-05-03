@@ -21,10 +21,15 @@ def isPartInManualExportPartMappingList(mocPart):
     return mocPart in manualMappedList
 
 #create dict of mappedPrintedList
-with open("lists/mappedPrintedList.txt", 'r', encoding="utf8") as mapfile:
-    for line in mapfile:
-        mappedPart = line.replace("\n", "").replace("\r", "").replace("\t", "").split(",")
-        printedDict[mappedPart[0]] = mappedPart[1]
+#with open("lists/mappedPrintedList.txt", 'r', encoding="utf8") as mapfile:
+#    for line in mapfile:
+#        mappedPart = line.replace("\n", "").replace("\r", "").replace("\t", "").split(",")
+#        printedDict[mappedPart[0]] = mappedPart[1]
+#print("PrintedMapperFile read with total entries: "+str(len(printedDict.keys())))
+with open("lists/mappedPrintedList.json", 'r', encoding="utf8") as mappingFile:
+    printPartMappings = json.load(mappingFile)
+    for partMapping in printPartMappings:
+        printedDict[partMapping["l"]] = partMapping["b"]
 print("PrintedMapperFile read with total entries: "+str(len(printedDict.keys())))
 
 #create dict of manualExportPartMappingList
@@ -57,7 +62,7 @@ for mocfile in os.listdir(os.getcwd()):
                         skipcurrently = True
                         customParts += 1
             os.remove("model.ldr")
-        with open("lists/parts-list.json","r") as partsmappingfile:
+        with open("lists/partsList.json","r") as partsmappingfile:
             partsmapping = json.load(partsmappingfile)
             #print("Checking a total of "+ str(len(mocParts))+ " parts against a total of "+str(len(partsmapping))+" mappings")
             for mocPart in mocParts:

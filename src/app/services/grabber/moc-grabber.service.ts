@@ -10,7 +10,7 @@ export class MocGrabberService {
   private mocs: Moc[];
 
   constructor() {
-    this.mocs = mocs;
+    this.mocs = mocs as Moc[];
     
   }
 

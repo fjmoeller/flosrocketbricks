@@ -6,7 +6,7 @@ export class File {
   allowViewer: boolean;
   allowExport: boolean;
 
-  constructor(link: string, name: string, description: string, type: string, allowViewer: boolean, allowExport:boolean) {
+  constructor(link: string, name: string, description: string, type: string, allowViewer: boolean, allowExport: boolean) {
     this.link = link;
     this.name = name;
     this.description = description;
@@ -43,7 +43,7 @@ export class Collection {
   cover: string;
   subCollections: SubCollection[];
 
-  constructor(id: number, name: string, description: string,cover:string, subCollections: SubCollection[]) {
+  constructor(id: number, name: string, description: string, cover: string, subCollections: SubCollection[]) {
     this.id = id;
     this.name = name;
     this.description = description;
@@ -104,7 +104,7 @@ export class Moc {
   regionExtra: string;
   typeExtra: string;
 
-  constructor(altTitles:string[],internalColor: string, type: string, region: string[], id: number, versions: Version[], title: string, pictures: string[],
+  constructor(altTitles: string[], internalColor: string, type: string, region: string[], id: number, versions: Version[], title: string, pictures: string[],
     parts: number, dimensions: string, scale: string, designer: string,
     stability: number, difficulty: number, lastupdate: string, tags: string[],
     mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],

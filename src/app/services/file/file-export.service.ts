@@ -176,7 +176,7 @@ export class FileExportService {
   }
 
   private parseSubmodels(submodels: string[]) {
-    console.log("Now parsing submodels!");
+    //console.log("Now parsing submodels!");
     const ldrSubModelMap = new Map<string, SimpleLdrSubmodel>();
     let topSubmodelSet: boolean = false;
     let topLdrSubmodel: SimpleLdrSubmodel = new SimpleLdrSubmodel("", []);

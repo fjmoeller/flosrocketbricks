@@ -80,7 +80,7 @@ for mocfile in os.listdir(os.getcwd()):
                         actualLdrawPart = printedDict[mocPart+".dat"]
                         actualPartMappings = searchPartsListJson(actualLdrawPart,partsmapping)
                     else:
-                        print("Problem found with Part l:" +mocPart+ " r:[] b:[]")
+                        print("Problem found with Part l:" +mocPart+ " r:{} b:{}")
                         problemCounter += 1
         if customParts > 0:
             print("Warning: a total of "+str(customParts)+" custom parts found!")

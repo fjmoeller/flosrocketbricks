@@ -71,14 +71,25 @@ export class LdrawColorService {
     return new Color("#fff000");
   }
 
-  getBricklinkColorOf(ldrawIdString: string): number {
+  getBricklinkColorOf(ldrawIdString: string,defaultColor:number): number {
     const ldrawId = Number(ldrawIdString);
 
     let foundColors = rebr_colors.filter(color => color.external_ids.LDraw?.ext_ids.includes(ldrawId));
 
     if(foundColors.length != 1)
-      console.log("Error finding color %s",ldrawIdString);
+      console.error("Error finding color %s",ldrawIdString);
 
-    return foundColors[0].external_ids.BrickLink?.ext_ids[0] ?? -1;
+    return foundColors[0].external_ids.BrickLink?.ext_ids[0] ?? defaultColor;
+  }
+
+  getRebrickableColorOf(ldrawIdString: string,defaultColor:number): number {
+    const ldrawId = Number(ldrawIdString);
+
+    let foundColors = rebr_colors.filter(color => color.external_ids.LDraw?.ext_ids.includes(ldrawId));
+
+    if(foundColors.length != 1)
+      console.error("Error finding color %s",ldrawIdString);
+
+    return foundColors[0].id ?? defaultColor;
   }
 }

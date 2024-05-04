@@ -15166,8 +15166,8 @@
         "dimensionsExtra": "",
         "typeExtra": "",
         "internalColor": "Green",
-        "mocDescription": "The rocket stages of this can be seperated. The payload fiaring holds some space for a small payload inside. An additional stand for the rocket is recommended. This MOC can be completely build out of Lego bricks.",
-        "rocketDescription": "The OmegA rocket was a project by Northrop Grumman Space Systems. It consisted of mutiple solid stages and a cryogenic, RL-10 driven upper stage. The development ceised development in 2020. The rocket would have been 59.84 meters high with a diameter of 3.71 meters on the first two stages.",
+        "mocDescription": "This is a MOC of the OmegA rocket. The stages of the rocket can be seperated into the two boosters, the first stage, the second stage and the third stage. The payload fairings can be separated from the third stage of the rocket and they hold some space for a payload.",
+        "rocketDescription": "The OmegA rocket was a project by Northrop Grumman Space Systems. It consisted of mutiple solid stages and a cryogenic, RL-10 driven upper stage. The development ceased development in 2020. The rocket would have been 59.84 meters high with a diameter of 3.71 meters on the first two stages.",
         "links": [
             "https://en.wikipedia.org/wiki/OmegA",
             "https://www.bernd-leitenberger.de/omegA.shtml"
@@ -15175,17 +15175,18 @@
         "stabilityExtra": "",
         "company": "",
         "difficulty": -1,
-        "lastupdate": "2023-03-06",
+        "lastupdate": "2024-05-04",
         "related": [],
         "region": [
             "USA"
         ],
         "scale": "110",
-        "smallCoverImage": "assets/mocImages/110/usa/omega/110-omega-v1.1.png",
+        "smallCoverImage": "assets/mocImages/110/usa/omega/110-omega-v1.2.jpg",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/usa/omega/v1.1/OmgeA_V1.1_1.png",
-            "https://files.flosrocketbackend.com/mocs/110/usa/omega/v1.1/OmgeA_V1.1_2.png",
-            "https://files.flosrocketbackend.com/mocs/110/usa/omega/v1.1/OmgeA_V1.1_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/omega/v1.2/OmgeA_V1.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/omega/v1.2/OmgeA_V1.2_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/omega/v1.2/OmgeA_V1.2_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/omega/v1.2/OmgeA_V1.2_4.jpg"
         ],
         "internalColorExtra": "",
         "scaleExtra": "",
@@ -15205,6 +15206,21 @@
                     }
                 ],
                 "version": "V1.1"
+            },
+            {
+                "changelog": "Improved fairings and interstage",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/omega/v1.2/OmgeA_V1.2.io",
+                        "name": "OmgeA_V1.2.io"
+                    }
+                ],
+                "version": "V1.2"
             }
         ],
         "dimensions": "5.1x6.9x54.7cm",

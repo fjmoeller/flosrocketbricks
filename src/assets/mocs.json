@@ -14683,6 +14683,14 @@
                         "allowExport": false,
                         "allowViewer": false,
                         "description": "The digital io file"
+                    },
+                    {
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/madv/v3.0/MADV_V3.0_instructions.pdf",
+                        "name": "MADV_V3.0_instructions.pdf",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "description": "The pdf instructions"
                     }
                 ],
                 "version": "V3.0"

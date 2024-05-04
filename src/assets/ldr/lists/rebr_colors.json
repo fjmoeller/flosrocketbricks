@@ -2575,7 +2575,7 @@
         ],
         "ext_descrs": [
           [
-            "Trans_Light_Blue"
+            "Trans_Very_Light_Blue"
           ]
         ]
       }
@@ -4118,7 +4118,7 @@
         ],
         "ext_descrs": [
           [
-            "Medium_Dark_Flesh"
+            "Medium_Nougat"
           ]
         ]
       }
@@ -4177,7 +4177,7 @@
         ],
         "ext_descrs": [
           [
-            "Dark_Purple"
+            "Medium_Lilac"
           ]
         ]
       }
@@ -4235,7 +4235,7 @@
         ],
         "ext_descrs": [
           [
-            "Dark_Flesh"
+            "Light_Brown"
           ]
         ]
       }
@@ -4341,7 +4341,7 @@
         ],
         "ext_descrs": [
           [
-            "Flesh"
+            "Nougat"
           ]
         ]
       }
@@ -5627,7 +5627,7 @@
         ],
         "ext_descrs": [
           [
-            "Flat_Dark_Gold"
+            "Pearl_Yellow"
           ]
         ]
       }
@@ -5686,7 +5686,7 @@
         ],
         "ext_descrs": [
           [
-            "Flat_Silver"
+            "Pearl_Silver"
           ]
         ]
       }
@@ -7901,16 +7901,6 @@
           ]
         ]
       },
-      "LDraw": {
-        "ext_ids": [
-          218
-        ],
-        "ext_descrs": [
-          [
-            "Medium Purple"
-          ]
-        ]
-      },
       "BrickLink": {
         "ext_ids": [
           227
@@ -7928,6 +7918,16 @@
         "ext_descrs": [
           [
             "Very Light Purple"
+          ]
+        ]
+      },
+      "LDraw": {
+        "ext_ids": [
+          218
+        ],
+        "ext_descrs": [
+          [
+            "Reddish_Lilac"
           ]
         ]
       }
@@ -8987,7 +8987,8 @@
         ],
         "ext_descrs": [
           [
-            "Coral"
+            "Coral",
+            "Vibrant Coral"
           ]
         ]
       }
@@ -9086,17 +9087,6 @@
     "rgb": "68BCC5",
     "is_trans": true,
     "external_ids": {
-      "LEGO": {
-        "ext_ids": [
-          362
-        ],
-        "ext_descrs": [
-          [
-            "Transparent Blue Opal",
-            "TR. BLUE OPAL"
-          ]
-        ]
-      },
       "BrickLink": {
         "ext_ids": [
           223
@@ -9124,6 +9114,17 @@
         "ext_descrs": [
           [
             "Transparent Blue Opal"
+          ]
+        ]
+      },
+      "LEGO": {
+        "ext_ids": [
+          362
+        ],
+        "ext_descrs": [
+          [
+            "Transparent Blue Opal",
+            "TR.BLUE OPAL"
           ]
         ]
       }
@@ -9262,6 +9263,16 @@
             "Transparent Brown With Opalescence"
           ]
         ]
+      },
+      "LDraw": {
+        "ext_ids": [
+          363
+        ],
+        "ext_descrs": [
+          [
+            "Opal_Trans_Black"
+          ]
+        ]
       }
     }
   },
@@ -9299,6 +9310,16 @@
         "ext_descrs": [
           [
             "Transparent Light Bright Green"
+          ]
+        ]
+      },
+      "LDraw": {
+        "ext_ids": [
+          227
+        ],
+        "ext_descrs": [
+          [
+            "Trans_Bright_Light_Green"
           ]
         ]
       }
@@ -9385,6 +9406,16 @@
         "ext_descrs": [
           [
             "Tr.Violet Opal"
+          ]
+        ]
+      },
+      "LDraw": {
+        "ext_ids": [
+          365
+        ],
+        "ext_descrs": [
+          [
+            "Opal_Trans_Purple"
           ]
         ]
       }
@@ -9718,7 +9749,7 @@
   },
   {
     "id": 1068,
-    "name": "Reddish Orange",
+    "name": "Bright Reddish Orange",
     "rgb": "EE5434",
     "is_trans": false,
     "external_ids": {
@@ -9748,7 +9779,7 @@
         ],
         "ext_descrs": [
           [
-            "Reddish Orange"
+            "Bright Reddish Orange"
           ]
         ]
       }
@@ -9817,6 +9848,16 @@
         "ext_descrs": [
           [
             "Pearl Blue"
+          ]
+        ]
+      },
+      "LDraw": {
+        "ext_ids": [
+          185
+        ],
+        "ext_descrs": [
+          [
+            "Metallic_Bright_Blue"
           ]
         ]
       }
@@ -9907,16 +9948,6 @@
           ]
         ]
       },
-      "LDraw": {
-        "ext_ids": [
-          83
-        ],
-        "ext_descrs": [
-          [
-            "Metallic_Black"
-          ]
-        ]
-      },
       "BrickOwl": {
         "ext_ids": [
           185
@@ -9936,6 +9967,16 @@
             "Pearl Black"
           ]
         ]
+      },
+      "LDraw": {
+        "ext_ids": [
+          83
+        ],
+        "ext_descrs": [
+          [
+            "Pearl_Black"
+          ]
+        ]
       }
     }
   },
@@ -9945,6 +9986,16 @@
     "rgb": "009ECE",
     "is_trans": false,
     "external_ids": {
+      "BrickLink": {
+        "ext_ids": [
+          247
+        ],
+        "ext_descrs": [
+          [
+            "Little Robots Blue"
+          ]
+        ]
+      },
       "LEGO": {
         "ext_ids": [
           188
@@ -10300,6 +10351,16 @@
             "Metallic Green"
           ]
         ]
+      },
+      "LDraw": {
+        "ext_ids": [
+          200
+        ],
+        "ext_descrs": [
+          [
+            "Lemon_Metallic"
+          ]
+        ]
       }
     }
   },
@@ -10404,6 +10465,16 @@
             "Warm Tan"
           ]
         ]
+      },
+      "LDraw": {
+        "ext_ids": [
+          371
+        ],
+        "ext_descrs": [
+          [
+            "Medium_Tan"
+          ]
+        ]
       }
     }
   },
@@ -10479,6 +10550,16 @@
         "ext_descrs": [
           [
             "Metallic Copper"
+          ]
+        ]
+      },
+      "LDraw": {
+        "ext_ids": [
+          300
+        ],
+        "ext_descrs": [
+          [
+            "Metallic_Copper"
           ]
         ]
       }
@@ -10573,6 +10654,26 @@
         "ext_descrs": [
           [
             "Tr. Black"
+          ]
+        ]
+      },
+      "BrickLink": {
+        "ext_ids": [
+          251
+        ],
+        "ext_descrs": [
+          [
+            "Trans-Black (2023)"
+          ]
+        ]
+      },
+      "BrickOwl": {
+        "ext_ids": [
+          235
+        ],
+        "ext_descrs": [
+          [
+            "Transparent Black (New)"
           ]
         ]
       }
@@ -10980,6 +11081,158 @@
     "rgb": "A5ADB4",
     "is_trans": false,
     "external_ids": {}
+  },
+  {
+    "id": 1136,
+    "name": "Reddish Orange",
+    "rgb": "CA4C0B",
+    "is_trans": false,
+    "external_ids": {
+      "LEGO": {
+        "ext_ids": [
+          402
+        ],
+        "ext_descrs": [
+          [
+            "Red. Orange"
+          ]
+        ]
+      },
+      "BrickLink": {
+        "ext_ids": [
+          167
+        ],
+        "ext_descrs": [
+          [
+            "Reddish Orange"
+          ]
+        ]
+      },
+      "BrickOwl": {
+        "ext_ids": [
+          241
+        ],
+        "ext_descrs": [
+          [
+            "Reddish Orange"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 1137,
+    "name": "Sienna Brown",
+    "rgb": "915C3C",
+    "is_trans": false,
+    "external_ids": {
+      "LEGO": {
+        "ext_ids": [
+          1137
+        ],
+        "ext_descrs": [
+          [
+            "Sienna Brown"
+          ]
+        ]
+      },
+      "BrickOwl": {
+        "ext_ids": [
+          245
+        ],
+        "ext_descrs": [
+          [
+            "Sienna Brown"
+          ]
+        ]
+      },
+      "BrickLink": {
+        "ext_ids": [
+          169
+        ],
+        "ext_descrs": [
+          [
+            "Sienna"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 1138,
+    "name": "Umber Brown",
+    "rgb": "5E3F33",
+    "is_trans": false,
+    "external_ids": {
+      "BrickLink": {
+        "ext_ids": [
+          168
+        ],
+        "ext_descrs": [
+          [
+            "Umber"
+          ]
+        ]
+      },
+      "BrickOwl": {
+        "ext_ids": [
+          243
+        ],
+        "ext_descrs": [
+          [
+            "Umber Brown"
+          ]
+        ]
+      },
+      "LEGO": {
+        "ext_ids": [
+          1138
+        ],
+        "ext_descrs": [
+          [
+            "Umber Brown"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": 1139,
+    "name": "Trans-Yellow Opal",
+    "rgb": "F5CD2F",
+    "is_trans": true,
+    "external_ids": {
+      "LEGO": {
+        "ext_ids": [
+          1139
+        ],
+        "ext_descrs": [
+          [
+            "Tr. Yellow Opal"
+          ]
+        ]
+      },
+      "BrickLink": {
+        "ext_ids": [
+          170
+        ],
+        "ext_descrs": [
+          [
+            "Satin Trans-Yellow"
+          ]
+        ]
+      },
+      "BrickOwl": {
+        "ext_ids": [
+          247
+        ],
+        "ext_descrs": [
+          [
+            "Transparent Yellow Opal"
+          ]
+        ]
+      }
+    }
   },
   {
     "id": 9999,

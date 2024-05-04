@@ -1,13 +1,15 @@
+# As printed parts in io files actually get saved via their bricklink id and not by their ldraw id, such as all the other parts
+# there needs to be some kind of mapping to find the ldraw id from the bricklink id, which is what this file is for
+# OLD: py printPartMapper.py origparts/parts lists/mappedPrintedList.txt
+# py printPartMapper.py origparts/parts lists/mappedPrintedList.json
+
 import sys
 import os
+import json
 
 
 found = 0
-# sys.argv[1] should be the notneeded1.ldr /parts/parts
-# sys.argv[2] should be the target folder /lists
-# py printPartMapper.py origparts/parts lists/mappedPrintedList.txt
-
-res = "";
+res = []
 
 for filename in os.listdir(sys.argv[1]):
     if(filename.endswith(".dat")):
@@ -22,14 +24,16 @@ for filename in os.listdir(sys.argv[1]):
                     try:
                         value_index = splitted.index("Bricklink")+1
                         partAlt = splitted[value_index].replace(',', '').replace('\n', '').replace('\r', '')
-                        res += partAlt + ".dat," + part + "\n"
+                        #res += partAlt + ".dat," + part + "\n"
+                        res.append({"b":partAlt+".dat", "l":part})
                         found += 1
                         print(str(found)+ " " + partAlt + "," + part)
                     except:
                         try:
                             value_index = splitted.index("BrickLink")+1
                             partAlt = splitted[value_index].replace(',', '').replace('\n', '').replace('\r', '')
-                            res += partAlt + ".dat," + part + "\n"
+                            #res += partAlt + ".dat," + part + "\n"
+                            res.append({"b":partAlt+".dat", "l":part})
                             found += 1
                             print(str(found)+ " " + partAlt + "," + part)
                         except:
@@ -38,9 +42,10 @@ for filename in os.listdir(sys.argv[1]):
                 
                 
                 
-
-f = open(sys.argv[2], "w")
-f.write(res)
-f.close()
+with open(sys.argv[2], "w") as file:
+    json.dump(res,file)
+#f = open(sys.argv[2], "w")
+#f.write(res)
+#f.close()
 
 print("Finished! A total of "+str(found)+" part mappings have been detected")

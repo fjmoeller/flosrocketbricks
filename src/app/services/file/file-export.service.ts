@@ -5,6 +5,10 @@ import { PartReference } from '../../model/ldrawParts';
 import { IoFileService } from './io-file.service';
 import { LdrawColorService } from './ldraw-color.service';
 import { SimpleLdrSubmodel, SimpleReference } from '../../model/simpleLdrawParts';
+import manualExportPartMappingList from '../../../assets/ldr/lists/manualExportPartMappingList.json'
+import mappedPrintedList from '../../../assets/ldr/lists/mappedPrintedList.json'
+import partsList from '../../../assets/ldr/lists/partsList.json'
+import { MultiPartMapping, SinglePartMapping,PrintPartMapping } from 'src/app/model/partMappings';
 
 @Injectable({
   providedIn: 'root'
@@ -13,59 +17,119 @@ export class FileExportService {
 
   private replaceColor: boolean = true;
 
-  private splitString: string = "###";
+  private separationString: string = "###";
 
-  private backendFetchUrl: string = "https://wandering-breeze-a826.flomodoyt1960.workers.dev/viewer/?apiurl=";
+  private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
 
   private countedPartMap: Map<string, number> = new Map<string, number>();
+  private usedPartsSet = new Set<string>();
+
+  private modelPartMappings: Map<string, { r: string, b: string }> = new Map();
 
   constructor(private ioFileService: IoFileService, private ldrawColorService: LdrawColorService) { }
 
-  async getXml(url: string, colorName: string): Promise<string> {
+  async collectUsedPartsMappings(url:string): Promise<void> {
+    //fetch the moc specific partmapping list
+    const fetchResult = await fetch(this.backendFetchUrl + url + "_parts.json");
+    let mocSpecificMappedParts : SinglePartMapping[] = [];
+    if (fetchResult.status != 404)
+      mocSpecificMappedParts = (await fetchResult.json()) as SinglePartMapping[];
+
+    const allPartsList: MultiPartMapping[] = (partsList as MultiPartMapping[]);
+    const printedMapping: PrintPartMapping[] = (mappedPrintedList as PrintPartMapping[]);
+    const manualPartMapping: SinglePartMapping[] = (manualExportPartMappingList as SinglePartMapping[]);
+    this.modelPartMappings.clear();
+    for (let usedPartId of this.usedPartsSet) {
+      usedPartId = usedPartId.slice(0, -4);
+      
+      const specificmappedPart = mocSpecificMappedParts.find(printMapping => printMapping.l == usedPartId); //checking if it is a manually mapped part
+      if(specificmappedPart != undefined){
+        this.modelPartMappings.set(usedPartId,{r:specificmappedPart.r,b:specificmappedPart.b});
+        continue;
+      }
+
+      const mappedPart = manualPartMapping.find(printMapping => printMapping.l == usedPartId); //checking if it is a manually mapped part
+      if(mappedPart != undefined){
+        this.modelPartMappings.set(usedPartId,{r:mappedPart.r,b:mappedPart.b});
+        continue;
+      }
+
+      let ldrawId = usedPartId; //might actually not be an ldraw id at this point but that will be fixed below (or later)
+
+      const actualLdrawId = printedMapping.filter(printMapping => printMapping.b == usedPartId); //checking if it is a printed part bricklink id
+      if(actualLdrawId.length > 0){
+        ldrawId = actualLdrawId[0].l;
+      }
+      let alert = 0;
+      for (let partMapping of allPartsList) { //TODO assert that 
+        if (partMapping.l.includes(ldrawId)){ //at this point this should only be valid once
+          this.modelPartMappings.set(usedPartId,{r:partMapping.r,b:partMapping.b[0]});
+          alert += 1;
+          //continue;
+        }
+      }
+      if(alert > 1)
+        console.error("Error: "+ldrawId+" has multiple mappings, check the python validation script!");
+    }
+  }
+
+  async getXml(url: string, placeholderColor: string): Promise<string> {
     this.countedPartMap.clear();
     await this.collectParts(url);
+    await this.collectUsedPartsMappings(url);
 
-    const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(colorName);
+    const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(placeholderColor);
+
 
     let xml = "<INVENTORY>\n";
     for (let key of this.countedPartMap.keys()) {
-      const splitted = key.split(this.splitString);
-      if (this.replaceColor && placeHolderColorcode == Number(splitted[0])) {
-        xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + splitted[1].split(".dat")[0] + "</ITEMID>\n		<COLOR>0</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>"
+      const colorIdKey = key.split(this.separationString); //1sr part contains color, 2nd the id
+      let color = "0";
+      if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
+        color = "" + this.ldrawColorService.getBricklinkColorOf(colorIdKey[0],0);
       }
-      else {
-        let color = splitted[0];
-        color = "" + this.ldrawColorService.getBricklinkColorOf(color);
-        xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + splitted[1].split(".dat")[0] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>"
-      }
+
+      if(!this.modelPartMappings.has(colorIdKey[1].split(".dat")[0]))
+        console.error("Part with ID"+colorIdKey[1].split(".dat")[0]+" not found!")
+      
+      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + this.modelPartMappings.get(colorIdKey[1].split(".dat")[0])?.b + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
     }
     xml += "</INVENTORY>";
 
     this.countedPartMap.clear();
+    this.usedPartsSet.clear();
+    this.modelPartMappings.clear();
     return xml;
   }
 
   async getCsv(url: string, colorName: string): Promise<string> {
     this.countedPartMap.clear();
     await this.collectParts(url);
+    await this.collectUsedPartsMappings(url);
 
     const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(colorName);
 
-    let csv = "BLItemNo,LDrawColorId,Qty\n";
+    let csv = "Part,Color,Quantity,Is Spare\n";
     for (let key of this.countedPartMap.keys()) {
-      const splitted = key.split(this.splitString);
-      if (this.replaceColor && placeHolderColorcode == Number(splitted[0]))
-        csv += splitted[1].split(".dat")[0] + ",9999," + this.countedPartMap.get(key) + "\n"
-      else
-        csv += splitted[1].split(".dat")[0] + "," + splitted[0] + "," + this.countedPartMap.get(key) + "\n"
+      const colorIdKey = key.split(this.separationString);
+      let color = "9999";
+      if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
+        color = "" + this.ldrawColorService.getRebrickableColorOf(colorIdKey[0],9999);
+      }
+
+      if(!this.modelPartMappings.has(colorIdKey[1].split(".dat")[0]))
+        console.error("Part with ID "+colorIdKey[1].split(".dat")[0]+" not found!")
+
+      csv += this.modelPartMappings.get(colorIdKey[1].split(".dat")[0])?.r + "," + color + "," + this.countedPartMap.get(key) + ",False\n";
     }
 
     this.countedPartMap.clear();
+    this.usedPartsSet.clear();
+    this.modelPartMappings.clear();
     return csv;
   }
 
   private async collectParts(url: string): Promise<void> {
-    console.log("Fetching MOC:", this.backendFetchUrl + url);
     const content = await fetch(this.backendFetchUrl + url);
     const ldrFile = await this.extractLdrFile(content);
 
@@ -74,8 +138,6 @@ export class FileExportService {
     const submodels = this.parseSubmodels(ldrFile.split("0 NOFILE"));
     const firstSubmodel = submodels.topLdrSubmodel;
     const allSubmodels = submodels.submodelMap;
-
-    this.countedPartMap.clear();
 
     this.countParts(firstSubmodel, allSubmodels);
 
@@ -88,8 +150,9 @@ export class FileExportService {
         if (referencedSubmodel)//if is submodel
           this.countParts(referencedSubmodel, allSubmodels);
         else { //if is part
-          const id = reference.color + this.splitString + reference.name;
+          const id = reference.color + this.separationString + reference.name;
           this.countedPartMap.set(id, (this.countedPartMap.get(id) ?? 0) + 1);
+          this.usedPartsSet.add(reference.name);
         }
       }
     );

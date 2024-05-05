@@ -14660,9 +14660,9 @@
         "dateCreated": "2023-02-13",
         "related": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/madv/v3.0/cover.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/madv/v3.0/V3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/madv/v3.0/V3_2.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/madv/v3.1/MADV_V3.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/madv/v3.1/MADV_V3.1_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/madv/v3.1/MADV_V3.1_3.jpg"
         ],
         "title": "MADV",
         "internalColorExtra": "",
@@ -14694,16 +14694,31 @@
                     }
                 ],
                 "version": "V3.0"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/madv/v3.1/MADV_V3.1.io",
+                        "name": "MADV_V3.1.io",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "description": "The digital io file"
+                    }
+                ],
+                "version": "V3.1"
             }
         ],
         "difficultyExtra": "",
-        "smallCoverImage": "assets/mocImages/110/usa/madv/110-madv-v3.0.png",
+        "smallCoverImage": "assets/mocImages/110/usa/madv/110-madv-v3.1.jpg",
         "regionExtra": "",
         "typeExtra": "",
         "stabilityExtra": "",
         "companyExtra": "",
-        "mocDescription": "The Mars Ascent/Descent Vehicle (MADV) is a proposal for a reusable martian lander by Lockheed Martin.",
-        "rocketDescription": "",
+        "mocDescription": "",
+        "rocketDescription": "The Mars Ascent/Descent Vehicle (MADV) is a proposal for a reusable martian lander by Lockheed Martin.",
         "region": [
             "USA"
         ],

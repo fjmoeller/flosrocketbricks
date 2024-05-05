@@ -12182,7 +12182,7 @@
         "stabilityExtra": "",
         "company": "ULA",
         "difficulty": -1,
-        "lastupdate": "2023-03-31",
+        "lastupdate": "2024-05-05",
         "dateCreated": "2023-03-31",
         "related": [
             50,
@@ -12210,14 +12210,35 @@
         "designer": "SkySaac",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.1/Atlas_V_N22_Starliner_Frost_V2.1_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.1/Atlas_V_N22_Starliner_Frost_V2.1_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.1/Atlas_V_N22_Starliner_Frost_V2.1_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.1/Atlas_V_N22_Starliner_Frost_V2.1_4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.1/Atlas_V_N22_Starliner_Frost_V2.1_5.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-n22-starliner/v2.1/Atlas_V_N22_Starliner_Frost_V2.1_6.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.2/Atlas_V_N22_Starliner_V2.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.2/Atlas_V_N22_Starliner_V2.2_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.2/Atlas_V_N22_Starliner_V2.2_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.2/Atlas_V_N22_Starliner_V2.2_4.jpg"
         ],
         "versions": [
+            {
+                "changelog": "Updated interstage",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the frosted version",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.2/Atlas_V_N22_Starliner_Frost_V2.2.io",
+                        "name": "Atlas_V_N22_Starliner_Frost_V2.2.io"
+                    },
+                    {
+                        "description": "The digital io file of the normal version",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.2/Atlas_V_N22_Starliner_V2.2.io",
+                        "name": "Atlas_V_N22_Starliner_V2.2.io"
+                    }
+                ],
+                "version": "V2.2"
+            },
             {
                 "changelog": "Updated the core stability and buildability",
                 "versionExtra": "",

@@ -3743,7 +3743,7 @@
         "altTitles": [],
         "tags": [],
         "designer": "SkySaac",
-        "lastupdate": "2023-10-03",
+        "lastupdate": "2024-05-05",
         "dateCreated": "2023-10-03",
         "related": [],
         "updateMessage": "",
@@ -3751,17 +3751,32 @@
         "rocketDescription": "Sputnik was a R-7 rocket carrying the Sputnik 1 satellite, which was the first satellite to orbit the earth.",
         "internalColor": "Green",
         "scale": "110",
-        "parts": 620,
+        "parts": 593,
         "dimensions": "9.3x9.3x26.4cm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/ussr/sputnik/rocket/110-sputnik-v1.2.png",
+        "smallCoverImage": "assets/mocImages/110/ussr/sputnik/rocket/110-sputnik-v1.3.jpg",
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/sputnik/rocket/v1.2/R7_Sputnik_V1.2_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/udssr/sputnik/rocket/v1.2/R7_Sputnik_V1.2_2.png"
+            "https://files.flosrocketbackend.com/mocs/110/ussr/sputnik/rocket/v1.3/R7_Sputnik_V1.3_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/sputnik/rocket/v1.3/R7_Sputnik_V1.3_2.jpg"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/sputnik/rocket/v1.3/R7_Sputnik_V1.3.io",
+                        "name": "R7_Sputnik_V1.3.io"
+                    }
+                ],
+                "version": "V1.3"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

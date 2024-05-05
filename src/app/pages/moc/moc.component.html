@@ -364,7 +364,6 @@
                         <hr *ngIf="version.changelog!=''" class="mt-3 mb-1 d-inline-block divider-hr" />
                         <div *ngFor="let file of version.files;let indexOfFile=index;"
                             class="mx-3 py-1 text-coloring d-flex align-items-center">
-                            
                             <label title="{{file.description}}" style="margin-right:10px">{{file.name}}</label>
                             <div class="m-0 p-0">
                                 <a title="Download {{file.type}} file"

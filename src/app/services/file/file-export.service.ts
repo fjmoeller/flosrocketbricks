@@ -8,7 +8,7 @@ import { SimpleLdrSubmodel, SimpleReference } from '../../model/simpleLdrawParts
 import manualExportPartMappingList from '../../../assets/ldr/lists/manualExportPartMappingList.json'
 import mappedPrintedList from '../../../assets/ldr/lists/mappedPrintedList.json'
 import partsList from '../../../assets/ldr/lists/partsList.json'
-import { MultiPartMapping, SinglePartMapping,PrintPartMapping } from 'src/app/model/partMappings';
+import { MultiPartMapping, SinglePartMapping, PrintPartMapping } from 'src/app/model/partMappings';
 
 @Injectable({
   providedIn: 'root'
@@ -28,10 +28,10 @@ export class FileExportService {
 
   constructor(private ioFileService: IoFileService, private ldrawColorService: LdrawColorService) { }
 
-  async collectUsedPartsMappings(url:string): Promise<void> {
+  async collectUsedPartsMappings(url: string): Promise<void> {
     //fetch the moc specific partmapping list
-    const fetchResult = await fetch(this.backendFetchUrl + url + "_parts.json");
-    let mocSpecificMappedParts : SinglePartMapping[] = [];
+    const fetchResult = await fetch(this.backendFetchUrl + url + "_pm.json");
+    let mocSpecificMappedParts: SinglePartMapping[] = [];
     if (fetchResult.status != 404)
       mocSpecificMappedParts = (await fetchResult.json()) as SinglePartMapping[];
 
@@ -40,36 +40,35 @@ export class FileExportService {
     const manualPartMapping: SinglePartMapping[] = (manualExportPartMappingList as SinglePartMapping[]);
     this.modelPartMappings.clear();
     for (let usedPartId of this.usedPartsSet) {
-      usedPartId = usedPartId.slice(0, -4);
-      
+
       const specificmappedPart = mocSpecificMappedParts.find(printMapping => printMapping.l == usedPartId); //checking if it is a manually mapped part
-      if(specificmappedPart != undefined){
-        this.modelPartMappings.set(usedPartId,{r:specificmappedPart.r,b:specificmappedPart.b});
+      if (specificmappedPart != undefined) {
+        this.modelPartMappings.set(usedPartId, { r: specificmappedPart.r, b: specificmappedPart.b });
         continue;
       }
 
       const mappedPart = manualPartMapping.find(printMapping => printMapping.l == usedPartId); //checking if it is a manually mapped part
-      if(mappedPart != undefined){
-        this.modelPartMappings.set(usedPartId,{r:mappedPart.r,b:mappedPart.b});
+      if (mappedPart != undefined) {
+        this.modelPartMappings.set(usedPartId, { r: mappedPart.r, b: mappedPart.b });
         continue;
       }
 
       let ldrawId = usedPartId; //might actually not be an ldraw id at this point but that will be fixed below (or later)
 
       const actualLdrawId = printedMapping.filter(printMapping => printMapping.b == usedPartId); //checking if it is a printed part bricklink id
-      if(actualLdrawId.length > 0){
+      if (actualLdrawId.length > 0) {
         ldrawId = actualLdrawId[0].l;
       }
       let alert = 0;
       for (let partMapping of allPartsList) { //TODO assert that 
-        if (partMapping.l.includes(ldrawId)){ //at this point this should only be valid once
-          this.modelPartMappings.set(usedPartId,{r:partMapping.r,b:partMapping.b[0]});
+        if (partMapping.l.includes(ldrawId)) { //at this point this should only be valid once
+          this.modelPartMappings.set(usedPartId, { r: partMapping.r, b: partMapping.b[0] });
           alert += 1;
           //continue;
         }
       }
-      if(alert > 1)
-        console.error("Error: "+ldrawId+" has multiple mappings, check the python validation script!");
+      if (alert > 1)
+        console.error("Error: " + ldrawId + " has multiple mappings, check the python validation script!");
     }
   }
 
@@ -86,12 +85,12 @@ export class FileExportService {
       const colorIdKey = key.split(this.separationString); //1sr part contains color, 2nd the id
       let color = "0";
       if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
-        color = "" + this.ldrawColorService.getBricklinkColorOf(colorIdKey[0],0);
+        color = "" + this.ldrawColorService.getBricklinkColorOf(colorIdKey[0], 0);
       }
 
-      if(!this.modelPartMappings.has(colorIdKey[1].split(".dat")[0]))
-        console.error("Part with ID"+colorIdKey[1].split(".dat")[0]+" not found!")
-      
+      if (!this.modelPartMappings.has(colorIdKey[1].split(".dat")[0]))
+        console.error("Part with ID " + colorIdKey[1].split(".dat")[0] + " not found!")
+
       xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + this.modelPartMappings.get(colorIdKey[1].split(".dat")[0])?.b + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
     }
     xml += "</INVENTORY>";
@@ -114,11 +113,11 @@ export class FileExportService {
       const colorIdKey = key.split(this.separationString);
       let color = "9999";
       if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
-        color = "" + this.ldrawColorService.getRebrickableColorOf(colorIdKey[0],9999);
+        color = "" + this.ldrawColorService.getRebrickableColorOf(colorIdKey[0], 9999);
       }
 
-      if(!this.modelPartMappings.has(colorIdKey[1].split(".dat")[0]))
-        console.error("Part with ID "+colorIdKey[1].split(".dat")[0]+" not found!")
+      if (!this.modelPartMappings.has(colorIdKey[1].split(".dat")[0]))
+        console.error("Part with ID " + colorIdKey[1].split(".dat")[0] + " not found!")
 
       csv += this.modelPartMappings.get(colorIdKey[1].split(".dat")[0])?.r + "," + color + "," + this.countedPartMap.get(key) + ",False\n";
     }
@@ -140,7 +139,6 @@ export class FileExportService {
     const allSubmodels = submodels.submodelMap;
 
     this.countParts(firstSubmodel, allSubmodels);
-
   }
 
   private countParts(currentSubmodel: SimpleLdrSubmodel, allSubmodels: Map<string, SimpleLdrSubmodel>) {
@@ -169,46 +167,55 @@ export class FileExportService {
         return decompressedBlob.text();
       }
     } catch (e) {
-      console.log("Error extracting ldr from io file!");
-      console.log(e);
+      console.error("Error extracting ldr from io file!");
+      console.error(e);
     }
     return "";
   }
 
   private parseSubmodels(submodels: string[]) {
-    //console.log("Now parsing submodels!");
     const ldrSubModelMap = new Map<string, SimpleLdrSubmodel>();
     let topSubmodelSet: boolean = false;
     let topLdrSubmodel: SimpleLdrSubmodel = new SimpleLdrSubmodel("", []);
     //for each submodel inside the ldr file
-    submodels.forEach(submodel => {
+    for (let submodel of submodels) {
       const submodelLines = submodel.split("\n");
 
-      let partName: string = "no name";
+      let submodelName: string = "no name";
       const references: SimpleReference[] = [];
-      //iterate all lines of a ldr submodel and parse them
-      submodelLines.forEach(submodelLine => {
+      let isCustomPart = false;
+      for (let submodelLine of submodelLines) { //iterate all lines of a ldr submodel and parse them
         if (submodelLine.endsWith("\r"))
           submodelLine = submodelLine.slice(0, submodelLine.lastIndexOf("\r"));
         if (submodelLine.startsWith("1"))
           references.push(this.parseLineTypeOne(submodelLine));
-        else if (submodelLine.startsWith("0 FILE"))
-          partName = submodelLine.slice(7).toLowerCase();
-        else if (submodelLine.startsWith("0 Name:") && partName == "no name") //backup in case no name got set which can happen
-          partName = submodelLine.slice(9).toLowerCase();
-      });
-      const ldrSubmodel = new SimpleLdrSubmodel(partName, references);
+        else if (submodelLine.startsWith("0 FILE")) {
+          if (submodelLine.includes(".dat")){
+            isCustomPart = true;
+            break;
+          }
+          else
+            submodelName = submodelLine.slice(7).toLowerCase();
+        }
+        else if (submodelLine.startsWith("0 Name:") && submodelName == "no name") //backup in case no name got set which can happen
+          submodelName = submodelLine.slice(9).toLowerCase();
+      }
+
+      if (isCustomPart) //skip adding it as partmodel as it's just a custom part
+        continue;
+
+      const ldrSubmodel = new SimpleLdrSubmodel(submodelName, references);
 
       if (!topSubmodelSet) { topLdrSubmodel = ldrSubmodel; topSubmodelSet = true; }
 
-      ldrSubModelMap.set(partName, ldrSubmodel);
-    });
+      ldrSubModelMap.set(submodelName, ldrSubmodel);
+    }
 
     return { "submodelMap": ldrSubModelMap, "topLdrSubmodel": topLdrSubmodel };
   }
 
   private parseLineTypeOne(line: string): PartReference {
     const splittedLine = this.ioFileService.splitter(line, " ", 14);
-    return new PartReference(splittedLine[splittedLine.length - 1], new Matrix4(), parseInt(splittedLine[1]), false);
+    return new PartReference(splittedLine[splittedLine.length - 1].split(".dat")[0], new Matrix4(), parseInt(splittedLine[1]), false);
   }
 }

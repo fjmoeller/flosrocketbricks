@@ -200,5 +200,7 @@
 /moc/195/blue-moon-mark-1/
 /moc/196/nasa-worm-logo/
 /moc/197/saxavord-fredo-launchpad/
+/moc/198/long-march-6c/
+/moc/199/titan-iva/
 /about/
 /404/

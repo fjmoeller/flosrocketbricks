@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/199/titan-iva/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iv/a/110-titan-iva-v4.1.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/198/long-march-6c/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-6/c/110-long-march-6c-v1.0.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/197/saxavord-fredo-launchpad/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/germany/rfa/rfa-one/launchpad/110-saxavord-fredo-launchpad-v1.2.jpg</image:loc>

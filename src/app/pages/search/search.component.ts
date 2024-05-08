@@ -91,9 +91,9 @@ export class SearchComponent implements OnInit {
 
     switch (this.sortingCategory) {
       case "Added": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.id < a.id ? 1 : -1)); break;
-      case "Updated": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.lastupdate < a.lastupdate ? 1 : -1)); break;
-      case "Title": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.title > a.title ? 1 : -1)); break;
       case "Parts": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.parts < a.parts ? 1 : -1)); break;
+      case "Title": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.title > a.title ? 1 : -1)); break;
+      case "Updated": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.lastupdate < a.lastupdate ? 1 : -1)); break;
     }
 
     this.mocs = tempMocs;

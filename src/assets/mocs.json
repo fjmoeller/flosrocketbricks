@@ -250,7 +250,7 @@
                     {
                         "description": "The digital io file of the launchpad",
                         "type": "io",
-                        "allowExport": false,
+                        "allowExport": true,
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/launchpad/v1.2/RFA_One_Launchpad_V1.2.io",
                         "name": "RFA_One_Launchpad_V1.2.io"

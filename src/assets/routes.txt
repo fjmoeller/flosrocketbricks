@@ -202,5 +202,6 @@
 /moc/197/saxavord-fredo-launchpad/
 /moc/198/long-march-6c/
 /moc/199/titan-iva/
+/moc/200/lk-lander/
 /about/
 /404/

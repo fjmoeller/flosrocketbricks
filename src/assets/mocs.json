@@ -2,6 +2,68 @@
     {
         "company": "",
         "region": [
+            "USSR"
+        ],
+        "links": [
+            "https://en.wikipedia.org/wiki/LK_(spacecraft)",
+            "https://www.russianspaceweb.com/lk.html",
+            "https://nick-stevens.com/2016/02/20/soviet-lk-moon-lander/"
+        ],
+        "type": "spacecraft",
+        "id": 200,
+        "title": "LK Lander",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-05-12",
+        "dateCreated": "2024-05-12",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Soviet LK Lander.",
+        "rocketDescription": "The Soviet LK Lander is a sapcecraft taht was supposed to land astronauts on the moon. It would have been launched with the N1 rocket and would be able to land one person on the moon and return that person back into lunar orbit.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 29,
+        "dimensions": "3.5x3.5x4.6cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/ussr/lk-lander/110-lk-lander-v1.1.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/ussr/lk-lander/v1.1/LK_Lander_V1.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/lk-lander/v1.1/LK_Lander_V1.1_2.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/lk-lander/v1.1/LK_Lander_V1.1.io",
+                        "name": "Titan_IVA_V4.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": [
             "USA"
         ],
         "links": [
@@ -192,7 +254,14 @@
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/launchpad/v1.2/RFA_One_Launchpad_V1.2.io",
                         "name": "RFA_One_Launchpad_V1.2.io"
-                    }
+                    },
+                    {
+                        "description": "The pdf instructions of teh launchpad",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/launchpad/v1.2/RFA_One_Launchpad_V1.2_instructions.pdf",
+                        "name": "RFA_One_Launchpad_V1.2_instructions.pdf"
                 ],
                 "version": "V1.2"
             }

@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/202/nyx/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/germany/the-exploration-company/nyx/110-nyx-v1.0.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/201/grasshopper/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/grasshopper/110-grasshopper-v1.1.jpg</image:loc>

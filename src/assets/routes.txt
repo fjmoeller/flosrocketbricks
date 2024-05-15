@@ -204,5 +204,6 @@
 /moc/199/titan-iva/
 /moc/200/lk-lander/
 /moc/201/grasshopper/
+/moc/202/nyx/
 /about/
 /404/

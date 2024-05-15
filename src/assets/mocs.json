@@ -1,5 +1,65 @@
 [
     {
+        "company": "The Exploration Company",
+        "region": [
+            "Germany"
+        ],
+        "links": [
+            "https://www.exploration.space/nyx-v2"
+        ],
+        "type": "spacecraft",
+        "id": 202,
+        "title": "Nyx",
+        "altTitles": ["Nyx V2"],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-05-15",
+        "dateCreated": "2024-05-15",
+        "related": [], 
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Nyx spacecraft.",
+        "rocketDescription": "Nyx is a cargo spacecraft by The Exploration Company. It is supposed to hold up to four tons of cargo to lift into low earth orbit and be able to return with up to three tons.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 71,
+        "dimensions": "3.5x3.5x6.4cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/germany/the-exploration-company/nyx/110-nyx-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/germany/the-exploration-company/nyx/v1.0/Nyx_V1.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/germany/the-exploration-company/nyx/v1.0/Nyx_V1.0_2.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/germany/the-exploration-company/nyx/v1.0/Nyx_V1.0.io",
+                        "name": "Grasshopper_V1.1.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "SpaceX",
         "region": [
             "USA"

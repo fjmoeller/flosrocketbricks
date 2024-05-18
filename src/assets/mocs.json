@@ -2938,7 +2938,7 @@
         "altTitles": [],
         "tags": [],
         "designer": "SkySaac",
-        "lastupdate": "2023-11-17",
+        "lastupdate": "2024-05-17",
         "dateCreated": "2022-05-05",
         "related": [
             34
@@ -2948,17 +2948,33 @@
         "rocketDescription": "The CST-100 Starliner is Boeings commercial human rated spacecraft. It can be launched on top of an Atlas V N22 rocket and so far has flown two test missions into space.",
         "internalColor": "Green",
         "scale": "110",
-        "parts": 67,
+        "parts": 73,
         "dimensions": "4.8x4.8x4.0cm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/usa/cst-100-starliner/110-cst-100-starliner-v2.1.png",
+        "smallCoverImage": "assets/mocImages/110/usa/cst-100-starliner/110-cst-100-starliner-v2.2.jpg",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/usa/cst-100-starliner/v2.1/CST-100 Starliner_V2.1_1.png",
-            "https://files.flosrocketbackend.com/mocs/110/usa/cst-100-starliner/v2.1/CST-100 Starliner_V2.1_2.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/cst-100-starliner/v2.2/CST-100_Starliner_V2.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/cst-100-starliner/v2.2/CST-100_Starliner_V2.2_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/cst-100-starliner/v2.2/CST-100_Starliner_V2.2_3.jpg"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/cst-100-starliner/v2.2/CST-100_Starliner_V2.2.io",
+                        "name": "CST-100_Starliner_V2.2.io"
+                    }
+                ],
+                "version": "V2.2"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",
@@ -12651,7 +12667,7 @@
         "stabilityExtra": "",
         "company": "ULA",
         "difficulty": -1,
-        "lastupdate": "2024-05-05",
+        "lastupdate": "2024-05-17",
         "dateCreated": "2023-03-31",
         "related": [
             50,
@@ -12662,16 +12678,16 @@
             "USA"
         ],
         "scale": "110",
-        "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/atlas-v-n22-starliner/110-atlas-v-n22-starliner-v2.1.png",
+        "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/atlas-v-n22-starliner/110-atlas-v-n22-starliner-v2.3.jpg",
         "internalColorExtra": "",
         "scaleExtra": "",
-        "dimensions": "7.7x6.4x47cm",
+        "dimensions": "7.7x6.4x46.9cm",
         "tags": [],
         "altTitles": [],
         "partsExtra": "Can be build completely out of Lego bricks. You will need to cut a hose to the correct length.",
         "title": "Atlas V N22 Starliner",
         "regionExtra": "",
-        "parts": 668,
+        "parts": 685,
         "stability": -1,
         "difficultyExtra": "",
         "designerExtra": "",
@@ -12679,12 +12695,35 @@
         "designer": "SkySaac",
         "fanPictures": [],
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.2/Atlas_V_N22_Starliner_V2.2_1.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.2/Atlas_V_N22_Starliner_V2.2_2.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.2/Atlas_V_N22_Starliner_V2.2_3.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.2/Atlas_V_N22_Starliner_V2.2_4.jpg"
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.3/Atlas_V_N22_Starliner_V2.3_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.3/Atlas_V_N22_Starliner_V2.3_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.3/Atlas_V_N22_Starliner_V2.3_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.3/Atlas_V_N22_Starliner_V2.3_4.jpg"
         ],
         "versions": [
+            {
+                "changelog": "Updated Starliner skirt",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the frosted version",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.3/Atlas_V_N22_Starliner_Frost_V2.3.io",
+                        "name": "Atlas_V_N22_Starliner_Frost_V2.3.io"
+                    },
+                    {
+                        "description": "The digital io file of the normal version",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.3/Atlas_V_N22_Starliner_V2.3.io",
+                        "name": "Atlas_V_N22_Starliner_V2.3.io"
+                    }
+                ],
+                "version": "V2.3"
+            },
             {
                 "changelog": "Updated interstage",
                 "versionExtra": "",

@@ -351,6 +351,29 @@
                         "type": "io",
                         "allowExport": true,
                         "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iv/titan-iva/v4.2/Titan_IVA_V4.2.io",
+                        "name": "Titan_IVA_V4.2.io"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variants",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iv/titan-iva/v4.1/Titan_IVA_Fairings_V4.1.io",
+                        "name": "Titan_IVA_Fairings_V4.1.io"
+                    }
+                ],
+                "version": "V4.2"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iv/titan-iva/v4.1/Titan_IVA_V4.1.io",
                         "name": "Titan_IVA_V4.1.io"
                     },

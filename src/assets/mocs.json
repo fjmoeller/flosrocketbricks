@@ -1519,7 +1519,7 @@
         "lastupdate": "2023-12-12",
         "dateCreated": "2021-12-12",
         "related": [],
-        "updateMessage": "T",
+        "updateMessage": "",
         "mocDescription": "This is a MOC of the Zephyr rocket. The first and second stage can be separated from one another.",
         "rocketDescription": "The Zephyr rocket is a liquid propelled orbital rocet that is being by the French company Latitude. It is supposed to have two stages and bring up to 100kg into low earth orbit.",
         "internalColor": "-",
@@ -3425,7 +3425,7 @@
                     {
                         "description": "The digital io file of the launchpad",
                         "type": "io",
-                        "allowExport": false,
+                        "allowExport": true,
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/launchpad/v1.3/X-33_Launchpad_V1.3.io",
                         "name": "X-33_Launchpad_V1.3.io"
@@ -3496,7 +3496,7 @@
                     {
                         "description": "The digital io file of the rocket",
                         "type": "io",
-                        "allowExport": false,
+                        "allowExport": true,
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.0/X-33_V1.0.io",
                         "name": "X-33_V1.0.io"
@@ -14319,7 +14319,7 @@
         "fanPictures": [],
         "companyExtra": "",
         "difficulty": -1,
-        "mocDescription": "The launchstructure can be turned 360°. It is compatible with my Epsilon rocket MOC.",
+        "mocDescription": "The launch structure can be turned 360°. It is compatible with my Epsilon rocket MOC.",
         "rocketDescription": "The Mu Pad at Uchinoura Space Center in Japan is currently used to launch Epsilon rockets. The launchpad has before been used for the M series of rockets.",
         "related": [
             160
@@ -15027,17 +15027,9 @@
                         "name": "Nova_V2.2_pub.io",
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/nova/v2.2/Nova_V2.2_pub.io",
                         "type": "io",
-                        "allowExport": false,
+                        "allowExport": true,
                         "allowViewer": false,
                         "description": "The digital io file"
-                    },
-                    {
-                        "name": "Nova_V2.2_bricklink.xml",
-                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/nova/v2.2/Nova_V2.2_bricklink.xml",
-                        "type": "xml",
-                        "allowExport": false,
-                        "allowViewer": false,
-                        "description": "A list of parts as bricklink xml list"
                     },
                     {
                         "name": "Nova_V2.2_instructions.pdf",

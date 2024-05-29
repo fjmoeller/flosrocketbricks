@@ -207,5 +207,7 @@
 /moc/202/nyx/
 /moc/203/tiangong-1/
 /moc/204/tiangong-2/
+/moc/205/falcon-9-block-5-earthcare/
+/moc/206/earthcare/
 /about/
 /404/

@@ -2,6 +2,130 @@
     {
         "company": "",
         "region": [
+            "Europe",
+            "Japan"
+        ],
+        "links": [
+            "https://earth.esa.int/eogateway/missions/earthcare",
+            "https://en.wikipedia.org/wiki/EarthCARE",
+            "https://global.jaxa.jp/projects/sat/earthcare/"
+        ],
+        "type": "spacecraft",
+        "id": 206,
+        "title": "EarthCARE",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-05-29",
+        "dateCreated": "2024-05-29",
+        "related": [205], 
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the EarthCARE satellite. A similar version fits into my Falcon 9 MOC.",
+        "rocketDescription": "EarthCARE is a joint European Japanese satellite. It observes clouds aerosols in Earths atmosphere. It was launched onboard a Falcon 9 Block 5 on the 29th of May 2025.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 38,
+        "dimensions": "16.6x3.4x2.8cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/europe/earthcare/110-earthcare-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/europe/earthcare/v1.0/EarthCARE_V1.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/earthcare/v1.0/EarthCARE_V1.0_2.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/earthcare/v1.0/EarthCARE_V1.0.io",
+                        "name": "EarthCARE_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "SpaceX",
+        "region": [
+            "USA"
+        ],
+        "links": [
+        ],
+        "type": "rocket",
+        "id": 205,
+        "title": "Falcon 9 Block 5 EarthCARE",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-05-29",
+        "dateCreated": "2024-05-29",
+        "related": [206], 
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the Falcon 9 Block 5 rocket with the EarthCARE satellite as a payload. The first two stages can be separated from one another. The payload fairing can split in two and fits the EarthCARE satellite.",
+        "rocketDescription": "The Falcon 9 Block 5 rocket is a orbital partially reusable rocket by SpaceX. On the 29th of May 2024 it launched with the EarthCARE satellite.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 976,
+        "dimensions": "6.1x6.1x63.4cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/falcon/falcon-9/block-5/earthcare/110-falcon-9-block-5-earthcare-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-9/block-5/earthcare/v1.0/Falcon_9_Earthcare_V1.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-9/block-5/earthcare/v1.0/Falcon_9_Earthcare_V1.0_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-9/block-5/earthcare/v1.0/Falcon_9_Earthcare_V1.0_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-9/block-5/earthcare/v1.0/Falcon_9_Earthcare_V1.0_4.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-9/block-5/earthcare/v1.0/Falcon_9_Earthcare_V1.0.io",
+                        "name": "Falcon_9_Earthcare_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": [
             "China"
         ],
         "links": [

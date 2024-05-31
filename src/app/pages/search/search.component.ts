@@ -30,21 +30,21 @@ export class SearchComponent implements OnInit {
         this.clearTags();
         if (params['q']) {
           this.searchInput = params['q'];
-        }else{
+        } else {
           this.searchInput = "";
         }
         if (params['type']) {
-          let ft: FrontTag | undefined = this.tagTypes.find(frontTag => frontTag.tagId == params['type']);
+          const ft: FrontTag | undefined = this.tagTypes.find(frontTag => frontTag.tagId == params['type']);
           if (ft)
             this.tagTypeChange(ft);
         }
         if (params['region']) {
-          let ft: FrontTag | undefined = this.tagRegions.find(frontTag => frontTag.tagId == params['region']);
+          const ft: FrontTag | undefined = this.tagRegions.find(frontTag => frontTag.tagId == params['region']);
           if (ft)
             this.tagRegionChange(ft);
         }
         if (params['scale']) {
-          let ft: FrontTag | undefined = this.tagScales.find(frontTag => frontTag.tagId == params['scale']);
+          const ft: FrontTag | undefined = this.tagScales.find(frontTag => frontTag.tagId == params['scale']);
           if (ft)
             this.tagScaleChange(ft);
         }

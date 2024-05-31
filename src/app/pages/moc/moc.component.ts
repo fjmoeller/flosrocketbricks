@@ -35,7 +35,6 @@ export class MocComponent implements OnInit, OnDestroy {
         this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 5);
       }
       else {
-        console.log("Moc with id %s not found", id);
         this.router.navigate(['/404/']);
       }
     });

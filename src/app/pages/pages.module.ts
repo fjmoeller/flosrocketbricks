@@ -13,13 +13,15 @@ import { BlogOverviewComponent } from './blog-overview/blog-overview.component';
 import { CollectionComponent } from './collection/collection.component';
 import { OrbiterComponent } from './orbiter/orbiter.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 
 @NgModule({
   declarations: [
     OrbiterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BlogComponent
   ],
   imports: [
     CommonModule,

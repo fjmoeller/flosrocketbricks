@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Injectable, Inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Moc } from '../model/classes';
+import { Blog } from '../model/blog';
 
 @Injectable({
   providedIn: 'root'
@@ -40,13 +41,13 @@ export class MetaServiceService {
     this.metaTagService.updateTag({ property: 'og:description', content: shortDesc });
     this.metaTagService.updateTag({ property: 'og:url', content: url });
     this.metaTagService.updateTag({ property: 'og:type', content: "website" });
-    this.metaTagService.updateTag({ property: 'og:image', content: "https://flosrocketbricks.com/"+image });
+    this.metaTagService.updateTag({ property: 'og:image', content: "https://flosrocketbricks.com/" + image });
 
     this.metaTagService.updateTag({ name: 'twitter:title', content: title });
     this.metaTagService.updateTag({ name: 'twitter:description', content: desc });
     this.metaTagService.updateTag({ name: 'twitter:url', content: url });
     this.metaTagService.updateTag({ name: 'twitter:card', content: "summary_large_image" });
-    this.metaTagService.updateTag({ name: 'twitter:image', content: "https://flosrocketbricks.com/"+image });
+    this.metaTagService.updateTag({ name: 'twitter:image', content: "https://flosrocketbricks.com/" + image });
 
     this.updateCanonicalUrl(url);
   }
@@ -58,11 +59,19 @@ export class MetaServiceService {
     this.setAllTags(title, desc, url, image);
   }
 
-  getPageMocLink(id: number, mocTitle: string): string {
-    return "/moc/" + id.toString() + "/" + mocTitle.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("") + "/";
+  getPageMocLink(id: number, title: string): string {
+    return "/moc/" + this.getPageLinks(id, title);
+  }
+
+  private getPageLinks(id: number, title: string): string {
+    return id.toString() + "/" + title.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("") + "/";
   }
 
   getTotalMocLink(moc: Moc): string {
-    return "https://flosrocketbricks.com" + this.getPageMocLink(moc.id, moc.title);
+    return "https://flosrocketbricks.com/moc/" + this.getPageLinks(moc.id, moc.title);
+  }
+
+  getTotalBlogLink(blog: Blog): string {
+    return "https://flosrocketbricks.com/blog/" + this.getPageLinks(blog.id, blog.title);
   }
 }

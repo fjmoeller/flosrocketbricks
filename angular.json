@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "flosrocketbricks:build:production"
+              "buildTarget": "flosrocketbricks:build:production"
             },
             "development": {
-              "browserTarget": "flosrocketbricks:build:development"
+              "buildTarget": "flosrocketbricks:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "flosrocketbricks:build"
+            "buildTarget": "flosrocketbricks:build"
           }
         },
         "test": {
@@ -135,7 +135,7 @@
           "defaultConfiguration": "production"
         },
         "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
             "development": {
               "browserTarget": "flosrocketbricks:build:development",
@@ -149,7 +149,7 @@
           "defaultConfiguration": "development"
         },
         "prerender": {
-          "builder": "@nguniversal/builders:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "routes": [
               "/"

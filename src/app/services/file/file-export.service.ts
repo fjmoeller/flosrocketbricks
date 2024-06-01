@@ -162,9 +162,13 @@ export class FileExportService {
       const options = { password: "soho0909", filenameEncoding: "utf-8" };
       const entries = await (new zip.ZipReader(new zip.BlobReader(blob), options)).getEntries();
       const model = entries.find(e => e.filename == "model.ldr");
-      if (model) {
-        const decompressedBlob = await model.getData(new zip.BlobWriter());
-        return decompressedBlob.text();
+      if(model == undefined)
+        return "";
+      if (model != undefined) {
+        const writer = new zip.BlobWriter();
+        const blobPromise = model.getData(writer);
+        const blob :Blob = await blobPromise;
+        return await blob.text();
       }
     } catch (e) {
       console.error("Error extracting ldr from io file!");
@@ -190,7 +194,7 @@ export class FileExportService {
         if (submodelLine.startsWith("1"))
           references.push(this.parseLineTypeOne(submodelLine));
         else if (submodelLine.startsWith("0 FILE")) {
-          if (submodelLine.includes(".dat")){
+          if (submodelLine.includes(".dat")) {
             isCustomPart = true;
             break;
           }

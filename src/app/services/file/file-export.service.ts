@@ -164,10 +164,8 @@ export class FileExportService {
       const model = entries.find(e => e.filename == "model.ldr");
       if(model == undefined)
         return "";
-      if (model != undefined) {
-        const writer = new zip.BlobWriter();
-        const blobPromise = model.getData(writer);
-        const blob :Blob = await blobPromise;
+      if (model && model.getData) {
+        const blob = await model.getData(new zip.BlobWriter());
         return await blob.text();
       }
     } catch (e) {

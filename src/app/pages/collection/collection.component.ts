@@ -25,7 +25,7 @@ export class CollectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
-      const foundColletion = this.collectionGrabberService.getCollection(Number(paramMap.get('id')) || 0);
+      this.collection = this.collectionGrabberService.getCollection(Number(paramMap.get('id')) || 0);
 
       const mocs = this.mocGrabberService.getAllMocs();
       this.subCollectionMocs.clear();
@@ -40,7 +40,6 @@ export class CollectionComponent implements OnInit {
       }
 
       this.metaService.setAllTags(this.collection.name + " - FlosRocketBricks", this.collection.description, "https://flosrocketbricks.com/collection/" + this.collection.id.toString() + "/" + this.collection.name.toLowerCase().split(' ').join('-') + "/", this.collection.cover);
-
     });
   }
 }

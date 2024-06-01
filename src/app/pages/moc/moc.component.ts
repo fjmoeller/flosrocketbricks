@@ -4,9 +4,14 @@ import { Moc, Version } from '../../model/classes';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 import { FileExportService } from 'src/app/services/file/file-export.service';
+import { CardComponent } from 'src/app/components/card/card.component';
+import { ViewerComponent } from 'src/app/components/viewer/viewer.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
+  standalone: true,
+  imports: [CardComponent,ViewerComponent,CommonModule],
   selector: 'app-moc',
   templateUrl: './moc.component.html',
   styleUrls: ['./moc.component.sass']

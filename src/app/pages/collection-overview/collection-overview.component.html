@@ -2,7 +2,8 @@
     <h1 class="pb-2">
         All Collections
     </h1>
-    <div *ngFor="let collection of collections" >
+    @for(collection of collections; track collection){
+    <div>
         <hr class="my-0 d-inline-block mx-auto divider-hr"/>
         <a routerLink="/collection/{{collection.id}}/{{collection.name.toLowerCase().split(' ').join('-')}}/." class="container no-dec-a">
             <div class="text-coloring row">
@@ -20,4 +21,5 @@
             </div>
         </a>
     </div>
+}
 </div>

@@ -1,10 +1,13 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
-import { Moc } from 'src/app/model/classes';
+import { FormsModule } from '@angular/forms';
+import {RouterLink} from '@angular/router';
 import { CollectionGrabberService } from 'src/app/services/grabber/collection-grabber.service';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 
 @Component({
+  standalone: true,
+  imports: [RouterLink,FormsModule],
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass']

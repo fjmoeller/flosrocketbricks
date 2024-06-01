@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { IoFileService } from 'src/app/services/file/io-file.service';
 import { AmbientLight, Box3, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
 
 @Component({
+  standalone: true,
+  imports: [],
   selector: 'app-viewer',
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.sass']

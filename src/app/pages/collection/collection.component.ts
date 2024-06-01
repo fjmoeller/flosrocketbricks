@@ -4,8 +4,11 @@ import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service'
 import { CollectionGrabberService } from 'src/app/services/grabber/collection-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { CardComponent } from 'src/app/components/card/card.component';
 
 @Component({
+  standalone: true,
+  imports: [CardComponent],
   selector: 'app-collection',
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.sass']

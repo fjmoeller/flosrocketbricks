@@ -1,8 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
-import { RouterModule} from '@angular/router';
+import { RouterLink} from '@angular/router';
 
 @Component({
+  standalone: true,
+  imports: [RouterLink],
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.sass']

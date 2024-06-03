@@ -3,11 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Blog, BlogElement, BlogElementType } from 'src/app/model/blog';
 import { BlogGrabberService } from 'src/app/services/grabber/blog-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { BlogContentElementComponent } from './blog-content-element/blog-content-element.component';
 import { BlogImageComponent } from './blog-image/blog-image.component';
 import { BlogTextComponent } from './blog-text/blog-text.component';
 import { BlogLinkComponent } from './blog-link/blog-link.component';
-import { BlogElementComponent } from 'src/app/components/blog-element/blog-element.component';
-import { BlogContentElementComponent } from './blog-content-element/blog-content-element.component';
 
 @Component({
   standalone: true,
@@ -21,7 +20,7 @@ export class BlogComponent implements OnInit {
   blog: Blog = new Blog(-1, "", "", [], "", "");
 
   blogContents: {
-    component: BlogElementComponent,
+    component: BlogContentElementComponent,
     inputs: BlogElement,
   }[] = [];
 
@@ -50,17 +49,15 @@ export class BlogComponent implements OnInit {
     for (let blogElement of this.blog.content) {
       switch (blogElement.blogElementType) {
         case BlogElementType.IMAGE:
-          this.blogContents.push({ component: BlogContentElementComponent, inputs: blogElement });
+          this.blogContents.push({ component: new BlogImageComponent, inputs: blogElement });
           break;
         case BlogElementType.TEXT:
-          this.blogContents.push({ component: BlogContentElementComponent, inputs: blogElement });
+          this.blogContents.push({ component: new BlogTextComponent, inputs: blogElement });
           break;
         case BlogElementType.LINK:
-          this.blogContents.push({ component: BlogContentElementComponent, inputs: blogElement });
+          this.blogContents.push({ component: new BlogLinkComponent, inputs: blogElement });
           break;
       }
-
     }
   }
-
 }

@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Collection, Moc, SubCollection } from 'src/app/model/classes';
+import { Collection, Moc } from 'src/app/model/classes';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
-import { ActivatedRoute } from '@angular/router';
 import { CollectionGrabberService } from 'src/app/services/grabber/collection-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { ActivatedRoute } from '@angular/router';
+import { CardComponent } from 'src/app/components/card/card.component';
 
 @Component({
+  standalone: true,
+  imports: [CardComponent],
   selector: 'app-collection',
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.sass']
@@ -16,9 +19,9 @@ export class CollectionComponent implements OnInit {
 
   subCollectionMocs = new Map<number, Moc[]>;
 
-  constructor(private route: ActivatedRoute, private collectionGrabberService: CollectionGrabberService, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
-    this.collection = new Collection(-1,"","","",[]);
-   }
+  constructor(private route: ActivatedRoute,private collectionGrabberService: CollectionGrabberService, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
+    this.collection = new Collection(-1, "", "", "", []);
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
@@ -36,8 +39,7 @@ export class CollectionComponent implements OnInit {
         this.subCollectionMocs.set(subCollection.id, mocList);
       }
 
-      this.metaService.setAllTags(this.collection.name + " - FlosRocketBricks", this.collection.description, "https://flosrocketbricks.com/collection/" + this.collection.id.toString() + "/" + this.collection.name.toLowerCase().split(' ').join('-')+"/", this.collection.cover);
-
+      this.metaService.setAllTags(this.collection.name + " - FlosRocketBricks", this.collection.description, "https://flosrocketbricks.com/collection/" + this.collection.id.toString() + "/" + this.collection.name.toLowerCase().split(' ').join('-') + "/", this.collection.cover);
     });
   }
 }

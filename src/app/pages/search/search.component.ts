@@ -3,8 +3,12 @@ import { FrontTag, Moc } from '../../model/classes';
 import { ActivatedRoute } from '@angular/router';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { CardComponent } from 'src/app/components/card/card.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
+  standalone: true,
+  imports: [CardComponent,FormsModule],
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.sass']

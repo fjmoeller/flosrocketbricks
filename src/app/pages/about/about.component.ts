@@ -3,8 +3,10 @@ import { MetaServiceService } from 'src/app/services/meta-service.service';
 
 @Component({
   selector: 'app-about',
+  standalone: true,
+  imports: [],
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.sass']
+  styleUrl: './about.component.sass'
 })
 export class AboutComponent implements OnInit {
 

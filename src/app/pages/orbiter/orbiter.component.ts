@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { PerspectiveCamera } from 'three/src/cameras/PerspectiveCamera';
-import { AmbientLight } from 'three/src/lights/AmbientLight';
-import { PointLight } from 'three/src/lights/PointLight';
-import { Box3 } from 'three/src/math/Box3';
-import { Vector3 } from 'three/src/math/Vector3';
-import { Group } from 'three/src/objects/Group';
-import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer';
-import { Scene } from 'three/src/scenes/Scene';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { PerspectiveCamera } from 'three/src/cameras/PerspectiveCamera.js';
+import { AmbientLight } from 'three/src/lights/AmbientLight.js';
+import { PointLight } from 'three/src/lights/PointLight.js';
+import { Box3 } from 'three/src/math/Box3.js';
+import { Vector3 } from 'three/src/math/Vector3.js';
+import { Group } from 'three/src/objects/Group.js';
+import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer.js';
+import { Scene } from 'three/src/scenes/Scene.js';
 
 @Component({
+  standalone: true,
+  imports: [],
   selector: 'app-orbiter',
   templateUrl: './orbiter.component.html',
   styleUrls: ['./orbiter.component.sass']

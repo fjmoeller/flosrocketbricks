@@ -5,7 +5,8 @@
     <p>
         {{collection.description}}
     </p>
-    <div *ngFor="let subcollection of collection.subCollections" class="border bordered-content rounded-3 mt-3 m-0 p-1"
+    @for(subcollection of collection.subCollections; track subcollection){
+    <div class="border bordered-content rounded-3 mt-3 m-0 p-1"
         id="{{subcollection.name.toLowerCase().split(' ').join('-')}}">
         <button class="btn text-coloring w-100 justify-content-left d-flex question-expand-button" type="button"
             data-bs-toggle="collapse" aria-expanded="false" [attr.data-bs-target]="'#file'+subcollection.id"
@@ -13,22 +14,26 @@
             <h3>
                 {{subcollection.name}}
             </h3>
-            <span *ngIf="subcollection.description!=''" class="p-2">
+            @if(subcollection.description !== ''){
+            <span class="p-2">
                 {{subcollection.description}}
             </span>
+            }
         </button>
         <div [id]="'file'+subcollection.id" class="accordion-collapse collapse show text-coloring subcollection-content"
             [attr.aria-labelledby]="'heading'+subcollection.id">
             <div class="accordion-body">
                 <div>
                     <div class="card-group">
-                        <app-card class="moc-card" *ngFor="let moc of subCollectionMocs.get(subcollection.id)"
-                            [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts" [id]="moc.id"
-                            [scale]="moc.scale">
+                        @for(moc of subCollectionMocs.get(subcollection.id);track moc){
+                        <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
+                            [id]="moc.id" [scale]="moc.scale">
                         </app-card>
+                        }
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    }
 </div>

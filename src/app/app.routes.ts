@@ -8,17 +8,28 @@ import { CollectionOverviewComponent } from './pages/collection-overview/collect
 import { CollectionComponent } from './pages/collection/collection.component';
 import { OrbiterComponent } from './pages/orbiter/orbiter.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { Location } from '@angular/common';
+
+const __stripTrailingSlash = (Location as any).stripTrailingSlash;
+
+(Location as any).stripTrailingSlash = function _stripTrailingSlash(url: string): string {
+  const queryString$ = url.match(/([^?]*)?(.*)/);
+  if (queryString$ != null && queryString$[2].length > 0) {
+    return /[^\/]\/$/.test(queryString$[1]) ? queryString$[1] + '.' + queryString$[2] : __stripTrailingSlash(url);
+  }
+  return /[^\/]\/$/.test(url) ? url + '.' : __stripTrailingSlash(url);
+};
 
 export const routes: Routes = [
-    { path: 'moc/:id/:name/.', component: MocComponent },
-    { path: 'about/.', component: AboutComponent },
-    { path: 'search/.', component: SearchComponent },
-    { path: 'start/.', component: StartComponent },
-    { path: 'blogs/.', component: BlogOverviewComponent },
-    { path: 'collections/.', component: CollectionOverviewComponent },
-    { path: 'collection/:id/:name/.', component: CollectionComponent },
-    { path: 'orbiter/.', component: OrbiterComponent },
-    { path: '404/.', component: NotFoundComponent },
-    { path: '', component: StartComponent },
-    { path: '**', redirectTo: '/404/.' }
-  ];
+  { path: 'moc/:id/:name/.', component: MocComponent },
+  { path: 'about/.', component: AboutComponent },
+  { path: 'search/.', component: SearchComponent },
+  { path: 'start/.', component: StartComponent },
+  { path: 'blogs/.', component: BlogOverviewComponent },
+  { path: 'collections/.', component: CollectionOverviewComponent },
+  { path: 'collection/:id/:name/.', component: CollectionComponent },
+  { path: 'orbiter/.', component: OrbiterComponent },
+  { path: '404/.', component: NotFoundComponent },
+  { path: '', component: StartComponent },
+  { path: '**', redirectTo: '/start/.' }
+];

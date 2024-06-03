@@ -42,9 +42,6 @@
             "prerender": {
               "routesFile": "src/assets/routes.txt",
               "discoverRoutes": false
-          },
-            "ssr": {
-              "entry": "server.ts"
             }
           },
           "configurations": {

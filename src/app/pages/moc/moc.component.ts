@@ -21,7 +21,6 @@ export class MocComponent implements OnInit, OnDestroy {
   relatedMocs: Moc[] = [];
   viewerLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io"; //default link
 
-  noError: boolean = true;
   showViewer: boolean = false;
 
   constructor(private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
@@ -33,22 +32,20 @@ export class MocComponent implements OnInit, OnDestroy {
       this.showViewer = false;
       const id = Number(paramMap.get('id')) || 0;
       const foundMoc = this.mocGrabberService.getMoc(id);
-      if (foundMoc != undefined) {
+      if (foundMoc !== undefined) {
         this.moc = foundMoc;
-        const scaleText: string = (this.moc.scale != "-" && this.moc.scale != "") ? (" 1:" + this.moc.scale + " ") : ("");
+        const scaleText: string = (this.moc.scale !== "-" && this.moc.scale !== "") ? (" 1:" + this.moc.scale + " ") : ("");
         this.metaService.setAllTags(this.moc.title + scaleText + " - FlosRocketBricks", this.moc.mocDescription + " " + this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
         this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 5);
       }
       else {
-        console.log("Moc with id %s not found", id);
         this.router.navigate(['/404/']);
       }
     });
   }
 
-  toggleViewer(url: any): void {
-
-    if (this.viewerLink == url)
+  toggleViewer(url: string): void {
+    if (this.viewerLink === url)
       this.showViewer = !this.showViewer;
     else {
       this.viewerLink = url;

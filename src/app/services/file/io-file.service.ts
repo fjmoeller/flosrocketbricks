@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BufferGeometry, Group, LineBasicMaterial, LineSegments, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
 import { LdrPart, LdrSubmodel, PartReference } from '../../model/ldrawParts';
 import { LdrawColorService } from './ldraw-color.service';
-import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
+import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,7 @@ export class IoFileService {
     const ldrObjects = ldrFile.split("0 NOSUBMODEL"); //0 = submodels, 1 = parts
 
     if (ldrObjects.length != 2) {
-      console.log("Error: file is formated wrong, no submodel divider found");
+      console.debug("Error: file is formated wrong, no submodel divider found");
       return new Group();
     }
 
@@ -39,13 +39,13 @@ export class IoFileService {
     //get the id of the color that is just a placeholder color and therefore doesnt need to be rendered
     const placeholderColorCode = this.ldrawColorService.getPlaceholderColorCode(placeHolderColor);
 
-    console.log("Now resolving the model!")
+    console.debug("Now resolving the model!")
     //resolve all submodels starting from top to bottom
     return this.resolveSubmodel(submodels.topLdrSubmodel, submodels.submodelNames, submodels.submodelMap, placeholderColorCode);
   }
 
   private parseSubmodels(submodels: string[]) {
-    console.log("Now parsing submodels!");
+    console.debug("Now parsing submodels!");
     let topSubmodelSet: boolean = false;
     let topLdrSubmodel: LdrSubmodel = new LdrSubmodel("", []);
     const ldrSubModelMap = new Map<string, LdrSubmodel>();
@@ -79,7 +79,7 @@ export class IoFileService {
   }
 
   private parseParts(parts: string[]) {
-    console.log("Now parsing parts!");
+    console.debug("Now parsing parts!");
     parts.forEach(partLines => {
       const parsedPart: LdrPart = this.parsePartLines(partLines);
       this.allPartsMap.set(parsedPart.name, parsedPart);
@@ -190,7 +190,7 @@ export class IoFileService {
     const ldrPart = this.allPartsMap.get(partName);
     if (ldrPart && !ldrPart.isResolved) {
       //resolve Part
-      //console.log("Resolving part: "+partName);
+      //console.debug("Resolving part: "+partName);
       ldrPart.references.forEach(partReference => {
         const referencedPart = this.allPartsMap.get(partReference.name)
         if (referencedPart) {

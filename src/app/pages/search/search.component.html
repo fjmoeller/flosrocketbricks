@@ -20,16 +20,20 @@
                             (click)="changeSorting('Title')">Title</button></li>
                 </ul>
                 <button class="btn mx-1 search-interaction-element" type="button" (click)="changeSortingDirection()">
-                    <svg *ngIf="sortingDirection==-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-arrow-down text-coloring" viewBox="0 0 16 16">
+                    @if(sortingDirection === -1){
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-down text-coloring" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
                     </svg>
-                    <svg *ngIf="sortingDirection==1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-arrow-up text-coloring" viewBox="0 0 16 16">
+                    }
+                    @else if(sortingDirection === 1){
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-up text-coloring" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
                     </svg>
+                    }
                 </button>
             </div>
 
@@ -46,20 +50,21 @@
                         <button class="accordion-button d-inline-block mt-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseType" aria-expanded="true" aria-controls="collapseType">
                             <h5><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
-                                class="bi bi-chevron-down"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                            </svg> Type</h5>
+                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg> Type</h5>
                         </button>
                     </h2>
                     <div id="collapseType" class="accordion-collapse collapse show">
                         <div class="accordion-body">
-                            <div class="form-check" *ngFor="let type of tagTypes">
+                            @for (type of tagTypes; track type) {
+                            <div class="form-check">
                                 <input class="form-check-input shadow-none" type="checkbox" id="{{type.tagId}}radio"
                                     [checked]="type.selected" (change)="tagTypeChange(type)">
                                 <label class="form-check-label" for="{{type.tagId}}radio">{{type.tagName}}</label>
                             </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -70,20 +75,21 @@
                         <button class="accordion-button d-inline-block mt-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseRegion" aria-expanded="true" aria-controls="collapseRegion">
                             <h5><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
-                                class="bi bi-chevron-down"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                            </svg> Region</h5>
+                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg> Region</h5>
                         </button>
                     </h2>
                     <div id="collapseRegion" class="accordion-collapse collapse show">
                         <div class="accordion-body">
-                            <div class="form-check" *ngFor="let region of tagRegions">
+                            @for (region of tagRegions; track region) {
+                            <div class="form-check">
                                 <input class="form-check-input shadow-none" type="checkbox" id="{{region.tagId}}radio"
                                     [checked]="region.selected" (change)="tagRegionChange(region)">
                                 <label class="form-check-label" for="{{region.tagId}}radio">{{region.tagName}}</label>
                             </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -94,20 +100,21 @@
                         <button class="accordion-button d-inline-block mt-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseScale" aria-expanded="true" aria-controls="collapseScale">
                             <h5><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
-                                class="bi bi-chevron-down"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                            </svg> Scale</h5>
+                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg> Scale</h5>
                         </button>
                     </h2>
                     <div id="collapseScale" class="accordion-collapse collapse show">
                         <div class="accordion-body">
-                            <div class="form-check" *ngFor="let scale of tagScales">
+                            @for (scale of tagScales; track scale) {
+                            <div class="form-check">
                                 <input class="form-check-input shadow-none" type="checkbox" id="{{scale.tagId}}radio"
                                     [checked]="scale.selected" (change)="tagScaleChange(scale)">
                                 <label class="form-check-label" for="{{scale.tagId}}radio">{{scale.tagName}}</label>
                             </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -117,9 +124,11 @@
         <div class="col-md-10">
             <span>{{mocs.length}} Results</span>
             <div class="mt-1 card-group">
-                <app-card class="moc-card" *ngFor="let moc of mocs" [pic]="moc.smallCoverImage" [name]="moc.title"
-                    [parts]="moc.parts" [id]="moc.id" [scale]="moc.scale">
+                @for(moc of mocs; track moc){
+                <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
+                    [id]="moc.id" [scale]="moc.scale">
                 </app-card>
+                }
             </div>
         </div>
     </div>

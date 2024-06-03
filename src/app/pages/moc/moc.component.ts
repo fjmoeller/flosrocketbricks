@@ -4,9 +4,14 @@ import { Moc, Version } from '../../model/classes';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 import { FileExportService } from 'src/app/services/file/file-export.service';
+import { CardComponent } from 'src/app/components/card/card.component';
+import { ViewerComponent } from 'src/app/components/viewer/viewer.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
+  standalone: true,
+  imports: [CardComponent,ViewerComponent,CommonModule],
   selector: 'app-moc',
   templateUrl: './moc.component.html',
   styleUrls: ['./moc.component.sass']
@@ -16,7 +21,6 @@ export class MocComponent implements OnInit, OnDestroy {
   relatedMocs: Moc[] = [];
   viewerLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io"; //default link
 
-  noError: boolean = true;
   showViewer: boolean = false;
 
   constructor(private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
@@ -28,9 +32,9 @@ export class MocComponent implements OnInit, OnDestroy {
       this.showViewer = false;
       const id = Number(paramMap.get('id')) || 0;
       const foundMoc = this.mocGrabberService.getMoc(id);
-      if (foundMoc != undefined) {
+      if (foundMoc !== undefined) {
         this.moc = foundMoc;
-        const scaleText: string = (this.moc.scale != "-" && this.moc.scale != "") ? (" 1:" + this.moc.scale + " ") : ("");
+        const scaleText: string = (this.moc.scale !== "-" && this.moc.scale !== "") ? (" 1:" + this.moc.scale + " ") : ("");
         this.metaService.setAllTags(this.moc.title + scaleText + " - FlosRocketBricks", this.moc.mocDescription + " " + this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
         this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 5);
       }
@@ -40,9 +44,8 @@ export class MocComponent implements OnInit, OnDestroy {
     });
   }
 
-  toggleViewer(url: any): void {
-
-    if (this.viewerLink == url)
+  toggleViewer(url: string): void {
+    if (this.viewerLink === url)
       this.showViewer = !this.showViewer;
     else {
       this.viewerLink = url;

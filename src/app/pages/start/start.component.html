@@ -19,9 +19,11 @@
             <h3>Newest Mocs</h3>
         </span>
         <div class="card-group">
-            <app-card class="moc-card" *ngFor="let moc of newestMocs" [pic]="moc.smallCoverImage" [name]="moc.title"
-                [parts]="moc.parts" [id]="moc.id" [scale]="moc.scale" [followRel]="true">
+            @for(moc of newestMocs; track moc){
+            <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts" [id]="moc.id"
+                [scale]="moc.scale" [followRel]="true">
             </app-card>
+            }
         </div>
     </div>
     <div class="row mt-5 mx-5">
@@ -29,9 +31,11 @@
             <h3>Newest Updates</h3>
         </span>
         <div class="card-group">
-            <app-card class="moc-card" *ngFor="let moc of newestUpdates" [pic]="moc.smallCoverImage" [name]="moc.title"
-                [parts]="moc.parts" [id]="moc.id" [scale]="moc.scale" [followRel]="true">
+            @for(moc of newestUpdates; track moc){
+            <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts" [id]="moc.id"
+                [scale]="moc.scale" [followRel]="true">
             </app-card>
+            }
         </div>
     </div>
 </div>

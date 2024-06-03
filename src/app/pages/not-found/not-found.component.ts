@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 
 @Component({
+  standalone: true,
+  imports: [],
   selector: 'app-not-found',
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.sass']

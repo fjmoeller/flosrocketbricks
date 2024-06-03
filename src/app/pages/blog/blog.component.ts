@@ -5,6 +5,8 @@ import { BlogGrabberService } from 'src/app/services/grabber/blog-grabber.servic
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 
 @Component({
+  standalone: true,
+  imports: [],
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.sass']

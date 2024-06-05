@@ -29,7 +29,7 @@ export class BlogElement {
 }
 
 export enum BlogElementType {
-    IMAGE = 0,
-    TEXT = 1,
+    IMAGE = 1,
+    TEXT = 0,
     LINK = 2
 }

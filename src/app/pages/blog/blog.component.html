@@ -1,7 +1,14 @@
-<div>
-    <h3 class="text-coloring">{{blog.title}}</h3>
-    <h5 class="text-coloring">by {{blog.author}}</h5>
-    @for(content of blog.content;track content){
-    <ng-container *ngComponentOutlet="content;inputs: content;" />
-    }
+<div class="text-align: center">
+    <div id="blog-header" class="blog-element">
+        <h3 class="text-coloring">{{blog.title}}</h3>
+        <h5 class="text-coloring">by {{blog.author}}</h5>
+        <img [src]="blog.coverImage">
+    </div>
+    <div id="blog-content" class="blog-element">
+        @for(content of blogContents;track content){
+        <ng-container *ngComponentOutlet="content.component;inputs: content.inputs;" />
+        }
+    </div>
+    <div id="blog-footer" class="blog-element">
+    </div>
 </div>

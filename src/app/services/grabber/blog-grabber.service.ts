@@ -18,7 +18,7 @@ export class BlogGrabberService {
     return this.blogs.find(blog => blog.id == id);
   }
 
-  getAllBlogs(): Blog[] {
+  getAllBlogs(): Blog[]{
     return this.blogs;
   }
 

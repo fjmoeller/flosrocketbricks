@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { BlogContentElementComponent } from '../blog-content-element/blog-content-element.component';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-blog-image',
@@ -8,5 +7,7 @@ import { BlogContentElementComponent } from '../blog-content-element/blog-conten
   templateUrl: './blog-image.component.html',
   styleUrl: './blog-image.component.sass'
 })
-export class BlogImageComponent extends BlogContentElementComponent {
+export class BlogImageComponent {
+  @Input() content!: string;
+  @Input() title!: string;
 }

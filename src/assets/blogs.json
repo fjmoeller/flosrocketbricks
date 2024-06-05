@@ -5,12 +5,46 @@
         "coverImage": "",
         "content": [
             {
-                "title": "",
-                "content": "",
+                "title": "title1",
+                "content": "content1",
                 "blogElementType": 0
+            },
+            {
+                "title": "title2",
+                "content": "content3",
+                "blogElementType": 1
+            },
+            {
+                "title": "title3",
+                "content": "content3",
+                "blogElementType": 2
             }
         ],
         "author": "SkySaac",
         "createdAt": "2024-05-31"
+    },
+    {
+        "id": 1,
+        "title": "How Bricklink bricks most of this site",
+        "coverImage": "",
+        "content": [
+            {
+                "title": "title4",
+                "content": "content4",
+                "blogElementType": 2
+            },
+            {
+                "title": "title5",
+                "content": "content5",
+                "blogElementType": 1
+            },
+            {
+                "title": "title6",
+                "content": "content6",
+                "blogElementType": 0
+            }
+        ],
+        "author": "SkySaac",
+        "createdAt": "2024-06-04"
     }
 ]

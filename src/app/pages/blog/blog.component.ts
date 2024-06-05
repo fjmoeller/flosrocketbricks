@@ -7,10 +7,11 @@ import { BlogContentElementComponent } from './blog-content-element/blog-content
 import { BlogImageComponent } from './blog-image/blog-image.component';
 import { BlogTextComponent } from './blog-text/blog-text.component';
 import { BlogLinkComponent } from './blog-link/blog-link.component';
+import { NgComponentOutlet } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [],
+  imports: [NgComponentOutlet],
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.sass']

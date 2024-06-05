@@ -1,7 +1,7 @@
 <div>
-    <h3>{{blog.title}}</h3>
-    <h5>by {{blog.author}}</h5>
-    @for(content of blog.contents;track contents){
+    <h3 class="text-coloring">{{blog.title}}</h3>
+    <h5 class="text-coloring">by {{blog.author}}</h5>
+    @for(content of blog.content;track content){
     <ng-container *ngComponentOutlet="content;inputs: content;" />
     }
 </div>

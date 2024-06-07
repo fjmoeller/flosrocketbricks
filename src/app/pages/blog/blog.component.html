@@ -2,7 +2,7 @@
     <div class="blog-element">
         <img [src]="blog.coverImage" class="blog-header-image">
         <h1 class="text-coloring">{{blog.title}}</h1>
-        <span class="blog-header-info-text"><h5 class="text-coloring">By {{blog.author}}</h5> <h5 class="text-coloring">Published at {{blog.createdAt}}</h5></span>
+        <span class="blog-header-info-text"><h5 class="text-coloring" style="margin-left: 5rem;">By {{blog.author}}</h5> <h5 class="text-coloring" style="margin-right: 5rem;">Published at {{blog.createdAt}}</h5></span>
     </div>
     <div class="blog-element">
         @for(content of blogContents;track content){

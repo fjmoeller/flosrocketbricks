@@ -5,6 +5,7 @@ import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service'
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { FormsModule } from '@angular/forms';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -26,7 +27,7 @@ export class SearchComponent implements OnInit {
 
   mocs: Moc[] = [];
 
-  constructor(private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
+  constructor(private scroller: ViewportScroller,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParams
@@ -53,9 +54,10 @@ export class SearchComponent implements OnInit {
             this.tagScaleChange(ft);
         }
         this.getMocs();
-
+        this.scroller.scrollToPosition([0,0]);
       });
     this.metaService.setDefaultTags("Search - FlosRocketBricks", "https://flosrocketbricks.com/search/");
+    
   }
 
   changeSorting(category: string): void {

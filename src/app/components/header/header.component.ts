@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   allLaunchpads: string[] = [];
   allSpacecrafts: string[] = [];
   allSpaceStations: string[] = [];
-  allOther: string[] = [];
 
   constructor(@Inject(DOCUMENT) document: Document, private mocGrabberService: MocGrabberService, private collectionGrabberService: CollectionGrabberService) { }
   ngOnInit(): void {
@@ -31,7 +30,6 @@ export class HeaderComponent implements OnInit {
     this.allLaunchpads = this.mocGrabberService.getAllMocs().filter(moc => moc.type == "launchpad").map(moc => moc.smallCoverImage);
     this.allSpacecrafts = this.mocGrabberService.getAllMocs().filter(moc => moc.type == "spacecraft").map(moc => moc.smallCoverImage);
     this.allSpaceStations = this.mocGrabberService.getAllMocs().filter(moc => moc.type == "spacestation").map(moc => moc.smallCoverImage);
-    this.allOther = this.mocGrabberService.getAllMocs().filter(moc => moc.type == "other").map(moc => moc.smallCoverImage);
   }
 
   setRandomCollection(): void {
@@ -57,11 +55,6 @@ export class HeaderComponent implements OnInit {
   setRandomSpacestation(): void {
     const randomSpaceStation = this.allSpaceStations[Math.floor(Math.random() * this.allSpaceStations.length)];
     document.documentElement.style.setProperty("--header-image-spacestation", "url('https://flosrocketbricks.com/" + randomSpaceStation + "')");
-  }
-
-  setRandomOther(): void {
-    const randomOther = this.allOther[Math.floor(Math.random() * this.allOther.length)];
-    document.documentElement.style.setProperty("--header-image-other", "url('https://flosrocketbricks.com/" + randomOther + "')");
   }
 
   triggerSearch(e: Event) {

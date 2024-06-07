@@ -5,14 +5,13 @@
         "coverImage": "https://files.flosrocketbackend.com/images/logo_small.png",
         "content": [
             {
-                "title": "Why needed",
-                "content": "- for some time wanted to have a platform to talk about some thing I encounter ",
+                "title": "Why this new feature exists",
+                "content": " So for quite some time now I thought about adding a place on this website where I could just talk about things regarding lego rockets and things I encountered while creating this website. While I could have just gone to sites such as Medium.com or so where one can just create his blog posts, I kind of wanted to use my own site for it. I mean havign more stuff on this site is always nice right? So that's why I finally decided to add this feature.",
                 "blogElementType": 0
             },
             {
-                "title": "What to expect",
-                "content": "- Me talking about lego rocket development \n - documenting spaceflight events I might attend \n - talking about new features on this site or just in general this site development \n - not any schedule for blogs, just posting one whenever I feel like it",
-                "blogElementType": 0
+                "title": "What to expect in the future",
+                "content": " When it comes to what you can expect on this blog in the future there are a few topics that I might be writing about. \nThose topics will mainly be ones I care about and that at least in some sense fit to this website. For exmaple talking about the creation of Lego rockets and things realted to it, such as the usage of websites that you are probably buying your bricks from like Bricklink. I also might talk about new features that I (at least if I have the time to) want to add on this website in the feature, these blog posts might be more technical and wont have too much to do with Lego rockets themselves as just with this website. Another thing might be spaceflight events I like visiting, like the ESA Open Days at ESTEC in the Netherlands, which I visited a few times now. I might write something, maybe I'll just mostly post pictures though, who knows. While I can't say how often I'll post blogs here, there might be months between them, whenever I find a topic to write about and have the time I will post one. The blogs also might differ in length, it's not like I really care about having books long texts on my website.",                "blogElementType": 0
             }
         ],
         "author": "SkySaac",

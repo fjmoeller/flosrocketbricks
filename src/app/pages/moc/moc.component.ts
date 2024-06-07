@@ -11,7 +11,7 @@ import { CommonModule, ViewportScroller } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [CardComponent,ViewerComponent,CommonModule],
+  imports: [CardComponent, ViewerComponent, CommonModule],
   selector: 'app-moc',
   templateUrl: './moc.component.html',
   styleUrls: ['./moc.component.sass']
@@ -23,9 +23,8 @@ export class MocComponent implements OnInit, OnDestroy {
 
   showViewer: boolean = false;
 
-  constructor(private scroller: ViewportScroller,private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
+  constructor(private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
-    this.scroller.scrollToPosition([0,0]);
   }
 
   async ngOnInit() {
@@ -38,7 +37,7 @@ export class MocComponent implements OnInit, OnDestroy {
         const scaleText: string = (this.moc.scale !== "-" && this.moc.scale !== "") ? (" 1:" + this.moc.scale + " ") : ("");
         this.metaService.setAllTags(this.moc.title + scaleText + " - FlosRocketBricks", this.moc.mocDescription + " " + this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
         this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 5);
-        this.scroller.scrollToPosition([0,0]);
+        window.scroll({top: 0,left: 0,behavior: "instant",});
       }
       else {
         this.router.navigate(['/404/']);

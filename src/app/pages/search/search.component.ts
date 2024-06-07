@@ -27,7 +27,7 @@ export class SearchComponent implements OnInit {
 
   mocs: Moc[] = [];
 
-  constructor(private scroller: ViewportScroller,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) {this.scroller.scrollToPosition([0,0]); }
+  constructor(private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.queryParams
@@ -54,7 +54,7 @@ export class SearchComponent implements OnInit {
             this.tagScaleChange(ft);
         }
         this.getMocs();
-        this.scroller.scrollToPosition([0,0]);
+        window.scroll({top: 0,left: 0,behavior: "instant",});
       });
     this.metaService.setDefaultTags("Search - FlosRocketBricks", "https://flosrocketbricks.com/search/");
     

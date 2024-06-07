@@ -25,6 +25,7 @@ export class MocComponent implements OnInit, OnDestroy {
 
   constructor(private scroller: ViewportScroller,private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
+    this.scroller.scrollToPosition([0,0]);
   }
 
   async ngOnInit() {

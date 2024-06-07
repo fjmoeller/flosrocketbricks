@@ -27,7 +27,7 @@ export class SearchComponent implements OnInit {
 
   mocs: Moc[] = [];
 
-  constructor(private scroller: ViewportScroller,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
+  constructor(private scroller: ViewportScroller,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) {this.scroller.scrollToPosition([0,0]); }
 
   ngOnInit(): void {
     this.route.queryParams

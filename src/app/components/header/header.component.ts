@@ -34,27 +34,27 @@ export class HeaderComponent implements OnInit {
 
   setRandomCollection(): void {
     const randomCol = this.allCollections[Math.floor(Math.random() * this.allCollections.length)];
-    document.documentElement.style.setProperty("--header-image-collection", "url('" + randomCol + "')");
+    document.documentElement.style.setProperty("--header-image-collection", "url('/" + randomCol + "')");
   }
 
   setRandomRocket(): void {
     const randomRock = this.allRockets[Math.floor(Math.random() * this.allRockets.length)];
-    document.documentElement.style.setProperty("--header-image-rocket", "url('https://flosrocketbricks.com/" + randomRock + "')");
+    document.documentElement.style.setProperty("--header-image-rocket", "url('/" + randomRock + "')");
   }
 
   setRandomLaunchpad(): void {
     const randomLaunch = this.allLaunchpads[Math.floor(Math.random() * this.allLaunchpads.length)];
-    document.documentElement.style.setProperty("--header-image-launchpad", "url('https://flosrocketbricks.com/" + randomLaunch + "')");
+    document.documentElement.style.setProperty("--header-image-launchpad", "url('/" + randomLaunch + "')");
   }
 
   setRandomSpacecraft(): void {
     const randomSpacecraft = this.allSpacecrafts[Math.floor(Math.random() * this.allSpacecrafts.length)];
-    document.documentElement.style.setProperty("--header-image-spacecraft", "url('https://flosrocketbricks.com/" + randomSpacecraft + "')");
+    document.documentElement.style.setProperty("--header-image-spacecraft", "url('/" + randomSpacecraft + "')");
   }
 
   setRandomSpacestation(): void {
     const randomSpaceStation = this.allSpaceStations[Math.floor(Math.random() * this.allSpaceStations.length)];
-    document.documentElement.style.setProperty("--header-image-spacestation", "url('https://flosrocketbricks.com/" + randomSpaceStation + "')");
+    document.documentElement.style.setProperty("--header-image-spacestation", "url('/" + randomSpaceStation + "')");
   }
 
   triggerSearch(e: Event) {

@@ -9418,24 +9418,24 @@
         "companyExtra": "",
         "difficulty": -1,
         "difficultyExtra": "",
-        "lastupdate": "2023-05-24",
+        "lastupdate": "2024-06-13",
         "dateCreated": "2022-01-24",
         "related": [],
-        "updateMessage": "Update coming very soon",
+        "updateMessage": "",
         "region": [
             "USA"
         ],
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-lro-lcross/110-atlas-v-401-lro-cross-v2.1.png",
+        "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-lro-lcross/110-atlas-v-401-lro-cross-v2.2.jpg",
         "internalColor": "Green",
         "internalColorExtra": "",
         "dimensions": "4.4x6.4x51.4cm",
         "dimensionsExtra": "",
         "tags": [],
         "altTitles": [],
-        "parts": 654,
+        "parts": 657,
         "partsExtra": "The MOC can be completely build out of Lego parts. The non frosted variant has 681 parts.",
         "title": "Atlas V 401 LRO LCROSS",
         "stability": -1,
@@ -9444,12 +9444,44 @@
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-lro-lcross/v2.1/Atlas_V_401_Frost_LRO_LCROSS_V2.1_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-lro-lcross/v2.1/Atlas_V_401_Frost_LRO_LCROSS_V2.1_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-lro-lcross/v2.1/Atlas_V_401_Frost_LRO_LCROSS_V2.1_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-lro-lcross/v2.1/Atlas_V_401_Frost_V2.1_4.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/401/lro-lcross/v2.2/Atlas_V_401_LRO_LCROSS_V2.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/401/lro-lcross/v2.2/Atlas_V_401_LRO_LCROSS_V2.2_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/401/lro-lcross/v2.2/Atlas_V_401_LRO_LCROSS_V2.2_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/401/lro-lcross/v2.2/Atlas_V_401_LRO_LCROSS_V2.2_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/401/lro-lcross/v2.2/Atlas_V_401_LRO_LCROSS_V2.2_5.jpg"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the frosted variant",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/401/lro-lcross/v2.2/Atlas_V_401_LRO_LCROSS_Frost_V2.2.io",
+                        "name": "Atlas_V_401_LRO_LCROSS_Frost_V2.2.io"
+                    },
+                    {
+                        "description": "The digital io file of the non frosted variant",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/401/lro-lcross/v2.2/Atlas_V_401_LRO_LCROSS_V2.2.io",
+                        "name": "Atlas_V_401_LRO_LCROSS_V2.2.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the non frosted variant",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/401/lro-lcross/v2.2/Atlas_V_401_LRO_LCROSS_V2.2_instructions.pdf",
+                        "name": "Atlas_V_401_LRO_LCROSS_V2.2_instructions.pdf"
+                    }
+                ],
+                "version": "V2.2"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",
@@ -12887,27 +12919,27 @@
         "stabilityExtra": "",
         "company": "ULA",
         "difficulty": -1,
-        "lastupdate": "2024-05-17",
+        "lastupdate": "2024-06-13",
         "dateCreated": "2023-03-31",
         "related": [
             50,
             163
         ],
-        "updateMessage": "Update coming very soon",
+        "updateMessage": "",
         "region": [
             "USA"
         ],
         "scale": "110",
-        "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/atlas-v-n22-starliner/110-atlas-v-n22-starliner-v2.3.jpg",
+        "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/atlas-v-n22-starliner/110-atlas-v-n22-starliner-v2.4.jpg",
         "internalColorExtra": "",
         "scaleExtra": "",
-        "dimensions": "7.7x6.4x46.9cm",
+        "dimensions": "7.8x6.4x46.9cm",
         "tags": [],
         "altTitles": [],
         "partsExtra": "Can be build completely out of Lego bricks. You will need to cut a hose to the correct length.",
         "title": "Atlas V N22 Starliner",
         "regionExtra": "",
-        "parts": 685,
+        "parts": 686,
         "stability": -1,
         "difficultyExtra": "",
         "designerExtra": "",
@@ -12915,12 +12947,43 @@
         "designer": "SkySaac",
         "fanPictures": [],
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.3/Atlas_V_N22_Starliner_V2.3_1.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.3/Atlas_V_N22_Starliner_V2.3_2.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.3/Atlas_V_N22_Starliner_V2.3_3.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.3/Atlas_V_N22_Starliner_V2.3_4.jpg"
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.4/Atlas_V_N22_Starliner_V2.4_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.4/Atlas_V_N22_Starliner_V2.4_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.4/Atlas_V_N22_Starliner_V2.4_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.4/Atlas_V_N22_Starliner_V2.4_4.jpg"
         ],
         "versions": [
+            {
+                "changelog": "Updated Starliner skirt",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the frosted version",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.4/Atlas_V_N22_Starliner_Frost_V2.4.io",
+                        "name": "Atlas_V_N22_Starliner_Frost_V2.4.io"
+                    },
+                    {
+                        "description": "The digital io file of the normal version",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.4/Atlas_V_N22_Starliner_V2.4.io",
+                        "name": "Atlas_V_N22_Starliner_V2.4.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the normal version",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/n22/v2.4/Atlas_V_N22_Starliner_V2.4.pdf",
+                        "name": "Atlas_V_N22_Starliner_V2.4.pdf"
+                    }
+                ],
+                "version": "V2.4"
+            },
             {
                 "changelog": "Updated Starliner skirt",
                 "versionExtra": "",
@@ -14659,7 +14722,7 @@
             "https://www.flickr.com/photos/ulalaunch/albums/72157714410183007/"
         ],
         "company": "",
-        "updateMessage": "Update coming very soon",
+        "updateMessage": "",
         "regionExtra": "",
         "id": 13,
         "internalColor": "Green",
@@ -14677,9 +14740,9 @@
             50
         ],
         "designerExtra": "",
-        "parts": 973,
+        "parts": 1003,
         "scale": "110",
-        "mocDescription": "This is a MOC of the Atlas V rocket in its 541 configuration with the Mars 2020 payload and fairing. \n There are two variants of the rocket. One is the frosted version and one is the non-frosted one. The io files furthermore include a small black stand for the rocket.",
+        "mocDescription": "This is a MOC of the Atlas V rocket in its 541 configuration with the Mars 2020 payload and fairing. \n There are two variants of the rocket. One is the frosted version and one is the non-frosted one. The io files furthermore include a small black stand for the rocket. The fairing can split in half. It contains the Centaur upper stage as well as the Mars 2020 payload.",
         "rocketDescription": "",
         "dimensionsExtra": "",
         "title": "Atlas V 541 Mars 2020",
@@ -14690,8 +14753,8 @@
         "region": [
             "USA"
         ],
-        "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/110-atlas-v-541-mars-2020-v2.2.png",
-        "lastupdate": "2023-07-16",
+        "smallCoverImage": "assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/110-atlas-v-541-mars-2020-v2.4.jpg",
+        "lastupdate": "2024-06-13",
         "stabilityExtra": "",
         "versions": [
             {
@@ -14778,17 +14841,48 @@
                     }
                 ],
                 "version": "V2.2"
+            },
+            {
+                "changelog": "add centaur and make fairing into two halves",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/541/mars-2020/v2.4/Atlas_V_541_Mars_2020_V2.4_instructions.pdf",
+                        "description": "The pdf instructions of the normal variant",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "name": "Atlas_V_541_Mars_2020_V2.4_instructions.pdf"
+                    },
+                    {
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/541/mars-2020/v2.4/Atlas_V_541_Mars_2020_Frost_V2.4.io",
+                        "description": "The digital io file of the frosted variant",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "name": "Atlas_V_541_Mars_2020_Frost_V2.4.io"
+                    },
+                    {
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/541/mars-2020/v2.4/Atlas_V_541_Mars_2020_V2.4.io",
+                        "description": "The digital io file of the non-frosted variant",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "name": "AAtlas_V_541_Mars_2020_V2.4.io"
+                    }
+                ],
+                "version": "V2.4"
             }
         ],
         "stability": 3,
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20Frost%20V2.1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20V2.1_3.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20V2.1_4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20V2.1_5.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20V2.1_6.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20V2.1_7.png",
-            "https://bricksafe.com/files/SkySaac/website/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/v2.1/Atlas%20V%20541%20Mars%202020%20V2.1_8.png"
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/541/mars-2020/v2.4/Atlas_V_541_Mars_2020_Frost_V2.4_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/541/mars-2020/v2.4/Atlas_V_541_Mars_2020_Frost_V2.4_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/541/mars-2020/v2.4/Atlas_V_541_Mars_2020_Frost_V2.4_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/541/mars-2020/v2.4/Atlas_V_541_Mars_2020_Frost_V2.4_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/541/mars-2020/v2.4/Atlas_V_541_Mars_2020_Frost_V2.4_5.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/541/mars-2020/v2.4/Atlas_V_541_Mars_2020_Frost_V2.4_7.png",
+            "https://files.flosrocketbackend.com/mocs/110/usa/atlas/atlas-v/541/mars-2020/v2.4/Atlas_V_541_Mars_2020_Frost_V2.4_8.png"
         ],
         "partsExtra": "Can be build completely out of Lego bricks.",
         "designer": "SkySaac",

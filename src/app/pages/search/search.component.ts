@@ -53,7 +53,7 @@ export class SearchComponent implements OnInit {
             this.tagScaleChange(ft);
         }
         this.getMocs();
-
+        window.scroll({top: 0,left: 0,behavior: "instant",});
       });
     this.metaService.setDefaultTags("Search - FlosRocketBricks", "https://flosrocketbricks.com/search/");
   }

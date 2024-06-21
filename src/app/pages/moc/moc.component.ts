@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Moc, Version } from '../../model/classes';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
@@ -6,7 +6,7 @@ import { MetaServiceService } from 'src/app/services/meta-service.service';
 import { FileExportService } from 'src/app/services/file/file-export.service';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { ViewerComponent } from 'src/app/components/viewer/viewer.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class MocComponent implements OnInit, OnDestroy {
 
   showViewer: boolean = false;
 
-  constructor(private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
+  constructor(@Inject(PLATFORM_ID) private platformId: any,private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
   }
 
@@ -41,6 +41,8 @@ export class MocComponent implements OnInit, OnDestroy {
       else {
         this.router.navigate(['/404/']);
       }
+      if (isPlatformBrowser(this.platformId))
+        window.scroll({ top: 0, left: 0, behavior: "instant"});
     });
   }
 

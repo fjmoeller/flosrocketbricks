@@ -4254,7 +4254,7 @@
             144,
             99
         ],
-        "updateMessage": "Small update coming soon!",
+        "updateMessage": "",
         "mocDescription": "This is a MOC of the Ariane 6 rocket in its 62 configuration and with a small payload fairing, the same configuration as will be used for the first launch.",
         "rocketDescription": "The Ariane 6 rocket is an orbital rocket by Arianegroup. It has up to four solid boosters and a hydrolox core and upper stage. The 62 variant has two boosters. The first launch is expected to happen in 2024.",
         "internalColor": "Green",
@@ -7718,40 +7718,43 @@
         "links": [
             "https://www.ariane.group/en/commercial-launch-services/ariane-6/"
         ],
-        "mocDescription": "This is a MOC of the Ariane 6 flight in its FM1 configuration based on ESA renders. The boosters can be seperated from the core stage. The second stage can be seperated from the first stage. The payload fairing holds some space for a payload.",
-        "rocketDescription": "This is MOC of Europes Ariane 6 rocket in the 62 configuration with the small payload fairing and the FM1 painting scheme as it's displayed in ESA renders. The Ariane 6 FM1 launch is scheduled for late 2023. The Ariane succeeds the Ariane 5 rocket. It can fly with either two or for boosters and have a 14 meter or 20 meter paylaod fairing.",
+        "mocDescription": "This is a MOC of the Ariane 6 flight in its VA262 configuration. The boosters can be seperated from the core stage. The second stage can be seperated from the first stage. The payload fairing can be split in two and includes the rideshare payloads.",
+        "rocketDescription": "This is MOC of Europes Ariane 6 rocket in the 62 configuration with the small payload fairing and the VA262 painting scheme. The Ariane 6 VA262 launch is scheduled for July 9th. The Ariane 6 can fly with either two or four boosters and can use a 14 meter or a 20 meter paylaod fairing.",
         "stability": -1,
         "stabilityExtra": "",
         "company": "",
         "companyExtra": "",
         "difficulty": -1,
         "difficultyExtra": "",
-        "lastupdate": "2023-06-09",
+        "lastupdate": "2024-06-25",
         "dateCreated": "2023-06-09",
         "related": [
             144,
             98
         ],
-        "updateMessage": "Update coming very soon",
+        "updateMessage": "",
         "region": [
             "Europe"
         ],
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/fm1/110-ariane-6-fm1-v2.7.png",
+        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/62/fm1/110-ariane-62-fm1-v3.0.jpg",
         "dimensions": "10.9x11.2x52.2cm",
         "tags": [],
-        "altTitles": [],
+        "altTitles": ["Ariane 62 VA262"],
         "title": "Ariane 6 FM1",
-        "parts": 1088,
-        "partsExtra": "Can be build completely out of Lego bricks. Some hoses need to be cut to the correct lengths as shown on the renders.",
+        "parts": 1260,
+        "partsExtra": "A few parts are not available by lego in the correct color. Some hoses need to be cut down to the correct lengths.",
         "designer": "SkySaac",
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/fm1/v2.7/Ariane_6_FM1_V2.7_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-6/fm1/v2.7/Ariane_6_FM1_V2.7_2.png"
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.0/Ariane_62_FM1_V3.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.0/Ariane_62_FM1_V3.0_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.0/Ariane_62_FM1_V3.0_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.0/Ariane_62_FM1_V3.0_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.0/Ariane_62_FM1_V3.0_5.jpg"
         ],
         "versions": [
             {
@@ -7768,6 +7771,21 @@
                     }
                 ],
                 "version": "V2.7"
+            },
+             {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.0/Ariane_62_FM1_V3.0.io",
+                        "name": "Ariane_62_FM1_V3.0.io"
+                    }
+                ],
+                "version": "V3.0"
             }
         ]
     },

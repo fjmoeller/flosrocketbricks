@@ -10187,33 +10187,33 @@
             "https://www.buran-energia.com/",
             "http://www.buran.ru/htm/homepage.htm"
         ],
-        "mocDescription": "This is a MOC of the Buran spacecraft. The payload doors can be opened.",
+        "mocDescription": "This is a MOC of the Buran spacecraft. The payload doors can be opened. The landing gear can be extended.",
         "rocketDescription": "The Buran spaceplane was a Soviet reusable spaceplane.",
         "company": "",
         "companyExtra": "",
         "difficulty": 4,
         "difficultyExtra": "",
-        "lastupdate": "2023-05-14",
+        "lastupdate": "2024-06-29",
         "dateCreated": "2021-10-29",
         "related": [
             67,
             69
         ],
-        "updateMessage": "Update coming soon",
+        "updateMessage": "",
         "region": [
             "USSR"
         ],
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/ussr/buran/110-buran-v2.6.png",
+        "smallCoverImage": "assets/mocImages/110/ussr/buran/110-buran-v2.7.jpg",
         "internalColor": "Green",
         "internalColorExtra": "",
-        "dimensions": "34.7x21x13.7cm",
+        "dimensions": "34.4x20.8x13.8cm",
         "dimensionsExtra": "",
         "tags": [],
         "altTitles": [],
-        "parts": 724,
+        "parts": 787,
         "partsExtra": "The spacecraft can be build completely out of Lego bricks.",
         "title": "Buran",
         "stability": 5,
@@ -10222,12 +10222,52 @@
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_4.png",
-            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7_5.jpg"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the spacecraft",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7.io",
+                        "name": "Buran_V2.7.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the spacecraft",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7_instructions.pdf",
+                        "name": "Buran_V2.7_instructions.pdf"
+                    },
+                    {
+                        "description": "The digital io file of the extended docking port",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_Docking_Adapter_V2.7.io",
+                        "name": "Buran_Docking_Adapter_V2.7.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the extended docking port",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_Docking_Adapter_V2.7_instructions.pdf",
+                        "name": "Buran_Docking_Adapter_V2.7_instructions.pdf"
+                    }
+                ],
+                "version": "V2.7"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

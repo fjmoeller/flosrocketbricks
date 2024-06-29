@@ -10199,7 +10199,7 @@
             67,
             69
         ],
-        "updateMessage": "",
+        "updateMessage": "Will be updated very soon!",
         "region": [
             "USSR"
         ],
@@ -10229,45 +10229,6 @@
             "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7_5.jpg"
         ],
         "versions": [
-            {
-                "changelog": "",
-                "versionExtra": "",
-                "files": [
-                    {
-                        "description": "The digital io file of the spacecraft",
-                        "type": "io",
-                        "allowExport": true,
-                        "allowViewer": false,
-                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7.io",
-                        "name": "Buran_V2.7.io"
-                    },
-                    {
-                        "description": "The pdf instructions of the spacecraft",
-                        "type": "pdf",
-                        "allowExport": false,
-                        "allowViewer": false,
-                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7_instructions.pdf",
-                        "name": "Buran_V2.7_instructions.pdf"
-                    },
-                    {
-                        "description": "The digital io file of the extended docking port",
-                        "type": "io",
-                        "allowExport": true,
-                        "allowViewer": false,
-                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_Docking_Adapter_V2.7.io",
-                        "name": "Buran_Docking_Adapter_V2.7.io"
-                    },
-                    {
-                        "description": "The pdf instructions of the extended docking port",
-                        "type": "pdf",
-                        "allowExport": false,
-                        "allowViewer": false,
-                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_Docking_Adapter_V2.7_instructions.pdf",
-                        "name": "Buran_Docking_Adapter_V2.7_instructions.pdf"
-                    }
-                ],
-                "version": "V2.7"
-            },
             {
                 "changelog": "",
                 "versionExtra": "",

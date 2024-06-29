@@ -1,4 +1,4 @@
-# this script can be used to check whether an io file can be used to automatically create parts lists for bricklink and rebrickable from
+# This script checks all .io files in the current directory and checks if all parts have mappings in order for the website export feature to be used
 
 from zipfile import ZipFile
 import os

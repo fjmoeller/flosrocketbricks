@@ -1,3 +1,5 @@
+# This script tries creating an ldraw file that includes all the definitions for all the needed parts for this model for every .io file in the current directory
+
 import shutil
 import os
 import sys
@@ -6,11 +8,9 @@ from zipfile import ZipFile
 
 
 class PartMapping:
-  actualLdrawId = []
-  r = ""
-  def __init__(self, actualLdrawId, r):
-    self.actualLdrawId = actualLdrawId
-    self.r = r
+  l = []
+  def __init__(self, l):
+    self.l = l
 
 class PartMappingFix:
   b = ""
@@ -25,13 +25,14 @@ class PartMappingFix:
 parts = {}
 submodels = []
 
-partList: dict[str,PartMapping] = {}
+blIdPartList: dict[str,PartMapping] = {}
 with open("lists/partList.json", 'r', encoding="utf8") as partListJson:
   partListDict = json.load(partListJson)
   for partMapping in partListDict:
     for fakeLDrawId in partMapping["b"]:
-      partList[fakeLDrawId] = PartMapping(partMapping["l"],partMapping["r"])
-print("PartList read with total entries: " + str(len(partList.keys())))
+      blIdPartList[fakeLDrawId] = PartMapping(partMapping["l"])
+print("PartList read with total entries: " + str(len(blIdPartList.keys())))
+
 partListFix: dict[str,PartMapping] = {}
 with open("lists/partListFix.json", 'r', encoding="utf8") as partListJson:
   partListDict = json.load(partListJson)
@@ -46,34 +47,33 @@ def collectParts(filePath):
     for line in file:
       fileContent.append(line)
       if line.startswith("1"):
-        referenceName = line.split(" ", 14)[-1].replace("\n", "").replace("\r", "")
-        referenceNameSplit = referenceName.split("\\")[-1]
-        if not referenceName in parts:
-          if referenceName.startswith("48\\"):
-            parts[referenceName] = collectParts("/".join(["origparts", "p", "48", referenceNameSplit]))
-            # print(" ".join(["Part added:",referenceName,"with a total amount of lines:",str(len(parts[referenceName]))]))
-          elif referenceName.startswith("8\\"):
-            parts[referenceName] = collectParts("/".join(["origparts", "p", "8", referenceNameSplit]))
-            # print(" ".join(["Part added:",referenceName,"with a total amount of lines:",str(len(parts[referenceName]))]))
-          elif referenceName.startswith("s\\"):
-            parts[referenceName] = collectParts("/".join(["origparts", "parts", "s", referenceNameSplit]))
-            # print(" ".join(["Part added:",referenceName,"with a total amount of lines:",str(len(parts[referenceName]))]))
+        partName = line.split(" ", 14)[-1].replace("\n", "").replace("\r", "")
+        partNameSplit = partName.split("\\")[-1]
+        partNameTrimmed = partNameSplit[0,-4]
+        if not partName in parts:
+          if partName.startswith("48\\"):
+            parts[partName] = collectParts("/".join(["origparts", "p", "48", partNameSplit]))
+          elif partName.startswith("8\\"):
+            parts[partName] = collectParts("/".join(["origparts", "p", "8", partNameSplit]))
+          elif partName.startswith("s\\"):
+            parts[partName] = collectParts("/".join(["origparts", "parts", "s", partNameSplit]))
 
-          elif referenceName in partListFix and os.path.exists(
-            os.path.join("origparts", "parts", partListFix[referenceName].l)):
-            parts[referenceName] = collectParts("/".join(["origparts", "parts", partListFix[referenceName].l]))
-          elif referenceName in partList and len(partList[referenceName].l) > 0 and os.path.exists(
-            os.path.join("origparts", "parts", partList[referenceName].l[0])):
-            parts[referenceName] = collectParts("/".join(["origparts", "parts", partList[referenceName].l[0]]))
+          elif partNameTrimmed in partListFix and os.path.exists(
+            os.path.join("origparts", "parts", partListFix[partNameTrimmed].l)):
+            parts[partName] = collectParts("/".join(["origparts", "parts", partListFix[partNameTrimmed].l+".dat"])) #TODO .dat richtig?
 
-          elif os.path.exists(os.path.join("origparts", "p", str(referenceNameSplit))):
-            parts[referenceName] = collectParts("/".join(["origparts", "p", referenceNameSplit]))
-            # print(" ".join(["Part added:",referenceName,"with a total amount of lines:",str(len(parts[referenceName]))]))
-          elif os.path.exists(os.path.join("origparts", "parts", str(referenceNameSplit))):
-            parts[referenceName] = collectParts("/".join(["origparts", "parts", referenceNameSplit]))
-            # print(" ".join(["Part added:",referenceName,"with a total amount of lines:",str(len(parts[referenceName]))]))
+          elif os.path.exists(os.path.join("origparts", "p", str(partNameSplit))):
+            parts[partName] = collectParts("/".join(["origparts", "p", partNameSplit]))
+          elif os.path.exists(os.path.join("origparts", "parts", str(partNameSplit))):
+            parts[partName] = collectParts("/".join(["origparts", "parts", partNameSplit]))
+            #print(" ".join(["Part added:",referenceName,"with a total amount of lines:",str(len(parts[referenceName]))]))
+
+          elif partNameTrimmed in blIdPartList and len(blIdPartList[partNameTrimmed].l) > 0 and os.path.exists(
+            os.path.join("origparts", "parts", blIdPartList[partNameTrimmed].l[0])):
+            parts[partName] = collectParts("/".join(["origparts", "parts", blIdPartList[partNameTrimmed].l[0]+".dat"])) #TODO .dat richtig?
+
           else:
-            print("Part not found: " + referenceName)
+            print("Part not found: " + partName)
         else:
           continue
   return "".join(fileContent)

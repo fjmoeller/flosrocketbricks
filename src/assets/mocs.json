@@ -10193,13 +10193,13 @@
         "companyExtra": "",
         "difficulty": 4,
         "difficultyExtra": "",
-        "lastupdate": "2024-06-29",
+        "lastupdate": "2024-06-30",
         "dateCreated": "2021-10-29",
         "related": [
             67,
             69
         ],
-        "updateMessage": "Will be updated very soon!",
+        "updateMessage": "",
         "region": [
             "USSR"
         ],
@@ -10213,7 +10213,7 @@
         "dimensionsExtra": "",
         "tags": [],
         "altTitles": [],
-        "parts": 787,
+        "parts": 788,
         "partsExtra": "The spacecraft can be build completely out of Lego bricks.",
         "title": "Buran",
         "stability": 5,
@@ -10236,13 +10236,52 @@
                     {
                         "description": "The digital io file",
                         "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7.io",
+                        "name": "Buran_V2.7.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7_instructions.pdf",
+                        "name": "Buran_V2.7_instructions.pdf"
+                    },
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_Docking_Adapter_V2.7.io",
+                        "name": "Buran_Docking_Adapter_V2.7.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_Docking_Adapter_V2.7_instructions.pdf",
+                        "name": "Buran_Docking_Adapter_V2.7_instructions.pdf"
+                    }
+                ],
+                "version": "V2.7"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
                         "allowExport": false,
                         "allowViewer": false,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/russia/buran/v2.6/Buran_V2.6_pub.io",
                         "name": "Buran_V2.6_pub.io"
                     },
                     {
-                        "description": "The pdf isntructions",
+                        "description": "The pdf instructions",
                         "type": "pdf",
                         "allowExport": false,
                         "allowViewer": false,

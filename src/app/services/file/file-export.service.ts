@@ -20,13 +20,12 @@ export class FileExportService {
 
   private countedPartMap = new Map<string, number>();
   private mappedCountedPartMap = new Map<string, number>();
-  private usedParts = new Set<string>();
 
   private partMappings = new Map<string, { r: string, b: string }>();
 
   constructor(private ioFileService: IoFileService, private ldrawColorService: LdrawColorService) { }
 
-  async collectUsedPartsMappings(url: string): Promise<void> {
+  async collectUsedPartsMappings(url: string, isBr: boolean): Promise<void> {
 
     const fetchResult = await fetch(this.backendFetchUrl + url + "_pm.json");
     let mocSpecificMappedParts: SpecificPartMapping[] = [];
@@ -37,41 +36,30 @@ export class FileExportService {
     const partListFix: PartMappingFix[] = await (await fetch("/assets/ldr/lists/partListFix.json")).json() as PartMappingFix[];
 
     this.partMappings.clear();
-    for (let partId of this.usedParts) {
 
-      const specificmappedPart = mocSpecificMappedParts.find(printMapping => printMapping.l == partId);
-      if (specificmappedPart != undefined) {
-        this.partMappings.set(partId, { r: specificmappedPart.r, b: specificmappedPart.b });
-        continue;
-      }
-
-      const mappedPartFix = partListFix.find(part => part.io == partId);
-      if (mappedPartFix != undefined) {
-        this.partMappings.set(partId, { r: mappedPartFix.r, b: mappedPartFix.b });
-        continue;
-      }
-
-      const mappedPart = partList.find(part => part.b.length > 0 && part.r !== "" && part.l.includes(partId));
-      if (mappedPart != undefined) {
-        if (mappedPart.b.length > 1) console.warn("Error: " + partId + " has multiple mappings, check the python validation script!");
-        else this.partMappings.set(partId, { r: mappedPart.r, b: mappedPart.b[0] });
-        continue;
-      }
-
-      console.error("Error: " + partId + " has found no mapping");
-    }
-  }
-
-  mapParts(isBr: boolean): void {
     for (let countedPart of this.countedPartMap.keys()) {
       const colorIdKey = countedPart.split(this.separationString); //1sr part contains color, 2nd the id
+      let mappedId = "";
 
-      const mapping = this.partMappings.get(colorIdKey[1]);
-      if (!mapping) { console.error("No mapping found for part" + countedPart); continue; }
-      this.mappedCountedPartMap.set(
-        colorIdKey[0] + this.separationString + (isBr ? mapping.b : mapping.r),
-        (this.mappedCountedPartMap.get(countedPart) ?? 0) + (this.countedPartMap.get(countedPart) ?? 0)
-      );
+      const specificmappedPart = mocSpecificMappedParts.find(printMapping => printMapping.l == colorIdKey[1]);
+      if (specificmappedPart != undefined)
+        mappedId = isBr ? specificmappedPart.b : specificmappedPart.r;
+      else {
+        const mappedPartFix = partListFix.find(part => part.io == colorIdKey[1]);
+        if (mappedPartFix != undefined) {
+          mappedId = isBr ? mappedPartFix.b : mappedPartFix.r;
+        } else {
+          const mappedPart = partList.find(part => part.b.length > 0 && part.r !== "" && part.l.includes(colorIdKey[1]));
+          if (mappedPart != undefined) {
+            if (mappedPart.b.length > 1) console.warn("Error: " + mappedPart + " has multiple mappings, check the python validation script!");
+            else mappedId = isBr ? mappedPart.b[0] : mappedPart.r;
+          }
+        }
+      }
+      if (!mappedId) { console.error("No mapping found for part" + countedPart); continue; }
+      const newKey = colorIdKey[0] + this.separationString + mappedId;
+      const newCount = (this.mappedCountedPartMap.get(newKey) ?? 0) + (this.countedPartMap.get(countedPart) ?? 0);
+      this.mappedCountedPartMap.set(newKey, newCount);
     }
   }
 
@@ -79,8 +67,7 @@ export class FileExportService {
     this.countedPartMap.clear();
     this.mappedCountedPartMap.clear();
     await this.collectParts(url);
-    await this.collectUsedPartsMappings(url);
-    this.mapParts(true);
+    await this.collectUsedPartsMappings(url, true);
 
     const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(placeholderColor);
 
@@ -90,14 +77,11 @@ export class FileExportService {
       let color = "0";
       if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) //if the color is not the to be replaced one
         color = "" + this.ldrawColorService.getBricklinkColorOf(colorIdKey[0], 0);
-
-
-      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + colorIdKey[1] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
+      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + colorIdKey[1] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.mappedCountedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
     }
     xml += "</INVENTORY>";
 
     this.countedPartMap.clear();
-    this.usedParts.clear();
     this.partMappings.clear();
     this.mappedCountedPartMap.clear();
     return xml;
@@ -107,8 +91,7 @@ export class FileExportService {
     this.countedPartMap.clear();
     this.mappedCountedPartMap.clear();
     await this.collectParts(url);
-    await this.collectUsedPartsMappings(url);
-    this.mapParts(false);
+    await this.collectUsedPartsMappings(url,false);
 
     const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(colorName);
 
@@ -120,12 +103,11 @@ export class FileExportService {
         color = "" + this.ldrawColorService.getRebrickableColorOf(colorIdKey[0], 9999);
       }
 
-      csv += colorIdKey[1] + "," + color + "," + this.countedPartMap.get(key) + ",False\n";
+      csv += colorIdKey[1] + "," + color + "," + this.mappedCountedPartMap.get(key) + ",False\n";
     }
 
     this.countedPartMap.clear();
     this.mappedCountedPartMap.clear();
-    this.usedParts.clear();
     this.partMappings.clear();
     return csv;
   }
@@ -152,7 +134,6 @@ export class FileExportService {
         else { //if is part
           const id = reference.color + this.separationString + reference.name;
           this.countedPartMap.set(id, (this.countedPartMap.get(id) ?? 0) + 1);
-          this.usedParts.add(reference.name);
         }
       }
     );

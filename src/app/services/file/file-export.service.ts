@@ -19,9 +19,10 @@ export class FileExportService {
   private backendFetchUrl = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
 
   private countedPartMap = new Map<string, number>();
+  private mappedCountedPartMap = new Map<string, number>();
   private usedParts = new Set<string>();
 
-  private modelPartMappings = new Map<string, { r: string, b: string }>();
+  private partMappings = new Map<string, { r: string, b: string }>();
 
   constructor(private ioFileService: IoFileService, private ldrawColorService: LdrawColorService) { }
 
@@ -35,93 +36,97 @@ export class FileExportService {
     const partList: PartMapping[] = await (await fetch("/assets/ldr/lists/partList.json")).json() as PartMapping[];
     const partListFix: PartMappingFix[] = await (await fetch("/assets/ldr/lists/partListFix.json")).json() as PartMappingFix[];
 
-    this.modelPartMappings.clear();
+    this.partMappings.clear();
     for (let partId of this.usedParts) {
 
       const specificmappedPart = mocSpecificMappedParts.find(printMapping => printMapping.l == partId);
       if (specificmappedPart != undefined) {
-        this.modelPartMappings.set(partId, { r: specificmappedPart.r, b: specificmappedPart.b });
+        this.partMappings.set(partId, { r: specificmappedPart.r, b: specificmappedPart.b });
         continue;
       }
 
       const mappedPartFix = partListFix.find(part => part.io == partId);
       if (mappedPartFix != undefined) {
-        this.modelPartMappings.set(partId, { r: mappedPartFix.r, b: mappedPartFix.b });
+        this.partMappings.set(partId, { r: mappedPartFix.r, b: mappedPartFix.b });
         continue;
       }
 
-      const mappedPart = partList.find(part => part.b.length>0 && part.r !== "" && part.l.includes(partId));
+      const mappedPart = partList.find(part => part.b.length > 0 && part.r !== "" && part.l.includes(partId));
       if (mappedPart != undefined) {
-        if(mappedPart.b.length > 1) console.warn("Error: " + partId + " has multiple mappings, check the python validation script!");
-        else this.modelPartMappings.set(partId, { r: mappedPart.r, b: mappedPart.b[0] });
+        if (mappedPart.b.length > 1) console.warn("Error: " + partId + " has multiple mappings, check the python validation script!");
+        else this.partMappings.set(partId, { r: mappedPart.r, b: mappedPart.b[0] });
         continue;
       }
 
-      //TODO if part was saved as bricklink id instead of stuff
-      /*
-      const wrongMappedPart = partList.find(part => part.r !== "" && part.b.includes(partId));
-      if (wrongMappedPart != undefined) {
-        this.modelPartMappings.set(partId, { r: wrongMappedPart.r, b: wrongMappedPart.b[0] });
-        continue;
-      }
-      */
+      console.error("Error: " + partId + " has found no mapping");
+    }
+  }
 
-      console.error("Error: "+partId+" has found no mapping");
+  mapParts(isBr: boolean): void {
+    for (let countedPart of this.countedPartMap.keys()) {
+      const colorIdKey = countedPart.split(this.separationString); //1sr part contains color, 2nd the id
+
+      const mapping = this.partMappings.get(colorIdKey[1]);
+      if (!mapping) { console.error("No mapping found for part" + countedPart); continue; }
+      this.mappedCountedPartMap.set(
+        colorIdKey[0] + this.separationString + (isBr ? mapping.b : mapping.r),
+        (this.mappedCountedPartMap.get(countedPart) ?? 0) + (this.countedPartMap.get(countedPart) ?? 0)
+      );
     }
   }
 
   async getXml(url: string, placeholderColor: string): Promise<string> {
     this.countedPartMap.clear();
+    this.mappedCountedPartMap.clear();
     await this.collectParts(url);
     await this.collectUsedPartsMappings(url);
+    this.mapParts(true);
 
     const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(placeholderColor);
 
     let xml = "<INVENTORY>\n";
-    for (let key of this.countedPartMap.keys()) {
+    for (let key of this.mappedCountedPartMap.keys()) {
       const colorIdKey = key.split(this.separationString); //1sr part contains color, 2nd the id
       let color = "0";
-      if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
+      if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) //if the color is not the to be replaced one
         color = "" + this.ldrawColorService.getBricklinkColorOf(colorIdKey[0], 0);
-      }
 
-      if (!this.modelPartMappings.has(colorIdKey[1].split(".dat")[0]))
-        console.error("Part with ID " + colorIdKey[1].split(".dat")[0] + " not found!")
 
-      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + this.modelPartMappings.get(colorIdKey[1].split(".dat")[0])?.b + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
+      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + colorIdKey[1] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
     }
     xml += "</INVENTORY>";
 
     this.countedPartMap.clear();
     this.usedParts.clear();
-    this.modelPartMappings.clear();
+    this.partMappings.clear();
+    this.mappedCountedPartMap.clear();
     return xml;
   }
 
   async getCsv(url: string, colorName: string): Promise<string> {
     this.countedPartMap.clear();
+    this.mappedCountedPartMap.clear();
     await this.collectParts(url);
     await this.collectUsedPartsMappings(url);
+    this.mapParts(false);
 
     const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(colorName);
 
     let csv = "Part,Color,Quantity,Is Spare\n";
-    for (let key of this.countedPartMap.keys()) {
+    for (let key of this.mappedCountedPartMap.keys()) {
       const colorIdKey = key.split(this.separationString);
       let color = "9999";
       if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
         color = "" + this.ldrawColorService.getRebrickableColorOf(colorIdKey[0], 9999);
       }
 
-      if (!this.modelPartMappings.has(colorIdKey[1].split(".dat")[0]))
-        console.error("Part with ID " + colorIdKey[1].split(".dat")[0] + " not found!")
-
-      csv += this.modelPartMappings.get(colorIdKey[1].split(".dat")[0])?.r + "," + color + "," + this.countedPartMap.get(key) + ",False\n";
+      csv += colorIdKey[1] + "," + color + "," + this.countedPartMap.get(key) + ",False\n";
     }
 
     this.countedPartMap.clear();
+    this.mappedCountedPartMap.clear();
     this.usedParts.clear();
-    this.modelPartMappings.clear();
+    this.partMappings.clear();
     return csv;
   }
 
@@ -159,7 +164,7 @@ export class FileExportService {
       const options = { password: "soho0909", filenameEncoding: "utf-8" };
       const entries = await (new zip.ZipReader(new zip.BlobReader(blob), options)).getEntries();
       const model = entries.find(e => e.filename == "model.ldr");
-      if(model == undefined)
+      if (model == undefined)
         return "";
       if (model && model.getData) {
         const blob = await model.getData(new zip.BlobWriter());

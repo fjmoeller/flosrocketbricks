@@ -14,11 +14,9 @@ class PartMapping:
 
 class PartMappingFix:
   b = ""
-  r = ""
   l = ""
-  def __init__(self, b, r,l):
+  def __init__(self, b, l):
     self.b = b
-    self.r = r
     self.l = l
 
 
@@ -37,7 +35,7 @@ partListFix: dict[str,PartMapping] = {}
 with open("lists/partListFix.json", 'r', encoding="utf8") as partListJson:
   partListDict = json.load(partListJson)
   for partMapping in partListDict:
-    partListFix[partMapping["io"]] = PartMappingFix(partMapping["b"],partMapping["r"],partMapping["l"])
+    partListFix[partMapping["io"]] = PartMappingFix(partMapping["b"],partMapping["l"])
 print("PartListFix read with total entries: " + str(len(partListFix.keys())))
 
 
@@ -49,7 +47,7 @@ def collectParts(filePath):
       if line.startswith("1"):
         partName = line.split(" ", 14)[-1].replace("\n", "").replace("\r", "")
         partNameSplit = partName.split("\\")[-1]
-        partNameTrimmed = partNameSplit[0,-4]
+        partNameTrimmed = partNameSplit.split(".dat")[0]
         if not partName in parts:
           if partName.startswith("48\\"):
             parts[partName] = collectParts("/".join(["origparts", "p", "48", partNameSplit]))
@@ -58,8 +56,8 @@ def collectParts(filePath):
           elif partName.startswith("s\\"):
             parts[partName] = collectParts("/".join(["origparts", "parts", "s", partNameSplit]))
 
-          elif partNameTrimmed in partListFix and os.path.exists(
-            os.path.join("origparts", "parts", partListFix[partNameTrimmed].l)):
+          elif partNameTrimmed in partListFix and partListFix[partNameTrimmed].l != "" and os.path.exists(
+            os.path.join("origparts", "parts", partListFix[partNameTrimmed].l+".dat")):
             parts[partName] = collectParts("/".join(["origparts", "parts", partListFix[partNameTrimmed].l+".dat"])) #TODO .dat richtig?
 
           elif os.path.exists(os.path.join("origparts", "p", str(partNameSplit))):
@@ -88,14 +86,12 @@ if len(sys.argv) == 1 or sys.argv[1] == None or sys.argv[1] == "":
       with ZipFile(filepath, 'r') as zObject:
         zObject.extract("model.ldr", path=os.getcwd())
       collectParts("model.ldr")
-      # print("Total amount of "+str(len(parts))+ " parts found.")
       actualParts = ["\n0 NOSUBMODEL\n"]
       for part in parts:
         if not part in submodels:
           actualParts.append("0 FILE " + part + "\n")  # todo is part correct here?
           actualParts.append(parts[part])
           actualParts.append("0 NOFILE\n")
-          # print("Added: "+part+" to file")
       with open(file[:-2] + "ldr", 'a', encoding="utf8") as ldrmoc:
         with open("model.ldr", 'r', encoding="utf8") as origfile:
           ldrmoc.write(origfile.read() + "\n".join(actualParts))

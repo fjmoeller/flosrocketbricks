@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FrontTag, Moc } from '../../model/classes';
 import { ActivatedRoute } from '@angular/router';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { FormsModule } from '@angular/forms';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -26,7 +27,7 @@ export class SearchComponent implements OnInit {
 
   mocs: Moc[] = [];
 
-  constructor(private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: any,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParams
@@ -53,7 +54,8 @@ export class SearchComponent implements OnInit {
             this.tagScaleChange(ft);
         }
         this.getMocs();
-        window.scroll({top: 0,left: 0,behavior: "instant",});
+        if (isPlatformBrowser(this.platformId))
+          window.scroll({top: 0,left: 0,behavior: "instant",});
       });
     this.metaService.setDefaultTags("Search - FlosRocketBricks", "https://flosrocketbricks.com/search/");
   }

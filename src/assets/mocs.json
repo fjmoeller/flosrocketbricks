@@ -7780,7 +7780,7 @@
                         "description": "The digital io file",
                         "type": "io",
                         "allowExport": true,
-                        "allowViewer": false,
+                        "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.0/Ariane_62_FM1_V3.0.io",
                         "name": "Ariane_62_FM1_V3.0.io"
                     }
@@ -10237,7 +10237,7 @@
                         "description": "The digital io file",
                         "type": "io",
                         "allowExport": true,
-                        "allowViewer": false,
+                        "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/v2.7/Buran_V2.7.io",
                         "name": "Buran_V2.7.io"
                     },
@@ -10375,7 +10375,7 @@
                         "description": "The digital io file",
                         "type": "io",
                         "allowExport": true,
-                        "allowViewer": false,
+                        "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/ussr/energia/energia-buran/v2.7/Energia_Buran_V2.7_pub.io",
                         "name": "Energia_Buran_V2.7_pub.io"
                     },

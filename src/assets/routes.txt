@@ -209,5 +209,7 @@
 /moc/204/tiangong-2/
 /moc/205/falcon-9-block-5-earthcare/
 /moc/206/earthcare/
+/moc/207/tale-of-sts-130/
+/moc/208/tale-of-ariane-6-fm1/
 /about/
 /404/

@@ -5142,12 +5142,28 @@
                         "name": "Firefly_Alpha_FLTA001_V2.1.io"
                     },
                     {
+                        "description": "The pdf instructions of the rocket",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/alpha/flight-1/v2.1/Firefly_Alpha_FLTA001_V2.1_instructions.pdf",
+                        "name": "Firefly_Alpha_FLTA001_V2.1_instructions.pdf"
+                    },
+                    {
                         "description": "The digital io file of the rocket in the frosted variant",
                         "type": "io",
                         "allowExport": false,
                         "allowViewer": true,
                         "link": "https://bricksafe.com/files/SkySaac/website/110/usa/alpha/flight-1/v2.1/Firefly_Alpha_FLTA001_Frost_V2.1.io",
                         "name": "Firefly_Alpha_FLTA001_Frost_V2.1.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the rocket frosted variant",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://bricksafe.com/files/SkySaac/website/110/usa/alpha/flight-1/v2.1/Firefly_Alpha_FLTA001_Frost_V2.1_instructions.pdf",
+                        "name": "Firefly_Alpha_FLTA001_Frost_V2.1_instructions.pdf"
                     }
                 ],
                 "version": "V2.1"

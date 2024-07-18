@@ -10925,7 +10925,7 @@
         "companyExtra": "",
         "difficulty": 3,
         "difficultyExtra": "",
-        "lastupdate": "2023-05-07",
+        "lastupdate": "2024-07-19",
         "dateCreated": "2021-04-27",
         "related": [
             64
@@ -10943,8 +10943,8 @@
         "dimensions": "4.1x4.1x44cm",
         "dimensionsExtra": "",
         "tags": [],
-        "altTitles": [],
-        "parts": 547,
+        "altTitles": ["LM-4C","CZ-4C"],
+        "parts": 549,
         "partsExtra": "The rocket can be build completely out of Lego bricks.",
         "title": "Long March 4C",
         "stability": 3,
@@ -10960,6 +10960,37 @@
             "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-4/long-march-4c/v3.5/Long_March_4C_V3.5_5.png"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file of the rocket",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-4/c/v3.6/Long_March_4C_V3.6.io",
+                        "name": "Long_March_4C_V3.6.io"
+                    },
+                    {
+                        "description": "The pdf instructions of the rocket",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-4/c/v3.6/Long_March_4C_V3.6.pdf",
+                        "name": "Long_March_4C_V3.6.pdf"
+                    },
+                    {
+                        "description": "The digital io file of the fairing variants",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-4/c/v3.6/Long_March_4C_Fairings_V3.6.io",
+                        "name": "Long_March_4C_Fairings_V3.6.io"
+                    }
+                ],
+                "version": "V3.6"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

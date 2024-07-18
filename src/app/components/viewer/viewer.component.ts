@@ -64,7 +64,7 @@ export class ViewerComponent implements OnInit {
     const canvasDiv = document.getElementById('canvas-viewer');
 
     if (!canvas || !canvasDiv){
-      console.log("Error: no canvas found");
+      console.error("Error: no canvas found");
       return;
     }
 

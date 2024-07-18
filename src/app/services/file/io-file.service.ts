@@ -37,7 +37,7 @@ export class IoFileService {
     this.parseParts(ldrObjects[1].split("0 NOFILE"));
 
     //get the id of the color that is just a placeholder color and therefore doesnt need to be rendered
-    const placeholderColorCode = this.ldrawColorService.getPlaceholderColorCode(placeHolderColor);
+    const placeholderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(placeHolderColor);
 
     console.debug("Now resolving the model!")
     //resolve all submodels starting from top to bottom
@@ -138,7 +138,7 @@ export class IoFileService {
           partGeometry.normalizeNormals();
 
           const material = new MeshStandardMaterial();
-          const matertialValues = this.ldrawColorService.resolveColor((color == 24 || color == 16 || color == -1 || color == -2) ? reference.color : color);
+          const matertialValues = this.ldrawColorService.resolveColorByLdrawColorId((color == 24 || color == 16 || color == -1 || color == -2) ? reference.color : color);
           material.flatShading = true;
           material.setValues(matertialValues);
 
@@ -170,12 +170,12 @@ export class IoFileService {
           {
             //material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(reference.color) });
             if (reference.color == 0)
-              material = new LineBasicMaterial({ color: this.ldrawColorService.getSimpleColor(71) });
+              material = new LineBasicMaterial({ color: this.ldrawColorService.getHexColorFromLdrawColorId(71) });
             else
-              material = new LineBasicMaterial({ color: this.ldrawColorService.getSimpleColor(0) });
+              material = new LineBasicMaterial({ color: this.ldrawColorService.getHexColorFromLdrawColorId(0) });
           }
           else
-            material = new LineBasicMaterial({ color: this.ldrawColorService.getSimpleColor(color) });
+            material = new LineBasicMaterial({ color: this.ldrawColorService.getHexColorFromLdrawColorId(color) });
           submodelGroup.add(new LineSegments(partGeometry, material));
         });
       }

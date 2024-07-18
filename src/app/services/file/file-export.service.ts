@@ -69,14 +69,14 @@ export class FileExportService {
     await this.collectParts(url);
     await this.collectUsedPartsMappings(url, true);
 
-    const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(placeholderColor);
+    const placeHolderColorcode = this.ldrawColorService.getLdrawColorIdByColorName(placeholderColor);
 
     let xml = "<INVENTORY>\n";
     for (let key of this.mappedCountedPartMap.keys()) {
       const colorIdKey = key.split(this.separationString); //1sr part contains color, 2nd the id
       let color = "0";
       if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) //if the color is not the to be replaced one
-        color = "" + this.ldrawColorService.getBricklinkColorOf(colorIdKey[0], 0);
+        color = "" + this.ldrawColorService.getBricklinkColorIdByLdrawColorId(colorIdKey[0], 0);
       xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + colorIdKey[1] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.mappedCountedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
     }
     xml += "</INVENTORY>";
@@ -93,14 +93,14 @@ export class FileExportService {
     await this.collectParts(url);
     await this.collectUsedPartsMappings(url,false);
 
-    const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(colorName);
+    const placeHolderColorcode = this.ldrawColorService.getLdrawColorIdByColorName(colorName);
 
     let csv = "Part,Color,Quantity,Is Spare\n";
     for (let key of this.mappedCountedPartMap.keys()) {
       const colorIdKey = key.split(this.separationString);
       let color = "9999";
       if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
-        color = "" + this.ldrawColorService.getRebrickableColorOf(colorIdKey[0], 9999);
+        color = "" + this.ldrawColorService.getRebrickableColorIdByLdrawColorId(colorIdKey[0], 9999);
       }
 
       csv += colorIdKey[1] + "," + color + "," + this.mappedCountedPartMap.get(key) + ",False\n";

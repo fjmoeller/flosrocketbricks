@@ -1,0 +1,1910 @@
+[
+    {
+        "name": "Black",
+        "code": 0,
+        "hex": "#1B2A34",
+        "edge": "#808080",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Blue",
+        "code": 1,
+        "hex": "#1E5AA8",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Green",
+        "code": 2,
+        "hex": "#00852B",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Turquoise",
+        "code": 3,
+        "hex": "#069D9F",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Red",
+        "code": 4,
+        "hex": "#B40000",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Pink",
+        "code": 5,
+        "hex": "#D3359D",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Brown",
+        "code": 6,
+        "hex": "#543324",
+        "edge": "#1E1E1E",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Grey",
+        "code": 7,
+        "hex": "#8A928D",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Grey",
+        "code": 8,
+        "hex": "#545955",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Blue",
+        "code": 9,
+        "hex": "#97CBD9",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Bright_Green",
+        "code": 10,
+        "hex": "#58AB41",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Turquoise",
+        "code": 11,
+        "hex": "#00AAA4",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Salmon",
+        "code": 12,
+        "hex": "#F06D61",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Pink",
+        "code": 13,
+        "hex": "#F6A9BB",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Yellow",
+        "code": 14,
+        "hex": "#FAC80A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "White",
+        "code": 15,
+        "hex": "#F4F4F4",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Green",
+        "code": 17,
+        "hex": "#ADD9A8",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Yellow",
+        "code": 18,
+        "hex": "#FFD67F",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Tan",
+        "code": 19,
+        "hex": "#D7BA8C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Violet",
+        "code": 20,
+        "hex": "#AFBED6",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Purple",
+        "code": 22,
+        "hex": "#671F81",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Blue_Violet",
+        "code": 23,
+        "hex": "#0E3E9A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Orange",
+        "code": 25,
+        "hex": "#D67923",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Magenta",
+        "code": 26,
+        "hex": "#901F76",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Lime",
+        "code": 27,
+        "hex": "#A5CA18",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Tan",
+        "code": 28,
+        "hex": "#897D62",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Bright_Pink",
+        "code": 29,
+        "hex": "#FF9ECD",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Lavender",
+        "code": 30,
+        "hex": "#A06EB9",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Lavender",
+        "code": 31,
+        "hex": "#CDA4DE",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Very_Light_Orange",
+        "code": 68,
+        "hex": "#FDC383",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Bright_Reddish_Lilac",
+        "code": 69,
+        "hex": "#8A12A8",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Reddish_Brown",
+        "code": 70,
+        "hex": "#5F3109",
+        "edge": "#808080",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Bluish_Grey",
+        "code": 71,
+        "hex": "#969696",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Bluish_Grey",
+        "code": 72,
+        "hex": "#646464",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Blue",
+        "code": 73,
+        "hex": "#7396C8",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Green",
+        "code": 74,
+        "hex": "#7FC475",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Pink",
+        "code": 77,
+        "hex": "#FECCCF",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Nougat",
+        "code": 78,
+        "hex": "#FFC995",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Nougat",
+        "code": 84,
+        "hex": "#AA7D55",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Lilac",
+        "code": 85,
+        "hex": "#441A91",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Brown",
+        "code": 86,
+        "hex": "#7B5D41",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Blue_Violet",
+        "code": 89,
+        "hex": "#1C58A7",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Nougat",
+        "code": 92,
+        "hex": "#BB805A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Salmon",
+        "code": 100,
+        "hex": "#F9B7A5",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Violet",
+        "code": 110,
+        "hex": "#26469A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Violet",
+        "code": 112,
+        "hex": "#4861AC",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Lime",
+        "code": 115,
+        "hex": "#B7D425",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Aqua",
+        "code": 118,
+        "hex": "#9CD6CC",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Lime",
+        "code": 120,
+        "hex": "#DEEA92",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Orange",
+        "code": 125,
+        "hex": "#F9A777",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Nougat",
+        "code": 128,
+        "hex": "#AD6140",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Very_Light_Bluish_Grey",
+        "code": 151,
+        "hex": "#C8C8C8",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Bright_Light_Orange",
+        "code": 191,
+        "hex": "#FCAC00",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Bright_Light_Blue",
+        "code": 212,
+        "hex": "#9DC3F7",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rust",
+        "code": 216,
+        "hex": "#872B17",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Reddish_Lilac",
+        "code": 218,
+        "hex": "#8E5597",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Lilac",
+        "code": 219,
+        "hex": "#564E9D",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Bright_Light_Yellow",
+        "code": 226,
+        "hex": "#FFEC6C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Sky_Blue",
+        "code": 232,
+        "hex": "#77C9D8",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Blue",
+        "code": 272,
+        "hex": "#19325A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Green",
+        "code": 288,
+        "hex": "#00451A",
+        "edge": "#808080",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Flamingo_Pink",
+        "code": 295,
+        "hex": "#FF94C2",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Brown",
+        "code": 308,
+        "hex": "#352100",
+        "edge": "#808080",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Maersk_Blue",
+        "code": 313,
+        "hex": "#ABD9FF",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Red",
+        "code": 320,
+        "hex": "#720012",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Azure",
+        "code": 321,
+        "hex": "#469BC3",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Azure",
+        "code": 322,
+        "hex": "#68C3E2",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Aqua",
+        "code": 323,
+        "hex": "#D3F2EA",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Yellowish_Green",
+        "code": 326,
+        "hex": "#E2F99A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Olive_Green",
+        "code": 330,
+        "hex": "#77774E",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Sand_Red",
+        "code": 335,
+        "hex": "#88605E",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Dark_Pink",
+        "code": 351,
+        "hex": "#F785B1",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Coral",
+        "code": 353,
+        "hex": "#FF6D77",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Earth_Orange",
+        "code": 366,
+        "hex": "#D86D2C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Neon_Yellow",
+        "code": 368,
+        "hex": "#EDFF21",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Brown",
+        "code": 370,
+        "hex": "#755945",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Tan",
+        "code": 371,
+        "hex": "#CCA373",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Sand_Purple",
+        "code": 373,
+        "hex": "#75657D",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Sand_Green",
+        "code": 378,
+        "hex": "#708E7C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Sand_Blue",
+        "code": 379,
+        "hex": "#70819A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Reddish_Orange",
+        "code": 402,
+        "hex": "#CA4C0B",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Sienna_Brown",
+        "code": 422,
+        "hex": "#915C3C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Umber_Brown",
+        "code": 423,
+        "hex": "#543F33",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Fabuland_Brown",
+        "code": 450,
+        "hex": "#D27744",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Medium_Orange",
+        "code": 462,
+        "hex": "#F58624",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Dark_Orange",
+        "code": 484,
+        "hex": "#91501C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Very_Light_Grey",
+        "code": 503,
+        "hex": "#BCB4A5",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Light_Orange_Brown",
+        "code": 507,
+        "hex": "#FA9C1C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Fabuland_Red",
+        "code": 508,
+        "hex": "#FF8014",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Fabuland_Orange",
+        "code": 509,
+        "hex": "#CF8A47",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Fabuland_Lime",
+        "code": 510,
+        "hex": "#78FC78",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Dark_Blue",
+        "code": 33,
+        "hex": "#0020A0",
+        "edge": "#000B38",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Green",
+        "code": 34,
+        "hex": "#237841",
+        "edge": "#174F2B",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Bright_Green",
+        "code": 35,
+        "hex": "#56E646",
+        "edge": "#27AF18",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Red",
+        "code": 36,
+        "hex": "#C91A09",
+        "edge": "#660D05",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Dark_Pink",
+        "code": 37,
+        "hex": "#DF6695",
+        "edge": "#B9275F",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Neon_Orange",
+        "code": 38,
+        "hex": "#FF800D",
+        "edge": "#A85100",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Very_Light_Blue",
+        "code": 39,
+        "hex": "#C1DFF0",
+        "edge": "#6FB4DC",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Brown",
+        "code": 40,
+        "hex": "#635F52",
+        "edge": "#2A2823",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Medium_Blue",
+        "code": 41,
+        "hex": "#559AB7",
+        "edge": "#326276",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Neon_Green",
+        "code": 42,
+        "hex": "#C0FF00",
+        "edge": "#739900",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Light_Blue",
+        "code": 43,
+        "hex": "#AEE9EF",
+        "edge": "#59D1DE",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Bright_Reddish_Lilac",
+        "code": 44,
+        "hex": "#96709F",
+        "edge": "#5F4365",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Pink",
+        "code": 45,
+        "hex": "#FC97AC",
+        "edge": "#F9345B",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Yellow",
+        "code": 46,
+        "hex": "#F5CD2F",
+        "edge": "#B49208",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Clear",
+        "code": 47,
+        "hex": "#FCFCFC",
+        "edge": "#C9C9C9",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Purple",
+        "code": 52,
+        "hex": "#A5A5CB",
+        "edge": "#6464A6",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Neon_Yellow",
+        "code": 54,
+        "hex": "#DAB000",
+        "edge": "#755E00",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Orange",
+        "code": 57,
+        "hex": "#F08F1C",
+        "edge": "#9E5C0A",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Black_IR_Lens",
+        "code": 32,
+        "hex": "#000000",
+        "edge": "#333333",
+        "alpha": 210,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Neon_Red",
+        "code": 158,
+        "hex": "#F18EBB",
+        "edge": "#E63384",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Bright_Light_Green",
+        "code": 227,
+        "hex": "#B5D96C",
+        "edge": "#86B22E",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Bright_Light_Orange",
+        "code": 231,
+        "hex": "#FCB76D",
+        "edge": "#FA860A",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Fire_Yellow",
+        "code": 234,
+        "hex": "#FBE890",
+        "edge": "#F7D22B",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Reddish_Lilac",
+        "code": 284,
+        "hex": "#C281A5",
+        "edge": "#944771",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Light_Green",
+        "code": 285,
+        "hex": "#7DC291",
+        "edge": "#46955D",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Light_Blue_Violet",
+        "code": 293,
+        "hex": "#6BABE4",
+        "edge": "#247BC6",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Trans_Black",
+        "code": 10375,
+        "hex": "#212121",
+        "edge": "#545454",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Chrome_Antique_Brass",
+        "code": 60,
+        "hex": "#645A4C",
+        "edge": "#665B4D",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "CHROME"
+    },
+    {
+        "name": "Chrome_Blue",
+        "code": 61,
+        "hex": "#6C96BF",
+        "edge": "#3D638A",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "CHROME"
+    },
+    {
+        "name": "Chrome_Green",
+        "code": 62,
+        "hex": "#3CB371",
+        "edge": "#226741",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "CHROME"
+    },
+    {
+        "name": "Chrome_Pink",
+        "code": 63,
+        "hex": "#AA4D8E",
+        "edge": "#632C52",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "CHROME"
+    },
+    {
+        "name": "Chrome_Black",
+        "code": 64,
+        "hex": "#1B2A34",
+        "edge": "#3D5F76",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "CHROME"
+    },
+    {
+        "name": "Chrome_Gold",
+        "code": 334,
+        "hex": "#DFC176",
+        "edge": "#C2982E",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "CHROME"
+    },
+    {
+        "name": "Chrome_Silver",
+        "code": 383,
+        "hex": "#CECECE",
+        "edge": "#9C9C9C",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "CHROME"
+    },
+    {
+        "name": "Pearl_Black",
+        "code": 83,
+        "hex": "#0A1327",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Copper",
+        "code": 134,
+        "hex": "#764D3B",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Pearl_Light_Grey",
+        "code": 135,
+        "hex": "#A0A0A0",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Metallic_Blue",
+        "code": 137,
+        "hex": "#5B7590",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Pearl_Light_Gold",
+        "code": 142,
+        "hex": "#DEAC66",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Pearl_Dark_Gold",
+        "code": 147,
+        "hex": "#83724F",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Pearl_Dark_Grey",
+        "code": 148,
+        "hex": "#484D48",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Pearl_Very_Light_Grey",
+        "code": 150,
+        "hex": "#989B99",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Pearl_Red",
+        "code": 176,
+        "hex": "#945148",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Pearl_Yellow",
+        "code": 178,
+        "hex": "#AB673A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Pearl_Silver",
+        "code": 179,
+        "hex": "#898788",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Pearl_White",
+        "code": 183,
+        "hex": "#F6F2DF",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Metallic_Bright_Red",
+        "code": 184,
+        "hex": "#D60026",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Metallic_Bright_Blue",
+        "code": 185,
+        "hex": "#0059A3",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Metallic_Dark_Green",
+        "code": 186,
+        "hex": "#008E3C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Reddish_Gold",
+        "code": 189,
+        "hex": "#AC8247",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Lemon_Metallic",
+        "code": 200,
+        "hex": "#708224",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Pearl_Gold",
+        "code": 297,
+        "hex": "#AA7F2E",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "PEARLESCENT"
+    },
+    {
+        "name": "Metallic_Silver",
+        "code": 80,
+        "hex": "#767676",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Metallic_Green",
+        "code": 81,
+        "hex": "#C2C06F",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Metallic_Gold",
+        "code": 82,
+        "hex": "#DBAC34",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Metallic_Dark_Grey",
+        "code": 87,
+        "hex": "#3E3C39",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Metallic_Copper",
+        "code": 300,
+        "hex": "#C27F53",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Metallic_Light_Blue",
+        "code": 10045,
+        "hex": "#97CBD9",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Metallic_Pink",
+        "code": 10046,
+        "hex": "#AD659A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Metallic_Light_Pink",
+        "code": 10049,
+        "hex": "#FECCCF",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Milky_White",
+        "code": 79,
+        "hex": "#EEEEEE",
+        "edge": "#BABABA",
+        "alpha": 240,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Glow_In_Dark_Opaque",
+        "code": 21,
+        "hex": "#E0FFB0",
+        "edge": "#B8FF4D",
+        "alpha": 240,
+        "luminance": 15,
+        "material": ""
+    },
+    {
+        "name": "Glow_In_Dark_Trans",
+        "code": 294,
+        "hex": "#BDC6AD",
+        "edge": "#8D9D72",
+        "alpha": 240,
+        "luminance": 15,
+        "material": ""
+    },
+    {
+        "name": "Glow_In_Dark_White",
+        "code": 329,
+        "hex": "#F5F3D7",
+        "edge": "#E0DA85",
+        "alpha": 240,
+        "luminance": 15,
+        "material": ""
+    },
+    {
+        "name": "Glitter_Trans_Dark_Pink",
+        "code": 114,
+        "hex": "#DF6695",
+        "edge": "#B9275F",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Glitter_Trans_Clear",
+        "code": 117,
+        "hex": "#EEEEEE",
+        "edge": "#BABABA",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Glitter_Trans_Purple",
+        "code": 129,
+        "hex": "#640061",
+        "edge": "#000000",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Glitter_Trans_Light_Blue",
+        "code": 302,
+        "hex": "#AEE9EF",
+        "edge": "#59D1DE",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Glitter_Trans_Neon_Green",
+        "code": 339,
+        "hex": "#C0FF00",
+        "edge": "#739900",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Glitter_Trans_Orange",
+        "code": 341,
+        "hex": "#F08F1C",
+        "edge": "#9E5C0A",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Opal_Trans_Clear",
+        "code": 360,
+        "hex": "#FCFCFC",
+        "edge": "#C9C9C9",
+        "alpha": 240,
+        "luminance": 5,
+        "material": ""
+    },
+    {
+        "name": "Opal_Trans_Light_Blue",
+        "code": 362,
+        "hex": "#AEE9EF",
+        "edge": "#59D1DE",
+        "alpha": 200,
+        "luminance": 5,
+        "material": ""
+    },
+    {
+        "name": "Opal_Trans_Black",
+        "code": 363,
+        "hex": "#635F52",
+        "edge": "#2A2823",
+        "alpha": 200,
+        "luminance": 5,
+        "material": ""
+    },
+    {
+        "name": "Opal_Trans_Dark_Pink",
+        "code": 364,
+        "hex": "#DF6695",
+        "edge": "#B9275F",
+        "alpha": 200,
+        "luminance": 5,
+        "material": ""
+    },
+    {
+        "name": "Opal_Trans_Purple",
+        "code": 365,
+        "hex": "#671F81",
+        "edge": "#441456",
+        "alpha": 200,
+        "luminance": 5,
+        "material": ""
+    },
+    {
+        "name": "Opal_Trans_Green",
+        "code": 367,
+        "hex": "#237841",
+        "edge": "#174F2B",
+        "alpha": 200,
+        "luminance": 5,
+        "material": ""
+    },
+    {
+        "name": "Glitter_Trans_Bright_Green",
+        "code": 10351,
+        "hex": "#56E646",
+        "edge": "#27AF18",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Opal_Trans_Dark_Blue",
+        "code": 10366,
+        "hex": "#0020A0",
+        "edge": "#000B38",
+        "alpha": 200,
+        "luminance": 5,
+        "material": ""
+    },
+    {
+        "name": "Speckle_Black_Copper",
+        "code": 75,
+        "hex": "#000000",
+        "edge": "#AB6038",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Speckle_Dark_Bluish_Grey_Silver",
+        "code": 76,
+        "hex": "#635F61",
+        "edge": "#898788",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Speckle_Black_Silver",
+        "code": 132,
+        "hex": "#000000",
+        "edge": "#898788",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Speckle_Black_Gold",
+        "code": 133,
+        "hex": "#000000",
+        "edge": "#DBAC34",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Yellow",
+        "code": 65,
+        "hex": "#FAC80A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Black",
+        "code": 256,
+        "hex": "#1B2A34",
+        "edge": "#808080",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Blue",
+        "code": 273,
+        "hex": "#1E5AA8",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Red",
+        "code": 324,
+        "hex": "#B40000",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Orange",
+        "code": 350,
+        "hex": "#D67923",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Light_Grey",
+        "code": 375,
+        "hex": "#8A928D",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Dark_Blue",
+        "code": 406,
+        "hex": "#19325A",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Purple",
+        "code": 449,
+        "hex": "#671F81",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Lime",
+        "code": 490,
+        "hex": "#A5CA18",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Light_Bluish_Grey",
+        "code": 496,
+        "hex": "#969696",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Flat_Silver",
+        "code": 504,
+        "hex": "#898788",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_White",
+        "code": 511,
+        "hex": "#F4F4F4",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Green",
+        "code": 10002,
+        "hex": "#00852B",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Bright_Green",
+        "code": 10010,
+        "hex": "#58AB41",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Magenta",
+        "code": 10026,
+        "hex": "#901F76",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Medium_Lavender",
+        "code": 10030,
+        "hex": "#A06EB9",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Lavender",
+        "code": 10031,
+        "hex": "#CDA4DE",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Reddish_Brown",
+        "code": 10070,
+        "hex": "#5F3109",
+        "edge": "#808080",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Medium_Blue",
+        "code": 10073,
+        "hex": "#7396C8",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Light_Nougat",
+        "code": 10078,
+        "hex": "#FFC995",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Bright_Light_Yellow",
+        "code": 10226,
+        "hex": "#FFEC6C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Dark_Brown",
+        "code": 10308,
+        "hex": "#352100",
+        "edge": "#808080",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Dark_Red",
+        "code": 10320,
+        "hex": "#720012",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Dark_Azure",
+        "code": 10321,
+        "hex": "#469BC3",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Medium_Azure",
+        "code": 10322,
+        "hex": "#68C3E2",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Light_Aqua",
+        "code": 10323,
+        "hex": "#D3F2EA",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Sand_Green",
+        "code": 10378,
+        "hex": "#708E7C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Dark_Orange",
+        "code": 10484,
+        "hex": "#91501C",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Trans_Yellow",
+        "code": 66,
+        "hex": "#F5CD2F",
+        "edge": "#B49208",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Trans_Clear",
+        "code": 67,
+        "hex": "#FCFCFC",
+        "edge": "#C9C9C9",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Trans_Bright_Green",
+        "code": 10035,
+        "hex": "#56E646",
+        "edge": "#27AF18",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Trans_Red",
+        "code": 10036,
+        "hex": "#C91A09",
+        "edge": "#660D05",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Rubber_Trans_Light_Blue",
+        "code": 10043,
+        "hex": "#AEE9EF",
+        "edge": "#59D1DE",
+        "alpha": 128,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Main_Colour",
+        "code": 16,
+        "hex": "#FFFF80",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Edge_Colour",
+        "code": 24,
+        "hex": "#7F7F7F",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": ""
+    },
+    {
+        "name": "Magnet",
+        "code": 493,
+        "hex": "#656761",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Electric_Contact_Alloy",
+        "code": 494,
+        "hex": "#D0D0D0",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Electric_Contact_Copper",
+        "code": 495,
+        "hex": "#AE7A59",
+        "edge": "#333333",
+        "alpha": 255,
+        "luminance": 0,
+        "material": "METAL"
+    },
+    {
+        "name": "Trans_Sticker",
+        "code": 10047,
+        "hex": "#FFFFFF",
+        "edge": "#FFFFFF",
+        "alpha": 16,
+        "luminance": 0,
+        "material": ""
+    }
+]

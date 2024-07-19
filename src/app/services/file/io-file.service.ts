@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BufferGeometry, Group, LineBasicMaterial, LineSegments, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
 import { LdrPart, LdrSubmodel, PartReference } from '../../model/ldrawParts';
-import { LdrawColorService } from './ldraw-color.service';
+import { LdrawColorService } from '../color/ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
 @Injectable({
@@ -9,7 +9,10 @@ import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUti
 })
 export class IoFileService {
 
+  public readonly RENDER_PLACEHOLDER_COLORED_PARTS: boolean = false;
+
   private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
+  private partIdToBufferGeomMap: Map<string, LdrPart> = new Map<string, LdrPart>();
 
   //base URL from where to fetch the part files to get around stuff
   private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
@@ -19,13 +22,13 @@ export class IoFileService {
   async getModel(ioUrl: string, placeHolderColor: string): Promise<Group> {
     const ldrUrl = ioUrl.slice(0, ioUrl.length - 2) + "ldr"
     const contents = await fetch(this.backendFetchUrl + ldrUrl);
-    const moc = this.createMesh(await contents.text(), placeHolderColor);
+    const moc = this.createMocMesh(await contents.text(), placeHolderColor);
     this.allPartsMap.clear();
     return moc;
   }
 
   //This function creates the group of meshes for use of the 3d renderer out of a ldr file
-  private createMesh(ldrFile: string, placeHolderColor: string): Group {
+  private createMocMesh(ldrFile: string, placeHolderColor: string): Group {
     const ldrObjects = ldrFile.split("0 NOSUBMODEL"); //0 = submodels, 1 = parts
 
     if (ldrObjects.length != 2) {
@@ -41,7 +44,7 @@ export class IoFileService {
 
     console.debug("Now resolving the model!")
     //resolve all submodels starting from top to bottom
-    return this.resolveSubmodel(submodels.topLdrSubmodel, submodels.submodelNames, submodels.submodelMap, placeholderColorCode);
+    return this.resolveSubmodel(submodels.topLdrSubmodel, submodels.submodelMap, placeholderColorCode);
   }
 
   private parseSubmodels(submodels: string[]) {
@@ -49,7 +52,6 @@ export class IoFileService {
     let topSubmodelSet: boolean = false;
     let topLdrSubmodel: LdrSubmodel = new LdrSubmodel("", []);
     const ldrSubModelMap = new Map<string, LdrSubmodel>();
-    const ldrSubModelNames: string[] = [];
     //for each submodel inside the ldr file
     submodels.forEach(submodel => {
       const submodelLines = submodel.split("\n");
@@ -72,22 +74,22 @@ export class IoFileService {
       if (!topSubmodelSet) { topLdrSubmodel = ldrSubmodel; topSubmodelSet = true; }
 
       ldrSubModelMap.set(partName, ldrSubmodel);
-      ldrSubModelNames.push(partName);
     });
 
-    return { "topLdrSubmodel": topLdrSubmodel, "submodelMap": ldrSubModelMap, "submodelNames": ldrSubModelNames };
+    return { "topLdrSubmodel": topLdrSubmodel, "submodelMap": ldrSubModelMap};
   }
 
   private parseParts(parts: string[]) {
     console.debug("Now parsing parts!");
     parts.forEach(partLines => {
       const parsedPart: LdrPart = this.parsePartLines(partLines);
+      //TODO assemble buffergeom already in partPartLines and put in here, and linegeometry too!
       this.allPartsMap.set(parsedPart.name, parsedPart);
     });
   }
 
   //This function resolves a submodel and returns a threejs group: that means that it takes all vertices of all parts and puts them into meshes and collects all groups of its submodels
-  private resolveSubmodel(submodel: LdrSubmodel, ldrSubModelNames: string[], ldrSubModelMap: Map<string, LdrSubmodel>, placeholderColorCode: number): Group {
+  private resolveSubmodel(submodel: LdrSubmodel, ldrSubModelMap: Map<string, LdrSubmodel>, placeholderColorCode: number): Group {
     //if the submodel has already been worked with it is ready already
     if (submodel.resolved) {
       return submodel.group;
@@ -98,16 +100,17 @@ export class IoFileService {
     for (const reference of submodel.references) { //this loop goes through all references to other parts/submodels inside the current submodel
       const matchingSubmodel: LdrSubmodel | undefined = ldrSubModelMap.get(reference.name);
       if (matchingSubmodel) {// reference is a submodel
-        const referenceSubmodelGroup = (this.resolveSubmodel(matchingSubmodel, ldrSubModelNames, ldrSubModelMap, placeholderColorCode)).clone();
+        const referenceSubmodelGroup = (this.resolveSubmodel(matchingSubmodel, ldrSubModelMap, placeholderColorCode)).clone();
         referenceSubmodelGroup.applyMatrix4(reference.transformMatrix);
         submodelGroup.add(referenceSubmodelGroup);
       } else {// reference is a part
 
         //skip if the part is just a placeholder that doesn't need to be rendered
-        if (reference.color == placeholderColorCode)
+        if (reference.color == placeholderColorCode && !this.RENDER_PLACEHOLDER_COLORED_PARTS)
           continue;
 
-        let referencedPart = this.resolvePart(reference.name);
+        const referencedPart = this.resolvePart(reference.name);
+        //TODO const partGeometry = this.getPartGeometry();
 
         referencedPart.colorVertexMap.forEach((vertices, color) => { //for each color of the part an own mesh gets created
 
@@ -117,8 +120,9 @@ export class IoFileService {
           if (indicies)
             partGeometry.setIndex(indicies);
           else
-            throw "Color not found: verticies exist but no face to em";
+            console.error("Color not found: verticies exist but no face to em");
 
+          //some parts need special attention...
           if (reference.name == "28192.dat") {
             partGeometry.rotateY(-Math.PI / 2);
             partGeometry.translate(-10, -24, 0);
@@ -143,6 +147,9 @@ export class IoFileService {
           material.setValues(matertialValues);
 
           const mesh = new Mesh(partGeometry, material);
+
+          //TODO add part to colorName -> (total coords, color id) map instead of adding it to submodelgroup
+
           submodelGroup.add(mesh);
         });
 
@@ -190,7 +197,6 @@ export class IoFileService {
     const ldrPart = this.allPartsMap.get(partName);
     if (ldrPart && !ldrPart.isResolved) {
       //resolve Part
-      //console.debug("Resolving part: "+partName);
       ldrPart.references.forEach(partReference => {
         const referencedPart = this.allPartsMap.get(partReference.name)
         if (referencedPart) {

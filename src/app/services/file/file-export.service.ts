@@ -3,7 +3,7 @@ import { Matrix4 } from 'three';
 import * as zip from "@zip.js/zip.js";
 import { PartReference } from '../../model/ldrawParts';
 import { IoFileService } from './io-file.service';
-import { LdrawColorService } from './ldraw-color.service';
+import { LdrawColorService } from '../color/ldraw-color.service';
 import { SimpleLdrSubmodel, SimpleReference } from '../../model/simpleLdrawParts';
 import { PartMapping, SpecificPartMapping, PartMappingFix } from 'src/app/model/partMappings';
 

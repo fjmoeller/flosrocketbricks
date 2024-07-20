@@ -7946,21 +7946,21 @@
             208,
             209
         ],
-        "updateMessage": "A small update is coming later today!",
+        "updateMessage": "",
         "region": [
             "Europe"
         ],
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/62/fm1/110-ariane-62-fm1-v3.2.jpg",
+        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/62/fm1/110-ariane-62-fm1-v3.3.jpg",
         "dimensions": "10.9x11.2x52.2cm",
         "tags": [],
         "altTitles": [
             "Ariane 62 VA262"
         ],
         "title": "Ariane 6 FM1",
-        "parts": 1251,
+        "parts": 1287,
         "partsExtra": "A few parts are not available by lego in the correct color. Some hoses need to be cut down to the correct lengths.",
         "designer": "SkySaac",
         "designerExtra": "",
@@ -8044,10 +8044,10 @@
                         "allowExport": true,
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.3/Ariane_62_FM1_V3.3.io",
-                        "name": "Ariane_62_FM1_V3.2.io"
+                        "name": "Ariane_62_FM1_V3.3.io"
                     }
                 ],
-                "version": "V3.2"
+                "version": "V3.3"
             }
         ]
     },

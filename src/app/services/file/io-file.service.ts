@@ -12,7 +12,6 @@ export class IoFileService {
   public readonly RENDER_PLACEHOLDER_COLORED_PARTS: boolean = false;
 
   private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
-  private partIdToBufferGeomMap: Map<string, LdrPart> = new Map<string, LdrPart>();
 
   //base URL from where to fetch the part files to get around stuff
   private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
@@ -37,7 +36,11 @@ export class IoFileService {
     }
 
     const submodels = this.parseSubmodels(ldrObjects[0].split("0 NOFILE"));
-    this.parseParts(ldrObjects[1].split("0 NOFILE"));
+    const allPartsMap = this.parseParts(ldrObjects[1].split("0 NOFILE"));
+
+    const partIdToBufferGeomMap = this.createBufferedGeometries(allPartsMap);
+    //TODO collect materials
+    //TODO collect multicolor parts -> normal groups as always i guess?
 
     //get the id of the color that is just a placeholder color and therefore doesnt need to be rendered
     const placeholderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(placeHolderColor);
@@ -76,7 +79,7 @@ export class IoFileService {
       ldrSubModelMap.set(partName, ldrSubmodel);
     });
 
-    return { "topLdrSubmodel": topLdrSubmodel, "submodelMap": ldrSubModelMap};
+    return { "topLdrSubmodel": topLdrSubmodel, "submodelMap": ldrSubModelMap };
   }
 
   private parseParts(parts: string[]) {
@@ -86,6 +89,92 @@ export class IoFileService {
       //TODO assemble buffergeom already in partPartLines and put in here, and linegeometry too!
       this.allPartsMap.set(parsedPart.name, parsedPart);
     });
+    return this.allPartsMap;
+  }
+
+  //This function parses a ldr part from text
+  parsePartLines(partText: string): LdrPart {
+    const partLines = partText.split("\n");
+
+    let partName: string = "ERROR FLO";
+    const references: PartReference[] = [];
+    let invertNext: boolean = false;
+    const colorVertexMap = new Map<number, Vector3[]>();
+    const colorIndexMap = new Map<number, number[]>();
+    const lineColorMap = new Map<number, Vector3[]>();
+    let isCW = false;
+
+    //Go through all lines of text and parse them
+    partLines.forEach(partLine => {
+      if (partLine.endsWith("\r")) //removes annoying stuff
+        partLine = partLine.slice(0, partLine.lastIndexOf("\r"));
+      if (partLine.startsWith("1")) { //line is a reference
+        references.push(this.parseLineTypeOne(partLine, invertNext));
+        invertNext = false;
+      }
+      else if (partLine.startsWith("0 FILE")) { //line is a part name
+        partName = partLine.slice(7);
+        invertNext = false;
+      }
+      else if (partLine.startsWith("0 BFC INVERTNEXT")) //line enables BFC for the next line
+        invertNext = true;
+      else if (partLine.startsWith("0 BFC CERTIFY CW")) //line enables BFC for the next line
+        isCW = true;
+      else if (partLine.startsWith("3") || partLine.startsWith("4")) { //line is a triangle or rectangle
+        if (partLine.startsWith("3"))
+          var parsed = this.parseLineTypeThree(partLine, (invertNext || isCW) && !(invertNext && isCW));
+        else
+          var parsed = this.parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW));
+
+        const partIndicies = colorIndexMap.get(parsed.color);
+        const partVerticies = colorVertexMap.get(parsed.color);
+
+        const vertexIndexMap = new Map<number, number>(); //indicies of vertices will be different so they need to be mapped to the actual ones
+
+        //put all vertices into partVerticies and to the vertexIndexMap 
+        if (partVerticies) //The current part already knows this color
+          for (let i = 0; i < parsed.vertices.length; i++) {
+            const found = partVerticies.findIndex(p => p.equals(parsed.vertices[i]));
+
+            if (found != -1) //vertex already exists
+              vertexIndexMap.set(i, found);
+            else { //vertex doesnt exist yet
+              partVerticies.push(parsed.vertices[i]);
+              vertexIndexMap.set(i, partVerticies.length - 1);
+            }
+          }
+        else //The current part doesnt have the current color yet
+          colorVertexMap.set(parsed.color, parsed.vertices);
+
+
+        const collectedIndices = [];
+        for (let i = 0; i < parsed.indicies.length; i += 3) { //map all indicies to their now referenced verticies
+          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i]) ?? parsed.indicies[i]);
+          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i + 1]) ?? parsed.indicies[i + 1]);
+          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i + 2]) ?? parsed.indicies[i + 2]);
+        }
+        colorIndexMap.set(parsed.color, (partIndicies ?? []).concat(collectedIndices));
+
+        invertNext = false;
+      }
+      else if (partLine.startsWith("2")) { //line is a line
+        const parsed = this.parseLineTypeTwo(partLine);
+        const entry = lineColorMap.get(parsed.color) ?? [];
+        lineColorMap.set(parsed.color, entry.concat(parsed.points));
+        invertNext = false;
+      }
+    });
+
+    return new LdrPart(partName, colorVertexMap, colorIndexMap, lineColorMap, references);
+  }
+
+  private createBufferedGeometries(allPartsMap: Map<string, LdrPart>): Map<string, BufferGeometry> {
+    const partIdToBufferGeomMap = new Map<string, BufferGeometry>();
+    for(const partName of allPartsMap.keys()){
+      
+    }
+
+    return partIdToBufferGeomMap;
   }
 
   //This function resolves a submodel and returns a threejs group: that means that it takes all vertices of all parts and puts them into meshes and collects all groups of its submodels
@@ -281,82 +370,6 @@ export class IoFileService {
         return ldrPart;
       throw ("Error: Part could not be found: " + partName);
     }
-  }
-
-  //This function parses a ldr part from text
-  parsePartLines(partText: string): LdrPart {
-    const partLines = partText.split("\n");
-
-    let partName: string = "ERROR FLO";
-    const references: PartReference[] = [];
-    let invertNext: boolean = false;
-    const colorVertexMap = new Map<number, Vector3[]>();
-    const colorIndexMap = new Map<number, number[]>();
-    const lineColorMap = new Map<number, Vector3[]>();
-    let isCW = false;
-
-    //Go through all lines of text and parse them
-    partLines.forEach(partLine => {
-      if (partLine.endsWith("\r")) //removes annoying stuff
-        partLine = partLine.slice(0, partLine.lastIndexOf("\r"));
-      if (partLine.startsWith("1")) { //line is a reference
-        references.push(this.parseLineTypeOne(partLine, invertNext));
-        invertNext = false;
-      }
-      else if (partLine.startsWith("0 FILE")) { //line is a part name
-        partName = partLine.slice(7);
-        invertNext = false;
-      }
-      else if (partLine.startsWith("0 BFC INVERTNEXT")) //line enables BFC for the next line
-        invertNext = true;
-      else if (partLine.startsWith("0 BFC CERTIFY CW")) //line enables BFC for the next line
-        isCW = true;
-      else if (partLine.startsWith("3") || partLine.startsWith("4")) { //line is a triangle or rectangle
-        if (partLine.startsWith("3"))
-          var parsed = this.parseLineTypeThree(partLine, (invertNext || isCW) && !(invertNext && isCW));
-        else
-          var parsed = this.parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW));
-
-        const partIndicies = colorIndexMap.get(parsed.color);
-        const partVerticies = colorVertexMap.get(parsed.color);
-
-        const vertexIndexMap = new Map<number, number>(); //indicies of vertices will be different so they need to be mapped to the actual ones
-
-        //put all vertices into partVerticies and to the vertexIndexMap 
-        if (partVerticies) //The current part already knows this color
-          for (let i = 0; i < parsed.vertices.length; i++) {
-            const found = partVerticies.findIndex(p => p.equals(parsed.vertices[i]));
-
-            if (found != -1) //vertex already exists
-              vertexIndexMap.set(i, found);
-            else { //vertex doesnt exist yet
-              partVerticies.push(parsed.vertices[i]);
-              vertexIndexMap.set(i, partVerticies.length - 1);
-            }
-          }
-        else //The current part doesnt have the current color yet
-          colorVertexMap.set(parsed.color, parsed.vertices);
-
-
-        const collectedIndices = [];
-        for (let i = 0; i < parsed.indicies.length; i += 3) { //map all indicies to their now referenced verticies
-          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i]) ?? parsed.indicies[i]);
-          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i + 1]) ?? parsed.indicies[i + 1]);
-          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i + 2]) ?? parsed.indicies[i + 2]);
-        }
-        colorIndexMap.set(parsed.color, (partIndicies ?? []).concat(collectedIndices));
-
-        invertNext = false;
-      }
-      else if (partLine.startsWith("2")) { //line is a line
-        const parsed = this.parseLineTypeTwo(partLine);
-        const entry = lineColorMap.get(parsed.color) ?? [];
-        lineColorMap.set(parsed.color, entry.concat(parsed.points));
-        invertNext = false;
-      }
-    });
-
-    return new LdrPart(partName, colorVertexMap, colorIndexMap, lineColorMap, references);
   }
 
   //This functions parses a line type one, which is a reference to a part or a submodel in a ldr file

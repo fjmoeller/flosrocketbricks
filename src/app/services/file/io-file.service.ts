@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BufferGeometry, Group, LineBasicMaterial, LineSegments, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Vector3, Vector4 } from 'three';
+import { BufferGeometry, Group, InstancedMesh, LineBasicMaterial, LineSegments, Material, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Object3D, Vector3, Vector4 } from 'three';
 import { LdrPart, LdrSubmodel, PartReference } from '../../model/ldrawParts';
 import { LdrawColorService } from '../color/ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
@@ -12,6 +12,7 @@ export class IoFileService {
   public readonly RENDER_PLACEHOLDER_COLORED_PARTS: boolean = false;
 
   private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
+  private allParts = [];
 
   //base URL from where to fetch the part files to get around stuff
   private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
@@ -38,11 +39,11 @@ export class IoFileService {
     const submodels = this.parseSubmodels(ldrObjects[0].split("0 NOFILE"));
     const allPartsMap = this.parseParts(ldrObjects[1].split("0 NOFILE"));
 
-    const partIdToBufferGeomMap = this.createBufferedGeometries(allPartsMap);
-    //TODO collect materials
-    //TODO collect multicolor parts -> normal groups as always i guess?
+    const partIdToBufferGeomMaps = this.createBufferedGeometries(allPartsMap);
+    const colorToMaterialMap = this.createMaterials(submodels.submodelMap, partIdToBufferGeomMaps.multi);
+    const nameToInstanceMeshMap = this.createInstanceMeshes(submodels.submodelMap, colorToMaterialMap, submodels.submodelMap);
 
-    //get the id of the color that is just a placeholder color and therefore doesnt need to be rendered
+    //get the id of the color that is just a placeholder color and therefore doesnt need to be rendered, might still be part of a multicolor part tho!!
     const placeholderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(placeHolderColor);
 
     console.debug("Now resolving the model!")
@@ -168,14 +169,120 @@ export class IoFileService {
     return new LdrPart(partName, colorVertexMap, colorIndexMap, lineColorMap, references);
   }
 
-  private createBufferedGeometries(allPartsMap: Map<string, LdrPart>): Map<string, BufferGeometry> {
+  private createBufferedGeometries(allPartsMap: Map<string, LdrPart>): { single: Map<string, BufferGeometry>, multi: Map<string, Map<number, BufferGeometry>> } {
     const partIdToBufferGeomMap = new Map<string, BufferGeometry>();
-    for(const partName of allPartsMap.keys()){
-      
+    const partIdToMultiBufferGeomMap = new Map<string, Map<number, BufferGeometry>>();
+    for (const partName of allPartsMap.keys()) {
+      //If not a printed part
+      const ldrPart = allPartsMap.get(partName);
+      if (ldrPart) { //TODO: check if not already bufferedgeometry created
+        const referencedPart = this.resolvePart(ldrPart.name);
+        if (referencedPart.colorVertexMap.size === 1) {//single color part
+          referencedPart.colorVertexMap.forEach((vertices, color) => { //should only be called once
+
+            let partGeometry = new BufferGeometry();
+            partGeometry.setFromPoints(vertices);
+            const indicies = referencedPart.colorIndexMap.get(color);
+            if (indicies)
+              partGeometry.setIndex(indicies);
+            else
+              console.error("Color not found: verticies exist but no face to em");
+
+            //some parts need special attention...
+            if (ldrPart.name == "28192.dat") {
+              partGeometry.rotateY(-Math.PI / 2);
+              partGeometry.translate(-10, -24, 0);
+            }
+            else if (ldrPart.name == "37762.dat")
+              partGeometry.translate(0, -8, 0);
+            else if (ldrPart.name == "68013.dat")
+              partGeometry.rotateY(-Math.PI);
+            else if (ldrPart.name == "70681.dat")
+              partGeometry.translate(0, 0, 20);
+
+            partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
+            partGeometry.computeBoundingBox();
+            partGeometry.computeVertexNormals();
+            partGeometry.normalizeNormals();
+
+            partIdToBufferGeomMap.set(ldrPart.name, partGeometry);
+          });
+        } else {//multi color part
+          const colorBufferMap = new Map<number, BufferGeometry>();
+          referencedPart.colorVertexMap.forEach((vertices, color) => { //should only be called once
+
+            let partGeometry = new BufferGeometry();
+            partGeometry.setFromPoints(vertices);
+            const indicies = referencedPart.colorIndexMap.get(color);
+            if (indicies)
+              partGeometry.setIndex(indicies);
+            else
+              console.error("Color not found: verticies exist but no face to em");
+
+            //some parts need special attention...
+            if (ldrPart.name == "28192.dat") {
+              partGeometry.rotateY(-Math.PI / 2);
+              partGeometry.translate(-10, -24, 0);
+            }
+            else if (ldrPart.name == "37762.dat")
+              partGeometry.translate(0, -8, 0);
+            else if (ldrPart.name == "68013.dat")
+              partGeometry.rotateY(-Math.PI);
+            else if (ldrPart.name == "70681.dat")
+              partGeometry.translate(0, 0, 20);
+
+            partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
+            partGeometry.computeBoundingBox();
+            partGeometry.computeVertexNormals();
+            partGeometry.normalizeNormals();
+
+            colorBufferMap.set(color, partGeometry);
+          });
+          partIdToMultiBufferGeomMap.set(ldrPart.name, colorBufferMap);
+        }
+      }
+    }
+    return { single: partIdToBufferGeomMap, multi: partIdToMultiBufferGeomMap };
+  }
+
+  private createMaterials(submodels: Map<string, LdrSubmodel>, multiGeos: Map<string, Map<number, BufferGeometry>>) {
+    const colorToMaterialMap = new Map<number, Material>();
+
+    submodels.forEach(submodel => { //add colors of all normally painted parts
+      submodel.references.forEach(reference => {
+        if (!colorToMaterialMap.has(reference.color) && reference.color != 24 && reference.color != 16 && reference.color != -1 && reference.color != -2) {
+          const material = new MeshStandardMaterial();
+          material.flatShading = true;
+          material.setValues(this.ldrawColorService.resolveColorByLdrawColorId(reference.color));
+          colorToMaterialMap.set(reference.color, material);
+        }
+      });
+    });
+
+    for (const colorBuffmap of multiGeos.entries()) { //add colors of multicolor painted parts such as prints
+      for (const color of colorBuffmap.keys()) {
+        if (color in colorBuffmap) {
+          if (!colorToMaterialMap.has(color) && color !== 24 && color !== 16 && color !== -1 && color !== -2) {
+            const material = new MeshStandardMaterial();
+            material.flatShading = true;
+            material.setValues(this.ldrawColorService.resolveColorByLdrawColorId(color));
+            colorToMaterialMap.set(color, material);
+          }
+        }
+      }
     }
 
-    return partIdToBufferGeomMap;
+    return colorToMaterialMap;
   }
+
+  private createInstanceMeshes(): Map<string, InstancedMesh> {
+    const instanceMap = new Map<string, InstancedMesh>();
+    
+    return instanceMap;
+  }
+
+
+
 
   //This function resolves a submodel and returns a threejs group: that means that it takes all vertices of all parts and puts them into meshes and collects all groups of its submodels
   private resolveSubmodel(submodel: LdrSubmodel, ldrSubModelMap: Map<string, LdrSubmodel>, placeholderColorCode: number): Group {
@@ -198,8 +305,12 @@ export class IoFileService {
         if (reference.color == placeholderColorCode && !this.RENDER_PLACEHOLDER_COLORED_PARTS)
           continue;
 
-        const referencedPart = this.resolvePart(reference.name);
-        //TODO const partGeometry = this.getPartGeometry();
+        const referencedPart = this.resolvePart(reference.name); //TODO change this call as the part doesnt need to get resovled anymore
+        //check if referencedPart.colorVertexMap has one entry
+        //if true
+        //-> get/create instanced mesh -> create instance at world coords
+        //-> create ldrpart with reference to instancemesh, based on partname n color, n coords (will be spawned in the world later)
+        //if false
 
         referencedPart.colorVertexMap.forEach((vertices, color) => { //for each color of the part an own mesh gets created
 

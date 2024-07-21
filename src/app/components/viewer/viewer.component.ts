@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { IoFileService } from 'src/app/services/file/io-file.service';
 import { AmbientLight, Box3, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { of } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -34,7 +35,7 @@ export class ViewerComponent implements OnInit {
   }
 
   async showViewerMoc() {
-    this.ioFileService.loadingStateObservable.subscribe(loadingProgress => this.loadingText = loadingProgress);
+    of(this.ioFileService.loadingState).subscribe(loadingProgress => this.loadingText = loadingProgress);
     this.loadingFinished = false;
     let group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor);
     group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);

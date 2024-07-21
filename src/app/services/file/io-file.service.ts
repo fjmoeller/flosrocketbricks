@@ -21,15 +21,12 @@ export class IoFileService {
   private instancePartRefs: { mainColor: number, partName: string, transform: Matrix4 }[] = [];
   private multiColorPartRefs: { mainColor: number, partName: string, transform: Matrix4 }[] = [];
 
-  private loadingState: string = "";
-
-  public loadingStateObservable: Observable<string>;
+  public loadingState: string = "Loading";
 
   //base URL from where to fetch the part files to get around stuff
   private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
 
   constructor(private ldrawColorService: LdrawColorService) {
-    this.loadingStateObservable = of(this.loadingState);
   }
 
   async getModel(ioUrl: string, placeHolderColor: string): Promise<Group> {

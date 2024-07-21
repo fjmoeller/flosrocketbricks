@@ -2,8 +2,9 @@
     @if(!loadingFinished){
     <div class="d-flex justify-content-center align-items-center pt-5">
         <div class="spinner-border" role="status">
+            <span class="sr-only text-coloring">{{loadingText}}</span>
         </div>
     </div>
-}
+    }
     <canvas #canvas id="canvas-box"></canvas>
 </div>

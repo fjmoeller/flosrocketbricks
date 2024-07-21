@@ -14,7 +14,9 @@ export class IoFileService {
 
   private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
   private colorToMaterialMap = new Map<number, Material>();
+  private lineMaterials = [new LineBasicMaterial({ color: this.ldrawColorService.getHexColorFromLdrawColorId(71) }), new LineBasicMaterial({ color: this.ldrawColorService.getHexColorFromLdrawColorId(0) })];
   private partNameToBufferedGeometryMap = new Map<string, BufferGeometry>();
+  private partNameToLineGeometryMap = new Map<string, BufferGeometry>();
   private partNameToColorBufferedGeometryMap = new Map<string, Map<number, BufferGeometry>>(); //TODO-> put into part maybe?  -> nah, but clean up ldrpart
   private instancePartRefs: { mainColor: number, partName: string, transform: Matrix4 }[] = [];
   private multiColorPartRefs: { mainColor: number, partName: string, transform: Matrix4 }[] = [];
@@ -22,8 +24,6 @@ export class IoFileService {
   private loadingState: string = "";
 
   public loadingStateObservable: Observable<string>;
-
-
 
   //base URL from where to fetch the part files to get around stuff
   private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
@@ -47,6 +47,7 @@ export class IoFileService {
     this.allPartsMap.clear();
     this.colorToMaterialMap.clear();
     this.partNameToBufferedGeometryMap.clear();
+    this.partNameToLineGeometryMap.clear();
     this.partNameToColorBufferedGeometryMap.clear();
     this.instancePartRefs = [];
     this.multiColorPartRefs = [];
@@ -121,32 +122,43 @@ export class IoFileService {
     //Count the amount of color+partname combinations of instancePartRefs
     this.instancePartRefs.forEach(ref => {
       const key = "" + ref.mainColor + "###" + ref.partName;
-      const numb = instancedMeshPositions.get(key);
-      if (!numb) {
+      const positions = instancedMeshPositions.get(key);
+      if (!positions) {
         instancedMeshPositions.set(key, [ref.transform.clone()]);
       }
-      else
-        numb.push(ref.transform.clone());
+      else positions.push(ref.transform.clone());
     });
 
     //for each color+partname pair create instancedmesh
     instancedMeshPositions.forEach((positions, colorPartName: string) => {
       const splitkey = colorPartName.split("###");//[0] is color [1] is partName
-      if(!this.RENDER_PLACEHOLDER_COLORED_PARTS && placeholderColor === Number(splitkey[0])) return;
+      if (!this.RENDER_PLACEHOLDER_COLORED_PARTS && placeholderColor === Number(splitkey[0])) return;
       const geometry = this.partNameToBufferedGeometryMap.get(splitkey[1]);
       const material = this.colorToMaterialMap.get(Number(splitkey[0]));
+
 
       const mesh = new InstancedMesh(geometry, material, positions.length);
       for (var i = 0; i < mesh.count; i++)
         mesh.setMatrixAt(i, positions[i]);
       mesh.instanceMatrix.needsUpdate = true;
       objects.push(mesh);
+
+      const lineGroup = new Group();
+      const lineGeometry = this.partNameToLineGeometryMap.get(splitkey[1]);
+      const lineMaterial = this.getLineMaterial(Number(splitkey[0])); //TODO fill this up and change the colorid....
+      const lineMesh = new LineSegments(lineGeometry, lineMaterial);
+      for (var i = 0; i < positions.length; i++) {
+        const segement = lineMesh.clone();
+        segement.applyMatrix4(positions[i]);
+        lineGroup.add(segement);
+      }
+      objects.push(lineGroup);
     });
 
     //every multicolor part will be made a group of meshes
     this.multiColorPartRefs.forEach(ref => {
-      if(!this.RENDER_PLACEHOLDER_COLORED_PARTS && placeholderColor === Number(ref.mainColor)) return;
-      
+      if (!this.RENDER_PLACEHOLDER_COLORED_PARTS && placeholderColor === Number(ref.mainColor)) return;
+
       const partGroup = new Group();
       const geometries = this.partNameToColorBufferedGeometryMap.get(ref.partName);
       const mainMaterial = this.colorToMaterialMap.get(ref.mainColor);
@@ -156,19 +168,26 @@ export class IoFileService {
           if (color === 16 || color === 24 || color === -1 || color === -2) material = mainMaterial;
           else material = this.colorToMaterialMap.get(color) ?? mainMaterial;
           const mesh = new Mesh(geometry, material);
-
-          //partGroup.add(mesh);
-
+          //partGroup.add(mesh); //TODO change
           mesh.applyMatrix4(ref.transform);
           objects.push(mesh);
-
         });
         partGroup.position.applyMatrix4(ref.transform);
-        //objects.push(partGroup);
 
+        const lineGroup = new Group();
+        const lineGeometry = this.partNameToLineGeometryMap.get(ref.partName);
+        const lineMaterial = this.getLineMaterial(ref.mainColor);
+        const lineMesh = new LineSegments(lineGeometry, lineMaterial);
+        lineGroup.add(lineMesh);
+        lineGroup.applyMatrix4(ref.transform);
+        objects.push(lineGroup);
+        //partGroup.add(lineGroup);//TODO change
+
+        //objects.push(partGroup);//TODO change
       }
       else console.error("No geometries/colors for multicolor part %s found", ref.partName);
     });
+
     return objects;
   }
 
@@ -224,6 +243,9 @@ export class IoFileService {
               colorGeometryMap.set(color, partGeometry);
             }
           });
+          resolvedPart.lineColorMap.forEach((vertices, color) => {
+            this.partNameToLineGeometryMap.set(resolvedPart.name, this.createLineGeometry(resolvedPart.name, vertices));
+          });
           this.partNameToColorBufferedGeometryMap.set(parsedPart.name, colorGeometryMap);
         } else { //if part is single color part
           this.createInstanceGeometry(resolvedPart);
@@ -233,20 +255,17 @@ export class IoFileService {
   }
 
   private createInstanceGeometry(part: LdrPart): void {
-    if (this.partNameToBufferedGeometryMap.has(part.name)) { //part already has had his bufferedgeometry created
-      const mapped = this.partNameToBufferedGeometryMap.get(part.name);
-      if (mapped) {
-        this.partNameToBufferedGeometryMap.set(part.name, mapped);
-      }
-    } else { //part geometry doesnt exist yet
+    if (!this.partNameToBufferedGeometryMap.has(part.name)) { //if not already exists
       part.colorVertexMap.forEach((vertices, color) => { // should only be called once
         const indicies = part.colorIndexMap.get(color);
         if (!indicies)
           console.error("Color not found: verticies exist but no face to em");
         else {
-          const partGeometry = this.createBufferedGeometry(part.name, vertices, indicies);
-          this.partNameToBufferedGeometryMap.set(part.name, partGeometry);
+          this.partNameToBufferedGeometryMap.set(part.name, this.createBufferedGeometry(part.name, vertices, indicies));
         }
+      });
+      part.lineColorMap.forEach((vertices, color) => {
+        this.partNameToLineGeometryMap.set(part.name, this.createLineGeometry(part.name, vertices));
       });
     }
   }
@@ -254,7 +273,6 @@ export class IoFileService {
   private createBufferedGeometry(partName: string, vertices: Vector3[], indicies: number[]): BufferGeometry {
     let partGeometry = new BufferGeometry();
     partGeometry.setFromPoints(vertices);
-
     partGeometry.setIndex(indicies);
 
     //some parts need special attention...
@@ -273,6 +291,26 @@ export class IoFileService {
     partGeometry.computeBoundingBox();
     partGeometry.computeVertexNormals();
     partGeometry.normalizeNormals();
+
+    return partGeometry;
+  }
+
+  private createLineGeometry(partName: string, vertices: Vector3[]): BufferGeometry {
+    let partGeometry = new BufferGeometry();
+    partGeometry.setFromPoints(vertices);
+
+    if (partName == "28192.dat") {
+      partGeometry.rotateY(-Math.PI / 2);
+      partGeometry.translate(-10, -24, 0);
+    }
+    else if (partName == "37762.dat")
+      partGeometry.translate(0, -8, 0);
+    else if (partName == "68013.dat")
+      partGeometry.rotateY(-Math.PI);
+    else if (partName == "70681.dat")
+      partGeometry.translate(0, 0, 20);
+
+    partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
 
     return partGeometry;
   }
@@ -354,13 +392,20 @@ export class IoFileService {
     return new LdrPart(partName, colorVertexMap, colorIndexMap, lineColorMap, references);
   }
 
-  private createMaterial(colorNumber: number): void {
-    if (!this.colorToMaterialMap.has(colorNumber) && colorNumber != 24 && colorNumber != 16 && colorNumber != -1 && colorNumber != -2) {
+  private createMaterial(color: number): void {
+    if (!this.colorToMaterialMap.has(color) && color != 24 && color != 16 && color != -1 && color != -2) {
       const material = new MeshStandardMaterial();
       material.flatShading = true;
-      material.setValues(this.ldrawColorService.resolveColorByLdrawColorId(colorNumber));
-      this.colorToMaterialMap.set(colorNumber, material);
+      material.setValues(this.ldrawColorService.resolveColorByLdrawColorId(color));
+      this.colorToMaterialMap.set(color, material);
     }
+  }
+
+  private getLineMaterial(color: number): LineBasicMaterial {
+    if (color === 0)
+      return this.lineMaterials[0];
+    else
+      return this.lineMaterials[1];
   }
 
   private resolvePart(partName: string): LdrPart {
@@ -377,37 +422,44 @@ export class IoFileService {
           //for all colors and their vertices that the referenced part has
           referencedPart.colorVertexMap.forEach((vertices, color) => {
             let indexMap = new Map<number, number>();
+
+            let actualPartColor = color; //a color can also be determined by above for a subPart, thats why this is to be checked here
+            if (partReference.color !== 16 && partReference.color !== 24 && partReference.color !== -1 && partReference.color !== -2
+              && (color === 16 || color === 24 || color === -1 || color === -2))
+              actualPartColor = partReference.color;
+
             for (let i = 0; i < vertices.length; i++) { //transform each vertex and see if it already exists
-              let pointVector4: Vector4 = new Vector4(vertices[i].x, vertices[i].y, vertices[i].z, 1);
-
-              pointVector4 = pointVector4.applyMatrix4(partReference.transformMatrix);
-
-              const pointVector3 = new Vector3(pointVector4.x, pointVector4.y, pointVector4.z);
-
-              if (ldrPart?.colorVertexMap.has(color) && !ldrPart?.colorVertexMap.get(color)?.find(v => v.equals(pointVector3))) { //part not in list already
-                const newVerticies = ldrPart?.colorVertexMap.get(color);
-                if (newVerticies != null) {
-                  newVerticies.push(pointVector3);
-                  indexMap.set(i, newVerticies.length - 1);
+              const newPoint = vertices[i].clone().applyMatrix4(partReference.transformMatrix);
+              if (ldrPart?.colorVertexMap.has(actualPartColor) && !ldrPart?.colorVertexMap.get(actualPartColor)?.find(v => v.equals(newPoint))) { //part not in list already
+                const verticyList = ldrPart?.colorVertexMap.get(actualPartColor);
+                if (verticyList) {
+                  verticyList.push(newPoint);
+                  indexMap.set(i, verticyList.length - 1);
                 }
                 else
                   throw "Part or Color not found during adding referenced parts vertices";
               }
-              else if (!ldrPart?.colorVertexMap.has(color)) { //color not found
-                ldrPart?.colorVertexMap.set(color, [pointVector3]);
+              else if (!ldrPart?.colorVertexMap.has(actualPartColor)) { //color not found
+                ldrPart?.colorVertexMap.set(actualPartColor, [newPoint]);
                 indexMap.set(i, i);
               } else { //vertex has already been added of this color
-                indexMap.set(i, ldrPart?.colorVertexMap.get(color)?.findIndex(v => v.equals(pointVector3)) ?? -1);
+                indexMap.set(i, ldrPart?.colorVertexMap.get(actualPartColor)?.findIndex(v => v.equals(newPoint)) ?? -1);
               }
             }
-            colorVertexIndexMap.set(color, indexMap);
+            colorVertexIndexMap.set(actualPartColor, indexMap);
           });
 
           //add all faces (made of indices of vertices)
           referencedPart.colorIndexMap.forEach((indices, color) => {
             const newIndicies: number[] = []; // this will have the mapped indices
+
+            let actualPartColor = color; //a color can also be determined by above for a subPart, thats why this is to be checked here
+            if (partReference.color !== 16 && partReference.color !== 24 && partReference.color !== -1 && partReference.color !== -2
+              && (color === 16 || color === 24 || color === -1 || color === -2))
+              actualPartColor = partReference.color;
+
             for (let i = 0; i < indices.length; i++) {
-              const mappedIndex = colorVertexIndexMap.get(color)?.get(indices[i]);
+              const mappedIndex = colorVertexIndexMap.get(actualPartColor)?.get(indices[i]);
               if (mappedIndex != null)
                 newIndicies.push(mappedIndex);
               else
@@ -419,21 +471,18 @@ export class IoFileService {
               newIndicies.reverse();
 
             //add indices to map
-            ldrPart?.colorIndexMap.set(color, (ldrPart?.colorIndexMap.get(color) ?? []).concat(newIndicies));
+            ldrPart?.colorIndexMap.set(actualPartColor, (ldrPart?.colorIndexMap.get(actualPartColor) ?? []).concat(newIndicies));
           });
 
-          referencedPart.lineColorMap.forEach((referencePoints, referenceColor) => {
+          referencedPart.lineColorMap.forEach((vertices, referenceColor) => {
             const transformedPoints: Vector3[] = [];
             //transform points with transformation matrix of the reference to the part
-            for (const referencePoint of referencePoints) {
-              let pointVector4: Vector4 = new Vector4(referencePoint.x, referencePoint.y, referencePoint.z, 1);
+            for (const vertex of vertices)
+              transformedPoints.push(vertex.clone().applyMatrix4(partReference.transformMatrix));
 
-              pointVector4 = pointVector4.applyMatrix4(partReference.transformMatrix);
-              transformedPoints.push(new Vector3(pointVector4.x, pointVector4.y, pointVector4.z));
-            }
-            if (partReference.invert) {
+            if (partReference.invert)
               transformedPoints.reverse();
-            }
+
             //append points of referenced part to the upper part to reduce the size of render hierachy
             if (ldrPart?.lineColorMap.has(referenceColor)) {
               const fullList = ldrPart?.lineColorMap.get(referenceColor)?.concat(transformedPoints)
@@ -452,42 +501,6 @@ export class IoFileService {
       throw ("Error: Part could not be found: " + partName);
     }
   }
-
-  /* TODO
-        referencedPart.lineColorMap.forEach((points, color) => { //for each color of the part an own mesh gets created
-          let partGeometry = new BufferGeometry();
-          partGeometry.setFromPoints(points);
-
-          if (reference.name == "28192.dat") {
-            partGeometry.rotateY(-Math.PI / 2);
-            partGeometry.translate(-10, -24, 0);
-          }
-          else if (reference.name == "37762.dat")
-            partGeometry.translate(0, -8, 0);
-          else if (reference.name == "68013.dat")
-            partGeometry.rotateY(-Math.PI);
-          else if (reference.name == "70681.dat")
-            partGeometry.translate(0, 0, 20);
-
-          partGeometry.applyMatrix4(reference.transformMatrix);
-          partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
-
-
-          let material; //TODO implement colors fully -> might have to remove resolved submodels to get color all the way to the bottom to each part that needs it
-          if (color == 24 || color == 16 || color == -1 || color == -2) //those are not valid colors or mean that the color gets resolved in a submodel above, not fully implemented yet
-          {
-            //material = new LineBasicMaterial({ color: this.ldrawColorService.resolveColor(reference.color) });
-            if (reference.color == 0)
-              material = new LineBasicMaterial({ color: this.ldrawColorService.getHexColorFromLdrawColorId(71) });
-            else
-              material = new LineBasicMaterial({ color: this.ldrawColorService.getHexColorFromLdrawColorId(0) });
-          }
-          else
-            material = new LineBasicMaterial({ color: this.ldrawColorService.getHexColorFromLdrawColorId(color) });
-          submodelGroup.add(new LineSegments(partGeometry, material));
-        });
-
-  */
 
   //This functions parses a line type one, which is a reference to a part or a submodel in a ldr file
   parseLineTypeOne(line: string, invert: boolean): PartReference {

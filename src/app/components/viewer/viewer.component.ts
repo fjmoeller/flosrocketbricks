@@ -1,12 +1,12 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { IoFileService } from 'src/app/services/file/io-file.service';
 import { AmbientLight, Box3, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
-import { of } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   selector: 'app-viewer',
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.sass']
@@ -25,9 +25,9 @@ export class ViewerComponent implements OnInit {
   //determines if the loading icon will be shown
   loadingFinished: boolean = true;
 
-  loadingText = "Loading";
+  loadingText = this.ioFileService.loadingState;
 
-  constructor(private ioFileService: IoFileService) {}
+  constructor(private ioFileService: IoFileService) { }
 
   ngOnInit(): void {
     if (this.showViewer)
@@ -35,7 +35,6 @@ export class ViewerComponent implements OnInit {
   }
 
   async showViewerMoc() {
-    of(this.ioFileService.loadingState).subscribe(loadingProgress => this.loadingText = loadingProgress);
     this.loadingFinished = false;
     let group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor);
     group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
@@ -67,7 +66,7 @@ export class ViewerComponent implements OnInit {
     const canvas = document.getElementById('canvas-box');
     const canvasDiv = document.getElementById('canvas-viewer');
 
-    if (!canvas || !canvasDiv){
+    if (!canvas || !canvasDiv) {
       console.error("Error: no canvas found");
       return;
     }

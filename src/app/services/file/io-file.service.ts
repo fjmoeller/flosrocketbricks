@@ -3,7 +3,7 @@ import { BufferGeometry, Group, InstancedMesh, LineBasicMaterial, LineSegments, 
 import { LdrPart, LdrSubmodel, PartReference } from '../../model/ldrawParts';
 import { LdrawColorService } from '../color/ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,8 @@ export class IoFileService {
   private instancePartRefs: { mainColor: number, partName: string, transform: Matrix4 }[] = [];
   private multiColorPartRefs: { mainColor: number, partName: string, transform: Matrix4 }[] = [];
 
-  public loadingState: string = "Loading";
+  private dataSubject = new BehaviorSubject<string>('Loading');
+  loadingState: Observable<string> = this.dataSubject.asObservable();
 
   //base URL from where to fetch the part files to get around stuff
   private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
@@ -30,13 +31,13 @@ export class IoFileService {
   }
 
   async getModel(ioUrl: string, placeHolderColor: string): Promise<Group> {
-    this.loadingState = "Downloading Ldr File";
+    this.dataSubject.next("Downloading Ldr File");
     const ldrUrl = ioUrl.slice(0, ioUrl.length - 2) + "ldr"
     const contents = await fetch(this.backendFetchUrl + ldrUrl);
-    this.loadingState = "Creating Mesh";
+    this.dataSubject.next("Creating Mesh");
     const moc = this.createMocGroup(await contents.text(), placeHolderColor);
     this.cleanUp();
-    this.loadingState = "Preparing Scene";
+    this.dataSubject.next("Preparing Scene");
     return moc;
   }
 

@@ -6,7 +6,7 @@ import { MetaServiceService } from 'src/app/services/meta-service.service';
 import { FileExportService } from 'src/app/services/file/file-export.service';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { ViewerComponent } from 'src/app/components/viewer/viewer.component';
-import {CommonModule, isPlatformBrowser} from '@angular/common';
+import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class MocComponent implements OnInit, OnDestroy {
 
   showViewer: boolean = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any,private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
+  constructor(@Inject(DOCUMENT) private document:Document,@Inject(PLATFORM_ID) private platformId: any,private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
   }
 
@@ -52,7 +52,7 @@ export class MocComponent implements OnInit, OnDestroy {
     else {
       this.viewerLink = url;
       this.showViewer = true;
-      document.getElementById("viewer")?.scrollIntoView();
+      this.document.getElementById("viewer")?.scrollIntoView(true);
     }
   }
 

@@ -312,7 +312,7 @@
         </div>
     </div>
     <div class="row m-4">
-        <div class="col-lg-6 text-coloring">
+        <div id="viewer" class="col-lg-6 text-coloring">
             @if(showViewer){
             <div class="row d-flex justify-content-between text-coloring m-2 align-items-center">
                 <button class="col btn inv-interact-button text-decoration-none text-align-center rounded"
@@ -323,7 +323,7 @@
             </div>
             }
             @if(showViewer){
-            <div id="viewer" class="text-coloring">
+            <div class="text-coloring">
                 <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer" [placeHolderColor]="moc.internalColor">
                 </app-viewer>
             </div>

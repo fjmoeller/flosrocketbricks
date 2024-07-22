@@ -114,16 +114,13 @@ export class ViewerComponent implements OnInit {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.target = new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2, (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2, (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2);
 
-    let delta = 0;
-
     const update = () => {
-      delta += this.clock.getDelta();
-      if (delta > this.INTERNAL) {
+      if (this.clock.getElapsedTime() > this.INTERNAL) {
         controls.update();
         // Render
         renderer.render(scene, camera);
 
-        delta = delta % this.INTERNAL;
+        this.clock.start()
       }
       // Call tick again on the next frame
       if (this.showViewer)

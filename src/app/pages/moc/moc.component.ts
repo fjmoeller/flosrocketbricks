@@ -1,17 +1,17 @@
 import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import { Moc, Version } from '../../model/classes';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 import { FileExportService } from 'src/app/services/file/file-export.service';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { ViewerComponent } from 'src/app/components/viewer/viewer.component';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import {CommonModule, isPlatformBrowser} from '@angular/common';
 
 
 @Component({
   standalone: true,
-  imports: [CardComponent,ViewerComponent,CommonModule],
+  imports: [CardComponent, ViewerComponent, CommonModule, RouterLink],
   selector: 'app-moc',
   templateUrl: './moc.component.html',
   styleUrls: ['./moc.component.sass']
@@ -52,6 +52,7 @@ export class MocComponent implements OnInit, OnDestroy {
     else {
       this.viewerLink = url;
       this.showViewer = true;
+      document.getElementById("viewer")?.scrollIntoView();
     }
   }
 

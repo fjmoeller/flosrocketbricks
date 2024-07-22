@@ -27,7 +27,7 @@
                     {{moc.title}}
                 </h1>
             </div>
-            <img style="width:0px;height:0px" [src]="moc.smallCoverImage" [alt]="moc.title" [title]="moc.title">
+            <img style="width:0;height:0" [src]="moc.smallCoverImage" [alt]="moc.title" [title]="moc.title">
             <div class="container">
                 <div class="row py-3">
                     <div class="col-6 justify-content-center text-center">
@@ -323,7 +323,7 @@
             </div>
             }
             @if(showViewer){
-            <div class="text-coloring">
+            <div id="viewer" class="text-coloring">
                 <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer" [placeHolderColor]="moc.internalColor">
                 </app-viewer>
             </div>

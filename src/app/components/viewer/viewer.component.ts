@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
-import {IoFileService} from 'src/app/services/file/io-file.service';
+import {LdrToThreeService} from 'src/app/services/file/ldr-to-three.service';
 import {AmbientLight, Box3, Clock, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer} from 'three';
 import {CommonModule} from '@angular/common';
 
@@ -31,7 +31,7 @@ export class ViewerComponent implements OnInit {
   // 30 fps
   private readonly INTERNAL: number = 1 / 60;
 
-  constructor(private ioFileService: IoFileService) {
+  constructor(private ioFileService: LdrToThreeService) {
   }
 
   ngOnInit(): void {

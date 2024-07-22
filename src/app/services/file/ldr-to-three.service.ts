@@ -21,7 +21,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class IoFileService {
+export class LdrToThreeService {
 
   public readonly RENDER_PLACEHOLDER_COLORED_PARTS: boolean = false;
 
@@ -243,11 +243,11 @@ export class IoFileService {
         if (resolvedPart.colorVertexMap.size > 1) { //if part is multi color part -> will not have an instanced mesh created
           const colorGeometryMap = new Map<number, BufferGeometry>();
           resolvedPart.colorVertexMap.forEach((vertices, color) => {
-            const indicies = resolvedPart.colorIndexMap.get(color);
-            if (!indicies)
+            const indices = resolvedPart.colorIndexMap.get(color);
+            if (!indices)
               console.error("Color %d not found: verticies exist but no face to em for part %s", color, parsedPart.name);
             else {
-              const partGeometry = this.createBufferedGeometry(resolvedPart.name, vertices, indicies);
+              const partGeometry = this.createBufferedGeometry(resolvedPart.name, vertices, indices);
               colorGeometryMap.set(color, partGeometry);
             }
           });
@@ -265,11 +265,11 @@ export class IoFileService {
   private createInstanceGeometry(part: LdrPart): void {
     if (!this.partNameToBufferedGeometryMap.has(part.name)) { //if not already exists
       part.colorVertexMap.forEach((vertices, color) => { // should only be called once
-        const indicies = part.colorIndexMap.get(color);
-        if (!indicies)
+        const indices = part.colorIndexMap.get(color);
+        if (!indices)
           console.error("Color not found: verticies exist but no face to em");
         else {
-          this.partNameToBufferedGeometryMap.set(part.name, this.createBufferedGeometry(part.name, vertices, indicies));
+          this.partNameToBufferedGeometryMap.set(part.name, this.createBufferedGeometry(part.name, vertices, indices));
         }
       });
       part.lineColorMap.forEach((vertices, color) => {
@@ -278,10 +278,10 @@ export class IoFileService {
     }
   }
 
-  private createBufferedGeometry(partName: string, vertices: Vector3[], indicies: number[]): BufferGeometry {
+  private createBufferedGeometry(partName: string, vertices: Vector3[], indices: number[]): BufferGeometry {
     let partGeometry = new BufferGeometry();
     partGeometry.setFromPoints(vertices);
-    partGeometry.setIndex(indicies);
+    partGeometry.setIndex(indices);
 
     //some parts need special attention...
     if (partName == "28192.dat") {
@@ -356,10 +356,10 @@ export class IoFileService {
           parsed = this.parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW));
 
         this.createMaterial(parsed.color);
-        const partIndicies = colorIndexMap.get(parsed.color);
+        const partIndices = colorIndexMap.get(parsed.color);
         const partVerticies = colorVertexMap.get(parsed.color);
 
-        const vertexIndexMap = new Map<number, number>(); //indicies of vertices will be different so they need to be mapped to the actual ones
+        const vertexIndexMap = new Map<number, number>(); //indices of vertices will be different so they need to be mapped to the actual ones
 
         //put all vertices into partVerticies and to the vertexIndexMap
         if (partVerticies) //The current part already knows this color
@@ -377,12 +377,12 @@ export class IoFileService {
           colorVertexMap.set(parsed.color, parsed.vertices);
 
         const collectedIndices = [];
-        for (let i = 0; i < parsed.indicies.length; i += 3) { //map all indicies to their now referenced verticies
-          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i]) ?? parsed.indicies[i]);
-          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i + 1]) ?? parsed.indicies[i + 1]);
-          collectedIndices.push(vertexIndexMap.get(parsed.indicies[i + 2]) ?? parsed.indicies[i + 2]);
+        for (let i = 0; i < parsed.indices.length; i += 3) { //map all indices to their now referenced verticies
+          collectedIndices.push(vertexIndexMap.get(parsed.indices[i]) ?? parsed.indices[i]);
+          collectedIndices.push(vertexIndexMap.get(parsed.indices[i + 1]) ?? parsed.indices[i + 1]);
+          collectedIndices.push(vertexIndexMap.get(parsed.indices[i + 2]) ?? parsed.indices[i + 2]);
         }
-        colorIndexMap.set(parsed.color, (partIndicies ?? []).concat(collectedIndices));
+        colorIndexMap.set(parsed.color, (partIndices ?? []).concat(collectedIndices));
 
         invertNext = false;
       } else if (partLine.startsWith("2")) { //line is a line
@@ -421,7 +421,7 @@ export class IoFileService {
         if (referencedPart) {
           this.resolvePart(partReference.name);
 
-          const colorVertexIndexMap = new Map<number, Map<number, number>>(); //each colors indicies of vertices will be different so they need to be mapped to the actual ones
+          const colorVertexIndexMap = new Map<number, Map<number, number>>(); //each colors indices of vertices will be different so they need to be mapped to the actual ones
 
           //for all colors and their vertices that the referenced part has
           referencedPart.colorVertexMap.forEach((vertices, color) => {
@@ -453,7 +453,7 @@ export class IoFileService {
 
           //add all faces (made of indices of vertices)
           referencedPart.colorIndexMap.forEach((indices, color) => {
-            const newIndicies: number[] = []; // this will have the mapped indices
+            const newIndices: number[] = []; // this will have the mapped indices
 
             let actualPartColor = color; //a color can also be determined by above for a subPart, thats why this is to be checked here
             if (partReference.color !== 16 && partReference.color !== 24 && partReference.color !== -1 && partReference.color !== -2
@@ -463,17 +463,17 @@ export class IoFileService {
             for (let i = 0; i < indices.length; i++) {
               const mappedIndex = colorVertexIndexMap.get(actualPartColor)?.get(indices[i]);
               if (mappedIndex != null)
-                newIndicies.push(mappedIndex);
+                newIndices.push(mappedIndex);
               else
                 throw "Color or index not found during adding referenced parts indices";
             }
 
             //if to be inverted
             if (partReference.invert)
-              newIndicies.reverse();
+              newIndices.reverse();
 
             //add indices to map
-            ldrPart?.colorIndexMap.set(actualPartColor, (ldrPart?.colorIndexMap.get(actualPartColor) ?? []).concat(newIndicies));
+            ldrPart?.colorIndexMap.set(actualPartColor, (ldrPart?.colorIndexMap.get(actualPartColor) ?? []).concat(newIndices));
           });
 
           referencedPart.lineColorMap.forEach((vertices, referenceColor) => {
@@ -582,7 +582,7 @@ export class IoFileService {
     return {
       color: color,
       vertices: vertices,
-      indicies: indices
+      indices: indices
     };
   }
 
@@ -605,7 +605,7 @@ export class IoFileService {
     return {
       color: color,
       vertices: vertices,
-      indicies: indices
+      indices: indices
     };
   }
 }

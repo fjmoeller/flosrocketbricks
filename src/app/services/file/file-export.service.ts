@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Matrix4 } from 'three';
+import {Injectable} from '@angular/core';
+import {Matrix4} from 'three';
 import * as zip from "@zip.js/zip.js";
-import { PartReference } from '../../model/ldrawParts';
-import { IoFileService } from './io-file.service';
-import { LdrawColorService } from '../color/ldraw-color.service';
-import { SimpleLdrSubmodel, SimpleReference } from '../../model/simpleLdrawParts';
-import { PartMapping, SpecificPartMapping, PartMappingFix } from 'src/app/model/partMappings';
+import {PartReference} from '../../model/ldrawParts';
+import {LdrToThreeService} from './ldr-to-three.service';
+import {LdrawColorService} from '../color/ldraw-color.service';
+import {SimpleLdrSubmodel, SimpleReference} from '../../model/simpleLdrawParts';
+import {PartMapping, SpecificPartMapping, PartMappingFix} from 'src/app/model/partMappings';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,8 @@ export class FileExportService {
 
   private partMappings = new Map<string, { r: string, b: string }>();
 
-  constructor(private ioFileService: IoFileService, private ldrawColorService: LdrawColorService) { }
+  constructor(private ldrToThreeService: LdrToThreeService, private ldrawColorService: LdrawColorService) {
+  }
 
   async collectUsedPartsMappings(url: string, isBr: boolean): Promise<void> {
 
@@ -56,7 +57,10 @@ export class FileExportService {
           }
         }
       }
-      if (!mappedId) { console.error("No mapping found for part" + countedPart); continue; }
+      if (!mappedId) {
+        console.error("No mapping found for part" + countedPart);
+        continue;
+      }
       const newKey = colorIdKey[0] + this.separationString + mappedId;
       const newCount = (this.mappedCountedPartMap.get(newKey) ?? 0) + (this.countedPartMap.get(countedPart) ?? 0);
       this.mappedCountedPartMap.set(newKey, newCount);
@@ -91,7 +95,7 @@ export class FileExportService {
     this.countedPartMap.clear();
     this.mappedCountedPartMap.clear();
     await this.collectParts(url);
-    await this.collectUsedPartsMappings(url,false);
+    await this.collectUsedPartsMappings(url, false);
 
     const placeHolderColorcode = this.ldrawColorService.getLdrawColorIdByColorName(colorName);
 
@@ -142,7 +146,7 @@ export class FileExportService {
   private async extractLdrFile(file: any): Promise<string> {
     try {
       const blob = await file.blob();
-      const options = { password: "soho0909", filenameEncoding: "utf-8" };
+      const options = {password: "soho0909", filenameEncoding: "utf-8"};
       const entries = await (new zip.ZipReader(new zip.BlobReader(blob), options)).getEntries();
       const model = entries.find(e => e.filename == "model.ldr");
       if (model == undefined)
@@ -178,11 +182,9 @@ export class FileExportService {
           if (submodelLine.includes(".dat")) {
             isCustomPart = true;
             break;
-          }
-          else
+          } else
             submodelName = submodelLine.slice(7).toLowerCase();
-        }
-        else if (submodelLine.startsWith("0 Name:") && submodelName == "no name") //backup in case no name got set which can happen
+        } else if (submodelLine.startsWith("0 Name:") && submodelName == "no name") //backup in case no name got set which can happen
           submodelName = submodelLine.slice(9).toLowerCase();
       }
 
@@ -191,16 +193,19 @@ export class FileExportService {
 
       const ldrSubmodel = new SimpleLdrSubmodel(submodelName, references);
 
-      if (!topSubmodelSet) { topLdrSubmodel = ldrSubmodel; topSubmodelSet = true; }
+      if (!topSubmodelSet) {
+        topLdrSubmodel = ldrSubmodel;
+        topSubmodelSet = true;
+      }
 
       ldrSubModelMap.set(submodelName, ldrSubmodel);
     }
 
-    return { "submodelMap": ldrSubModelMap, "topLdrSubmodel": topLdrSubmodel };
+    return {"submodelMap": ldrSubModelMap, "topLdrSubmodel": topLdrSubmodel};
   }
 
   private parseLineTypeOne(line: string): PartReference {
-    const splittedLine = this.ioFileService.splitter(line, " ", 14);
+    const splittedLine = this.ldrToThreeService.splitter(line, " ", 14);
     return new PartReference(splittedLine[splittedLine.length - 1].split(".dat")[0], new Matrix4(), parseInt(splittedLine[1]), false);
   }
 }

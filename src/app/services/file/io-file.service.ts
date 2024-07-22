@@ -1,9 +1,22 @@
-import { Injectable } from '@angular/core';
-import { BufferGeometry, Group, InstancedMesh, LineBasicMaterial, LineSegments, Material, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Object3D, Vector3 } from 'three';
-import { LdrPart, LdrSubmodel, PartReference } from '../../model/ldrawParts';
-import { LdrawColorService } from '../color/ldraw-color.service';
+import {Injectable} from '@angular/core';
+import {
+  BufferGeometry,
+  Group,
+  InstancedMesh,
+  LineBasicMaterial,
+  LineSegments,
+  Material,
+  Matrix3,
+  Matrix4,
+  Mesh,
+  MeshStandardMaterial,
+  Object3D,
+  Vector3
+} from 'three';
+import {LdrPart, LdrSubmodel, PartReference} from '../../model/ldrawParts';
+import {LdrawColorService} from '../color/ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +27,7 @@ export class IoFileService {
 
   private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
   private colorToMaterialMap = new Map<number, Material>();
-  private lineMaterials = [new LineBasicMaterial({ color: this.ldrawColorService.getHexColorFromLdrawColorId(71) }), new LineBasicMaterial({ color: this.ldrawColorService.getHexColorFromLdrawColorId(0) })];
+  private lineMaterials = [new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(71)}), new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(0)})];
   private partNameToBufferedGeometryMap = new Map<string, BufferGeometry>();
   private partNameToLineGeometryMap = new Map<string, BufferGeometry>();
   private partNameToColorBufferedGeometryMap = new Map<string, Map<number, BufferGeometry>>(); //TODO-> put into part maybe?  -> nah, but clean up ldrpart
@@ -82,8 +95,7 @@ export class IoFileService {
           stageSubmodelGroup.applyMatrix4(reference.transformMatrix);
 
           mocGroup.add(stageSubmodelGroup);
-        }
-        else console.error("FRB submodel with name %s not found", reference.name);
+        } else console.error("FRB submodel with name %s not found", reference.name);
       });
       return mocGroup;
     } else { // only one submodel will be used with everything in it
@@ -104,10 +116,10 @@ export class IoFileService {
         const part = this.allPartsMap.get(reference.name);
         if (part && part.colorVertexMap.size > 1) { //reference is a multi color part
           const partTransform = transform.clone().multiply(reference.transformMatrix);
-          this.multiColorPartRefs.push({ mainColor: reference.color, partName: part.name, transform: partTransform });
+          this.multiColorPartRefs.push({mainColor: reference.color, partName: part.name, transform: partTransform});
         } else if (part && part.colorVertexMap.size === 1) { //reference is a single color part
           const partTransform = transform.clone().multiply(reference.transformMatrix);
-          this.instancePartRefs.push({ mainColor: reference.color, partName: part.name, transform: partTransform });
+          this.instancePartRefs.push({mainColor: reference.color, partName: part.name, transform: partTransform});
         } else console.error("Referenced part %s from submodel %s not found in allPartsMap of size %d", reference.name, submodel.name, this.allPartsMap.size);
       }
     });
@@ -123,8 +135,7 @@ export class IoFileService {
       const positions = instancedMeshPositions.get(key);
       if (!positions) {
         instancedMeshPositions.set(key, [ref.transform.clone()]);
-      }
-      else positions.push(ref.transform.clone());
+      } else positions.push(ref.transform.clone());
     });
 
     //for each color+partname pair create instancedmesh
@@ -137,9 +148,11 @@ export class IoFileService {
       for (let i = 0; i < mesh.count; i++)
         mesh.setMatrixAt(i, positions[i]);
       mesh.instanceMatrix.needsUpdate = true;
+      mesh.name = colorPartName;
       objects.push(mesh);
 
       const lineGroup = new Group();
+      lineGroup.name = "line" + colorPartName;
       const lineGeometry = this.partNameToLineGeometryMap.get(splitkey[1]);
       const lineMaterial = this.getLineMaterial(Number(splitkey[0])); //TODO fill this up and change the colorid....
       const lineMesh = new LineSegments(lineGeometry, lineMaterial);
@@ -156,7 +169,7 @@ export class IoFileService {
       if (!this.RENDER_PLACEHOLDER_COLORED_PARTS && placeholderColor === Number(ref.mainColor)) return;
 
       const partGroup = new Group();
-      partGroup.name = ref.partName;
+      partGroup.name = "" + ref.mainColor + ref.partName;
       const geometries = this.partNameToColorBufferedGeometryMap.get(ref.partName);
       const mainMaterial = this.colorToMaterialMap.get(ref.mainColor);
       if (geometries && mainMaterial) {
@@ -178,8 +191,7 @@ export class IoFileService {
         partGroup.add(lineGroup);
 
         objects.push(partGroup);
-      }
-      else console.error("No geometries/colors for multicolor part %s found", ref.partName);
+      } else console.error("No geometries/colors for multicolor part %s found", ref.partName);
     });
 
     return objects;
@@ -204,20 +216,22 @@ export class IoFileService {
           references.push(this.parseLineTypeOne(submodelLine, submodelLines[index - 1].includes("0 BFC INVERTNEXT")));
           this.createMaterial(references[references.length - 1].color);
           trueParts.push(references[references.length - 1].name);
-        }
-        else if (submodelLine.startsWith("0 FILE"))
+        } else if (submodelLine.startsWith("0 FILE"))
           partName = submodelLine.slice(7).toLowerCase();
         else if (submodelLine.startsWith("0 Name:") && partName == "no name") //backup in case no name got set which can happen
           partName = submodelLine.slice(9).toLowerCase();
       });
       const ldrSubmodel = new LdrSubmodel(partName, references);
 
-      if (!topSubmodelSet) { topLdrSubmodel = ldrSubmodel; topSubmodelSet = true; }
+      if (!topSubmodelSet) {
+        topLdrSubmodel = ldrSubmodel;
+        topSubmodelSet = true;
+      }
 
       ldrSubModelMap.set(partName, ldrSubmodel);
     });
 
-    return { "topLdrSubmodel": topLdrSubmodel, "submodelMap": ldrSubModelMap, "trueParts": trueParts };
+    return {"topLdrSubmodel": topLdrSubmodel, "submodelMap": ldrSubModelMap, "trueParts": trueParts};
   }
 
   private parseParts(parts: string[], trueParts: string[]) {
@@ -273,8 +287,7 @@ export class IoFileService {
     if (partName == "28192.dat") {
       partGeometry.rotateY(-Math.PI / 2);
       partGeometry.translate(-10, -24, 0);
-    }
-    else if (partName == "37762.dat")
+    } else if (partName == "37762.dat")
       partGeometry.translate(0, -8, 0);
     else if (partName == "68013.dat")
       partGeometry.rotateY(-Math.PI);
@@ -296,8 +309,7 @@ export class IoFileService {
     if (partName == "28192.dat") {
       partGeometry.rotateY(-Math.PI / 2);
       partGeometry.translate(-10, -24, 0);
-    }
-    else if (partName == "37762.dat")
+    } else if (partName == "37762.dat")
       partGeometry.translate(0, -8, 0);
     else if (partName == "68013.dat")
       partGeometry.rotateY(-Math.PI);
@@ -329,20 +341,19 @@ export class IoFileService {
         references.push(this.parseLineTypeOne(partLine, invertNext));
         invertNext = false;
         this.createMaterial(references[references.length - 1].color);
-      }
-      else if (partLine.startsWith("0 FILE")) { //line is a part name
+      } else if (partLine.startsWith("0 FILE")) { //line is a part name
         partName = partLine.slice(7);
         invertNext = false;
-      }
-      else if (partLine.startsWith("0 BFC INVERTNEXT")) //line enables BFC for the next line
+      } else if (partLine.startsWith("0 BFC INVERTNEXT")) //line enables BFC for the next line
         invertNext = true;
       else if (partLine.startsWith("0 BFC CERTIFY CW")) //line enables BFC for the next line
         isCW = true;
       else if (partLine.startsWith("3") || partLine.startsWith("4")) { //line is a triangle or rectangle
+        let parsed;
         if (partLine.startsWith("3"))
-          var parsed = this.parseLineTypeThree(partLine, (invertNext || isCW) && !(invertNext && isCW));
+          parsed = this.parseLineTypeThree(partLine, (invertNext || isCW) && !(invertNext && isCW));
         else
-          var parsed = this.parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW));
+          parsed = this.parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW));
 
         this.createMaterial(parsed.color);
         const partIndicies = colorIndexMap.get(parsed.color);
@@ -374,8 +385,7 @@ export class IoFileService {
         colorIndexMap.set(parsed.color, (partIndicies ?? []).concat(collectedIndices));
 
         invertNext = false;
-      }
-      else if (partLine.startsWith("2")) { //line is a line
+      } else if (partLine.startsWith("2")) { //line is a line
         const parsed = this.parseLineTypeTwo(partLine);
         const entry = lineColorMap.get(parsed.color) ?? [];
         lineColorMap.set(parsed.color, entry.concat(parsed.points));
@@ -429,11 +439,9 @@ export class IoFileService {
                 if (verticyList) {
                   verticyList.push(newPoint);
                   indexMap.set(i, verticyList.length - 1);
-                }
-                else
+                } else
                   throw "Part or Color not found during adding referenced parts vertices";
-              }
-              else if (!ldrPart?.colorVertexMap.has(actualPartColor)) { //color not found
+              } else if (!ldrPart?.colorVertexMap.has(actualPartColor)) { //color not found
                 ldrPart?.colorVertexMap.set(actualPartColor, [newPoint]);
                 indexMap.set(i, i);
               } else { //vertex has already been added of this color
@@ -488,8 +496,7 @@ export class IoFileService {
       });
       ldrPart.isResolved = true;
       return ldrPart;
-    }
-    else {
+    } else {
       if (ldrPart)
         return ldrPart;
       throw ("Error: Part could not be found: " + partName);

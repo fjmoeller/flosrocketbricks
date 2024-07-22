@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { IoFileService } from 'src/app/services/file/io-file.service';
-import { AmbientLight, Box3, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
-import { CommonModule } from '@angular/common';
+import {Component, Input, OnInit} from '@angular/core';
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
+import {IoFileService} from 'src/app/services/file/io-file.service';
+import {AmbientLight, Box3, Clock, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer} from 'three';
+import {CommonModule} from '@angular/common';
 
 @Component({
   standalone: true,
@@ -27,7 +27,12 @@ export class ViewerComponent implements OnInit {
 
   loadingText = this.ioFileService.loadingState;
 
-  constructor(private ioFileService: IoFileService) { }
+  private readonly clock = new Clock();
+  // 30 fps
+  private readonly INTERNAL: number = 1 / 60;
+
+  constructor(private ioFileService: IoFileService) {
+  }
 
   ngOnInit(): void {
     if (this.showViewer)
@@ -87,7 +92,7 @@ export class ViewerComponent implements OnInit {
     camera.lookAt(new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2, (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2, (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2));
     scene.add(camera);
 
-    const renderer = new WebGLRenderer({ antialias: true, canvas: canvas });
+    const renderer = new WebGLRenderer({antialias: true, canvas: canvas});
     renderer.setClearColor(0x19212D, 1);
     renderer.setSize(canvasSizes.width, canvasSizes.height);
     renderer.setPixelRatio(window.devicePixelRatio * 1.5);
@@ -109,13 +114,20 @@ export class ViewerComponent implements OnInit {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.target = new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2, (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2, (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2);
 
-    const animateGeometry = () => {
-      controls.update();
-      // Render
-      renderer.render(scene, camera);
+    let delta = 0;
+
+    const update = () => {
+      delta += this.clock.getDelta();
+      if (delta > this.INTERNAL) {
+        controls.update();
+        // Render
+        renderer.render(scene, camera);
+
+        delta = delta % this.INTERNAL;
+      }
       // Call tick again on the next frame
       if (this.showViewer)
-        window.requestAnimationFrame(animateGeometry);
+        window.requestAnimationFrame(update);
     };
 
     controls.update();
@@ -123,7 +135,7 @@ export class ViewerComponent implements OnInit {
 
     this.loadingFinished = true;
 
-    animateGeometry();
+    update();
   }
 
 }

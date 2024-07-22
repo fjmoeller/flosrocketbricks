@@ -1,135 +1,157 @@
 <div class="container text-coloring pb-2">
-    <h1 class="row search-title">Search</h1>
-    <div class="row">
-        <div class="col-md-2">
-            <hr class="row-12 mt-3 d-inline-block mx-auto divider-hr" />
-            <h3 class="row-12">Sorting</h3>
-            <div class="dropdown">
-                <button class="btn text-coloring dropdown-toggle mr-1 search-interaction-element" type="button"
-                    id="sortingDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                    Sort by {{sortingCategory}}
-                </button>
-                <ul class="dropdown-menu search-interaction-element" aria-labelledby="sortingDropdown">
-                    <li><button class="dropdown-item text-coloring search-interaction-element" type="button"
-                            (click)="changeSorting('Added')">Added</button></li>
-                    <li><button class="dropdown-item text-coloring search-interaction-element" type="button"
-                            (click)="changeSorting('Updated')">Updated</button></li>
-                    <li><button class="dropdown-item text-coloring search-interaction-element" type="button"
-                            (click)="changeSorting('Parts')">Parts</button></li>
-                    <li><button class="dropdown-item text-coloring search-interaction-element" type="button"
-                            (click)="changeSorting('Title')">Title</button></li>
-                </ul>
-                <button class="btn mx-1 search-interaction-element" type="button" (click)="changeSortingDirection()">
-                    @if(sortingDirection === -1){
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-arrow-down text-coloring" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
-                    </svg>
-                    }
-                    @else if(sortingDirection === 1){
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-arrow-up text-coloring" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
-                    </svg>
-                    }
-                </button>
-            </div>
-
-            <hr class="row-12 mt-3 d-inline-block mx-auto divider-hr" />
-
-            <h3 class="row-12">Filter</h3>
-            <div class="row-12">
-                <input class="form-control row-11" type="search" placeholder="Search" aria-label="Search"
-                    [(ngModel)]="searchInput" (keyup.enter)="getMocs()">
-            </div>
-            <div class="row-4 row-lg-12">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button d-inline-block mt-2" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseType" aria-expanded="true" aria-controls="collapseType">
-                            <h5><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
-                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                                </svg> Type</h5>
-                        </button>
-                    </h2>
-                    <div id="collapseType" class="accordion-collapse collapse show">
-                        <div class="accordion-body">
-                            @for (type of tagTypes; track type) {
-                            <div class="form-check">
-                                <input class="form-check-input shadow-none" type="checkbox" id="{{type.tagId}}radio"
-                                    [checked]="type.selected" (change)="tagTypeChange(type)">
-                                <label class="form-check-label" for="{{type.tagId}}radio">{{type.tagName}}</label>
-                            </div>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row-4 row-lg-12">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button d-inline-block mt-2" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseRegion" aria-expanded="true" aria-controls="collapseRegion">
-                            <h5><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
-                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                                </svg> Region</h5>
-                        </button>
-                    </h2>
-                    <div id="collapseRegion" class="accordion-collapse collapse show">
-                        <div class="accordion-body">
-                            @for (region of tagRegions; track region) {
-                            <div class="form-check">
-                                <input class="form-check-input shadow-none" type="checkbox" id="{{region.tagId}}radio"
-                                    [checked]="region.selected" (change)="tagRegionChange(region)">
-                                <label class="form-check-label" for="{{region.tagId}}radio">{{region.tagName}}</label>
-                            </div>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row-4 row-lg-12">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button d-inline-block mt-2" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseScale" aria-expanded="true" aria-controls="collapseScale">
-                            <h5><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
-                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                                </svg> Scale</h5>
-                        </button>
-                    </h2>
-                    <div id="collapseScale" class="accordion-collapse collapse show">
-                        <div class="accordion-body">
-                            @for (scale of tagScales; track scale) {
-                            <div class="form-check">
-                                <input class="form-check-input shadow-none" type="checkbox" id="{{scale.tagId}}radio"
-                                    [checked]="scale.selected" (change)="tagScaleChange(scale)">
-                                <label class="form-check-label" for="{{scale.tagId}}radio">{{scale.tagName}}</label>
-                            </div>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="row-12 mt-3 d-inline-block mx-auto divider-hr" />
+  <h1 class="row search-title">Search</h1>
+  <div class="row">
+    <div class="col-md-2">
+      <hr class="row-12 mt-3 d-inline-block mx-auto divider-hr"/>
+      <h3 class="row-12">Sorting</h3>
+      <div class="dropdown">
+        <div>
+          <label>Sort by</label>
+          <button class="btn text-coloring dropdown-toggle mr-1 search-interaction-element" type="button"
+                  id="sortingDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            {{ sortingCategory }}
+          </button>
+          <ul class="dropdown-menu search-interaction-element" aria-labelledby="sortingDropdown">
+            <li>
+              <button class="dropdown-item text-coloring search-interaction-element" type="button"
+                      (click)="changeSorting('Added')">Added
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item text-coloring search-interaction-element" type="button"
+                      (click)="changeSorting('Updated')">Updated
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item text-coloring search-interaction-element" type="button"
+                      (click)="changeSorting('Parts')">Parts
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item text-coloring search-interaction-element" type="button"
+                      (click)="changeSorting('Title')">Title
+              </button>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-10">
-            <span>{{mocs.length}} Results</span>
-            <div class="mt-1 card-group">
-                @for(moc of mocs; track moc){
-                <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
-                    [id]="moc.id" [scale]="moc.scale">
-                </app-card>
-                }
-            </div>
+        <div>
+          <label>Order</label>
+          <button class="btn mx-1 search-interaction-element" type="button" (click)="changeSortingDirection()">
+            @if (sortingDirection === -1) {
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                   class="bi bi-arrow-down text-coloring" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+              </svg>
+            } @else if (sortingDirection === 1) {
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                   class="bi bi-arrow-up text-coloring" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+              </svg>
+            }
+          </button>
         </div>
+      </div>
+
+      <hr class="row-12 mt-3 d-inline-block mx-auto divider-hr"/>
+
+      <h3 class="row-12">Filter</h3>
+      <div class="row-4 row-lg-12">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button d-inline-block mt-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseType" aria-expanded="true" aria-controls="collapseType">
+              <h5>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
+                     class="bi bi-chevron-down" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+                Type
+              </h5>
+            </button>
+          </h2>
+          <div id="collapseType" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              @for (type of tagTypes; track type) {
+                <div class="form-check">
+                  <input class="form-check-input shadow-none" type="checkbox" id="{{type.tagId}}radio"
+                         [checked]="type.selected" (change)="tagTypeChange(type)">
+                  <label class="form-check-label" for="{{type.tagId}}radio">{{ type.tagName }}</label>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row-4 row-lg-12">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button d-inline-block mt-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseRegion" aria-expanded="true" aria-controls="collapseRegion">
+              <h5>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
+                     class="bi bi-chevron-down" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+                Region
+              </h5>
+            </button>
+          </h2>
+          <div id="collapseRegion" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              @for (region of tagRegions; track region) {
+                <div class="form-check">
+                  <input class="form-check-input shadow-none" type="checkbox" id="{{region.tagId}}radio"
+                         [checked]="region.selected" (change)="tagRegionChange(region)">
+                  <label class="form-check-label" for="{{region.tagId}}radio">{{ region.tagName }}</label>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row-4 row-lg-12">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button d-inline-block mt-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseScale" aria-expanded="true" aria-controls="collapseScale">
+              <h5>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
+                     class="bi bi-chevron-down" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+                Scale
+              </h5>
+            </button>
+          </h2>
+          <div id="collapseScale" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              @for (scale of tagScales; track scale) {
+                <div class="form-check">
+                  <input class="form-check-input shadow-none" type="checkbox" id="{{scale.tagId}}radio"
+                         [checked]="scale.selected" (change)="tagScaleChange(scale)">
+                  <label class="form-check-label" for="{{scale.tagId}}radio">{{ scale.tagName }}</label>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="row-12 mt-3 d-inline-block mx-auto divider-hr"/>
     </div>
+    <div class="col-md-10">
+      <span>{{ mocs.length }} Results</span>
+      <div class="mt-1 card-group">
+        @for (moc of mocs; track moc) {
+          <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
+                    [id]="moc.id" [scale]="moc.scale">
+          </app-card>
+        }
+      </div>
+    </div>
+  </div>
 </div>

@@ -7938,7 +7938,7 @@
         "companyExtra": "",
         "difficulty": -1,
         "difficultyExtra": "",
-        "lastupdate": "2024-07-09",
+        "lastupdate": "2024-07-20",
         "dateCreated": "2023-06-09",
         "related": [
             144,
@@ -7953,24 +7953,25 @@
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/62/fm1/110-ariane-62-fm1-v3.1.jpg",
+        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/62/fm1/110-ariane-62-fm1-v3.3.jpg",
         "dimensions": "10.9x11.2x52.2cm",
         "tags": [],
         "altTitles": [
             "Ariane 62 VA262"
         ],
         "title": "Ariane 6 FM1",
-        "parts": 1273,
+        "parts": 1287,
         "partsExtra": "A few parts are not available by lego in the correct color. Some hoses need to be cut down to the correct lengths.",
         "designer": "SkySaac",
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.1/Ariane_62_FM1_V3.1_1.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.1/Ariane_62_FM1_V3.1_2.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.1/Ariane_62_FM1_V3.1_3.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.1/Ariane_62_FM1_V3.1_4.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.1/Ariane_62_FM1_V3.1_5.jpg"
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.3/Ariane_62_FM1_V3.3_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.3/Ariane_62_FM1_V3.3_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.3/Ariane_62_FM1_V3.3_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.3/Ariane_62_FM1_V3.3_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.3/Ariane_62_FM1_V3.3_5.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.3/Ariane_62_FM1_V3.3_6.jpg"
         ],
         "versions": [
             {
@@ -8017,6 +8018,36 @@
                     }
                 ],
                 "version": "V3.1"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.2/Ariane_62_FM1_V3.2.io",
+                        "name": "Ariane_62_FM1_V3.2.io"
+                    }
+                ],
+                "version": "V3.2"
+            },
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.3/Ariane_62_FM1_V3.3.io",
+                        "name": "Ariane_62_FM1_V3.3.io"
+                    }
+                ],
+                "version": "V3.3"
             }
         ]
     },

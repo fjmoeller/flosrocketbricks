@@ -6,8 +6,8 @@
       <h3 class="row-12">Sorting</h3>
       <div class="dropdown">
         <div>
-          <label>Sort by</label>
-          <button class="btn text-coloring dropdown-toggle mr-1 search-interaction-element" type="button"
+          <label class="mx-1">Sort by</label>
+          <button class="btn text-coloring dropdown-toggle mx-1 search-interaction-element" type="button"
                   id="sortingDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
             {{ sortingCategory }}
           </button>
@@ -35,7 +35,7 @@
           </ul>
         </div>
         <div>
-          <label>Order</label>
+          <label class="mx-1">Order</label>
           <button class="btn mx-1 search-interaction-element" type="button" (click)="changeSortingDirection()">
             @if (sortingDirection === -1) {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

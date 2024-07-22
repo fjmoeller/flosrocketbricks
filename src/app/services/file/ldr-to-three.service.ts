@@ -245,7 +245,7 @@ export class LdrToThreeService {
           resolvedPart.colorVertexMap.forEach((vertices, color) => {
             const indices = resolvedPart.colorIndexMap.get(color);
             if (!indices)
-              console.error("Color %d not found: verticies exist but no face to em for part %s", color, parsedPart.name);
+              console.error("Color %d not found: vertices exist but no face to em for part %s", color, parsedPart.name);
             else {
               const partGeometry = this.createBufferedGeometry(resolvedPart.name, vertices, indices);
               colorGeometryMap.set(color, partGeometry);
@@ -267,7 +267,7 @@ export class LdrToThreeService {
       part.colorVertexMap.forEach((vertices, color) => { // should only be called once
         const indices = part.colorIndexMap.get(color);
         if (!indices)
-          console.error("Color not found: verticies exist but no face to em");
+          console.error("Color not found: vertices exist but no face to em");
         else {
           this.partNameToBufferedGeometryMap.set(part.name, this.createBufferedGeometry(part.name, vertices, indices));
         }
@@ -357,27 +357,27 @@ export class LdrToThreeService {
 
         this.createMaterial(parsed.color);
         const partIndices = colorIndexMap.get(parsed.color);
-        const partVerticies = colorVertexMap.get(parsed.color);
+        const partVertices = colorVertexMap.get(parsed.color);
 
         const vertexIndexMap = new Map<number, number>(); //indices of vertices will be different so they need to be mapped to the actual ones
 
-        //put all vertices into partVerticies and to the vertexIndexMap
-        if (partVerticies) //The current part already knows this color
+        //put all vertices into partVertices and to the vertexIndexMap
+        if (partVertices) //The current part already knows this color
           for (let i = 0; i < parsed.vertices.length; i++) {
-            const found = partVerticies.findIndex(p => p.equals(parsed.vertices[i]));
+            const found = partVertices.findIndex(p => p.equals(parsed.vertices[i]));
 
             if (found != -1) //vertex already exists
               vertexIndexMap.set(i, found);
             else { //vertex doesnt exist yet
-              partVerticies.push(parsed.vertices[i]);
-              vertexIndexMap.set(i, partVerticies.length - 1);
+              partVertices.push(parsed.vertices[i]);
+              vertexIndexMap.set(i, partVertices.length - 1);
             }
           }
-        else //The current part doesnt have the current color yet
+        else //The current part doesn't have the current color yet
           colorVertexMap.set(parsed.color, parsed.vertices);
 
-        const collectedIndices = [];
-        for (let i = 0; i < parsed.indices.length; i += 3) { //map all indices to their now referenced verticies
+        const collectedIndices: number[] = [];
+        for (let i = 0; i < parsed.indices.length; i += 3) { //map all indices to their now referenced vertices
           collectedIndices.push(vertexIndexMap.get(parsed.indices[i]) ?? parsed.indices[i]);
           collectedIndices.push(vertexIndexMap.get(parsed.indices[i + 1]) ?? parsed.indices[i + 1]);
           collectedIndices.push(vertexIndexMap.get(parsed.indices[i + 2]) ?? parsed.indices[i + 2]);

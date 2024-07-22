@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BufferGeometry, Group, InstancedMesh, LineBasicMaterial, LineSegments, Material, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Object3D, Vector3, Vector4 } from 'three';
+import { BufferGeometry, Group, InstancedMesh, LineBasicMaterial, LineSegments, Material, Matrix3, Matrix4, Mesh, MeshStandardMaterial, Object3D, Vector3 } from 'three';
 import { LdrPart, LdrSubmodel, PartReference } from '../../model/ldrawParts';
 import { LdrawColorService } from '../color/ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -133,10 +133,8 @@ export class IoFileService {
       if (!this.RENDER_PLACEHOLDER_COLORED_PARTS && placeholderColor === Number(splitkey[0])) return;
       const geometry = this.partNameToBufferedGeometryMap.get(splitkey[1]);
       const material = this.colorToMaterialMap.get(Number(splitkey[0]));
-
-
       const mesh = new InstancedMesh(geometry, material, positions.length);
-      for (var i = 0; i < mesh.count; i++)
+      for (let i = 0; i < mesh.count; i++)
         mesh.setMatrixAt(i, positions[i]);
       mesh.instanceMatrix.needsUpdate = true;
       objects.push(mesh);
@@ -145,10 +143,10 @@ export class IoFileService {
       const lineGeometry = this.partNameToLineGeometryMap.get(splitkey[1]);
       const lineMaterial = this.getLineMaterial(Number(splitkey[0])); //TODO fill this up and change the colorid....
       const lineMesh = new LineSegments(lineGeometry, lineMaterial);
-      for (var i = 0; i < positions.length; i++) {
-        const segement = lineMesh.clone();
-        segement.applyMatrix4(positions[i]);
-        lineGroup.add(segement);
+      for (let i = 0; i < positions.length; i++) {
+        const segments = lineMesh.clone();
+        segments.applyMatrix4(positions[i]);
+        lineGroup.add(segments);
       }
       objects.push(lineGroup);
     });
@@ -158,6 +156,7 @@ export class IoFileService {
       if (!this.RENDER_PLACEHOLDER_COLORED_PARTS && placeholderColor === Number(ref.mainColor)) return;
 
       const partGroup = new Group();
+      partGroup.name = ref.partName;
       const geometries = this.partNameToColorBufferedGeometryMap.get(ref.partName);
       const mainMaterial = this.colorToMaterialMap.get(ref.mainColor);
       if (geometries && mainMaterial) {
@@ -166,22 +165,19 @@ export class IoFileService {
           if (color === 16 || color === 24 || color === -1 || color === -2) material = mainMaterial;
           else material = this.colorToMaterialMap.get(color) ?? mainMaterial;
           const mesh = new Mesh(geometry, material);
-          //partGroup.add(mesh); //TODO change
-          mesh.applyMatrix4(ref.transform);
-          objects.push(mesh);
+          partGroup.add(mesh);
         });
-        partGroup.position.applyMatrix4(ref.transform);
+        partGroup.applyMatrix4(ref.transform);
 
         const lineGroup = new Group();
+        lineGroup.name = "lines";
         const lineGeometry = this.partNameToLineGeometryMap.get(ref.partName);
         const lineMaterial = this.getLineMaterial(ref.mainColor);
         const lineMesh = new LineSegments(lineGeometry, lineMaterial);
         lineGroup.add(lineMesh);
-        lineGroup.applyMatrix4(ref.transform);
-        objects.push(lineGroup);
-        //partGroup.add(lineGroup);//TODO change
+        partGroup.add(lineGroup);
 
-        //objects.push(partGroup);//TODO change
+        objects.push(partGroup);
       }
       else console.error("No geometries/colors for multicolor part %s found", ref.partName);
     });
@@ -354,7 +350,7 @@ export class IoFileService {
 
         const vertexIndexMap = new Map<number, number>(); //indicies of vertices will be different so they need to be mapped to the actual ones
 
-        //put all vertices into partVerticies and to the vertexIndexMap 
+        //put all vertices into partVerticies and to the vertexIndexMap
         if (partVerticies) //The current part already knows this color
           for (let i = 0; i < parsed.vertices.length; i++) {
             const found = partVerticies.findIndex(p => p.equals(parsed.vertices[i]));

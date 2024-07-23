@@ -33,15 +33,14 @@ export class LdrawColorService {
     const finalColor = this.getHexColorFromLdrawColorId(id);
     const opacity = ldrcolor ? ldrcolor.alpha / 255 : 0.0;
     const transparent = opacity > 0.001;
+    const roughness = 0.8;
 
-    let roughness = 0.8;
-    if (ldrcolor) {
+    if (ldrcolor)
       switch (ldrcolor.material) {
-        case "CHROME": return { metalness: 0.7, roughness: 0.1, emissive: new Color(finalColor.r - 0.1, finalColor.g - 0.1, finalColor.b - 0.1), color: finalColor, opacity: opacity, transparent: transparent };
-        case "PEARLESCENT": return { metalness: 0.9, roughness: 0.7, emissive: new Color(finalColor.r + 0.05, finalColor.g + 0.05, finalColor.b + 0.05), color: finalColor, opacity: opacity, transparent: transparent };
-        case "METAL": return { metalness: 0.3, roughness: 0.5, emissive: new Color(finalColor.r - 0.10, finalColor.g - 0.10, finalColor.b - 0.10), color: finalColor, opacity: opacity, transparent: transparent };
+        case "CHROME": return { metalness: 1, roughness: 0.1, emissive: new Color(finalColor.r - 0.1, finalColor.g - 0.1, finalColor.b - 0.1), color: finalColor, opacity: opacity, transparent: transparent };
+        case "PEARLESCENT": return { metalness: 0.3, roughness: 0.4, emissive: new Color(finalColor.r - 0.2, finalColor.g - 0.2, finalColor.b - 0.2), color: finalColor, opacity: opacity, transparent: transparent };
+        case "METAL": return { metalness: 1, roughness: 0.3, emissive: new Color(finalColor.r - 0.1, finalColor.g - 0.1, finalColor.b - 0.1), color: finalColor, opacity: opacity, transparent: transparent };
       }
-    }
     return { color: finalColor, opacity: opacity, roughness: roughness, transparent: transparent }
   }
 

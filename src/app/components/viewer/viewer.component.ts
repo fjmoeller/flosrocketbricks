@@ -3,6 +3,7 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import {LdrToThreeService} from 'src/app/services/file/ldr-to-three.service';
 import {AmbientLight, Box3, Clock, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer} from 'three';
 import {CommonModule} from '@angular/common';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -21,6 +22,9 @@ export class ViewerComponent implements OnInit {
 
   @Input('showViewer')
   showViewer: boolean = false;
+  
+  private dataCTSubject = new BehaviorSubject<number>(0);
+  computingTime: Observable<number> = this.dataCTSubject.asObservable();
 
   //determines if the loading icon will be shown
   loadingFinished: boolean = true;
@@ -115,6 +119,7 @@ export class ViewerComponent implements OnInit {
     controls.target = new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2, (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2, (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2);
 
     const update = () => {
+      this.dataCTSubject.next(this.clock.getElapsedTime()); //TODO only when debug mode enabled
       if (this.clock.getElapsedTime() > this.INTERNAL) {
         controls.update();
         // Render

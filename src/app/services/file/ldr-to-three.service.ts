@@ -396,7 +396,7 @@ export class LdrToThreeService {
     }
 
     if (!this.ENABLE_FLAT_SHADING) {
-      for (let [lineColor, lineVertices] of colorLineVertexMap.entries()) {
+      for (let [lineColor, lineVertices] of colorLineVertexMap.entries()) { //dont use the lineColor, as line have different colors to parts
         for (let color of colorVertexMap.keys()) {
           for (let lineIndex = 0; lineIndex < lineVertices.length; lineIndex += 2) { //check for every line
             const lineVertexStart = lineVertices[lineIndex];
@@ -414,26 +414,21 @@ export class LdrToThreeService {
                   const face1Index2 = (colorIndexMap.get(color) ?? [])[face1Index + 2];
                   const vertices = colorVertexMap.get(color) ?? [];
                   const indices = colorIndexMap.get(color) ?? [];
-                  if ([face1Index0, face1Index1, face1Index2].filter(index => vertices[index].equals(lineVertexStart) || vertices[index].equals(lineVertexEnd)).length == 2) {
-                    //line equals edge on different face too
+                  if ([face1Index0, face1Index1, face1Index2].filter(index => vertices[index].equals(lineVertexStart) || vertices[index].equals(lineVertexEnd)).length == 2) { //line equals edge on different face too
                     //if overlapping indices
                     const face2Indices = [face1Index0, face1Index1, face1Index2];
                     const faceIndex0Overlap = face2Indices.filter(index => index === face1Index0);
                     const faceIndex1Overlap = face2Indices.filter(index => index === face1Index1);
                     const faceIndex2Overlap = face2Indices.filter(index => index === face1Index2);
                     //clone parts
-
-
                     if (faceIndex0Overlap.length !== 0) {
                       vertices.push(vertices[face0Index0]);
                       indices[face0Index] = vertices.length - 1;
                     }
-
                     if (faceIndex1Overlap.length !== 0) {
                       vertices.push(vertices[face0Index1]);
                       indices[face0Index + 1] = vertices.length - 1;
                     }
-
                     if (faceIndex2Overlap.length !== 0) {
                       vertices.push(vertices[face0Index2]);
                       indices[face0Index + 2] = vertices.length - 1;

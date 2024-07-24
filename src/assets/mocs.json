@@ -306,6 +306,14 @@
                         "allowViewer": false,
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-9/block-5/earthcare/v1.0/Falcon_9_Earthcare_V1.0.io",
                         "name": "Falcon_9_Earthcare_V1.0.io"
+                    },
+                    {
+                        "description": "The pdf instructions for the rocket",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/falcon/falcon-9/block-5/earthcare/v1.0/Falcon_9_Earthcare_V1.0_instructions.pdf",
+                        "name": "Falcon_9_Earthcare_V1.0_instructions.pdf"
                     }
                 ],
                 "version": "V1.0"

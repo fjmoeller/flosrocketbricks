@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  Box3,
   BufferGeometry,
   Group,
   InstancedMesh,
@@ -99,14 +100,23 @@ export class LdrToThreeService {
           mocGroup.add(stageSubmodelGroup);
         } else console.error("FRB submodel with name %s not found", reference.name);
       });
-      return mocGroup;
     } else { // only one submodel will be used with everything in it
       this.collectPartRefs(submodels.topLdrSubmodel, submodels.submodelMap, new Matrix4());
 
       //instance parts and add them to the group
       mocGroup.add(...this.spawnPartRefs(placeholderColorCode));
-      return mocGroup;
     }
+
+    //center everything
+    const mocBB = new Box3().setFromObject(mocGroup);
+    const center = mocBB.getCenter(new Vector3());
+    for(let mocElement of mocGroup.children){
+      mocElement.position.x -= center.x;
+      mocElement.position.y -= center.y;
+      mocElement.position.z -= center.z;
+    }
+
+    return mocGroup;
   }
 
   private collectPartRefs(submodel: LdrSubmodel, ldrSubModelMap: Map<string, LdrSubmodel>, transform: Matrix4): void {
@@ -293,8 +303,7 @@ export class LdrToThreeService {
     if (partName == "28192.dat") {
       partGeometry.rotateY(-Math.PI / 2);
       partGeometry.translate(-10, -24, 0);
-    } else if (partName == "37762.dat")
-      partGeometry.translate(0, -8, 0);
+    }
     else if (partName == "68013.dat")
       partGeometry.rotateY(-Math.PI);
     else if (partName == "70681.dat")
@@ -315,8 +324,7 @@ export class LdrToThreeService {
     if (partName == "28192.dat") {
       partGeometry.rotateY(-Math.PI / 2);
       partGeometry.translate(-10, -24, 0);
-    } else if (partName == "37762.dat")
-      partGeometry.translate(0, -8, 0);
+    }
     else if (partName == "68013.dat")
       partGeometry.rotateY(-Math.PI);
     else if (partName == "70681.dat")

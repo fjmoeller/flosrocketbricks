@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { LdrToThreeService } from 'src/app/services/file/ldr-to-three.service';
-import { AmbientLight, Box3, Clock, Group, Mesh, MeshBasicMaterial, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { AmbientLight, BasicShadowMap, Box3, CameraHelper, Clock, Group, Mesh, MeshBasicMaterial, MeshLambertMaterial, MeshStandardMaterial, PCFSoftShadowMap, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -31,6 +31,8 @@ export class ViewerComponent implements OnInit {
 
   loadingText = this.ioFileService.loadingState;
 
+  public ENABLE_SHADOWS: boolean = false;
+
   private readonly clock = new Clock();
   // 30 fps
   private readonly INTERNAL: number = 1 / 60;
@@ -53,28 +55,39 @@ export class ViewerComponent implements OnInit {
 
     const scene = new Scene();
 
-    const pointLight = new PointLight(0xffffff, 0.5);
-    pointLight.position.add(new Vector3(1000, 500, -1000));
-    //pointLight.castShadow = true;
-    scene.add(pointLight);
-    const ambientLight = new AmbientLight(0xffffff, 0.8);
-    scene.add(ambientLight);
-
     mocGroup.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
     const mocBB = new Box3().setFromObject(mocGroup);
     const size = mocBB.getSize(new Vector3());
-    mocGroup.position.y += size.y/2;
+    mocGroup.position.y += size.y / 2;
     scene.add(mocGroup);
+
+    const pointLight = new PointLight(0xffffff, 0.5,4000);
+    pointLight.position.add(new Vector3(1000, mocBB.getSize(new Vector3()).y, -1000));
+    pointLight.lookAt(mocBB.getCenter(new Vector3));
+    pointLight.shadow.camera.lookAt(mocBB.getCenter(new Vector3));
+    if (this.ENABLE_SHADOWS) {
+      pointLight.castShadow = true;
+      pointLight.shadow.mapSize.width = 1024;
+      pointLight.shadow.mapSize.height = 1024;
+      pointLight.shadow.camera.near = 0.5;
+      pointLight.shadow.camera.far = 2000;
+      //const helper = new CameraHelper(pointLight.shadow.camera);
+      //scene.add(helper);
+    }
+    scene.add(pointLight);
+    const ambientLight = new AmbientLight(0xffffff, 0.8);
+    scene.add(ambientLight);
 
     //scene.add( new Box3Helper( new Box3().setFromObject(mocGroup), new Color(0xffff00) ) );
     //const axesHelper = new AxesHelper( 5 );
     //scene.add( axesHelper );
 
     const planeGeometry = new PlaneGeometry(2000, 2000, 50, 50);
-    const planeMaterial = new MeshBasicMaterial({ color: 0x999999 });
+    const planeMaterial = new MeshLambertMaterial({ color: 0x999999 });
     const plane = new Mesh(planeGeometry, planeMaterial);
     plane.rotateX(-Math.PI / 2);
-    plane.receiveShadow = true;
+    if (this.ENABLE_SHADOWS)
+      plane.receiveShadow = true;
     scene.add(plane);
 
     let canvasSizes = {
@@ -95,14 +108,16 @@ export class ViewerComponent implements OnInit {
 
     const camera = new PerspectiveCamera(50, canvasSizes.width / canvasSizes.height, 0.5, 5000);
     camera.position.z = -1000;
-    camera.position.y = mocBB.getSize(new Vector3).y*0.8;
+    camera.position.y = mocBB.getSize(new Vector3).y * 0.8;
     camera.position.x = -500;
     scene.add(camera);
 
     const renderer = new WebGLRenderer({ antialias: true, canvas: canvas });
     renderer.setClearColor(0x19212D, 1);
-    //renderer.shadowMap.enabled = true;
-    //renderer.shadowMap.type = BasicShadowMap; 
+    if (this.ENABLE_SHADOWS) {
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = BasicShadowMap;
+    }
     renderer.setSize(canvasSizes.width, canvasSizes.height);
     renderer.setPixelRatio(window.devicePixelRatio * 1.5);
     renderer.setClearColor("rgb(88,101,117)");
@@ -119,8 +134,8 @@ export class ViewerComponent implements OnInit {
     });
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.target = new Vector3(0,mocBB.getSize(new Vector3).y/2,0);
-    controls.maxDistance = 5000;
+    controls.target = new Vector3(0, mocBB.getSize(new Vector3).y / 2, 0);
+    controls.maxDistance = 3500;
     controls.minDistance = 10;
 
     const update = () => {

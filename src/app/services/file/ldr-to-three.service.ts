@@ -26,7 +26,8 @@ export class LdrToThreeService {
 
   public readonly RENDER_PLACEHOLDER_COLORED_PARTS: boolean = false;
 
-  public ENABLE_FLAT_SHADING: boolean = false;
+  public ENABLE_FLAT_SHADING: boolean = true;
+  public ENABLE_SHADOWS: boolean = false;
 
   private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
   private colorToMaterialMap = new Map<number, Material>();
@@ -110,7 +111,7 @@ export class LdrToThreeService {
     //center everything
     const mocBB = new Box3().setFromObject(mocGroup);
     const center = mocBB.getCenter(new Vector3());
-    for(let mocElement of mocGroup.children){
+    for (let mocElement of mocGroup.children) {
       mocElement.position.x -= center.x;
       mocElement.position.y -= center.y;
       mocElement.position.z -= center.z;
@@ -161,8 +162,10 @@ export class LdrToThreeService {
         mesh.setMatrixAt(i, positions[i]);
       mesh.instanceMatrix.needsUpdate = true;
       mesh.name = colorPartName;
-      //mesh.castShadow = true;
-      //mesh.receiveShadow = true;
+      if (this.ENABLE_SHADOWS) {
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+      }
       objects.push(mesh);
 
       const lineGroup = new Group();
@@ -192,8 +195,10 @@ export class LdrToThreeService {
           if (color === 16 || color === 24 || color === -1 || color === -2) material = mainMaterial;
           else material = this.colorToMaterialMap.get(color) ?? mainMaterial;
           const mesh = new Mesh(geometry, material);
-          //mesh.castShadow = true;
-          //mesh.receiveShadow = true;
+          if (this.ENABLE_SHADOWS) {
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+          }
           partGroup.add(mesh);
         });
         partGroup.applyMatrix4(ref.transform);
@@ -416,7 +421,7 @@ export class LdrToThreeService {
       return;
 
     for (let [color, indices] of colorIndexMap.entries()) {//for every color
-      
+
       const vertices = colorVertexMap.get(color) ?? [];
       for (let face = 0; face < indices.length; face += 1) { //for every edge
         const face1index1index: number = face;
@@ -478,8 +483,8 @@ export class LdrToThreeService {
       }
 
       //remove all vertices that now are not being used anymore
-      const removed:number[] = [];
-      for (let vIndex:number = 0; vIndex < vertices.length; vIndex++) {
+      const removed: number[] = [];
+      for (let vIndex: number = 0; vIndex < vertices.length; vIndex++) {
         const isUsed = indices.indexOf(vIndex);
         if (isUsed === -1) {
           for (let index = 0; index < indices.length; index++) {

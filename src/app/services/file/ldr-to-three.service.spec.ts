@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { IoFileService } from './io-file.service';
+import { LdrToThreeService } from './ldr-to-three.service';
 
-describe('IoFileService', () => {
-  let service: IoFileService;
+describe('LdrToThreeService', () => {
+  let service: LdrToThreeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(IoFileService);
+    service = TestBed.inject(LdrToThreeService);
   });
 
   it('should be created', () => {

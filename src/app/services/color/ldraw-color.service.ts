@@ -19,11 +19,13 @@ export class LdrawColorService {
 
   getLdrawColorIdByColorName(colorName: string): number {
     if (colorName === "-") return -1;
+    const noSpaceColorName = colorName.replace(" ","_");
     for (let key of this.ldrColorList.keys()) {
-      if (this.ldrColorList.get(key)?.name == colorName) {
+      if (this.ldrColorList.get(key)?.name === noSpaceColorName) {
         return key;
       }
     }
+    console.log(this.ldrColorList)
     console.error("Error finding color id by name: %s", colorName);
     return -1;
   }

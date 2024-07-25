@@ -25,7 +25,7 @@ export class LdrToThreeService {
 
   public readonly RENDER_PLACEHOLDER_COLORED_PARTS: boolean = false;
 
-  public ENABLE_FLAT_SHADING: boolean = false;
+  public ENABLE_FLAT_SHADING: boolean = true;
 
   private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
   private colorToMaterialMap = new Map<number, Material>();
@@ -245,13 +245,12 @@ export class LdrToThreeService {
         if (resolvedPart.colorVertexMap.size > 1) { //if part is multi color part -> will not have an instanced mesh created
           const colorGeometryMap = new Map<number, BufferGeometry>();
           resolvedPart.colorVertexMap.forEach((vertices, color) => {
-            const indices = resolvedPart.colorIndexMap.get(color);
-            if (!indices)
-              console.error("Color %d not found: vertices exist but no face to em for part %s", color, parsedPart.name);
-            else {
+            const indices = resolvedPart.colorIndexMap.get(color) ?? [];
+            if (indices) {
               const partGeometry = this.createBufferedGeometry(resolvedPart.name, vertices, indices);
               colorGeometryMap.set(color, partGeometry);
             }
+            else console.error("Color %d not found: vertices exist but no face to em for part %s", color, parsedPart.name);
           });
           resolvedPart.lineColorMap.forEach((vertices, color) => {
             this.partNameToLineGeometryMap.set(resolvedPart.name, this.createLineGeometry(resolvedPart.name, vertices));
@@ -359,16 +358,15 @@ export class LdrToThreeService {
           parsed = this.parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW));
 
         this.createMaterial(parsed.color);
-        const partIndices = colorIndexMap.get(parsed.color) ?? [];
         const partVertices = colorVertexMap.get(parsed.color);
 
-        const vertexIndexMap = new Map<number, number>(); //indices of vertices will be different so they need to be mapped to the actual ones
+        const vertexIndexMap = new Map<number, number>(); //maps the old index of the vertex to the position in the colorIndexMap
 
         //put all vertices into partVertices and to the vertexIndexMap
         if (partVertices)  //The current part already knows this color
           for (let i = 0; i < parsed.vertices.length; i++) {
             const found = partVertices.findIndex(p => p.equals(parsed.vertices[i]));
-            if (found != -1) //vertex already exists
+            if (found != -1 && this.ENABLE_FLAT_SHADING) //vertex already exists
               vertexIndexMap.set(i, found);
             else { //vertex doesnt exist yet
               partVertices.push(parsed.vertices[i]);
@@ -384,6 +382,8 @@ export class LdrToThreeService {
           collectedIndices.push(vertexIndexMap.get(parsed.indices[i + 1]) ?? parsed.indices[i + 1]);
           collectedIndices.push(vertexIndexMap.get(parsed.indices[i + 2]) ?? parsed.indices[i + 2]);
         }
+
+        const partIndices = colorIndexMap.get(parsed.color) ?? [];
         colorIndexMap.set(parsed.color, partIndices.concat(collectedIndices));
 
         invertNext = false;
@@ -395,58 +395,73 @@ export class LdrToThreeService {
       }
     }
 
-    if (!this.ENABLE_FLAT_SHADING) {
-      for (let [lineColor, lineVertices] of colorLineVertexMap.entries()) { //dont use the lineColor, as line have different colors to parts
-        for (let color of colorVertexMap.keys()) {
-          for (let lineIndex = 0; lineIndex < lineVertices.length; lineIndex += 2) { //check for every line
-            const lineVertexStart = lineVertices[lineIndex];
-            const lineVertexEnd = lineVertices[lineIndex + 1];
-            for (let face0Index = 0; face0Index < (colorIndexMap.get(color) ?? []).length; face0Index += 3) { //if face exists
-              const face0Index0 = (colorIndexMap.get(color) ?? [])[face0Index];
-              const face0Index1 = (colorIndexMap.get(color) ?? [])[face0Index + 1];
-              const face0Index2 = (colorIndexMap.get(color) ?? [])[face0Index + 2];
-              if ([face0Index0, face0Index1, face0Index2].filter(index => (colorVertexMap.get(color) ?? [])[index].equals(lineVertexStart) || (colorVertexMap.get(color) ?? [])[index].equals(lineVertexEnd)).length == 2) {
-                //line equals edge on face
-                for (let face1Index = 0; face1Index < (colorIndexMap.get(color) ?? []).length; face1Index += 3) {//if another different face exists
-                  if (face0Index === face1Index) continue;
-                  const face1Index0 = (colorIndexMap.get(color) ?? [])[face1Index];
-                  const face1Index1 = (colorIndexMap.get(color) ?? [])[face1Index + 1];
-                  const face1Index2 = (colorIndexMap.get(color) ?? [])[face1Index + 2];
-                  const vertices = colorVertexMap.get(color) ?? [];
-                  const indices = colorIndexMap.get(color) ?? [];
-                  if ([face1Index0, face1Index1, face1Index2].filter(index => vertices[index].equals(lineVertexStart) || vertices[index].equals(lineVertexEnd)).length == 2) { //line equals edge on different face too
-                    //if overlapping indices
-                    const face2Indices = [face1Index0, face1Index1, face1Index2];
-                    const faceIndex0Overlap = face2Indices.filter(index => index === face1Index0);
-                    const faceIndex1Overlap = face2Indices.filter(index => index === face1Index1);
-                    const faceIndex2Overlap = face2Indices.filter(index => index === face1Index2);
-                    //clone parts
-                    if (faceIndex0Overlap.length !== 0) {
-                      vertices.push(vertices[face0Index0]);
-                      indices[face0Index] = vertices.length - 1;
-                    }
-                    if (faceIndex1Overlap.length !== 0) {
-                      vertices.push(vertices[face0Index1]);
-                      indices[face0Index + 1] = vertices.length - 1;
-                    }
-                    if (faceIndex2Overlap.length !== 0) {
-                      vertices.push(vertices[face0Index2]);
-                      indices[face0Index + 2] = vertices.length - 1;
-                    }
-                    colorVertexMap.set(color, vertices);
-                    colorIndexMap.set(color, indices);
-                  }
+    if (!this.ENABLE_FLAT_SHADING) { //split => merged
+      for (let [color, indices] of colorIndexMap.entries()) {//for every color
+        console.log("color %d", color);
+        const vertices = colorVertexMap.get(color) ?? [];
+        for (let face = 0; face < indices.length; face += 1) { //for every edge
+          const face1index1: number = indices[face];
+          const face1index2: number = indices[face + (face % 3 === 2 ? -2 : 1)];
+          const face1vertex1: Vector3 = vertices[face1index1];
+          const face1vertex2: Vector3 = vertices[face1index2];
+
+          //check if edge is a line
+          let isLine = false;
+          for (let lineVertices of colorLineVertexMap.values()) {
+            if (!isLine)
+              for (let lineVertex = 0; lineVertex < lineVertices.length; lineVertex += 2)
+                if ((lineVertices[lineVertex].equals(face1vertex1) && lineVertices[lineVertex + 1].equals(face1vertex2)) ||
+                  (lineVertices[lineVertex].equals(face1vertex2) && lineVertices[lineVertex + 1].equals(face1vertex1))) {
+                  isLine = true;
+                  break;
                 }
+          }
+
+          //if edge is not a line => find other face that uses this line => will need to be merged later
+          if (!isLine) {
+            //find 2nd faces edge
+            let face2index1: number = -1; // the index of the vertex equaling the vertex of another edge
+            let face2index2: number = -1;
+            for (let face2 = face + 3 - (face % 3); face2 < indices.length; face2 += 1) { //for every faces edge starting from the next face
+              const tFace2index1index: number = face2;
+              const tFace2index2index: number = face2 + (face2 % 3 === 2 ? -2 : 1);
+              const tFace2index1:number = indices[tFace2index1index];
+              const tFace2index2:number = indices[tFace2index2index];
+              const tFace2vertex1:Vector3 = vertices[tFace2index1];
+              const tFace2vertex2:Vector3 = vertices[tFace2index2];
+              if (tFace2vertex1.equals(face1vertex1) && tFace2vertex2.equals(face1vertex2) && tFace2index1 !== face1index1) { //if the vertices are the same, the indices are not tho
+                face2index1 = tFace2index1;
+                face2index2 = tFace2index2;
+                console.log("edge1 i: %d %d",face1index1,face1index2, face1vertex1, face1vertex2);
+                console.log("edge2 i: %d %d",face2index1,face2index2,tFace2vertex1,tFace2vertex2);
+                break;
+              }
+              else if (tFace2vertex1.equals(face1vertex2) && tFace2vertex2.equals(face1vertex1) && tFace2index1 !== face1index2) { //if the vertices are the same, the indices are not tho
+                face2index1 = tFace2index2;
+                face2index2 = tFace2index1;
+                console.log("edge1 i: %d %d",face1index1,face1index2, face1vertex1, face1vertex2);
+                console.log("edge2 i: %d %d",face2index1,face2index2,tFace2vertex1,tFace2vertex2);
+                break;
               }
             }
+
+            if (face2index1 !== -1 && face2index2 !== -1) { //second face exists
+              console.log("merging");
+              for (let index = 0; index < face; index++) { //reroute all indices that also point to face1vertex1 to face2vertex1 (set them to face2index1)
+                if (indices[index] === face1index1) //TODO could maybe do index < face
+                  indices[index] = indices[face2index1];
+                if (indices[index] === face1index2)
+                  indices[index] = indices[face2index2];
+              }
+            }else{
+              console.log("no overlap edge1 i: %d %d",face1index1,face1index2, face1vertex1, face1vertex2);
+            }
           }
+          //}
         }
+        //TODO remove all vertices that are not used
       }
     }
-    //for every line =>
-    //  for all faces => if face contains line points (both)
-    //    for all faces => if face2 contains line points && face !== face2
-    //      split up again
 
     return new LdrPart(partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
   }

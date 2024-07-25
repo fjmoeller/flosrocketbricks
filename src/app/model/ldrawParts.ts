@@ -5,7 +5,7 @@ export class LdrPart {
     isResolved: boolean = false;
     colorVertexMap: Map<number,Vector3[]>;
     colorIndexMap: Map<number, number[]>;
-    lineColorMap: Map<number, Vector3[]>;
+    colorLineVertexMap: Map<number, Vector3[]>;
     references: PartReference[];
     partIndex: number = 0;
 
@@ -13,7 +13,7 @@ export class LdrPart {
         this.name = name;
         this.colorVertexMap = colorVertexMap;
         this.colorIndexMap = colorIndexMap;
-        this.lineColorMap = lineColorMap;
+        this.colorLineVertexMap = lineColorMap;
         this.references = references;
     }
 }

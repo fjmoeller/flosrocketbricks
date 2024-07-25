@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import {LdrToThreeService} from 'src/app/services/file/ldr-to-three.service';
-import {AmbientLight, Box3, Clock, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer} from 'three';
+import {AmbientLight, BasicShadowMap, Box3, Clock, Group, PCFSoftShadowMap, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer} from 'three';
 import {CommonModule} from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -56,10 +56,12 @@ export class ViewerComponent implements OnInit {
 
     const pointLight = new PointLight(0xffffff, 0.3);
     pointLight.position.add(new Vector3(1000, 500, 1000));
+    pointLight.castShadow = true;
     scene.add(pointLight);
 
     const pointLight2 = new PointLight(0xffffff, 0.3);
     pointLight2.position.add(new Vector3(-1000, 500, -1000));
+    pointLight2.castShadow = true;
     scene.add(pointLight2);
 
     const ambientLight = new AmbientLight(0xffffff, 0.6);
@@ -98,6 +100,8 @@ export class ViewerComponent implements OnInit {
 
     const renderer = new WebGLRenderer({antialias: true, canvas: canvas});
     renderer.setClearColor(0x19212D, 1);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = BasicShadowMap; 
     renderer.setSize(canvasSizes.width, canvasSizes.height);
     renderer.setPixelRatio(window.devicePixelRatio * 1.5);
     renderer.setClearColor("rgb(88,101,117)");

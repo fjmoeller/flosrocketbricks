@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  Box3,
   BufferGeometry,
   Group,
   InstancedMesh,
@@ -26,6 +27,7 @@ export class LdrToThreeService {
   public readonly RENDER_PLACEHOLDER_COLORED_PARTS: boolean = false;
 
   public ENABLE_FLAT_SHADING: boolean = true;
+  public ENABLE_SHADOWS: boolean = false;
 
   private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
   private colorToMaterialMap = new Map<number, Material>();
@@ -99,14 +101,23 @@ export class LdrToThreeService {
           mocGroup.add(stageSubmodelGroup);
         } else console.error("FRB submodel with name %s not found", reference.name);
       });
-      return mocGroup;
     } else { // only one submodel will be used with everything in it
       this.collectPartRefs(submodels.topLdrSubmodel, submodels.submodelMap, new Matrix4());
 
       //instance parts and add them to the group
       mocGroup.add(...this.spawnPartRefs(placeholderColorCode));
-      return mocGroup;
     }
+
+    //center everything
+    const mocBB = new Box3().setFromObject(mocGroup);
+    const center = mocBB.getCenter(new Vector3());
+    for (let mocElement of mocGroup.children) {
+      mocElement.position.x -= center.x;
+      mocElement.position.y -= center.y;
+      mocElement.position.z -= center.z;
+    }
+    mocGroup.scale.setScalar(0.044);
+    return mocGroup;
   }
 
   private collectPartRefs(submodel: LdrSubmodel, ldrSubModelMap: Map<string, LdrSubmodel>, transform: Matrix4): void {
@@ -151,6 +162,10 @@ export class LdrToThreeService {
         mesh.setMatrixAt(i, positions[i]);
       mesh.instanceMatrix.needsUpdate = true;
       mesh.name = colorPartName;
+      if (this.ENABLE_SHADOWS) {
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+      }
       objects.push(mesh);
 
       const lineGroup = new Group();
@@ -180,6 +195,10 @@ export class LdrToThreeService {
           if (color === 16 || color === 24 || color === -1 || color === -2) material = mainMaterial;
           else material = this.colorToMaterialMap.get(color) ?? mainMaterial;
           const mesh = new Mesh(geometry, material);
+          if (this.ENABLE_SHADOWS) {
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+          }
           partGroup.add(mesh);
         });
         partGroup.applyMatrix4(ref.transform);
@@ -242,6 +261,7 @@ export class LdrToThreeService {
       this.allPartsMap.set(parsedPart.name, parsedPart);
       if (trueParts.includes(parsedPart.name)) { //is not a subpart
         const resolvedPart = this.resolvePart(parsedPart.name); //collects all vertices in the top part, so all subparts wil be resolved
+        this.mergeVertices(resolvedPart.colorIndexMap, resolvedPart.colorVertexMap, resolvedPart.colorLineVertexMap);
         if (resolvedPart.colorVertexMap.size > 1) { //if part is multi color part -> will not have an instanced mesh created
           const colorGeometryMap = new Map<number, BufferGeometry>();
           resolvedPart.colorVertexMap.forEach((vertices, color) => {
@@ -252,7 +272,7 @@ export class LdrToThreeService {
             }
             else console.error("Color %d not found: vertices exist but no face to em for part %s", color, parsedPart.name);
           });
-          resolvedPart.lineColorMap.forEach((vertices, color) => {
+          resolvedPart.colorLineVertexMap.forEach((vertices, color) => {
             this.partNameToLineGeometryMap.set(resolvedPart.name, this.createLineGeometry(resolvedPart.name, vertices));
           });
           this.partNameToColorBufferedGeometryMap.set(parsedPart.name, colorGeometryMap);
@@ -273,7 +293,7 @@ export class LdrToThreeService {
           this.partNameToBufferedGeometryMap.set(part.name, this.createBufferedGeometry(part.name, vertices, indices));
         }
       });
-      part.lineColorMap.forEach((vertices, color) => {
+      part.colorLineVertexMap.forEach((vertices, color) => {
         this.partNameToLineGeometryMap.set(part.name, this.createLineGeometry(part.name, vertices));
       });
     }
@@ -288,8 +308,7 @@ export class LdrToThreeService {
     if (partName == "28192.dat") {
       partGeometry.rotateY(-Math.PI / 2);
       partGeometry.translate(-10, -24, 0);
-    } else if (partName == "37762.dat")
-      partGeometry.translate(0, -8, 0);
+    }
     else if (partName == "68013.dat")
       partGeometry.rotateY(-Math.PI);
     else if (partName == "70681.dat")
@@ -310,8 +329,7 @@ export class LdrToThreeService {
     if (partName == "28192.dat") {
       partGeometry.rotateY(-Math.PI / 2);
       partGeometry.translate(-10, -24, 0);
-    } else if (partName == "37762.dat")
-      partGeometry.translate(0, -8, 0);
+    }
     else if (partName == "68013.dat")
       partGeometry.rotateY(-Math.PI);
     else if (partName == "70681.dat")
@@ -395,75 +413,89 @@ export class LdrToThreeService {
       }
     }
 
-    if (!this.ENABLE_FLAT_SHADING) { //split => merged
-      for (let [color, indices] of colorIndexMap.entries()) {//for every color
-        console.log("color %d", color);
-        const vertices = colorVertexMap.get(color) ?? [];
-        for (let face = 0; face < indices.length; face += 1) { //for every edge
-          const face1index1: number = indices[face];
-          const face1index2: number = indices[face + (face % 3 === 2 ? -2 : 1)];
-          const face1vertex1: Vector3 = vertices[face1index1];
-          const face1vertex2: Vector3 = vertices[face1index2];
+    return new LdrPart(partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
+  }
 
-          //check if edge is a line
-          let isLine = false;
-          for (let lineVertices of colorLineVertexMap.values()) {
-            if (!isLine)
-              for (let lineVertex = 0; lineVertex < lineVertices.length; lineVertex += 2)
-                if ((lineVertices[lineVertex].equals(face1vertex1) && lineVertices[lineVertex + 1].equals(face1vertex2)) ||
-                  (lineVertices[lineVertex].equals(face1vertex2) && lineVertices[lineVertex + 1].equals(face1vertex1))) {
-                  isLine = true;
-                  break;
-                }
-          }
+  private mergeVertices(colorIndexMap: Map<number, number[]>, colorVertexMap: Map<number, Vector3[]>, colorLineVertexMap: Map<number, Vector3[]>) {
+    if (this.ENABLE_FLAT_SHADING)  //split => merged
+      return;
 
-          //if edge is not a line => find other face that uses this line => will need to be merged later
-          if (!isLine) {
-            //find 2nd faces edge
-            let face2index1: number = -1; // the index of the vertex equaling the vertex of another edge
-            let face2index2: number = -1;
-            for (let face2 = face + 3 - (face % 3); face2 < indices.length; face2 += 1) { //for every faces edge starting from the next face
-              const tFace2index1index: number = face2;
-              const tFace2index2index: number = face2 + (face2 % 3 === 2 ? -2 : 1);
-              const tFace2index1:number = indices[tFace2index1index];
-              const tFace2index2:number = indices[tFace2index2index];
-              const tFace2vertex1:Vector3 = vertices[tFace2index1];
-              const tFace2vertex2:Vector3 = vertices[tFace2index2];
-              if (tFace2vertex1.equals(face1vertex1) && tFace2vertex2.equals(face1vertex2) && tFace2index1 !== face1index1) { //if the vertices are the same, the indices are not tho
-                face2index1 = tFace2index1;
-                face2index2 = tFace2index2;
-                console.log("edge1 i: %d %d",face1index1,face1index2, face1vertex1, face1vertex2);
-                console.log("edge2 i: %d %d",face2index1,face2index2,tFace2vertex1,tFace2vertex2);
+    for (let [color, indices] of colorIndexMap.entries()) {//for every color
+
+      const vertices = colorVertexMap.get(color) ?? [];
+      for (let face = 0; face < indices.length; face += 1) { //for every edge
+        const face1index1index: number = face;
+        const face1index2index: number = face + (face % 3 === 2 ? -2 : 1);
+        const face1index1: number = indices[face1index1index];
+        const face1index2: number = indices[face1index2index];
+        const face1vertex1: Vector3 = vertices[face1index1];
+        const face1vertex2: Vector3 = vertices[face1index2];
+
+        //check if edge is a line
+        let isLine = false;
+        for (let lineVertices of colorLineVertexMap.values()) {
+          if (!isLine)
+            for (let lineVertex = 0; lineVertex < lineVertices.length; lineVertex += 2)
+              if ((lineVertices[lineVertex].equals(face1vertex1) && lineVertices[lineVertex + 1].equals(face1vertex2)) ||
+                (lineVertices[lineVertex].equals(face1vertex2) && lineVertices[lineVertex + 1].equals(face1vertex1))) {
+                isLine = true;
                 break;
               }
-              else if (tFace2vertex1.equals(face1vertex2) && tFace2vertex2.equals(face1vertex1) && tFace2index1 !== face1index2) { //if the vertices are the same, the indices are not tho
-                face2index1 = tFace2index2;
-                face2index2 = tFace2index1;
-                console.log("edge1 i: %d %d",face1index1,face1index2, face1vertex1, face1vertex2);
-                console.log("edge2 i: %d %d",face2index1,face2index2,tFace2vertex1,tFace2vertex2);
-                break;
-              }
-            }
-
-            if (face2index1 !== -1 && face2index2 !== -1) { //second face exists
-              console.log("merging");
-              for (let index = 0; index < face; index++) { //reroute all indices that also point to face1vertex1 to face2vertex1 (set them to face2index1)
-                if (indices[index] === face1index1) //TODO could maybe do index < face
-                  indices[index] = indices[face2index1];
-                if (indices[index] === face1index2)
-                  indices[index] = indices[face2index2];
-              }
-            }else{
-              console.log("no overlap edge1 i: %d %d",face1index1,face1index2, face1vertex1, face1vertex2);
-            }
-          }
-          //}
         }
-        //TODO remove all vertices that are not used
+
+        //if edge is not a line => find other face that uses this line => will need to be merged later
+        if (!isLine) {
+          //find 2nd faces edge
+          let foundFace2index1: number = -1; // the index of the vertex equaling the vertex of another edge
+          let foundFace2index2: number = -1;
+          for (let face2 = face + 3 - (face % 3); face2 < indices.length; face2 += 1) { //for every faces edge starting from the next face
+            const face2index1index: number = face2;
+            const face2index2index: number = face2 + (face2 % 3 === 2 ? -2 : 1);
+            const face2index1: number = indices[face2index1index];
+            const face2index2: number = indices[face2index2index];
+            const face2vertex1: Vector3 = vertices[face2index1];
+            const face2vertex2: Vector3 = vertices[face2index2];
+            if (face2vertex1.equals(face1vertex1) && face2vertex2.equals(face1vertex2) && !(face2index1 == face1index1 && face2index2 == face1index2)) { //if the vertices are the same (in values), the indices are not tho
+              foundFace2index1 = face2index1;
+              foundFace2index2 = face2index2;
+              break;
+            }
+            else if (face2vertex1.equals(face1vertex2) && face2vertex2.equals(face1vertex1) && !(face2index1 == face1index2 && face2index2 == face1index1)) { //if the vertices are the same (in values), the indices are not tho
+              foundFace2index1 = face2index2;
+              foundFace2index2 = face2index1;
+              break;
+            }
+          }
+
+          if (foundFace2index1 !== -1 && foundFace2index2 !== -1) { //second face exists
+            for (let index = 0; index < indices.length; index++) { //reroute all indices that also point to face1vertex1 to face2vertex1 (set them to face2index1)
+              if (indices[index] === face1index1) { //TODO could maybe do index < face
+                indices[index] = foundFace2index1;
+              }
+              if (indices[index] === face1index2) {
+                indices[index] = foundFace2index2;
+              }
+            }
+            indices[face1index1index] = foundFace2index1;
+            indices[face1index2index] = foundFace2index2;
+          }
+        }
+      }
+
+      //remove all vertices that now are not being used anymore
+      const removed: number[] = [];
+      for (let vIndex: number = 0; vIndex < vertices.length; vIndex++) {
+        const isUsed = indices.indexOf(vIndex);
+        if (isUsed === -1) {
+          for (let index = 0; index < indices.length; index++) {
+            if (indices[index] > vIndex)
+              indices[index]--;
+          }
+          vertices.splice(vIndex, 1);
+          removed.push(vIndex);
+        }
       }
     }
-
-    return new LdrPart(partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
   }
 
   private createMaterial(color: number): void {
@@ -545,7 +577,7 @@ export class LdrToThreeService {
             ldrPart?.colorIndexMap.set(actualPartColor, (ldrPart?.colorIndexMap.get(actualPartColor) ?? []).concat(newIndices));
           });
 
-          referencedPart.lineColorMap.forEach((vertices, referenceColor) => {
+          referencedPart.colorLineVertexMap.forEach((vertices, referenceColor) => {
             const transformedPoints: Vector3[] = [];
             //transform points with transformation matrix of the reference to the part
             for (const vertex of vertices)
@@ -555,11 +587,11 @@ export class LdrToThreeService {
               transformedPoints.reverse();
 
             //append points of referenced part to the upper part to reduce the size of render hierachy
-            if (ldrPart?.lineColorMap.has(referenceColor)) {
-              const fullList = ldrPart?.lineColorMap.get(referenceColor)?.concat(transformedPoints)
-              ldrPart?.lineColorMap.set(referenceColor, fullList ? fullList : []);
+            if (ldrPart?.colorLineVertexMap.has(referenceColor)) {
+              const fullList = ldrPart?.colorLineVertexMap.get(referenceColor)?.concat(transformedPoints)
+              ldrPart?.colorLineVertexMap.set(referenceColor, fullList ? fullList : []);
             } else
-              ldrPart?.lineColorMap.set(referenceColor, transformedPoints);
+              ldrPart?.colorLineVertexMap.set(referenceColor, transformedPoints);
           });
         }
       });

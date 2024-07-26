@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
-import {LdrToThreeService} from 'src/app/services/file/ldr-to-three.service';
-import {AmbientLight, Box3, Clock, Group, PerspectiveCamera, PointLight, Scene, Vector3, WebGLRenderer} from 'three';
-import {CommonModule} from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { LdrToThreeService } from 'src/app/services/file/ldr-to-three.service';
+import { AmbientLight, BasicShadowMap, Box3, CameraHelper, Clock, DirectionalLight, Group, Mesh, MeshBasicMaterial, MeshLambertMaterial, MeshStandardMaterial, PCFSoftShadowMap, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
@@ -22,7 +22,7 @@ export class ViewerComponent implements OnInit {
 
   @Input('showViewer')
   showViewer: boolean = false;
-  
+
   private dataCTSubject = new BehaviorSubject<number>(0);
   computingTime: Observable<number> = this.dataCTSubject.asObservable();
 
@@ -30,6 +30,8 @@ export class ViewerComponent implements OnInit {
   loadingFinished: boolean = true;
 
   loadingText = this.ioFileService.loadingState;
+
+  public ENABLE_SHADOWS: boolean = false;
 
   private readonly clock = new Clock();
   // 30 fps
@@ -45,8 +47,7 @@ export class ViewerComponent implements OnInit {
 
   async showViewerMoc() {
     this.loadingFinished = false;
-    let group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor);
-    group.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
+    const group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor);
     this.createThreeJsBox(group);
   }
 
@@ -54,55 +55,69 @@ export class ViewerComponent implements OnInit {
 
     const scene = new Scene();
 
-    const pointLight = new PointLight(0xffffff, 0.3);
-    pointLight.position.add(new Vector3(1000, 500, 1000));
+    mocGroup.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
+    const mocBB = new Box3().setFromObject(mocGroup);
+    mocGroup.position.y += mocBB.getSize(new Vector3()).y / 2;
+    scene.add(mocGroup);
+
+    const pointLight = new DirectionalLight(0xffffff, 0.5);
+    pointLight.position.set(100,100,-100);
+    if (this.ENABLE_SHADOWS) {
+      pointLight.castShadow = true;
+      pointLight.shadow.mapSize.width = 1024;
+      pointLight.shadow.mapSize.height = 1024;
+      pointLight.shadow.camera.near = 0.5;
+      pointLight.shadow.camera.far = 2000;
+      //const helper = new CameraHelper(pointLight.shadow.camera);
+      //scene.add(helper);
+    }
     scene.add(pointLight);
-
-    const pointLight2 = new PointLight(0xffffff, 0.3);
-    pointLight2.position.add(new Vector3(-1000, 500, -1000));
-    scene.add(pointLight2);
-
-    const ambientLight = new AmbientLight(0xffffff, 0.6);
+    const ambientLight = new AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
 
-    scene.add(mocGroup);
+    //scene.add( new Box3Helper( new Box3().setFromObject(mocGroup), new Color(0xffff00) ) );
+    //const axesHelper = new AxesHelper( 5 );
+    //scene.add( axesHelper );
+
+    const planeGeometry = new PlaneGeometry(200, 200, 50, 50);
+    const planeMaterial = new MeshLambertMaterial({ color: 0x999999 });
+    const plane = new Mesh(planeGeometry, planeMaterial);
+    plane.rotateX(-Math.PI / 2);
+    if (this.ENABLE_SHADOWS)
+      plane.receiveShadow = true;
+    scene.add(plane);
 
     let canvasSizes = {
       width: window.innerWidth / 3,
       height: window.innerWidth * (3 / 12),
     };
-
     const canvas = document.getElementById('canvas-box');
     const canvasDiv = document.getElementById('canvas-viewer');
-
     if (!canvas || !canvasDiv) {
       console.error("Error: no canvas found");
       return;
     }
-
     if (canvasDiv)
       canvasSizes = {
         width: canvasDiv.clientWidth,
         height: canvasDiv.clientWidth * (3 / 4)
       };
 
-    const camera = new PerspectiveCamera(50, canvasSizes.width / canvasSizes.height, 0.5, 5000);
-    const mocBoundingBox = new Box3();
-    mocBoundingBox.setFromObject(mocGroup);
-    camera.position.x = (mocBoundingBox.max.x + mocBoundingBox.min.x) / 2
-    camera.position.y = (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2
-    camera.position.z = (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2
-    camera.translateZ(200);
-    camera.lookAt(new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2, (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2, (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2));
+    const camera = new PerspectiveCamera(50, canvasSizes.width / canvasSizes.height, 0.5, 1000);
+    camera.position.z = -100;
+    camera.position.y = mocBB.getSize(new Vector3).y * 0.8;
+    camera.position.x = -50;
     scene.add(camera);
 
-    const renderer = new WebGLRenderer({antialias: true, canvas: canvas});
+    const renderer = new WebGLRenderer({ antialias: true, canvas: canvas });
     renderer.setClearColor(0x19212D, 1);
+    if (this.ENABLE_SHADOWS) {
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = BasicShadowMap;
+    }
     renderer.setSize(canvasSizes.width, canvasSizes.height);
     renderer.setPixelRatio(window.devicePixelRatio * 1.5);
     renderer.setClearColor("rgb(88,101,117)");
-    /*renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = BasicShadowMap;*/
 
     window.addEventListener('resize', () => {
       canvasSizes.width = canvasDiv.clientWidth;
@@ -116,7 +131,9 @@ export class ViewerComponent implements OnInit {
     });
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.target = new Vector3((mocBoundingBox.max.x + mocBoundingBox.min.x) / 2, (mocBoundingBox.max.y + mocBoundingBox.min.y) / 2, (mocBoundingBox.max.z + mocBoundingBox.min.z) / 2);
+    controls.target = new Vector3(0, mocBB.getSize(new Vector3).y / 2, 0);
+    controls.maxDistance = 500;
+    controls.minDistance = 5;
 
     const update = () => {
       this.dataCTSubject.next(this.clock.getElapsedTime()); //TODO only when debug mode enabled

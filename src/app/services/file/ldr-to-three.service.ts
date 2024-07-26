@@ -116,7 +116,7 @@ export class LdrToThreeService {
       mocElement.position.y -= center.y;
       mocElement.position.z -= center.z;
     }
-
+    mocGroup.scale.setScalar(0.044);
     return mocGroup;
   }
 

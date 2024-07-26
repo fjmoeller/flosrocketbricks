@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { LdrToThreeService } from 'src/app/services/file/ldr-to-three.service';
-import { AmbientLight, BasicShadowMap, Box3, CameraHelper, Clock, Group, Mesh, MeshBasicMaterial, MeshLambertMaterial, MeshStandardMaterial, PCFSoftShadowMap, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { AmbientLight, BasicShadowMap, Box3, CameraHelper, Clock, DirectionalLight, Group, Mesh, MeshBasicMaterial, MeshLambertMaterial, MeshStandardMaterial, PCFSoftShadowMap, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -57,14 +57,11 @@ export class ViewerComponent implements OnInit {
 
     mocGroup.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
     const mocBB = new Box3().setFromObject(mocGroup);
-    const size = mocBB.getSize(new Vector3());
-    mocGroup.position.y += size.y / 2;
+    mocGroup.position.y += mocBB.getSize(new Vector3()).y / 2;
     scene.add(mocGroup);
 
-    const pointLight = new PointLight(0xffffff, 0.5,4000);
-    pointLight.position.add(new Vector3(1000, mocBB.getSize(new Vector3()).y, -1000));
-    pointLight.lookAt(mocBB.getCenter(new Vector3));
-    pointLight.shadow.camera.lookAt(mocBB.getCenter(new Vector3));
+    const pointLight = new DirectionalLight(0xffffff, 0.5);
+    pointLight.position.set(100,100,-100);
     if (this.ENABLE_SHADOWS) {
       pointLight.castShadow = true;
       pointLight.shadow.mapSize.width = 1024;
@@ -82,7 +79,7 @@ export class ViewerComponent implements OnInit {
     //const axesHelper = new AxesHelper( 5 );
     //scene.add( axesHelper );
 
-    const planeGeometry = new PlaneGeometry(2000, 2000, 50, 50);
+    const planeGeometry = new PlaneGeometry(200, 200, 50, 50);
     const planeMaterial = new MeshLambertMaterial({ color: 0x999999 });
     const plane = new Mesh(planeGeometry, planeMaterial);
     plane.rotateX(-Math.PI / 2);
@@ -106,10 +103,10 @@ export class ViewerComponent implements OnInit {
         height: canvasDiv.clientWidth * (3 / 4)
       };
 
-    const camera = new PerspectiveCamera(50, canvasSizes.width / canvasSizes.height, 0.5, 5000);
-    camera.position.z = -1000;
+    const camera = new PerspectiveCamera(50, canvasSizes.width / canvasSizes.height, 0.5, 1000);
+    camera.position.z = -100;
     camera.position.y = mocBB.getSize(new Vector3).y * 0.8;
-    camera.position.x = -500;
+    camera.position.x = -50;
     scene.add(camera);
 
     const renderer = new WebGLRenderer({ antialias: true, canvas: canvas });
@@ -135,8 +132,8 @@ export class ViewerComponent implements OnInit {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.target = new Vector3(0, mocBB.getSize(new Vector3).y / 2, 0);
-    controls.maxDistance = 3500;
-    controls.minDistance = 10;
+    controls.maxDistance = 500;
+    controls.minDistance = 5;
 
     const update = () => {
       this.dataCTSubject.next(this.clock.getElapsedTime()); //TODO only when debug mode enabled

@@ -34,7 +34,7 @@ export class LdrawColorService {
     const ldrcolor = this.ldrColorList.get(id);
     const finalColor = this.getHexColorFromLdrawColorId(id);
     const opacity = ldrcolor ? ldrcolor.alpha / 255 : 0.0;
-    const transparent = opacity > 0.001;
+    const transparent = opacity < 0.999;
     const roughness = 0.8;
 
     if (ldrcolor)
@@ -43,7 +43,7 @@ export class LdrawColorService {
         case "PEARLESCENT": return { metalness: 0.3, roughness: 0.4, emissive: new Color(finalColor.r - 0.2, finalColor.g - 0.2, finalColor.b - 0.2), color: finalColor, opacity: opacity, transparent: transparent };
         case "METAL": return { metalness: 1, roughness: 0.3, emissive: new Color(finalColor.r - 0.1, finalColor.g - 0.1, finalColor.b - 0.1), color: finalColor, opacity: opacity, transparent: transparent };
       }
-    return { color: finalColor, opacity: opacity, roughness: roughness, transparent: transparent }
+    return { color: finalColor, opacity: opacity, roughness: roughness, transparent: transparent}
   }
 
   getHexColorFromLdrawColorId(id: number): Color {

@@ -5,6 +5,250 @@
             "Europe"
         ],
         "links": [
+        ],
+        "type": "other",
+        "id": 213,
+        "title": "Tale of Ariane 6 FM1: Air",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-08-02",
+        "dateCreated": "2024-08-02",
+        "related": [
+            208,210,211,212
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the air element. It is compatible with all other tales.",
+        "rocketDescription": "The tale shows a Mirage 2000 flying with the Ariane 6 FM1 rocket in the background.",
+        "internalColor": "",
+        "scale": "",
+        "parts": 200,
+        "dimensions": "3.2x9.6x14.7cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/air/tale-of-ariane-6-fm1-air-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/air/V1.0/Tale_Of_Ariane_6_FM1_Air_V1.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/Tale_Of_Ariane_6_FM1_Elements_V1.0_1.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/air/V1.0/Tale_Of_Ariane_6_FM1_Air_V1.0.io",
+                        "name": "Tale_Of_Ariane_6_FM1_Air_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": [
+            "Europe"
+        ],
+        "links": [
+        ],
+        "type": "other",
+        "id": 212,
+        "title": "Tale of Ariane 6 FM1: Earth",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-08-02",
+        "dateCreated": "2024-08-02",
+        "related": [
+            208,210,211,213
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the earth element. It is compatible with all other tales.",
+        "rocketDescription": "The tale shows the Ariane 6 rocket inside the mobile gantry.",
+        "internalColor": "",
+        "scale": "",
+        "parts": 261,
+        "dimensions": "3.2x9.6x14.7cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/earth/tale-of-ariane-6-fm1-earth-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/earth/V1.0/Tale_Of_Ariane_6_FM1_Earth_V1.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/Tale_Of_Ariane_6_FM1_Elements_V1.0_1.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/earth/V1.0/Tale_Of_Ariane_6_FM1_Earth_V1.0.io",
+                        "name": "Tale_Of_Ariane_6_FM1_Earth_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": [
+            "Europe"
+        ],
+        "links": [
+        ],
+        "type": "other",
+        "id": 211,
+        "title": "Tale of Ariane 6 FM1: Water",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-08-02",
+        "dateCreated": "2024-08-02",
+        "related": [
+            208,210,212,213
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the water element. It is compatible with all other tales.",
+        "rocketDescription": "The tale shows the the flame trench with the rocket launching in the background.",
+        "internalColor": "",
+        "scale": "",
+        "parts": 237,
+        "dimensions": "3.2x9.6x14.7cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/water/tale-of-ariane-6-fm1-water-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/water/V1.0/Tale_Of_Ariane_6_FM1_Water_V1.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/Tale_Of_Ariane_6_FM1_Elements_V1.0_1.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/water/V1.0/Tale_Of_Ariane_6_FM1_Water_V1.0.io",
+                        "name": "Tale_Of_Ariane_6_FM1_Water_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": [
+            "Europe"
+        ],
+        "links": [
+        ],
+        "type": "other",
+        "id": 210,
+        "title": "Tale of Ariane 6 FM1: Fire",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-08-02",
+        "dateCreated": "2024-08-02",
+        "related": [
+            208,211,212,213
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the fire element. It is compatible with all other tales.",
+        "rocketDescription": "The tale shows the engine section of the Ariane 6 rocket on its first launch.",
+        "internalColor": "",
+        "scale": "",
+        "parts": 306,
+        "dimensions": "3.2x9.6x14.7cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/fire/tale-of-ariane-6-fm1-fire-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/fire/V1.0/Tale_Of_Ariane_6_FM1_Fire_V1.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/Tale_Of_Ariane_6_FM1_Elements_V1.0_1.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-ariane-6-fm1/elements/fire/V1.0/Tale_Of_Ariane_6_FM1_Fire_V1.0.io",
+                        "name": "Tale_Of_Ariane_6_FM1_Fire_V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": [
+            "Europe"
+        ],
+        "links": [
             "http://www.capcomespace.net/dossiers/espace_europeen/CSG/ELA4/ELA4.htm"
         ],
         "type": "launchpad",

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        
+  <url>
+    <loc>https://flosrocketbricks.com/moc/214/long-march-6a/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-6/a/110-long-march-6a-v1.5.jpg</image:loc>
+    </image:image>
+  </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/213/tale-of-Ariane-6-fm1-air/</loc>
     <image:image>
@@ -28,7 +35,7 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/209/ela-4-launchpad/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/ela-4/launchpad/110-ela-4-launchpad-v1.0.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/ela-4/launchpad/110-ela-4-launchpad-v1.1.jpg</image:loc>
     </image:image>
   </url>
   <url>

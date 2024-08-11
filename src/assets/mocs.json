@@ -2,10 +2,72 @@
     {
         "company": "",
         "region": [
+            "China"
+        ],
+        "links": [],
+        "type": "rocket",
+        "id": 214,
+        "title": "Long March 6A",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-08-11",
+        "dateCreated": "2024-08-11",
+        "related": [
+            128,
+            198
+        ],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the air element. It is compatible with all other tales.",
+        "rocketDescription": "The tale shows a Mirage 2000 flying with the Ariane 6 FM1 rocket in the background.",
+        "internalColor": "Green",
+        "scale": "110",
+        "parts": 1056,
+        "dimensions": "8.8x8.8x44.3cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-6/a/110-long-march-6a-v1.5.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-6/a/v1.5/Long_March_6A_V1.5_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-6/a/v1.5/Long_March_6A_V1.5_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-6/a/v1.5/Long_March_6A_V1.5_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-6/a/v1.5/Long_March_6A_V1.5_4.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-6/a/v1.5/Long_March_6A_V1.5.io",
+                        "name": "Long_March_6A_V1.5.io"
+                    }
+                ],
+                "version": "V1.5"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": [
             "Europe"
         ],
-        "links": [
-        ],
+        "links": [],
         "type": "other",
         "id": 213,
         "title": "Tale of Ariane 6 FM1: Air",
@@ -15,7 +77,10 @@
         "lastupdate": "2024-08-02",
         "dateCreated": "2024-08-02",
         "related": [
-            208,210,211,212
+            208,
+            210,
+            211,
+            212
         ],
         "updateMessage": "",
         "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the air element. It is compatible with all other tales.",
@@ -65,8 +130,7 @@
         "region": [
             "Europe"
         ],
-        "links": [
-        ],
+        "links": [],
         "type": "other",
         "id": 212,
         "title": "Tale of Ariane 6 FM1: Earth",
@@ -76,7 +140,10 @@
         "lastupdate": "2024-08-02",
         "dateCreated": "2024-08-02",
         "related": [
-            208,210,211,213
+            208,
+            210,
+            211,
+            213
         ],
         "updateMessage": "",
         "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the earth element. It is compatible with all other tales.",
@@ -126,8 +193,7 @@
         "region": [
             "Europe"
         ],
-        "links": [
-        ],
+        "links": [],
         "type": "other",
         "id": 211,
         "title": "Tale of Ariane 6 FM1: Water",
@@ -137,7 +203,10 @@
         "lastupdate": "2024-08-02",
         "dateCreated": "2024-08-02",
         "related": [
-            208,210,212,213
+            208,
+            210,
+            212,
+            213
         ],
         "updateMessage": "",
         "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the water element. It is compatible with all other tales.",
@@ -187,8 +256,7 @@
         "region": [
             "Europe"
         ],
-        "links": [
-        ],
+        "links": [],
         "type": "other",
         "id": 210,
         "title": "Tale of Ariane 6 FM1: Fire",
@@ -198,7 +266,10 @@
         "lastupdate": "2024-08-02",
         "dateCreated": "2024-08-02",
         "related": [
-            208,211,212,213
+            208,
+            211,
+            212,
+            213
         ],
         "updateMessage": "",
         "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the fire element. It is compatible with all other tales.",
@@ -257,7 +328,7 @@
         "altTitles": [],
         "tags": [],
         "designer": "SkySaac",
-        "lastupdate": "2024-07-18",
+        "lastupdate": "2024-08-07",
         "dateCreated": "2024-07-18",
         "related": [
             99
@@ -267,19 +338,34 @@
         "rocketDescription": "The launchtable and the umbilical mast are used on the ELA-4 launchpad for the Ariane 6 rocket.",
         "internalColor": "Dark Pink",
         "scale": "110",
-        "parts": 2238,
+        "parts": 2247,
         "dimensions": "3.2x9.9x14.7cm",
         "stability": -1,
         "difficulty": -1,
         "fanPictures": [],
-        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/ela-4/launchpad/110-ela-4-launchpad-v1.0.jpg",
+        "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/ela-4/launchpad/110-ela-4-launchpad-v1.1.jpg",
         "pictures": [
-            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.0/ELA-4_Launchpad_V1.0_1.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.0/ELA-4_Launchpad_V1.0_2.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.0/ELA-4_Launchpad_V1.0_3.jpg",
-            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.0/ELA-4_Launchpad_V1.0_4.jpg"
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.1/ELA-4_Launchpad_V1.1_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.1/ELA-4_Launchpad_V1.1_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.1/ELA-4_Launchpad_V1.1_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.1/ELA-4_Launchpad_V1.1_4.jpg"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.1/ELA-4_Launchpad_V1.1.io",
+                        "name": "ELA-4_Launchpad_V1.1.io"
+                    }
+                ],
+                "version": "V1.1"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",
@@ -1012,7 +1098,8 @@
         "lastupdate": "2024-05-08",
         "dateCreated": "2024-05-08",
         "related": [
-            128
+            128,
+            214
         ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Long March 6C rocket. The first stage can be separated from the 2nd stage. The fairing has some space for a small payload.",
@@ -6183,7 +6270,9 @@
         "lastupdate": "2023-08-25",
         "dateCreated": "2021-05-02",
         "related": [
-            129
+            129,
+            198,
+            214
         ],
         "updateMessage": "",
         "mocDescription": "This is a MOC of the Long March 6 rocket. The first two stages can be separated from another. It is compatible with the Taiyuan LC16 launchpad MOC.",
@@ -11226,7 +11315,10 @@
         "dimensions": "4.1x4.1x44cm",
         "dimensionsExtra": "",
         "tags": [],
-        "altTitles": ["LM-4C","CZ-4C"],
+        "altTitles": [
+            "LM-4C",
+            "CZ-4C"
+        ],
         "parts": 549,
         "partsExtra": "The rocket can be build completely out of Lego bricks.",
         "title": "Long March 4C",

@@ -59,7 +59,7 @@ export class MetaServiceService {
   }
 
   getPageMocLink(id: number, mocTitle: string): string {
-    return "/moc/" + id.toString() + "/" + mocTitle.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("").split(":").join("-") + "/";
+    return "/moc/" + id.toString() + "/" + mocTitle.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("").split(":").join("-").split("--").join("-") + "/";
   }
 
   getTotalMocLink(moc: Moc): string {

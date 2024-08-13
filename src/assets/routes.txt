@@ -212,10 +212,10 @@
 /moc/207/tale-of-sts-130/
 /moc/208/tale-of-ariane-6-fm1/
 /moc/209/ela-4-launchpad/
-/moc/210/tale-of-Ariane-6-fm1-fire/
-/moc/211/tale-of-Ariane-6-fm1-water/
-/moc/212/tale-of-Ariane-6-fm1-earth/
-/moc/213/tale-of-Ariane-6-fm1-air/
+/moc/210/tale-of-ariane-6-fm1-fire/
+/moc/211/tale-of-ariane-6-fm1-water/
+/moc/212/tale-of-ariane-6-fm1-earth/
+/moc/213/tale-of-ariane-6-fm1-air/
 /moc/214/long-march-6a/
 /about/
 /404/

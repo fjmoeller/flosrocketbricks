@@ -1,25 +1,16 @@
 <div class="main-content container-fluid">
-    <div class="row">
-        <div id="mocCarousel" class="carousel slide col-md-7 mx-auto" data-bs-ride="carousel">
-            <div class="carousel-inner">
+    <div class="row mx-4">
+        <div class="slideshow-container col-md-7">
                 @for(picture of moc.pictures;track picture; let index = $index){
-                <div [class.active]="index === 0" class="carousel-item">
+                <div [style.display]="(index===slideIndex) ? 'block' : 'none'">
                     <img [src]="picture" class="d-block w-100" [alt]="moc.title" [title]="moc.title">
                 </div>
                 }
-            </div>
-            @if(moc.pictures.length > 1){
-            <button class="carousel-control-prev" type="button" data-bs-target="#mocCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            }
-            @if (moc.pictures.length > 1){
-            <button class="carousel-control-next" type="button" data-bs-target="#mocCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            }
+                <div class="numbertext">{{slideIndex+1}} / {{moc.pictures.length}}</div>
+                @if(moc.pictures.length > 1){
+                <a class="prev p-4" (click)="changeSlide(-1)">&#10094;</a>
+                <a class="next p-4" (click)="changeSlide(1)">&#10095;</a>
+                }
         </div>
         <div class="col-md-5 text-coloring">
             <div class="row justify-content-center text-center my-3">

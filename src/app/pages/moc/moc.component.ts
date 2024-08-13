@@ -1,12 +1,12 @@
-import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
-import {ActivatedRoute, Router, RouterLink} from '@angular/router';
-import {Moc, Version} from '../../model/classes';
-import {MocGrabberService} from 'src/app/services/grabber/moc-grabber.service';
-import {MetaServiceService} from 'src/app/services/meta-service.service';
-import {FileExportService} from 'src/app/services/file/file-export.service';
-import {CardComponent} from 'src/app/components/card/card.component';
-import {ViewerComponent} from 'src/app/components/viewer/viewer.component';
-import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Moc, Version } from '../../model/classes';
+import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
+import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { FileExportService } from 'src/app/services/file/file-export.service';
+import { CardComponent } from 'src/app/components/card/card.component';
+import { ViewerComponent } from 'src/app/components/viewer/viewer.component';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 
 @Component({
@@ -22,8 +22,9 @@ export class MocComponent implements OnInit, OnDestroy {
   viewerLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io"; //default link
 
   showViewer: boolean = false;
+  slideIndex: number = 0;
 
-  constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: any, private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
+  constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: any, private renderer: Renderer2, private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
   }
 
@@ -41,8 +42,12 @@ export class MocComponent implements OnInit, OnDestroy {
         this.router.navigate(['/404/']);
       }
       if (isPlatformBrowser(this.platformId))
-        window.scroll({top: 0, left: 0, behavior: "instant"});
+        window.scroll({ top: 0, left: 0, behavior: "instant" });
     });
+  }
+
+  changeSlide(n: number): void {
+    this.slideIndex = ((this.slideIndex + n) + this.moc.pictures.length) % this.moc.pictures.length;
   }
 
   toggleViewer(url: string): void {
@@ -58,7 +63,7 @@ export class MocComponent implements OnInit, OnDestroy {
 
   async downloadXml(filelink: string, filename: string) {
     const data = await this.fileExportService.getXml(filelink, this.moc.internalColor);
-    const blob = new Blob([data], {type: 'application/xml'});
+    const blob = new Blob([data], { type: 'application/xml' });
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);
     a.download = filename.split(".io")[0] + ".xml";
@@ -67,7 +72,7 @@ export class MocComponent implements OnInit, OnDestroy {
 
   async downloadCsv(filelink: string, filename: string) {
     const data = await this.fileExportService.getCsv(filelink, this.moc.internalColor);
-    const blob = new Blob([data], {type: 'text/csv'});
+    const blob = new Blob([data], { type: 'text/csv' });
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);
     a.download = filename.split(".io")[0] + ".csv";

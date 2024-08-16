@@ -217,5 +217,6 @@
 /moc/212/tale-of-ariane-6-fm1-earth/
 /moc/213/tale-of-ariane-6-fm1-air/
 /moc/214/long-march-6a/
+/moc/215/need-a-ride-t-shirt/
 /about/
 /404/

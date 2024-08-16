@@ -148,7 +148,7 @@
       <div class="mt-1 card-group">
         @for (moc of mocs; track moc) {
           <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
-                    [id]="moc.id" [scale]="moc.scale">
+                    [id]="moc.id" [type]="moc.type" [scale]="moc.scale">
           </app-card>
         }
       </div>

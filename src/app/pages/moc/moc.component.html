@@ -1,16 +1,16 @@
 <div class="main-content container-fluid">
     <div class="row mx-4">
         <div class="slideshow-container col-md-7">
-                @for(picture of moc.pictures;track picture; let index = $index){
-                <div [style.display]="(index===slideIndex) ? 'block' : 'none'">
-                    <img [src]="picture" class="d-block w-100" [alt]="moc.title" [title]="moc.title">
-                </div>
-                }
-                <div class="numbertext">{{slideIndex+1}} / {{moc.pictures.length}}</div>
-                @if(moc.pictures.length > 1){
-                <a class="prev p-4" (click)="changeSlide(-1)">&#10094;</a>
-                <a class="next p-4" (click)="changeSlide(1)">&#10095;</a>
-                }
+            @for(picture of moc.pictures;track picture; let index = $index){
+            <div [style.display]="(index===slideIndex) ? 'block' : 'none'">
+                <img [src]="picture" class="d-block w-100" [alt]="moc.title" [title]="moc.title">
+            </div>
+            }
+            <div class="numbertext">{{slideIndex+1}} / {{moc.pictures.length}}</div>
+            @if(moc.pictures.length > 1){
+            <a class="prev p-4" (click)="changeSlide(-1)">&#10094;</a>
+            <a class="next p-4" (click)="changeSlide(1)">&#10095;</a>
+            }
         </div>
         <div class="col-md-5 text-coloring">
             <div class="row justify-content-center text-center my-3">
@@ -20,6 +20,7 @@
             </div>
             <img style="width:0;height:0" [src]="moc.smallCoverImage" [alt]="moc.title" [title]="moc.title">
             <div class="container">
+                @if(moc.type !== "merch"){
                 <div class="row py-3">
                     <div class="col-6 justify-content-center text-center">
                         <div class="row">
@@ -76,65 +77,35 @@
                         </div>
                     </div>
                 </div>
+                }
                 <div class="row py-3">
                     <div class="col-6 justify-content-center text-center py-auto">
                         <div class="row">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-wrench-adjustable" viewBox="0 0 16 16">
+                                class="bi bi-person-square" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                 <path
-                                    d="M16 4.5a4.492 4.492 0 0 1-1.703 3.526L13 5l2.959-1.11c.027.2.041.403.041.61Z" />
-                                <path
-                                    d="M11.5 9c.653 0 1.273-.139 1.833-.39L12 5.5 11 3l3.826-1.53A4.5 4.5 0 0 0 7.29 6.092l-6.116 5.096a2.583 2.583 0 1 0 3.638 3.638L9.908 8.71A4.49 4.49 0 0 0 11.5 9Zm-1.292-4.361-.596.893.809-.27a.25.25 0 0 1 .287.377l-.596.893.809-.27.158.475-1.5.5a.25.25 0 0 1-.287-.376l.596-.893-.809.27a.25.25 0 0 1-.287-.377l.596-.893-.809.27-.158-.475 1.5-.5a.25.25 0 0 1 .287.376ZM3 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+                                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
                             </svg>
                         </div>
                         <div class="row justify-content-center popover-wrapper">
-                            <strong>Stability:</strong>
-                            <div>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2,'brick-1-color': moc.stability==1}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5}" class="brick-default-color"
-                                    width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                            </div>
-                            <span>{{getStabilityText(moc.stability)}}
-                                @if(moc.stabilityExtra !==''){
+                            <strong>Designers:</strong>
+
+                            <span>{{moc.designer}}
+                                @if(moc.designerExtra !== ''){
                                 <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                     <path
                                         d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                </svg>
-                                }
-                                @if(moc.stabilityExtra !== '' && moc.stabilityExtra !== '-'){
-                                <div class="popover-content">
-                                    <p class="popover-content-text">{{moc.stabilityExtra}}</p>
-                                </div>
-                                }
+                                </svg>}
                             </span>
+
+                            @if(moc.designerExtra !== '' && moc.designerExtra !== '-'){
+                            <div class="popover-content">
+                                <p class="popover-content-text">{{moc.designerExtra}}</p>
+                            </div>
+                            }
                         </div>
                     </div>
                     <div class="col-6 justify-content-center text-center py-auto">
@@ -152,6 +123,7 @@
                         </div>
                     </div>
                 </div>
+                @if(moc.type !== "merch"){
                 <div class="row py-3">
                     <div class="col-6 justify-content-center text-center py-auto">
                         <div class="row">
@@ -184,28 +156,27 @@
                     <div class="col-6 justify-content-center text-center py-auto">
                         <div class="row">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-person-square" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                class="bi bi-palette-fill" viewBox="0 0 16 16">
                                 <path
-                                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
+                                    d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                             </svg>
                         </div>
                         <div class="row justify-content-center popover-wrapper">
-                            <strong>Designers:</strong>
-
-                            <span>{{moc.designer}}
-                                @if(moc.designerExtra !== ''){
+                            <strong>Placeholder color:</strong>
+                            <span>
+                                {{moc.internalColor}}
+                                @if(moc.internalColorExtra !== ''){
                                 <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                     <path
                                         d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                </svg>}
+                                </svg>
+                                }
                             </span>
-
-                            @if(moc.designerExtra !== '' && moc.designerExtra !== '-'){
+                            @if(moc.internalColorExtra !== '' && moc.internalColorExtra !== '-'){
                             <div class="popover-content">
-                                <p class="popover-content-text">{{moc.designerExtra}}</p>
+                                <p class="popover-content-text">{{moc.internalColorExtra}}</p>
                             </div>
                             }
                         </div>
@@ -273,16 +244,48 @@
                     <div class="col-6 justify-content-center text-center py-auto">
                         <div class="row">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-palette-fill" viewBox="0 0 16 16">
+                                class="bi bi-wrench-adjustable" viewBox="0 0 16 16">
                                 <path
-                                    d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                    d="M16 4.5a4.492 4.492 0 0 1-1.703 3.526L13 5l2.959-1.11c.027.2.041.403.041.61Z" />
+                                <path
+                                    d="M11.5 9c.653 0 1.273-.139 1.833-.39L12 5.5 11 3l3.826-1.53A4.5 4.5 0 0 0 7.29 6.092l-6.116 5.096a2.583 2.583 0 1 0 3.638 3.638L9.908 8.71A4.49 4.49 0 0 0 11.5 9Zm-1.292-4.361-.596.893.809-.27a.25.25 0 0 1 .287.377l-.596.893.809-.27.158.475-1.5.5a.25.25 0 0 1-.287-.376l.596-.893-.809.27a.25.25 0 0 1-.287-.377l.596-.893-.809.27-.158-.475 1.5-.5a.25.25 0 0 1 .287.376ZM3 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
                             </svg>
                         </div>
                         <div class="row justify-content-center popover-wrapper">
-                            <strong>Placeholder color:</strong>
-                            <span>
-                                {{moc.internalColor}}
-                                @if(moc.internalColorExtra !== ''){
+                            <strong>Stability:</strong>
+                            <div>
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2,'brick-1-color': moc.stability==1}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4}"
+                                    class="brick-default-color" width="16" height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                                <svg [ngClass]="{'brick-5-color': moc.stability==5}" class="brick-default-color"
+                                    width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
+                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
+                                </svg>
+                            </div>
+                            <span>{{getStabilityText(moc.stability)}}
+                                @if(moc.stabilityExtra !==''){
                                 <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -290,15 +293,16 @@
                                         d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
                                 </svg>
                                 }
+                                @if(moc.stabilityExtra !== '' && moc.stabilityExtra !== '-'){
+                                <div class="popover-content">
+                                    <p class="popover-content-text">{{moc.stabilityExtra}}</p>
+                                </div>
+                                }
                             </span>
-                            @if(moc.internalColorExtra !== '' && moc.internalColorExtra !== '-'){
-                            <div class="popover-content">
-                                <p class="popover-content-text">{{moc.internalColorExtra}}</p>
-                            </div>
-                            }
                         </div>
                     </div>
                 </div>
+                }
             </div>
         </div>
     </div>
@@ -320,14 +324,14 @@
             </div>
             }
             <h4>About the MOC</h4>
-            <p>
+            <p style="white-space: pre-wrap">
                 {{moc.mocDescription}}
             </p>
-            @if(moc.rocketDescription!=''){
+            @if(moc.rocketDescription !== '' && moc.type !== 'merch'){
             <h4 class="pt-2">About the {{moc.type}}</h4>
             }
-            @if(moc.type!=''){
-            <p>
+            @if(moc.type !== '' && moc.type !== 'merch'){
+            <p style="white-space: pre-wrap">
                 {{moc.rocketDescription}}
             </p>
             }
@@ -466,8 +470,8 @@
                     [id]="moc.id" [scale]="moc.scale" [followRel]="true">
                 </app-card>
                 <app-card class="moc-card" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
-                    [name]="relatedMoc.title" [parts]="relatedMoc.parts" [id]="relatedMoc.id" [scale]="relatedMoc.scale"
-                    [followRel]="true">
+                    [name]="relatedMoc.title" [parts]="relatedMoc.parts" [type]="moc.type" [id]="relatedMoc.id"
+                    [scale]="relatedMoc.scale" [followRel]="true">
                 </app-card>
             </div>
         </div>

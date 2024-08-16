@@ -20,7 +20,7 @@
         </span>
         <div class="card-group">
             @for(moc of newestMocs; track moc){
-            <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts" [id]="moc.id"
+            <app-card class="moc-card" [type]="moc.type" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts" [id]="moc.id"
                 [scale]="moc.scale" [followRel]="true">
             </app-card>
             }
@@ -32,7 +32,7 @@
         </span>
         <div class="card-group">
             @for(moc of newestUpdates; track moc){
-            <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts" [id]="moc.id"
+            <app-card class="moc-card" [type]="moc.type" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts" [id]="moc.id"
                 [scale]="moc.scale" [followRel]="true">
             </app-card>
             }

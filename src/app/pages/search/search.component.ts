@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FrontTag, Moc } from '../../model/classes';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
 import { CardComponent } from 'src/app/components/card/card.component';
@@ -22,12 +22,12 @@ export class SearchComponent implements OnInit {
   sortingDirection: number = -1;
 
   tagRegions: FrontTag[] = [{ tagId: "", tagName: "All Regions", selected: true }, { tagId: "Australia", tagName: "Australia", selected: false }, { tagId: "China", tagName: "China", selected: false }, { tagId: "Europe", tagName: "Europe", selected: false }, { tagId: "France", tagName: "France", selected: false }, { tagId: "Germany", tagName: "Germany", selected: false }, { tagId: "Japan", tagName: "Japan", selected: false }, { tagId: "New Zeeland", tagName: "New Zeeland", selected: false }, { tagId: "North Korea", tagName: "North Korea", selected: false }, { tagId: "Russia", tagName: "Russia", selected: false }, { tagId: "South Korea", tagName: "South Korea", selected: false }, { tagId: "USSR", tagName: "USSR", selected: false }, { tagId: "Ukraine", tagName: "Ukraine", selected: false }, { tagId: "United Kingdom", tagName: "United Kingdom", selected: false }, { tagId: "USA", tagName: "USA", selected: false }];
-  tagTypes: FrontTag[] = [{ tagId: "", tagName: "All Types", selected: true }, { tagId: "rocket", tagName: "Rocket", selected: false }, { tagId: "launchpad", tagName: "Launchpad", selected: false }, { tagId: "spacecraft", tagName: "Spacecraft", selected: false }, { tagId: "spacestation", tagName: "Space Station", selected: false }, { tagId: "other", tagName: "Other", selected: false }];
+  tagTypes: FrontTag[] = [{ tagId: "", tagName: "All Types", selected: true }, { tagId: "rocket", tagName: "Rocket", selected: false }, { tagId: "launchpad", tagName: "Launchpad", selected: false }, { tagId: "spacecraft", tagName: "Spacecraft", selected: false }, { tagId: "spacestation", tagName: "Space Station", selected: false },{ tagId: "merch", tagName: "Merch", selected: false }, { tagId: "other", tagName: "Other", selected: false }];
   tagScales: FrontTag[] = [{ tagId: "", tagName: "All Scales", selected: true }, { tagId: "35", tagName: "1:35", selected: false }, { tagId: "40", tagName: "1:40", selected: false }, { tagId: "110", tagName: "1:110", selected: false }, { tagId: "220", tagName: "1:220", selected: false }, { tagId: "350", tagName: "1:350", selected: false }];
 
   mocs: Moc[] = [];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: any,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams

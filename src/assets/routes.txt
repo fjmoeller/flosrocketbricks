@@ -218,5 +218,6 @@
 /moc/213/tale-of-ariane-6-fm1-air/
 /moc/214/long-march-6a/
 /moc/215/need-a-ride-t-shirt/
+/moc/216/tale-of-energia-buran/
 /about/
 /404/

@@ -2,6 +2,64 @@
     {
         "company": "",
         "region": [],
+        "links": [],
+        "type": "other",
+        "id": 216,
+        "title": "Tale of Energia Buran",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-09-10",
+        "dateCreated": "2024-09-10",
+        "related": [
+            207,
+            208
+        ],
+        "updateMessage": "",
+        "mocDescription": "This tale shows Energia Buran lifting of into the night sky with the GSE towers in the background. It is compatible with all other tales. ",
+        "rocketDescription": "",
+        "internalColor": "",
+        "scale": "",
+        "parts": 342,
+        "dimensions": "5.4x9.9x14.7cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/no-scale/tales/tale-of-energia-buran/tale-of-energia-buran-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-energia-buran/v1.0/Tale_Of_Energia_Buran_V1.0_1.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-energia-buran/v1.0/Tale_Of_Energia_Buran_V1.0.io",
+                        "name": "Tale-Of-Energia-Buran-V1.0.io"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
+        "company": "",
+        "region": [],
         "links": [
             "https://www.spreadshirt.de/selbst-gestalten?productType=1352&view=1&draft=2w5eg038VEHvojVw3J2K"
         ],
@@ -40,7 +98,7 @@
                 "versionExtra": "",
                 "files": [
                     {
-                        "description": "The digital io file",
+                        "description": "The main image",
                         "type": "png",
                         "allowExport": false,
                         "allowViewer": false,
@@ -48,7 +106,7 @@
                         "name": "NEED_A_RIDE.png"
                     },
                     {
-                        "description": "The digital io file",
+                        "description": "Energia Buran side logo",
                         "type": "png",
                         "allowExport": false,
                         "allowViewer": false,
@@ -56,7 +114,7 @@
                         "name": "Energia_Buran_V2.7_side.png"
                     },
                     {
-                        "description": "The digital io file",
+                        "description": "FRB side logo in black",
                         "type": "png",
                         "allowExport": false,
                         "allowViewer": false,
@@ -64,7 +122,7 @@
                         "name": "FRB_Dark.png"
                     },
                     {
-                        "description": "The digital io file",
+                        "description": "FRB side logo in white",
                         "type": "png",
                         "allowExport": false,
                         "allowViewer": false,
@@ -105,7 +163,7 @@
             198
         ],
         "updateMessage": "",
-        "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the air element. It is compatible with all other tales.",
+        "mocDescription": "This MOC is part of the Elements of Ariane 6 series. This tale is displaying the air element. It is compatible with all other tales.",
         "rocketDescription": "The tale shows a Mirage 2000 flying with the Ariane 6 FM1 rocket in the background.",
         "internalColor": "Green",
         "scale": "110",
@@ -170,7 +228,7 @@
             212
         ],
         "updateMessage": "",
-        "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the air element. It is compatible with all other tales.",
+        "mocDescription": "This MOC is part of the Elements of Ariane 6 series. This tale is displaying the air element. It is compatible with all other tales.",
         "rocketDescription": "The tale shows a Mirage 2000 flying with the Ariane 6 FM1 rocket in the background.",
         "internalColor": "",
         "scale": "",
@@ -233,7 +291,7 @@
             213
         ],
         "updateMessage": "",
-        "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the earth element. It is compatible with all other tales.",
+        "mocDescription": "This MOC is part of the Elements of Ariane 6 series. This tale is displaying the earth element. It is compatible with all other tales.",
         "rocketDescription": "The tale shows the Ariane 6 rocket inside the mobile gantry.",
         "internalColor": "",
         "scale": "",
@@ -296,7 +354,7 @@
             213
         ],
         "updateMessage": "",
-        "mocDescription": "This is a MOC is part of the Elements of Ariane 6 series. This tale is displaying the water element. It is compatible with all other tales.",
+        "mocDescription": "This MOC is part of the Elements of Ariane 6 series. This tale is displaying the water element. It is compatible with all other tales.",
         "rocketDescription": "The tale shows the the flame trench with the rocket launching in the background.",
         "internalColor": "",
         "scale": "",
@@ -1074,7 +1132,7 @@
             "USA"
         ],
         "links": [
-            "http://www.b14643.de/Spacerockets_2/United_States_6/Titan_IV/Description/Frame.htm",
+            "https://b14643.eu/Spacerockets_2/United_States_6/Titan_IV/Description/Frame.htm",
             "https://en.wikipedia.org/wiki/Titan_IV"
         ],
         "type": "rocket",
@@ -1811,7 +1869,7 @@
             "https://en.wikipedia.org/wiki/H-IIB",
             "https://www.raumfahrer.net/h-iib/",
             "https://global.jaxa.jp/projects/rockets/h2b/",
-            "http://www.b14643.de/Spacerockets_1/Japan/H-IIB/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/Japan/H-IIB/Description/Frame.htm"
         ],
         "type": "rocket",
         "id": 189,
@@ -1938,7 +1996,7 @@
             "USSR"
         ],
         "links": [
-            "http://www.b14643.de/Spacerockets_1/East_Europe_2/Proton/Description/Frame.htm",
+            "https://b14643.eu/Spacerockets_1/East_Europe_2/Proton/Description/Frame.htm",
             "https://en.wikipedia.org/wiki/Proton_(rocket_family)",
             "https://www.russianspaceweb.com/proton.html",
             "http://www.astronautix.com/p/proton.html"
@@ -2211,7 +2269,7 @@
         "links": [
             "https://en.wikipedia.org/wiki/Delta_II",
             "https://www.raumfahrer.net/delta-ii/",
-            "http://www.b14643.de/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm"
         ],
         "type": "rocket",
         "id": 183,
@@ -2273,7 +2331,7 @@
         "links": [
             "https://en.wikipedia.org/wiki/Delta_II",
             "https://www.raumfahrer.net/delta-ii/",
-            "http://www.b14643.de/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm",
+            "https://b14643.eu/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm",
             "https://www.spaceline.org/cape-canaveral-rocket-missile-program/delta-ii-6000-series/"
         ],
         "type": "rocket",
@@ -2339,7 +2397,7 @@
         "links": [
             "https://en.wikipedia.org/wiki/Delta_II",
             "https://www.raumfahrer.net/delta-ii/",
-            "http://www.b14643.de/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm",
+            "https://b14643.eu/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm",
             "https://www.spaceline.org/cape-canaveral-rocket-missile-program/delta-ii-6000-series/"
         ],
         "type": "rocket",
@@ -2406,7 +2464,7 @@
             "https://en.wikipedia.org/wiki/Delta_II",
             "https://en.wikipedia.org/wiki/ROSAT",
             "https://www.raumfahrer.net/delta-ii/",
-            "http://www.b14643.de/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm",
+            "https://b14643.eu/Spacerockets_2/United_States_5/Delta_II/Description/Frame.htm",
             "https://www.spaceline.org/cape-canaveral-rocket-missile-program/delta-ii-6000-series/"
         ],
         "type": "rocket",
@@ -3953,7 +4011,7 @@
         "links": [
             "https://global.jaxa.jp/projects/rockets/epsilon/",
             "https://en.wikipedia.org/wiki/Epsilon_(rocket)",
-            "http://www.b14643.de/Spacerockets_1/Japan/ASR-Epsilon/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/Japan/ASR-Epsilon/Description/Frame.htm"
         ],
         "type": "rocket",
         "id": 160,
@@ -4432,7 +4490,7 @@
         ],
         "links": [
             "https://en.wikipedia.org/wiki/Proton-K",
-            "http://www.b14643.de/Spacerockets_1/East_Europe_2/Proton/Description/Frame.htm",
+            "https://b14643.eu/Spacerockets_1/East_Europe_2/Proton/Description/Frame.htm",
             "http://www.astronautix.com/p/proton-k.html",
             "https://space.skyrocket.de/doc_lau_fam/proton.htm",
             "https://en.wikipedia.org/wiki/Zond_5",
@@ -7800,7 +7858,7 @@
         "internalColorExtra": "",
         "links": [
             "https://space.skyrocket.de/doc_lau/antares_osc.htm",
-            "http://www.b14643.de/Spacerockets_2/United_States_2/Antares/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_2/United_States_2/Antares/Description/Frame.htm"
         ],
         "mocDescription": "This is a MOC of the Antares 230+ rocket. The first and second stage as well as the payload fairings can be separated. The fairing holds space for a potential payload. My Cygnus MOC does not fit inside.",
         "rocketDescription": "The Antares 230+ rocket is an orbital rocket produced by Northrop Grumman. The first stage is powered by a RD-181. The second stage is a Castor 30XL solid rocket motor. The rocket is used to launch the Cygnus spacecraft to the International Space Station.",
@@ -7871,7 +7929,7 @@
         "internalColorExtra": "",
         "links": [
             "https://space.skyrocket.de/doc_lau/kuaizhou-11.htm",
-            "http://www.b14643.de/Spacerockets_4/Expace_KZ-11/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_4/Expace_KZ-11/Description/Frame.htm"
         ],
         "mocDescription": "This is a MOC of the KZ-11 Transporter. It can hold the KZ-11 rocket and its launchstand, which is a separate MOC.",
         "rocketDescription": "The KZ-11 rocket is a solid fueled Chinese orbital rocket. The transporter is used to transport it and the launchstand to the launchpad.",
@@ -7935,7 +7993,7 @@
         "internalColorExtra": "",
         "links": [
             "https://space.skyrocket.de/doc_lau/kuaizhou-11.htm",
-            "http://www.b14643.de/Spacerockets_4/Expace_KZ-11/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_4/Expace_KZ-11/Description/Frame.htm"
         ],
         "mocDescription": "This is a MOC of the KZ-11 rocket. The first, second and third stage can be separated from one another. The fairing holds some space for a small payload. This MOC furthermore includes the launch stand of the rocket.",
         "rocketDescription": "The KZ-11 rocket is a solid fueled Chinese orbital rocket. It has four stages and first launched in 2020, although this launch resulted in a failure. In 2022 it first reached orbit on its second try.",
@@ -8755,7 +8813,7 @@
         "internalColorExtra": "",
         "links": [
             "https://space.skyrocket.de/doc_lau/chollima-1.htm",
-            "http://www.b14643.de/Spacerockets_1/Rest_World/Chollima-1/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/Rest_World/Chollima-1/Description/Frame.htm"
         ],
         "mocDescription": "This is a MOC of North Koreas Chollima-1 rocket. The three stages can be seperated. The fairing holds no space for a payload.",
         "rocketDescription": "Chollima-1 is North Koreas newest orbital rocket system. Its so far only launch ended in a failure in 2023. It probably consists out of three stages.",
@@ -8894,7 +8952,7 @@
         "internalColorExtra": "",
         "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
-            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
         "mocDescription": "This is a MOC of an Ariane 4 rocket in the 44P configuration. The boosters and the three stages can be seperated from another. The fairing holds some space for a payload. Additionally there are more fairing options available.",
         "rocketDescription": "The Ariane 4 rocket was an European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 44LP variant has four PAP boosters.",
@@ -8970,7 +9028,7 @@
         "internalColorExtra": "",
         "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
-            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
         "mocDescription": "This is a MOC of an Ariane 4 rocket in the 44LP configuration. The boosters and the three stages can be seperated from another. The fairing holds some space for a payload. Additionally there are more fairing options available.",
         "rocketDescription": "The Ariane 4 rocket was an European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 44LP variant has two PAL and two PAP boosters.",
@@ -9046,7 +9104,7 @@
         "internalColorExtra": "",
         "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
-            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
         "mocDescription": "This is a MOC of an Ariane 4 rocket in the 44L configuration. The boosters and the three stages can be seperated from another. The fairing holds some space for a payload. Additionally there are more fairing options available.",
         "rocketDescription": "The Ariane 4 rocket was an European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 44L variant has four PAL boosters.",
@@ -9122,7 +9180,7 @@
         "internalColorExtra": "",
         "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
-            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
         "mocDescription": "This is a MOC of an Ariane 4 rocket in the 42P configuration. The boosters and the three stages can be seperated from another. The fairing holds some space for a payload. Additionally there are more fairing options available.",
         "rocketDescription": "The Ariane 4 rocket was a European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 42P variant has two PAP boosters.",
@@ -9198,7 +9256,7 @@
         "internalColorExtra": "",
         "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
-            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
         "mocDescription": "This is a MOC of an Ariane 4 rocket in the 42L configuration. The boosters and the three stages can be seperated from another. The fairing holds some space for a payload. Additionally there are more fairing options available.",
         "rocketDescription": "The Ariane 4 rocket was a European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 42L variant has two PAL boosters.",
@@ -9274,7 +9332,7 @@
         "internalColorExtra": "",
         "links": [
             "https://en.wikipedia.org/wiki/Ariane_4",
-            "http://www.b14643.de/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/West_Europe/Ariane/Description/Frame.htm"
         ],
         "mocDescription": "This is a MOC of an Ariane 4 rocket in the 40 configuration. The three stages can be seperated from each other. The fairing holds some space for a payload. Additionally there are more fairing options available.",
         "rocketDescription": "The Ariane 4 rocket was a European orbital rocket. It first launched in 1988 and last launched in 2003 with a total count of 116 launches. The 40 variant has no boosters.",
@@ -14597,7 +14655,7 @@
         "internalColor": "Green",
         "links": [
             "https://en.wikipedia.org/wiki/Tsyklon-4",
-            "http://www.b14643.de/Spacerockets_1/East_Europe_2/Cyclone-4/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/East_Europe_2/Cyclone-4/Description/Frame.htm"
         ],
         "mocDescription": "The first two rocket stages can be seperated. The fairing holds no space for a payload.",
         "rocketDescription": "The Tsyklon 4 rocket was an Ukrainian developed orbital rocket based on the Tsyklon 3 rocket, but it never flew. It was supposed to have two stages and is about 40 meters tall.",
@@ -14661,7 +14719,7 @@
         "internalColor": "Green",
         "links": [
             "https://en.wikipedia.org/wiki/Tsyklon-3",
-            "http://www.b14643.de/Spacerockets_1/East_Europe_2/Tsiklon/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/East_Europe_2/Tsiklon/Description/Frame.htm"
         ],
         "mocDescription": "The first two of the three stages of the rocket can be seperated. The fairing does not hold any space for a payload due to the building techniques used.",
         "rocketDescription": "The Tsyklon 3 rocket was an Ukrainian orbital rocket based on the Tsyklon 2 rocket. It first flew in 1977 and flew a total of 122 times. It had three stages and is about 40 meters tall. It can deliver up to 4.1 tons into LEO",
@@ -14740,7 +14798,7 @@
         "internalColor": "Green",
         "links": [
             "https://en.wikipedia.org/wiki/Tsyklon-2",
-            "http://www.b14643.de/Spacerockets_1/East_Europe_2/Tsiklon/Description/Frame.htm"
+            "https://b14643.eu/Spacerockets_1/East_Europe_2/Tsiklon/Description/Frame.htm"
         ],
         "mocDescription": "Both rocket stages can be seperated. The fairing holds space for a small payload.",
         "rocketDescription": "The Tsyklon 2 rocket was an Ukrainian orbital rocket based on the R-36 ICBM. It first flew in 1969 and flew a total of 106 times. It had two stages and is about 40 meters tall.",
@@ -15725,7 +15783,7 @@
         "links": [
             "https://en.wikipedia.org/wiki/Zhuque-2",
             "https://space.skyrocket.de/doc_lau/zhuque-2.htm",
-            "http://www.b14643.de/Spacerockets_4/Landspace_ZQ-2/Description/Text.htm",
+            "https://b14643.eu/Spacerockets_4/Landspace_ZQ-2/Description/Text.htm",
             "https://www.landspace.com/"
         ],
         "dateCreated": "2023-02-20",
@@ -16071,7 +16129,7 @@
         "links": [
             "https://en.wikipedia.org/wiki/New_Glenn",
             "https://www.blueorigin.com/new-glenn",
-            "http://www.b14643.de/Spacerockets_2/United_States_1/B.O._New-Glenn/Description/Frame.htm",
+            "https://b14643.eu/Spacerockets_2/United_States_1/B.O._New-Glenn/Description/Frame.htm",
             "https://www.nasaspaceflight.com/tag/new-glenn/",
             "https://forum.nasaspaceflight.com/index.php?board=78.0"
         ],

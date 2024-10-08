@@ -10675,6 +10675,14 @@
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/v3.2/Vulcan_Centaur_Astrobotic_V3.2.io",
                         "name": "Vulcan_Centaur_Astrobotic_V3.2.io"
+                    },
+                    {
+                        "description": "The digital pdf instructions",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/vulcan/vulcan-centaur/vc2s/peregrine/v3.2/Vulcan_Centaur_Astrobotic_V3.2.pdf",
+                        "name": "Vulcan_Centaur_Astrobotic_V3.2.pdf"
                     }
                 ],
                 "version": "V3.2"

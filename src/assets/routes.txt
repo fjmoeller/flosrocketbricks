@@ -219,5 +219,6 @@
 /moc/214/long-march-6a/
 /moc/215/need-a-ride-t-shirt/
 /moc/216/tale-of-energia-buran/
+/moc/217/crew-dragon/
 /about/
 /404/

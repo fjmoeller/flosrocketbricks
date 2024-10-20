@@ -1,7 +1,86 @@
 [
     {
+        "company": "SpaceX",
+        "region": [
+            "USA"
+        ],
+        "links": [
+            "https://www.spacex.com/vehicles/dragon/",
+            "https://en.wikipedia.org/wiki/SpaceX_Dragon_2"
+        ],
+        "type": "spacecraft",
+        "id": 217,
+        "title": "Crew Dragon",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-10-20",
+        "dateCreated": "2024-10-20",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of SpaceXs Crew Dragon. The capsule and trunk can be separated. The nosecone can be closed, but can also fit the docking adapter or alternatively the cupola which are included. The inside has four seats althought they do not fit minifigures and the capsule can not be opened up to see them.",
+        "rocketDescription": "Crew Dragon is SpaceXs commercial crewed capsule that can lift up to four people into LEO and birng them back. It first flew with crew in 2020.",
+        "internalColor": "-",
+        "scale": "40",
+        "parts": 968,
+        "dimensions": "12.6x12.3x12.2cm",
+        "stability": 3,
+        "difficulty": 2,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/40/usa/dragon/crew-dragon/40-crew-dragon-v1.0.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_5.jpg",
+            "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_6.jpg",
+            "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_7.jpg",
+            "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_8.jpg",
+            "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_9.jpg",
+            "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_10.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0.io",
+                        "name": "Crew_Dragon_V1.0.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/40/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_instructions.pdf",
+                        "name": "Crew_Dragon_V1.0_instructions.pdf"
+                    }
+                ],
+                "version": "V1.0"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "",
-        "region": ["USSR"],
+        "region": [
+            "USSR"
+        ],
         "links": [],
         "type": "other",
         "id": 216,

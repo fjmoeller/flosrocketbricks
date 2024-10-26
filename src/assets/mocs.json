@@ -552,7 +552,7 @@
         "altTitles": [],
         "tags": [],
         "designer": "SkySaac",
-        "lastupdate": "2024-08-07",
+        "lastupdate": "2024-10-26",
         "dateCreated": "2024-07-18",
         "related": [
             99
@@ -562,7 +562,7 @@
         "rocketDescription": "The launchtable and the umbilical mast are used on the ELA-4 launchpad for the Ariane 6 rocket.",
         "internalColor": "Dark Pink",
         "scale": "110",
-        "parts": 2247,
+        "parts": 2217,
         "dimensions": "3.2x9.9x14.7cm",
         "stability": -1,
         "difficulty": -1,
@@ -575,6 +575,29 @@
             "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.1/ELA-4_Launchpad_V1.1_4.jpg"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.3/ELA-4_Launchpad_V1.3.io",
+                        "name": "ELA-4_Launchpad_V1.3.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.3/ELA-4_Launchpad_V1.3_instructions.pdf",
+                        "name": "ELA-4_Launchpad_V1.3.pdf"
+                    }
+                ],
+                "version": "V1.3"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",
@@ -612,7 +635,7 @@
         "designerExtra": "",
         "internalColorExtra": "",
         "scaleExtra": "",
-        "partsExtra": "A few pieces are not available by Lego in the correct colors, instead buy them somewhere else.",
+        "partsExtra": "",
         "dimensionsExtra": "",
         "stabilityExtra": "",
         "difficultyExtra": ""

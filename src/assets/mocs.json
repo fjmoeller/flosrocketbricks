@@ -10986,15 +10986,16 @@
             "https://en.wikipedia.org/wiki/OK-GLI",
             "https://en.wikipedia.org/wiki/Buran_programme",
             "https://www.buran-energia.com/",
-            "http://www.buran.ru/htm/homepage.htm"
+            "http://www.buran.ru/htm/homepage.htm",
+            "https://speyer.technik-museum.de/en/spaceshuttle-buran"
         ],
-        "mocDescription": "This is a MOC of the OK-GLI glide test vehicle for the Buran program. The payload doors can be opened (I don't know if the real one was able to though).",
-        "rocketDescription": "The OK-GLI test vehicle was a Soviet plane that was used for 25 test flights between 1985 and 1988 before being retired.",
+        "mocDescription": "This is a MOC of the OK-GLI glide test vehicle. The landing gear can be retracted.",
+        "rocketDescription": "The OK-GLI test vehicle was a Soviet plane for the Buran program that was used for 25 test flights between 1985 and 1988 before being retired. It now stands in Speyer, Germany in a museum.",
         "company": "",
         "companyExtra": "",
         "difficulty": 4,
         "difficultyExtra": "",
-        "lastupdate": "2023-05-17",
+        "lastupdate": "2024-11-01",
         "dateCreated": "2022-07-23",
         "related": [
             68
@@ -11006,27 +11007,44 @@
         "regionExtra": "",
         "scale": "110",
         "scaleExtra": "",
-        "smallCoverImage": "assets/mocImages/110/ussr/buran/ok-gli/110-ok-gli-v2.7.png",
-        "internalColor": "Green",
+        "smallCoverImage": "assets/mocImages/110/ussr/buran/ok-gli/110-ok-gli-v2.8.jpg",
+        "internalColor": "Dark Pink",
         "internalColorExtra": "",
-        "dimensions": "20.8x37.1x13.7cm",
+        "dimensions": "20.8x37.1x16.2cm",
         "dimensionsExtra": "",
         "tags": [],
         "altTitles": [],
-        "parts": 871,
-        "partsExtra": "The MOC needs a few bricks that Lego does not have in those colors, I recommend getting them from BlueBrixx or so.",
+        "parts": 945,
+        "partsExtra": "",
         "title": "OK-GLI",
-        "stability": 5,
+        "stability": 3,
         "stabilityExtra": "",
-        "designer": "SkySaac",
+        "designer": "SkySaac, Andy Kappler",
         "designerExtra": "",
         "fanPictures": [],
         "pictures": [
-            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/ok-gli/v2.7/OK-GLI_V2.7_1.png",
-            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/ok-gli/v2.7/OK-GLI_V2.7_2.png",
-            "https://bricksafe.com/files/SkySaac/website/110/russia/buran/ok-gli/v2.7/OK-GLI_V2.7_3.png"
+            "https://files.flosrocketbackend.com/mocs/110/ussr/buran/ok-gli/v2.8/OK_GLI_V2.8_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/buran/ok-gli/v2.8/OK_GLI_V2.8_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/buran/ok-gli/v2.8/OK_GLI_V2.8_3.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/buran/ok-gli/v2.8/OK_GLI_V2.8_4.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/ussr/buran/ok-gli/v2.8/OK_GLI_V2.8_5.jpg"
         ],
         "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": true,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/ok-gli/v2.8/OK_GLI_V2.8.io",
+                        "name": "OK_GLI_V2.8.io"
+                    }
+                ],
+                "version": "V2.8"
+            },
             {
                 "changelog": "",
                 "versionExtra": "",

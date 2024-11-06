@@ -11041,6 +11041,14 @@
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/ok-gli/v2.8/OK_GLI_V2.8.io",
                         "name": "OK_GLI_V2.8.io"
+                    },
+                    {
+                        "description": "The pdf instructions",
+                        "type": "pdf",
+                        "allowExport": false,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/ussr/buran/ok-gli/v2.8/OK_GLI_V2.8_instructions.pdf",
+                        "name": "OK_GLI_V2.8_instructions.pdf"
                     }
                 ],
                 "version": "V2.8"

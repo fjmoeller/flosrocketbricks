@@ -220,5 +220,6 @@
 /moc/215/need-a-ride-t-shirt/
 /moc/216/tale-of-energia-buran/
 /moc/217/crew-dragon/
+/moc/218/space-shuttle-tail-cone/
 /about/
 /404/

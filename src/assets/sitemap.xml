@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/218/space-shuttle-tail-cone/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/space-shuttle/tail-cone/110-space-shuttle-tail-cone-v1.2.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/217/crew-dragon/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/40/usa/dragon/crew-dragon/40-crew-dragon-v1.0.jpg</image:loc>

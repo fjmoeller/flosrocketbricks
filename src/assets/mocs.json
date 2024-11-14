@@ -1,5 +1,68 @@
 [
     {
+        "company": "",
+        "region": [
+            "USA"
+        ],
+        "links": [
+            "https://nasa-wings.info/pages/site_gal_4_ov-101.htm",
+            "http://www.ninfinger.org/models/vault2009/Orbiter%20Tailcone/index.html",
+            "https://rebrickable.com/mocs/MOC-46228/KingsKnight/space-shuttle-1110-scale/"
+        ],
+        "type": "other",
+        "id": 218,
+        "title": "Space Shuttle Tail Cone",
+        "altTitles": [],
+        "tags": [],
+        "designer": "SkySaac",
+        "lastupdate": "2024-11-15",
+        "dateCreated": "2024-11-15",
+        "related": [],
+        "updateMessage": "",
+        "mocDescription": "This is a MOC of the tail cone of the Space Shuttle. It is made for KingsKnights Space Shuttle.",
+        "rocketDescription": "The tail cone was used on the Space Shuttle to improve the Space Shuttles aerodynamics and for covering the Space Shuttles tail end and main engines during transport on the Boeing 747.",
+        "internalColor": "-",
+        "scale": "110",
+        "parts": 171,
+        "dimensions": "7x10.4x6.4cm",
+        "stability": -1,
+        "difficulty": -1,
+        "fanPictures": [],
+        "smallCoverImage": "assets/mocImages/110/usa/space-shuttle/tail-cone/110-space-shuttle-tail-cone-v1.2.jpg",
+        "pictures": [
+            "https://files.flosrocketbackend.com/mocs/110/usa/space-shuttle/tail-cone/v1.2/Space_Shuttle_Tailcover_V1.2_1.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/space-shuttle/tail-cone/v1.2/Space_Shuttle_Tailcover_V1.2_2.jpg",
+            "https://files.flosrocketbackend.com/mocs/110/usa/space-shuttle/tail-cone/v1.2/Space_Shuttle_Tailcover_V1.2_3.jpg"
+        ],
+        "versions": [
+            {
+                "changelog": "",
+                "versionExtra": "",
+                "files": [
+                    {
+                        "description": "The digital io file",
+                        "type": "io",
+                        "allowExport": true,
+                        "allowViewer": false,
+                        "link": "https://files.flosrocketbackend.com/mocs/110/usa/space-shuttle/tail-cone/v1.2/Space_Shuttle_Tailcover_V1.2.io",
+                        "name": "Space_Shuttle_Tailcover_V1.2.io"
+                    }
+                ],
+                "version": "V1.2"
+            }
+        ],
+        "companyExtra": "",
+        "regionExtra": "",
+        "typeExtra": "",
+        "designerExtra": "",
+        "internalColorExtra": "",
+        "scaleExtra": "",
+        "partsExtra": "",
+        "dimensionsExtra": "",
+        "stabilityExtra": "",
+        "difficultyExtra": ""
+    },
+    {
         "company": "SpaceX",
         "region": [
             "USA"

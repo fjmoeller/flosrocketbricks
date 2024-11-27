@@ -34,7 +34,7 @@ export class ViewerComponent implements OnInit {
   public ENABLE_SHADOWS: boolean = false;
 
   private readonly clock = new Clock();
-  // 30 fps
+  // 60 fps
   private readonly INTERNAL: number = 1 / 60;
 
   constructor(private ioFileService: LdrToThreeService) {

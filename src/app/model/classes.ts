@@ -3,16 +3,18 @@ export class File {
   name: string;
   description: string;
   type: string;
-  allowViewer: boolean;
-  allowExport: boolean;
+  viewer: boolean;
+  export: boolean;
+  instructions: boolean;
 
-  constructor(link: string, name: string, description: string, type: string, allowViewer: boolean, allowExport: boolean) {
+  constructor(link: string, name: string, description: string, type: string, allowViewer: boolean, allowExport: boolean, allowInstructions: boolean) {
     this.link = link;
     this.name = name;
     this.description = description;
     this.type = type;
-    this.allowViewer = allowViewer;
-    this.allowExport = allowExport;
+    this.viewer = allowViewer;
+    this.export = allowExport;
+    this.instructions = allowInstructions;
   }
 }
 

@@ -18,6 +18,7 @@ import { LdrPart, LdrSubmodel, PartReference } from '../../model/ldrawParts';
 import { LdrawColorService } from '../color/ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { BehaviorSubject, Observable } from 'rxjs';
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -41,16 +42,13 @@ export class LdrToThreeService {
   private loadingSubject = new BehaviorSubject<string>('Loading');
   loadingState: Observable<string> = this.loadingSubject.asObservable();
 
-  //base URL from where to fetch the part files to get around stuff
-  private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
-
   constructor(private ldrawColorService: LdrawColorService) {
   }
 
   async getModel(ioUrl: string, placeHolderColor: string): Promise<Group> {
     this.loadingSubject.next("Downloading Ldr File");
     const ldrUrl = ioUrl.slice(0, ioUrl.length - 2) + "ldr"
-    const contents = await fetch(this.backendFetchUrl + ldrUrl);
+    const contents = await fetch(environment.backendFetchUrl + ldrUrl);
     this.loadingSubject.next("Creating Mesh");
     const moc = this.createMocGroup(await contents.text(), placeHolderColor);
     this.cleanUp();
@@ -650,7 +648,7 @@ export class LdrToThreeService {
   }
 
   //This functions parses a line type two, which is a line
-  private parseLineTypeTwo(line: string) {
+  parseLineTypeTwo(line: string) {
     const splitLine = line.split(" ");
     if (splitLine.length < 8) {
       throw "line with too few coordinates";
@@ -666,7 +664,7 @@ export class LdrToThreeService {
   }
 
   //This functions parses a line type three, which is a triangle
-  private parseLineTypeThree(line: string, invert: boolean) {
+  parseLineTypeThree(line: string, invert: boolean) {
     const splitLine = line.split(" ");
     if (splitLine.length < 10) {
       throw "Triangle with too few coordinates";
@@ -688,7 +686,7 @@ export class LdrToThreeService {
   }
 
   //This functions parses a line type four, which is a rectangle, but i just split those into two triangles
-  private parseLineTypeFour(line: string, invert: boolean) {
+  parseLineTypeFour(line: string, invert: boolean) {
     const splitLine = line.split(" ");
     if (splitLine.length < 13) {
       throw "Rectangle with too few coordinates";

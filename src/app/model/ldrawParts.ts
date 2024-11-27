@@ -7,7 +7,6 @@ export class LdrPart {
     colorIndexMap: Map<number, number[]>;
     colorLineVertexMap: Map<number, Vector3[]>;
     references: PartReference[];
-    partIndex: number = 0;
 
     constructor(name: string, colorVertexMap: Map<number, Vector3[]>, colorIndexMap: Map<number, number[]>, lineColorMap: Map<number, Vector3[]>, references: PartReference[]) {
         this.name = name;
@@ -39,7 +38,6 @@ export class LdrColor {
 export class LdrSubmodel {
     name: string;
     references: PartReference[];
-    resolved = false;
     group: Group;
 
     constructor(name: string, references: PartReference[]) {

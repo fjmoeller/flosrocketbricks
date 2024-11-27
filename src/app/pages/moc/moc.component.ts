@@ -1,12 +1,12 @@
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Moc, Version } from '../../model/classes';
-import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
-import { MetaServiceService } from 'src/app/services/meta-service.service';
-import { FileExportService } from 'src/app/services/file/file-export.service';
-import { CardComponent } from 'src/app/components/card/card.component';
-import { ViewerComponent } from 'src/app/components/viewer/viewer.component';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2} from '@angular/core';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
+import {Moc, Version} from '../../model/classes';
+import {MocGrabberService} from 'src/app/services/grabber/moc-grabber.service';
+import {MetaServiceService} from 'src/app/services/meta-service.service';
+import {FileExportService} from 'src/app/services/file/file-export.service';
+import {CardComponent} from 'src/app/components/card/card.component';
+import {ViewerComponent} from 'src/app/components/viewer/viewer.component';
+import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
 
 
 @Component({
@@ -42,7 +42,7 @@ export class MocComponent implements OnInit, OnDestroy {
         this.router.navigate(['/404/']);
       }
       if (isPlatformBrowser(this.platformId))
-        window.scroll({ top: 0, left: 0, behavior: "instant" });
+        window.scroll({top: 0, left: 0, behavior: "instant"});
     });
   }
 
@@ -63,7 +63,7 @@ export class MocComponent implements OnInit, OnDestroy {
 
   async downloadXml(filelink: string, filename: string) {
     const data = await this.fileExportService.getXml(filelink, this.moc.internalColor);
-    const blob = new Blob([data], { type: 'application/xml' });
+    const blob = new Blob([data], {type: 'application/xml'});
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);
     a.download = filename.split(".io")[0] + ".xml";
@@ -72,7 +72,7 @@ export class MocComponent implements OnInit, OnDestroy {
 
   async downloadCsv(filelink: string, filename: string) {
     const data = await this.fileExportService.getCsv(filelink, this.moc.internalColor);
-    const blob = new Blob([data], { type: 'text/csv' });
+    const blob = new Blob([data], {type: 'text/csv'});
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);
     a.download = filename.split(".io")[0] + ".csv";

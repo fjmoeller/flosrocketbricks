@@ -1,480 +1,504 @@
-<div class="main-content container-fluid">
-    <div class="row mx-4">
-        <div class="slideshow-container col-md-7">
-            @for(picture of moc.pictures;track picture; let index = $index){
-            <div [style.display]="(index===slideIndex) ? 'block' : 'none'">
-                <img [src]="picture" class="d-block w-100" [alt]="moc.title" [title]="moc.title">
-            </div>
-            }
-            <div class="numbertext">{{slideIndex+1}} / {{moc.pictures.length}}</div>
-            @if(moc.pictures.length > 1){
-            <a class="prev p-4" (click)="changeSlide(-1)">&#10094;</a>
-            <a class="next p-4" (click)="changeSlide(1)">&#10095;</a>
-            }
+<div class="main-content container-fluid pt-4">
+  <div class="row mx-4">
+    <div class="slideshow-container col-md-7">
+      @for (picture of moc.pictures; track picture; let index = $index) {
+        <div [style.display]="(index===slideIndex) ? 'block' : 'none'">
+          <img [src]="picture" class="d-block w-100" [alt]="moc.title" [title]="moc.title">
         </div>
-        <div class="col-md-5 text-coloring">
-            <div class="row justify-content-center text-center my-3">
-                <h1>
-                    {{moc.title}}
-                </h1>
-            </div>
-            <img style="width:0;height:0" [src]="moc.smallCoverImage" [alt]="moc.title" [title]="moc.title">
-            <div class="container">
-                @if(moc.type !== "merch"){
-                <div class="row py-3">
-                    <div class="col-6 justify-content-center text-center">
-                        <div class="row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-puzzle-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.459.459 0 0 0-.115.118.113.113 0 0 0-.012.025L6.5 4.5v.003l.003.01c.004.01.014.028.036.053a.86.86 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.86.86 0 0 0 .271-.194.213.213 0 0 0 .036-.054l.003-.01v-.008a.112.112 0 0 0-.012-.025.459.459 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.459.459 0 0 0 .115-.118.113.113 0 0 0 .012-.025L9.5 11.5v-.003l-.003-.01a.214.214 0 0 0-.036-.053.859.859 0 0 0-.27-.194C8.91 11.1 8.49 11 8 11c-.491 0-.912.1-1.19.24a.859.859 0 0 0-.271.194.214.214 0 0 0-.036.054l-.003.01v.002l.001.006a.113.113 0 0 0 .012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238l-.244-2.855z" />
-                            </svg>
-                        </div>
-                        <div class="row justify-content-center popover-wrapper">
-                            <strong>Brick count:</strong>
-                            <span>{{moc.parts}}
-                                @if (moc.partsExtra !== ''){
-                                <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                    <path
-                                        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                </svg>
-                                }
-                            </span>
-                            @if (moc.partsExtra !== '' && moc.partsExtra !== '-'){
-                            <div class="popover-content">
-                                <p class="popover-content-text">{{moc.partsExtra}}</p>
-                            </div>
-                            }
-                        </div>
-                    </div>
-                    <div class="col-6 justify-content-center text-center">
-                        <div class="row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                        </div>
-                        <div class="row justify-content-center popover-wrapper">
-                            <strong>Scale:</strong>
-                            <span>{{moc.scale}}
-                                @if (moc.scaleExtra !== ''){
-                                <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                    <path
-                                        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                </svg>
-                                }
-                            </span>
-                            @if (moc.scaleExtra !== '' && moc.scaleExtra !== '-'){
-                            <div class="popover-content">
-                                <p class="popover-content-text">{{moc.scaleExtra}}</p>
-                            </div>
-                            }
-                        </div>
-                    </div>
-                </div>
-                }
-                <div class="row py-3">
-                    <div class="col-6 justify-content-center text-center py-auto">
-                        <div class="row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-person-square" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                <path
-                                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
-                            </svg>
-                        </div>
-                        <div class="row justify-content-center popover-wrapper">
-                            <strong>Designers:</strong>
-
-                            <span>{{moc.designer}}
-                                @if(moc.designerExtra !== ''){
-                                <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                    <path
-                                        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                </svg>}
-                            </span>
-
-                            @if(moc.designerExtra !== '' && moc.designerExtra !== '-'){
-                            <div class="popover-content">
-                                <p class="popover-content-text">{{moc.designerExtra}}</p>
-                            </div>
-                            }
-                        </div>
-                    </div>
-                    <div class="col-6 justify-content-center text-center py-auto">
-                        <div class="row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-calendar-date-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zm5.402 9.746c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2z" />
-                                <path
-                                    d="M16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm-2.89-5.435v5.332H5.77V8.079h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z" />
-                            </svg>
-                        </div>
-                        <div class="row justify-content-center">
-                            <strong>Last updated:</strong> {{moc.lastupdate}}
-                        </div>
-                    </div>
-                </div>
-                @if(moc.type !== "merch"){
-                <div class="row py-3">
-                    <div class="col-6 justify-content-center text-center py-auto">
-                        <div class="row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-rulers" viewBox="0 0 16 16">
-                                <path
-                                    d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z" />
-                            </svg>
-                        </div>
-
-                        <div class="row justify-content-center popover-wrapper">
-                            <strong>Dimensions:</strong>
-
-                            <span>{{moc.dimensions}} @if(moc.dimensionsExtra !==''){<svg placement="top"
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
-                                    class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                    <path
-                                        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                </svg>}
-                            </span>
-
-                            @if(moc.dimensionsExtra !== ''){
-                            <div class="popover-content">
-                                <p class="popover-content-text">{{moc.dimensionsExtra}}</p>
-                            </div>
-                            }
-                        </div>
-                    </div>
-                    <div class="col-6 justify-content-center text-center py-auto">
-                        <div class="row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-palette-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                            </svg>
-                        </div>
-                        <div class="row justify-content-center popover-wrapper">
-                            <strong>Placeholder color:</strong>
-                            <span>
-                                {{moc.internalColor}}
-                                @if(moc.internalColorExtra !== ''){
-                                <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                    <path
-                                        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                </svg>
-                                }
-                            </span>
-                            @if(moc.internalColorExtra !== '' && moc.internalColorExtra !== '-'){
-                            <div class="popover-content">
-                                <p class="popover-content-text">{{moc.internalColorExtra}}</p>
-                            </div>
-                            }
-                        </div>
-                    </div>
-                </div>
-                <div class="row py-3">
-                    <div class="col-6 justify-content-center text-center py-auto">
-                        <div class="row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                            </svg>
-                        </div>
-                        <div class="row justify-content-center popover-wrapper">
-                            <strong>Build difficulty:</strong>
-                            <div>
-                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2,'brick-1-color': moc.difficulty==1}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.difficulty==5}" class="brick-default-color"
-                                    width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                            </div>
-                            <span>{{getDifficultyText(moc.difficulty)}}
-                                @if(moc.difficultyExtra !== ''){
-                                <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                    <path
-                                        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                </svg>
-                                }
-                            </span>
-                            @if(moc.difficultyExtra !== ''){
-                            <div class="popover-content">
-                                <p class="popover-content-text">{{moc.difficultyExtra}}</p>
-                            </div>
-                            }
-                        </div>
-                    </div>
-                    <div class="col-6 justify-content-center text-center py-auto">
-                        <div class="row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-wrench-adjustable" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 4.5a4.492 4.492 0 0 1-1.703 3.526L13 5l2.959-1.11c.027.2.041.403.041.61Z" />
-                                <path
-                                    d="M11.5 9c.653 0 1.273-.139 1.833-.39L12 5.5 11 3l3.826-1.53A4.5 4.5 0 0 0 7.29 6.092l-6.116 5.096a2.583 2.583 0 1 0 3.638 3.638L9.908 8.71A4.49 4.49 0 0 0 11.5 9Zm-1.292-4.361-.596.893.809-.27a.25.25 0 0 1 .287.377l-.596.893.809-.27.158.475-1.5.5a.25.25 0 0 1-.287-.376l.596-.893-.809.27a.25.25 0 0 1-.287-.377l.596-.893-.809.27-.158-.475 1.5-.5a.25.25 0 0 1 .287.376ZM3 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
-                            </svg>
-                        </div>
-                        <div class="row justify-content-center popover-wrapper">
-                            <strong>Stability:</strong>
-                            <div>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2,'brick-1-color': moc.stability==1}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4}"
-                                    class="brick-default-color" width="16" height="16"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                                <svg [ngClass]="{'brick-5-color': moc.stability==5}" class="brick-default-color"
-                                    width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%" />
-                                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%" />
-                                </svg>
-                            </div>
-                            <span>{{getStabilityText(moc.stability)}}
-                                @if(moc.stabilityExtra !==''){
-                                <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                    <path
-                                        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                </svg>
-                                }
-                                @if(moc.stabilityExtra !== '' && moc.stabilityExtra !== '-'){
-                                <div class="popover-content">
-                                    <p class="popover-content-text">{{moc.stabilityExtra}}</p>
-                                </div>
-                                }
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                }
-            </div>
-        </div>
+      }
+      <div class="numbertext">{{ slideIndex + 1 }} / {{ moc.pictures.length }}</div>
+      @if (moc.pictures.length > 1) {
+        <a class="prev p-4" (click)="changeSlide(-1)">&#10094;</a>
+        <a class="next p-4" (click)="changeSlide(1)">&#10095;</a>
+      }
     </div>
-    <div class="row m-4">
-        <div id="viewer" class="col-lg-6 text-coloring">
-            @if(showViewer){
-            <div class="row d-flex justify-content-between text-coloring m-2 align-items-center">
-                <button class="col btn inv-interact-button text-decoration-none text-align-center rounded"
-                    (click)="toggleViewer(viewerLink)">Close Viewer</button>
-                <a class="col text-coloring text-center" href="https://www.ldraw.org/" target="_blank">
-                    This viewer has been created using LDraw
-                </a>
-            </div>
-            }
-            @if(showViewer){
-            <div class="text-coloring">
-                <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer" [placeHolderColor]="moc.internalColor">
-                </app-viewer>
-            </div>
-            }
-            <h4>About the MOC</h4>
-            <p style="white-space: pre-wrap">
-                {{moc.mocDescription}}
-            </p>
-            @if(moc.rocketDescription !== '' && moc.type !== 'merch'){
-            <h4 class="pt-2">About the {{moc.type}}</h4>
-            }
-            @if(moc.type !== '' && moc.type !== 'merch'){
-            <p style="white-space: pre-wrap">
-                {{moc.rocketDescription}}
-            </p>
-            }
-            @if(moc.links.length > 0){
-            <h4 class="pt-2">Useful links</h4>
-            <ul>
-                @for(link of moc.links; track link){
-                <li>
-                    <a class="text-coloring" href="{{link}}" target="_blank" rel="noreferrer noopener">{{link}}</a>
-                </li>
+    <div class="col-md-5 text-coloring">
+      <div class="row justify-content-center text-center my-3">
+        <h1>
+          {{ moc.title }}
+        </h1>
+      </div>
+      <img style="width:0;height:0" [src]="moc.smallCoverImage" [alt]="moc.title" [title]="moc.title">
+      <div class="container">
+        @if (moc.type !== "merch") {
+          <div class="row py-3">
+            <div class="col-6 justify-content-center text-center">
+              <div class="row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                     class="bi bi-puzzle-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.459.459 0 0 0-.115.118.113.113 0 0 0-.012.025L6.5 4.5v.003l.003.01c.004.01.014.028.036.053a.86.86 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.86.86 0 0 0 .271-.194.213.213 0 0 0 .036-.054l.003-.01v-.008a.112.112 0 0 0-.012-.025.459.459 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.459.459 0 0 0 .115-.118.113.113 0 0 0 .012-.025L9.5 11.5v-.003l-.003-.01a.214.214 0 0 0-.036-.053.859.859 0 0 0-.27-.194C8.91 11.1 8.49 11 8 11c-.491 0-.912.1-1.19.24a.859.859 0 0 0-.271.194.214.214 0 0 0-.036.054l-.003.01v.002l.001.006a.113.113 0 0 0 .012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238l-.244-2.855z"/>
+                </svg>
+              </div>
+              <div class="row justify-content-center popover-wrapper">
+                <strong>Brick count:</strong>
+                <span>{{ moc.parts }}
+                  @if (moc.partsExtra !== '') {
+                    <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                         fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path
+                                      d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                </svg>
+                  }
+                            </span>
+                @if (moc.partsExtra !== '' && moc.partsExtra !== '-') {
+                  <div class="popover-content">
+                    <p class="popover-content-text">{{ moc.partsExtra }}</p>
+                  </div>
                 }
-            </ul>
-            }
+              </div>
+            </div>
+            <div class="col-6 justify-content-center text-center">
+              <div class="row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                     class="bi bi-search" viewBox="0 0 16 16">
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </div>
+              <div class="row justify-content-center popover-wrapper">
+                <strong>Scale:</strong>
+                <span>{{ moc.scale }}
+                  @if (moc.scaleExtra !== '') {
+                    <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                         fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path
+                                      d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                </svg>
+                  }
+                            </span>
+                @if (moc.scaleExtra !== '' && moc.scaleExtra !== '-') {
+                  <div class="popover-content">
+                    <p class="popover-content-text">{{ moc.scaleExtra }}</p>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        }
+        <div class="row py-3">
+          <div class="col-6 justify-content-center text-center py-auto">
+            <div class="row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                   class="bi bi-person-square" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path
+                  d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>
+              </svg>
+            </div>
+            <div class="row justify-content-center popover-wrapper">
+              <strong>Designers:</strong>
+
+              <span>{{ moc.designer }}
+                @if (moc.designerExtra !== '') {
+                  <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                       fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path
+                                      d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                </svg>
+                }
+                            </span>
+
+              @if (moc.designerExtra !== '' && moc.designerExtra !== '-') {
+                <div class="popover-content">
+                  <p class="popover-content-text">{{ moc.designerExtra }}</p>
+                </div>
+              }
+            </div>
+          </div>
+          <div class="col-6 justify-content-center text-center py-auto">
+            <div class="row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                   class="bi bi-calendar-date-fill" viewBox="0 0 16 16">
+                <path
+                  d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zm5.402 9.746c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2z"/>
+                <path
+                  d="M16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm-2.89-5.435v5.332H5.77V8.079h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z"/>
+              </svg>
+            </div>
+            <div class="row justify-content-center">
+              <strong>Last updated:</strong> {{ moc.lastupdate }}
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6">
-            @if(moc.updateMessage !==''){
-            <div class="row mt-1">
-                <h4 class="mx-auto text-center text-danger p-1 update-message-container">
-                    {{moc.updateMessage}}
-                </h4>
+        @if (moc.type !== "merch") {
+          <div class="row py-3">
+            <div class="col-6 justify-content-center text-center py-auto">
+              <div class="row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                     class="bi bi-rulers" viewBox="0 0 16 16">
+                  <path
+                    d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z"/>
+                </svg>
+              </div>
+
+              <div class="row justify-content-center popover-wrapper">
+                <strong>Dimensions:</strong>
+
+                <span>{{ moc.dimensions }} @if (moc.dimensionsExtra !== '') {
+                  <svg placement="top"
+                       xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+                       class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path
+                                      d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                </svg>
+                }
+                            </span>
+
+                @if (moc.dimensionsExtra !== '') {
+                  <div class="popover-content">
+                    <p class="popover-content-text">{{ moc.dimensionsExtra }}</p>
+                  </div>
+                }
+              </div>
             </div>
-            }
-            <div class="row mt-1">
-                <h3 class="mx-auto text-center text-coloring">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        class="bi bi-download mr-2" viewBox="0 0 16 16">
-                        <path
-                            d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                        <path
-                            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
-                    </svg>
-                    Instructions and digital files
-                </h3>
+            <div class="col-6 justify-content-center text-center py-auto">
+              <div class="row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                     class="bi bi-palette-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                </svg>
+              </div>
+              <div class="row justify-content-center popover-wrapper">
+                <strong>Placeholder color:</strong>
+                <span>
+                                {{ moc.internalColor }}
+                  @if (moc.internalColorExtra !== '') {
+                    <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                         fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path
+                                      d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                </svg>
+                  }
+                            </span>
+                @if (moc.internalColorExtra !== '' && moc.internalColorExtra !== '-') {
+                  <div class="popover-content">
+                    <p class="popover-content-text">{{ moc.internalColorExtra }}</p>
+                  </div>
+                }
+              </div>
             </div>
-            <div class="row mt-1">
+          </div>
+          <div class="row py-3">
+            <div class="col-6 justify-content-center text-center py-auto">
+              <div class="row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                     class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+              </div>
+              <div class="row justify-content-center popover-wrapper">
+                <strong>Build difficulty:</strong>
+                <div>
+                  <svg
+                    [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2,'brick-1-color': moc.difficulty==1}"
+                    class="brick-default-color" width="16" height="16"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
+                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
+                  </svg>
+                  <svg
+                    [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2}"
+                    class="brick-default-color" width="16" height="16"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
+                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
+                  </svg>
+                  <svg
+                    [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3}"
+                    class="brick-default-color" width="16" height="16"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
+                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
+                  </svg>
+                  <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4}"
+                       class="brick-default-color" width="16" height="16"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
+                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
+                  </svg>
+                  <svg [ngClass]="{'brick-5-color': moc.difficulty==5}" class="brick-default-color"
+                       width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
+                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
+                  </svg>
+                </div>
+                <span>{{ getDifficultyText(moc.difficulty) }}
+                  @if (moc.difficultyExtra !== '') {
+                    <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                         fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path
+                                      d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                </svg>
+                  }
+                            </span>
+                @if (moc.difficultyExtra !== '') {
+                  <div class="popover-content">
+                    <p class="popover-content-text">{{ moc.difficultyExtra }}</p>
+                  </div>
+                }
+              </div>
+            </div>
+            <div class="col-6 justify-content-center text-center py-auto">
+              <div class="row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                     class="bi bi-wrench-adjustable" viewBox="0 0 16 16">
+                  <path
+                    d="M16 4.5a4.492 4.492 0 0 1-1.703 3.526L13 5l2.959-1.11c.027.2.041.403.041.61Z"/>
+                  <path
+                    d="M11.5 9c.653 0 1.273-.139 1.833-.39L12 5.5 11 3l3.826-1.53A4.5 4.5 0 0 0 7.29 6.092l-6.116 5.096a2.583 2.583 0 1 0 3.638 3.638L9.908 8.71A4.49 4.49 0 0 0 11.5 9Zm-1.292-4.361-.596.893.809-.27a.25.25 0 0 1 .287.377l-.596.893.809-.27.158.475-1.5.5a.25.25 0 0 1-.287-.376l.596-.893-.809.27a.25.25 0 0 1-.287-.377l.596-.893-.809.27-.158-.475 1.5-.5a.25.25 0 0 1 .287.376ZM3 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+                </svg>
+              </div>
+              <div class="row justify-content-center popover-wrapper">
+                <strong>Stability:</strong>
+                <div>
+                  <svg
+                    [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2,'brick-1-color': moc.stability==1}"
+                    class="brick-default-color" width="16" height="16"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
+                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
+                  </svg>
+                  <svg
+                    [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2}"
+                    class="brick-default-color" width="16" height="16"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
+                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
+                  </svg>
+                  <svg
+                    [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3}"
+                    class="brick-default-color" width="16" height="16"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
+                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
+                  </svg>
+                  <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4}"
+                       class="brick-default-color" width="16" height="16"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
+                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
+                  </svg>
+                  <svg [ngClass]="{'brick-5-color': moc.stability==5}" class="brick-default-color"
+                       width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
+                    <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
+                  </svg>
+                </div>
+                <span>{{ getStabilityText(moc.stability) }}
+                  @if (moc.stabilityExtra !== '') {
+                    <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                         fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path
+                                      d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                </svg>
+                  }
+                  @if (moc.stabilityExtra !== '' && moc.stabilityExtra !== '-') {
+                    <div class="popover-content">
+                                    <p class="popover-content-text">{{ moc.stabilityExtra }}</p>
+                                </div>
+                  }
+                            </span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="row m-4">
+    <div id="viewer" class="col-lg-6 text-coloring">
+      @if (showViewer) {
+        <div class="row d-flex justify-content-between text-coloring m-2 align-items-center">
+          <button class="col btn inv-interact-button text-decoration-none text-align-center rounded"
+                  (click)="toggleViewer(viewerLink)">Close Viewer
+          </button>
+          <a class="col text-coloring text-center" href="https://www.ldraw.org/" target="_blank">
+            This viewer has been created using LDraw
+          </a>
+        </div>
+      }
+      @if (showViewer) {
+        <div class="text-coloring">
+          <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer" [placeHolderColor]="moc.internalColor">
+          </app-viewer>
+        </div>
+      }
+      <h4>About the MOC</h4>
+      <p style="white-space: pre-wrap">
+        {{ moc.mocDescription }}
+      </p>
+      @if (moc.rocketDescription !== '' && moc.type !== 'merch') {
+        <h4 class="pt-2">About the {{ moc.type }}</h4>
+      }
+      @if (moc.type !== '' && moc.type !== 'merch') {
+        <p style="white-space: pre-wrap">
+          {{ moc.rocketDescription }}
+        </p>
+      }
+      @if (moc.links.length > 0) {
+        <h4 class="pt-2">Useful links</h4>
+        <ul>
+          @for (link of moc.links; track link) {
+            <li>
+              <a class="text-coloring" href="{{link}}" target="_blank" rel="noreferrer noopener">{{ link }}</a>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+    <div class="col-lg-6">
+      @if (moc.updateMessage !== '') {
+        <div class="row mt-1">
+          <h4 class="mx-auto text-center text-danger p-1 update-message-container">
+            {{ moc.updateMessage }}
+          </h4>
+        </div>
+      }
+      <div class="row mt-1">
+        <h3 class="mx-auto text-center text-coloring">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+               class="bi bi-download mr-2" viewBox="0 0 16 16">
+            <path
+              d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path
+              d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+          </svg>
+          Instructions and digital files
+        </h3>
+      </div>
+      <div class="row mt-1">
                 <span class="text-center text-coloring">
                     No pdf instructions or part lists available? <a class="text-coloring" routerLink="/about/.">Contact
                         me!</a><br>
                     Answers to common questions can be found <a class="text-coloring" routerLink="/about/.">here</a>!
                 </span>
-            </div>
-            <div class="row mt-1">
-                @for(version of sortedVersions(moc.versions);track version;let indexOfelement = $index){
-                <div class="border bordered-content rounded-3 mt-3 m-0 p-1">
-                    <button
-                        class="btn version-expand-button text-coloring text-decoration-none d-flex w-100 justify-content-left"
-                        type="button" data-bs-toggle="collapse" aria-expanded="false"
-                        [attr.data-bs-target]="'#body'+indexOfelement" [attr.aria-controls]="'body'+indexOfelement">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
-                            style="vertical-align: baseline; margin-right: 10px;" class="bi bi-chevron-down"
-                            viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                        </svg>
-                        <b>{{version.version}}</b>
-                        @if(indexOfelement === 0 && moc.versions.length > 1){
-                        <span style="color:red;margin-right:1rem;margin-left:1rem;">
+      </div>
+      <div class="row mt-1">
+        @for (version of sortedVersions(moc.versions); track version; let indexOfelement = $index) {
+          <div class="border bordered-content rounded-3 mt-3 m-0 p-1">
+            <button
+              class="btn version-expand-button text-coloring text-decoration-none d-flex w-100 justify-content-left"
+              type="button" data-bs-toggle="collapse" aria-expanded="false"
+              [attr.data-bs-target]="'#body'+indexOfelement" [attr.aria-controls]="'body'+indexOfelement">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
+                   style="vertical-align: baseline; margin-right: 10px;" class="bi bi-chevron-down"
+                   viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+              </svg>
+              <b>{{ version.version }}</b>
+              @if (indexOfelement === 0 && moc.versions.length > 1) {
+                <span style="color:red;margin-right:1rem;margin-left:1rem;">
                             Newest version!
                         </span>
-                        }
-                        {{version.versionExtra}}
-                    </button>
-                    <div class="collapse text-coloring" [id]="'body'+indexOfelement">
-                        @if(version.changelog !== ''){
-                        <p class="m-3 mb-0">
-                            <strong>Changelog:</strong><br>
-                            {{version.changelog}}<br>
-                        </p>
-                        <hr class="mt-3 mb-1 d-inline-block divider-hr" />
-                        }
-                        @for(file of version.files;track file; let indexOfFile=$index){
-                        <div class="mx-3 py-1 text-coloring d-flex align-items-center">
-                            <label title="{{file.description}}" style="margin-right:10px">{{file.name}}</label>
-                            <div class="m-0 p-0">
-                                <a title="Download {{file.type}} file"
-                                    class="btn inv-interact-button text-decoration-none text-align-center"
-                                    style="margin-right:10px" type="button" href="{{file.link}}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                                        class="bi bi-download" viewBox="0 0 16 16">
-                                        <path
-                                            d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                                        <path
-                                            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
-                                    </svg>
-                                </a>
-                                @if(file.type === 'io' && file.allowViewer){
-                                <button title="Open in 3D viewer"
-                                    class="btn inv-interact-button text-decoration-none text-align-center"
-                                    style="margin-right:10px" type="button" (click)="toggleViewer(file.link)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                                        class="bi bi-tv" viewBox="0 0 16 16">
-                                        <path
-                                            d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM13.991 3l.024.001a1.46 1.46 0 0 1 .538.143.757.757 0 0 1 .302.254c.067.1.145.277.145.602v5.991l-.001.024a1.464 1.464 0 0 1-.143.538.758.758 0 0 1-.254.302c-.1.067-.277.145-.602.145H2.009l-.024-.001a1.464 1.464 0 0 1-.538-.143.758.758 0 0 1-.302-.254C1.078 10.502 1 10.325 1 10V4.009l.001-.024a1.46 1.46 0 0 1 .143-.538.758.758 0 0 1 .254-.302C1.498 3.078 1.675 3 2 3h11.991zM14 2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h12c2 0 2-2 2-2V4c0-2-2-2-2-2z" />
-                                    </svg>
-                                </button>
-                                }
-                                @if(file.type === 'io' && file.allowExport){
-                                <button title="Download Bricklink .xml partlist" type="button"
-                                    class="btn inv-interact-button text-decoration-none text-align-center"
-                                    style="margin-right:10px" (click)="downloadXml(file.link,file.name)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                                        class="bi bi-filetype-xml" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M14 4.5V14a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.527 11.85h-.893l-.823 1.439h-.036L.943 11.85H.012l1.227 1.983L0 15.85h.861l.853-1.415h.035l.85 1.415h.908l-1.254-1.992 1.274-2.007Zm.954 3.999v-2.66h.038l.952 2.159h.516l.946-2.16h.038v2.661h.715V11.85h-.8l-1.14 2.596h-.025L4.58 11.85h-.806v3.999h.706Zm4.71-.674h1.696v.674H8.4V11.85h.791v3.325Z" />
-                                    </svg>
-                                </button>
-                                }
-                                @if(file.type === 'io' && file.allowExport){
-                                <button title="Download rebrickable .csv partslist" type="button"
-                                    class="btn inv-interact-button text-decoration-none text-align-center"
-                                    style="margin-right:10px" (click)="downloadCsv(file.link,file.name)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                                        class="bi bi-filetype-csv" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.517 14.841a1.13 1.13 0 0 0 .401.823c.13.108.289.192.478.252.19.061.411.091.665.091.338 0 .624-.053.859-.158.236-.105.416-.252.539-.44.125-.189.187-.408.187-.656 0-.224-.045-.41-.134-.56a1.001 1.001 0 0 0-.375-.357 2.027 2.027 0 0 0-.566-.21l-.621-.144a.97.97 0 0 1-.404-.176.37.37 0 0 1-.144-.299c0-.156.062-.284.185-.384.125-.101.296-.152.512-.152.143 0 .266.023.37.068a.624.624 0 0 1 .246.181.56.56 0 0 1 .12.258h.75a1.092 1.092 0 0 0-.2-.566 1.21 1.21 0 0 0-.5-.41 1.813 1.813 0 0 0-.78-.152c-.293 0-.551.05-.776.15-.225.099-.4.24-.527.421-.127.182-.19.395-.19.639 0 .201.04.376.122.524.082.149.2.27.352.367.152.095.332.167.539.213l.618.144c.207.049.361.113.463.193a.387.387 0 0 1 .152.326.505.505 0 0 1-.085.29.559.559 0 0 1-.255.193c-.111.047-.249.07-.413.07-.117 0-.223-.013-.32-.04a.838.838 0 0 1-.248-.115.578.578 0 0 1-.255-.384h-.765ZM.806 13.693c0-.248.034-.46.102-.633a.868.868 0 0 1 .302-.399.814.814 0 0 1 .475-.137c.15 0 .283.032.398.097a.7.7 0 0 1 .272.26.85.85 0 0 1 .12.381h.765v-.072a1.33 1.33 0 0 0-.466-.964 1.441 1.441 0 0 0-.489-.272 1.838 1.838 0 0 0-.606-.097c-.356 0-.66.074-.911.223-.25.148-.44.359-.572.632-.13.274-.196.6-.196.979v.498c0 .379.064.704.193.976.131.271.322.48.572.626.25.145.554.217.914.217.293 0 .554-.055.785-.164.23-.11.414-.26.55-.454a1.27 1.27 0 0 0 .226-.674v-.076h-.764a.799.799 0 0 1-.118.363.7.7 0 0 1-.272.25.874.874 0 0 1-.401.087.845.845 0 0 1-.478-.132.833.833 0 0 1-.299-.392 1.699 1.699 0 0 1-.102-.627v-.495Zm8.239 2.238h-.953l-1.338-3.999h.917l.896 3.138h.038l.888-3.138h.879l-1.327 4Z" />
-                                    </svg>
-                                </button>
-                                }
-                            </div>
-                        </div>
-                        }
-                    </div>
+              }
+              {{ version.versionExtra }}
+            </button>
+            <div class="collapse text-coloring" [id]="'body'+indexOfelement">
+              @if (version.changelog !== '') {
+                <p class="m-3 mb-0">
+                  <strong>Changelog:</strong><br>
+                  {{ version.changelog }}<br>
+                </p>
+                <hr class="mt-3 mb-1 d-inline-block divider-hr"/>
+              }
+              @for (file of version.files; track file; let fileIndex = $index) {
+                <div class="mx-3 py-1 text-coloring d-flex align-items-center">
+                  <label title="{{file.description}}" style="margin-right:10px">{{ file.name }}</label>
+                  <div class="m-0 p-0">
+                    <a title="Download {{file.type}} file"
+                       class="btn inv-interact-button text-decoration-none text-align-center"
+                       style="margin-right:10px" type="button" href="{{file.link}}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                           class="bi bi-download" viewBox="0 0 16 16">
+                        <path
+                          d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path
+                          d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                      </svg>
+                    </a>
+                    @if (file.type === 'io' && file.instructions) {
+                      <a title="Open in Instruction viewer"
+                              class="btn inv-interact-button text-decoration-none text-align-center"
+                              style="margin-right:10px" type="button"
+                              href="/instruction-viewer/{{this.moc.id}}/{{version.version}}/{{fileIndex}}/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                             class="bi bi-tv" viewBox="0 0 16 16">
+                          <path
+                            d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM13.991 3l.024.001a1.46 1.46 0 0 1 .538.143.757.757 0 0 1 .302.254c.067.1.145.277.145.602v5.991l-.001.024a1.464 1.464 0 0 1-.143.538.758.758 0 0 1-.254.302c-.1.067-.277.145-.602.145H2.009l-.024-.001a1.464 1.464 0 0 1-.538-.143.758.758 0 0 1-.302-.254C1.078 10.502 1 10.325 1 10V4.009l.001-.024a1.46 1.46 0 0 1 .143-.538.758.758 0 0 1 .254-.302C1.498 3.078 1.675 3 2 3h11.991zM14 2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h12c2 0 2-2 2-2V4c0-2-2-2-2-2z"/>
+                        </svg>
+                      </a>
+                    }
+                    @if (file.type === 'io' && file.viewer) {
+                      <button title="Open in 3D viewer"
+                              class="btn inv-interact-button text-decoration-none text-align-center"
+                              style="margin-right:10px" type="button" (click)="toggleViewer(file.link)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                             class="bi bi-badge-3d" viewBox="0 0 16 16">
+                          <path
+                            d="M4.52 8.368h.664c.646 0 1.055.378 1.06.9.008.537-.427.919-1.086.919-.598-.004-1.037-.325-1.068-.756H3c.03.914.791 1.688 2.153 1.688 1.24 0 2.285-.66 2.272-1.798-.013-.953-.747-1.38-1.292-1.432v-.062c.44-.07 1.125-.527 1.108-1.375-.013-.906-.8-1.57-2.053-1.565-1.31.005-2.043.734-2.074 1.67h1.103c.022-.391.383-.751.936-.751.532 0 .928.33.928.813.004.479-.383.835-.928.835h-.632v.914zm3.606-3.367V11h2.189C12.125 11 13 9.893 13 7.985c0-1.894-.861-2.984-2.685-2.984zm1.187.967h.844c1.112 0 1.621.686 1.621 2.04 0 1.353-.505 2.02-1.621 2.02h-.844z"/>
+                          <path
+                            d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/>
+                        </svg>
+                      </button>
+                    }
+                    @if (file.type === 'io' && file.export) {
+                      <button title="Download Bricklink .xml partlist" type="button"
+                              class="btn inv-interact-button text-decoration-none text-align-center"
+                              style="margin-right:10px" (click)="downloadXml(file.link,file.name)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                             class="bi bi-filetype-xml" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                                d="M14 4.5V14a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.527 11.85h-.893l-.823 1.439h-.036L.943 11.85H.012l1.227 1.983L0 15.85h.861l.853-1.415h.035l.85 1.415h.908l-1.254-1.992 1.274-2.007Zm.954 3.999v-2.66h.038l.952 2.159h.516l.946-2.16h.038v2.661h.715V11.85h-.8l-1.14 2.596h-.025L4.58 11.85h-.806v3.999h.706Zm4.71-.674h1.696v.674H8.4V11.85h.791v3.325Z"/>
+                        </svg>
+                      </button>
+                    }
+                    @if (file.type === 'io' && file.export) {
+                      <button title="Download rebrickable .csv partslist" type="button"
+                              class="btn inv-interact-button text-decoration-none text-align-center"
+                              style="margin-right:10px" (click)="downloadCsv(file.link,file.name)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                             class="bi bi-filetype-csv" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                                d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.517 14.841a1.13 1.13 0 0 0 .401.823c.13.108.289.192.478.252.19.061.411.091.665.091.338 0 .624-.053.859-.158.236-.105.416-.252.539-.44.125-.189.187-.408.187-.656 0-.224-.045-.41-.134-.56a1.001 1.001 0 0 0-.375-.357 2.027 2.027 0 0 0-.566-.21l-.621-.144a.97.97 0 0 1-.404-.176.37.37 0 0 1-.144-.299c0-.156.062-.284.185-.384.125-.101.296-.152.512-.152.143 0 .266.023.37.068a.624.624 0 0 1 .246.181.56.56 0 0 1 .12.258h.75a1.092 1.092 0 0 0-.2-.566 1.21 1.21 0 0 0-.5-.41 1.813 1.813 0 0 0-.78-.152c-.293 0-.551.05-.776.15-.225.099-.4.24-.527.421-.127.182-.19.395-.19.639 0 .201.04.376.122.524.082.149.2.27.352.367.152.095.332.167.539.213l.618.144c.207.049.361.113.463.193a.387.387 0 0 1 .152.326.505.505 0 0 1-.085.29.559.559 0 0 1-.255.193c-.111.047-.249.07-.413.07-.117 0-.223-.013-.32-.04a.838.838 0 0 1-.248-.115.578.578 0 0 1-.255-.384h-.765ZM.806 13.693c0-.248.034-.46.102-.633a.868.868 0 0 1 .302-.399.814.814 0 0 1 .475-.137c.15 0 .283.032.398.097a.7.7 0 0 1 .272.26.85.85 0 0 1 .12.381h.765v-.072a1.33 1.33 0 0 0-.466-.964 1.441 1.441 0 0 0-.489-.272 1.838 1.838 0 0 0-.606-.097c-.356 0-.66.074-.911.223-.25.148-.44.359-.572.632-.13.274-.196.6-.196.979v.498c0 .379.064.704.193.976.131.271.322.48.572.626.25.145.554.217.914.217.293 0 .554-.055.785-.164.23-.11.414-.26.55-.454a1.27 1.27 0 0 0 .226-.674v-.076h-.764a.799.799 0 0 1-.118.363.7.7 0 0 1-.272.25.874.874 0 0 1-.401.087.845.845 0 0 1-.478-.132.833.833 0 0 1-.299-.392 1.699 1.699 0 0 1-.102-.627v-.495Zm8.239 2.238h-.953l-1.338-3.999h.917l.896 3.138h.038l.888-3.138h.879l-1.327 4Z"/>
+                        </svg>
+                      </button>
+                    }
+                  </div>
                 </div>
-                }
+              }
             </div>
-        </div>
+          </div>
+        }
+      </div>
     </div>
-    @if(moc.related.length > 0){
+  </div>
+  @if (moc.related.length > 0) {
     <div class="row justify-content-center m-4 text-coloring">
-        <div class="justify-content-center">
+      <div class="justify-content-center">
             <span>
                 <h3>This and related Mocs</h3>
             </span>
-            <div class="card-group">
-                <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
+        <div class="card-group">
+          <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
                     [id]="moc.id" [scale]="moc.scale" [followRel]="true">
-                </app-card>
-                <app-card class="moc-card" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
+          </app-card>
+          <app-card class="moc-card" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
                     [name]="relatedMoc.title" [parts]="relatedMoc.parts" [type]="moc.type" [id]="relatedMoc.id"
                     [scale]="relatedMoc.scale" [followRel]="true">
-                </app-card>
-            </div>
+          </app-card>
         </div>
+      </div>
     </div>
-    }
+  }
 </div>

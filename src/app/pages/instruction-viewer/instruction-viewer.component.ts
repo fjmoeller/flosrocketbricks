@@ -3,7 +3,7 @@ import {AsyncPipe} from "@angular/common";
 import {
   AmbientLight, AxesHelper, Box3Helper,
   BufferGeometry, Clock, Color, DirectionalLight,
-  Group, Material, OrthographicCamera, PerspectiveCamera, Scene, Spherical,
+  Group, Material, Matrix3, Matrix4, OrthographicCamera, PerspectiveCamera, Quaternion, Scene, Spherical,
   Vector3, WebGLRenderer
 } from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls.js";
@@ -33,56 +33,23 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   loadingText: string = "Loading...";
   renderingActive: boolean = false
   currentStepNumber: number = 0;
+  canvasSize: { width: number, height: number } = {width: 0, height: 0};
 
-  private isMouseDown: boolean = false;
-  private integratedScroll: number = 0; //TODO remove x
-  private integratedCursor: { mx: number, my: number }[] = []; //TODO remove x and y
+  private isDragging: boolean = false;
+  private isPanning: boolean = false;
+  private scrollDelta: number = 0;
+  private dragDelta: { mx: number, my: number }[] = [];
+  private panDelta: { mx: number, my: number }[] = [];
 
   currentStepModel: StepModel;
   instructionModel: InstructionModel;
 
   private scene: Scene = new Scene();
-  private camera: OrthographicCamera | undefined;
-  private cameraCoordinates: Spherical = new Spherical();
-  private target: Vector3 = new Vector3(0,0,0);
-
-  @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    switch (event.key) {
-      case "ArrowRight":
-        this.nextStep();
-        break;
-      case "ArrowLeft":
-        this.previousStep();
-        break;
-    }
-  }
-
-  @HostListener('document:mousedown', ['$event'])
-  handleMouseDownEvent(event: MouseEvent) {
-    //TODO check the button (left, right)
-    this.isMouseDown = true;
-  }
-
-  @HostListener('document:mouseup', ['$event'])
-  handleMouseUpEvent(event: MouseEvent) {
-    //TODO check the button (left, right)
-    this.isMouseDown = false;
-  }
-
-  @HostListener('document:mousemove', ['$event'])
-  handleMouseMoveEvent(event: MouseEvent) {
-    if(this.isMouseDown)
-      this.integratedCursor.push({ mx: event.movementX, my: event.movementY });
-  }
-
-  @HostListener('document:wheel', ['$event'])
-  handleWheelEvent(event: WheelEvent) {
-    this.integratedScroll += event.deltaY;
-  }
+  private camera: OrthographicCamera = new OrthographicCamera();
+  private cameraCoordinates: Spherical = new Spherical(1, 1, 1);
+  private target: Vector3 = new Vector3(0, 0, 0);
 
   readonly clock = new Clock();
-  // 60 fps
   readonly MAX_FPS: number = 1 / 60;
 
   constructor(private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) {
@@ -107,14 +74,14 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       const moc = this.mocGrabberService.getMoc(Number(paramMap.get('id')) || 0);
       const version = moc?.versions.find(v => v.version.toLowerCase() === paramMap.get('version'));
       const file = version?.files[Number(paramMap.get('file')) || 0];
-      if (file) {
+      if (file) { //TODO add && instructions
         this.mocName = moc?.title ?? "";
         this.mocFileName = file.name;
         this.mocVersion = version.version;
         this.loadingFinished = false;
         const defaultLink = "https://bricksafe.com/files/SkySaac/temp/test2.io";
         this.instructionModel = await this.instructionService.getInstructionModel(defaultLink);
-        //this.instructionModel = await this.instructionService.getInstructionModel(file.link);
+        //this.instructionModel = await this.instructionService.getInstructionModel(file.link); //TODO
         this.createScene();
         this.refreshStep(false);
       }
@@ -123,6 +90,41 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.renderingActive = false;
+  }
+
+  private registerListeners(canvas: HTMLElement) {
+    canvas.addEventListener('mousedown', event => {
+      if (event.button === 0)
+        this.isDragging = true;
+      else if (event.button === 2)
+        this.isPanning = true;
+    });
+    canvas.addEventListener('mouseup', event => {
+      if (event.button === 0)
+        this.isDragging = false;
+      else if (event.button === 2)
+        this.isPanning = false;
+    });
+    canvas.addEventListener('wheel', event => {
+      event.preventDefault();
+      this.scrollDelta += event.deltaY;
+    });
+    canvas.addEventListener('mousemove', event => {
+      if (this.isDragging)
+        this.dragDelta.push({mx: event.movementX, my: event.movementY});
+      if (this.isPanning)
+        this.panDelta.push({mx: event.movementX, my: event.movementY});
+    });
+    canvas.addEventListener('keydown', event => {
+      switch (event.key) {
+        case "ArrowRight":
+          this.nextStep();
+          break;
+        case "ArrowLeft":
+          this.previousStep();
+          break;
+      }
+    });
   }
 
   previousStep() {
@@ -137,33 +139,40 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.refreshStep(true);
   }
 
-  private updateControls():void{
-    //add up cursor movement
-    let deltaX: number = 0;
-    let deltaY: number = 0;
-    for(let i = 0; i < this.integratedCursor.length; i++){
-      deltaX += this.integratedCursor[i].mx;
-      deltaY += this.integratedCursor[i].my;
+  private updateControls(): void {
+    //zooming in
+    const zoomSpeed = 0.02; //TODO put in settings & make depending on current zoom
+    this.camera.zoom = Math.max(Math.min(this.camera.zoom - (this.scrollDelta * zoomSpeed), 1000), 5);
+    this.scrollDelta = 0;
+
+    //panning
+    const panSpeed = 1 / this.camera.zoom; //TODO put in settings
+    let panningDeltaX: number = 0;
+    let panningDeltaY: number = 0;
+    for (let i = 0; i < this.panDelta.length; i++) {
+      panningDeltaX -= this.panDelta[i].mx;
+      panningDeltaY += this.panDelta[i].my;
     }
-    this.integratedCursor = [];
+    this.panDelta = [];
+    this.target.add(new Vector3(panningDeltaX * panSpeed, panningDeltaY * panSpeed, 0).applyMatrix3(new Matrix3().getNormalMatrix(this.camera.matrix)))
 
-    //add up scroll
-    const scrollSpeed = 0.001;
-    console.log(this.cameraCoordinates.radius);
-    this.cameraCoordinates.radius += this.integratedScroll * scrollSpeed;
-    this.integratedScroll = 0;
-
-    const rotationSpeed = 0.005;
-    this.cameraCoordinates.theta -= deltaX * rotationSpeed;
-    this.cameraCoordinates.phi -= deltaY * rotationSpeed;
-
+    //rotating & position
+    const rotationSpeed = 0.01; //TODO put in settings
+    let draggingDeltaX: number = 0;
+    let draggingDeltaY: number = 0;
+    for (let i = 0; i < this.dragDelta.length; i++) {
+      draggingDeltaX += this.dragDelta[i].mx;
+      draggingDeltaY += this.dragDelta[i].my;
+    }
+    this.dragDelta = [];
+    this.cameraCoordinates.theta -= draggingDeltaX * rotationSpeed;
+    this.cameraCoordinates.phi -= draggingDeltaY * rotationSpeed;
     // no camera flipping
-    this.cameraCoordinates.phi = Math.max(0.1, Math.min(Math.PI - 0.1, this.cameraCoordinates.phi));
-
-    const newPosition = new Vector3().setFromSpherical(this.cameraCoordinates).add(this.target);
-    this.camera?.position.copy(newPosition);
+    this.cameraCoordinates.phi = Math.max(0.05, Math.min(Math.PI - 0.05, this.cameraCoordinates.phi));
+    this.camera?.position.setFromSpherical(this.cameraCoordinates).add(this.target);
     this.camera?.lookAt(this.target);
-    //console.log(this.camera?.position);
+
+    this.camera.updateProjectionMatrix();
   }
 
   private refreshStep(removeOldModels: boolean): void {
@@ -175,26 +184,32 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     new Box3().setFromObject(this.currentStepModel.newPartsModel).getCenter(this.currentStepModel.prevPartsModel.position).multiplyScalar(-1);
     new Box3().setFromObject(this.currentStepModel.newPartsModel).getCenter(this.currentStepModel.newPartsModel.position).multiplyScalar(-1);
 
-    /*if (this.camera) {
-      const boundingBox = new Box3().setFromObject(this.currentStepModel.newPartsModel);
-      const p1 = new Vector3(boundingBox.min.x, boundingBox.min.y, boundingBox.min.z).project(this.camera);
-      const p2 = new Vector3(boundingBox.min.x, boundingBox.min.y, boundingBox.max.z).project(this.camera);
-      const p3 = new Vector3(boundingBox.min.x, boundingBox.max.y, boundingBox.min.z).project(this.camera);
-      const p4 = new Vector3(boundingBox.min.x, boundingBox.max.y, boundingBox.max.z).project(this.camera);
-
-      const p5 = new Vector3(boundingBox.max.x, boundingBox.min.y, boundingBox.min.z).project(this.camera);
-      const p6 = new Vector3(boundingBox.max.x, boundingBox.min.y, boundingBox.max.z).project(this.camera);
-      const p7 = new Vector3(boundingBox.max.x, boundingBox.max.y, boundingBox.min.z).project(this.camera);
-      const p8 = new Vector3(boundingBox.max.x, boundingBox.max.y, boundingBox.max.z).project(this.camera);
-      //TODO adjust camera
-    }*/
+    if (this.camera) { // zoom to the correct distance
+      const box = new Box3().setFromObject(this.currentStepModel.newPartsModel);
+      const boxPoints = [
+        new Vector3(box.min.x, box.min.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.min.x, box.min.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.min.x, box.max.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.min.x, box.max.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.max.x, box.min.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.max.x, box.min.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.max.x, box.max.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.max.x, box.max.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
+      ];
+      const cameraBox = new Box3().setFromPoints(boxPoints);
+      const width = cameraBox.max.x - cameraBox.min.x;
+      const height = cameraBox.max.y - cameraBox.min.y;
+      const defaultZoomFactor = 4; //TODO put in settings
+      if (width / height > this.canvasSize.width / this.canvasSize.height)
+        this.camera.zoom = this.canvasSize.width / (width * defaultZoomFactor);
+      else
+        this.camera.zoom = this.canvasSize.height / (height * defaultZoomFactor);
+    }
 
     //this.scene.add(new Box3Helper(new Box3().setFromObject(this.currentStepModel.newPartsModel), new Color(0xffff00))); //yellow
     //this.scene.add(new Box3Helper(new Box3().setFromObject(this.currentStepModel.prevPartsModel), new Color(0x00ff00)));
 
     this.scene.add(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
-
-    //TODO update stepPart UI
   }
 
   createScene(): void {
@@ -217,21 +232,23 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     const canvas = document.getElementById('canvas-viewer');
     const canvasWrapper = document.getElementById('canvas-wrapper');
     if (!canvas || !canvasWrapper) return;
-    let canvasSizes = {
+    this.canvasSize = {
       width: canvas.clientWidth,
       height: canvas.clientHeight
     };
+    this.registerListeners(canvas);
 
-    const camera = new OrthographicCamera(canvasSizes.width / -2, canvasSizes.width / 2, canvasSizes.height / 2, canvasSizes.height / -2, 1, 1000);
-    camera.position.z = 5;
-    camera.position.y = 5;
-    camera.position.x = 5;
-    camera.lookAt(0,0,0);
+    const camera = new OrthographicCamera(this.canvasSize.width / -2, this.canvasSize.width / 2, this.canvasSize.height / 2, this.canvasSize.height / -2, -1000, 1000);
+    camera.position.z = 0;
+    camera.position.y = 0;
+    camera.position.x = 0;
+    camera.zoom = 10;
+    camera.lookAt(0, 0, 0);
     newScene.add(camera);
     this.camera = camera;
 
     const renderer = new WebGLRenderer({antialias: true, canvas: canvas});
-    renderer.setSize(canvasSizes.width, canvasSizes.height);
+    renderer.setSize(this.canvasSize.width, this.canvasSize.height);
     renderer.setPixelRatio(window.devicePixelRatio * 1.5);
     renderer.setClearColor("rgb(88,101,117)");
 

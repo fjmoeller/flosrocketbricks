@@ -145,6 +145,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.camera.zoom = Math.max(Math.min(this.camera.zoom - (this.scrollDelta * zoomSpeed), 1000), 5);
     this.scrollDelta = 0;
 
+
     //panning
     const panSpeed = 1 / this.camera.zoom; //TODO put in settings
     let panningDeltaX: number = 0;
@@ -186,19 +187,9 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
     if (this.camera) { // zoom to the correct distance
       const box = new Box3().setFromObject(this.currentStepModel.newPartsModel);
-      const boxPoints = [
-        new Vector3(box.min.x, box.min.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.min.x, box.min.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.min.x, box.max.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.min.x, box.max.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.max.x, box.min.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.max.x, box.min.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.max.x, box.max.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.max.x, box.max.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
-      ];
-      const cameraBox = new Box3().setFromPoints(boxPoints);
-      const width = cameraBox.max.x - cameraBox.min.x;
-      const height = cameraBox.max.y - cameraBox.min.y;
+      box.applyMatrix4(this.camera.matrixWorld);
+      const width = box.max.x - box.min.x;
+      const height = box.max.y - box.min.y;
       const defaultZoomFactor = 4; //TODO put in settings
       if (width / height > this.canvasSize.width / this.canvasSize.height)
         this.camera.zoom = this.canvasSize.width / (width * defaultZoomFactor);
@@ -225,10 +216,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     const ambientLight = new AmbientLight(0xffffff, 0.8);
     newScene.add(ambientLight);
 
-    //TODO remove
-    //const axesHelper = new AxesHelper();
-    //newScene.add(axesHelper);
-
     const canvas = document.getElementById('canvas-viewer');
     const canvasWrapper = document.getElementById('canvas-wrapper');
     if (!canvas || !canvasWrapper) return;
@@ -239,9 +226,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.registerListeners(canvas);
 
     const camera = new OrthographicCamera(this.canvasSize.width / -2, this.canvasSize.width / 2, this.canvasSize.height / 2, this.canvasSize.height / -2, -1000, 1000);
-    camera.position.z = 0;
-    camera.position.y = 0;
-    camera.position.x = 0;
     camera.zoom = 10;
     camera.lookAt(0, 0, 0);
     newScene.add(camera);
@@ -267,7 +251,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       if (this.clock.getElapsedTime() > this.MAX_FPS) {
         this.updateControls();
 
-        //TODO only render if mouse moved or next step clicked or so
         renderer.render(newScene, camera);
 
         this.clock.start()

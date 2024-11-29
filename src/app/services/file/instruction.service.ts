@@ -141,8 +141,6 @@ export class InstructionService {
     if(firstSubmodel)
       this.collectPartRefs(firstSubmodel, instructionModel);
 
-    console.log("finished instructionModel:", instructionModel);
-
     return instructionModel;
   }
 
@@ -169,7 +167,6 @@ export class InstructionService {
       const thisStepsSubmodels: string[] = []; //list of already made submodels so against resolving same submodels multiple times
       for (let partReferenceIndex: number = 0; partReferenceIndex < partReferences.length; partReferenceIndex++) {
         const partReference: PartReference = partReferences[partReferenceIndex];
-        //TODO remove console.log("resolving reference: " + partReference.name + " " + partReferenceIndex);
 
         const referencedThing = instructionModel.submodels.get(partReference.name);
         if (referencedThing) { //If Submodel
@@ -536,17 +533,6 @@ export class InstructionService {
       }
       //TODO check if assembling the submodels here on demand might be a good idea instead of doing it beforehand for all
     }
-
-    //center everything based on these models
-    /*const mocBoundingBox = new Box3().setFromObject(partsGroup);
-    const center = mocBoundingBox.getCenter(new Vector3());
-    partsGroup.position.sub(center);
-    console.log("Center: ",partsGroup.position);*/
-
-    /*
-    this.modelGroup
-    const mocBB = new Box3().setFromObject(mocGroup);
-    mocGroup.position.y += mocBB.getSize(new Vector3()).y / 2;*/
 
     for (let i = 0; i < currentStep.previousSubmodels.length; i++) {
       const iSubReference = currentStep.previousSubmodels[i];

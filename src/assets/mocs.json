@@ -16382,7 +16382,7 @@
                         "name": "New_Glenn_V3.8_pub.io",
                         "description": "The digital io file",
                         "type": "io",
-                        "allowExport": false,
+                        "allowExport": true,
                         "allowViewer": true,
                         "link": "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.8/New_Glenn_V3.8_pub.io"
                     }

@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
 import {
-  Box3, Box3Helper,BufferGeometry, Color,Group,LineBasicMaterial, LineSegments,Material,Mesh,
+  BufferGeometry, Color,Group,LineBasicMaterial, LineSegments,Material,Mesh,
   MeshStandardMaterial,Vector3
 } from "three";
 import {environment} from "../../../environments/environment";
-import {BehaviorSubject, Observable} from "rxjs";
 import {LdrawColorService} from "../color/ldraw-color.service";
 import {
   InstructionModel, InstructionPart, InstructionPartReference, InstructionStep,
@@ -26,21 +25,14 @@ export class InstructionService {
   private lineMaterials = [new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(71)}), new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(0)})];
   private prevLineMaterials = [new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(71)}), new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(0)})];
 
-  private loadingSubject = new BehaviorSubject<string>('Loading');
-  loadingState: Observable<string> = this.loadingSubject.asObservable();
-
   constructor(private ldrawColorService: LdrawColorService, private ldrToThreeService: LdrToThreeService) {
   }
 
   async getInstructionModel(fileLink: string): Promise<InstructionModel> {
-    this.loadingSubject.next("Downloading Ldraw File");
     const fileName = fileLink.slice(0, fileLink.length - 2) + "ldr"
     const contents = await fetch(environment.backendFetchUrl + fileName);
-    this.loadingSubject.next("Creating Instruction Model");
-    const instructionModel: InstructionModel = this.createInstructionModel(await contents.text());
 
-    this.loadingSubject.next("Preparing Scene");
-    return instructionModel;
+    return this.createInstructionModel(await contents.text());
   }
 
   private createInstructionModel(ldrFileContent: string): InstructionModel {
@@ -52,9 +44,9 @@ export class InstructionService {
         allPartsMap: new Map<string, LdrPart>(),
         colorToMaterialMap: new Map<number, Material>(),
         colorToPrevMaterialMap: new Map<number, Material>(),
-        nameToGeometryMap: new Map<string, BufferGeometry>(), // geometries for normal parts
-        nameToColorGeometryMap: new Map<string, Map<number, BufferGeometry>>(), // geometries for multicolor parts (like printed ones)
-        nameToLineGeometryMap: new Map<string, BufferGeometry>()
+        idToGeometryMap: new Map<string, BufferGeometry>(), // geometries for normal parts
+        idToColorGeometryMap: new Map<string, Map<number, BufferGeometry>>(), // geometries for multicolor parts (like printed ones)
+        idToLineGeometryMap: new Map<string, BufferGeometry>()
       }
     };
     let topSubmodel: string = "";
@@ -81,7 +73,7 @@ export class InstructionService {
         }
       if (empty) continue;
 
-      let partName: string = "";
+      let submodelName: string = "";
       const stepReferences: PartReference[][] = [];
       stepReferences.push([]);
       let stepCounter = 0;
@@ -100,18 +92,18 @@ export class InstructionService {
           stepCounter++;
           stepReferences.push([]);
         } else if (submodelLine.startsWith("0 FILE"))
-          partName = submodelLine.slice(7).toLowerCase();
-        else if (submodelLine.startsWith("0 Name:") && partName == "no name") //backup in case no name got set which can happen
-          partName = submodelLine.slice(9).toLowerCase();
+          submodelName = submodelLine.slice(7).toLowerCase();
+        else if (submodelLine.startsWith("0 Name:") && submodelName == "no name") //backup in case no name got set which can happen
+          submodelName = submodelLine.slice(9).toLowerCase();
       }
       //remove last step if it's completely empty
       if (stepReferences.length > 0 && stepReferences[stepReferences.length - 1].length === 0)
         stepReferences.pop();
 
-      instructionModel.submodels.set(partName,{name: partName, stepReferences: stepReferences, group: new Group(), prevGroup: new Group()});
+      instructionModel.submodels.set(submodelName,{name: submodelName, stepReferences: stepReferences, group: new Group(), prevGroup: new Group()});
 
       //remember which one the first submodel is
-      if(topSubmodel === "") topSubmodel = partName;
+      if(topSubmodel === "") topSubmodel = submodelName;
     }
 
     //Parsing parts
@@ -119,21 +111,21 @@ export class InstructionService {
     for (let i = 0; i < rawPartLines.length; i++) {
       const partLines = rawPartLines[i];
       const parsedPart: LdrPart = this.parsePartLines(partLines, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap);
-      instructionModel.ldrData.allPartsMap.set(parsedPart.name, parsedPart);
-      if (!referenceNames.includes(parsedPart.name)) continue; //if it's a subpart, then skip it
-      const resolvedPart = this.resolvePart(parsedPart.name, instructionModel.ldrData.allPartsMap); //collects all vertices in the top part, so all subparts wil be resolved
+      instructionModel.ldrData.allPartsMap.set(parsedPart.id, parsedPart);
+      if (!referenceNames.includes(parsedPart.id)) continue; //if it's a subpart, then skip it
+      const resolvedPart = this.resolvePart(parsedPart.id, instructionModel.ldrData.allPartsMap); //collects all vertices in the top part, so all subparts wil be resolved
       if (resolvedPart.colorVertexMap.size > 1) { //if part is multi color part
         const colorGeometryMap = new Map<number, BufferGeometry>();
         resolvedPart.colorVertexMap.forEach((vertices, color) => {
           const indices = resolvedPart.colorIndexMap.get(color) ?? [];
           if (indices.length > 0)
-            colorGeometryMap.set(color, this.createGeometry(resolvedPart.name, vertices, indices));
+            colorGeometryMap.set(color, this.createGeometry(resolvedPart.id, vertices, indices));
         });
-        instructionModel.ldrData.nameToColorGeometryMap.set(parsedPart.name, colorGeometryMap);
+        instructionModel.ldrData.idToColorGeometryMap.set(parsedPart.id, colorGeometryMap);
         for (let vertices of resolvedPart.colorLineVertexMap.values())
-          instructionModel.ldrData.nameToLineGeometryMap.set(resolvedPart.name, this.createLineGeometry(resolvedPart.name, vertices));
+          instructionModel.ldrData.idToLineGeometryMap.set(resolvedPart.id, this.createLineGeometry(resolvedPart.id, vertices));
       } else { //if part is single color part
-        this.createGeometryIfNotExists(resolvedPart, instructionModel.ldrData.nameToGeometryMap, instructionModel.ldrData.nameToLineGeometryMap);
+        this.createGeometryIfNotExists(resolvedPart, instructionModel.ldrData.idToGeometryMap, instructionModel.ldrData.idToLineGeometryMap);
       }
     }
 
@@ -196,8 +188,8 @@ export class InstructionService {
             const partGroup = new Group();
             const prevPartGroup = new Group();
             if (foundPart && foundPart.colorVertexMap.size > 1) { //Is part with multiple colors //TODO auf prev achten!
-              const geoms = instructionModel.ldrData.nameToColorGeometryMap.get(partReference.name);
-              geoms?.forEach((geometry, color) => {
+              const geometries = instructionModel.ldrData.idToColorGeometryMap.get(partReference.name);
+              geometries?.forEach((geometry, color) => {
                 const material = instructionModel.ldrData.colorToMaterialMap.get(color);
                 const prevMaterial = instructionModel.ldrData.colorToPrevMaterialMap.get(color);
                 const mesh = new Mesh(geometry, material);
@@ -207,28 +199,24 @@ export class InstructionService {
                 prevPartGroup.add(mesh);
               });
             } else { //Is part with single color
-              const geometry = instructionModel.ldrData.nameToGeometryMap.get(partReference.name);
+              const geometry = instructionModel.ldrData.idToGeometryMap.get(partReference.name);
               const material = instructionModel.ldrData.colorToMaterialMap.get(partReference.color);
               const prevMaterial = instructionModel.ldrData.colorToPrevMaterialMap.get(partReference.color);
               const partMesh = new Mesh(geometry, material);
               const prevPartMesh = new Mesh(geometry, prevMaterial);
-              //partMesh.applyMatrix4(partReference.transformMatrix);
-              //prevPartMesh.applyMatrix4(partReference.transformMatrix);
               partGroup.add(partMesh);
               prevPartGroup.add(prevPartMesh);
             }
-            const lineGeometry = instructionModel.ldrData.nameToLineGeometryMap.get(partReference.name);
+            const lineGeometry = instructionModel.ldrData.idToLineGeometryMap.get(partReference.name);
             const lineMaterial = partReference.color === 0 ? this.lineMaterials[0] : this.lineMaterials[1];
             const prevLineMaterial = partReference.color === 0 ? this.prevLineMaterials[0] : this.prevLineMaterials[1];
             const lineMesh = new LineSegments(lineGeometry, lineMaterial);
             const prevLineMesh = new LineSegments(lineGeometry, prevLineMaterial);
-            //lineMesh.applyMatrix4(partReference.transformMatrix);
-            //prevLineMesh.applyMatrix4(partReference.transformMatrix);
             partGroup.add(lineMesh);
             prevPartGroup.add(prevLineMesh);
 
             //add to map of all parts
-            const newPart: InstructionPart = {name:partReference.name,prevGroup:prevPartGroup.clone(),group:partGroup.clone()};
+            const newPart: InstructionPart = {id:partReference.name,prevGroup:prevPartGroup.clone(),group:partGroup.clone()};
             instructionModel.parts.set(partReference.color + "###" + partReference.name, newPart);
 
             //add as parts to group of current submodel
@@ -245,12 +233,12 @@ export class InstructionService {
             currentSubmodel.prevGroup.add(constructedPrevPart);
           }
           instructionStep.newParts.push({
-            partName: partReference.name,
+            partId: partReference.name,
             color: partReference.color,
             transformMatrix: partReference.transformMatrix
           });
           previousParts.push({
-            partName: partReference.name,
+            partId: partReference.name,
             color: partReference.color,
             transformMatrix: partReference.transformMatrix
           });
@@ -352,6 +340,7 @@ export class InstructionService {
   private parsePartLines(partText: string, colorToMaterialMap: Map<number, Material>,colorToPrevMaterialMap: Map<number, Material>): LdrPart {
     const partLines = partText.split("\n");
 
+    let partId: string = "ERROR FLO";
     let partName: string = "ERROR FLO";
     const references: PartReference[] = [];
     let invertNext: boolean = false;
@@ -369,8 +358,11 @@ export class InstructionService {
         references.push(this.ldrToThreeService.parseLineTypeOne(partLine, invertNext));
         invertNext = false;
         this.createMaterialIfNotExists(references[references.length - 1].color, colorToMaterialMap, colorToPrevMaterialMap);
-      } else if (partLine.startsWith("0 FILE")) { //line is a part name
-        partName = partLine.slice(7);
+      } else if (partLine.startsWith("0 FILE")) { //line is a part id
+        partId = partLine.slice(7);
+        invertNext = false;
+      } else if (partLine.startsWith("0 ") && partName === "ERROR FLO" && partId != "ERROR FLO") { //line is a part name
+        partName = partLine.slice(2).trim().replace("  "," ");
         invertNext = false;
       } else if (partLine.startsWith("0 BFC INVERTNEXT")) //line enables BFC for the next line
         invertNext = true;
@@ -421,8 +413,7 @@ export class InstructionService {
       }
     }
 
-    return new LdrPart(partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
-
+    return new LdrPart(partId,partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
   }
 
   private createMaterialIfNotExists(color: number, colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>): void {
@@ -441,14 +432,14 @@ export class InstructionService {
   }
 
   private createGeometryIfNotExists(part: LdrPart, nameToGeometryMap: Map<string, BufferGeometry>, nameToLineGeometryMap: Map<string, BufferGeometry>): void {
-    if (nameToGeometryMap.has(part.name)) return;
+    if (nameToGeometryMap.has(part.id)) return;
     part.colorVertexMap.forEach((vertices, color) => { // should only be called once
       const indices = part.colorIndexMap.get(color);
       if (!indices) console.error("Color not found: vertices exist but no face to em");
-      else nameToGeometryMap.set(part.name, this.createGeometry(part.name, vertices, indices));
+      else nameToGeometryMap.set(part.id, this.createGeometry(part.id, vertices, indices));
     });
     part.colorLineVertexMap.forEach((vertices, color) => {
-      nameToLineGeometryMap.set(part.name, this.createLineGeometry(part.name, vertices));
+      nameToLineGeometryMap.set(part.id, this.createLineGeometry(part.id, vertices));
     });
   }
 
@@ -465,6 +456,8 @@ export class InstructionService {
       partGeometry.rotateY(-Math.PI);
     else if (partName == "70681.dat")
       partGeometry.translate(0, 0, 20);
+    else if (partName == "49803.dat")
+      partGeometry.translate(0, -32, 0);
 
     partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1); //if (this.ENABLE_FLAT_SHADING)
     partGeometry.computeBoundingBox();
@@ -485,6 +478,8 @@ export class InstructionService {
       partGeometry.rotateY(-Math.PI);
     else if (partName == "70681.dat")
       partGeometry.translate(0, 0, 20);
+    else if (partName == "49803.dat")
+      partGeometry.translate(0, -32, 0);
 
     partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1); //if (this.ENABLE_FLAT_SHADING)
 
@@ -499,7 +494,7 @@ export class InstructionService {
 
     for (let i = 0; i < currentStep.newParts.length; i++) {
       const iPartReference = currentStep.newParts[i];
-      const pPart = instructionModel.parts.get(iPartReference.color + "###" + iPartReference.partName);
+      const pPart = instructionModel.parts.get(iPartReference.color + "###" + iPartReference.partId);
       if (!pPart) continue; //not found
 
       const part = pPart.group.clone();
@@ -508,19 +503,22 @@ export class InstructionService {
 
       let found = false;
       for (let i = 0; i < stepPartsList.length; i++) {
-        if (stepPartsList[i].partName === iPartReference.partName && stepPartsList[i].color === iPartReference.color) {
+        if (stepPartsList[i].partId === iPartReference.partId && stepPartsList[i].color === iPartReference.color) {
           stepPartsList[i].quantity += 1;
           found = true;
           break;
         }
       }
-      if (!found) stepPartsList.push({
-        model: pPart.group,
-        color: iPartReference.color,
-        partName: iPartReference.partName,
-        quantity: 1
-      });
-      //TODO check if assembling the parts here on demand might be a good idea instead of doing it beforehand for all
+      if (!found) {
+        const partName = instructionModel.ldrData.allPartsMap.get(iPartReference.partId)?.name ?? "";
+        stepPartsList.push({
+          model: pPart.group,
+          partName:partName,
+          color: iPartReference.color,
+          partId: iPartReference.partId,
+          quantity: 1
+        });
+      }
     }
 
     for (let i = 0; i < currentStep.newSubmodels.length; i++) {
@@ -531,7 +529,6 @@ export class InstructionService {
         submodel.applyMatrix4(iSubReference.transformMatrix);
         newPartsGroup.add(submodel);
       }
-      //TODO check if assembling the submodels here on demand might be a good idea instead of doing it beforehand for all
     }
 
     for (let i = 0; i < currentStep.previousSubmodels.length; i++) {
@@ -542,18 +539,16 @@ export class InstructionService {
         submodel.applyMatrix4(iSubReference.transformMatrix);
         prevPartsGroup.add(submodel);
       }
-      //TODO check if assembling the submodels here on demand might be a good idea instead of doing it beforehand for all
     }
 
     for (let i = 0; i < currentStep.previousParts.length; i++) {
       const iPartReference = currentStep.previousParts[i];
-      const pPart = instructionModel.parts.get(iPartReference.color + "###" + iPartReference.partName);
+      const pPart = instructionModel.parts.get(iPartReference.color + "###" + iPartReference.partId);
       if (pPart) {
         const part = pPart.prevGroup.clone();
         part.applyMatrix4(iPartReference.transformMatrix);
         prevPartsGroup.add(part);
       }
-      //TODO check if assembling the parts here on demand might be a good idea instead of doing it beforehand for all
     }
 
     newPartsGroup.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);

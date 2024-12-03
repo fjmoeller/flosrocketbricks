@@ -8,6 +8,7 @@ export interface StepModel {
 }
 
 export interface StepPart {
+  partId: string;
   partName: string;
   color: number;
   quantity: number;
@@ -27,10 +28,10 @@ export interface InstructionModel {
 export interface LdrData {
   colorToMaterialMap: Map<number,Material>,
   colorToPrevMaterialMap: Map<number,Material>,
-  nameToGeometryMap: Map<string,BufferGeometry>,
-  nameToColorGeometryMap: Map<string,Map<number,BufferGeometry>>,
-  nameToLineGeometryMap: Map<string,BufferGeometry>,
-  allPartsMap: Map<string,LdrPart>,
+  idToGeometryMap: Map<string,BufferGeometry>,
+  idToColorGeometryMap: Map<string,Map<number,BufferGeometry>>,
+  idToLineGeometryMap: Map<string,BufferGeometry>,
+  allPartsMap: Map<string,LdrPart>
 }
 
 export interface InstructionStep {
@@ -42,7 +43,7 @@ export interface InstructionStep {
 }
 
 export interface InstructionPartReference {
-  partName: string;
+  partId: string;
   transformMatrix: Matrix4;
   color: number;
 }
@@ -60,7 +61,7 @@ export interface InstructionSubmodel {
 }
 
 export interface InstructionPart {
-  name: string;
+  id: string;
   group: Group;
   prevGroup: Group;
 }

@@ -1,10 +1,10 @@
 import {AfterViewInit, Component, Input, OnDestroy} from '@angular/core';
-import {StepPart} from "../../model/instructions";
+import {InstructionPart, InstructionSubmodel, StepPart} from "../../model/instructions";
 import {
-  AmbientLight, Box3Helper,
+  AmbientLight, Box3Helper, BufferGeometry,
   Clock, Color,
   DirectionalLight,
-  Group, Matrix3, Matrix4,
+  Group, Material, Matrix3, Matrix4,
   OrthographicCamera,
   Scene, Sphere,
   Spherical,
@@ -12,6 +12,11 @@ import {
   WebGLRenderer
 } from "three";
 import {Box3} from "three/src/math/Box3.js";
+import {InstructionService} from "../../services/file/instruction.service";
+import {ActivatedRoute} from "@angular/router";
+import {MocGrabberService} from "../../services/grabber/moc-grabber.service";
+import {LdrPart} from "../../model/ldrawParts";
+import {LdrawColorService} from "../../services/color/ldraw-color.service";
 
 @Component({
   selector: 'app-instruction-part',
@@ -27,6 +32,8 @@ export class InstructionPartComponent implements AfterViewInit, OnDestroy {
   @Input()
   partIndex: number = 0;
 
+  colorName: string = "";
+
   private renderingActive: boolean = false;
   private readonly MAX_FPS: number = 1 / 30;
   private readonly clock = new Clock();
@@ -38,9 +45,27 @@ export class InstructionPartComponent implements AfterViewInit, OnDestroy {
   private camera: OrthographicCamera = new OrthographicCamera();
   private cameraCoordinates: Spherical = new Spherical(1, 1, 1);
 
+  zoomSpeed = 0.0002;
+  rotationSpeed = 0.01;
+
+  constructor(private ldrawColorService: LdrawColorService) {
+  }
+
   ngAfterViewInit(): void {
-    if (this.stepPart)
+    if (this.stepPart) {
       this.createScene(this.stepPart?.model);
+      this.colorName = this.ldrawColorService.getLdrawColorNameByColorId(this.stepPart?.color).split('_').join(' ');
+    }
+    //TODO
+    /**
+     * fix scaling in main scene
+     * fix movedto part name
+     * auto part rotation
+     * move part list below
+     * part list at end
+     * fix multicolor parts
+     * submodel indicators
+     */
   }
 
   ngOnDestroy(): void {
@@ -49,12 +74,10 @@ export class InstructionPartComponent implements AfterViewInit, OnDestroy {
 
   private updateControls(): void {
     //zooming in
-    const zoomSpeed = 0.02; //TODO put in settings & make depending on current zoom
-    this.camera.zoom = Math.max(Math.min(this.camera.zoom - (this.scrollDelta * zoomSpeed), 1000), 5);
+    this.camera.zoom = Math.max(Math.min(this.camera.zoom - (this.scrollDelta * this.zoomSpeed), 1), 0);
     this.scrollDelta = 0;
 
     //rotating & position
-    const rotationSpeed = 0.01; //TODO put in settings
     let draggingDeltaX: number = 0;
     let draggingDeltaY: number = 0;
     for (let i = 0; i < this.dragDelta.length; i++) {
@@ -62,14 +85,12 @@ export class InstructionPartComponent implements AfterViewInit, OnDestroy {
       draggingDeltaY += this.dragDelta[i].my;
     }
     this.dragDelta = [];
-    this.cameraCoordinates.theta -= draggingDeltaX * rotationSpeed;
-    this.cameraCoordinates.phi -= draggingDeltaY * rotationSpeed;
+    this.cameraCoordinates.theta -= draggingDeltaX * this.rotationSpeed;
+    this.cameraCoordinates.phi -= draggingDeltaY * this.rotationSpeed;
     // no camera flipping
     this.cameraCoordinates.phi = Math.max(0.05, Math.min(Math.PI - 0.05, this.cameraCoordinates.phi));
     this.camera?.position.setFromSpherical(this.cameraCoordinates);
     this.camera?.lookAt(0, 0, 0);
-
-    console.log("camera.zoom", this.camera.zoom); //TODO remove
 
     this.camera.updateProjectionMatrix();
   }
@@ -103,10 +124,10 @@ export class InstructionPartComponent implements AfterViewInit, OnDestroy {
 
   private createScene(partGroup: Group) {
     const partModel = partGroup.clone();
-    partModel.add(new Box3Helper(new Box3().setFromObject(partModel), new Color(0x00ff00)));
+    //partModel.add(new Box3Helper(new Box3().setFromObject(partModel), new Color(0x00ff00)));
     partModel.scale.setScalar(0.044);
     partModel.rotateX(Math.PI);
-    partModel.rotateY(Math.PI / 2);
+    partModel.rotateY(-Math.PI / 2);
     new Box3().setFromObject(partModel).getCenter(partModel.position).multiplyScalar(-1);
 
     const partScene = new Scene();
@@ -133,30 +154,30 @@ export class InstructionPartComponent implements AfterViewInit, OnDestroy {
 
     const camera = new OrthographicCamera(canvasSizes.width / -2, canvasSizes.width / 2, canvasSizes.height / 2, canvasSizes.height / -2, -1000, 1000);
     this.camera = camera;
-    camera.position.z = 5;
-    camera.position.y = 5;
-    camera.position.x = 5;
+    camera.position.setFromSpherical(this.cameraCoordinates);
     camera.lookAt(0, 0, 0);
     partScene.add(camera);
     this.updateControls();
 
     //fit zoom to part size
     const modelBB = new Box3().setFromObject(partModel);
-    modelBB.applyMatrix4(camera.matrix);
-    const modelWidth = modelBB.max.x - modelBB.min.x;
-    const modelHeight = modelBB.max.y - modelBB.min.y;
-    const defaultZoomFactor = 2; //TODO
-    const requiredZoomX = (camera.right - camera.left) / modelWidth;
-    const requiredZoomY = (camera.top - camera.bottom) / modelHeight;
-    camera.zoom = Math.min(requiredZoomX, requiredZoomY);
-    console.log("canvasSizes", canvasSizes);
-    console.log("modelWidth", modelWidth);
-    console.log("modelMaxX", modelBB.max.x, modelBB.min.x);
-    console.log("modelMaxY", modelBB.max.y, modelBB.min.y);
-    console.log("modelHeight", modelHeight);
-    console.log("requiredZoomX", requiredZoomX);
-    console.log("requiredZoomY", requiredZoomY);
-    console.log("camera.zoom", camera.zoom);
+    modelBB.applyMatrix4(new Matrix4().makeRotationFromEuler(camera.rotation).invert());
+    const center = new Vector3();
+    modelBB.getCenter(center);
+    const leftBottom = modelBB.min.sub(center);
+    const rightTop = modelBB.max.sub(center);
+    const aspectRatio = (leftBottom.y - rightTop.y) / (leftBottom.x - rightTop.x);
+    if (aspectRatio < 1.0) {
+      camera.left = leftBottom.x;
+      camera.right = rightTop.x;
+      camera.bottom = leftBottom.x;
+      camera.top = rightTop.x;
+    } else {
+      camera.left = leftBottom.y;
+      camera.right = rightTop.y;
+      camera.bottom = leftBottom.y;
+      camera.top = rightTop.y;
+    }
     camera.updateProjectionMatrix();
 
     const renderer = new WebGLRenderer({antialias: true, canvas: canvas, alpha: true});

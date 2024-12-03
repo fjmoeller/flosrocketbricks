@@ -5,20 +5,21 @@
       "USA"
     ],
     "links": [
-      ""
+      "https://space.skyrocket.de/doc_lau/phantom-express.htm",
+      "https://en.wikipedia.org/wiki/XS-1_(spacecraft)"
     ],
     "type": "rocket",
     "id": 219,
-    "title": "XS-1",
-    "altTitles": [],
+    "title": "Phantom Express",
+    "altTitles": ["XS-1","XS-P"],
     "tags": [],
     "designer": "SkySaac",
-    "lastupdate": "2024-11-15",
-    "dateCreated": "2024-11-15",
+    "lastupdate": "2024-11-30",
+    "dateCreated": "2021-05-20",
     "related": [],
     "updateMessage": "",
-    "mocDescription": "This is a MOC of the tail cone of the Space Shuttle. It is made for KingsKnights Space Shuttle.",
-    "rocketDescription": "The tail cone was used on the Space Shuttle to improve the Space Shuttles aerodynamics and for covering the Space Shuttles tail end and main engines during transport on the Boeing 747.",
+    "mocDescription": "This is a MOC of Boeings Phantom Express. The second stage can be taken off from the spaceplane.",
+    "rocketDescription": "Phantom Express was Boeings entry to DARPAs XS-1/XS-P program. It was supposed to take up to 1.3 tons of payload into low earth orbit. It was cancelled in 2020.",
     "internalColor": "-",
     "scale": "110",
     "parts": 303,
@@ -26,11 +27,10 @@
     "stability": -1,
     "difficulty": -1,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/usa/space-shuttle/tail-cone/110-space-shuttle-tail-cone-v1.2.jpg",
+    "smallCoverImage": "assets/mocImages/110/usa/phantom-express/110-phantom-express-v3.0.jpg",
     "pictures": [
-      "https://files.flosrocketbackend.com/mocs/110/usa/space-shuttle/tail-cone/v1.2/Space_Shuttle_Tailcover_V1.2_1.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/space-shuttle/tail-cone/v1.2/Space_Shuttle_Tailcover_V1.2_2.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/space-shuttle/tail-cone/v1.2/Space_Shuttle_Tailcover_V1.2_3.jpg"
+      "https://files.flosrocketbackend.com/mocs/110/usa/phantom-express/v3.0/Phantom_Express_V3.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/phantom-express/v3.0/Phantom_Express_V3.0_2.jpg"
     ],
     "versions": [
       {
@@ -41,10 +41,19 @@
             "description": "The digital io file",
             "type": "io",
             "export": true,
+            "instructions": true,
+            "viewer": true,
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/phantom-express/v3.0/Phantom_Express_V3.0_pub.io",
+            "name": "Phantom_Express_V3.0_pub.io"
+          },
+          {
+            "description": "The digital pdf instructions",
+            "type": "pdf",
+            "export": false,
             "instructions": false,
             "viewer": false,
-            "link": "https://files.flosrocketbackend.com/mocs/110/usa/space-shuttle/tail-cone/v1.2/Space_Shuttle_Tailcover_V1.2.io",
-            "name": "Space_Shuttle_Tailcover_V1.2.io"
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/phantom-express/v3.0/Phantom_Express_V3.0.pdf",
+            "name": "Phantom_Express_V3.0.pdf"
           }
         ],
         "version": "V3.0"

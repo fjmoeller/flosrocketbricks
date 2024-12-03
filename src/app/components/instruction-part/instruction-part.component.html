@@ -1,6 +1,7 @@
-<div>
-  <div style="height: 10rem; width: 10rem;" id="canvas-wrapper-{{partIndex}}">
-    <canvas oncontextmenu="return false;" id="canvas-part-{{partIndex}}" style="height:100%; width:100%; background-color:red;" class="p-0 m-0"></canvas>
+<div class="tooltip-wrapper" style="padding-right:1rem">
+  <span class="tooltip-content">ID: {{stepPart?.partId}}<br>Name: {{stepPart?.partName}}<br>Color: {{colorName}}</span>
+  <div style="height: 6rem; width: 6rem;" id="canvas-wrapper-{{partIndex}}">
+    <canvas oncontextmenu="return false;" id="canvas-part-{{partIndex}}" style="height:100%; width:100%;" class="p-0 m-0 canvas"></canvas>
   </div>
   <label><b>{{ this.stepPart?.quantity }}x</b></label>
 </div>

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnDestroy} from '@angular/core';
+import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {InstructionPart, InstructionSubmodel, StepPart} from "../../model/instructions";
 import {
   AmbientLight, Box3Helper, BufferGeometry,
@@ -25,7 +25,7 @@ import {LdrawColorService} from "../../services/color/ldraw-color.service";
   templateUrl: './instruction-part.component.html',
   styleUrl: './instruction-part.component.sass'
 })
-export class InstructionPartComponent implements AfterViewInit, OnDestroy {
+export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input()
   stepPart?: StepPart;
 
@@ -51,21 +51,14 @@ export class InstructionPartComponent implements AfterViewInit, OnDestroy {
   constructor(private ldrawColorService: LdrawColorService) {
   }
 
-  ngAfterViewInit(): void {
-    if (this.stepPart) {
-      this.createScene(this.stepPart?.model);
+  ngOnInit(): void {
+    if (this.stepPart)
       this.colorName = this.ldrawColorService.getLdrawColorNameByColorId(this.stepPart?.color).split('_').join(' ');
-    }
-    //TODO
-    /**
-     * fix scaling in main scene
-     * fix movedto part name
-     * auto part rotation
-     * move part list below
-     * part list at end
-     * fix multicolor parts
-     * submodel indicators
-     */
+  }
+
+  ngAfterViewInit() {
+    if (this.stepPart)
+      this.createScene(this.stepPart?.model);
   }
 
   ngOnDestroy(): void {

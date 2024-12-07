@@ -4,6 +4,8 @@ import {LdrPart, PartReference} from "./ldrawParts";
 export interface StepModel {
   newPartsModel: Group;
   prevPartsModel: Group;
+  parentSubmodelModel: Group | undefined;
+  parentSubmodelAmount: number;
   stepPartsList: StepPart[];
 }
 
@@ -35,11 +37,13 @@ export interface LdrData {
 }
 
 export interface InstructionStep {
-  parentSubmodel: string; //parent submodel defines which previously added parts should be visible
+  parentSubmodel: string; //the name of the submodel that is being build in this step
+  parentSubmodelAmount: number;
   previousParts: InstructionPartReference[];
   previousSubmodels: InstructionSubmodelReference[];
   newSubmodels: InstructionSubmodelReference[];
   newParts: InstructionPartReference[];
+  isFirstStepInSubmodel: boolean;
 }
 
 export interface InstructionPartReference {

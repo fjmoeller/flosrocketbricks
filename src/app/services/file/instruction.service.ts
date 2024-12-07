@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {
-  BufferGeometry, Color,Group,LineBasicMaterial, LineSegments,Material,Mesh,
-  MeshStandardMaterial,Vector3
+  BufferGeometry, Color, Group, LineBasicMaterial, LineSegments, Material, Mesh,
+  MeshStandardMaterial, Vector3
 } from "three";
 import {environment} from "../../../environments/environment";
 import {LdrawColorService} from "../color/ldraw-color.service";
 import {
   InstructionModel, InstructionPart, InstructionPartReference, InstructionStep,
-  InstructionSubmodel, InstructionSubmodelReference,StepModel,StepPart
+  InstructionSubmodel, InstructionSubmodelReference, StepModel, StepPart
 } from "../../model/instructions";
 import {LdrPart, PartReference} from "../../model/ldrawParts";
 import {LdrToThreeService} from "./ldr-to-three.service";
@@ -18,7 +18,8 @@ import * as BufferGeometryUtils from "three/examples/jsm/utils/BufferGeometryUti
 })
 export class InstructionService {
 
-  private readonly PREVINTERPOLATIONCOLOR = new Color(0.344,0.394,0.457);
+  private readonly PREVINTERPOLATIONCOLOR = new Color(0.344, 0.394, 0.457);
+  private readonly PREVINTERPOLATIONPERCENTAGE:number= 0.7;
   //private readonly PREVINTERPOLATIONCOLOR = new Color(0.678,0.847,0.902); "rgb(88,101,117)"
 
   //Because there are only two possible lineColors I just initialize them here :)
@@ -38,8 +39,8 @@ export class InstructionService {
   private createInstructionModel(ldrFileContent: string): InstructionModel {
     const instructionModel: InstructionModel = {
       instructionSteps: [],
-      parts: new Map<string,InstructionPart>(),
-      submodels: new Map<string,InstructionSubmodel>(),
+      parts: new Map<string, InstructionPart>(),
+      submodels: new Map<string, InstructionSubmodel>(),
       ldrData: {
         allPartsMap: new Map<string, LdrPart>(),
         colorToMaterialMap: new Map<number, Material>(),
@@ -54,7 +55,7 @@ export class InstructionService {
     const ldrObjects = ldrFileContent.split("0 NOSUBMODEL"); //0 = submodels, 1 = parts
 
     if (ldrObjects.length != 2) {
-      console.error("Error: file is formated wrong, no submodel divider found: ",ldrObjects.length);
+      console.error("Error: file is formated wrong, no submodel divider found: ", ldrObjects.length);
       return instructionModel;
     }
 
@@ -100,10 +101,15 @@ export class InstructionService {
       if (stepReferences.length > 0 && stepReferences[stepReferences.length - 1].length === 0)
         stepReferences.pop();
 
-      instructionModel.submodels.set(submodelName,{name: submodelName, stepReferences: stepReferences, group: new Group(), prevGroup: new Group()});
+      instructionModel.submodels.set(submodelName, {
+        name: submodelName,
+        stepReferences: stepReferences,
+        group: new Group(),
+        prevGroup: new Group()
+      });
 
       //remember which one the first submodel is
-      if(topSubmodel === "") topSubmodel = submodelName;
+      if (topSubmodel === "") topSubmodel = submodelName;
     }
 
     //Parsing parts
@@ -114,7 +120,7 @@ export class InstructionService {
       instructionModel.ldrData.allPartsMap.set(parsedPart.id, parsedPart);
       if (!referenceNames.includes(parsedPart.id)) continue; //if it's a subpart, then skip it
       const resolvedPart = this.resolvePart(parsedPart.id, instructionModel.ldrData.allPartsMap); //collects all vertices in the top part, so all subparts wil be resolved
-      if (resolvedPart.colorVertexMap.size > 1) { //if part is multi color part
+      if (resolvedPart.colorVertexMap.size > 1) { //if part is multicolor part
         const colorGeometryMap = new Map<number, BufferGeometry>();
         resolvedPart.colorVertexMap.forEach((vertices, color) => {
           const indices = resolvedPart.colorIndexMap.get(color) ?? [];
@@ -130,17 +136,26 @@ export class InstructionService {
     }
 
     const firstSubmodel = instructionModel.submodels.get(topSubmodel);
-    if(firstSubmodel)
-      this.collectPartRefs(firstSubmodel, instructionModel);
+    if (firstSubmodel)
+      this.collectPartRefs(firstSubmodel, instructionModel,1);
 
     return instructionModel;
   }
 
-  private collectPartRefs(currentSubmodel: InstructionSubmodel, instructionModel: InstructionModel): void {
+  private countSubmodelAmount(submodelName:string,partReferences:PartReference[]):number{
+    let count = 0;
+    for(let i:number = 0; i<partReferences.length;i++){
+      if(partReferences[i].name === submodelName)
+        count++;
+    }
+    return count;
+  }
 
+  private collectPartRefs(currentSubmodel: InstructionSubmodel, instructionModel: InstructionModel, submodelReferenceAmount:number): void {
     //accumulate the submodels and parts used in this submodels steps
-    const previousSubmodels:InstructionSubmodelReference[] = [];
-    const previousParts:InstructionPartReference[] = [];
+    const previousSubmodels: InstructionSubmodelReference[] = [];
+    const previousParts: InstructionPartReference[] = [];
+    let isFirstStep = true;
 
     for (let stepIndex = 0; stepIndex < currentSubmodel.stepReferences.length; stepIndex++) {
       const partReferences: PartReference[] = currentSubmodel.stepReferences[stepIndex];
@@ -150,8 +165,11 @@ export class InstructionService {
         previousParts: [],
         newParts: [],
         newSubmodels: [],
-        parentSubmodel: currentSubmodel.name
+        parentSubmodel: currentSubmodel.name,
+        parentSubmodelAmount: submodelReferenceAmount,
+        isFirstStepInSubmodel: isFirstStep
       };
+      isFirstStep = false;
       //add the previous parts to this steps prevPartslist (same with submodel)
       instructionStep.previousParts.push(...previousParts);
       instructionStep.previousSubmodels.push(...previousSubmodels);
@@ -163,7 +181,7 @@ export class InstructionService {
         const referencedThing = instructionModel.submodels.get(partReference.name);
         if (referencedThing) { //If Submodel
           if (!thisStepsSubmodels.includes(partReference.name)) { //has not already been resolved in this step
-            this.collectPartRefs(referencedThing, instructionModel);
+            this.collectPartRefs(referencedThing, instructionModel, this.countSubmodelAmount(partReference.name,partReferences));
             thisStepsSubmodels.push(partReference.name);
           }
           //Add the submodel as reference into this step and add the group transformed into the parent submodel
@@ -190,13 +208,14 @@ export class InstructionService {
             if (foundPart && foundPart.colorVertexMap.size > 1) { //Is part with multiple colors //TODO auf prev achten!
               const geometries = instructionModel.ldrData.idToColorGeometryMap.get(partReference.name);
               geometries?.forEach((geometry, color) => {
+                if(color === 16 || color === 24 || color === -1 || color === -2)
+                  color = partReference.color;
                 const material = instructionModel.ldrData.colorToMaterialMap.get(color);
                 const prevMaterial = instructionModel.ldrData.colorToPrevMaterialMap.get(color);
                 const mesh = new Mesh(geometry, material);
                 const prevMesh = new Mesh(geometry, prevMaterial);
-                //mesh.applyMatrix4(partReference.transformMatrix);
                 partGroup.add(mesh);
-                prevPartGroup.add(mesh);
+                prevPartGroup.add(prevMesh);
               });
             } else { //Is part with single color
               const geometry = instructionModel.ldrData.idToGeometryMap.get(partReference.name);
@@ -216,7 +235,11 @@ export class InstructionService {
             prevPartGroup.add(prevLineMesh);
 
             //add to map of all parts
-            const newPart: InstructionPart = {id:partReference.name,prevGroup:prevPartGroup.clone(),group:partGroup.clone()};
+            const newPart: InstructionPart = {
+              id: partReference.name,
+              prevGroup: prevPartGroup.clone(),
+              group: partGroup.clone()
+            };
             instructionModel.parts.set(partReference.color + "###" + partReference.name, newPart);
 
             //add as parts to group of current submodel
@@ -337,7 +360,7 @@ export class InstructionService {
     return ldrPart;
   }
 
-  private parsePartLines(partText: string, colorToMaterialMap: Map<number, Material>,colorToPrevMaterialMap: Map<number, Material>): LdrPart {
+  private parsePartLines(partText: string, colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>): LdrPart {
     const partLines = partText.split("\n");
 
     let partId: string = "ERROR FLO";
@@ -362,7 +385,7 @@ export class InstructionService {
         partId = partLine.slice(7);
         invertNext = false;
       } else if (partLine.startsWith("0 ") && partName === "ERROR FLO" && partId != "ERROR FLO") { //line is a part name
-        partName = partLine.slice(2).trim().replace("  "," ");
+        partName = partLine.slice(2).trim().replace("  ", " ");
         invertNext = false;
       } else if (partLine.startsWith("0 BFC INVERTNEXT")) //line enables BFC for the next line
         invertNext = true;
@@ -413,7 +436,7 @@ export class InstructionService {
       }
     }
 
-    return new LdrPart(partId,partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
+    return new LdrPart(partId, partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
   }
 
   private createMaterialIfNotExists(color: number, colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>): void {
@@ -426,7 +449,7 @@ export class InstructionService {
 
       const prevMatParams = this.ldrawColorService.resolveColorByLdrawColorId(color);
       const prevMaterial = material.clone();
-      prevMaterial.color = prevMatParams.color.clone().lerp(this.PREVINTERPOLATIONCOLOR,0.6);
+      prevMaterial.color = prevMatParams.color.clone().lerp(this.PREVINTERPOLATIONCOLOR, this.PREVINTERPOLATIONPERCENTAGE);
       colorToPrevMaterialMap.set(color, prevMaterial);
     }
   }
@@ -487,7 +510,7 @@ export class InstructionService {
   }
 
   getModelByStep(instructionModel: InstructionModel, stepIndex: number): StepModel {
-    const currentStep:InstructionStep = instructionModel.instructionSteps[stepIndex];
+    const currentStep: InstructionStep = instructionModel.instructionSteps[stepIndex];
     const newPartsGroup = new Group();
     const prevPartsGroup = new Group();
     const stepPartsList: StepPart[] = [];
@@ -501,6 +524,7 @@ export class InstructionService {
       part.applyMatrix4(iPartReference.transformMatrix);
       newPartsGroup.add(part);
 
+      //create the partslist of all the parts added in this step
       let found = false;
       for (let i = 0; i < stepPartsList.length; i++) {
         if (stepPartsList[i].partId === iPartReference.partId && stepPartsList[i].color === iPartReference.color) {
@@ -513,7 +537,7 @@ export class InstructionService {
         const partName = instructionModel.ldrData.allPartsMap.get(iPartReference.partId)?.name ?? "";
         stepPartsList.push({
           model: pPart.group,
-          partName:partName,
+          partName: partName,
           color: iPartReference.color,
           partId: iPartReference.partId,
           quantity: 1
@@ -556,6 +580,12 @@ export class InstructionService {
     newPartsGroup.scale.setScalar(0.044);
     prevPartsGroup.scale.setScalar(0.044);
 
-    return {newPartsModel: newPartsGroup,prevPartsModel: prevPartsGroup, stepPartsList};
+    //add the model of the parent submodel if this is the first step in said submodel
+    let parentSubmodel = undefined;
+    if( currentStep.isFirstStepInSubmodel){
+      parentSubmodel = instructionModel.submodels.get(currentStep.parentSubmodel)?.group;
+    }
+
+    return {newPartsModel: newPartsGroup,prevPartsModel: prevPartsGroup, stepPartsList: stepPartsList, parentSubmodelModel: parentSubmodel, parentSubmodelAmount: currentStep.parentSubmodelAmount};
   }
 }

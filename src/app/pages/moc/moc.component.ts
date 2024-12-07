@@ -68,6 +68,7 @@ export class MocComponent implements OnInit, OnDestroy {
     a.href = window.URL.createObjectURL(blob);
     a.download = filename.split(".io")[0] + ".xml";
     a.click();
+    window.URL.revokeObjectURL(a.href);
   }
 
   async downloadCsv(filelink: string, filename: string) {
@@ -77,6 +78,7 @@ export class MocComponent implements OnInit, OnDestroy {
     a.href = window.URL.createObjectURL(blob);
     a.download = filename.split(".io")[0] + ".csv";
     a.click();
+    window.URL.revokeObjectURL(a.href);
   }
 
   ngOnDestroy(): void {

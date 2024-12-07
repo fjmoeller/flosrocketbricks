@@ -29,6 +29,7 @@ export const routes: Routes = [
   { path: 'blogs/.', component: BlogOverviewComponent },
   { path: 'instruction-viewer/.', component: InstructionViewerComponent },
   { path: 'instruction-viewer/:id/:version/:file/.', component: InstructionViewerComponent },
+  { path: 'instruction-viewer/:id/:version/:file/:stepIndex/.', component: InstructionViewerComponent },
   { path: 'collections/.', component: CollectionOverviewComponent },
   { path: 'collection/:id/:name/.', component: CollectionComponent },
   { path: 'orbiter/.', component: OrbiterComponent },

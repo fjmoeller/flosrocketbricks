@@ -1,22 +1,19 @@
-import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {InstructionPart, InstructionSubmodel, StepPart} from "../../model/instructions";
+import {AfterViewInit, Component, Inject, Input, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import {StepPart} from "../../model/instructions";
 import {
-  AmbientLight, Box3Helper, BufferGeometry,
-  Clock, Color,
+  AmbientLight,
+  Clock,
   DirectionalLight,
-  Group, Material, Matrix3, Matrix4,
+  Group, Matrix4,
   OrthographicCamera,
-  Scene, Sphere,
+  Scene,
   Spherical,
   Vector3,
   WebGLRenderer
 } from "three";
 import {Box3} from "three/src/math/Box3.js";
-import {InstructionService} from "../../services/file/instruction.service";
-import {ActivatedRoute} from "@angular/router";
-import {MocGrabberService} from "../../services/grabber/moc-grabber.service";
-import {LdrPart} from "../../model/ldrawParts";
 import {LdrawColorService} from "../../services/color/ldraw-color.service";
+import {isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-instruction-part',
@@ -27,12 +24,22 @@ import {LdrawColorService} from "../../services/color/ldraw-color.service";
 })
 export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input()
-  stepPart?: StepPart;
+  isPartList: boolean = false;
 
+  //if this component is a submodelindicator
   @Input()
-  partIndex: number = 0;
+  submodelAmountIndicator?: number;
+  @Input()
+  submodelGroup?: Group;
+
+  //if this component is a part list item
+  @Input()
+  stepPart?: StepPart;
+  @Input()
+  partIndex: number = -1;
 
   colorName: string = "";
+  partId: string = "";
 
   private renderingActive: boolean = false;
   private readonly MAX_FPS: number = 1 / 30;
@@ -48,17 +55,28 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
   zoomSpeed = 0.0002;
   rotationSpeed = 0.01;
 
-  constructor(private ldrawColorService: LdrawColorService) {
+  constructor(private ldrawColorService: LdrawColorService, @Inject(PLATFORM_ID) private _platformId: Object) {
   }
 
   ngOnInit(): void {
-    if (this.stepPart)
-      this.colorName = this.ldrawColorService.getLdrawColorNameByColorId(this.stepPart?.color).split('_').join(' ');
+    if (this.stepPart && this.isPartList) {
+      this.colorName = this.ldrawColorService.getLdrawColorNameByColorId(this.stepPart.color).split('_').join(' ');
+      if (this.stepPart.partId.endsWith(".dat"))
+        this.partId = this.stepPart.partId.slice(0, this.stepPart.partId.length - 4);
+      else
+        this.partId = this.stepPart.partId;
+    }
   }
 
   ngAfterViewInit() {
-    if (this.stepPart)
-      this.createScene(this.stepPart?.model);
+    setTimeout(() => { //set timeout cause angular is kinda stupid
+      if (isPlatformBrowser(this._platformId)) {
+        if (this.stepPart && this.isPartList)
+          this.createScene(this.stepPart?.model);
+        else if (this.submodelGroup && !this.isPartList)
+          this.createScene(this.submodelGroup);
+      }
+    }, 5);
   }
 
   ngOnDestroy(): void {

@@ -22,9 +22,7 @@ export class InstructionDownloadComponent {
       type:"",
       export:false,
       name:"",
-      instructions:false,
       description:"",
-      viewer:false
     };
   }
 

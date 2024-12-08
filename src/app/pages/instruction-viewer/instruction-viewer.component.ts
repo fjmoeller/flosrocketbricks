@@ -89,8 +89,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     };
     this.file = {
       link: "",
-      instructions: false,
-      viewer: false,
       name: "",
       type: "",
       export: false,
@@ -111,11 +109,11 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       const version = moc?.versions.find(v => v.version.toLowerCase() === paramMap.get('version')?.toLowerCase());
       const file = version?.files[Number(paramMap.get('file')) || 0];
       let initialStep = (Number(paramMap.get('stepIndex')) || 0);
-      if (file) {
+      if (file && file.instructions) {
         this.file = file;
         this.version = version;
         this.loadingFinished = false;
-        this.instructionModel = await this.instructionService.getInstructionModel(file.link);
+        this.instructionModel = await this.instructionService.getInstructionModel(file.link,file.instructions);
         this.createScene();
         this.currentStepNumber = initialStep;
         this.refreshStep(false);
@@ -355,6 +353,9 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       camera.top = camera.top / (newAspectRatio / prevAspectRatio);
       camera.bottom = camera.bottom / (newAspectRatio / prevAspectRatio);
       camera.updateProjectionMatrix();
+
+      this.canvasSize.width = canvasWrapper.clientWidth;
+      this.canvasSize.height = canvasWrapper.clientHeight;
     });
 
     const update = () => {

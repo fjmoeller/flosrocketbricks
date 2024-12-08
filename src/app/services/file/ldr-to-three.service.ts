@@ -45,12 +45,12 @@ export class LdrToThreeService {
   constructor(private ldrawColorService: LdrawColorService) {
   }
 
-  async getModel(ioUrl: string, placeHolderColor: string): Promise<Group> {
+  async getModel(ioUrl: string, placeHolderColor: string, viewerVersion: string): Promise<Group> {
     this.loadingSubject.next("Downloading Ldr File");
     const ldrUrl = ioUrl.slice(0, ioUrl.length - 2) + "ldr"
     const contents = await fetch(environment.backendFetchUrl + ldrUrl);
     this.loadingSubject.next("Creating Mesh");
-    const moc = this.createMocGroup(await contents.text(), placeHolderColor);
+    const moc = this.createMocGroup(await contents.text(), placeHolderColor, viewerVersion);
     this.cleanUp();
     this.loadingSubject.next("Preparing Scene");
     return moc;
@@ -67,7 +67,7 @@ export class LdrToThreeService {
   }
 
   //This function creates the group of meshes for use of the 3d renderer out of a ldr file
-  private createMocGroup(ldrFile: string, placeHolderColor: string): Group {
+  private createMocGroup(ldrFile: string, placeHolderColor: string, viewerVersion: string): Group {
     const ldrObjects = ldrFile.split("0 NOSUBMODEL"); //0 = submodels, 1 = parts
 
     if (ldrObjects.length != 2) {
@@ -78,7 +78,7 @@ export class LdrToThreeService {
     const placeholderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(placeHolderColor);
 
     const submodels = this.parseSubmodels(ldrObjects[0].split("0 NOFILE"));
-    this.parseParts(ldrObjects[1].split("0 NOFILE"), submodels.trueParts);
+    this.parseParts(ldrObjects[1].split("0 NOFILE"), submodels.trueParts, viewerVersion);
     const mocGroup = new Group();
     mocGroup.name = "MOC";
 
@@ -253,7 +253,7 @@ export class LdrToThreeService {
     return { "topLdrSubmodel": topLdrSubmodel, "submodelMap": ldrSubModelMap, "trueParts": trueParts };
   }
 
-  private parseParts(parts: string[], trueParts: string[]) {
+  private parseParts(parts: string[], trueParts: string[], viewerVersion: string) {
     parts.forEach(partLines => { //for every part
       const parsedPart: LdrPart = this.parsePartLines(partLines);
       this.allPartsMap.set(parsedPart.id, parsedPart);
@@ -265,54 +265,45 @@ export class LdrToThreeService {
           resolvedPart.colorVertexMap.forEach((vertices, color) => {
             const indices = resolvedPart.colorIndexMap.get(color) ?? [];
             if (indices) {
-              const partGeometry = this.createBufferedGeometry(resolvedPart.id, vertices, indices);
+              const partGeometry = this.createBufferedGeometry(resolvedPart.id, vertices, indices, viewerVersion);
               colorGeometryMap.set(color, partGeometry);
             }
             else console.error("Color %d not found: vertices exist but no face to em for part %s", color, parsedPart.id);
           });
           resolvedPart.colorLineVertexMap.forEach((vertices, color) => {
-            this.partNameToLineGeometryMap.set(resolvedPart.id, this.createLineGeometry(resolvedPart.id, vertices));
+            this.partNameToLineGeometryMap.set(resolvedPart.id, this.createLineGeometry(resolvedPart.id, vertices, viewerVersion));
           });
           this.partNameToColorBufferedGeometryMap.set(parsedPart.id, colorGeometryMap);
         } else { //if part is single color part
-          this.createInstanceGeometry(resolvedPart);
+          this.createInstanceGeometry(resolvedPart, viewerVersion);
         }
       }
     });
   }
 
-  private createInstanceGeometry(part: LdrPart): void {
+  private createInstanceGeometry(part: LdrPart, viewerVersion: string): void {
     if (!this.partNameToBufferedGeometryMap.has(part.id)) { //if not already exists
       part.colorVertexMap.forEach((vertices, color) => { // should only be called once
         const indices = part.colorIndexMap.get(color);
         if (!indices)
           console.error("Color not found: vertices exist but no face to em");
         else {
-          this.partNameToBufferedGeometryMap.set(part.id, this.createBufferedGeometry(part.id, vertices, indices));
+          this.partNameToBufferedGeometryMap.set(part.id, this.createBufferedGeometry(part.id, vertices, indices, viewerVersion));
         }
       });
       part.colorLineVertexMap.forEach((vertices, color) => {
-        this.partNameToLineGeometryMap.set(part.id, this.createLineGeometry(part.id, vertices));
+        this.partNameToLineGeometryMap.set(part.id, this.createLineGeometry(part.id, vertices, viewerVersion));
       });
     }
   }
 
-  private createBufferedGeometry(partName: string, vertices: Vector3[], indices: number[]): BufferGeometry {
+  private createBufferedGeometry(partName: string, vertices: Vector3[], indices: number[], viewerVersion: string): BufferGeometry {
     let partGeometry = new BufferGeometry();
     partGeometry.setFromPoints(vertices);
     partGeometry.setIndex(indices);
 
     //some parts need special attention...
-    if (partName == "28192.dat") {
-      partGeometry.rotateY(-Math.PI / 2);
-      partGeometry.translate(-10, -24, 0);
-    }
-    else if (partName == "68013.dat")
-      partGeometry.rotateY(-Math.PI);
-    else if (partName == "70681.dat")
-      partGeometry.translate(0, 0, 20);
-    else if (partName == "49803.dat")
-      partGeometry.translate(0, -32, 0);
+    this.adjustGeometryByVersion(viewerVersion,partName,partGeometry);
 
     if (this.ENABLE_FLAT_SHADING) partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
     partGeometry.computeBoundingBox();
@@ -322,20 +313,26 @@ export class LdrToThreeService {
     return partGeometry;
   }
 
-  private createLineGeometry(partName: string, vertices: Vector3[]): BufferGeometry {
+  adjustGeometryByVersion(viewerVersion: string, partName:string , partGeometry: BufferGeometry){
+    if (viewerVersion === "V1"){
+      if (partName == "28192.dat") {
+        partGeometry.rotateY(-Math.PI / 2);
+        partGeometry.translate(-10, -24, 0);
+      }
+      else if (partName == "68013.dat")
+        partGeometry.rotateY(-Math.PI);
+      else if (partName == "70681.dat")
+        partGeometry.translate(0, 0, 20);
+      else if (partName == "49803.dat")
+        partGeometry.translate(0, -32, 0);
+    }
+  }
+
+  private createLineGeometry(partName: string, vertices: Vector3[], viewerVersion: string): BufferGeometry {
     let partGeometry = new BufferGeometry();
     partGeometry.setFromPoints(vertices);
 
-    if (partName == "28192.dat") {
-      partGeometry.rotateY(-Math.PI / 2);
-      partGeometry.translate(-10, -24, 0);
-    }
-    else if (partName == "68013.dat")
-      partGeometry.rotateY(-Math.PI);
-    else if (partName == "70681.dat")
-      partGeometry.translate(0, 0, 20);
-    else if (partName == "49803.dat")
-      partGeometry.translate(0, -32, 0);
+    this.adjustGeometryByVersion(viewerVersion,partName,partGeometry);
 
     if (this.ENABLE_FLAT_SHADING) partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
 
@@ -487,7 +484,7 @@ export class LdrToThreeService {
           }
         }
       }
-
+      //TODO
       //remove all vertices that now are not being used anymore
       const removed: number[] = [];
       for (let vIndex: number = 0; vIndex < vertices.length; vIndex++) {

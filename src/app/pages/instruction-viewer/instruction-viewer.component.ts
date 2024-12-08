@@ -66,6 +66,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   enableAutoZoom: boolean = true;
   enableAutoRotation: boolean = true;
 
+  previousTouch?: TouchEvent;
+
   constructor(private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) {
     this.currentStepModel = {
       stepPartsList: [],
@@ -113,7 +115,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.file = file;
         this.version = version;
         this.loadingFinished = false;
-        this.instructionModel = await this.instructionService.getInstructionModel(file.link,file.instructions);
+        this.instructionModel = await this.instructionService.getInstructionModel(file.link, file.instructions);
         this.createScene();
         this.currentStepNumber = initialStep;
         this.refreshStep(false);
@@ -138,6 +140,12 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       else if (event.button === 2)
         this.isPanning = false;
     });
+    canvas.addEventListener('touchstart', event => {
+      this.isDragging = true;
+    });
+    canvas.addEventListener('touchend', event => {
+      this.isDragging = false;
+    });
     canvas.addEventListener('wheel', event => {
       event.preventDefault();
       this.scrollDelta += event.deltaY;
@@ -147,6 +155,15 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.dragDelta.push({mx: event.movementX, my: event.movementY});
       if (this.isPanning)
         this.panDelta.push({mx: event.movementX, my: event.movementY});
+    });
+    canvas.addEventListener('touchmove', event => {
+      //TODO add pan & zoom (maybe if two touches?)
+      if (this.previousTouch) {
+        const deltaX = event.touches[0].clientX - this.previousTouch.touches[0].clientX;
+        const deltaY = event.touches[0].clientY - this.previousTouch.touches[0].clientY;
+        this.dragDelta.push({mx: deltaX, my: deltaY});
+      }
+      this.previousTouch = event;
     });
     document.addEventListener('keydown', event => {
       switch (event.key) {

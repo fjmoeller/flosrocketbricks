@@ -3,7 +3,7 @@
     <span><h3 class="m-0">{{ submodelAmountIndicator }}x</h3></span>
   }
   @if (isPartList) {
-  <span class="tooltip-content"><b>ID:</b> {{ partId }}<br><b>Name:</b> {{ stepPart?.partName }}
+  <span class="tooltip-content"><b>Ldraw-ID:</b> {{ partId }}<br><b>Name:</b> {{ stepPart?.partName }}
     <br><b>Color:</b> {{ colorName }}</span>
   }
   <div id="canvas-wrapper-{{partIndex}}" [class.canvas-instruction-part-wrapper]="isPartList" [class.canvas-submodel-indicator]="!isPartList">

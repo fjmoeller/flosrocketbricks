@@ -50,7 +50,7 @@
   }
   <canvas oncontextmenu="return false;" id="canvas-viewer" class="canvas"></canvas>
 </div>
-@if (currentStepModel.stepPartsList.length > 0) {
+@if (currentStepModel.stepPartsList.length > 0 && loadingFinished && currentStepNumber > 0) {
   <div style="display:flex; padding: 1rem; background-color: lightsteelblue;flex-wrap: wrap">
     @for (part of currentStepModel.stepPartsList; track part; let i = $index) {
       <app-instruction-part style="margin-right:1rem" [isPartList]="true" [partIndex]="i" [stepPart]="part"></app-instruction-part>

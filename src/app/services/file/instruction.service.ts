@@ -20,7 +20,6 @@ export class InstructionService {
 
   private readonly PREVINTERPOLATIONCOLOR = new Color(0.344, 0.394, 0.457);
   private readonly PREVINTERPOLATIONPERCENTAGE:number= 0.7;
-  //private readonly PREVINTERPOLATIONCOLOR = new Color(0.678,0.847,0.902); "rgb(88,101,117)"
 
   //Because there are only two possible lineColors I just initialize them here :)
   private lineMaterials = [new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(71)}), new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(0)})];
@@ -534,7 +533,13 @@ export class InstructionService {
         }
       }
       if (!found) {
-        const partName = instructionModel.ldrData.allPartsMap.get(iPartReference.partId)?.name ?? "";
+        let partName = instructionModel.ldrData.allPartsMap.get(iPartReference.partId)?.name ?? "";
+        if(partName.includes("Moved To ")){ //if the model is a moved one then search for the actual part name
+          let newPartName = partName.split("Moved To ")[1].trim();
+          if(!newPartName.endsWith(".dat"))
+            newPartName += ".dat";
+          partName = instructionModel.ldrData.allPartsMap.get(newPartName)?.name ?? "";
+        }
         stepPartsList.push({
           model: pPart.group,
           partName: partName,

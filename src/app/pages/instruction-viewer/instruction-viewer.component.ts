@@ -110,7 +110,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       this.moc = moc;
       const version = moc?.versions.find(v => v.version.toLowerCase() === paramMap.get('version')?.toLowerCase());
       const file = version?.files[Number(paramMap.get('file')) || 0];
-      let initialStep = (Number(paramMap.get('stepIndex')) || 1);
+      let initialStep = (Number(paramMap.get('stepIndex')) || 0);
       if (file) {
         this.file = file;
         this.version = version;

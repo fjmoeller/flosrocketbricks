@@ -116,6 +116,7 @@ export class FileExportService {
   }
 
   private async collectParts(url: string): Promise<void> {
+    //TODO does it work without fetch url (the worker) now (for non bricksafe stuff)?
     const content = await fetch(environment.backendFetchUrl + url);
     const ldrFile = await this.extractLdrFile(content);
 

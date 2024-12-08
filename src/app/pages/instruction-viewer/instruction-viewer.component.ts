@@ -12,15 +12,18 @@ import {ActivatedRoute} from "@angular/router";
 import {MocGrabberService} from "../../services/grabber/moc-grabber.service";
 import {Box3} from "three/src/math/Box3.js";
 import {InstructionPartComponent} from "../../components/instruction-part/instruction-part.component";
-import {FileExportService} from "../../services/file/file-export.service";
-import {File, Moc} from "../../model/classes";
+import {File, Moc, Version} from "../../model/classes";
+import {InstructionCoverComponent} from "../../components/instruction-cover/instruction-cover.component";
+import {InstructionDownloadComponent} from "../../components/instruction-download/instruction-download.component";
 
 @Component({
   selector: 'app-instruction-viewer',
   standalone: true,
   templateUrl: './instruction-viewer.component.html',
   imports: [
-    InstructionPartComponent
+    InstructionPartComponent,
+    InstructionCoverComponent,
+    InstructionDownloadComponent
   ],
   styleUrl: './instruction-viewer.component.sass'
 })
@@ -28,13 +31,11 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   moc?: Moc;
   file: File;
-  mocName: string = "";
-  mocVersion: string = "";
-  mocFileName: string = "";
+  version: Version;
   loadingFinished: boolean = true;
   loadingText: string = "Loading...";
-  renderingActive: boolean = false
-  currentStepNumber: number = 30;
+  renderingActive: boolean = false;
+  currentStepNumber: number = 0;
   currentSubmodelAmount: number = 0;
   canvasSize: { width: number, height: number } = {width: 0, height: 0};
 
@@ -52,16 +53,20 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   private cameraCoordinates: Spherical = new Spherical(1, 1, 2.6);
   private target: Vector3 = new Vector3(0, 0, 0);
 
-  readonly clock = new Clock();
+  readonly clock: Clock = new Clock();
   readonly MAX_FPS: number = 1 / 60;
 
   zoomSpeed: number = 0.01;
+  minimalZoom: number = 7;
+  maxCameraZoom: number = 0.05;
+  minCameraZoom: number = 1000;
   rotationSpeed: number = 0.01;
-  defaultZoomFactor: number = 3;
-  enableAutoZoom: boolean = false;
+  defaultZoomFactor: number = 2;
+  panningSpeed: number = 50;
+  enableAutoZoom: boolean = true;
   enableAutoRotation: boolean = true;
 
-  constructor(private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
+  constructor(private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) {
     this.currentStepModel = {
       stepPartsList: [],
       newPartsModel: new Group(),
@@ -83,13 +88,19 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       }
     };
     this.file = {
-      link:"",
-      instructions:false,
-      viewer:false,
-      name:"",
-      type:"",
-      export:false,
-      description:""
+      link: "",
+      instructions: false,
+      viewer: false,
+      name: "",
+      type: "",
+      export: false,
+      description: ""
+    };
+    this.version = {
+      version: "",
+      changelog: "",
+      files: [],
+      versionExtra: ""
     };
   }
 
@@ -99,17 +110,13 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       this.moc = moc;
       const version = moc?.versions.find(v => v.version.toLowerCase() === paramMap.get('version')?.toLowerCase());
       const file = version?.files[Number(paramMap.get('file')) || 0];
-      let initialStep = (Number(paramMap.get('stepIndex')) || 1)-1;
+      let initialStep = (Number(paramMap.get('stepIndex')) || 1);
       if (file) {
         this.file = file;
-        this.mocName = moc?.title ?? "";
-        this.mocFileName = file.name;
-        this.mocVersion = version.version;
+        this.version = version;
         this.loadingFinished = false;
         this.instructionModel = await this.instructionService.getInstructionModel(file.link);
         this.createScene();
-        if(initialStep > this.instructionModel.instructionSteps.length)
-          initialStep = this.instructionModel.instructionSteps.length;
         this.currentStepNumber = initialStep;
         this.refreshStep(false);
       }
@@ -156,24 +163,24 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   }
 
   previousStep() {
-    if (this.currentStepNumber === 0) return;
+    if (this.currentStepNumber <= 0) return;
     this.currentStepNumber -= 1;
     this.refreshStep(true);
   }
 
   nextStep() {
-    if (this.currentStepNumber === this.instructionModel.instructionSteps.length) return;
+    if (this.currentStepNumber >= this.instructionModel.instructionSteps.length + 1) return;
     this.currentStepNumber += 1;
     this.refreshStep(true);
   }
 
   private updateControls(): void {
     //zooming in
-    this.camera.zoom = Math.max(Math.min(this.camera.zoom - (this.scrollDelta * this.zoomSpeed), 1000), 5);
+    this.camera.zoom = Math.max(Math.min(this.camera.zoom - (this.scrollDelta * this.zoomSpeed), this.minCameraZoom), this.maxCameraZoom);
     this.scrollDelta = 0;
 
     //panning
-    const panSpeed = 1 / this.camera.zoom;
+    const panSpeed = 1 / this.camera.zoom / this.panningSpeed;
     let panningDeltaX: number = 0;
     let panningDeltaY: number = 0;
     for (let i = 0; i < this.panDelta.length; i++) {
@@ -205,81 +212,108 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     if (notFirstCall)
       this.scene.remove(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
 
-    if(this.currentStepNumber >= this.instructionModel.instructionSteps.length || this.currentStepNumber < 0)
-      return;
+    if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0)
+      return; //if it's not a page with the normal model in it
 
-    this.currentStepModel = this.instructionService.getModelByStep(this.instructionModel, this.currentStepNumber);
+    this.currentStepModel = this.instructionService.getModelByStep(this.instructionModel, this.currentStepNumber - 1);
     this.currentSubmodelAmount = this.currentStepModel.parentSubmodelAmount;
 
-    //center the parts onto the center of this.currentStepModel.newPartsModel (at 0,0,0)
-    const newPartsBox = new Box3().setFromObject(this.currentStepModel.newPartsModel);
-    newPartsBox.getCenter(this.currentStepModel.prevPartsModel.position).multiplyScalar(-1);
-    newPartsBox.getCenter(this.currentStepModel.newPartsModel.position).multiplyScalar(-1);
-
     if (this.enableAutoRotation) {
+      //reset camera rotation
       this.cameraCoordinates = new Spherical(1, 1, 2.6);
 
-      //rotate so that longest axis of model is on x-axis
+      //rotate the model so that longest axis of the model is on the x-axis
       const allPartsGroup = new Group();
       allPartsGroup.add(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
       const allPartsBox = new Box3().setFromObject(allPartsGroup);
       const ySize = allPartsBox.max.y - allPartsBox.min.y;
       const xSize = allPartsBox.max.x - allPartsBox.min.x;
       const zSize = allPartsBox.max.z - allPartsBox.min.z;
-      if (ySize > xSize && ySize > zSize) {
-        //console.log("y is longest");
-        //TODO DOESNT WORK FOR SOME FUCKIGN REASON
-        //this.currentStepModel.newPartsModel.rotateZ(-Math.PI / 2);
-        //this.currentStepModel.prevPartsModel.rotateZ( -Math.PI / 2);
-      } else if (zSize > xSize && zSize > ySize) {
-        //console.log("z is longest");
-        //TODO DOESNT WORK FOR SOME FUCKIGN REASON
-        //this.currentStepModel.newPartsModel.rotateY(-Math.PI / 2);
-        //this.currentStepModel.prevPartsModel.rotateY(-Math.PI / 2);
+      if (ySize > xSize && ySize > zSize) { //rotate the y-axis onto the x-axis
+        this.currentStepModel.newPartsModel.rotateOnWorldAxis(new Vector3(0, 0, 1), -Math.PI / 2);
+        this.currentStepModel.prevPartsModel.rotateOnWorldAxis(new Vector3(0, 0, 1), -Math.PI / 2);
+      } else if (zSize > xSize && zSize > ySize) { //rotate the z-axis onto the x-axis
+        this.currentStepModel.newPartsModel.rotateOnWorldAxis(new Vector3(0, 1, 0), -Math.PI / 2);
+        this.currentStepModel.prevPartsModel.rotateOnWorldAxis(new Vector3(0, 1, 0), -Math.PI / 2);
       }
 
-      //check the direction the camera should be in
-      if (this.currentStepModel.prevPartsModel.children.length != 0) { //dont do anything if there's noe prev step
+      //rotate the camera so that it (probably) looks at the new parts from the correct direction
+      if (this.currentStepModel.prevPartsModel.children.length != 0) { //don't do anything if there's noe prev step
         const newPartCenter = new Box3().setFromObject(this.currentStepModel.newPartsModel).getCenter(new Vector3());
         const prevPartCenter = new Box3().setFromObject(this.currentStepModel.prevPartsModel).getCenter(new Vector3());
         const directionVector = newPartCenter.clone().sub(prevPartCenter);
 
-        if (directionVector.dot(new Vector3(0, 1, 0)) < 0) { //new parts are below -> flip it on x-axis by pi
-          //console.log("Flip on x-axis");
-          //TODO DOESNT WORK FOR SOME FUCKIGN REASON
-          //this.currentStepModel.newPartsModel.rotateOnAxis(new Vector3(1, 0, 0), Math.PI);
-          //this.currentStepModel.prevPartsModel.rotateOnAxis(new Vector3(1, 0, 0), Math.PI);
-        }
-        /*if (directionVector.dot(new Vector3(0, 0, 1)) < 0) //new parts are behind -> rotate on y-axis by pi
-            this.cameraCoordinates.theta += Math.PI;
-        if(directionVector.dot(new Vector3(1, 0, 0)) < 0) //new parts are on the right side -> flip a little
-          this.cameraCoordinates.theta = -this.cameraCoordinates.theta; //TODO is correct?*/
+        //TODO FIX THIS ROTATION
+        /*if (directionVector.dot(new Vector3(0, 1, 0)) < 0) { //new parts are below -> flip it on x-axis by pi
+          this.currentStepModel.newPartsModel.rotateOnAxis(new Vector3(1, 0, 0), Math.PI);
+          this.currentStepModel.prevPartsModel.rotateOnAxis(new Vector3(1, 0, 0), Math.PI);
+        }*/
+        //TODO just a temporary fix also not good tho xD
+        /*if (directionVector.dot(new Vector3(0, 1, -1)) < -0.01) //new parts are behind -> rotate on y-axis by pi
+          this.cameraCoordinates.phi = Math.PI - this.cameraCoordinates.phi;*/
+        if (directionVector.dot(new Vector3(0, 0, -1)) < -0.01) //new parts are behind -> rotate on y-axis by pi
+          this.cameraCoordinates.theta += Math.PI;
+        if (directionVector.dot(new Vector3(1, 0, 0)) < -0.01) //new parts are on the right side -> flip a little
+          this.cameraCoordinates.theta = -this.cameraCoordinates.theta;
       }
     }
 
+    //center the parts onto the center of newPartsModel
+    const newPartsBox = new Box3().setFromObject(this.currentStepModel.newPartsModel);
+    newPartsBox.getCenter(this.currentStepModel.prevPartsModel.position).multiplyScalar(-1);
+    newPartsBox.getCenter(this.currentStepModel.newPartsModel.position).multiplyScalar(-1);
+
     //this.scene.add(new Box3Helper(new Box3().setFromObject(this.currentStepModel.newPartsModel),new Color(1,0,0)),new Box3Helper(new Box3().setFromObject(this.currentStepModel.prevPartsModel),new Color(0,1,0)));
 
-    if ((this.enableAutoZoom || !notFirstCall) && this.camera) { // zoom to the correct distance //TODO use code form instruction part
+    if ((this.enableAutoZoom || !notFirstCall) && this.camera) {
       const box = new Box3().setFromObject(this.currentStepModel.newPartsModel);
-      box.applyMatrix4(this.camera.matrixWorld);
-      const width = box.max.x - box.min.x;
-      const height = box.max.y - box.min.y;
-      const defaultZoomFactor = 4;
+      const boxPoints = [
+        new Vector3(box.min.x, box.min.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.min.x, box.min.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.min.x, box.max.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.min.x, box.max.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.max.x, box.min.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.max.x, box.min.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.max.x, box.max.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.max.x, box.max.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
+      ];
+      const cameraBox: Box3 = new Box3().setFromPoints(boxPoints);
+      const modelWidth: number = cameraBox.max.x - cameraBox.min.x;
+      const modelHeight: number = cameraBox.max.y - cameraBox.min.y;
+      const modelAspectRatio: number = modelWidth / modelHeight;
+      const canvasAspectRatio: number = this.canvasSize.width / this.canvasSize.height;
 
-      if (width / height > this.canvasSize.width / this.canvasSize.height)
-        this.camera.zoom = this.canvasSize.width / (width * defaultZoomFactor);
-      else
-        this.camera.zoom = this.canvasSize.height / (height * defaultZoomFactor);
+      if (modelAspectRatio > canvasAspectRatio) { //if the model is wider than the canvas (in terms of aspect ratio)
+        this.camera.left = -modelWidth / 2 * this.defaultZoomFactor;
+        this.camera.right = modelWidth / 2 * this.defaultZoomFactor;
+        this.camera.bottom = (-modelWidth / 2 / canvasAspectRatio) * this.defaultZoomFactor;
+        this.camera.top = (modelWidth / 2 / canvasAspectRatio) * this.defaultZoomFactor;
+      } else { //if the model is taller than the canvas (in terms of aspect ratio)
+        this.camera.left = (-modelHeight / 2 * canvasAspectRatio) * this.defaultZoomFactor;
+        this.camera.right = (modelHeight / 2 * canvasAspectRatio) * this.defaultZoomFactor;
+        this.camera.bottom = -modelHeight / 2 * this.defaultZoomFactor;
+        this.camera.top = modelHeight / 2 * this.defaultZoomFactor;
+      }
+      //expect a minimum size of the canvas
+      if (this.camera.right < this.minimalZoom || this.camera.top < this.minimalZoom) {
+        this.camera.left = -this.minimalZoom * canvasAspectRatio;
+        this.camera.right = this.minimalZoom * canvasAspectRatio;
+        this.camera.bottom = -this.minimalZoom;
+        this.camera.top = this.minimalZoom;
+      }
+      this.camera.zoom = 1;
+      this.camera.updateProjectionMatrix();
     }
-
     this.scene.add(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
   }
 
   createScene(): void {
     const newScene = new Scene();
     this.scene = newScene;
-    //const axesHelper = new AxesHelper(5);
-    //this.scene.add(axesHelper); //TODO remove
+
+    //TODO remove
+    /*const axesHelper = new AxesHelper(5);
+    this.scene.add(axesHelper);*/
 
     const pointLight = new DirectionalLight(0xffffff, 0.5);
     pointLight.position.set(100, 100, -100);
@@ -316,10 +350,10 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       renderer.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
       renderer.render(newScene, camera);
 
-      camera.left = canvasWrapper.clientWidth / -2;
-      camera.right = canvasWrapper.clientWidth / 2;
-      camera.top = canvasWrapper.clientHeight / 2;
-      camera.bottom = canvasWrapper.clientHeight / -2;
+      const prevAspectRatio: number = camera.right / camera.top;
+      const newAspectRatio: number = canvasWrapper.clientWidth / canvasWrapper.clientHeight;
+      camera.top = camera.top / (newAspectRatio / prevAspectRatio);
+      camera.bottom = camera.bottom / (newAspectRatio / prevAspectRatio);
       camera.updateProjectionMatrix();
     });
 
@@ -331,7 +365,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
         this.clock.start()
       }
-      // Call tick again on the next frame
       if (this.renderingActive)
         window.requestAnimationFrame(update);
     };
@@ -343,29 +376,5 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.renderingActive = true;
 
     update();
-  }
-
-  async downloadXml(filelink: string, filename: string) {
-    if (this.moc) {
-      const data = await this.fileExportService.getXml(filelink, this.moc.internalColor);
-      const blob = new Blob([data], {type: 'application/xml'});
-      const a = document.createElement('a');
-      a.href = window.URL.createObjectURL(blob);
-      a.download = filename.split(".io")[0] + ".xml";
-      a.click();
-      window.URL.revokeObjectURL(a.href);
-    }
-  }
-
-  async downloadCsv(filelink: string, filename: string) {
-    if (this.moc) {
-      const data = await this.fileExportService.getCsv(filelink, this.moc.internalColor);
-      const blob = new Blob([data], {type: 'text/csv'});
-      const a = document.createElement('a');
-      a.href = window.URL.createObjectURL(blob);
-      a.download = filename.split(".io")[0] + ".csv";
-      a.click();
-      window.URL.revokeObjectURL(a.href);
-    }
   }
 }

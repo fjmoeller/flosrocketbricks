@@ -1,13 +1,9 @@
 import {
   AfterViewInit,
   Component,
-  Inject,
   Input,
-  OnChanges,
   OnDestroy,
-  OnInit,
-  PLATFORM_ID,
-  SimpleChanges
+  OnInit
 } from '@angular/core';
 import {StepPart} from "../../model/instructions";
 import {
@@ -23,7 +19,6 @@ import {
 } from "three";
 import {Box3} from "three/src/math/Box3.js";
 import {LdrawColorService} from "../../services/color/ldraw-color.service";
-import {isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-instruction-part',
@@ -61,39 +56,17 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
   private partScene: Scene = new Scene();
   private camera: OrthographicCamera = new OrthographicCamera();
   private cameraCoordinates: Spherical = new Spherical(1, 1, 1);
-
-  /*private viewIsInitialized: boolean = false;
-  private inputArrived: boolean = false;*/
+  private previousTouch?: TouchEvent;
 
   zoomSpeed = 0.0002;
   rotationSpeed = 0.01;
 
-  constructor(private ldrawColorService: LdrawColorService, @Inject(PLATFORM_ID) private _platformId: Object) {
+  constructor(private ldrawColorService: LdrawColorService) {
   }
-
-  /*ngOnChanges(changes: SimpleChanges): void {
-    this.inputArrived = true;
-    if(this.viewIsInitialized && changes["stepPart"].isFirstChange()){
-      this.initScenes();
-    }
-  }
-
-  ngAfterViewInit(): void {
-    this.viewIsInitialized = true;
-    if(this.inputArrived){
-      this.initScenes();
-    }
-  }*/
-
 
   ngAfterViewInit() {
-    //setTimeout(() => { //set timeout cause angular is kinda stupid
-      if (isPlatformBrowser(this._platformId)) {
         this.initScenes();
-      }
-    //}, 5);
   }
-
 
   initScenes(){
     if (this.stepPart && this.isPartList)
@@ -146,9 +119,21 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
       if (event.button === 0)
         this.isDragging = true;
     });
+    canvas.addEventListener('touchstart', event => {
+      if (event.touches.length === 1)
+        this.isDragging = true;
+    });
     canvas.addEventListener('mouseup', event => {
       if (event.button === 0)
         this.isDragging = false;
+    });
+    canvas.addEventListener('touchend', event => {
+      if (this.previousTouch) {
+        if (this.previousTouch.touches.length === 1) {
+          this.isDragging = false;
+          this.previousTouch = undefined;
+        }
+      }
     });
     canvas.addEventListener('wheel', event => {
       event.preventDefault();
@@ -157,6 +142,16 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
     canvas.addEventListener('mousemove', event => {
       if (this.isDragging)
         this.dragDelta.push({mx: event.movementX, my: event.movementY});
+    });
+    canvas.addEventListener('touchmove', event => {
+      if (this.previousTouch) {
+        if (event.touches.length === 1) { //rotation
+          const deltaX = event.touches[0].clientX - this.previousTouch.touches[0].clientX;
+          const deltaY = event.touches[0].clientY - this.previousTouch.touches[0].clientY;
+          this.dragDelta.push({mx: deltaX, my: deltaY});
+        }
+      }
+      this.previousTouch = event;
     });
     canvas.addEventListener('mouseleave', event => {
       this.renderingActive = false;

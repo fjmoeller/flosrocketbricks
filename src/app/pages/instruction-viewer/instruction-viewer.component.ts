@@ -50,6 +50,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   private scene: Scene = new Scene();
   private camera: OrthographicCamera = new OrthographicCamera();
+  private renderer?: WebGLRenderer;
   private cameraCoordinates: Spherical = new Spherical(1, 1, 2.6);
   private target: Vector3 = new Vector3(0, 0, 0);
 
@@ -126,6 +127,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.renderingActive = false;
+    this.renderer?.dispose();
+    this.renderer?.forceContextLoss();
   }
 
   private registerListeners(canvas: HTMLElement) {
@@ -409,14 +412,14 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     newScene.add(camera);
     this.camera = camera;
 
-    const renderer = new WebGLRenderer({antialias: true, canvas: canvas});
-    renderer.setSize(this.canvasSize.width, this.canvasSize.height);
-    renderer.setPixelRatio(window.devicePixelRatio * 1.5);
-    renderer.setClearColor("rgb(88,101,117)");
+    this.renderer = new WebGLRenderer({antialias: true, canvas: canvas});
+    this.renderer.setSize(this.canvasSize.width, this.canvasSize.height);
+    this.renderer.setPixelRatio(window.devicePixelRatio * 1.5);
+    this.renderer.setClearColor("rgb(88,101,117)");
 
     window.addEventListener('resize', () => {
-      renderer.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
-      renderer.render(newScene, camera);
+      this.renderer?.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
+      this.renderer?.render(newScene, camera);
 
       const prevAspectRatio: number = camera.right / camera.top;
       const newAspectRatio: number = canvasWrapper.clientWidth / canvasWrapper.clientHeight;
@@ -432,7 +435,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       if (this.clock.getElapsedTime() > this.MAX_FPS) {
         this.updateControls();
 
-        renderer.render(newScene, camera);
+        this.renderer?.render(newScene, camera);
 
         this.clock.start()
       }
@@ -441,7 +444,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     };
 
     this.updateControls();
-    renderer.render(newScene, camera);
+    this.renderer.render(newScene, camera);
 
     this.loadingFinished = true;
     this.renderingActive = true;

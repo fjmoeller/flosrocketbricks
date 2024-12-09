@@ -137,8 +137,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     canvas.addEventListener('touchstart', event => {
       if (event.touches.length === 1)
         this.isDragging = true;
-      else if (event.touches.length === 2)
-        this.isPanning = true;
+      /*else if (event.touches.length === 2)
+        this.isPanning = true;*/
     });
     canvas.addEventListener('mouseup', event => {
       if (event.button === 0)
@@ -151,14 +151,14 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         if (this.previousTouch.touches.length === 1) {
           this.isDragging = false;
           this.previousTouch = undefined;
-        } else if (this.previousTouch.touches.length === 2) {
+        } /*else if (this.previousTouch.touches.length === 2) {
           this.isPanning = false;
           if (event.touches.length === 0) {
             this.isDragging = false;
             this.previousTouch = undefined;
           } else
             this.previousTouch = event;
-        }
+        }*/
       }
     });
     canvas.addEventListener('touchcancel', event => {
@@ -166,14 +166,14 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         if (this.previousTouch.touches.length === 1) {
           this.isDragging = false;
           this.previousTouch = undefined;
-        } else if (this.previousTouch.touches.length === 2) {
+        } /*else if (this.previousTouch.touches.length === 2) {
           this.isPanning = false;
           if (event.touches.length === 0) {
             this.isDragging = false;
             this.previousTouch = undefined;
           } else
             this.previousTouch = event;
-        }
+        }*/
       }
     });
     canvas.addEventListener('wheel', event => {
@@ -192,11 +192,11 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
           const deltaX = event.touches[0].clientX - this.previousTouch.touches[0].clientX;
           const deltaY = event.touches[0].clientY - this.previousTouch.touches[0].clientY;
           this.dragDelta.push({mx: deltaX, my: deltaY});
-        } else if (event.touches.length === 2) { //pan or zoom
+        }/* else if (event.touches.length === 2) { //pan or zoom
           const prevDistance = Math.sqrt((this.previousTouch.touches[1].clientX - this.previousTouch.touches[0].clientX) ^ 2 + (this.previousTouch.touches[1].clientY - this.previousTouch.touches[0].clientY) ^ 2);
           const newDistance = Math.sqrt((event.touches[1].clientX - event.touches[0].clientX) ^ 2 + (event.touches[1].clientY - event.touches[0].clientY) ^ 2);
 
-          if (prevDistance - newDistance != 0) //zoom //TODO add small epsilon?
+          if (prevDistance - newDistance != 0) //zoom //add smal lepsilon?
             this.scrollDelta += prevDistance - newDistance;
 
           //pan
@@ -209,7 +209,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
             this.panDelta.push({mx: avgXChange, my: avgYChange});
           }
-        }
+        }*/
       }
       this.previousTouch = event;
     });

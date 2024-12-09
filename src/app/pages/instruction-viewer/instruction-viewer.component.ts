@@ -56,7 +56,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   readonly clock: Clock = new Clock();
   readonly MAX_FPS: number = 1 / 60;
 
-  zoomSpeed: number = 0.01;
+  zoomSpeed: number = 0.0005;
+  resetTargetOnPageChange: boolean = true;
   minimalZoom: number = 7;
   maxCameraZoom: number = 0.05;
   minCameraZoom: number = 1000;
@@ -284,6 +285,10 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     if (this.enableAutoRotation) {
       //reset camera rotation
       this.cameraCoordinates = new Spherical(1, 1, 2.6);
+
+      //reset camera target
+      if(this.resetTargetOnPageChange)
+        this.target = new Vector3(0,0,0);
 
       //rotate the model so that longest axis of the model is on the x-axis
       const allPartsGroup = new Group();

@@ -32,7 +32,7 @@ import {isPlatformBrowser} from "@angular/common";
   templateUrl: './instruction-part.component.html',
   styleUrl: './instruction-part.component.sass'
 })
-export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges, AfterViewInit {
+export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestroy, AfterViewInit {
   @Input()
   isPartList: boolean = false;
 
@@ -62,8 +62,8 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
   private camera: OrthographicCamera = new OrthographicCamera();
   private cameraCoordinates: Spherical = new Spherical(1, 1, 1);
 
-  private viewIsInitialized: boolean = false;
-  private inputArrived: boolean = false;
+  /*private viewIsInitialized: boolean = false;
+  private inputArrived: boolean = false;*/
 
   zoomSpeed = 0.0002;
   rotationSpeed = 0.01;
@@ -71,7 +71,7 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
   constructor(private ldrawColorService: LdrawColorService, @Inject(PLATFORM_ID) private _platformId: Object) {
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  /*ngOnChanges(changes: SimpleChanges): void {
     this.inputArrived = true;
     if(this.viewIsInitialized && changes["stepPart"].isFirstChange()){
       this.initScenes();
@@ -83,20 +83,17 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
     if(this.inputArrived){
       this.initScenes();
     }
+  }*/
+
+
+  ngAfterViewInit() {
+    //setTimeout(() => { //set timeout cause angular is kinda stupid
+      if (isPlatformBrowser(this._platformId)) {
+        this.initScenes();
+      }
+    //}, 5);
   }
 
-  /*
-  ngAfterViewInit() {
-    setTimeout(() => { //set timeout cause angular is kinda stupid
-      if (isPlatformBrowser(this._platformId)) {
-        if (this.stepPart && this.isPartList)
-          this.createScene(this.stepPart?.model);
-        else if (this.submodelGroup && !this.isPartList)
-          this.createScene(this.submodelGroup);
-      }
-    }, 5);
-  }
-   */
 
   initScenes(){
     if (this.stepPart && this.isPartList)

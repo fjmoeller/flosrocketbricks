@@ -7,7 +7,7 @@
     <br><b>Color:</b> {{ colorName }}</span>
   }
   <div id="canvas-wrapper-{{partIndex}}" [class.canvas-instruction-part-wrapper]="isPartList" [class.canvas-submodel-indicator]="!isPartList">
-    <canvas oncontextmenu="return false;" id="canvas-part-{{partIndex}}" style="height:100%; width:100%;"
+    <canvas oncontextmenu="return false;" id="canvas-part-{{partIndex}}" style="height:100%; width:100%;touch-action: none"
             class="p-0 m-0 canvas"></canvas>
   </div>
   @if (isPartList) {

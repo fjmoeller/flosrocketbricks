@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {
-  AmbientLight,
+  AmbientLight, AxesHelper,
   BufferGeometry, Clock, DirectionalLight,
   Group, Material, Matrix3, OrthographicCamera, Scene, Spherical,
   Vector3, WebGLRenderer
@@ -150,7 +150,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       else if (event.button === 2)
         this.isPanning = false;
     });
-    canvas.addEventListener('touchend', event => {
+    canvas.addEventListener('touchend', () => {
       if (this.previousTouch) {
         if (this.previousTouch.touches.length === 1) {
           this.isDragging = false;
@@ -165,7 +165,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         }*/
       }
     });
-    canvas.addEventListener('touchcancel', event => {
+    canvas.addEventListener('touchcancel', () => {
       if (this.previousTouch) {
         if (this.previousTouch.touches.length === 1) {
           this.isDragging = false;
@@ -290,8 +290,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       this.cameraCoordinates = new Spherical(1, 1, 2.6);
 
       //reset camera target
-      if(this.resetTargetOnPageChange)
-        this.target = new Vector3(0,0,0);
+      if (this.resetTargetOnPageChange)
+        this.target = new Vector3(0, 0, 0);
 
       //rotate the model so that longest axis of the model is on the x-axis
       const allPartsGroup = new Group();
@@ -322,10 +322,13 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         //TODO just a temporary fix also not good tho xD
         /*if (directionVector.dot(new Vector3(0, 1, -1)) < -0.01) //new parts are behind -> rotate on y-axis by pi
           this.cameraCoordinates.phi = Math.PI - this.cameraCoordinates.phi;*/
-        if (directionVector.dot(new Vector3(0, 0, -1)) < -0.01) //new parts are behind -> rotate on y-axis by pi
+        if (directionVector.dot(new Vector3(0, 0, -1)) < -0.01) { //new parts are behind -> rotate on y-axis by pi
           this.cameraCoordinates.theta += Math.PI;
-        if (directionVector.dot(new Vector3(1, 0, 0)) < -0.01) //new parts are on the right side -> flip a little
+          if (directionVector.dot(new Vector3(-1, 0, 0)) < -0.01) //new parts are on the right side -> flip a little
+            this.cameraCoordinates.theta = -this.cameraCoordinates.theta;
+        } else if (directionVector.dot(new Vector3(1, 0, 0)) < -0.01) //new parts are on the right side -> flip a little
           this.cameraCoordinates.theta = -this.cameraCoordinates.theta;
+
       }
     }
 
@@ -383,8 +386,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.scene = newScene;
 
     //TODO remove
-    /*const axesHelper = new AxesHelper(5);
-    this.scene.add(axesHelper);*/
+    const axesHelper = new AxesHelper(10);
+    this.scene.add(axesHelper);
 
     const pointLight = new DirectionalLight(0xffffff, 0.5);
     pointLight.position.set(100, 100, -100);

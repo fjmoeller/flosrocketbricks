@@ -87,8 +87,8 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
 
   ngOnDestroy(): void {
     this.renderingActive = false;
-    this.renderer?.dispose();
-    this.renderer?.forceContextLoss();
+    //this.renderer?.dispose();
+    //this.renderer?.forceContextLoss();
   }
 
   private updateControls(): void {

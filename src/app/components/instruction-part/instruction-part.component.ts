@@ -87,8 +87,8 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
 
   ngOnDestroy(): void {
     this.renderingActive = false;
-    //this.renderer?.dispose();
-    //this.renderer?.forceContextLoss();
+    this.renderer?.dispose();
+    this.renderer?.forceContextLoss();
   }
 
   private updateControls(): void {
@@ -127,7 +127,7 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
       if (event.button === 0)
         this.isDragging = false;
     });
-    canvas.addEventListener('touchend', event => {
+    canvas.addEventListener('touchend', () => {
       if (this.previousTouch) {
         if (this.previousTouch.touches.length === 1) {
           this.isDragging = false;
@@ -153,11 +153,11 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
       }
       this.previousTouch = event;
     });
-    canvas.addEventListener('mouseleave', event => {
+    canvas.addEventListener('mouseleave', () => {
       this.renderingActive = false;
       this.isDragging = false;
     });
-    canvas.addEventListener('mouseenter', event => {
+    canvas.addEventListener('mouseenter', () => {
       this.renderingActive = true;
       this.update();
     });

@@ -1,4 +1,14 @@
-import {AfterViewInit, Component, Inject, Input, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+  SimpleChanges
+} from '@angular/core';
 import {StepPart} from "../../model/instructions";
 import {
   AmbientLight,
@@ -22,7 +32,7 @@ import {isPlatformBrowser} from "@angular/common";
   templateUrl: './instruction-part.component.html',
   styleUrl: './instruction-part.component.sass'
 })
-export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestroy {
+export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges, AfterViewInit {
   @Input()
   isPartList: boolean = false;
 
@@ -52,10 +62,47 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
   private camera: OrthographicCamera = new OrthographicCamera();
   private cameraCoordinates: Spherical = new Spherical(1, 1, 1);
 
+  private viewIsInitialized: boolean = false;
+  private inputArrived: boolean = false;
+
   zoomSpeed = 0.0002;
   rotationSpeed = 0.01;
 
   constructor(private ldrawColorService: LdrawColorService, @Inject(PLATFORM_ID) private _platformId: Object) {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.inputArrived = true;
+    if(this.viewIsInitialized && changes["stepPart"].isFirstChange()){
+      this.initScenes();
+    }
+  }
+
+  ngAfterViewInit(): void {
+    this.viewIsInitialized = true;
+    if(this.inputArrived){
+      this.initScenes();
+    }
+  }
+
+  /*
+  ngAfterViewInit() {
+    setTimeout(() => { //set timeout cause angular is kinda stupid
+      if (isPlatformBrowser(this._platformId)) {
+        if (this.stepPart && this.isPartList)
+          this.createScene(this.stepPart?.model);
+        else if (this.submodelGroup && !this.isPartList)
+          this.createScene(this.submodelGroup);
+      }
+    }, 5);
+  }
+   */
+
+  initScenes(){
+    if (this.stepPart && this.isPartList)
+      this.createScene(this.stepPart?.model);
+    else if (this.submodelGroup && !this.isPartList)
+      this.createScene(this.submodelGroup);
   }
 
   ngOnInit(): void {
@@ -66,17 +113,6 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
       else
         this.partId = this.stepPart.partId;
     }
-  }
-
-  ngAfterViewInit() {
-    setTimeout(() => { //set timeout cause angular is kinda stupid
-      if (isPlatformBrowser(this._platformId)) {
-        if (this.stepPart && this.isPartList)
-          this.createScene(this.stepPart?.model);
-        else if (this.submodelGroup && !this.isPartList)
-          this.createScene(this.submodelGroup);
-      }
-    }, 5);
   }
 
   ngOnDestroy(): void {

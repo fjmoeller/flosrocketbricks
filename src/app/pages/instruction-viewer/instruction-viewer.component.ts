@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {
-  AmbientLight, AxesHelper,
+  AmbientLight,
   BufferGeometry, Clock, DirectionalLight,
   Group, Material, Matrix3, OrthographicCamera, Scene, Spherical,
   Vector3, WebGLRenderer
@@ -386,8 +386,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.scene = newScene;
 
     //TODO remove
-    const axesHelper = new AxesHelper(10);
-    this.scene.add(axesHelper);
+    //const axesHelper = new AxesHelper(10);
+    //this.scene.add(axesHelper);
 
     const pointLight = new DirectionalLight(0xffffff, 0.5);
     pointLight.position.set(100, 100, -100);

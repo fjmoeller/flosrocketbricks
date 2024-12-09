@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaServiceService } from 'src/app/services/meta-service.service';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.sass'
 })

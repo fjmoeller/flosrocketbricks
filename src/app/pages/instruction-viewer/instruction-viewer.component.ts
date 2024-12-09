@@ -134,17 +134,47 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       else if (event.button === 2)
         this.isPanning = true;
     });
+    canvas.addEventListener('touchstart', event => {
+      if (event.touches.length === 1)
+        this.isDragging = true;
+      else if (event.touches.length === 2)
+        this.isPanning = true;
+    });
     canvas.addEventListener('mouseup', event => {
       if (event.button === 0)
         this.isDragging = false;
       else if (event.button === 2)
         this.isPanning = false;
     });
-    canvas.addEventListener('touchstart', event => {
-      this.isDragging = true;
-    });
     canvas.addEventListener('touchend', event => {
-      this.isDragging = false;
+      if (this.previousTouch) {
+        if (this.previousTouch.touches.length === 1) {
+          this.isDragging = false;
+          this.previousTouch = undefined;
+        } else if (this.previousTouch.touches.length === 2) {
+          this.isPanning = false;
+          if (event.touches.length === 0) {
+            this.isDragging = false;
+            this.previousTouch = undefined;
+          } else
+            this.previousTouch = event;
+        }
+      }
+    });
+    canvas.addEventListener('touchcancel', event => {
+      if (this.previousTouch) {
+        if (this.previousTouch.touches.length === 1) {
+          this.isDragging = false;
+          this.previousTouch = undefined;
+        } else if (this.previousTouch.touches.length === 2) {
+          this.isPanning = false;
+          if (event.touches.length === 0) {
+            this.isDragging = false;
+            this.previousTouch = undefined;
+          } else
+            this.previousTouch = event;
+        }
+      }
     });
     canvas.addEventListener('wheel', event => {
       event.preventDefault();
@@ -157,11 +187,29 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.panDelta.push({mx: event.movementX, my: event.movementY});
     });
     canvas.addEventListener('touchmove', event => {
-      //TODO add pan & zoom (maybe if two touches?)
       if (this.previousTouch) {
-        const deltaX = event.touches[0].clientX - this.previousTouch.touches[0].clientX;
-        const deltaY = event.touches[0].clientY - this.previousTouch.touches[0].clientY;
-        this.dragDelta.push({mx: deltaX, my: deltaY});
+        if (event.touches.length === 1) { //rotation
+          const deltaX = event.touches[0].clientX - this.previousTouch.touches[0].clientX;
+          const deltaY = event.touches[0].clientY - this.previousTouch.touches[0].clientY;
+          this.dragDelta.push({mx: deltaX, my: deltaY});
+        } else if (event.touches.length === 2) { //pan or zoom
+          const prevDistance = Math.sqrt((this.previousTouch.touches[1].clientX - this.previousTouch.touches[0].clientX) ^ 2 + (this.previousTouch.touches[1].clientY - this.previousTouch.touches[0].clientY) ^ 2);
+          const newDistance = Math.sqrt((event.touches[1].clientX - event.touches[0].clientX) ^ 2 + (event.touches[1].clientY - event.touches[0].clientY) ^ 2);
+
+          if (prevDistance - newDistance != 0) //zoom //TODO add small epsilon?
+            this.scrollDelta += prevDistance - newDistance;
+
+          //pan
+          const touch0PositionChange = Math.sqrt((event.touches[0].clientX - this.previousTouch.touches[0].clientX) ^ 2 + (event.touches[0].clientY - this.previousTouch.touches[0].clientY) ^ 2);
+          const touch1PositionChange = Math.sqrt((event.touches[1].clientX - this.previousTouch.touches[1].clientX) ^ 2 + (event.touches[1].clientY - this.previousTouch.touches[1].clientY) ^ 2);
+          const avgTouchPositionChange = (touch0PositionChange + touch1PositionChange) / 2;
+          if (avgTouchPositionChange > 0) {
+            const avgXChange = ((event.touches[0].clientX - this.previousTouch.touches[0].clientX) + (event.touches[1].clientX - this.previousTouch.touches[1].clientX)) / 2;
+            const avgYChange = ((event.touches[0].clientY - this.previousTouch.touches[0].clientY) + (event.touches[1].clientY - this.previousTouch.touches[1].clientY)) / 2;
+
+            this.panDelta.push({mx: avgXChange, my: avgYChange});
+          }
+        }
       }
       this.previousTouch = event;
     });

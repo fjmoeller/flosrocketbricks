@@ -58,6 +58,8 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
   private cameraCoordinates: Spherical = new Spherical(1, 1, 1);
   private previousTouch?: TouchEvent;
 
+  maxCameraZoom: number = 0.05;
+  minCameraZoom: number = 1000;
   zoomSpeed = 0.0002;
   rotationSpeed = 0.01;
 
@@ -93,7 +95,7 @@ export class InstructionPartComponent implements OnInit, AfterViewInit, OnDestro
 
   private updateControls(): void {
     //zooming in
-    this.camera.zoom = Math.max(Math.min(this.camera.zoom - (this.scrollDelta * this.zoomSpeed), 1), 0);
+    this.camera.zoom = Math.max(Math.min(this.camera.zoom - (this.scrollDelta * this.zoomSpeed), this.minCameraZoom), this.maxCameraZoom);
     this.scrollDelta = 0;
 
     //rotating & position

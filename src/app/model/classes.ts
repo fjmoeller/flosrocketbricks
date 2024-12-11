@@ -3,16 +3,18 @@ export class File {
   name: string;
   description: string;
   type: string;
-  allowViewer: boolean;
-  allowExport: boolean;
+  export: boolean;
+  viewer?: string;
+  instructions?: string;
 
-  constructor(link: string, name: string, description: string, type: string, allowViewer: boolean, allowExport: boolean) {
+  constructor(link: string, name: string, description: string, type: string, allowExport: boolean, viewerVersion?: string, instructionVersion?: string) {
     this.link = link;
     this.name = name;
     this.description = description;
     this.type = type;
-    this.allowViewer = allowViewer;
-    this.allowExport = allowExport;
+    this.export = allowExport;
+    this.viewer = viewerVersion;
+    this.instructions = instructionVersion;
   }
 }
 
@@ -81,7 +83,7 @@ export class Moc {
   designer: string;
   stability: number;
   difficulty: number;
-  lastupdate: string;
+  lastUpdate: string;
   fanPictures: string[];
   tags: string[];
   mocDescription: string;
@@ -129,7 +131,7 @@ export class Moc {
     this.designer = designer;
     this.stability = stability;
     this.difficulty = difficulty;
-    this.lastupdate = lastupdate;
+    this.lastUpdate = lastupdate;
     this.tags = tags;
     this.mocDescription = mocDescription;
     this.related = related;

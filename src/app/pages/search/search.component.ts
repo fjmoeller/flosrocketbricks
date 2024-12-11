@@ -27,7 +27,7 @@ export class SearchComponent implements OnInit {
 
   mocs: Moc[] = [];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute, private router: Router) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: any,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParams
@@ -99,7 +99,7 @@ export class SearchComponent implements OnInit {
       case "Added": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.id < a.id ? 1 : -1)); break;
       case "Parts": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.parts < a.parts ? 1 : -1)); break;
       case "Title": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.title > a.title ? 1 : -1)); break;
-      case "Updated": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.lastupdate < a.lastupdate ? 1 : -1)); break;
+      case "Updated": tempMocs.sort((a: Moc, b: Moc) => this.sortingDirection * (b.lastUpdate < a.lastUpdate ? 1 : -1)); break;
     }
 
     this.mocs = tempMocs;

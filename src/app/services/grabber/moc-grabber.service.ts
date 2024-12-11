@@ -7,11 +7,11 @@ import mocs from '../../../assets/mocs.json';
 })
 export class MocGrabberService {
 
-  private mocs: Moc[];
+  private readonly mocs: Moc[];
 
   constructor() {
     this.mocs = mocs as Moc[];
-    
+
   }
 
   getEmptyMoc(): Moc{

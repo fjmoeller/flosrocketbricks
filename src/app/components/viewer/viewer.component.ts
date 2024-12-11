@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { LdrToThreeService } from 'src/app/services/file/ldr-to-three.service';
-import { AmbientLight, BasicShadowMap, Box3, CameraHelper, Clock, DirectionalLight, Group, Mesh, MeshBasicMaterial, MeshLambertMaterial, MeshStandardMaterial, PCFSoftShadowMap, PerspectiveCamera, PlaneGeometry, PointLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { AmbientLight, BasicShadowMap, Box3, Clock, DirectionalLight, Group, Mesh, MeshLambertMaterial, PerspectiveCamera, PlaneGeometry, Scene, Vector3, WebGLRenderer } from 'three';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -23,6 +23,9 @@ export class ViewerComponent implements OnInit {
   @Input('showViewer')
   showViewer: boolean = false;
 
+  @Input('viewerVersion')
+  viewerVersion: string = "V1";
+
   private dataCTSubject = new BehaviorSubject<number>(0);
   computingTime: Observable<number> = this.dataCTSubject.asObservable();
 
@@ -34,7 +37,7 @@ export class ViewerComponent implements OnInit {
   public ENABLE_SHADOWS: boolean = false;
 
   private readonly clock = new Clock();
-  // 30 fps
+  // 60 fps
   private readonly INTERNAL: number = 1 / 60;
 
   constructor(private ioFileService: LdrToThreeService) {
@@ -47,11 +50,11 @@ export class ViewerComponent implements OnInit {
 
   async showViewerMoc() {
     this.loadingFinished = false;
-    const group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor);
-    this.createThreeJsBox(group);
+    const group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor,this.viewerVersion);
+    this.createScene(group);
   }
 
-  createThreeJsBox(mocGroup: Group): void {
+  createScene(mocGroup: Group): void {
 
     const scene = new Scene();
 

@@ -18,6 +18,7 @@ import { LdrPart, LdrSubmodel, PartReference } from '../../model/ldrawParts';
 import { LdrawColorService } from '../color/ldraw-color.service';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { BehaviorSubject, Observable } from 'rxjs';
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -41,18 +42,15 @@ export class LdrToThreeService {
   private loadingSubject = new BehaviorSubject<string>('Loading');
   loadingState: Observable<string> = this.loadingSubject.asObservable();
 
-  //base URL from where to fetch the part files to get around stuff
-  private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
-
   constructor(private ldrawColorService: LdrawColorService) {
   }
 
-  async getModel(ioUrl: string, placeHolderColor: string): Promise<Group> {
+  async getModel(ioUrl: string, placeHolderColor: string, viewerVersion: string): Promise<Group> {
     this.loadingSubject.next("Downloading Ldr File");
     const ldrUrl = ioUrl.slice(0, ioUrl.length - 2) + "ldr"
-    const contents = await fetch(this.backendFetchUrl + ldrUrl);
+    const contents = await fetch(environment.backendFetchUrl + ldrUrl);
     this.loadingSubject.next("Creating Mesh");
-    const moc = this.createMocGroup(await contents.text(), placeHolderColor);
+    const moc = this.createMocGroup(await contents.text(), placeHolderColor, viewerVersion);
     this.cleanUp();
     this.loadingSubject.next("Preparing Scene");
     return moc;
@@ -69,7 +67,7 @@ export class LdrToThreeService {
   }
 
   //This function creates the group of meshes for use of the 3d renderer out of a ldr file
-  private createMocGroup(ldrFile: string, placeHolderColor: string): Group {
+  private createMocGroup(ldrFile: string, placeHolderColor: string, viewerVersion: string): Group {
     const ldrObjects = ldrFile.split("0 NOSUBMODEL"); //0 = submodels, 1 = parts
 
     if (ldrObjects.length != 2) {
@@ -80,7 +78,7 @@ export class LdrToThreeService {
     const placeholderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(placeHolderColor);
 
     const submodels = this.parseSubmodels(ldrObjects[0].split("0 NOFILE"));
-    this.parseParts(ldrObjects[1].split("0 NOFILE"), submodels.trueParts);
+    this.parseParts(ldrObjects[1].split("0 NOFILE"), submodels.trueParts, viewerVersion);
     const mocGroup = new Group();
     mocGroup.name = "MOC";
 
@@ -129,10 +127,10 @@ export class LdrToThreeService {
         const part = this.allPartsMap.get(reference.name);
         if (part && part.colorVertexMap.size > 1) { //reference is a multi color part
           const partTransform = transform.clone().multiply(reference.transformMatrix);
-          this.multiColorPartRefs.push({ mainColor: reference.color, partName: part.name, transform: partTransform });
+          this.multiColorPartRefs.push({ mainColor: reference.color, partName: part.id, transform: partTransform });
         } else if (part && part.colorVertexMap.size === 1) { //reference is a single color part
           const partTransform = transform.clone().multiply(reference.transformMatrix);
-          this.instancePartRefs.push({ mainColor: reference.color, partName: part.name, transform: partTransform });
+          this.instancePartRefs.push({ mainColor: reference.color, partName: part.id, transform: partTransform });
         } else console.error("Referenced part %s from submodel %s not found in allPartsMap of size %d", reference.name, submodel.name, this.allPartsMap.size);
       }
     });
@@ -227,7 +225,7 @@ export class LdrToThreeService {
     submodels.forEach(submodel => {
       const submodelLines = submodel.split("\n");
 
-      let partName: string = "no name";
+      let submodelName: string = "no name";
       const references: PartReference[] = [];
       //iterate all lines of a ldr submodel and parse them
       submodelLines.forEach((submodelLine, index) => {
@@ -238,81 +236,74 @@ export class LdrToThreeService {
           this.createMaterial(references[references.length - 1].color);
           trueParts.push(references[references.length - 1].name);
         } else if (submodelLine.startsWith("0 FILE"))
-          partName = submodelLine.slice(7).toLowerCase();
-        else if (submodelLine.startsWith("0 Name:") && partName == "no name") //backup in case no name got set which can happen
-          partName = submodelLine.slice(9).toLowerCase();
+          submodelName = submodelLine.slice(7).toLowerCase();
+        else if (submodelLine.startsWith("0 Name:") && submodelName == "no name") //backup in case no name got set which can happen
+          submodelName = submodelLine.slice(9).toLowerCase();
       });
-      const ldrSubmodel = new LdrSubmodel(partName, references);
+      const ldrSubmodel = new LdrSubmodel(submodelName, references);
 
       if (!topSubmodelSet) {
         topLdrSubmodel = ldrSubmodel;
         topSubmodelSet = true;
       }
 
-      ldrSubModelMap.set(partName, ldrSubmodel);
+      ldrSubModelMap.set(submodelName, ldrSubmodel);
     });
 
     return { "topLdrSubmodel": topLdrSubmodel, "submodelMap": ldrSubModelMap, "trueParts": trueParts };
   }
 
-  private parseParts(parts: string[], trueParts: string[]) {
+  private parseParts(parts: string[], trueParts: string[], viewerVersion: string) {
     parts.forEach(partLines => { //for every part
       const parsedPart: LdrPart = this.parsePartLines(partLines);
-      this.allPartsMap.set(parsedPart.name, parsedPart);
-      if (trueParts.includes(parsedPart.name)) { //is not a subpart
-        const resolvedPart = this.resolvePart(parsedPart.name); //collects all vertices in the top part, so all subparts wil be resolved
+      this.allPartsMap.set(parsedPart.id, parsedPart);
+      if (trueParts.includes(parsedPart.id)) { //is not a subpart
+        const resolvedPart = this.resolvePart(parsedPart.id); //collects all vertices in the top part, so all subparts wil be resolved
         this.mergeVertices(resolvedPart.colorIndexMap, resolvedPart.colorVertexMap, resolvedPart.colorLineVertexMap);
         if (resolvedPart.colorVertexMap.size > 1) { //if part is multi color part -> will not have an instanced mesh created
           const colorGeometryMap = new Map<number, BufferGeometry>();
           resolvedPart.colorVertexMap.forEach((vertices, color) => {
             const indices = resolvedPart.colorIndexMap.get(color) ?? [];
             if (indices) {
-              const partGeometry = this.createBufferedGeometry(resolvedPart.name, vertices, indices);
+              const partGeometry = this.createBufferedGeometry(resolvedPart.id, vertices, indices, viewerVersion);
               colorGeometryMap.set(color, partGeometry);
             }
-            else console.error("Color %d not found: vertices exist but no face to em for part %s", color, parsedPart.name);
+            else console.error("Color %d not found: vertices exist but no face to em for part %s", color, parsedPart.id);
           });
           resolvedPart.colorLineVertexMap.forEach((vertices, color) => {
-            this.partNameToLineGeometryMap.set(resolvedPart.name, this.createLineGeometry(resolvedPart.name, vertices));
+            this.partNameToLineGeometryMap.set(resolvedPart.id, this.createLineGeometry(resolvedPart.id, vertices, viewerVersion));
           });
-          this.partNameToColorBufferedGeometryMap.set(parsedPart.name, colorGeometryMap);
+          this.partNameToColorBufferedGeometryMap.set(parsedPart.id, colorGeometryMap);
         } else { //if part is single color part
-          this.createInstanceGeometry(resolvedPart);
+          this.createInstanceGeometry(resolvedPart, viewerVersion);
         }
       }
     });
   }
 
-  private createInstanceGeometry(part: LdrPart): void {
-    if (!this.partNameToBufferedGeometryMap.has(part.name)) { //if not already exists
+  private createInstanceGeometry(part: LdrPart, viewerVersion: string): void {
+    if (!this.partNameToBufferedGeometryMap.has(part.id)) { //if not already exists
       part.colorVertexMap.forEach((vertices, color) => { // should only be called once
         const indices = part.colorIndexMap.get(color);
         if (!indices)
           console.error("Color not found: vertices exist but no face to em");
         else {
-          this.partNameToBufferedGeometryMap.set(part.name, this.createBufferedGeometry(part.name, vertices, indices));
+          this.partNameToBufferedGeometryMap.set(part.id, this.createBufferedGeometry(part.id, vertices, indices, viewerVersion));
         }
       });
       part.colorLineVertexMap.forEach((vertices, color) => {
-        this.partNameToLineGeometryMap.set(part.name, this.createLineGeometry(part.name, vertices));
+        this.partNameToLineGeometryMap.set(part.id, this.createLineGeometry(part.id, vertices, viewerVersion));
       });
     }
   }
 
-  private createBufferedGeometry(partName: string, vertices: Vector3[], indices: number[]): BufferGeometry {
+  private createBufferedGeometry(partName: string, vertices: Vector3[], indices: number[], viewerVersion: string): BufferGeometry {
     let partGeometry = new BufferGeometry();
     partGeometry.setFromPoints(vertices);
     partGeometry.setIndex(indices);
 
     //some parts need special attention...
-    if (partName == "28192.dat") {
-      partGeometry.rotateY(-Math.PI / 2);
-      partGeometry.translate(-10, -24, 0);
-    }
-    else if (partName == "68013.dat")
-      partGeometry.rotateY(-Math.PI);
-    else if (partName == "70681.dat")
-      partGeometry.translate(0, 0, 20);
+    this.adjustGeometryByVersion(viewerVersion,partName,partGeometry);
 
     if (this.ENABLE_FLAT_SHADING) partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
     partGeometry.computeBoundingBox();
@@ -322,18 +313,26 @@ export class LdrToThreeService {
     return partGeometry;
   }
 
-  private createLineGeometry(partName: string, vertices: Vector3[]): BufferGeometry {
+  adjustGeometryByVersion(viewerVersion: string, partName:string , partGeometry: BufferGeometry){
+    if (viewerVersion === "V1"){
+      if (partName == "28192.dat") {
+        partGeometry.rotateY(-Math.PI / 2);
+        partGeometry.translate(-10, -24, 0);
+      }
+      else if (partName == "68013.dat")
+        partGeometry.rotateY(-Math.PI);
+      else if (partName == "70681.dat")
+        partGeometry.translate(0, 0, 20);
+      else if (partName == "49803.dat")
+        partGeometry.translate(0, -32, 0);
+    }
+  }
+
+  private createLineGeometry(partName: string, vertices: Vector3[], viewerVersion: string): BufferGeometry {
     let partGeometry = new BufferGeometry();
     partGeometry.setFromPoints(vertices);
 
-    if (partName == "28192.dat") {
-      partGeometry.rotateY(-Math.PI / 2);
-      partGeometry.translate(-10, -24, 0);
-    }
-    else if (partName == "68013.dat")
-      partGeometry.rotateY(-Math.PI);
-    else if (partName == "70681.dat")
-      partGeometry.translate(0, 0, 20);
+    this.adjustGeometryByVersion(viewerVersion,partName,partGeometry);
 
     if (this.ENABLE_FLAT_SHADING) partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1);
 
@@ -344,6 +343,7 @@ export class LdrToThreeService {
   parsePartLines(partText: string): LdrPart {
     const partLines = partText.split("\n");
 
+    let partId: string = "ERROR FLO";
     let partName: string = "ERROR FLO";
     const references: PartReference[] = [];
     let invertNext: boolean = false;
@@ -362,7 +362,10 @@ export class LdrToThreeService {
         invertNext = false;
         this.createMaterial(references[references.length - 1].color);
       } else if (partLine.startsWith("0 FILE")) { //line is a part name
-        partName = partLine.slice(7);
+        partId = partLine.slice(7);
+        invertNext = false;
+      } else if (partLine.startsWith("0 ") && partName === "ERROR FLO" && partId != "ERROR FLO") { //line is a part name
+        partName = partLine.slice(2).trim().replace("  "," ");
         invertNext = false;
       } else if (partLine.startsWith("0 BFC INVERTNEXT")) //line enables BFC for the next line
         invertNext = true;
@@ -413,7 +416,7 @@ export class LdrToThreeService {
       }
     }
 
-    return new LdrPart(partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
+    return new LdrPart(partId,partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
   }
 
   private mergeVertices(colorIndexMap: Map<number, number[]>, colorVertexMap: Map<number, Vector3[]>, colorLineVertexMap: Map<number, Vector3[]>) {
@@ -481,7 +484,7 @@ export class LdrToThreeService {
           }
         }
       }
-
+      //TODO
       //remove all vertices that now are not being used anymore
       const removed: number[] = [];
       for (let vIndex: number = 0; vIndex < vertices.length; vIndex++) {
@@ -650,7 +653,7 @@ export class LdrToThreeService {
   }
 
   //This functions parses a line type two, which is a line
-  private parseLineTypeTwo(line: string) {
+  parseLineTypeTwo(line: string) {
     const splitLine = line.split(" ");
     if (splitLine.length < 8) {
       throw "line with too few coordinates";
@@ -666,7 +669,7 @@ export class LdrToThreeService {
   }
 
   //This functions parses a line type three, which is a triangle
-  private parseLineTypeThree(line: string, invert: boolean) {
+  parseLineTypeThree(line: string, invert: boolean) {
     const splitLine = line.split(" ");
     if (splitLine.length < 10) {
       throw "Triangle with too few coordinates";
@@ -688,7 +691,7 @@ export class LdrToThreeService {
   }
 
   //This functions parses a line type four, which is a rectangle, but i just split those into two triangles
-  private parseLineTypeFour(line: string, invert: boolean) {
+  parseLineTypeFour(line: string, invert: boolean) {
     const splitLine = line.split(" ");
     if (splitLine.length < 13) {
       throw "Rectangle with too few coordinates";

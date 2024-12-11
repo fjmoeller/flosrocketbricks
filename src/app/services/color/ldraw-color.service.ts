@@ -25,9 +25,16 @@ export class LdrawColorService {
         return key;
       }
     }
-    console.log(this.ldrColorList)
     console.error("Error finding color id by name: %s", colorName);
     return -1;
+  }
+
+  getLdrawColorNameByColorId(colorId: number): string {
+    const color = this.ldrColorList.get(colorId);
+    if(color)
+      return color.name;
+    else
+      return "";
   }
 
   resolveColorByLdrawColorId(id: number) {

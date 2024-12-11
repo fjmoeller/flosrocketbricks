@@ -6,6 +6,7 @@ import {LdrToThreeService} from './ldr-to-three.service';
 import {LdrawColorService} from '../color/ldraw-color.service';
 import {SimpleLdrSubmodel, SimpleReference} from '../../model/simpleLdrawParts';
 import {PartMapping, SpecificPartMapping, PartMappingFix} from 'src/app/model/partMappings';
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,6 @@ export class FileExportService {
   private replaceColor: boolean = true;
 
   private separationString = "###";
-
-  private backendFetchUrl = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
 
   private countedPartMap = new Map<string, number>();
   private mappedCountedPartMap = new Map<string, number>();
@@ -28,7 +27,7 @@ export class FileExportService {
 
   async collectUsedPartsMappings(url: string, isBr: boolean): Promise<void> {
 
-    const fetchResult = await fetch(this.backendFetchUrl + url + "_pm.json");
+    const fetchResult = await fetch(environment.backendFetchUrl + url + "_pm.json");
     let mocSpecificMappedParts: SpecificPartMapping[] = [];
     if (fetchResult.status != 404)
       mocSpecificMappedParts = (await fetchResult.json()) as SpecificPartMapping[];
@@ -117,7 +116,8 @@ export class FileExportService {
   }
 
   private async collectParts(url: string): Promise<void> {
-    const content = await fetch(this.backendFetchUrl + url);
+    //TODO does it work without fetch url (the worker) now (for non bricksafe stuff)?
+    const content = await fetch(environment.backendFetchUrl + url);
     const ldrFile = await this.extractLdrFile(content);
 
     //go through all things => collect submodels and parts
@@ -143,21 +143,18 @@ export class FileExportService {
     );
   }
 
-  private async extractLdrFile(file: any): Promise<string> {
+  async extractLdrFile(file: Response): Promise<string> {
     try {
       const blob = await file.blob();
       const options = {password: "soho0909", filenameEncoding: "utf-8"};
       const entries = await (new zip.ZipReader(new zip.BlobReader(blob), options)).getEntries();
       const model = entries.find(e => e.filename == "model.ldr");
-      if (model == undefined)
-        return "";
       if (model && model.getData) {
         const blob = await model.getData(new zip.BlobWriter());
         return await blob.text();
       }
     } catch (e) {
-      console.error("Error extracting ldr from io file!");
-      console.error(e);
+      console.error("Error extracting ldr from io file!",e);
     }
     return "";
   }

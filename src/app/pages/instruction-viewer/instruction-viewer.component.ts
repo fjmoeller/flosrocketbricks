@@ -15,6 +15,7 @@ import {InstructionPartComponent} from "../../components/instruction-part/instru
 import {File, Moc, Version} from "../../model/classes";
 import {InstructionCoverComponent} from "../../components/instruction-cover/instruction-cover.component";
 import {InstructionDownloadComponent} from "../../components/instruction-download/instruction-download.component";
+import {MetaServiceService} from "../../services/meta-service.service";
 
 @Component({
   selector: 'app-instruction-viewer',
@@ -70,7 +71,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   previousTouch?: TouchEvent;
 
-  constructor(private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService) {
+  constructor(private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
     this.currentStepModel = {
       stepPartsList: [],
       newPartsModel: new Group(),
@@ -113,7 +114,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       const version = moc?.versions.find(v => v.version.toLowerCase() === paramMap.get('version')?.toLowerCase());
       const file = version?.files[Number(paramMap.get('file')) || 0];
       let initialStep = (Number(paramMap.get('stepIndex')) || 0);
-      if (file && file.instructions) {
+      if (moc && file && file.instructions) {
+        this.metaService.setDefaultTags(file.name+ " Online Instructions",window.location.href);
         this.file = file;
         this.version = version;
         this.loadingFinished = false;

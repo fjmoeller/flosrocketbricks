@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import {
   AmbientLight,
   BufferGeometry,
@@ -21,7 +21,6 @@ import {MocGrabberService} from "../../services/grabber/moc-grabber.service";
 import {Box3} from "three/src/math/Box3.js";
 import {File, Moc, Version} from "../../model/classes";
 import {MetaServiceService} from "../../services/meta-service.service";
-import {isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-instruction-viewer',
@@ -93,7 +92,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   previousTouch?: TouchEvent;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any, private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
+  constructor(private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
     this.currentStepModel = {
       stepPartsList: [],
       newPartsModel: new Group(),
@@ -317,22 +316,22 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     if (notFirstCall)
       this.mainScene.remove(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
 
+    //remove the divs of the parts fro mthe last step
     this.clearPartListElements();
 
     //if it's not a page with the normal model in it
-    /**if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0)
-     return;*/ //TODO add back in when we have a next step thing
-
+    if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0)
+     return;
 
     this.currentStepModel = this.instructionService.getModelByStep(this.instructionModel, this.currentStepNumber - 1);
     this.currentSubmodelAmount = this.currentStepModel.parentSubmodelAmount;
 
-    //partList
-    this.createPartListScenes();
+    //create teh divs and scenes for the new parts of the part list
+    this.createPartListElements();
 
     this.canvasWrapper.style.height = "" + document.getElementById('content')!.clientHeight + "px";
 
-    //main
+    //change the view for the main canvas from here on
     if (this.enableAutoRotation) {
       //reset camera rotation
       this.cameraCoordinates = new Spherical(1, 1, 2.6);
@@ -461,7 +460,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     scene.userData['camera'] = camera;
   }
 
-  createPartListScenes(): void {
+  createPartListElements(): void {
     for (let i = 0; i < this.currentStepModel.stepPartsList.length; i++) { //TODO sort parts by size beforehand
       const scene = this.createDefaultScene();
 

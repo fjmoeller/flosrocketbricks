@@ -12,8 +12,34 @@
 .stepButton:disabled
   cursor: not-allowed
 
-.canvas
+#canvas-viewer
+  position: absolute
+  left: 0
+  width: 100%
+  height: 100%
+  touch-action: none
+
+#content
+  position: absolute
+  top: 0
+  width: 100%
+  z-index: 1
+  touch-action: none
+
+#main-content
   height: 75vh
   width: 100%
   touch-action: none
+
+#partlist-content
+  width: 100%
+  display: flex
+  background-color: #f2f2f2
+  touch-action: none
+
+.partlist-element
+  height: 6rem
+  width: 6rem
+  touch-action: none
+
 

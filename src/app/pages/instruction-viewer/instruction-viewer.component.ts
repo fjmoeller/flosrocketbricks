@@ -1,9 +1,17 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {
   AmbientLight,
-  BufferGeometry, Clock, DirectionalLight,
-  Group, Material, Matrix3, OrthographicCamera, Scene, Spherical,
-  Vector3, WebGLRenderer
+  BufferGeometry,
+  Clock,
+  DirectionalLight,
+  Group,
+  Material,
+  Matrix3,
+  OrthographicCamera,
+  Scene,
+  Spherical,
+  Vector3,
+  WebGLRenderer
 } from "three";
 import {InstructionModel, InstructionPart, InstructionSubmodel, StepModel} from "../../model/instructions";
 import {InstructionService} from "../../services/file/instruction.service";
@@ -11,24 +19,29 @@ import {LdrPart} from "../../model/ldrawParts";
 import {ActivatedRoute} from "@angular/router";
 import {MocGrabberService} from "../../services/grabber/moc-grabber.service";
 import {Box3} from "three/src/math/Box3.js";
-import {InstructionPartComponent} from "../../components/instruction-part/instruction-part.component";
 import {File, Moc, Version} from "../../model/classes";
-import {InstructionCoverComponent} from "../../components/instruction-cover/instruction-cover.component";
-import {InstructionDownloadComponent} from "../../components/instruction-download/instruction-download.component";
 import {MetaServiceService} from "../../services/meta-service.service";
+import {isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-instruction-viewer',
   standalone: true,
   templateUrl: './instruction-viewer.component.html',
-  imports: [
-    InstructionPartComponent,
-    InstructionCoverComponent,
-    InstructionDownloadComponent
-  ],
+  imports: [],
   styleUrl: './instruction-viewer.component.sass'
 })
 export class InstructionViewerComponent implements OnInit, OnDestroy {
+
+  //TODO fix the rotation stuff or comment back in i guess
+  //TODO fix resizing window problem
+  //TODO make more performing by using one canvas//webgl instance
+  //TODO make touch zoom and pan possible
+  //TODO add settings
+  //TODO add buttons: go to end go to start
+  //TODO auto switch url to page with each page change
+  //TODO simplify code
+  //TODO calc rotation already when creating steps -> add flip symbols
+  //TODO add axis indicator
 
   moc?: Moc;
   file: File;
@@ -38,7 +51,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   renderingActive: boolean = false;
   currentStepNumber: number = 0;
   currentSubmodelAmount: number = 0;
-  canvasSize: { width: number, height: number } = {width: 0, height: 0};
 
   private isDragging: boolean = false;
   private isPanning: boolean = false;
@@ -49,10 +61,19 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   currentStepModel: StepModel;
   instructionModel: InstructionModel;
 
-  private scene: Scene = new Scene();
-  private camera: OrthographicCamera = new OrthographicCamera();
-  private renderer?: WebGLRenderer;
-  private cameraCoordinates: Spherical = new Spherical(1, 1, 2.6);
+  private canvas!: HTMLCanvasElement;
+  private canvasWrapper!: HTMLDivElement;
+  private contentWrapper!: HTMLDivElement;
+  private mainContent!: HTMLDivElement;
+  private partlistContent!: HTMLDivElement;
+
+  private mainScene: Scene = new Scene(); //TODO put into list below as first element or so
+  private partListScenes: Scene[] = []; //make list with not active scenes -> not active if mouse not over
+  private mainCamera: OrthographicCamera = new OrthographicCamera(); //TODO put into scene
+  private partListCameras: OrthographicCamera[] = []; //TODO put into scene
+  private cameraCoordinates: Spherical = new Spherical(1, 1, 2.6); //TODO put into scene
+  private partListCameraCoordinates: Spherical[] = []; //TODO put into scene
+  private renderer!: WebGLRenderer;
   private target: Vector3 = new Vector3(0, 0, 0);
 
   readonly clock: Clock = new Clock();
@@ -68,10 +89,11 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   panningSpeed: number = 50;
   enableAutoZoom: boolean = true;
   enableAutoRotation: boolean = true;
+  defaultCameraCoordinates: Spherical = new Spherical(1, 1, 2.6);
 
   previousTouch?: TouchEvent;
 
-  constructor(private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
+  constructor(@Inject(PLATFORM_ID) private platformId: any, private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
     this.currentStepModel = {
       stepPartsList: [],
       newPartsModel: new Group(),
@@ -113,16 +135,18 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       this.moc = moc;
       const version = moc?.versions.find(v => v.version.toLowerCase() === paramMap.get('version')?.toLowerCase());
       const file = version?.files[Number(paramMap.get('file')) || 0];
-      let initialStep = (Number(paramMap.get('stepIndex')) || 0);
+      let initialStep = (Number(paramMap.get('stepIndex')) || 0); //TODO change back to 0
       if (moc && file && file.instructions) {
-        this.metaService.setDefaultTags(file.name+ " Online Instructions",window.location.href);
+        //this.metaService.setDefaultTags(file.name+ " Online Instructions",window.location.href);
         this.file = file;
         this.version = version;
         this.loadingFinished = false;
         this.instructionModel = await this.instructionService.getInstructionModel(file.link, file.instructions);
-        this.createScene();
         this.currentStepNumber = initialStep;
-        this.refreshStep(false);
+        this.collectElementReferences();
+        this.createMainScene();
+        this.refreshStep(false); //TODO maybe move to afterviewinit?
+        this.startRenderLoop();
       }
     });
   }
@@ -133,26 +157,34 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.renderer?.forceContextLoss();
   }
 
-  private registerListeners(canvas: HTMLElement) {
-    canvas.addEventListener('mousedown', event => {
+  private collectElementReferences(): void {
+    this.canvas = document.getElementById('canvas-viewer')! as HTMLCanvasElement;
+    this.canvasWrapper = document.getElementById('canvas-wrapper')! as HTMLDivElement;
+    this.contentWrapper = document.getElementById("content") as HTMLDivElement;
+    this.mainContent = document.getElementById("main-content") as HTMLDivElement;
+    this.partlistContent = document.getElementById("partlist-content") as HTMLDivElement;
+  }
+
+  private registerListeners(htmlElement: HTMLElement) {
+    htmlElement.addEventListener('mousedown', event => {
       if (event.button === 0)
         this.isDragging = true;
       else if (event.button === 2)
         this.isPanning = true;
     });
-    canvas.addEventListener('touchstart', event => {
+    htmlElement.addEventListener('touchstart', event => {
       if (event.touches.length === 1)
         this.isDragging = true;
       /*else if (event.touches.length === 2)
         this.isPanning = true;*/
     });
-    canvas.addEventListener('mouseup', event => {
+    htmlElement.addEventListener('mouseup', event => {
       if (event.button === 0)
         this.isDragging = false;
       else if (event.button === 2)
         this.isPanning = false;
     });
-    canvas.addEventListener('touchend', () => {
+    htmlElement.addEventListener('touchend', () => {
       if (this.previousTouch) {
         if (this.previousTouch.touches.length === 1) {
           this.isDragging = false;
@@ -167,7 +199,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         }*/
       }
     });
-    canvas.addEventListener('touchcancel', () => {
+    htmlElement.addEventListener('touchcancel', () => {
       if (this.previousTouch) {
         if (this.previousTouch.touches.length === 1) {
           this.isDragging = false;
@@ -182,17 +214,17 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         }*/
       }
     });
-    canvas.addEventListener('wheel', event => {
+    htmlElement.addEventListener('wheel', event => {
       event.preventDefault();
       this.scrollDelta += event.deltaY;
     });
-    canvas.addEventListener('mousemove', event => {
+    htmlElement.addEventListener('mousemove', event => {
       if (this.isDragging)
         this.dragDelta.push({mx: event.movementX, my: event.movementY});
       if (this.isPanning)
         this.panDelta.push({mx: event.movementX, my: event.movementY});
     });
-    canvas.addEventListener('touchmove', event => {
+    htmlElement.addEventListener('touchmove', event => {
       if (this.previousTouch) {
         if (event.touches.length === 1) { //rotation
           const deltaX = event.touches[0].clientX - this.previousTouch.touches[0].clientX;
@@ -229,6 +261,10 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
           break;
       }
     });
+    window.addEventListener('resize', () => {
+      this.renderer?.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+      //TODO update main camera
+    });
   }
 
   previousStep() {
@@ -243,50 +279,60 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.refreshStep(true);
   }
 
-  private updateControls(): void {
+  //TODO also update for non mainScene things and change the panDelta and scrollDelta params so that i dont have to set them to 0 after callign this fucntion
+  private updateControls(camera: OrthographicCamera, cameraTarget: Vector3, cameraCoordinates: Spherical, scrollDelta: number, panDelta: {mx:number,my:number}[], dragDelta:{mx:number,my:number}[]): void {
     //zooming in
-    this.camera.zoom = Math.max(Math.min(this.camera.zoom - (this.scrollDelta * this.zoomSpeed), this.minCameraZoom), this.maxCameraZoom);
-    this.scrollDelta = 0;
+    camera.zoom = Math.max(Math.min(camera.zoom - (scrollDelta * this.zoomSpeed), this.minCameraZoom), this.maxCameraZoom);
 
     //panning
-    const panSpeed = 1 / this.camera.zoom / this.panningSpeed;
+    const panSpeed = 1 / camera.zoom / this.panningSpeed;
     let panningDeltaX: number = 0;
     let panningDeltaY: number = 0;
-    for (let i = 0; i < this.panDelta.length; i++) {
-      panningDeltaX -= this.panDelta[i].mx;
-      panningDeltaY += this.panDelta[i].my;
+    for (let i = 0; i < panDelta.length; i++) {
+      panningDeltaX -= panDelta[i].mx;
+      panningDeltaY += panDelta[i].my;
     }
-    this.panDelta = [];
-    this.target.add(new Vector3(panningDeltaX * panSpeed, panningDeltaY * panSpeed, 0).applyMatrix3(new Matrix3().getNormalMatrix(this.camera.matrix)))
+    panDelta = [];
+    cameraTarget.add(new Vector3(panningDeltaX * panSpeed, panningDeltaY * panSpeed, 0).applyMatrix3(new Matrix3().getNormalMatrix(camera.matrix)))
 
     //rotating & position
     let draggingDeltaX: number = 0;
     let draggingDeltaY: number = 0;
-    for (let i = 0; i < this.dragDelta.length; i++) {
-      draggingDeltaX += this.dragDelta[i].mx;
-      draggingDeltaY += this.dragDelta[i].my;
+    for (let i = 0; i < dragDelta.length; i++) {
+      draggingDeltaX += dragDelta[i].mx;
+      draggingDeltaY += dragDelta[i].my;
     }
-    this.dragDelta = [];
-    this.cameraCoordinates.theta -= draggingDeltaX * this.rotationSpeed;
-    this.cameraCoordinates.phi -= draggingDeltaY * this.rotationSpeed;
+    dragDelta = [];
+    cameraCoordinates.theta -= draggingDeltaX * this.rotationSpeed;
+    cameraCoordinates.phi -= draggingDeltaY * this.rotationSpeed;
     // no camera flipping
-    this.cameraCoordinates.phi = Math.max(0.05, Math.min(Math.PI - 0.05, this.cameraCoordinates.phi));
-    this.camera?.position.setFromSpherical(this.cameraCoordinates).add(this.target);
-    this.camera?.lookAt(this.target);
+    cameraCoordinates.phi = Math.max(0.05, Math.min(Math.PI - 0.05, cameraCoordinates.phi));
+    camera.position.setFromSpherical(cameraCoordinates).add(cameraTarget);
+    camera.lookAt(cameraTarget);
 
-    this.camera.updateProjectionMatrix();
+    camera.updateProjectionMatrix();
   }
 
   private refreshStep(notFirstCall: boolean): void {
     if (notFirstCall)
-      this.scene.remove(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
+      this.mainScene.remove(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
 
-    if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0)
-      return; //if it's not a page with the normal model in it
+    this.clearPartListElements();
+
+    //if it's not a page with the normal model in it
+    /**if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0)
+     return;*/ //TODO add back in when we have a next step thing
+
 
     this.currentStepModel = this.instructionService.getModelByStep(this.instructionModel, this.currentStepNumber - 1);
     this.currentSubmodelAmount = this.currentStepModel.parentSubmodelAmount;
 
+    //partList
+    this.createPartListScenes();
+
+    this.canvasWrapper.style.height = "" + document.getElementById('content')!.clientHeight + "px";
+
+    //main
     if (this.enableAutoRotation) {
       //reset camera rotation
       this.cameraCoordinates = new Spherical(1, 1, 2.6);
@@ -341,52 +387,52 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
     //this.scene.add(new Box3Helper(new Box3().setFromObject(this.currentStepModel.newPartsModel),new Color(1,0,0)),new Box3Helper(new Box3().setFromObject(this.currentStepModel.prevPartsModel),new Color(0,1,0)));
 
-    if ((this.enableAutoZoom || !notFirstCall) && this.camera) {
+    if ((this.enableAutoZoom || !notFirstCall)) {
       const box = new Box3().setFromObject(this.currentStepModel.newPartsModel);
       const boxPoints = [
-        new Vector3(box.min.x, box.min.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.min.x, box.min.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.min.x, box.max.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.min.x, box.max.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.max.x, box.min.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.max.x, box.min.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.max.x, box.max.y, box.min.z).applyMatrix4(this.camera.matrixWorld),
-        new Vector3(box.max.x, box.max.y, box.max.z).applyMatrix4(this.camera.matrixWorld),
+        new Vector3(box.min.x, box.min.y, box.min.z).applyMatrix4(this.mainCamera.matrixWorld),
+        new Vector3(box.min.x, box.min.y, box.max.z).applyMatrix4(this.mainCamera.matrixWorld),
+        new Vector3(box.min.x, box.max.y, box.min.z).applyMatrix4(this.mainCamera.matrixWorld),
+        new Vector3(box.min.x, box.max.y, box.max.z).applyMatrix4(this.mainCamera.matrixWorld),
+        new Vector3(box.max.x, box.min.y, box.min.z).applyMatrix4(this.mainCamera.matrixWorld),
+        new Vector3(box.max.x, box.min.y, box.max.z).applyMatrix4(this.mainCamera.matrixWorld),
+        new Vector3(box.max.x, box.max.y, box.min.z).applyMatrix4(this.mainCamera.matrixWorld),
+        new Vector3(box.max.x, box.max.y, box.max.z).applyMatrix4(this.mainCamera.matrixWorld),
       ];
       const cameraBox: Box3 = new Box3().setFromPoints(boxPoints);
       const modelWidth: number = cameraBox.max.x - cameraBox.min.x;
       const modelHeight: number = cameraBox.max.y - cameraBox.min.y;
       const modelAspectRatio: number = modelWidth / modelHeight;
-      const canvasAspectRatio: number = this.canvasSize.width / this.canvasSize.height;
+      //const canvasAspectRatio: number = this.mainContent.clientWidth / this.mainContent.clientHeight; TODO this somehow doesnt work idk why
+      const canvasAspectRatio: number = this.canvas.clientWidth / this.canvas.clientHeight;
+      //console.log(this.mainContent.clientWidth,this.mainContent.clientHeight);
 
       if (modelAspectRatio > canvasAspectRatio) { //if the model is wider than the canvas (in terms of aspect ratio)
-        this.camera.left = -modelWidth / 2 * this.defaultZoomFactor;
-        this.camera.right = modelWidth / 2 * this.defaultZoomFactor;
-        this.camera.bottom = (-modelWidth / 2 / canvasAspectRatio) * this.defaultZoomFactor;
-        this.camera.top = (modelWidth / 2 / canvasAspectRatio) * this.defaultZoomFactor;
+        this.mainCamera.left = -modelWidth / 2 * this.defaultZoomFactor;
+        this.mainCamera.right = modelWidth / 2 * this.defaultZoomFactor;
+        this.mainCamera.bottom = (-modelWidth / 2 / canvasAspectRatio) * this.defaultZoomFactor;
+        this.mainCamera.top = (modelWidth / 2 / canvasAspectRatio) * this.defaultZoomFactor;
       } else { //if the model is taller than the canvas (in terms of aspect ratio)
-        this.camera.left = (-modelHeight / 2 * canvasAspectRatio) * this.defaultZoomFactor;
-        this.camera.right = (modelHeight / 2 * canvasAspectRatio) * this.defaultZoomFactor;
-        this.camera.bottom = -modelHeight / 2 * this.defaultZoomFactor;
-        this.camera.top = modelHeight / 2 * this.defaultZoomFactor;
+        this.mainCamera.left = (-modelHeight / 2 * canvasAspectRatio) * this.defaultZoomFactor;
+        this.mainCamera.right = (modelHeight / 2 * canvasAspectRatio) * this.defaultZoomFactor;
+        this.mainCamera.bottom = -modelHeight / 2 * this.defaultZoomFactor;
+        this.mainCamera.top = modelHeight / 2 * this.defaultZoomFactor;
       }
       //expect a minimum size of the canvas
-      if (this.camera.right < this.minimalZoom || this.camera.top < this.minimalZoom) {
-        this.camera.left = -this.minimalZoom * canvasAspectRatio;
-        this.camera.right = this.minimalZoom * canvasAspectRatio;
-        this.camera.bottom = -this.minimalZoom;
-        this.camera.top = this.minimalZoom;
+      if (this.mainCamera.right < this.minimalZoom || this.mainCamera.top < this.minimalZoom) {
+        this.mainCamera.left = -this.minimalZoom * canvasAspectRatio;
+        this.mainCamera.right = this.minimalZoom * canvasAspectRatio;
+        this.mainCamera.bottom = -this.minimalZoom;
+        this.mainCamera.top = this.minimalZoom;
       }
-      this.camera.zoom = 1;
-      this.camera.updateProjectionMatrix();
+      this.mainCamera.zoom = 1;
+      this.mainCamera.updateProjectionMatrix();
     }
-    this.scene.add(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
+    this.mainScene.add(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
   }
 
-  createScene(): void {
+  createDefaultScene(): Scene {
     const newScene = new Scene();
-    this.scene = newScene;
-
     //TODO remove
     //const axesHelper = new AxesHelper(10);
     //this.scene.add(axesHelper);
@@ -400,59 +446,137 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     const ambientLight = new AmbientLight(0xffffff, 0.8);
     newScene.add(ambientLight);
 
-    const canvas = document.getElementById('canvas-viewer');
-    const canvasWrapper = document.getElementById('canvas-wrapper');
-    if (!
-      canvas || !canvasWrapper
-    )
-      return;
-    this.canvasSize = {
-      width: canvas.clientWidth,
-      height: canvas.clientHeight
-    };
-    this.registerListeners(canvas);
+    return newScene;
+  }
 
-    const camera = new OrthographicCamera(this.canvasSize.width / -2, this.canvasSize.width / 2, this.canvasSize.height / 2, this.canvasSize.height / -2, -1000, 1000);
-    camera.lookAt(0, 0, 0);
-    newScene.add(camera);
-    this.camera = camera;
+  createMainScene(): void {
+    const scene = this.createDefaultScene();
+    this.mainScene = scene;
 
-    this.renderer = new WebGLRenderer({antialias: true, canvas: canvas});
-    this.renderer.setSize(this.canvasSize.width, this.canvasSize.height);
-    this.renderer.setPixelRatio(window.devicePixelRatio * 1.5);
-    this.renderer.setClearColor("rgb(88,101,117)");
+    const camera = new OrthographicCamera(this.mainContent.clientWidth / -2, this.mainContent.clientWidth / 2, this.mainContent.clientHeight / 2, this.mainContent.clientHeight / -2, -1000, 1000);
+    scene.add(camera);
+    this.mainCamera = camera;
 
-    window.addEventListener('resize', () => {
-      this.renderer?.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
-      this.renderer?.render(newScene, camera);
+    scene.userData['element'] = this.mainContent;
+    scene.userData['camera'] = camera;
+  }
 
-      const prevAspectRatio: number = camera.right / camera.top;
-      const newAspectRatio: number = canvasWrapper.clientWidth / canvasWrapper.clientHeight;
-      camera.top = camera.top / (newAspectRatio / prevAspectRatio);
-      camera.bottom = camera.bottom / (newAspectRatio / prevAspectRatio);
-      camera.updateProjectionMatrix();
+  createPartListScenes(): void {
+    const partListDiv = document.getElementById("partlist-content");
 
-      this.canvasSize.width = canvasWrapper.clientWidth;
-      this.canvasSize.height = canvasWrapper.clientHeight;
-    });
+    for (let i = 0; i < this.currentStepModel.stepPartsList.length; i++) { //TODO sort parts by size beforehand
+      const scene = this.createDefaultScene();
+
+      const stepPart = this.currentStepModel.stepPartsList[i];
+      scene.add(stepPart.model);
+
+      const partDiv: HTMLDivElement = document.createElement('div'); //TODO add hover effect
+      partDiv.className = 'partlist-element';
+      partDiv.style.height = '6rem';
+      partDiv.style.width = '6rem';
+      //partDiv.id = "partlist-element-"+i;
+      const sceneDiv: HTMLDivElement = document.createElement('div');
+      //sceneDiv.id = "partlist-element-scene-"+i;
+      const amountDiv: HTMLDivElement = document.createElement('div');
+      amountDiv.innerText = stepPart.quantity + 'x'; //TODO increase text size
+      partDiv.appendChild(sceneDiv); //TODO add class maybe?
+      partDiv.appendChild(amountDiv);
+      partListDiv?.appendChild(partDiv);
+
+      const camera = new OrthographicCamera(sceneDiv.clientWidth / -2, sceneDiv.clientWidth / 2, sceneDiv.clientHeight / 2, sceneDiv.clientHeight / -2, -1000, 1000);
+      camera.position.setFromSpherical(this.defaultCameraCoordinates.clone());
+      camera.lookAt(0, 0, 0);
+      scene.add(camera);
+      this.partListCameras.push(camera);
+
+      //TODO add camera size determination
+
+      scene.userData['element'] = sceneDiv;
+      scene.userData['camera'] = camera;
+      this.partListScenes.push(scene);
+    }
+  }
+
+  private clearPartListElements() {
+    const partListDiv = document.getElementById("partlist-content");
+    while (partListDiv?.hasChildNodes() && partListDiv.lastChild)
+      partListDiv.removeChild(partListDiv.lastChild);
+
+    this.partListCameras = [];
+    this.partListScenes = [];
+    this.partListCameraCoordinates = [];
+  }
+
+  private startRenderLoop() {
+    this.registerListeners(this.contentWrapper);
+
+    this.loadingFinished = true;
+    this.renderingActive = true;
 
     const update = () => {
       if (this.clock.getElapsedTime() > this.MAX_FPS) {
-        this.updateControls();
+        this.clock.start();
 
-        this.renderer?.render(newScene, camera);
+        this.updateControls(this.mainCamera,this.target,this.cameraCoordinates,this.scrollDelta,this.panDelta,this.dragDelta);
+        this.scrollDelta = 0;
+        this.panDelta = [];
+        this.dragDelta = [];
 
-        this.clock.start()
+        //render main scene
+        const scene = this.mainScene;
+        const element: HTMLDivElement = scene.userData["element"];
+        const camera: OrthographicCamera = scene.userData["camera"];
+        // get its position relative to the page's viewport
+        const rect = element.getBoundingClientRect();
+        const canvasrect = this.canvas.getBoundingClientRect();
+        rect.x -= canvasrect.x;
+        // set the viewport
+        const width = rect.right - rect.left;
+        const height = rect.bottom - rect.top;
+        const left = rect.left;
+        const bottom = this.canvas.clientHeight - rect.bottom;
+        this.renderer.setViewport(left, bottom, width, height);
+        this.renderer.setScissor(left, bottom, width, height);
+        this.renderer.render(scene, camera);
+
+        //render partList n stuff
+        for (let i = 0; i < this.partListScenes.length; i++) {
+          const scene = this.partListScenes[i];
+          const element: HTMLDivElement = scene.userData["element"];
+          const camera: OrthographicCamera = scene.userData["camera"];
+
+          // get its position relative to the page's viewport
+          const rect = element.getBoundingClientRect();
+          // skip if offscreen
+          if (rect.bottom < 0 || rect.top > this.renderer?.domElement.clientHeight ||
+            rect.right < 0 || rect.left > this.renderer.domElement.clientWidth)
+            continue;
+
+          //this.updateControls(this.mainCamera,this.target,this.cameraCoordinates,this.scrollDelta,this.panDelta,this.dragDelta); TODO add for the parts
+
+          // set the viewport
+          const width = rect.right - rect.left;
+          const height = rect.bottom - rect.top;
+          const left = rect.left;
+          const bottom = this.renderer.domElement.clientHeight - rect.bottom;
+          this.renderer.setViewport(left, bottom, width, height);
+          this.renderer.setScissor(left, bottom, width, height);
+          this.renderer.render(scene, camera);
+        }
       }
       if (this.renderingActive)
         window.requestAnimationFrame(update);
     };
 
-    this.updateControls();
-    this.renderer.render(newScene, camera);
+    this.renderer = new WebGLRenderer({antialias: true, canvas: this.canvas});
+    this.renderer.setSize(this.canvas.width, this.canvas.height, false);
+    this.renderer.setPixelRatio(window.devicePixelRatio * 1.5); //TODO remove 1.5
+    this.renderer.setClearColor("rgb(88,101,117)");
 
-    this.loadingFinished = true;
-    this.renderingActive = true;
+    this.updateControls(this.mainCamera,this.target,this.cameraCoordinates,this.scrollDelta,this.panDelta,this.dragDelta);
+    this.scrollDelta = 0;
+    this.panDelta = [];
+    this.dragDelta = [];
 
     update();
   }

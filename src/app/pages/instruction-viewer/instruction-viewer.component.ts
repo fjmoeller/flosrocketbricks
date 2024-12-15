@@ -462,8 +462,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   }
 
   createPartListScenes(): void {
-    const partListDiv = document.getElementById("partlist-content");
-
     for (let i = 0; i < this.currentStepModel.stepPartsList.length; i++) { //TODO sort parts by size beforehand
       const scene = this.createDefaultScene();
 
@@ -474,14 +472,14 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       partDiv.className = 'partlist-element';
       partDiv.style.height = '6rem';
       partDiv.style.width = '6rem';
-      //partDiv.id = "partlist-element-"+i;
+      partDiv.id = "partlist-element-"+i;
       const sceneDiv: HTMLDivElement = document.createElement('div');
-      //sceneDiv.id = "partlist-element-scene-"+i;
+      sceneDiv.id = "partlist-element-scene-"+i;
       const amountDiv: HTMLDivElement = document.createElement('div');
       amountDiv.innerText = stepPart.quantity + 'x'; //TODO increase text size
       partDiv.appendChild(sceneDiv); //TODO add class maybe?
       partDiv.appendChild(amountDiv);
-      partListDiv?.appendChild(partDiv);
+      this.partlistContent.appendChild(partDiv);
 
       const camera = new OrthographicCamera(sceneDiv.clientWidth / -2, sceneDiv.clientWidth / 2, sceneDiv.clientHeight / 2, sceneDiv.clientHeight / -2, -1000, 1000);
       camera.position.setFromSpherical(this.defaultCameraCoordinates.clone());

@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {
-  AmbientLight, AxesHelper,
+  AmbientLight,
   BufferGeometry,
   Clock,
   DirectionalLight,
@@ -13,7 +13,7 @@ import {
   Vector3,
   WebGLRenderer
 } from "three";
-import {InstructionModel, InstructionPart, InstructionSubmodel, StepModel} from "../../model/instructions";
+import {InstructionModel, InstructionPart, InstructionSubmodel, StepModel, StepPart} from "../../model/instructions";
 import {InstructionService} from "../../services/file/instruction.service";
 import {LdrPart} from "../../model/ldrawParts";
 import {ActivatedRoute} from "@angular/router";
@@ -21,6 +21,7 @@ import {MocGrabberService} from "../../services/grabber/moc-grabber.service";
 import {Box3} from "three/src/math/Box3.js";
 import {File, Moc, Version} from "../../model/classes";
 import {MetaServiceService} from "../../services/meta-service.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-instruction-viewer',
@@ -90,7 +91,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   enableAutoRotation: boolean = true;
   defaultCameraCoordinates: Spherical = new Spherical(1, 1, 2.6);
 
-  constructor(private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
+  constructor(private location: Location, private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
     this.currentStepModel = {
       stepPartsList: [],
       newPartsModel: new Group(),
@@ -134,7 +135,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       const file = version?.files[Number(paramMap.get('file')) || 0];
       let initialStep = (Number(paramMap.get('stepIndex')) || 0); //TODO change back to 0
       if (moc && file && file.instructions) {
-        //this.metaService.setDefaultTags(file.name+ " Online Instructions",window.location.href);
+        this.metaService.setDefaultTags(file.name+ " Online Instructions",window.location.href);
         this.file = file;
         this.version = version;
         this.loadingFinished = false;
@@ -143,6 +144,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.collectElementReferences();
         this.createMainScene();
         this.refreshStep(false); //TODO maybe move to afterviewinit?
+        this.registerWindowListeners();
         this.startRenderLoop();
       }
     });
@@ -248,6 +250,9 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       }
       this.previousTouch = event;
     });
+  }
+
+  private registerWindowListeners() {
     document.addEventListener('keydown', event => {
       switch (event.key) {
         case "ArrowRight":
@@ -259,7 +264,10 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       }
     });
     window.addEventListener('resize', () => {
-      this.renderer?.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+      const rectCanvas = this.canvasWrapper.getBoundingClientRect();
+      this.canvas.width = rectCanvas.width;
+      this.canvas.height = rectCanvas.height;
+      this.renderer.setSize(rectCanvas.width, rectCanvas.height);
       //TODO update main camera
     });
   }
@@ -268,12 +276,27 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     if (this.currentStepNumber <= 0) return;
     this.currentStepNumber -= 1;
     this.refreshStep(true);
+    this.changeStepInPath();
   }
 
   nextStep() {
     if (this.currentStepNumber >= this.instructionModel.instructionSteps.length + 1) return;
     this.currentStepNumber += 1;
     this.refreshStep(true);
+    this.changeStepInPath();
+  }
+
+  private changeStepInPath(): void {
+    const pathSegments = this.location.path().split('/');
+    if (pathSegments.length === 6) {
+      pathSegments[pathSegments.length - 1] = this.currentStepNumber + "";
+      const newPath = pathSegments.join('/') + '/';
+      this.location.replaceState(newPath);
+    } else {
+      pathSegments[pathSegments.length - 2] = this.currentStepNumber + "";
+      const newPath = pathSegments.join('/');
+      this.location.replaceState(newPath);
+    }
   }
 
   //TODO also update for non mainScene things and change the panDelta and scrollDelta params so that i dont have to set them to 0 after callign this fucntion
@@ -320,17 +343,17 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     //remove the divs of the parts fro mthe last step
     this.clearPartListElements();
 
-    //if it's not a page with the normal model in it
-    if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0)
-      return;
+    //if it's not a page with the normal model in it then skip it
+    if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0) return;
 
+    //fetch new step
     this.currentStepModel = this.instructionService.getModelByStep(this.instructionModel, this.currentStepNumber - 1);
     this.currentSubmodelAmount = this.currentStepModel.parentSubmodelAmount;
 
-    //create teh divs and scenes for the new parts of the part list
+    //create the divs and scenes for the new parts of the part list
     this.createPartListElements();
 
-    this.canvasWrapper.style.height = "" + document.getElementById('content')!.clientHeight + "px";
+    this.canvasWrapper.style.height = "" + document.getElementById('content')!.clientHeight + "px"; //TODO needed?
 
     //change the view for the main canvas from here on
     if (this.enableAutoRotation) {
@@ -458,17 +481,22 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     for (let i = 0; i < this.currentStepModel.stepPartsList.length; i++) { //TODO sort parts by size beforehand
       const scene = this.createDefaultScene();
 
-      const stepPart = this.currentStepModel.stepPartsList[i];
-      scene.add(stepPart.model);
+      const stepPart: StepPart = this.currentStepModel.stepPartsList[i];
+      const partGroup: Group = stepPart.model.clone();
+      scene.add(partGroup);
+      //partGroup.scale.setScalar(0.044); //TODO add later
+      partGroup.rotateX(Math.PI);
+      partGroup.rotateY(-Math.PI / 2);
+      new Box3().setFromObject(partGroup).getCenter(partGroup.position).multiplyScalar(-1);
 
       const partDiv: HTMLDivElement = document.createElement('div'); //TODO add hover effect
       partDiv.className = 'partlist-element';
-      partDiv.style.height = '6rem';
-      partDiv.style.width = '6rem';
       partDiv.id = "partlist-element-" + i;
       const sceneDiv: HTMLDivElement = document.createElement('div');
       sceneDiv.id = "partlist-element-scene-" + i;
-      sceneDiv.className = 'partlist-element-scene';
+      sceneDiv.style.touchAction = 'none';
+      sceneDiv.style.height = '6rem';
+      sceneDiv.style.width = '6rem';
       const amountDiv: HTMLDivElement = document.createElement('div');
       amountDiv.innerText = stepPart.quantity + 'x';
       partDiv.appendChild(sceneDiv);
@@ -516,20 +544,16 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         const element: HTMLDivElement = scene.userData["element"];
         const camera: OrthographicCamera = scene.userData["camera"];
         // get its position relative to the page's viewport
-        const rect = element.getBoundingClientRect();
-        const rectParent = element.parentElement!.getBoundingClientRect();
+        const rectElement = element.getBoundingClientRect();
         const rectCanvas = this.canvas.getBoundingClientRect();
-        const top = rect.y - rectCanvas.y;
-        const left = rect.x - rectCanvas.x;
-        this.renderer.setSize(rectCanvas.width, rectCanvas.height); //TODO move out of here?
 
-        this.renderer.setViewport(0, 0, rect.width, rect.height);
-        this.renderer.setScissor(0, 0, rect.width, rect.height);
+        this.renderer.setViewport(0, 0, rectElement.width, rectElement.height);
+        this.renderer.setScissor(0, 0, rectElement.width, rectElement.height);
         this.renderer.clearColor();
         this.renderer.clearDepth();
 
-        this.renderer.setViewport(left, top, rect.width, rect.height);
-        this.renderer.setScissor(left, top, rect.width, rect.height);
+        this.renderer.setViewport(0, rectCanvas.bottom - rectElement.bottom, rectElement.width, rectElement.height);
+        this.renderer.setScissor(0, rectCanvas.bottom - rectElement.bottom, rectElement.width, rectElement.height);
         this.renderer.render(scene, camera);
 
         //render partList n stuff
@@ -539,15 +563,15 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
           const partListCamera: OrthographicCamera = partListScene.userData["camera"];
 
           // get its position relative to the page's viewport
-          const partListRect = partListElement.getBoundingClientRect();
-          //const top = rect.top - rectCanvas.top;
-          //const left = rect.left - rectCanvas.left;
+          const rectPartlistElement = partListElement.getBoundingClientRect();
+          const left = rectPartlistElement.left - rectCanvas.left;
+          const top = rectCanvas.bottom - rectPartlistElement.bottom;
 
           //this.updateControls(this.mainCamera,this.target,this.cameraCoordinates,this.scrollDelta,this.panDelta,this.dragDelta); TODO add for the parts
 
           // set the viewport
-          this.renderer.setViewport(partListRect.left, 0, partListRect.width, 96);
-          this.renderer.setScissor(partListRect.left, 0, partListRect.width, 96);
+          this.renderer.setViewport(left, top, rectPartlistElement.width, rectPartlistElement.height);
+          this.renderer.setScissor(left, top, rectPartlistElement.width, rectPartlistElement.height);
           // this.renderer.clearColor();
           // this.renderer.clearDepth();
           this.renderer.render(partListScene, partListCamera);
@@ -559,9 +583,11 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
     this.renderer = new WebGLRenderer({antialias: true, canvas: this.canvas});
 
-    this.renderer.setPixelRatio(window.devicePixelRatio * 1.5); //TODO remove 1.5
+    this.renderer.setPixelRatio(window.devicePixelRatio * 1.5); //TODO remove 1.5?
     this.renderer.setClearColor("rgb(88,101,117)");
     this.renderer.autoClear = false;
+    const rectCanvas = this.canvas.getBoundingClientRect();
+    this.renderer.setSize(rectCanvas.width, rectCanvas.height);
 
     this.updateControls(this.mainCamera, this.target, this.cameraCoordinates, this.scrollDelta, this.panDelta, this.dragDelta);
     this.scrollDelta = 0;

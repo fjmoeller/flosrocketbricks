@@ -40,19 +40,23 @@
           </div>
         }
         @if (currentSubmodelAmount > 1 && loadingFinished) {
-          <div style="display:flex; justify-content: center; padding: 1rem; width: fit-content; position:absolute; top:0; left:0;">
+          <div
+            style="display:flex; justify-content: center; padding: 1rem; width: fit-content; position:absolute; top:0; left:0;">
             <h3>{{ currentSubmodelAmount }}x</h3>
           </div>
         }
       </div>
+      @if (currentStepNumber === 0 && loadingFinished) {
+        <app-instruction-cover [authors]="moc?.designer" [fileName]="file.name" [mocName]="moc?.title"
+                               [scale]="moc?.scale" [version]="version.version"></app-instruction-cover>
+      }
+      @if (currentStepNumber > instructionModel.instructionSteps.length && loadingFinished) {
+        <app-instruction-download [file]="file" [internalColor]="moc?.internalColor"></app-instruction-download>
+      }
     </div>
     <div oncontextmenu="return false;" id="partlist-content"></div>
   </div>
-  <!--@if (currentStepNumber === 0 && loadingFinished) {
-    <app-instruction-cover [authors]="moc?.designer" [fileName]="file.name" [mocName]="moc?.title" [scale]="moc?.scale"
-                           [version]="version.version"></app-instruction-cover>
-  }
-
+  <!--
   @if (currentStepNumber > 0 && currentStepModel.parentSubmodelModel != undefined && loadingFinished) {
     <div
       style="border: 3px solid black;border-top-right-radius: 10px;display:flex; justify-content: center; width: fit-content; position:absolute; bottom:0; left:0; padding: 0.2rem; background-color: tan;">
@@ -60,7 +64,5 @@
                             [submodelAmountIndicator]="currentStepModel.parentSubmodelAmount"></app-instruction-part>
     </div>
   }
-  @if (currentStepNumber > instructionModel.instructionSteps.length && loadingFinished) {
-    <app-instruction-download [file]="file" [internalColor]="moc?.internalColor"></app-instruction-download>
-  }-->
+  -->
 </div>

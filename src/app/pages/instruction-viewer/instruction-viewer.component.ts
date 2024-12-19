@@ -1,17 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {
-  AmbientLight,
-  BufferGeometry,
-  Clock,
-  DirectionalLight,
-  Group,
-  Material,
-  Matrix3,
-  OrthographicCamera,
-  Scene,
-  Spherical,
-  Vector3,
-  WebGLRenderer
+  AmbientLight, BufferGeometry, Clock, DirectionalLight, Group, Material, Matrix3, OrthographicCamera, Scene,
+  Spherical, Vector3, WebGLRenderer
 } from "three";
 import {InstructionModel, InstructionPart, InstructionSubmodel, StepModel, StepPart} from "../../model/instructions";
 import {InstructionService} from "../../services/file/instruction.service";
@@ -22,12 +12,17 @@ import {Box3} from "three/src/math/Box3.js";
 import {File, Moc, Version} from "../../model/classes";
 import {MetaServiceService} from "../../services/meta-service.service";
 import {Location} from "@angular/common";
+import {InstructionDownloadComponent} from "../../components/instruction-download/instruction-download.component";
+import {InstructionCoverComponent} from "../../components/instruction-cover/instruction-cover.component";
 
 @Component({
   selector: 'app-instruction-viewer',
   standalone: true,
   templateUrl: './instruction-viewer.component.html',
-  imports: [],
+  imports: [
+    InstructionDownloadComponent,
+    InstructionCoverComponent
+  ],
   styleUrl: './instruction-viewer.component.sass'
 })
 export class InstructionViewerComponent implements OnInit, OnDestroy {
@@ -358,7 +353,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.clearScenes();
 
     //if it's not a page with the normal model in it then skip it
-    if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0){
+    if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0) {
       this.instructionWrapper.style.height = this.contentWrapper.clientHeight + "px";
       this.canvas.style.height = this.contentWrapper.clientHeight + "px";
       this.renderer.setSize(this.contentWrapper.clientWidth, this.contentWrapper.clientHeight);
@@ -438,7 +433,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     camera.updateProjectionMatrix();
   }
 
-  private createRenderer():void{
+  private createRenderer(): void {
     this.renderer = new WebGLRenderer({antialias: true, canvas: this.canvas});
     this.renderer.setPixelRatio(window.devicePixelRatio * 1.5); //TODO remove 1.5?
     this.renderer.setClearColor("rgb(88,101,117)");

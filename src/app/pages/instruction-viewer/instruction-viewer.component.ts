@@ -24,6 +24,7 @@ import {MetaServiceService} from "../../services/meta-service.service";
 import {Location} from "@angular/common";
 import {InstructionDownloadComponent} from "../../components/instruction-download/instruction-download.component";
 import {InstructionCoverComponent} from "../../components/instruction-cover/instruction-cover.component";
+import {LdrawColorService} from "../../services/color/ldraw-color.service";
 
 @Component({
   selector: 'app-instruction-viewer',
@@ -99,7 +100,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   cameraRotationSpeed: number = 0.01;
   partListCameraRotationSpeed: number = 0.02;
 
-  panningSpeed: number = 50; //high -> faster
+  panningSpeed: number = 50; //low -> faster
   resetTargetOnPageChange: boolean = true;
 
   enableAutoZoom: boolean = true;
@@ -112,7 +113,9 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   readonly defaultCameraCoordinates: Spherical = new Spherical(1, 1, 2.6);
   readonly defaultPartListCameraCoordinates: Spherical = new Spherical(1, 1, 1);
 
-  constructor(private location: Location, private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
+  constructor(private location: Location, private instructionService: InstructionService,
+              private route: ActivatedRoute, private mocGrabberService: MocGrabberService,
+              private metaService: MetaServiceService, private ldrawColorService: LdrawColorService) {
     this.currentStepModel = {
       stepPartsList: [],
       newPartsModel: new Group(),
@@ -599,7 +602,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
       this.submodelIndicatorCameraCoordinates = this.defaultPartListCameraCoordinates.clone();
       this.submodelIndicatorCamera.position.setFromSpherical(this.submodelIndicatorCameraCoordinates);
-      this.submodelIndicatorCamera.lookAt(new Vector3(0,0,0));
+      this.submodelIndicatorCamera.lookAt(new Vector3(0, 0, 0));
 
       this.submodelIndicatorGroup = this.currentStepModel.parentSubmodelModel.clone();
       this.submodelIndicatorGroup.rotateX(Math.PI);
@@ -619,19 +622,44 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     for (let i = 0; i < this.currentStepModel.stepPartsList.length; i++) { //TODO sort parts by size beforehand
 
       const stepPart: StepPart = this.currentStepModel.stepPartsList[i];
+      const colorName = this.ldrawColorService.getLdrawColorNameByColorId(stepPart.color).split('_').join(' ');
+      let partId = stepPart.partId;
+      if (stepPart.partId.endsWith(".dat"))
+        partId = stepPart.partId.slice(0, stepPart.partId.length - 4);
 
-      const partDiv: HTMLDivElement = document.createElement('div'); //TODO add hover effect
-      partDiv.className = 'partlist-element';
+      const partDiv: HTMLDivElement = document.createElement('div');
       partDiv.id = "partlist-element-" + i;
       partDiv.style.margin = '5px';
+      partDiv.style.position = 'relative';
+
+      const toolTipDiv: HTMLDivElement = document.createElement('div');
+      toolTipDiv.style.padding = '5px';
+      toolTipDiv.style.borderRadius = '5px';
+      toolTipDiv.style.visibility = 'hidden';
+      toolTipDiv.style.position = 'absolute';
+      toolTipDiv.style.bottom = '100%';
+      toolTipDiv.style.left = '0';
+      toolTipDiv.style.color = 'white';
+      toolTipDiv.style.backgroundColor = '#444';
+      toolTipDiv.style.width = '15rem';
+      toolTipDiv.innerText = "LDraw-ID: " + partId + "\nName: " + stepPart.partName + "\nColor: " + colorName + "";
+
+      partDiv.addEventListener('mouseenter', () => {toolTipDiv.style.visibility = 'visible'; partDiv.style.boxShadow = 'rgba(0, 0, 0, 0.12) 0 1px 3px, rgba(0, 0, 0, 0.24) 0 1px 2px';});
+      partDiv.addEventListener('mouseleave', () => {toolTipDiv.style.visibility = 'hidden'; partDiv.style.boxShadow = '';});
+      partDiv.addEventListener('touchstart', () => toolTipDiv.style.visibility = 'visible' );
+      partDiv.addEventListener('touchend', () => toolTipDiv.style.visibility = 'hidden' );
+      partDiv.addEventListener('touchcancel', () => toolTipDiv.style.visibility = 'hidden' );
+
       const sceneDiv: HTMLDivElement = document.createElement('div');
       sceneDiv.id = "partlist-element-scene-" + i;
       sceneDiv.style.touchAction = 'none';
       sceneDiv.style.height = '6rem';
       sceneDiv.style.width = '6rem';
+
       const amountDiv: HTMLDivElement = document.createElement('div');
       amountDiv.innerText = stepPart.quantity + 'x';
       partDiv.appendChild(sceneDiv);
+      partDiv.appendChild(toolTipDiv);
       partDiv.appendChild(amountDiv);
       this.partListContent.appendChild(partDiv);
 

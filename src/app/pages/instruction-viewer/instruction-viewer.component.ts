@@ -279,7 +279,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     });
     window.addEventListener('resize', () => {
       this.canvas.style.width = this.contentWrapper.clientWidth + "px";
-      this.canvas.style.height = this.contentWrapper.clientHeight + "px"; //TODO
+      this.canvas.style.height = this.contentWrapper.clientHeight + "px";
+      this.instructionWrapper.style.height = this.contentWrapper.clientHeight + "px";
       this.renderer.setSize(this.contentWrapper.clientWidth, this.contentWrapper.clientHeight);
 
       if (this.enableAutoZoom && this.currentStepNumber > 0 && this.currentStepNumber <= this.instructionModel.instructionSteps.length) {
@@ -357,7 +358,13 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.clearScenes();
 
     //if it's not a page with the normal model in it then skip it
-    if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0) return;
+    if (this.currentStepNumber > this.instructionModel.instructionSteps.length || this.currentStepNumber <= 0){
+      this.instructionWrapper.style.height = this.contentWrapper.clientHeight + "px";
+      this.canvas.style.height = this.contentWrapper.clientHeight + "px";
+      this.renderer.setSize(this.contentWrapper.clientWidth, this.contentWrapper.clientHeight);
+      this.initializeControlBuffers();
+      return;
+    }
 
     //fetch new step
     this.currentStepModel = this.instructionService.getModelByStep(this.instructionModel, this.currentStepNumber - 1);
@@ -389,7 +396,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     }
   }
 
-  private adjustCameraToModel(model: Group, camera: OrthographicCamera, htmlElement: HTMLElement, defaultZoomFactor: number, minimalZoom: number): void {
+  private adjustCameraToModel(model: Group, camera: OrthographicCamera, htmlElement: HTMLElement,
+                              defaultZoomFactor: number, minimalZoom: number): void {
     camera.updateMatrixWorld();
     const box = new Box3().setFromObject(model);
     const boxPoints = [
@@ -583,6 +591,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       this.partListContent.removeChild(this.partListContent.lastChild);
     this.partListScenes = [];
     this.partListCameraCoordinates = [];
+
+    this.currentStepModel.stepPartsList = [];
   }
 
   private startRenderLoop() {
@@ -591,10 +601,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.renderingActive = true;
 
     this.renderer.setSize(this.contentWrapper.clientWidth, this.contentWrapper.clientHeight);
-
-    //update main controls once TODO remove
-    this.updateControls(this.mainCamera, this.target, this.cameraCoordinates, 0, true,
-      this.cameraZoomSpeed, this.cameraMinZoom, this.cameraMaxZoom, this.cameraRotationSpeed);
 
     const update = () => {
       if (this.clock.getElapsedTime() > this.MAX_FPS) {

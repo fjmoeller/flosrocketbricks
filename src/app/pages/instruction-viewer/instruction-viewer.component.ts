@@ -1,7 +1,17 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {
-  AmbientLight, BufferGeometry, Clock, DirectionalLight, Group, Material, Matrix3, OrthographicCamera, Scene,
-  Spherical, Vector3, WebGLRenderer
+  AmbientLight,
+  BufferGeometry,
+  Clock,
+  DirectionalLight,
+  Group,
+  Material,
+  Matrix3,
+  OrthographicCamera,
+  Scene,
+  Spherical,
+  Vector3,
+  WebGLRenderer
 } from "three";
 import {InstructionModel, InstructionPart, InstructionSubmodel, StepModel, StepPart} from "../../model/instructions";
 import {InstructionService} from "../../services/file/instruction.service";
@@ -62,14 +72,20 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   private contentWrapper!: HTMLDivElement;
   private mainContent!: HTMLDivElement;
   private partListContent!: HTMLDivElement;
+  private submodelIndicatorWrapper!: HTMLDivElement;
+  private submodelIndicatorContent!: HTMLDivElement;
 
-  private mainScene: Scene = new Scene(); //TODO put into list below as first element or so
-  private partListScenes: Scene[] = []; //make list with not active scenes -> not active if mouse not over
-  private mainCamera: OrthographicCamera = new OrthographicCamera(); //TODO put into scene
-  private cameraCoordinates: Spherical = new Spherical(1, 1, 2.6); //TODO put into scene
-  private partListCameraCoordinates: Spherical[] = []; //TODO put into scene
+  private mainScene: Scene = new Scene();
+  private submodelIndicatorScene: Scene = new Scene();
+  private partListScenes: Scene[] = [];
+  private mainCamera: OrthographicCamera = new OrthographicCamera();
+  private submodelIndicatorCamera: OrthographicCamera = new OrthographicCamera();
+  private cameraCoordinates: Spherical = new Spherical(1, 1, 2.6);
+  private submodelIndicatorCameraCoordinates!: Spherical;
+  private partListCameraCoordinates: Spherical[] = [];
   private renderer!: WebGLRenderer;
   private target: Vector3 = new Vector3(0, 0, 0);
+  private submodelIndicatorGroup?: Group;
 
   readonly clock: Clock = new Clock();
   readonly MAX_FPS: number = 1 / 60;
@@ -93,8 +109,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   autoZoomFactor: number = 1.7; //high -> further away
   partListAutoZoomFactor: number = 1.1; //high -> further away
 
-  defaultCameraCoordinates: Spherical = new Spherical(1, 1, 2.6);
-  defaultPartListCameraCoordinates: Spherical = new Spherical(1, 1, 1);
+  readonly defaultCameraCoordinates: Spherical = new Spherical(1, 1, 2.6);
+  readonly defaultPartListCameraCoordinates: Spherical = new Spherical(1, 1, 1);
 
   constructor(private location: Location, private instructionService: InstructionService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
     this.currentStepModel = {
@@ -140,7 +156,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       const file = version?.files[Number(paramMap.get('file')) || 0];
       let initialStep = (Number(paramMap.get('stepIndex')) || 0);
       if (moc && file && file.instructions) {
-        //this.metaService.setDefaultTags(file.name+ " Online Instructions",window.location.href);
+        //this.metaService.setDefaultTags(file.name + " Online Instructions - FlosRocketBricks", window.location.href);
         this.file = file;
         this.version = version;
         this.loadingFinished = false;
@@ -149,6 +165,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.collectElementReferences();
         this.createRenderer();
         this.createMainScene();
+        this.createSubmodelIndicatorScene();
         this.refreshStep();
         this.registerWindowListeners();
         this.startRenderLoop();
@@ -163,33 +180,50 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   }
 
   private collectElementReferences(): void {
-    this.canvas = document.getElementById('canvas-viewer')! as HTMLCanvasElement;
     this.instructionWrapper = document.getElementById('instruction-wrapper')! as HTMLDivElement;
+
+    this.canvas = document.getElementById('canvas-viewer')! as HTMLCanvasElement;
+
     this.contentWrapper = document.getElementById("content") as HTMLDivElement;
-    this.mainContent = document.getElementById("main-content") as HTMLDivElement;
     this.partListContent = document.getElementById("partlist-content") as HTMLDivElement;
+    this.mainContent = document.getElementById("main-content") as HTMLDivElement;
+
+    this.submodelIndicatorWrapper = document.getElementById("submodel-indicator-wrapper") as HTMLDivElement;
+    this.submodelIndicatorContent = document.getElementById("submodel-indicator-content") as HTMLDivElement;
   }
 
   private registerListeners(htmlElement: HTMLElement, htmlElementIndex: number, enablePan: boolean) {
     htmlElement.addEventListener('mousedown', event => {
+      event.stopImmediatePropagation();
+      event.stopPropagation();
+      event.preventDefault();
       if (event.button === 0)
         this.isDragging[htmlElementIndex] = true;
       else if (event.button === 2 && enablePan)
         this.isPanning = true;
     });
     htmlElement.addEventListener('touchstart', event => {
+      event.stopImmediatePropagation();
+      event.stopPropagation();
+      event.preventDefault();
       if (event.touches.length === 1)
         this.isDragging[htmlElementIndex] = true;
       /*else if (event.touches.length === 2)
         this.isPanning = true;*/
     });
     htmlElement.addEventListener('mouseup', event => {
+      event.stopImmediatePropagation();
+      event.stopPropagation();
+      event.preventDefault();
       if (event.button === 0)
         this.isDragging[htmlElementIndex] = false;
       else if (event.button === 2 && enablePan)
         this.isPanning = false;
     });
-    htmlElement.addEventListener('touchend', () => {
+    htmlElement.addEventListener('touchend', event => {
+      event.stopImmediatePropagation();
+      event.stopPropagation();
+      event.preventDefault();
       const prevTouch = this.previousTouch[htmlElementIndex];
       if (prevTouch) {
         if (prevTouch.touches.length === 1) {
@@ -205,7 +239,10 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         }*/
       }
     });
-    htmlElement.addEventListener('touchcancel', () => {
+    htmlElement.addEventListener('touchcancel', event => {
+      event.stopImmediatePropagation();
+      event.stopPropagation();
+      event.preventDefault();
       const prevTouch = this.previousTouch[htmlElementIndex];
       if (prevTouch) {
         if (prevTouch.touches.length === 1) {
@@ -222,16 +259,24 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       }
     });
     htmlElement.addEventListener('wheel', event => {
+      event.stopImmediatePropagation();
+      event.stopPropagation();
       event.preventDefault();
       this.scrollDelta[htmlElementIndex] += event.deltaY;
     });
     htmlElement.addEventListener('mousemove', event => {
+      event.stopImmediatePropagation();
+      event.stopPropagation();
+      event.preventDefault();
       if (this.isDragging[htmlElementIndex])
         this.dragDelta[htmlElementIndex].push({mx: event.movementX, my: event.movementY});
       if (this.isPanning && enablePan)
         this.panDelta.push({mx: event.movementX, my: event.movementY});
     });
     htmlElement.addEventListener('touchmove', event => {
+      event.stopImmediatePropagation();
+      event.stopPropagation();
+      event.preventDefault();
       const prevTouch = this.previousTouch[htmlElementIndex];
       if (prevTouch) {
         if (event.touches.length === 1) { //rotation
@@ -358,6 +403,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       this.canvas.style.height = this.contentWrapper.clientHeight + "px";
       this.renderer.setSize(this.contentWrapper.clientWidth, this.contentWrapper.clientHeight);
       this.initializeControlBuffers();
+      this.updateSubmodelIndicatorScene();
       return;
     }
 
@@ -376,6 +422,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.renderer.setSize(this.contentWrapper.clientWidth, this.contentWrapper.clientHeight);
 
     this.updateMainScene();
+    this.updateSubmodelIndicatorScene();
   }
 
   private initializeControlBuffers(): void {
@@ -383,7 +430,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.isDragging = [];
     this.scrollDelta = [];
     this.previousTouch = [];
-    for (let i = 0; i <= this.currentStepModel.stepPartsList.length; i++) {
+    for (let i = 0; i < this.currentStepModel.stepPartsList.length + 2; i++) { //+2 because the main scene and submodelindicator scenes are in there too
       this.dragDelta.push([]);
       this.isDragging.push(false);
       this.scrollDelta.push(0);
@@ -392,7 +439,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   }
 
   private adjustCameraToModel(model: Group, camera: OrthographicCamera, htmlElement: HTMLElement,
-                              defaultZoomFactor: number, minimalZoom: number): void {
+                              defaultZoomFactor: number, minimalZoom: number) {
     camera.updateMatrixWorld();
     const box = new Box3().setFromObject(model);
     const boxPoints = [
@@ -530,6 +577,44 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.mainScene.add(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
   }
 
+  private createSubmodelIndicatorScene() {
+    const scene = this.createDefaultScene();
+    this.submodelIndicatorScene = scene;
+
+    const camera = new OrthographicCamera(this.submodelIndicatorContent.clientWidth / -2, this.submodelIndicatorContent.clientWidth / 2, this.submodelIndicatorContent.clientHeight / 2, this.submodelIndicatorContent.clientHeight / -2, -1000, 1000);
+    scene.add(camera);
+    this.submodelIndicatorCamera = camera;
+
+    scene.userData['element'] = this.submodelIndicatorContent;
+    scene.userData['camera'] = camera;
+
+    this.registerListeners(this.submodelIndicatorContent, 1, false);
+  }
+
+  private updateSubmodelIndicatorScene() {
+    if (this.currentStepNumber > 0 && this.currentStepNumber <= this.instructionModel.instructionSteps.length && this.currentStepModel.parentSubmodelModel) {
+
+      //enable the div with that'll hold the model
+      this.submodelIndicatorWrapper.style.display = 'block';
+
+      this.submodelIndicatorCameraCoordinates = this.defaultPartListCameraCoordinates.clone();
+      this.submodelIndicatorCamera.position.setFromSpherical(this.submodelIndicatorCameraCoordinates);
+      this.submodelIndicatorCamera.lookAt(new Vector3(0,0,0));
+
+      this.submodelIndicatorGroup = this.currentStepModel.parentSubmodelModel.clone();
+      this.submodelIndicatorGroup.rotateX(Math.PI);
+      this.submodelIndicatorGroup.rotateY(-Math.PI / 2);
+
+      new Box3().setFromObject(this.submodelIndicatorGroup).getCenter(this.submodelIndicatorGroup.position).multiplyScalar(-1);
+      this.adjustCameraToModel(this.submodelIndicatorGroup, this.submodelIndicatorCamera, this.submodelIndicatorContent, this.partListAutoZoomFactor, this.partListMinimalAutoZoom);
+
+      this.submodelIndicatorScene.add(this.submodelIndicatorGroup);
+    } else {
+      this.submodelIndicatorWrapper.style.display = 'none';
+      this.submodelIndicatorGroup = undefined;
+    }
+  }
+
   private updatePartListScenes(): void {
     for (let i = 0; i < this.currentStepModel.stepPartsList.length; i++) { //TODO sort parts by size beforehand
 
@@ -550,7 +635,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       partDiv.appendChild(amountDiv);
       this.partListContent.appendChild(partDiv);
 
-      this.registerListeners(sceneDiv, i + 1, false);
+      this.registerListeners(sceneDiv, i + 2, false);
 
       const scene = this.createDefaultScene();
       const partGroup: Group = stepPart.model.clone();
@@ -580,6 +665,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       this.mainScene.remove(this.currentStepModel.newPartsModel);
     if (this.currentStepModel.prevPartsModel)
       this.mainScene.remove(this.currentStepModel.prevPartsModel);
+    if (this.submodelIndicatorGroup)
+      this.submodelIndicatorScene.remove(this.submodelIndicatorGroup);
 
     //clear part list divs
     while (this.partListContent.hasChildNodes() && this.partListContent.lastChild)
@@ -588,6 +675,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.partListCameraCoordinates = [];
 
     this.currentStepModel.stepPartsList = [];
+    this.submodelIndicatorGroup = undefined;
   }
 
   private startRenderLoop() {
@@ -595,16 +683,14 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.loadingFinished = true;
     this.renderingActive = true;
 
-    this.renderer.setSize(this.contentWrapper.clientWidth, this.contentWrapper.clientHeight);
-
     const update = () => {
       if (this.clock.getElapsedTime() > this.MAX_FPS) {
         this.clock.start();
 
+        //MAIN SCENE
         this.updateControls(this.mainCamera, this.target, this.cameraCoordinates, 0, true,
           this.cameraZoomSpeed, this.cameraMinZoom, this.cameraMaxZoom, this.cameraRotationSpeed);
 
-        //render main scene
         const scene = this.mainScene;
         const element: HTMLDivElement = scene.userData["element"];
         const camera: OrthographicCamera = scene.userData["camera"];
@@ -612,16 +698,31 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         const rectElement = element.getBoundingClientRect();
         const rectCanvas = this.canvas.getBoundingClientRect();
 
-        this.renderer.setViewport(0, 0, rectElement.width, rectElement.height);
-        this.renderer.setScissor(0, 0, rectElement.width, rectElement.height);
-        this.renderer.clearColor();
-        this.renderer.clearDepth();
+        // this.renderer.setViewport(0, 0, rectElement.width, rectElement.height);
+        // this.renderer.setScissor(0, 0, rectElement.width, rectElement.height);
+        // this.renderer.clearColor();
+        // this.renderer.clearDepth();
 
         this.renderer.setViewport(0, rectCanvas.bottom - rectElement.bottom, rectElement.width, rectElement.height);
         this.renderer.setScissor(0, rectCanvas.bottom - rectElement.bottom, rectElement.width, rectElement.height);
         this.renderer.render(scene, camera);
 
-        //render partList n stuff
+        //SUBMODEL INDICATOR SCENE
+        if (this.submodelIndicatorGroup) {
+          this.updateControls(this.submodelIndicatorCamera, new Vector3(0, 0, 0), this.submodelIndicatorCameraCoordinates, 1, false,
+            this.partListCameraZoomSpeed, this.partListMinCameraZoom, this.partListMaxCameraZoom, this.partListCameraRotationSpeed);
+
+          const scene = this.submodelIndicatorScene;
+
+          // get its position relative to the page's viewport
+          const rectElement = this.submodelIndicatorContent.getBoundingClientRect();
+
+          this.renderer.setViewport(rectElement.left - rectCanvas.left, rectCanvas.bottom - rectElement.bottom, rectElement.width, rectElement.height);
+          this.renderer.setScissor(rectElement.left - rectCanvas.left, rectCanvas.bottom - rectElement.bottom, rectElement.width, rectElement.height);
+          this.renderer.render(scene, this.submodelIndicatorCamera);
+        }
+
+        //PART LIST SCENES
         for (let i = 0; i < this.partListScenes.length; i++) {
           const partListScene = this.partListScenes[i];
           const partListElement: HTMLDivElement = partListScene.userData["element"];
@@ -632,7 +733,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
           const left = rectPartlistElement.left - rectCanvas.left;
           const top = rectCanvas.bottom - rectPartlistElement.bottom;
 
-          this.updateControls(partListCamera, new Vector3(0, 0, 0), this.partListCameraCoordinates[i], i + 1, false,
+          this.updateControls(partListCamera, new Vector3(0, 0, 0), this.partListCameraCoordinates[i], i + 2, false,
             this.partListCameraZoomSpeed, this.partListMinCameraZoom, this.partListMaxCameraZoom, this.partListCameraRotationSpeed);
 
           // set the viewport

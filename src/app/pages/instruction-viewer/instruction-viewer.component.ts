@@ -52,12 +52,12 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   currentStepNumber: number = 0;
   currentSubmodelAmount: number = 0;
 
-  private isDragging: boolean = false;
+  private isDragging: boolean[] = [];
   private isPanning: boolean = false;
-  private scrollDelta: number = 0;
-  private dragDelta: { mx: number, my: number }[] = [];
+  private scrollDelta: number[] = [];
+  private dragDelta: { mx: number, my: number }[][] = [];
   private panDelta: { mx: number, my: number }[] = [];
-  private previousTouch?: TouchEvent;
+  private previousTouch: (TouchEvent | null)[] = [];
 
   currentStepModel: StepModel;
   instructionModel: InstructionModel;
@@ -79,18 +79,24 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   readonly clock: Clock = new Clock();
   readonly MAX_FPS: number = 1 / 60;
 
-  zoomSpeed: number = 0.0005;
+  cameraZoomSpeed: number = 0.0005;
+  partListCameraZoomSpeed: number = 0.0005;
+  cameraMaxZoom: number = 0.05;
+  partListMaxCameraZoom: number = 0.05;
+  cameraMinZoom: number = 1000;
+  partListMinCameraZoom: number = 1000;
+  cameraRotationSpeed: number = 0.01;
+  partListCameraRotationSpeed: number = 0.02;
+
+  panningSpeed: number = 50; //high -> faster
   resetTargetOnPageChange: boolean = true;
-  minimalZoom: number = 7;
-  partListMinimalZoom: number = 7;
-  maxCameraZoom: number = 0.05;
-  minCameraZoom: number = 1000;
-  rotationSpeed: number = 0.01;
-  zoomFactor: number = 1;
-  partListZoomFactor: number = 1.1;
-  panningSpeed: number = 50;
+
   enableAutoZoom: boolean = true;
   enableAutoRotation: boolean = true;
+  minimalAutoZoom: number = 4; //high -> further away
+  partListMinimalAutoZoom: number = 7; //high -> further away
+  autoZoomFactor: number = 1.7; //high -> further away
+  partListAutoZoomFactor: number = 1.1; //high -> further away
 
   defaultCameraCoordinates: Spherical = new Spherical(1, 1, 2.6);
   defaultPartListCameraCoordinates: Spherical = new Spherical(1, 1, 1);
@@ -146,6 +152,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.instructionModel = await this.instructionService.getInstructionModel(file.link, file.instructions);
         this.currentStepNumber = initialStep;
         this.collectElementReferences();
+        this.createRenderer();
         this.createMainScene();
         this.refreshStep();
         this.registerWindowListeners();
@@ -168,30 +175,31 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.partListContent = document.getElementById("partlist-content") as HTMLDivElement;
   }
 
-  private registerListeners(htmlElement: HTMLElement) {
+  private registerListeners(htmlElement: HTMLElement, htmlElementIndex: number, enablePan: boolean) {
     htmlElement.addEventListener('mousedown', event => {
       if (event.button === 0)
-        this.isDragging = true;
-      else if (event.button === 2)
+        this.isDragging[htmlElementIndex] = true;
+      else if (event.button === 2 && enablePan)
         this.isPanning = true;
     });
     htmlElement.addEventListener('touchstart', event => {
       if (event.touches.length === 1)
-        this.isDragging = true;
+        this.isDragging[htmlElementIndex] = true;
       /*else if (event.touches.length === 2)
         this.isPanning = true;*/
     });
     htmlElement.addEventListener('mouseup', event => {
       if (event.button === 0)
-        this.isDragging = false;
-      else if (event.button === 2)
+        this.isDragging[htmlElementIndex] = false;
+      else if (event.button === 2 && enablePan)
         this.isPanning = false;
     });
     htmlElement.addEventListener('touchend', () => {
-      if (this.previousTouch) {
-        if (this.previousTouch.touches.length === 1) {
-          this.isDragging = false;
-          this.previousTouch = undefined;
+      const prevTouch = this.previousTouch[htmlElementIndex];
+      if (prevTouch) {
+        if (prevTouch.touches.length === 1) {
+          this.isDragging[htmlElementIndex] = false;
+          this.previousTouch[htmlElementIndex] = null;
         } /*else if (this.previousTouch.touches.length === 2) {
           this.isPanning = false;
           if (event.touches.length === 0) {
@@ -203,10 +211,11 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       }
     });
     htmlElement.addEventListener('touchcancel', () => {
-      if (this.previousTouch) {
-        if (this.previousTouch.touches.length === 1) {
-          this.isDragging = false;
-          this.previousTouch = undefined;
+      const prevTouch = this.previousTouch[htmlElementIndex];
+      if (prevTouch) {
+        if (prevTouch.touches.length === 1) {
+          this.isDragging[htmlElementIndex] = false;
+          this.previousTouch[htmlElementIndex] = null;
         } /*else if (this.previousTouch.touches.length === 2) {
           this.isPanning = false;
           if (event.touches.length === 0) {
@@ -219,20 +228,21 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     });
     htmlElement.addEventListener('wheel', event => {
       event.preventDefault();
-      this.scrollDelta += event.deltaY;
+      this.scrollDelta[htmlElementIndex] += event.deltaY;
     });
     htmlElement.addEventListener('mousemove', event => {
-      if (this.isDragging)
-        this.dragDelta.push({mx: event.movementX, my: event.movementY});
-      if (this.isPanning)
+      if (this.isDragging[htmlElementIndex])
+        this.dragDelta[htmlElementIndex].push({mx: event.movementX, my: event.movementY});
+      if (this.isPanning && enablePan)
         this.panDelta.push({mx: event.movementX, my: event.movementY});
     });
     htmlElement.addEventListener('touchmove', event => {
-      if (this.previousTouch) {
+      const prevTouch = this.previousTouch[htmlElementIndex];
+      if (prevTouch) {
         if (event.touches.length === 1) { //rotation
-          const deltaX = event.touches[0].clientX - this.previousTouch.touches[0].clientX;
-          const deltaY = event.touches[0].clientY - this.previousTouch.touches[0].clientY;
-          this.dragDelta.push({mx: deltaX, my: deltaY});
+          const deltaX = event.touches[0].clientX - prevTouch.touches[0].clientX;
+          const deltaY = event.touches[0].clientY - prevTouch.touches[0].clientY;
+          this.dragDelta[htmlElementIndex].push({mx: deltaX, my: deltaY});
         }/* else if (event.touches.length === 2) { //pan or zoom
           const prevDistance = Math.sqrt((this.previousTouch.touches[1].clientX - this.previousTouch.touches[0].clientX) ^ 2 + (this.previousTouch.touches[1].clientY - this.previousTouch.touches[0].clientY) ^ 2);
           const newDistance = Math.sqrt((event.touches[1].clientX - event.touches[0].clientX) ^ 2 + (event.touches[1].clientY - event.touches[0].clientY) ^ 2);
@@ -252,7 +262,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
           }
         }*/
       }
-      this.previousTouch = event;
+      this.previousTouch[htmlElementIndex] = event;
     });
   }
 
@@ -273,9 +283,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       this.renderer.setSize(this.contentWrapper.clientWidth, this.contentWrapper.clientHeight);
 
       if (this.enableAutoZoom && this.currentStepNumber > 0 && this.currentStepNumber <= this.instructionModel.instructionSteps.length) {
-        this.adjustCameraToModel(this.currentStepModel.newPartsModel, this.mainCamera, this.mainContent, this.zoomFactor, this.minimalZoom);
+        this.adjustCameraToModel(this.currentStepModel.newPartsModel, this.mainCamera, this.mainContent, this.autoZoomFactor, this.minimalAutoZoom);
       }
-      //TODO update main camera
     });
   }
 
@@ -306,37 +315,36 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     }
   }
 
-  //TODO also update for non mainScene things and change the panDelta and scrollDelta params so that i dont have to set them to 0 after callign this fucntion
-  private updateControls(camera: OrthographicCamera,
-                         cameraTarget: Vector3,
-                         cameraCoordinates: Spherical,
-                         scrollDelta: number,
-                         panDelta: { mx: number, my: number }[],
-                         dragDelta: { mx: number, my: number }[]): void {
+  private updateControls(camera: OrthographicCamera, cameraTarget: Vector3, cameraCoordinates: Spherical,
+                         elementIndex: number, enablePan: boolean, zoomSpeed: number, minCameraZoom: number,
+                         maxCameraZoom: number, rotationSpeed: number): void {
     //zooming in
-    camera.zoom = Math.max(Math.min(camera.zoom - (scrollDelta * this.zoomSpeed), this.minCameraZoom), this.maxCameraZoom);
+    camera.zoom = Math.max(Math.min(camera.zoom - (this.scrollDelta[elementIndex] * zoomSpeed), minCameraZoom), maxCameraZoom);
+    this.scrollDelta[elementIndex] = 0;
 
-    //panning
-    const panSpeed = 1 / camera.zoom / this.panningSpeed;
-    let panningDeltaX: number = 0;
-    let panningDeltaY: number = 0;
-    for (let i = 0; i < panDelta.length; i++) {
-      panningDeltaX -= panDelta[i].mx;
-      panningDeltaY += panDelta[i].my;
+    if (enablePan) {
+      //panning
+      const panSpeed = 1 / camera.zoom / this.panningSpeed;
+      let panningDeltaX: number = 0;
+      let panningDeltaY: number = 0;
+      for (let i = 0; i < this.panDelta.length; i++) {
+        panningDeltaX -= this.panDelta[i].mx;
+        panningDeltaY += this.panDelta[i].my;
+      }
+      this.panDelta = [];
+      cameraTarget.add(new Vector3(panningDeltaX * panSpeed, panningDeltaY * panSpeed, 0).applyMatrix3(new Matrix3().getNormalMatrix(camera.matrix)));
     }
-    panDelta = [];
-    cameraTarget.add(new Vector3(panningDeltaX * panSpeed, panningDeltaY * panSpeed, 0).applyMatrix3(new Matrix3().getNormalMatrix(camera.matrix)))
 
     //rotating & position
     let draggingDeltaX: number = 0;
     let draggingDeltaY: number = 0;
-    for (let i = 0; i < dragDelta.length; i++) {
-      draggingDeltaX += dragDelta[i].mx;
-      draggingDeltaY += dragDelta[i].my;
+    for (let i = 0; i < this.dragDelta[elementIndex].length; i++) {
+      draggingDeltaX += this.dragDelta[elementIndex][i].mx;
+      draggingDeltaY += this.dragDelta[elementIndex][i].my;
     }
-    dragDelta = [];
-    cameraCoordinates.theta -= draggingDeltaX * this.rotationSpeed;
-    cameraCoordinates.phi -= draggingDeltaY * this.rotationSpeed;
+    this.dragDelta[elementIndex] = [];
+    cameraCoordinates.theta -= draggingDeltaX * rotationSpeed;
+    cameraCoordinates.phi -= draggingDeltaY * rotationSpeed;
     // no camera flipping
     cameraCoordinates.phi = Math.max(0.05, Math.min(Math.PI - 0.05, cameraCoordinates.phi));
     camera.position.setFromSpherical(cameraCoordinates).add(cameraTarget);
@@ -358,10 +366,27 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     //create the divs and scenes for the new parts of the part list
     this.updatePartListScenes();
 
+    //initialize the lists n stuff for the camera control
+    this.initializeControlBuffers();
+
     this.instructionWrapper.style.height = this.contentWrapper.clientHeight + "px";
     this.canvas.style.height = this.contentWrapper.clientHeight + "px";
+    this.renderer.setSize(this.contentWrapper.clientWidth, this.contentWrapper.clientHeight);
 
     this.updateMainScene();
+  }
+
+  private initializeControlBuffers(): void {
+    this.dragDelta = [];
+    this.isDragging = [];
+    this.scrollDelta = [];
+    this.previousTouch = [];
+    for (let i = 0; i <= this.currentStepModel.stepPartsList.length; i++) {
+      this.dragDelta.push([]);
+      this.isDragging.push(false);
+      this.scrollDelta.push(0);
+      this.previousTouch.push(null);
+    }
   }
 
   private adjustCameraToModel(model: Group, camera: OrthographicCamera, htmlElement: HTMLElement, defaultZoomFactor: number, minimalZoom: number): void {
@@ -405,6 +430,13 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     camera.updateProjectionMatrix();
   }
 
+  private createRenderer():void{
+    this.renderer = new WebGLRenderer({antialias: true, canvas: this.canvas});
+    this.renderer.setPixelRatio(window.devicePixelRatio * 1.5); //TODO remove 1.5?
+    this.renderer.setClearColor("rgb(88,101,117)");
+    this.renderer.autoClear = false;
+  }
+
   private createDefaultScene(): Scene {
     const scene = new Scene();
     const pointLight = new DirectionalLight(0xffffff, 0.5);
@@ -428,6 +460,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
     scene.userData['element'] = this.mainContent;
     scene.userData['camera'] = camera;
+
+    this.registerListeners(this.mainContent, 0, true);
   }
 
   private updateMainScene(): void {
@@ -487,7 +521,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     //this.scene.add(new Box3Helper(new Box3().setFromObject(this.currentStepModel.newPartsModel),new Color(1,0,0)),new Box3Helper(new Box3().setFromObject(this.currentStepModel.prevPartsModel),new Color(0,1,0)));
 
     if (this.enableAutoZoom && this.currentStepNumber > 0 && this.currentStepNumber <= this.instructionModel.instructionSteps.length) {
-      this.adjustCameraToModel(this.currentStepModel.newPartsModel, this.mainCamera, this.mainContent, this.zoomFactor, this.minimalZoom);
+      this.adjustCameraToModel(this.currentStepModel.newPartsModel, this.mainCamera, this.mainContent, this.autoZoomFactor, this.minimalAutoZoom);
     }
 
     this.mainScene.add(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
@@ -495,6 +529,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   private updatePartListScenes(): void {
     for (let i = 0; i < this.currentStepModel.stepPartsList.length; i++) { //TODO sort parts by size beforehand
+
       const stepPart: StepPart = this.currentStepModel.stepPartsList[i];
 
       const partDiv: HTMLDivElement = document.createElement('div'); //TODO add hover effect
@@ -512,22 +547,23 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       partDiv.appendChild(amountDiv);
       this.partListContent.appendChild(partDiv);
 
+      this.registerListeners(sceneDiv, i + 1, false);
+
       const scene = this.createDefaultScene();
       const partGroup: Group = stepPart.model.clone();
 
       scene.add(partGroup);
-      //partGroup.scale.setScalar(0.044); //TODO add later
       partGroup.rotateX(Math.PI);
       partGroup.rotateY(-Math.PI / 2);
       new Box3().setFromObject(partGroup).getCenter(partGroup.position).multiplyScalar(-1);
 
-      //scene.add(new Box3Helper(new Box3().setFromObject(partGroup)));
-
       const camera = new OrthographicCamera(sceneDiv.clientWidth / -2, sceneDiv.clientWidth / 2, sceneDiv.clientHeight / 2, sceneDiv.clientHeight / -2, -1000, 1000);
-      camera.position.setFromSpherical(this.defaultPartListCameraCoordinates.clone());
+      const cameraCoordinates = this.defaultPartListCameraCoordinates.clone();
+      this.partListCameraCoordinates[i] = cameraCoordinates;
+      camera.position.setFromSpherical(cameraCoordinates);
       camera.lookAt(0, 0, 0);
       scene.add(camera);
-      this.adjustCameraToModel(partGroup, camera, sceneDiv, this.partListZoomFactor, this.partListMinimalZoom);
+      this.adjustCameraToModel(partGroup, camera, sceneDiv, this.partListAutoZoomFactor, this.partListMinimalAutoZoom);
 
       scene.userData["element"] = sceneDiv;
       scene.userData["camera"] = camera;
@@ -550,31 +586,22 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   }
 
   private startRenderLoop() {
-    this.registerListeners(this.mainContent);
 
     this.loadingFinished = true;
     this.renderingActive = true;
 
-    this.renderer = new WebGLRenderer({antialias: true, canvas: this.canvas}); //TODO do somewhere else
-    this.renderer.setPixelRatio(window.devicePixelRatio * 1.5); //TODO remove 1.5?
-    this.renderer.setClearColor("rgb(88,101,117)");
-    this.renderer.autoClear = false;
-
     this.renderer.setSize(this.contentWrapper.clientWidth, this.contentWrapper.clientHeight);
 
-    this.updateControls(this.mainCamera, this.target, this.cameraCoordinates, this.scrollDelta, this.panDelta, this.dragDelta);
-    this.scrollDelta = 0;
-    this.panDelta = [];
-    this.dragDelta = [];
+    //update main controls once TODO remove
+    this.updateControls(this.mainCamera, this.target, this.cameraCoordinates, 0, true,
+      this.cameraZoomSpeed, this.cameraMinZoom, this.cameraMaxZoom, this.cameraRotationSpeed);
 
     const update = () => {
       if (this.clock.getElapsedTime() > this.MAX_FPS) {
         this.clock.start();
 
-        this.updateControls(this.mainCamera, this.target, this.cameraCoordinates, this.scrollDelta, this.panDelta, this.dragDelta);
-        this.scrollDelta = 0;
-        this.panDelta = [];
-        this.dragDelta = [];
+        this.updateControls(this.mainCamera, this.target, this.cameraCoordinates, 0, true,
+          this.cameraZoomSpeed, this.cameraMinZoom, this.cameraMaxZoom, this.cameraRotationSpeed);
 
         //render main scene
         const scene = this.mainScene;
@@ -604,7 +631,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
           const left = rectPartlistElement.left - rectCanvas.left;
           const top = rectCanvas.bottom - rectPartlistElement.bottom;
 
-          //this.updateControls(this.mainCamera,this.target,this.cameraCoordinates,this.scrollDelta,this.panDelta,this.dragDelta); TODO add for the parts
+          this.updateControls(partListCamera, new Vector3(0, 0, 0), this.partListCameraCoordinates[i], i + 1, false,
+            this.partListCameraZoomSpeed, this.partListMinCameraZoom, this.partListMaxCameraZoom, this.partListCameraRotationSpeed);
 
           // set the viewport
           this.renderer.setViewport(left, top, rectPartlistElement.width, rectPartlistElement.height);

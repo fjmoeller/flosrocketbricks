@@ -1,0 +1,100 @@
+<div class="border bordered-content rounded-3 mt-3 mb-3 m-0 p-1">
+  <button
+    class="accbutton btn version-expand-button text-coloring text-decoration-none d-flex w-100 align-items-center"
+    type="button" data-bs-toggle="collapse" aria-expanded="false"
+    [attr.data-bs-target]="'#instruction-settings-body'" [attr.aria-controls]="'instruction-settings-body'">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
+         style="vertical-align: baseline; margin-right: 10px;" class="bi bi-chevron-down"
+         viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+    </svg>
+    <b>Settings</b>
+  </button>
+  <div class="collapse text-coloring" [id]="'instruction-settings-body'">
+    <div style="display:flex;justify-content:center">
+      <button (click)="save()" style="width: 10rem" class="btn text-coloring inv-interact-button text-decoration-none text-align-center">Save</button>
+      <button (click)="reset()" style="width: 10rem" class="btn text-coloring inv-interact-button text-decoration-none text-align-center">Reset</button>
+    </div>
+    <div class="settingCategoryWrapper">
+      <div class="settingCategory">
+        <h4>General:</h4>
+
+        <label for="maxFps">Max FPS:&nbsp;</label><br>
+        <input type="number" id="maxFps" name="maxFps" [(ngModel)]="maxFps" min="1" max="1000" step="10"><br>
+
+        <input type="checkbox" id="resetTargetOnPageChange" name="resetTargetOnPageChange" [(ngModel)]="resetTargetOnPageChange">
+        <label for="resetTargetOnPageChange">&nbsp;Reset Camera Position on Step Change</label><br>
+
+        <input type="checkbox" id="enableOutline" name="enableOutline" disabled [(ngModel)]="enableOutline">
+        <label for="enableOutline">&nbsp;Outline for new Parts</label><br>
+
+        <input type="checkbox" id="enablePartListSmallPartScaling" name="enablePartListSmallPartScaling" [(ngModel)]="enablePartListSmallPartScaling">
+        <label for="enablePartListSmallPartScaling">&nbsp;Allow Part List Size Differences</label><br>
+        <label for="partListSmallPartScalingThreshold">Part List Size Difference Threshold:&nbsp;</label><br>
+        <input type="number" id="partListSmallPartScalingThreshold" name="partListSmallPartScalingThreshold" min="1"
+               max="1000" step="1" [(ngModel)]="partListSmallPartScalingThreshold"><br>
+
+      </div>
+      <div class="settingCategory">
+        <h4>Manual Main Camera Movement:</h4>
+
+        <label for="cameraZoomSpeed">Main Camera Zoom Speed:</label><br>
+        <input type="number" id="cameraZoomSpeed" name="cameraZoomSpeed" min="0.00005" max="1" step="0.0001" [(ngModel)]="cameraZoomSpeed"><br>
+        <label for="cameraMaxZoom">Max Main Camera Zoom:</label><br>
+        <input type="number" id="cameraMaxZoom" name="cameraMaxZoom" min="0.0005" max="1" step="0.01" [(ngModel)]="cameraMaxZoom"><br>
+        <label for="cameraMinZoom">Min Main Camera Zoom:</label><br>
+        <input type="number" id="cameraMinZoom" name="cameraMinZoom" min="1" max="100000" step="10" [(ngModel)]="cameraMinZoom"><br>
+        <label for="cameraRotationSpeed">Main Camera Rotation Speed:</label><br>
+        <input type="number" id="cameraRotationSpeed" name="cameraRotationSpeed" min="0.00001" step="0.005" max="1" [(ngModel)]="cameraRotationSpeed"><br>
+        <label for="panningSpeed">Main Camera Pan Speed:</label><br>
+        <input type="number" id="panningSpeed" name="panningSpeed" min="1" step="5" max="1000" [(ngModel)]="panningSpeed"><br>
+
+      </div>
+      <div class="settingCategory">
+        <h4>Manual Part List Camera Movement:</h4>
+
+        <label for="partListCameraZoomSpeed">Zoom Speed:</label><br>
+        <input type="number" id="partListCameraZoomSpeed" name="partListCameraZoomSpeed" step="0.0001" min="0.000001" max="1" [(ngModel)]="partListCameraZoomSpeed"><br>
+        <label for="partListMaxCameraZoom">Max Zoom:</label><br>
+        <input type="number" id="partListMaxCameraZoom" name="partListMaxCameraZoom" step="0.01" min="0.0005" max="1" [(ngModel)]="partListMaxCameraZoom"><br>
+        <label for="partListMinCameraZoom">Min Zoom:</label><br>
+        <input type="number" id="partListMinCameraZoom" name="partListMinCameraZoom" step="10" min="1" max="100000" [(ngModel)]="partListMinCameraZoom"><br>
+        <label for="partListCameraRotationSpeed">Rotation Speed:</label><br>
+        <input type="number" id="partListCameraRotationSpeed" name="partListCameraRotationSpeed" step="0.005" min="0.0002" max="1" [(ngModel)]="partListCameraRotationSpeed"><br>
+      </div>
+      <div class="settingCategory">
+        <h4>Coloring:</h4>
+        <label for="mainBgColor">Main Background Color:</label><br>
+        <input type="color" id="mainBgColor" name="mainBgColor" [(ngModel)]="mainBgColor"><br>
+        <label for="submodelIndicatorBgColor">Submodel Indicator Background Color:</label><br>
+        <input type="color" id="submodelIndicatorBgColor" name="submodelIndicatorBgColor" [(ngModel)]="submodelIndicatorBgColor"><br>
+        <label for="partListBgColor">Part List Background Color:</label><br>
+        <input type="color" id="partListBgColor" name="partListBgColor" [(ngModel)]="partListBgColor"><br>
+
+        <label for="prevInterpolationColor">Previous Parts Interpolation Color:</label><br>
+        <input type="color" id="prevInterpolationColor" name="prevInterpolationColor" [(ngModel)]="prevInterpolationColor"><br>
+        <label for="prevInterpolationPercentage">Previous Parts Interpolation Percentage:</label><br>
+        <input type="number" id="prevInterpolationPercentage" name="prevInterpolationPercentage" step="0.05" min="0.01" max="1" [(ngModel)]="prevInterpolationPercentage"><br>
+      </div>
+      <div class="settingCategory">
+        <h4>Automatic Main Camera:</h4>
+        <input type="checkbox" id="enableAutoZoom" name="enableAutoZoom" [(ngModel)]="enableAutoZoom">
+        <label for="enableAutoZoom">&nbsp;Zoom to fit Size</label><br>
+        <input type="checkbox" id="enableAutoRotation" name="enableAutoRotation" [(ngModel)]="enableAutoRotation">
+        <label for="enableAutoRotation">&nbsp;Rotate to new Parts</label><br>
+        <label for="minimalAutoZoom">Minimal Zoom:</label><br>
+        <input type="number" id="minimalAutoZoom" name="minimalAutoZoom" min="0.5" step="1" max="10" [(ngModel)]="minimalAutoZoom"><br>
+        <label for="autoZoomFactor">Zoom Factor:</label><br>
+        <input type="number" id="autoZoomFactor" name="autoZoomFactor" min="0.5" step="0.05" max="10" [(ngModel)]="autoZoomFactor"><br>
+      </div>
+      <div class="settingCategory">
+        <h4>Automatic Part List Camera:</h4>
+        <label for="partListMinimalAutoZoom">Minimal Zoom:</label><br>
+        <input type="number" id="partListMinimalAutoZoom" name="partListMinimalAutoZoom" step="1" min="0.5" max="10" [(ngModel)]="partListMinimalAutoZoom"><br>
+        <label for="partListAutoZoomFactor">Zoom Factor:</label><br>
+        <input type="number" id="partListAutoZoomFactor" name="partListAutoZoomFactor" step="0.05" min="0.5" max="10" [(ngModel)]="partListAutoZoomFactor"><br>
+      </div>
+    </div>
+  </div>
+</div>

@@ -18,8 +18,11 @@ import * as BufferGeometryUtils from "three/examples/jsm/utils/BufferGeometryUti
 })
 export class InstructionService {
 
-  private readonly PREVINTERPOLATIONCOLOR = new Color(0.344, 0.394, 0.457);
-  private readonly PREVINTERPOLATIONPERCENTAGE:number= 0.7;
+  private readonly DEFAULT_PREV_INTERPOLATION_COLOR = new Color(0.344, 0.394, 0.457);
+  private readonly DEFAULT_PREV_INTERPOLATION_PERCENTAGE: number = 0.7;
+
+  private PREV_INTERPOLATION_COLOR = this.DEFAULT_PREV_INTERPOLATION_COLOR;
+  private PREV_INTERPOLATION_PERCENTAGE: number = this.DEFAULT_PREV_INTERPOLATION_PERCENTAGE;
 
   //Because there are only two possible lineColors I just initialize them here :)
   private lineMaterials = [new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(71)}), new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(0)})];
@@ -28,14 +31,19 @@ export class InstructionService {
   constructor(private ldrawColorService: LdrawColorService, private ldrToThreeService: LdrToThreeService) {
   }
 
-  async getInstructionModel(fileLink: string,instructionVersion:string): Promise<InstructionModel> {
+  async getInstructionModel(fileLink: string, instructionVersion: string, prevInterpolationColor?: Color, prevInterpolationPercentage?: number): Promise<InstructionModel> {
+    if (prevInterpolationColor !== undefined) this.PREV_INTERPOLATION_COLOR = prevInterpolationColor;
+    else this.PREV_INTERPOLATION_COLOR = this.DEFAULT_PREV_INTERPOLATION_COLOR;
+    if (prevInterpolationPercentage !== undefined) this.PREV_INTERPOLATION_PERCENTAGE = prevInterpolationPercentage;
+    else this.PREV_INTERPOLATION_PERCENTAGE = this.DEFAULT_PREV_INTERPOLATION_PERCENTAGE;
+
     const fileName = fileLink.slice(0, fileLink.length - 2) + "ldr"
     const contents = await fetch(environment.backendFetchUrl + fileName);
 
-    return this.createInstructionModel(await contents.text(),instructionVersion);
+    return this.createInstructionModel(await contents.text(), instructionVersion);
   }
 
-  private createInstructionModel(ldrFileContent: string,instructionVersion:string): InstructionModel {
+  private createInstructionModel(ldrFileContent: string, instructionVersion: string): InstructionModel {
     const instructionModel: InstructionModel = {
       instructionSteps: [],
       parts: new Map<string, InstructionPart>(),
@@ -124,33 +132,33 @@ export class InstructionService {
         resolvedPart.colorVertexMap.forEach((vertices, color) => {
           const indices = resolvedPart.colorIndexMap.get(color) ?? [];
           if (indices.length > 0)
-            colorGeometryMap.set(color, this.createGeometry(resolvedPart.id, vertices, indices,instructionVersion));
+            colorGeometryMap.set(color, this.createGeometry(resolvedPart.id, vertices, indices, instructionVersion));
         });
         instructionModel.ldrData.idToColorGeometryMap.set(parsedPart.id, colorGeometryMap);
         for (let vertices of resolvedPart.colorLineVertexMap.values())
           instructionModel.ldrData.idToLineGeometryMap.set(resolvedPart.id, this.createLineGeometry(resolvedPart.id, vertices, instructionVersion));
       } else { //if part is single color part
-        this.createGeometryIfNotExists(resolvedPart, instructionModel.ldrData.idToGeometryMap, instructionModel.ldrData.idToLineGeometryMap,instructionVersion);
+        this.createGeometryIfNotExists(resolvedPart, instructionModel.ldrData.idToGeometryMap, instructionModel.ldrData.idToLineGeometryMap, instructionVersion);
       }
     }
 
     const firstSubmodel = instructionModel.submodels.get(topSubmodel);
     if (firstSubmodel)
-      this.collectPartRefs(firstSubmodel, instructionModel,1);
+      this.collectPartRefs(firstSubmodel, instructionModel, 1);
 
     return instructionModel;
   }
 
-  private countSubmodelAmount(submodelName:string,partReferences:PartReference[]):number{
+  private countSubmodelAmount(submodelName: string, partReferences: PartReference[]): number {
     let count = 0;
-    for(let i:number = 0; i<partReferences.length;i++){
-      if(partReferences[i].name === submodelName)
+    for (let i: number = 0; i < partReferences.length; i++) {
+      if (partReferences[i].name === submodelName)
         count++;
     }
     return count;
   }
 
-  private collectPartRefs(currentSubmodel: InstructionSubmodel, instructionModel: InstructionModel, submodelReferenceAmount:number): void {
+  private collectPartRefs(currentSubmodel: InstructionSubmodel, instructionModel: InstructionModel, submodelReferenceAmount: number): void {
     //accumulate the submodels and parts used in this submodels steps
     const previousSubmodels: InstructionSubmodelReference[] = [];
     const previousParts: InstructionPartReference[] = [];
@@ -180,7 +188,7 @@ export class InstructionService {
         const referencedThing = instructionModel.submodels.get(partReference.name);
         if (referencedThing) { //If Submodel
           if (!thisStepsSubmodels.includes(partReference.name)) { //has not already been resolved in this step
-            this.collectPartRefs(referencedThing, instructionModel, this.countSubmodelAmount(partReference.name,partReferences));
+            this.collectPartRefs(referencedThing, instructionModel, this.countSubmodelAmount(partReference.name, partReferences));
             thisStepsSubmodels.push(partReference.name);
           }
           //Add the submodel as reference into this step and add the group transformed into the parent submodel
@@ -207,7 +215,7 @@ export class InstructionService {
             if (foundPart && foundPart.colorVertexMap.size > 1) { //Is part with multiple colors //TODO auf prev achten!
               const geometries = instructionModel.ldrData.idToColorGeometryMap.get(partReference.name);
               geometries?.forEach((geometry, color) => {
-                if(color === 16 || color === 24 || color === -1 || color === -2)
+                if (color === 16 || color === 24 || color === -1 || color === -2)
                   color = partReference.color;
                 const material = instructionModel.ldrData.colorToMaterialMap.get(color);
                 const prevMaterial = instructionModel.ldrData.colorToPrevMaterialMap.get(color);
@@ -448,17 +456,17 @@ export class InstructionService {
 
       const prevMatParams = this.ldrawColorService.resolveColorByLdrawColorId(color);
       const prevMaterial = material.clone();
-      prevMaterial.color = prevMatParams.color.clone().lerp(this.PREVINTERPOLATIONCOLOR, this.PREVINTERPOLATIONPERCENTAGE);
+      prevMaterial.color = prevMatParams.color.clone().lerp(this.PREV_INTERPOLATION_COLOR, this.PREV_INTERPOLATION_PERCENTAGE);
       colorToPrevMaterialMap.set(color, prevMaterial);
     }
   }
 
-  private createGeometryIfNotExists(part: LdrPart, nameToGeometryMap: Map<string, BufferGeometry>, nameToLineGeometryMap: Map<string, BufferGeometry>,instructionVersion:string): void {
+  private createGeometryIfNotExists(part: LdrPart, nameToGeometryMap: Map<string, BufferGeometry>, nameToLineGeometryMap: Map<string, BufferGeometry>, instructionVersion: string): void {
     if (nameToGeometryMap.has(part.id)) return;
     part.colorVertexMap.forEach((vertices, color) => { // should only be called once
       const indices = part.colorIndexMap.get(color);
       if (!indices) console.error("Color not found: vertices exist but no face to em");
-      else nameToGeometryMap.set(part.id, this.createGeometry(part.id, vertices, indices,instructionVersion));
+      else nameToGeometryMap.set(part.id, this.createGeometry(part.id, vertices, indices, instructionVersion));
     });
     part.colorLineVertexMap.forEach((vertices, color) => {
       nameToLineGeometryMap.set(part.id, this.createLineGeometry(part.id, vertices, instructionVersion));
@@ -471,7 +479,7 @@ export class InstructionService {
     partGeometry.setIndex(indices);
 
     //some parts need special attention...
-    this.ldrToThreeService.adjustGeometryByVersion(instructionVersion,partName,partGeometry);
+    this.ldrToThreeService.adjustGeometryByVersion(instructionVersion, partName, partGeometry);
 
     partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1); //if (this.ENABLE_FLAT_SHADING)
     partGeometry.computeBoundingBox();
@@ -481,12 +489,12 @@ export class InstructionService {
     return partGeometry;
   }
 
-  private createLineGeometry(partName: string, vertices: Vector3[],instructionVersion: string): BufferGeometry {
+  private createLineGeometry(partName: string, vertices: Vector3[], instructionVersion: string): BufferGeometry {
     let partGeometry = new BufferGeometry();
     partGeometry.setFromPoints(vertices);
 
     //some parts need special attention...
-    this.ldrToThreeService.adjustGeometryByVersion(instructionVersion,partName,partGeometry);
+    this.ldrToThreeService.adjustGeometryByVersion(instructionVersion, partName, partGeometry);
 
     partGeometry = BufferGeometryUtils.mergeVertices(partGeometry, 0.1); //if (this.ENABLE_FLAT_SHADING)
 
@@ -519,9 +527,9 @@ export class InstructionService {
       }
       if (!found) {
         let partName = instructionModel.ldrData.allPartsMap.get(iPartReference.partId)?.name ?? "";
-        if(partName.includes("Moved To ")){ //if the model is a moved one then search for the actual part name
+        if (partName.includes("Moved To ")) { //if the model is a moved one then search for the actual part name
           let newPartName = partName.split("Moved To ")[1].trim();
-          if(!newPartName.endsWith(".dat"))
+          if (!newPartName.endsWith(".dat"))
             newPartName += ".dat";
           partName = instructionModel.ldrData.allPartsMap.get(newPartName)?.name ?? "";
         }
@@ -572,10 +580,16 @@ export class InstructionService {
 
     //add the model of the parent submodel if this is the first step in said submodel
     let parentSubmodel = undefined;
-    if( currentStep.isFirstStepInSubmodel){
+    if (currentStep.isFirstStepInSubmodel) {
       parentSubmodel = instructionModel.submodels.get(currentStep.parentSubmodel)?.group;
     }
 
-    return {newPartsModel: newPartsGroup,prevPartsModel: prevPartsGroup, stepPartsList: stepPartsList, parentSubmodelModel: parentSubmodel, parentSubmodelAmount: currentStep.parentSubmodelAmount};
+    return {
+      newPartsModel: newPartsGroup,
+      prevPartsModel: prevPartsGroup,
+      stepPartsList: stepPartsList,
+      parentSubmodelModel: parentSubmodel,
+      parentSubmodelAmount: currentStep.parentSubmodelAmount
+    };
   }
 }

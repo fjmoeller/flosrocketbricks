@@ -384,12 +384,12 @@
                 </span>
       </div>
       <div class="row mt-1">
-        @for (version of sortedVersions(moc.versions); track version; let indexOfelement = $index) {
+        @for (version of sortedVersions(moc.versions); track version; let indexOfElement = $index) {
           <div class="border bordered-content rounded-3 mt-3 m-0 p-1">
             <button
               class="btn version-expand-button text-coloring text-decoration-none d-flex w-100 justify-content-left"
               type="button" data-bs-toggle="collapse" aria-expanded="false"
-              [attr.data-bs-target]="'#body'+indexOfelement" [attr.aria-controls]="'body'+indexOfelement">
+              [attr.data-bs-target]="'#body'+indexOfElement" [attr.aria-controls]="'body'+indexOfElement">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"
                    style="vertical-align: baseline; margin-right: 10px;" class="bi bi-chevron-down"
                    viewBox="0 0 16 16">
@@ -397,14 +397,14 @@
                       d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
               </svg>
               <b>{{ version.version }}</b>
-              @if (indexOfelement === 0 && moc.versions.length > 1) {
+              @if (indexOfElement === 0 && moc.versions.length > 1) {
                 <span style="color:red;margin-right:1rem;margin-left:1rem;">
                             Newest version!
                         </span>
               }
               {{ version.versionExtra }}
             </button>
-            <div class="collapse text-coloring" [id]="'body'+indexOfelement">
+            <div class="collapse text-coloring" [id]="'body'+indexOfElement">
               @if (version.changelog !== '') {
                 <p class="m-3 mb-0">
                   <strong>Changelog:</strong><br>

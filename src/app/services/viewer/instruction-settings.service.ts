@@ -10,28 +10,60 @@ export class InstructionSettingsService {
 
   private readonly LOCALSTORAGE_KEY = 'instruction-settings';
 
+  private settings: InstructionSettings;
+
+  private readonly isLocalStorageSupported: boolean;
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(platformId)) {
+      let storageSupported = false;
+      try {
+        storageSupported = (window.localStorage && true);
+      } catch (e) {
+      }
+      this.isLocalStorageSupported = storageSupported;
+      if (this.isLocalStorageSupported) {
+        this.settings = this.retrieveInstructionSettingsFromLocalStorage();
+      } else {
+        this.settings = this.getDefaultInstructionSettings();
+      }
+    } else {
+      this.isLocalStorageSupported = false
+      this.settings = this.getDefaultInstructionSettings();
+    }
   }
 
   getInstructionSettings(): InstructionSettings {
-    if (isPlatformBrowser(this.platformId)) {
-      const saved: string | null = localStorage.getItem(this.LOCALSTORAGE_KEY);
-      if (saved !== null){
-        return JSON.parse(saved, (key, value) => {
-          return key === "prevInterpolationColor" ? new Color(value) : value;
-        }) as InstructionSettings;
-      }
-
-    }
-    return this.getDefaultInstructionSettings();
+    return this.settings;
   }
 
   setInstructionSettings(settings: InstructionSettings) {
-    localStorage.setItem(this.LOCALSTORAGE_KEY, JSON.stringify(settings));
+    if (this.isLocalStorageSupported) {
+      this.saveInstructionSettingsToLocalStorage(settings);
+    }
+    this.settings = settings;
   }
 
   resetInstructionSettings() {
-    localStorage.setItem(this.LOCALSTORAGE_KEY, JSON.stringify(this.getDefaultInstructionSettings()));
+    if (this.isLocalStorageSupported) {
+      this.saveInstructionSettingsToLocalStorage(this.getDefaultInstructionSettings());
+    }
+    this.settings = this.getDefaultInstructionSettings();
+  }
+
+  private retrieveInstructionSettingsFromLocalStorage(): InstructionSettings {
+    const saved: string | null = localStorage.getItem(this.LOCALSTORAGE_KEY);
+    if (saved !== null) {
+      return JSON.parse(saved, (key, value) => {
+        return key === "prevInterpolationColor" ? new Color(value) : value;
+      }) as InstructionSettings;
+    } else {
+      return this.getDefaultInstructionSettings();
+    }
+  }
+
+  private saveInstructionSettingsToLocalStorage(settings: InstructionSettings) {
+    localStorage.setItem(this.LOCALSTORAGE_KEY, JSON.stringify(settings));
   }
 
   private getDefaultInstructionSettings(): InstructionSettings {

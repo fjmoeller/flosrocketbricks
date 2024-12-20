@@ -212,9 +212,10 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.isPanning = true;
     });
     htmlElement.addEventListener('touchstart', event => {
-      event.stopImmediatePropagation();
+      /*event.stopImmediatePropagation();
       event.stopPropagation();
-      event.preventDefault();
+      event.preventDefault();*/
+      console.log('touchstart');
       if (event.touches.length === 1)
         this.isDragging[htmlElementIndex] = true;
       /*else if (event.touches.length === 2)
@@ -230,9 +231,10 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.isPanning = false;
     });
     htmlElement.addEventListener('touchend', event => {
-      event.stopImmediatePropagation();
+      /*event.stopImmediatePropagation();
       event.stopPropagation();
-      event.preventDefault();
+      event.preventDefault();*/
+      console.log('touchend');
       const prevTouch = this.previousTouch[htmlElementIndex];
       if (prevTouch) {
         if (prevTouch.touches.length === 1) {

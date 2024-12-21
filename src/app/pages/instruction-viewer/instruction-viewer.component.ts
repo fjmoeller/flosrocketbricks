@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {
   AmbientLight,
   BufferGeometry,
@@ -28,7 +28,7 @@ import {MocGrabberService} from "../../services/grabber/moc-grabber.service";
 import {Box3} from "three/src/math/Box3.js";
 import {File, Moc, Version} from "../../model/classes";
 import {MetaServiceService} from "../../services/meta-service.service";
-import {Location, NgStyle} from "@angular/common";
+import {isPlatformBrowser, Location, NgStyle} from "@angular/common";
 import {InstructionDownloadComponent} from "../../components/instruction-download/instruction-download.component";
 import {InstructionCoverComponent} from "../../components/instruction-cover/instruction-cover.component";
 import {LdrawColorService} from "../../services/color/ldraw-color.service";
@@ -75,6 +75,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   currentStepModel: StepModel;
   instructionModel: InstructionModel;
 
+  private windowListenersRegistered: boolean = false;
+
   private canvas!: HTMLCanvasElement;
   private instructionWrapper!: HTMLDivElement;
   private contentWrapper!: HTMLDivElement;
@@ -110,7 +112,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   constructor(private location: Location, private instructionService: InstructionService,
               private route: ActivatedRoute, private mocGrabberService: MocGrabberService,
               private metaService: MetaServiceService, private ldrawColorService: LdrawColorService,
-              private instructionSettingsService: InstructionSettingsService) {
+              private instructionSettingsService: InstructionSettingsService,@Inject(PLATFORM_ID) private platform:Object) {
     this.currentStepModel = {
       stepPartsList: [],
       newPartsModel: new Group(),
@@ -165,7 +167,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   async refreshPage() {
     this.instructionSettings = this.instructionSettingsService.getInstructionSettings();
     this.loadingFinished = false;
-    if (this.file.instructions) {
+    if (this.file.instructions && isPlatformBrowser(this.platform)) {
       this.metaService.setDefaultTags(this.file.name + " Online Instructions - FlosRocketBricks", window.location.href);
       this.instructionModel = await this.instructionService.getInstructionModel(this.file.link, this.file.instructions, this.instructionSettings.prevInterpolationColor, this.instructionSettings.prevInterpolationPercentage);
       this.collectElementReferences();
@@ -318,7 +320,10 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   }
 
   private registerWindowListeners() {
+    if(this.windowListenersRegistered) return;
+    this.windowListenersRegistered = true;
     document.addEventListener('keydown', event => {
+      if(!this.loadingFinished) return;
       switch (event.key) {
         case "ArrowRight":
           this.nextStep();
@@ -329,6 +334,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       }
     });
     window.addEventListener('resize', () => {
+      if(!this.loadingFinished) return;
       this.canvas.style.width = this.contentWrapper.clientWidth + "px";
       this.canvas.style.height = this.contentWrapper.clientHeight + "px";
       this.instructionWrapper.style.height = this.contentWrapper.clientHeight + "px";
@@ -527,7 +533,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       if (this.instructionSettings.resetTargetOnPageChange)
         this.target = new Vector3(0, 0, 0);
 
-      //rotate the model so that longest axis of the model is on the x-axis
+      //rotate the model so that longest axis of the model is on the x-axis //TODO add to settings
       const allPartsGroup = new Group();
       allPartsGroup.add(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
       const allPartsBox = new Box3().setFromObject(allPartsGroup);
@@ -542,7 +548,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.currentStepModel.prevPartsModel.rotateOnWorldAxis(new Vector3(0, 1, 0), -Math.PI / 2);
       }
 
-      //rotate the camera so that it (probably) looks at the new parts from the correct direction
+      //rotate the camera so that it (probably) looks at the new parts from the correct direction //TODO add to settings
       if (this.currentStepModel.prevPartsModel.children.length != 0) { //don't do anything if there's noe prev step
         const newPartCenter = new Box3().setFromObject(this.currentStepModel.newPartsModel).getCenter(new Vector3());
         const prevPartCenter = new Box3().setFromObject(this.currentStepModel.prevPartsModel).getCenter(new Vector3());

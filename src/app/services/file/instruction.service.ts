@@ -12,6 +12,7 @@ import {
 import {LdrPart, PartReference} from "../../model/ldrawParts";
 import {LdrToThreeService} from "./ldr-to-three.service";
 import * as BufferGeometryUtils from "three/examples/jsm/utils/BufferGeometryUtils.js";
+import {Box3} from "three/src/math/Box3.js";
 
 @Injectable({
   providedIn: 'root'
@@ -583,6 +584,12 @@ export class InstructionService {
     if (currentStep.isFirstStepInSubmodel) {
       parentSubmodel = instructionModel.submodels.get(currentStep.parentSubmodel)?.group;
     }
+
+    stepPartsList.sort((a:StepPart,b:StepPart) => {
+      const aBox = new Box3().setFromObject(a.model);
+      const bBox = new Box3().setFromObject(b.model);
+      return (aBox.max.x - aBox.min.x) - (bBox.max.x - bBox.min.x);
+    });
 
     return {
       newPartsModel: newPartsGroup,

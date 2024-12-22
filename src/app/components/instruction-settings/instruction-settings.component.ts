@@ -1,7 +1,6 @@
-import {Component, EventEmitter, Inject, OnInit, Output, PLATFORM_ID} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {InstructionSettingsService} from "../../services/viewer/instruction-settings.service";
 import {AutoShowBottom, InstructionSettings} from "../../model/instructions";
-import {isPlatformBrowser} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {Color, Spherical} from "three";
 
@@ -59,12 +58,11 @@ export class InstructionSettingsComponent implements OnInit {
   prevInterpolationPercentage!: number;
   enableOutline!: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private instructionSettingsService: InstructionSettingsService) {
+  constructor(private instructionSettingsService: InstructionSettingsService) {
   }
 
-  ngOnInit() {
-    if (isPlatformBrowser(this.platformId))
-      this.reset();
+  ngOnInit():void{
+    this.setData(this.instructionSettingsService.getInstructionSettings());
   }
 
   setData(instructionSettings: InstructionSettings) {

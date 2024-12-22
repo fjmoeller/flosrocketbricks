@@ -1,5 +1,69 @@
 [
   {
+    "company": "",
+    "region": [
+      "China"
+    ],
+    "links": [
+      "https://nextspaceflight.com/launches/details/7576",
+      "https://en.wikipedia.org/wiki/Long_March_12",
+      "https://space.skyrocket.de/doc_lau/cz-12.htm"
+    ],
+    "type": "rocket",
+    "id": 220,
+    "title": "Long March 12",
+    "altTitles": ["CZ-12","LM-12"],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2024-12-21",
+    "dateCreated": "2024-12-21",
+    "related": [],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Long March 12 rocket. The first two stages can be separated. the fairing halves can hold a payload and can be taken off from the fairing.",
+    "rocketDescription": "The Long March 12 is a Chinese orbital rocket that was first launched in 2024. It has two stages and is 62 meters high. It can launch up to 12 tons into low earth orbit.",
+    "internalColor": "Green",
+    "scale": "110",
+    "parts": 769,
+    "dimensions": "5.4x4.8x56.6cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-12/110-long-march-12-v1.2.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/v1.2/Long_March_12_V1.2_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/v1.2/Long_March_12_V1.2_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/v1.2/Long_March_12_V1.2_3.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "instructions": "V2",
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/v1.2/Long_March_12_V1.2.io",
+            "name": "Long_March_12_V1.2.io"
+          }
+        ],
+        "version": "V1.2"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
     "company": "Boeing",
     "region": [
       "USA"

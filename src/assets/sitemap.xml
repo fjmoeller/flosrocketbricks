@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/moc/220/long-march-12/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-12/110-long-march-12-v1.2.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/219/phantom-express/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/phantom-express/110-phantom-express-v3.0.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/218/space-shuttle-tail-cone/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/space-shuttle/tail-cone/110-space-shuttle-tail-cone-v1.2.jpg</image:loc>
@@ -342,7 +354,7 @@
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/orion/110-orion-v2.2.png</image:loc>
     </image:image>
-  </url> 
+  </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/161/x-37b/</loc>
     <image:image>

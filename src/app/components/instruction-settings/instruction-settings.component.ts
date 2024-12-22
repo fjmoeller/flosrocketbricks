@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Inject, OnInit, Output, PLATFORM_ID} from '@angular/core';
 import {InstructionSettingsService} from "../../services/viewer/instruction-settings.service";
-import {InstructionSettings} from "../../model/instructions";
+import {AutoShowBottom, InstructionSettings} from "../../model/instructions";
 import {isPlatformBrowser} from "@angular/common";
 import {FormsModule} from "@angular/forms";
-import {Color} from "three";
+import {Color, Spherical} from "three";
 
 @Component({
   selector: 'app-instruction-settings',
@@ -20,6 +20,7 @@ export class InstructionSettingsComponent implements OnInit {
   settingsChanged: EventEmitter<void> = new EventEmitter();
 
   maxFps!: number;
+  enableAxisHelper!: boolean;
 
   cameraZoomSpeed!: number;
   partListCameraZoomSpeed!: number;
@@ -35,8 +36,17 @@ export class InstructionSettingsComponent implements OnInit {
   partListSmallPartScalingThreshold!: number;
   enablePartListSmallPartScaling!: boolean;
 
+  defaultMainCameraPositionRadius!: number;
+  defaultMainCameraPositionTheta!: number;
+  defaultMainCameraPositionPhi!: number;
+  defaultPartListCameraPositionRadius!: number;
+  defaultPartListCameraPositionTheta!: number;
+  defaultPartListCameraPositionPhi!: number;
   enableAutoZoom!: boolean;
   enableAutoRotation!: boolean;
+  enableLongestOntoXAxisFlip!: boolean;
+  autoShowBottom!: AutoShowBottom;
+  autoShowBottomThreshold!: number;
   minimalAutoZoom!: number;
   partListMinimalAutoZoom!: number;
   autoZoomFactor!: number;
@@ -59,6 +69,7 @@ export class InstructionSettingsComponent implements OnInit {
 
   setData(instructionSettings: InstructionSettings) {
     this.maxFps = instructionSettings.maxFps;
+    this.enableAxisHelper = instructionSettings.enableAxisHelper;
     this.cameraZoomSpeed = instructionSettings.cameraZoomSpeed;
     this.partListCameraZoomSpeed = instructionSettings.partListCameraZoomSpeed;
     this.cameraMaxZoom = instructionSettings.cameraMaxZoom;
@@ -73,8 +84,17 @@ export class InstructionSettingsComponent implements OnInit {
     this.partListSmallPartScalingThreshold = instructionSettings.partListSmallPartScalingThreshold;
     this.enablePartListSmallPartScaling = instructionSettings.enablePartListSmallPartScaling;
 
+    this.defaultMainCameraPositionRadius = instructionSettings.defaultMainCameraPosition.radius;
+    this.defaultMainCameraPositionPhi = instructionSettings.defaultMainCameraPosition.phi;
+    this.defaultMainCameraPositionTheta = instructionSettings.defaultMainCameraPosition.theta;
+    this.defaultPartListCameraPositionRadius = instructionSettings.defaultPartListCameraPosition.radius;
+    this.defaultPartListCameraPositionPhi = instructionSettings.defaultPartListCameraPosition.phi;
+    this.defaultPartListCameraPositionTheta = instructionSettings.defaultPartListCameraPosition.theta;
     this.enableAutoZoom = instructionSettings.enableAutoZoom;
     this.enableAutoRotation = instructionSettings.enableAutoRotation;
+    this.enableLongestOntoXAxisFlip = instructionSettings.enableLongestOntoXAxisFlip;
+    this.autoShowBottom = instructionSettings.autoShowBottom;
+    this.autoShowBottomThreshold = instructionSettings.autoShowBottomThreshold;
     this.minimalAutoZoom = instructionSettings.minimalAutoZoom;
     this.partListMinimalAutoZoom = instructionSettings.partListMinimalAutoZoom;
     this.autoZoomFactor = instructionSettings.autoZoomFactor;
@@ -83,7 +103,7 @@ export class InstructionSettingsComponent implements OnInit {
     this.mainBgColor = instructionSettings.mainBgColor;
     this.submodelIndicatorBgColor = instructionSettings.submodelIndicatorBgColor;
     this.partListBgColor = instructionSettings.partListBgColor;
-    this.prevInterpolationColor = '#'+('000000'+instructionSettings.prevInterpolationColor.getHex().toString(16)).slice(-6);
+    this.prevInterpolationColor = '#' + ('000000' + instructionSettings.prevInterpolationColor.getHex().toString(16)).slice(-6);
     this.prevInterpolationPercentage = instructionSettings.prevInterpolationPercentage;
     this.enableOutline = instructionSettings.enableOutline;
   }
@@ -91,6 +111,7 @@ export class InstructionSettingsComponent implements OnInit {
   save(): void {
     const newSettings: InstructionSettings = {
       maxFps: this.maxFps,
+      enableAxisHelper: this.enableAxisHelper,
 
       cameraZoomSpeed: this.cameraZoomSpeed,
       partListCameraZoomSpeed: this.partListCameraZoomSpeed,
@@ -106,8 +127,13 @@ export class InstructionSettingsComponent implements OnInit {
       partListSmallPartScalingThreshold: this.partListSmallPartScalingThreshold,
       enablePartListSmallPartScaling: this.enablePartListSmallPartScaling,
 
+      defaultMainCameraPosition: new Spherical(this.defaultMainCameraPositionRadius, this.defaultMainCameraPositionPhi, this.defaultMainCameraPositionTheta),
+      defaultPartListCameraPosition: new Spherical(this.defaultPartListCameraPositionRadius, this.defaultPartListCameraPositionPhi, this.defaultPartListCameraPositionTheta),
       enableAutoZoom: this.enableAutoZoom,
       enableAutoRotation: this.enableAutoRotation,
+      enableLongestOntoXAxisFlip: this.enableLongestOntoXAxisFlip && this.enableAutoRotation,
+      autoShowBottom: this.autoShowBottom,
+      autoShowBottomThreshold: this.autoShowBottomThreshold,
       minimalAutoZoom: this.minimalAutoZoom,
       partListMinimalAutoZoom: this.partListMinimalAutoZoom,
       autoZoomFactor: this.autoZoomFactor,
@@ -132,4 +158,5 @@ export class InstructionSettingsComponent implements OnInit {
   }
 
 
+  protected readonly AutoShowBottom = AutoShowBottom;
 }

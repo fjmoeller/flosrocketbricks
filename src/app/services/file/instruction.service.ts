@@ -585,10 +585,12 @@ export class InstructionService {
       parentSubmodel = instructionModel.submodels.get(currentStep.parentSubmodel)?.group;
     }
 
-    stepPartsList.sort((a:StepPart,b:StepPart) => {
+    stepPartsList.sort((a: StepPart, b: StepPart) => {
       const aBox = new Box3().setFromObject(a.model);
       const bBox = new Box3().setFromObject(b.model);
-      return (aBox.max.x - aBox.min.x) - (bBox.max.x - bBox.min.x);
+      const x = (aBox.max.x - aBox.min.x) - (bBox.max.x - bBox.min.x);
+      const y = (aBox.max.y - aBox.min.y) - (bBox.max.y - bBox.min.y);
+      return x !== 0 ? x : (y !== 0 ? y : (aBox.max.z - aBox.min.z) - (bBox.max.z - bBox.min.z));
     });
 
     return {

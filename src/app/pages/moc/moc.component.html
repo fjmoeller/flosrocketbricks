@@ -34,7 +34,7 @@
                 <strong>Brick count:</strong>
                 <span>{{ moc.parts }}
                   @if (moc.partsExtra !== '') {
-                    <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                          fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                     <path
@@ -61,7 +61,7 @@
                 <strong>Scale:</strong>
                 <span>{{ moc.scale }}
                   @if (moc.scaleExtra !== '') {
-                    <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                          fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                     <path
@@ -93,7 +93,7 @@
 
               <span>{{ moc.designer }}
                 @if (moc.designerExtra !== '') {
-                  <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                        fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                     <path
@@ -139,8 +139,7 @@
                 <strong>Dimensions:</strong>
 
                 <span>{{ moc.dimensions }} @if (moc.dimensionsExtra !== '') {
-                  <svg placement="top"
-                       xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
                        class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                     <path
@@ -169,7 +168,7 @@
                 <span>
                                 {{ moc.internalColor }}
                   @if (moc.internalColorExtra !== '') {
-                    <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                          fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                     <path
@@ -232,7 +231,7 @@
                 </div>
                 <span>{{ getDifficultyText(moc.difficulty) }}
                   @if (moc.difficultyExtra !== '') {
-                    <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                          fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                     <path
@@ -295,7 +294,7 @@
                 </div>
                 <span>{{ getStabilityText(moc.stability) }}
                   @if (moc.stabilityExtra !== '') {
-                    <svg placement="top" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                          fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                     <path
@@ -320,7 +319,7 @@
       @if (showViewer) {
         <div class="row d-flex justify-content-between text-coloring m-2 align-items-center">
           <button class="col btn inv-interact-button text-decoration-none text-align-center rounded"
-                  (click)="toggleViewer(viewerLink)">Close Viewer
+                  (click)="toggleViewer(viewerLink,viewerVersion)">Close Viewer
           </button>
           <a class="col text-coloring text-center" href="https://www.ldraw.org/" target="_blank">
             This viewer has been created using LDraw
@@ -329,7 +328,7 @@
       }
       @if (showViewer) {
         <div class="text-coloring">
-          <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer" [placeHolderColor]="moc.internalColor">
+          <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer" [placeHolderColor]="moc.internalColor" [viewerVersion]="viewerVersion">
           </app-viewer>
         </div>
       }
@@ -478,7 +477,7 @@
                     @if (file.type === 'io' && file.viewer) {
                       <button title="Open in 3D viewer"
                               class="btn inv-interact-button text-decoration-none text-align-center"
-                              style="margin-right:10px" type="button" (click)="toggleViewer(file.link)">
+                              style="margin-right:10px" type="button" (click)="toggleViewer(file.link,file.viewer)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
                              class="bi bi-badge-3d" viewBox="0 0 16 16">
                           <path

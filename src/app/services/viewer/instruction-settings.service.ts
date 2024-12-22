@@ -1,6 +1,6 @@
 import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
-import {InstructionSettings} from "../../model/instructions";
-import {Color} from "three";
+import {AutoShowBottom, InstructionSettings} from "../../model/instructions";
+import {Color, Spherical} from "three";
 import {isPlatformBrowser} from "@angular/common";
 
 @Injectable({
@@ -69,6 +69,7 @@ export class InstructionSettingsService {
   private getDefaultInstructionSettings(): InstructionSettings {
     return {
       maxFps: 60,
+      enableAxisHelper: true,
 
       cameraZoomSpeed: 0.0005,
       partListCameraZoomSpeed: 0.0005,
@@ -84,8 +85,13 @@ export class InstructionSettingsService {
       partListSmallPartScalingThreshold: 44, //how big a part must be so that it gets a container width of 6rem instead of 3rem
       enablePartListSmallPartScaling: true,
 
+      defaultMainCameraPosition: new Spherical(1, 1, 2.6),
+      defaultPartListCameraPosition: new Spherical(1, 1, 1),
       enableAutoZoom: true,
       enableAutoRotation: true,
+      enableLongestOntoXAxisFlip: false,
+      autoShowBottom: AutoShowBottom.ROTATE,
+      autoShowBottomThreshold: -0.17,
       minimalAutoZoom: 4, //high -> further away
       partListMinimalAutoZoom: 7, //high -> further away
       autoZoomFactor: 1.7, //high -> further away

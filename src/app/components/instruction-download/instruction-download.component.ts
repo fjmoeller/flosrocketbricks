@@ -14,7 +14,7 @@ export class InstructionDownloadComponent {
   file: File;
 
   @Input()
-  internalColor?: string = "";
+  internalColor?: string;
 
   constructor(private fileExportService: FileExportService) {
     this.file = {

@@ -1,4 +1,4 @@
-import {BufferGeometry, Group, Material, Matrix4, Mesh} from "three";
+import {BufferGeometry, Color, Group, Material, Matrix4, Spherical} from "three";
 import {LdrPart, PartReference} from "./ldrawParts";
 
 export interface StepModel {
@@ -68,4 +68,48 @@ export interface InstructionPart {
   id: string;
   group: Group;
   prevGroup: Group;
+}
+
+export interface InstructionSettings {
+  maxFps: number,
+  enableAxisHelper: boolean,
+
+  cameraZoomSpeed: number,
+  partListCameraZoomSpeed: number,
+  cameraMaxZoom: number,
+  partListMaxCameraZoom: number,
+  cameraMinZoom: number,
+  partListMinCameraZoom: number,
+  cameraRotationSpeed: number,
+  partListCameraRotationSpeed: number,
+
+  panningSpeed: number, //low -> faster
+  resetTargetOnPageChange: boolean,
+  partListSmallPartScalingThreshold: number, //how big a part must be so that it gets a container width of 6rem instead of 3rem
+  enablePartListSmallPartScaling: boolean,
+
+  defaultMainCameraPosition: Spherical,
+  defaultPartListCameraPosition: Spherical,
+  enableAutoZoom: boolean,
+  enableAutoRotation: boolean,
+  enableLongestOntoXAxisFlip: boolean
+  autoShowBottom: AutoShowBottom,
+  autoShowBottomThreshold: number,
+  minimalAutoZoom: number, //high -> further away
+  partListMinimalAutoZoom: number, //high -> further away
+  autoZoomFactor: number, //high -> further away
+  partListAutoZoomFactor: number, //high -> further away
+
+  mainBgColor: string,
+  submodelIndicatorBgColor: string,
+  partListBgColor: string,
+  prevInterpolationColor: Color,
+  prevInterpolationPercentage: number,
+  enableOutline: boolean
+}
+
+export enum AutoShowBottom {
+  DISABLED,
+  ROTATE,
+  FLIP
 }

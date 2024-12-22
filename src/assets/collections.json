@@ -1,226 +1,291 @@
 [
-    {
+  {
+    "id": 0,
+    "name": "Long March",
+    "description": "The Long March series of rockets is a Chinese family of orbital rocket systems.",
+    "cover": "https://bricksafe.com/files/SkySaac/website/collection/long-march/Long_March_V2.png/640x512.png",
+    "subCollections": [
+      {
         "id": 0,
-        "name": "Long March",
-        "description": "The Long March series of rockets is a Chinese family of orbital rocket systems.",
-        "cover": "https://bricksafe.com/files/SkySaac/website/collection/long-march/Long_March_V2.png/640x512.png",
-        "subCollections": [
-            {
-                "id": 0,
-                "name": "Long March 1",
-                "description": "The Long March 1 series of rockets included the first Chinese Orbital launch vehicle that launched the first Chinese Satellite in 1970.",
-                "mocs": [
-                    5
-                ]
-            },
-            {
-                "id": 1,
-                "name": "Long March 2",
-                "description": "The Long March 2 series of rockets features a wide variety of rockets. From medium sized launch vehicles to crewed ones.",
-                "mocs": [
-                    113,114,115,116,117,118,126,127
-                ]
-            },
-            {
-                "id": 2,
-                "name": "Long March 3",
-                "description": "",
-                "mocs": [
-                    80,81,82,83
-                ]
-            },
-            {
-                "id": 3,
-                "name": "Long March 4",
-                "description": "",
-                "mocs": [
-                    64,63
-                ]
-            },
-            {
-                "id": 4,
-                "name": "Long March 5",
-                "description": "",
-                "mocs": [
-                    134,135,140
-                ]
-            },
-            {
-                "id": 5,
-                "name": "Long March 6",
-                "description": "",
-                "mocs": [
-                    128,129,198,214
-                ]
-            },
-            {
-                "id": 6,
-                "name": "Long March 7",
-                "description": "The Long March 7 series of rockets is one of the new series of Chinas space launch systems. The most notable payloads are the Tianzhou spacecrafts that resupply the Chinese Space Station.",
-                "mocs": [
-                    59,60,53
-                ]
-            },
-            {
-                "id": 7,
-                "name": "Long March 8",
-                "description": "",
-                "mocs": [
-                    61,62
-                ]
-            },
-            {
-                "id": 8,
-                "name": "Long March 9",
-                "description": "",
-                "mocs": [
-                    154
-                ]
-            }
+        "name": "Long March 1",
+        "description": "The Long March 1 series of rockets included the first Chinese Orbital launch vehicle that launched the first Chinese Satellite in 1970.",
+        "mocs": [
+          5
         ]
-    },
-    {
+      },
+      {
         "id": 1,
-        "name": "Titan",
-        "description": "The Titan series of rockets!",
-        "cover": "https://bricksafe.com/files/SkySaac/website/collection/titan/Titan_V1.png/640x512.png",
-        "subCollections": [
-            {
-                "id": 0,
-                "name": "Titan III",
-                "description": "",
-                "mocs": [
-                    21,42,43,47
-                ]
-            },
-            {
-                "id": 1,
-                "name": "Titan IIIC",
-                "description": "",
-                "mocs": [
-                    37,38,39,40,41,22
-                ]
-            },
-            {
-                "id": 2,
-                "name": "Titan III Commercial",
-                "description": "",
-                "mocs": [
-                    44,45,46
-                ]
-            },
-            {
-                "id": 3,
-                "name": "Titan IV",
-                "description": "",
-                "mocs": [
-                    48,199
-                ]
-            }
+        "name": "Long March 2",
+        "description": "The Long March 2 series of rockets features a wide variety of rockets. From medium sized launch vehicles to crewed ones.",
+        "mocs": [
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          126,
+          127
         ]
-    },
-    {
+      },
+      {
         "id": 2,
-        "name": "Atlas",
-        "description": "The Atlas series has been used from the beginning of the space age until today.",
-        "cover": "https://bricksafe.com/files/SkySaac/website/collection/atlas/Atlas_V1.png/640x512.png",
-        "subCollections": [
-            {
-                "id": 0,
-                "name": "Atlas V 500",
-                "description": "",
-                "mocs": [
-                    28,29,30,31,32,33
-                ]
-            },
-            {
-                "id": 1,
-                "name": "Atlas V 500 Missions",
-                "description": "",
-                "mocs": [
-                    13,14
-                ]
-            },
-            {
-                "id": 2,
-                "name": "Atlas V 400",
-                "description": "",
-                "mocs": [
-                    72,73,74,75
-                ]
-            },
-            {
-                "id": 3,
-                "name": "Atlas V 400 Missions",
-                "description": "",
-                "mocs": [
-                    76,77,78
-                ]
-            },
-            {
-                "id": 4,
-                "name": "Other Atlas V variants",
-                "description": "",
-                "mocs": [
-                    34,35
-                ]
-            },
-            {
-                "id": 5,
-                "name": "Atlas V Launchpad",
-                "description": "",
-                "mocs": [
-                    50
-                ]
-            }
+        "name": "Long March 3",
+        "description": "",
+        "mocs": [
+          80,
+          81,
+          82,
+          83
         ]
-    },
-    {
+      },
+      {
         "id": 3,
-        "name": "Ariane",
-        "description": "The Ariane series features European orbital launch vehicles.",
-        "cover": "https://flosrocketbricks.com/assets/collections/3/ariane/Ariane_Family_V2.0.jpg",
-        "subCollections": [
-            {
-                "id": 0,
-                "name": "Ariane 1-3",
-                "description": "",
-                "mocs": [
-                    2,3,4
-                ]
-            },
-            {
-                "id": 1,
-                "name": "Ariane 4",
-                "description": "",
-                "mocs": [
-                    87,88,89,90,91,92
-                ]
-            },
-            {
-                "id": 2,
-                "name": "Ariane 5",
-                "description": "",
-                "mocs": [
-                    79,17,84,27,100
-                ]
-            },
-            {
-                "id": 3,
-                "name": "Ariane 5 Launchpad",
-                "description": "",
-                "mocs": [
-                    85,96
-                ]
-            },
-            {
-                "id": 4,
-                "name": "Ariane 6",
-                "description": "",
-                "mocs": [
-                    98,99,144,149
-                ]
-            }
+        "name": "Long March 4",
+        "description": "",
+        "mocs": [
+          64,
+          63
         ]
-    }
+      },
+      {
+        "id": 4,
+        "name": "Long March 5",
+        "description": "",
+        "mocs": [
+          134,
+          135,
+          140
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Long March 6",
+        "description": "",
+        "mocs": [
+          128,
+          129,
+          198,
+          214
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Long March 7",
+        "description": "The Long March 7 series of rockets is one of the new series of Chinas space launch systems. The most notable payloads are the Tianzhou spacecrafts that resupply the Chinese Space Station.",
+        "mocs": [
+          59,
+          60,
+          53
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Long March 8",
+        "description": "",
+        "mocs": [
+          61,
+          62
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Long March 9",
+        "description": "",
+        "mocs": [
+          154
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Long March 12",
+        "description": "",
+        "mocs": [
+          220
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Titan",
+    "description": "The Titan series of rockets!",
+    "cover": "https://bricksafe.com/files/SkySaac/website/collection/titan/Titan_V1.png/640x512.png",
+    "subCollections": [
+      {
+        "id": 0,
+        "name": "Titan III",
+        "description": "",
+        "mocs": [
+          21,
+          42,
+          43,
+          47
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Titan IIIC",
+        "description": "",
+        "mocs": [
+          37,
+          38,
+          39,
+          40,
+          41,
+          22
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Titan III Commercial",
+        "description": "",
+        "mocs": [
+          44,
+          45,
+          46
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Titan IV",
+        "description": "",
+        "mocs": [
+          48,
+          199
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Atlas",
+    "description": "The Atlas series has been used from the beginning of the space age until today.",
+    "cover": "https://bricksafe.com/files/SkySaac/website/collection/atlas/Atlas_V1.png/640x512.png",
+    "subCollections": [
+      {
+        "id": 0,
+        "name": "Atlas V 500",
+        "description": "",
+        "mocs": [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Atlas V 500 Missions",
+        "description": "",
+        "mocs": [
+          13,
+          14
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Atlas V 400",
+        "description": "",
+        "mocs": [
+          72,
+          73,
+          74,
+          75
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Atlas V 400 Missions",
+        "description": "",
+        "mocs": [
+          76,
+          77,
+          78
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Other Atlas V variants",
+        "description": "",
+        "mocs": [
+          34,
+          35
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Atlas V Launchpad",
+        "description": "",
+        "mocs": [
+          50
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Ariane",
+    "description": "The Ariane series features European orbital launch vehicles.",
+    "cover": "https://flosrocketbricks.com/assets/collections/3/ariane/Ariane_Family_V2.0.jpg",
+    "subCollections": [
+      {
+        "id": 0,
+        "name": "Ariane 1-3",
+        "description": "",
+        "mocs": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Ariane 4",
+        "description": "",
+        "mocs": [
+          87,
+          88,
+          89,
+          90,
+          91,
+          92
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Ariane 5",
+        "description": "",
+        "mocs": [
+          79,
+          17,
+          84,
+          27,
+          100
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Ariane 5 Launchpad",
+        "description": "",
+        "mocs": [
+          85,
+          96
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Ariane 6",
+        "description": "",
+        "mocs": [
+          98,
+          99,
+          144,
+          149
+        ]
+      }
+    ]
+  }
 ]

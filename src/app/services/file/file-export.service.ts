@@ -72,13 +72,13 @@ export class FileExportService {
     await this.collectParts(url);
     await this.collectUsedPartsMappings(url, true);
 
-    const placeHolderColorcode = this.ldrawColorService.getLdrawColorIdByColorName(placeholderColor);
+    const placeHolderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(placeholderColor);
 
     let xml = "<INVENTORY>\n";
     for (let key of this.mappedCountedPartMap.keys()) {
       const colorIdKey = key.split(this.separationString); //1sr part contains color, 2nd the id
       let color = "0";
-      if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) //if the color is not the to be replaced one
+      if (!this.replaceColor || placeHolderColorCode != Number(colorIdKey[0])) //if the color is not the to be replaced one
         color = "" + this.ldrawColorService.getBricklinkColorIdByLdrawColorId(colorIdKey[0], 0);
       xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + colorIdKey[1] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.mappedCountedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
     }

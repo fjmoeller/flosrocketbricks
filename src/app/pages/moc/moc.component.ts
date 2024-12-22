@@ -20,6 +20,7 @@ export class MocComponent implements OnInit, OnDestroy {
   moc: Moc;
   relatedMocs: Moc[] = [];
   viewerLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io"; //default link
+  viewerVersion: string = "V1";
 
   showViewer: boolean = false;
   slideIndex: number = 0;
@@ -50,19 +51,20 @@ export class MocComponent implements OnInit, OnDestroy {
     this.slideIndex = ((this.slideIndex + n) + this.moc.pictures.length) % this.moc.pictures.length;
   }
 
-  toggleViewer(url: string): void {
+  toggleViewer(url: string, version: string): void {
     if (this.viewerLink === url)
       this.showViewer = !this.showViewer;
     else {
       this.viewerLink = url;
+      this.viewerVersion = version;
       this.showViewer = true;
     }
     if (this.showViewer)
       this.document.getElementById("viewer")?.scrollIntoView(true);
   }
 
-  async downloadXml(filelink: string, filename: string) {
-    const data = await this.fileExportService.getXml(filelink, this.moc.internalColor);
+  async downloadXml(fileLink: string, filename: string) {
+    const data = await this.fileExportService.getXml(fileLink, this.moc.internalColor);
     const blob = new Blob([data], {type: 'application/xml'});
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);

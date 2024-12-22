@@ -129,11 +129,11 @@
         <div style="border-left: 1px solid white; padding:0.2rem 0 0.3rem 0.5rem">
           <label>Show Parts that are on the Bottom:</label><br>
           <label><input type="radio" id="disableBottom" name="bottom" [value]="AutoShowBottom.DISABLED"
-                        [disabled]="!enableAutoRotation" [(ngModel)]="autoShowBottom">Disabled</label><br>
+                        [disabled]="!enableAutoRotation" [(ngModel)]="autoShowBottom">&nbsp;Disabled</label><br>
           <label><input type="radio" id="rotateBottom" name="bottom" [value]="AutoShowBottom.ROTATE"
-                        [disabled]="!enableAutoRotation" [(ngModel)]="autoShowBottom">Rotate to Bottom</label><br>
+                        [disabled]="!enableAutoRotation" [(ngModel)]="autoShowBottom">&nbsp;Rotate to Bottom</label><br>
           <label><input type="radio" id="flipBottom" name="bottom" [value]="AutoShowBottom.FLIP"
-                        [disabled]="!enableAutoRotation" [(ngModel)]="autoShowBottom">Flip on Y-Axis</label>
+                        [disabled]="!enableAutoRotation" [(ngModel)]="autoShowBottom">&nbsp;Flip on Y-Axis</label>
         </div>
         <label for="autoShowBottomThreshold">Showing Parts on Bottom Threshold:</label><br>
         <input type="number" id="autoShowBottomThreshold" name="autoShowBottomThreshold" min="-100" step="0.01"

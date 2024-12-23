@@ -73,6 +73,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   private dragDelta: { mx: number, my: number }[][] = [];
   private panDelta: { mx: number, my: number }[] = [];
   private previousTouch: (TouchEvent | null)[] = [];
+  private touchStartDistance: number = 0;
 
   currentStepModel: StepModel;
   instructionModel: InstructionModel;
@@ -209,7 +210,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.axesHelperContent = document.getElementById("axes-helper-content") as HTMLDivElement;
   }
 
-  private registerListeners(htmlElement: HTMLElement, htmlElementIndex: number, enablePan: boolean) {
+  private registerListeners(htmlElement: HTMLElement, htmlElementIndex: number, enablePan: boolean, enableZoom: boolean) {
     htmlElement.addEventListener('mousedown', event => {
       event.stopImmediatePropagation();
       event.stopPropagation();
@@ -223,12 +224,12 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       /*event.stopImmediatePropagation();
       event.stopPropagation();
       event.preventDefault();*/
-      if (event.touches.length === 1){
+      if (event.touches.length === 1) {
         this.isDragging[htmlElementIndex] = true;
+      } else if (event.touches.length === 2) {
+        this.touchStartDistance = Math.sqrt((event.touches[1].clientX - event.touches[0].clientX) ^ 2 + (event.touches[1].clientY - event.touches[0].clientY) ^ 2);
       }
-      else if (event.touches.length === 2){
-        this.previousTouch[htmlElementIndex] = event;
-      }
+      this.previousTouch[htmlElementIndex] = event;
     });
     htmlElement.addEventListener('mouseup', event => {
       event.stopImmediatePropagation();
@@ -243,20 +244,13 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       /*event.stopImmediatePropagation();
       event.stopPropagation();
       event.preventDefault();*/
-      console.log('touchend');
       const prevTouch = this.previousTouch[htmlElementIndex];
       if (prevTouch) {
         if (prevTouch.touches.length === 1) {
           this.isDragging[htmlElementIndex] = false;
           this.previousTouch[htmlElementIndex] = null;
-        } /*else if (this.previousTouch.touches.length === 2) {
-          this.isPanning = false;
-          if (event.touches.length === 0) {
-            this.isDragging = false;
-            this.previousTouch = undefined;
-          } else
-            this.previousTouch = event;
-        }*/
+          this.touchStartDistance = 0;
+        }
       }
     });
     htmlElement.addEventListener('touchcancel', event => {
@@ -268,14 +262,9 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         if (prevTouch.touches.length === 1) {
           this.isDragging[htmlElementIndex] = false;
           this.previousTouch[htmlElementIndex] = null;
-        } /*else if (this.previousTouch.touches.length === 2) {
-          this.isPanning = false;
-          if (event.touches.length === 0) {
-            this.isDragging = false;
-            this.previousTouch = undefined;
-          } else
-            this.previousTouch = event;
-        }*/
+
+          this.touchStartDistance = 0;
+        }
       }
     });
     htmlElement.addEventListener('wheel', event => {
@@ -298,29 +287,16 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       event.stopPropagation();
       event.preventDefault();
       const prevTouch = this.previousTouch[htmlElementIndex];
-      if (prevTouch) {
-        if (event.touches.length === 1) { //rotation
-          const deltaX = event.touches[0].clientX - prevTouch.touches[0].clientX;
-          const deltaY = event.touches[0].clientY - prevTouch.touches[0].clientY;
-          this.dragDelta[htmlElementIndex].push({mx: deltaX, my: deltaY});
-        } else if (event.touches.length === 2){
-          const prevDistance = Math.sqrt((prevTouch.touches[1].clientX - prevTouch.touches[0].clientX) ^ 2 + (prevTouch.touches[1].clientY - prevTouch.touches[0].clientY) ^ 2);
-          const newDistance = Math.sqrt((event.touches[1].clientX - event.touches[0].clientX) ^ 2 + (event.touches[1].clientY - event.touches[0].clientY) ^ 2);
-          if (Math.abs(prevDistance - newDistance) > this.instructionSettings.touchZoomEpsilon) //zoom //add smal lepsilon?
-            this.scrollDelta[htmlElementIndex] += prevDistance - newDistance;
-          console.log(prevDistance - newDistance);
+      if (event.touches.length === 1 && prevTouch) { //rotation
+        const deltaX = event.touches[0].clientX - prevTouch.touches[0].clientX;
+        const deltaY = event.touches[0].clientY - prevTouch.touches[0].clientY;
+        this.dragDelta[htmlElementIndex].push({mx: deltaX, my: deltaY});
+      } else if (event.touches.length === 2 && this.touchStartDistance !== 0 && enableZoom) {
+        const currentDistance = Math.sqrt((event.touches[1].clientX - event.touches[0].clientX) ^ 2 + (event.touches[1].clientY - event.touches[0].clientY) ^ 2);
+        if (Math.abs(this.touchStartDistance - currentDistance) > this.instructionSettings.touchZoomEpsilon) {
+          this.scrollDelta[htmlElementIndex] += this.touchStartDistance - currentDistance;
         }
-            /*pan
-            const touch0PositionChange = Math.sqrt((event.touches[0].clientX - this.previousTouch.touches[0].clientX) ^ 2 + (event.touches[0].clientY - this.previousTouch.touches[0].clientY) ^ 2);
-            const touch1PositionChange = Math.sqrt((event.touches[1].clientX - this.previousTouch.touches[1].clientX) ^ 2 + (event.touches[1].clientY - this.previousTouch.touches[1].clientY) ^ 2);
-            const avgTouchPositionChange = (touch0PositionChange + touch1PositionChange) / 2;
-            if (avgTouchPositionChange > 0) {
-              const avgXChange = ((event.touches[0].clientX - this.previousTouch.touches[0].clientX) + (event.touches[1].clientX - this.previousTouch.touches[1].clientX)) / 2;
-              const avgYChange = ((event.touches[0].clientY - this.previousTouch.touches[0].clientY) + (event.touches[1].clientY - this.previousTouch.touches[1].clientY)) / 2;
 
-              this.panDelta.push({mx: avgXChange, my: avgYChange});
-            }
-          }*/
       }
       this.previousTouch[htmlElementIndex] = event;
     });
@@ -543,7 +519,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     scene.userData['element'] = this.mainContent;
     scene.userData['camera'] = camera;
 
-    this.registerListeners(this.mainContent, 0, true);
+    this.registerListeners(this.mainContent, 0, true, true);
   }
 
   private updateMainScene(): void {
@@ -621,7 +597,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     scene.userData['element'] = this.submodelIndicatorContent;
     scene.userData['camera'] = camera;
 
-    this.registerListeners(this.submodelIndicatorContent, 1, false);
+    this.registerListeners(this.submodelIndicatorContent, 1, false, false);
   }
 
   private updateSubmodelIndicatorScene() {
@@ -705,7 +681,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       partDiv.appendChild(amountDiv);
       this.partListContent.appendChild(partDiv);
 
-      this.registerListeners(sceneDiv, i + 2, false);
+      this.registerListeners(sceneDiv, i + 2, false, false);
 
       const scene = this.createDefaultScene();
       const partGroup: Group = stepPart.model.clone();

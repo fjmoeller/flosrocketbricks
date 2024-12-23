@@ -228,6 +228,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.isDragging[htmlElementIndex] = true;
       } else if (event.touches.length === 2) {
         this.touchStartDistance = Math.sqrt((event.touches[1].clientX - event.touches[0].clientX) ^ 2 + (event.touches[1].clientY - event.touches[0].clientY) ^ 2);
+        console.log("starting touch with 2 fingers:",this.touchStartDistance);
       }
       this.previousTouch[htmlElementIndex] = event;
     });
@@ -249,7 +250,9 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         if (prevTouch.touches.length === 1) {
           this.isDragging[htmlElementIndex] = false;
           this.previousTouch[htmlElementIndex] = null;
+
           this.touchStartDistance = 0;
+          console.log("ending touch with 2 fingers");
         }
       }
     });
@@ -264,6 +267,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
           this.previousTouch[htmlElementIndex] = null;
 
           this.touchStartDistance = 0;
+          console.log("ending touch with 2 fingers");
         }
       }
     });
@@ -293,10 +297,11 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         this.dragDelta[htmlElementIndex].push({mx: deltaX, my: deltaY});
       } else if (event.touches.length === 2 && this.touchStartDistance !== 0 && enableZoom) {
         const currentDistance = Math.sqrt((event.touches[1].clientX - event.touches[0].clientX) ^ 2 + (event.touches[1].clientY - event.touches[0].clientY) ^ 2);
-        if (Math.abs(this.touchStartDistance - currentDistance) > this.instructionSettings.touchZoomEpsilon) {
+        console.log("touchmove:",currentDistance);
+        if (Math.abs(this.touchStartDistance - currentDistance) > this.instructionSettings.touchZoomEpsilon) { //TOOD umdrehen?
           this.scrollDelta[htmlElementIndex] += this.touchStartDistance - currentDistance;
+          console.log("touchmove above epsilon:",this.touchStartDistance - currentDistance);
         }
-
       }
       this.previousTouch[htmlElementIndex] = event;
     });

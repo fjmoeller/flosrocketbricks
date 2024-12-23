@@ -101,6 +101,8 @@ export class InstructionSettingsService {
             autoZoomFactor: 1.7, //high -> further away
             partListAutoZoomFactor: 1.1, //high -> further away
 
+            touchZoomEpsilon:0.1,
+
             mainBgColor: "#586575",
             submodelIndicatorBgColor: "#D2B48C",
             partListBgColor: "#B0C4DE",

@@ -82,6 +82,7 @@ export interface InstructionSettings {
   partListMinCameraZoom: number,
   cameraRotationSpeed: number,
   partListCameraRotationSpeed: number,
+  touchZoomEpsilon: number,
 
   panningSpeed: number, //low -> faster
   resetTargetOnPageChange: boolean,

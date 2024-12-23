@@ -55,7 +55,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   //TODO calc rotation already when creating steps -> add flip symbols
   //TODO add reset view button???
   //TODO add small star onto metallic parts in the parts list as indicator
-  //TODO part list more padding, maybe justify center? and make 3x text bigger
   //TODO make reminder that green parts can be of any color: in beginning at end and in steps if it's used, maybe also in the hover over thing?
 
   moc?: Moc;
@@ -224,11 +223,12 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       /*event.stopImmediatePropagation();
       event.stopPropagation();
       event.preventDefault();*/
-      console.log('touchstart');
-      if (event.touches.length === 1)
+      if (event.touches.length === 1){
         this.isDragging[htmlElementIndex] = true;
-      /*else if (event.touches.length === 2)
-        this.isPanning = true;*/
+      }
+      else if (event.touches.length === 2){
+        this.previousTouch[htmlElementIndex] = event;
+      }
     });
     htmlElement.addEventListener('mouseup', event => {
       event.stopImmediatePropagation();
@@ -303,24 +303,24 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
           const deltaX = event.touches[0].clientX - prevTouch.touches[0].clientX;
           const deltaY = event.touches[0].clientY - prevTouch.touches[0].clientY;
           this.dragDelta[htmlElementIndex].push({mx: deltaX, my: deltaY});
-        }/* else if (event.touches.length === 2) { //pan or zoom
-          const prevDistance = Math.sqrt((this.previousTouch.touches[1].clientX - this.previousTouch.touches[0].clientX) ^ 2 + (this.previousTouch.touches[1].clientY - this.previousTouch.touches[0].clientY) ^ 2);
+        } else if (event.touches.length === 2){
+          const prevDistance = Math.sqrt((prevTouch.touches[1].clientX - prevTouch.touches[0].clientX) ^ 2 + (prevTouch.touches[1].clientY - prevTouch.touches[0].clientY) ^ 2);
           const newDistance = Math.sqrt((event.touches[1].clientX - event.touches[0].clientX) ^ 2 + (event.touches[1].clientY - event.touches[0].clientY) ^ 2);
+          if (Math.abs(prevDistance - newDistance) > this.instructionSettings.touchZoomEpsilon) //zoom //add smal lepsilon?
+            this.scrollDelta[htmlElementIndex] += prevDistance - newDistance;
+          console.log(prevDistance - newDistance);
+        }
+            /*pan
+            const touch0PositionChange = Math.sqrt((event.touches[0].clientX - this.previousTouch.touches[0].clientX) ^ 2 + (event.touches[0].clientY - this.previousTouch.touches[0].clientY) ^ 2);
+            const touch1PositionChange = Math.sqrt((event.touches[1].clientX - this.previousTouch.touches[1].clientX) ^ 2 + (event.touches[1].clientY - this.previousTouch.touches[1].clientY) ^ 2);
+            const avgTouchPositionChange = (touch0PositionChange + touch1PositionChange) / 2;
+            if (avgTouchPositionChange > 0) {
+              const avgXChange = ((event.touches[0].clientX - this.previousTouch.touches[0].clientX) + (event.touches[1].clientX - this.previousTouch.touches[1].clientX)) / 2;
+              const avgYChange = ((event.touches[0].clientY - this.previousTouch.touches[0].clientY) + (event.touches[1].clientY - this.previousTouch.touches[1].clientY)) / 2;
 
-          if (prevDistance - newDistance != 0) //zoom //add smal lepsilon?
-            this.scrollDelta += prevDistance - newDistance;
-
-          //pan
-          const touch0PositionChange = Math.sqrt((event.touches[0].clientX - this.previousTouch.touches[0].clientX) ^ 2 + (event.touches[0].clientY - this.previousTouch.touches[0].clientY) ^ 2);
-          const touch1PositionChange = Math.sqrt((event.touches[1].clientX - this.previousTouch.touches[1].clientX) ^ 2 + (event.touches[1].clientY - this.previousTouch.touches[1].clientY) ^ 2);
-          const avgTouchPositionChange = (touch0PositionChange + touch1PositionChange) / 2;
-          if (avgTouchPositionChange > 0) {
-            const avgXChange = ((event.touches[0].clientX - this.previousTouch.touches[0].clientX) + (event.touches[1].clientX - this.previousTouch.touches[1].clientX)) / 2;
-            const avgYChange = ((event.touches[0].clientY - this.previousTouch.touches[0].clientY) + (event.touches[1].clientY - this.previousTouch.touches[1].clientY)) / 2;
-
-            this.panDelta.push({mx: avgXChange, my: avgYChange});
-          }
-        }*/
+              this.panDelta.push({mx: avgXChange, my: avgYChange});
+            }
+          }*/
       }
       this.previousTouch[htmlElementIndex] = event;
     });

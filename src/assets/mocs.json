@@ -9705,8 +9705,8 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/usa/venture-star/v3.0/Venture_Star_V3.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/usa/venture-star/v3.0/Venture_Star_V3.0_2.png"
+      "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/v3.0/VentureStar_V3.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/v3.0/VentureStar_V3.0_2.jpg"
     ],
     "versions": [
       {
@@ -9716,17 +9716,17 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/usa/venture-star/v3.0/V3_pub.io",
-            "name": "V3_pub.io"
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/v3.0/VentureStar_V3.0_pub.io",
+            "name": "VentureStar_V3.0_pub.io"
           },
           {
             "description": "The pdf instructions",
             "type": "pdf",
             "export": false,
-            "link": "https://bricksafe.com/files/SkySaac/website/110/usa/venture-star/v3.0/V3.pdf",
-            "name": "V3.pdf"
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/v3.0/VentureStar_V3.0.pdf",
+            "name": "VentureStar_V3.0.pdf"
           }
         ],
         "version": "V3.0"

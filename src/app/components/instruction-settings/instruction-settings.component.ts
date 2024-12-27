@@ -30,6 +30,7 @@ export class InstructionSettingsComponent implements OnInit {
   cameraRotationSpeed!: number;
   partListCameraRotationSpeed!: number;
   touchZoomEpsilon!: number;
+  touchZoomSpeed!: number;
 
   panningSpeed!: number;
   resetTargetOnPageChange!: boolean;
@@ -78,6 +79,7 @@ export class InstructionSettingsComponent implements OnInit {
     this.cameraRotationSpeed = instructionSettings.cameraRotationSpeed;
     this.partListCameraRotationSpeed = instructionSettings.partListCameraRotationSpeed;
     this.touchZoomEpsilon = instructionSettings.touchZoomEpsilon;
+    this.touchZoomSpeed = instructionSettings.touchZoomSpeed;
 
     this.panningSpeed = instructionSettings.panningSpeed;
     this.resetTargetOnPageChange = instructionSettings.resetTargetOnPageChange;
@@ -122,6 +124,7 @@ export class InstructionSettingsComponent implements OnInit {
       cameraRotationSpeed: this.cameraRotationSpeed,
       partListCameraRotationSpeed: this.partListCameraRotationSpeed,
       touchZoomEpsilon: this.touchZoomEpsilon,
+      touchZoomSpeed: this.touchZoomSpeed,
 
       panningSpeed: this.panningSpeed,
       resetTargetOnPageChange: this.resetTargetOnPageChange,

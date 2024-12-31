@@ -5,6 +5,68 @@
       "China"
     ],
     "links": [
+      "https://en.wikipedia.org/wiki/Long_March_8",
+      "https://spacelaunchnow.me/vehicle/launch_vehicle/518/",
+      "https://nextspaceflight.com/launches/details/7518"
+    ],
+    "type": "rocket",
+    "id": 221,
+    "title": "Long March 8A",
+    "altTitles": ["CZ-8A","LM-8A","Long March 8G","CZ-8G","LM-8G"],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2024-12-31",
+    "dateCreated": "2024-12-31",
+    "related": [61,62],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Long March 8A rocket. The boosters and the second stage can be separated. The fairing can split in three and has some space for a payload.",
+    "rocketDescription": "The Long March 8A rocket is a Chinese orbital rocket. It is an updated variant of teh Long March 8 rocket. It features a different upper stage which is teh same diameter as the core stage. It can also use a wider payload fairing. The first launch is planned for 2025.",
+    "internalColor": "Green",
+    "scale": "110",
+    "parts": 869,
+    "dimensions": "8.1x7.2x45.6cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-8/long-march-8a/110-long-march-8a-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-8/long-march-8a/v1.0/Long_March_8A_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-8/long-march-8a/v1.0/Long_March_8A_V1.0_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-8/long-march-8a/v1.0/Long_March_8A_V1.0.io",
+            "name": "Long_March_8A_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "",
+    "region": [
+      "China"
+    ],
+    "links": [
       "https://nextspaceflight.com/launches/details/7576",
       "https://en.wikipedia.org/wiki/Long_March_12",
       "https://space.skyrocket.de/doc_lau/cz-12.htm"
@@ -11796,7 +11858,8 @@
     "lastUpdate": "2023-05-01",
     "dateCreated": "2021-12-23",
     "related": [
-      61
+      61,
+      221
     ],
     "updateMessage": "",
     "region": [
@@ -11860,7 +11923,8 @@
     "lastUpdate": "2023-05-01",
     "dateCreated": "2021-12-23",
     "related": [
-      62
+      62,
+      221
     ],
     "updateMessage": "",
     "region": [

@@ -223,5 +223,6 @@
 /moc/218/space-shuttle-tail-cone/
 /moc/219/phantom-express/
 /moc/220/long-march-12/
+/moc/221/long-march-8a/
 /about/
 /404/

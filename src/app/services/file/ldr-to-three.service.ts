@@ -325,6 +325,10 @@ export class LdrToThreeService {
         partGeometry.translate(0, 0, 20);
       else if (partName == "49803.dat")
         partGeometry.translate(0, -32, 0);
+    }else if(viewerVersion === "V2"){
+      if(partName == "63965.dat"){
+        partGeometry.translate(0, 1.5, 0);
+      }
     }
   }
 

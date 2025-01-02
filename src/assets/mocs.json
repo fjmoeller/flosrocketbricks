@@ -11,7 +11,11 @@
     "type": "rocket",
     "id": 222,
     "title": "Saturn IB",
-    "altTitles": ["Saturn 1B","Saturn-1B","Saturn-IB"],
+    "altTitles": [
+      "Saturn 1B",
+      "Saturn-1B",
+      "Saturn-IB"
+    ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2025-01-01",
@@ -73,12 +77,21 @@
     "type": "rocket",
     "id": 221,
     "title": "Long March 8A",
-    "altTitles": ["CZ-8A","LM-8A","Long March 8G","CZ-8G","LM-8G"],
+    "altTitles": [
+      "CZ-8A",
+      "LM-8A",
+      "Long March 8G",
+      "CZ-8G",
+      "LM-8G"
+    ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2024-12-31",
     "dateCreated": "2024-12-31",
-    "related": [61,62],
+    "related": [
+      61,
+      62
+    ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Long March 8A rocket. The boosters and the second stage can be separated. The fairing can split in three and has some space for a payload.",
     "rocketDescription": "The Long March 8A rocket is a Chinese orbital rocket. It is an updated variant of teh Long March 8 rocket. It features a different upper stage which is teh same diameter as the core stage. It can also use a wider payload fairing. The first launch is planned for 2025.",
@@ -135,7 +148,10 @@
     "type": "rocket",
     "id": 220,
     "title": "Long March 12",
-    "altTitles": ["CZ-12","LM-12"],
+    "altTitles": [
+      "CZ-12",
+      "LM-12"
+    ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2024-12-21",
@@ -198,7 +214,10 @@
     "type": "rocket",
     "id": 219,
     "title": "Phantom Express",
-    "altTitles": ["XS-1","XS-P"],
+    "altTitles": [
+      "XS-1",
+      "XS-P"
+    ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2024-11-30",
@@ -863,13 +882,13 @@
     "altTitles": [],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2024-10-26",
+    "lastUpdate": "2025-01-02",
     "dateCreated": "2024-07-18",
     "related": [
       99
     ],
     "updateMessage": "",
-    "mocDescription": "This is a MOC of the ELA-4 launchtable and umbilical mast used for the Ariane 6 rocket. The configuration on this MOC is for the Ariane 62 rocket. It is compatible with my Ariane 6 FM1 rocket MOC.",
+    "mocDescription": "This is a MOC of the ELA-4 launchtable and umbilical mast used for the Ariane 6 rocket. The configuration on this MOC is for the Ariane 62 rocket. It is compatible with my Ariane 6 FM1 rocket MOC. If you want the Ariane 64, which has four boosters to go onto it you will need the ELA-4_Launchpad_6_Expansion_V1.3.io file as well.",
     "rocketDescription": "The launchtable and the umbilical mast are used on the ELA-4 launchpad for the Ariane 6 rocket.",
     "internalColor": "Dark Pink",
     "scale": "110",
@@ -897,6 +916,15 @@
             "viewer": "V1",
             "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.3/ELA-4_Launchpad_V1.3.io",
             "name": "ELA-4_Launchpad_V1.3.io"
+          },
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.3/ELA-4_Launchpad_6_Expansion_V1.3.io",
+            "name": "ELA-4_Launchpad_6_Expansion_V1.3.io"
           },
           {
             "description": "The pdf instructions",

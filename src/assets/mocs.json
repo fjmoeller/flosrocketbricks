@@ -913,7 +913,7 @@
             "description": "The digital io file",
             "type": "io",
             "export": true,
-            "viewer": "V1",
+            "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/ela-4/launchpad/v1.3/ELA-4_Launchpad_V1.3.io",
             "name": "ELA-4_Launchpad_V1.3.io"
           },
@@ -8955,7 +8955,7 @@
             "description": "The digital io file",
             "type": "io",
             "export": true,
-            "viewer": "V1",
+            "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/62/fm1/v3.4/Ariane_62_FM1_V3.4.io",
             "name": "Ariane_62_FM1_V3.4.io"
           },

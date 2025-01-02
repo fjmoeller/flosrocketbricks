@@ -5524,29 +5524,46 @@
     "altTitles": [],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2023-10-03",
+    "lastUpdate": "2025-02-02",
     "dateCreated": "2023-10-03",
     "related": [
       99,
       98
     ],
-    "updateMessage": "Small update coming soon!",
+    "updateMessage": "",
     "mocDescription": "This is a MOC of the Ariane 6 rocket in its 64 configuration and with a large payload fairing. The boosters and the second stage can be separated from the core stage. Further the payload fairings can be separated form the upper stage and hold space for a potential payload.",
     "rocketDescription": "The Ariane 6 rocket is an orbital rocket by Arianegroup. It has four solid boosters and a hydrolox core and upper stage. The 64 variant has four boosters. The first launch is expected to happen in 2024.",
     "internalColor": "Dark Pink",
     "scale": "110",
-    "parts": 1478,
-    "dimensions": "10x10.3x57cm",
+    "parts": 1705,
+    "dimensions": "10x10.3x57.6cm",
     "stability": -1,
     "difficulty": -1,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/64/110-ariane-64-v2.7.png",
+    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/64/110-ariane-64-v3.4.jpg",
     "pictures": [
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_1.png",
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_2.png",
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v2.7/Ariane_64_V2.7_3.png"
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v3.4/Ariane_64_V3.4_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v3.4/Ariane_64_V3.4_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v3.4/Ariane_64_V3.4_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v3.4/Ariane_64_V3.4_4.jpg"
     ],
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v3.4/Ariane_64_V3.4.io",
+            "name": "Ariane_64_V3.4.io"
+          }
+        ],
+        "version": "V3.4"
+      },
       {
         "changelog": "",
         "versionExtra": "",

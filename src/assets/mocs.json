@@ -16419,6 +16419,7 @@
   },
   {
     "id": 8,
+    "title": "New Glenn",
     "related": [
       195
     ],
@@ -16595,13 +16596,12 @@
     "difficulty": 3,
     "companyExtra": "",
     "pictures": [
-      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.8/New_Glenn_V4.0_1.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.8/New_Glenn_V4.0_2.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.8/New_Glenn_V4.0_3.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.8/New_Glenn_V4.0_4.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v3.8/New_Glenn_V4.0_5.jpg"
-    ],
-    "title": "New Glenn"
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0_5.jpg"
+    ]
   },
   {
     "id": 7,

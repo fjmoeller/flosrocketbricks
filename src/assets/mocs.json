@@ -5552,7 +5552,7 @@
     "altTitles": [],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2025-02-02",
+    "lastUpdate": "2025-01-02",
     "dateCreated": "2023-10-03",
     "related": [
       99,
@@ -16436,13 +16436,29 @@
     "region": [
       "USA"
     ],
-    "parts": 2234,
+    "parts": 2092,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/usa/new-glenn/110-new-glenn-v3.8.jpg",
+    "smallCoverImage": "assets/mocImages/110/usa/new-glenn/110-new-glenn-v4.0.jpg",
     "regionExtra": "",
-    "partsExtra": "Two parts (2x 98100) are not available in DBG by Lego. Either buy them non-Lego or change the color to LBG.",
+    "partsExtra": "A few parts aren't available by Lego in the correct colors (15712, 48336). You'll need a different supplier for these.",
     "internalColorExtra": "",
     "versions": [
+      {
+        "files": [
+          {
+            "name": "New_Glenn_V4.0.io",
+            "description": "The digital file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V4.0",
+        "changelog": ""
+      },
       {
         "files": [
           {
@@ -16575,7 +16591,7 @@
     "type": "rocket",
     "designerExtra": "",
     "dateCreated": "2023-02-13",
-    "lastUpdate": "2024-04-08",
+    "lastUpdate": "2025-01-05",
     "difficulty": 3,
     "companyExtra": "",
     "pictures": [

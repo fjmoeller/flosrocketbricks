@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
-import { Collection, Moc } from '../../model/classes';
-import { MetaServiceService } from 'src/app/services/meta-service.service';
-import { CollectionGrabberService } from 'src/app/services/grabber/collection-grabber.service';
-import { ActivatedRoute } from '@angular/router';
-import { CardComponent } from 'src/app/components/card/card.component';
+import {Component, OnInit} from '@angular/core';
+import {MocGrabberService} from 'src/app/services/grabber/moc-grabber.service';
+import {Collection, Moc} from '../../model/classes';
+import {MetaServiceService} from 'src/app/services/meta-service.service';
+import {CollectionGrabberService} from 'src/app/services/grabber/collection-grabber.service';
+import {RouterLink} from '@angular/router';
+import {CardComponent} from 'src/app/components/card/card.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent, RouterLink, NgOptimizedImage],
   selector: 'app-start',
   templateUrl: './start.component.html',
   styleUrls: ['./start.component.sass']
@@ -19,14 +20,14 @@ export class StartComponent implements OnInit {
   newestUpdates: Moc[] = [];
   collections: Collection[] = [];
 
-  constructor(private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private collectionGrabberService: CollectionGrabberService) {
+  constructor(private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private collectionGrabberService: CollectionGrabberService) {
   }
 
   ngOnInit(): void {
     this.metaService.setDefaultTags("Start - FlosRocketBricks", "https://flosrocketbricks.com/");
 
     this.newestMocs = this.mocGrabberService.getAllMocs().sort((a: Moc, b: Moc) => b.id - a.id).slice(0, 6);
-    this.newestUpdates = this.mocGrabberService.getAllMocs().sort((a: Moc, b: Moc) => b.lastupdate > a.lastupdate? 1 : -1).slice(0, 6);
+    this.newestUpdates = this.mocGrabberService.getAllMocs().sort((a: Moc, b: Moc) => b.lastUpdate > a.lastUpdate ? 1 : -1).slice(0, 6);
     this.collections = this.collectionGrabberService.getAllCollections().sort((a: Collection, b: Collection) => b.id - a.id).slice(0, 6);
   }
 

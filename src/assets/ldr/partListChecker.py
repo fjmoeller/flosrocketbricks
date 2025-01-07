@@ -1,90 +1,101 @@
-# this script can be used to check whether an io file can be used to automatically create parts lists for bricklink and rebrickable from
+# This script checks all .io files in the current directory and checks if all parts have mappings in order for the website export feature to be used
 
 from zipfile import ZipFile
 import os
 import json
 
-printedDict = {}
-manualMappedList = []
 
-def searchPartsListJson(ldrawPartId,partsMappingJson):
-    rParts = set()
-    bParts = set()
-    for partMapping in partsMappingJson:
-        if ldrawPartId in partMapping["l"]:
-            rParts.add(partMapping["r"])
-            for bricklinkId in partMapping["b"]:
-                bParts.add(bricklinkId)
-    return (rParts,bParts)
-    
-def isPartInManualExportPartMappingList(mocPart):
-    return mocPart in manualMappedList
+class PartMapping:
+    b = []
+    r = ""
+    l = []
 
-#create dict of mappedPrintedList
-#with open("lists/mappedPrintedList.txt", 'r', encoding="utf8") as mapfile:
-#    for line in mapfile:
-#        mappedPart = line.replace("\n", "").replace("\r", "").replace("\t", "").split(",")
-#        printedDict[mappedPart[0]] = mappedPart[1]
-#print("PrintedMapperFile read with total entries: "+str(len(printedDict.keys())))
-with open("lists/mappedPrintedList.json", 'r', encoding="utf8") as mappingFile:
-    printPartMappings = json.load(mappingFile)
-    for partMapping in printPartMappings:
-        printedDict[partMapping["l"]] = partMapping["b"]
-print("PrintedMapperFile read with total entries: "+str(len(printedDict.keys())))
-
-#create dict of manualExportPartMappingList
-with open("lists/manualExportPartMappingList.json", 'r', encoding="utf8") as mapfile:
-    partsmapping = json.load(mapfile)
-    for mapping in partsmapping:
-        manualMappedList.append(mapping["l"])
-print("ManualExportPartMappingList read with total entries: "+str(len(manualMappedList)))
+    def __init__(self, b, r, l):
+        self.b = b
+        self.r = r
+        self.l = l
 
 
-for mocfile in os.listdir(os.getcwd()):
+class PartMappingFix:
+    b = ""
+    r = ""
+    l = ""
+
+    def __init__(self, b, r, l):
+        self.b = b
+        self.r = r
+        self.l = l
+
+
+partList: list[PartMapping] = []
+partListFix: dict[str, PartMappingFix] = {}
+
+with open("lists/partList.json", 'r', encoding="utf8") as mappingFile:
+    partMappings = json.load(mappingFile)
+    for partMapping in partMappings:
+        partList.append(PartMapping(partMapping["b"], partMapping["r"], partMapping["l"]))
+print("PartList read with total entries: " + str(len(partList)))
+
+with open("lists/partListFix.json", 'r', encoding="utf8") as mappingFile:
+    partMappings = json.load(mappingFile)
+    for partMapping in partMappings:
+        partListFix[partMapping["io"]] = PartMappingFix(partMapping["b"], partMapping["r"], partMapping["l"])
+print("PartListFix read with total entries: " + str(len(partListFix.keys())))
+
+
+def isPartInPartList(part):
+    for partMapping in partList:
+        if part in partMapping.l:
+            if len(partMapping.b) == 1:
+                return 1
+            elif len(partMapping.b) > 1:
+                return len(partMapping.b)
+            return 0
+    return -1
+
+
+for mocFile in os.listdir(os.getcwd()):
     problemCounter = 0
     mocParts = set()
-    if mocfile.endswith(".io"):
+    if mocFile.endswith(".io"):
         customParts = 0
-        print("io file "+mocfile)
-        with ZipFile(os.path.join(os.getcwd(), mocfile), 'r') as iofile:
+        print("----Looking at io file " + mocFile+"----")
+        with ZipFile(os.path.join(os.getcwd(), mocFile), 'r') as iofile:
             iofile.extract("model.ldr", path=os.getcwd())
             with open("model.ldr", "r") as f:
                 lines = f.readlines()
-                skipcurrently = False
+                skipCurrently = False
                 for line in lines:
-                    if skipcurrently: #currently skipping lines
-                        if "NOFILE" in line: #end of custom hose or string
-                            skipcurrently = False
+                    if skipCurrently:  # currently skipping lines
+                        if "NOFILE" in line:  # end of custom hose or string
+                            skipCurrently = False
                         continue
-                    if line[0] == "1" and line.strip().endswith(".dat"): #normal line to work with
+                    if line[0] == "1" and line.strip().endswith(".dat"):  # normal line to work with
                         mocParts.add(line.split(".dat")[0].split(" ")[-1])
-                    if line[2:8] == "String" or line[2:6] == "Hose": # start of custom hose or string -> skip following lines
-                        skipcurrently = True
+                    if line[2:8] == "String" or line[2:6] == "Hose":  # start of custom hose or string -> skip following lines
+                        skipCurrently = True
                         customParts += 1
             os.remove("model.ldr")
-        with open("lists/partsList.json","r") as partsmappingfile:
-            partsmapping = json.load(partsmappingfile)
-            #print("Checking a total of "+ str(len(mocParts))+ " parts against a total of "+str(len(partsmapping))+" mappings")
-            for mocPart in mocParts:
-                partMappings = searchPartsListJson(mocPart,partsmapping) #search if part is in json
-                if len(partMappings[0])==1 and len(partMappings[1])==1: #everything good, easy mapping
-                    continue
-                if isPartInManualExportPartMappingList(mocPart): #check if manualExportPartMappingList file has defined on what to choose
-                    continue
-                if len(partMappings[0])>=1 or len(partMappings[1])>=1:
-                    print("Problem found with Part l:" +mocPart+ " r:" +str(partMappings[0])+ " b:" +str(partMappings[1]))
-                    problemCounter += 1
-                else: #one of the mappings is at an amount of 0, if both are 0 then studio probably saved the bricklink id instead of the ldraw id...
-                    #now check if it's part of the printed parts map
-                    if mocPart+".dat" in printedDict: #if it's in the printed list -> mocPart is actually a bricklink id
-                        actualLdrawPart = printedDict[mocPart+".dat"]
-                        actualPartMappings = searchPartsListJson(actualLdrawPart,partsmapping)
-                    else:
-                        print("Problem found with Part l:" +mocPart+ " r:{} b:{}")
-                        problemCounter += 1
+
+        print("io file contains "+ str(len(mocParts))+ " parts")
+        for mocPart in mocParts:
+            if mocPart in partListFix and partListFix[mocPart].b != "" and partListFix[mocPart].r != "":
+                continue
+            partMapping = isPartInPartList(mocPart)  # search if part is in json
+            if partMapping == 1:
+                continue
+            elif partMapping > 1:
+                print("Problem found with Part l:" + mocPart + " b: " + str(partMapping))
+                problemCounter += 1
+            elif partMapping == 0:
+                print("Problem found with Part l:" + mocPart + " r:{} b:{}")
+                problemCounter += 1
+            else:
+                print("Problem found with Part l:" + mocPart + " not found")
+                problemCounter += 1
         if customParts > 0:
-            print("Warning: a total of "+str(customParts)+" custom parts found!")
+            print("Warning: a total of " + str(customParts) + " custom parts found!")
         if problemCounter > 0:
-            print("Total of " +str(problemCounter)+ " problems found!")
+            print("Total of " + str(problemCounter) + " problems found!")
         else:
             print("No problems found!")

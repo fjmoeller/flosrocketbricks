@@ -59,12 +59,8 @@ export class MetaServiceService {
     this.setAllTags(title, desc, url, image);
   }
 
-  getPageMocLink(id: number, title: string): string {
-    return "/moc/" + this.getPageLinks(id, title);
-  }
-
-  private getPageLinks(id: number, title: string): string {
-    return id.toString() + "/" + title.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("") + "/";
+  getPageMocLink(id: number, mocTitle: string): string {
+    return "/moc/" + id.toString() + "/" + mocTitle.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("").split(":").join("-").split("--").join("-") + "/";
   }
 
   getTotalMocLink(moc: Moc): string {

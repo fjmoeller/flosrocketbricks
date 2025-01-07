@@ -3,7 +3,8 @@
     <div class="d-flex justify-content-center align-items-center pt-5">
         <div class="spinner-border" role="status">
         </div>
+        <span class="mx-2 text-coloring">{{loadingText | async}}</span>
     </div>
-}
-    <canvas #canvas id="canvas-box"></canvas>
+    }
+    <canvas id="canvas-box"></canvas>
 </div>

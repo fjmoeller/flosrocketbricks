@@ -1,14 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Matrix4 } from 'three';
+import {Injectable} from '@angular/core';
+import {Matrix4} from 'three';
 import * as zip from "@zip.js/zip.js";
-import { PartReference } from '../../model/ldrawParts';
-import { IoFileService } from './io-file.service';
-import { LdrawColorService } from './ldraw-color.service';
-import { SimpleLdrSubmodel, SimpleReference } from '../../model/simpleLdrawParts';
-import manualExportPartMappingList from '../../../assets/ldr/lists/manualExportPartMappingList.json'
-import mappedPrintedList from '../../../assets/ldr/lists/mappedPrintedList.json'
-import partsList from '../../../assets/ldr/lists/partsList.json'
-import { MultiPartMapping, SinglePartMapping, PrintPartMapping } from 'src/app/model/partMappings';
+import {PartReference} from '../../model/ldrawParts';
+import {LdrToThreeService} from './ldr-to-three.service';
+import {LdrawColorService} from '../color/ldraw-color.service';
+import {SimpleLdrSubmodel, SimpleReference} from '../../model/simpleLdrawParts';
+import {PartMapping, SpecificPartMapping, PartMappingFix, BricklinkRefactoredPart} from 'src/app/model/partMappings';
+import bricklink_refactored_parts from '../../../assets/ldr/lists/bricklink_refactored_parts.json'
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -17,119 +16,100 @@ export class FileExportService {
 
   private replaceColor: boolean = true;
 
-  private separationString: string = "###";
+  private separationString = "###";
 
-  private backendFetchUrl: string = "https://worker.flosrocketbackend.com/viewer/?apiurl=";
+  private countedPartMap = new Map<string, number>();
+  private mappedCountedPartMap = new Map<string, number>();
 
-  private countedPartMap: Map<string, number> = new Map<string, number>();
-  private usedPartsSet = new Set<string>();
+  constructor(private ldrToThreeService: LdrToThreeService, private ldrawColorService: LdrawColorService) {
+  }
 
-  private modelPartMappings: Map<string, { r: string, b: string }> = new Map();
+  async collectUsedPartsMappings(url: string, isBr: boolean): Promise<void> {
 
-  constructor(private ioFileService: IoFileService, private ldrawColorService: LdrawColorService) { }
-
-  async collectUsedPartsMappings(url: string): Promise<void> {
-    //fetch the moc specific partmapping list
-    const fetchResult = await fetch(this.backendFetchUrl + url + "_pm.json");
-    let mocSpecificMappedParts: SinglePartMapping[] = [];
+    const fetchResult = await fetch(environment.backendFetchUrl + url + "_pm.json");
+    let mocSpecificMappedParts: SpecificPartMapping[] = [];
     if (fetchResult.status != 404)
-      mocSpecificMappedParts = (await fetchResult.json()) as SinglePartMapping[];
+      mocSpecificMappedParts = (await fetchResult.json()) as SpecificPartMapping[];
 
-    const allPartsList: MultiPartMapping[] = (partsList as MultiPartMapping[]);
-    const printedMapping: PrintPartMapping[] = (mappedPrintedList as PrintPartMapping[]);
-    const manualPartMapping: SinglePartMapping[] = (manualExportPartMappingList as SinglePartMapping[]);
-    this.modelPartMappings.clear();
-    for (let usedPartId of this.usedPartsSet) {
+    const partList: PartMapping[] = await (await fetch("/assets/ldr/lists/partList.json")).json() as PartMapping[];
+    const partListFix: PartMappingFix[] = await (await fetch("/assets/ldr/lists/partListFix.json")).json() as PartMappingFix[];
 
-      const specificmappedPart = mocSpecificMappedParts.find(printMapping => printMapping.l == usedPartId); //checking if it is a manually mapped part
-      if (specificmappedPart != undefined) {
-        this.modelPartMappings.set(usedPartId, { r: specificmappedPart.r, b: specificmappedPart.b });
-        continue;
-      }
+    for (let countedPart of this.countedPartMap.keys()) {
+      const colorIdKey = countedPart.split(this.separationString); //1sr part contains color, 2nd the id
+      let mappedId = "";
 
-      const mappedPart = manualPartMapping.find(printMapping => printMapping.l == usedPartId); //checking if it is a manually mapped part
-      if (mappedPart != undefined) {
-        this.modelPartMappings.set(usedPartId, { r: mappedPart.r, b: mappedPart.b });
-        continue;
-      }
-
-      let ldrawId = usedPartId; //might actually not be an ldraw id at this point but that will be fixed below (or later)
-
-      const actualLdrawId = printedMapping.filter(printMapping => printMapping.b == usedPartId); //checking if it is a printed part bricklink id
-      if (actualLdrawId.length > 0) {
-        ldrawId = actualLdrawId[0].l;
-      }
-      let alert = 0;
-      for (let partMapping of allPartsList) { //TODO assert that 
-        if (partMapping.l.includes(ldrawId)) { //at this point this should only be valid once
-          this.modelPartMappings.set(usedPartId, { r: partMapping.r, b: partMapping.b[0] });
-          alert += 1;
-          //continue;
+      const specificmappedPart = mocSpecificMappedParts.find(printMapping => printMapping.l == colorIdKey[1]);
+      if (specificmappedPart != undefined)
+        mappedId = isBr ? specificmappedPart.b : specificmappedPart.r;
+      else {
+        const mappedPartFix = partListFix.find(part => part.io == colorIdKey[1]);
+        if (mappedPartFix != undefined) {
+          mappedId = isBr ? mappedPartFix.b : mappedPartFix.r;
+        } else {
+          const mappedPart = partList.find(part => part.b.length > 0 && part.r !== "" && part.l.includes(colorIdKey[1]));
+          if (mappedPart != undefined) {
+            if (mappedPart.b.length > 1) console.warn("Error: " + mappedPart + " has multiple mappings, check the python validation script!");
+            else mappedId = isBr ? mappedPart.b[0] : mappedPart.r;
+          }
         }
       }
-      if (alert > 1)
-        console.error("Error: " + ldrawId + " has multiple mappings, check the python validation script!");
+      if (!mappedId) {
+        console.error("No mapping found for part" + countedPart);
+        continue;
+      }
+      const newKey = colorIdKey[0] + this.separationString + mappedId;
+      const newCount = (this.mappedCountedPartMap.get(newKey) ?? 0) + (this.countedPartMap.get(countedPart) ?? 0);
+      this.mappedCountedPartMap.set(newKey, newCount);
     }
   }
 
   async getXml(url: string, placeholderColor: string): Promise<string> {
-    this.countedPartMap.clear();
     await this.collectParts(url);
-    await this.collectUsedPartsMappings(url);
+    await this.collectUsedPartsMappings(url, true);
 
-    const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(placeholderColor);
-
+    const placeHolderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(placeholderColor);
 
     let xml = "<INVENTORY>\n";
-    for (let key of this.countedPartMap.keys()) {
+    for (let key of this.mappedCountedPartMap.keys()) {
       const colorIdKey = key.split(this.separationString); //1sr part contains color, 2nd the id
       let color = "0";
-      if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
-        color = "" + this.ldrawColorService.getBricklinkColorOf(colorIdKey[0], 0);
-      }
-
-      if (!this.modelPartMappings.has(colorIdKey[1].split(".dat")[0]))
-        console.error("Part with ID " + colorIdKey[1].split(".dat")[0] + " not found!")
-
-      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + this.modelPartMappings.get(colorIdKey[1].split(".dat")[0])?.b + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.countedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
+      if (!this.replaceColor || placeHolderColorCode != Number(colorIdKey[0])) //if the color is not the to be replaced one
+        color = "" + this.ldrawColorService.getBricklinkColorIdByLdrawColorId(colorIdKey[0], 0);
+      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + colorIdKey[1] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.mappedCountedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
     }
     xml += "</INVENTORY>";
 
+    //this.fixBricklinkRefactoredParts();
+
     this.countedPartMap.clear();
-    this.usedPartsSet.clear();
-    this.modelPartMappings.clear();
+    this.mappedCountedPartMap.clear();
     return xml;
   }
 
   async getCsv(url: string, colorName: string): Promise<string> {
-    this.countedPartMap.clear();
     await this.collectParts(url);
-    await this.collectUsedPartsMappings(url);
+    await this.collectUsedPartsMappings(url, false);
 
-    const placeHolderColorcode = this.ldrawColorService.getPlaceholderColorCode(colorName);
+    const placeHolderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(colorName);
 
     let csv = "Part,Color,Quantity,Is Spare\n";
-    for (let key of this.countedPartMap.keys()) {
+    for (let key of this.mappedCountedPartMap.keys()) {
       const colorIdKey = key.split(this.separationString);
       let color = "9999";
-      if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
-        color = "" + this.ldrawColorService.getRebrickableColorOf(colorIdKey[0], 9999);
+      if (!this.replaceColor || placeHolderColorCode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
+        color = "" + this.ldrawColorService.getRebrickableColorIdByLdrawColorId(colorIdKey[0], 9999);
       }
-
-      if (!this.modelPartMappings.has(colorIdKey[1].split(".dat")[0]))
-        console.error("Part with ID " + colorIdKey[1].split(".dat")[0] + " not found!")
-
-      csv += this.modelPartMappings.get(colorIdKey[1].split(".dat")[0])?.r + "," + color + "," + this.countedPartMap.get(key) + ",False\n";
+      csv += colorIdKey[1] + "," + color + "," + this.mappedCountedPartMap.get(key) + ",False\n";
     }
 
     this.countedPartMap.clear();
-    this.usedPartsSet.clear();
-    this.modelPartMappings.clear();
+    this.mappedCountedPartMap.clear();
     return csv;
   }
 
   private async collectParts(url: string): Promise<void> {
-    const content = await fetch(this.backendFetchUrl + url);
+    //TODO does it work without fetch url (the worker) now (for non bricksafe stuff)?
+    const content = await fetch(environment.backendFetchUrl + url);
     const ldrFile = await this.extractLdrFile(content);
 
     //go through all things => collect submodels and parts
@@ -150,27 +130,23 @@ export class FileExportService {
         else { //if is part
           const id = reference.color + this.separationString + reference.name;
           this.countedPartMap.set(id, (this.countedPartMap.get(id) ?? 0) + 1);
-          this.usedPartsSet.add(reference.name);
         }
       }
     );
   }
 
-  private async extractLdrFile(file: any): Promise<string> {
+  async extractLdrFile(file: Response): Promise<string> {
     try {
       const blob = await file.blob();
-      const options = { password: "soho0909", filenameEncoding: "utf-8" };
+      const options = {password: "soho0909", filenameEncoding: "utf-8"};
       const entries = await (new zip.ZipReader(new zip.BlobReader(blob), options)).getEntries();
       const model = entries.find(e => e.filename == "model.ldr");
-      if(model == undefined)
-        return "";
       if (model && model.getData) {
         const blob = await model.getData(new zip.BlobWriter());
         return await blob.text();
       }
     } catch (e) {
-      console.error("Error extracting ldr from io file!");
-      console.error(e);
+      console.error("Error extracting ldr from io file!", e);
     }
     return "";
   }
@@ -195,11 +171,9 @@ export class FileExportService {
           if (submodelLine.includes(".dat")) {
             isCustomPart = true;
             break;
-          }
-          else
+          } else
             submodelName = submodelLine.slice(7).toLowerCase();
-        }
-        else if (submodelLine.startsWith("0 Name:") && submodelName == "no name") //backup in case no name got set which can happen
+        } else if (submodelLine.startsWith("0 Name:") && submodelName == "no name") //backup in case no name got set which can happen
           submodelName = submodelLine.slice(9).toLowerCase();
       }
 
@@ -208,16 +182,37 @@ export class FileExportService {
 
       const ldrSubmodel = new SimpleLdrSubmodel(submodelName, references);
 
-      if (!topSubmodelSet) { topLdrSubmodel = ldrSubmodel; topSubmodelSet = true; }
+      if (!topSubmodelSet) {
+        topLdrSubmodel = ldrSubmodel;
+        topSubmodelSet = true;
+      }
 
       ldrSubModelMap.set(submodelName, ldrSubmodel);
     }
 
-    return { "submodelMap": ldrSubModelMap, "topLdrSubmodel": topLdrSubmodel };
+    return {"submodelMap": ldrSubModelMap, "topLdrSubmodel": topLdrSubmodel};
   }
 
   private parseLineTypeOne(line: string): PartReference {
-    const splittedLine = this.ioFileService.splitter(line, " ", 14);
+    const splittedLine = this.ldrToThreeService.splitter(line, " ", 14);
     return new PartReference(splittedLine[splittedLine.length - 1].split(".dat")[0], new Matrix4(), parseInt(splittedLine[1]), false);
+  }
+
+  private fixBricklinkRefactoredParts(): void {
+    const partMappings: BricklinkRefactoredPart[] = bricklink_refactored_parts as BricklinkRefactoredPart[];
+    const keysToRemove: string[] = [];
+    for (let key of this.mappedCountedPartMap.keys()) {
+      const colorIdKey = key.split(this.separationString); //1sr part contains color, 2nd the id
+      const value = this.mappedCountedPartMap.get(key);
+      const mapping = partMappings.find(v => v.oldId === colorIdKey[1]);
+      if (mapping && value !== undefined) {
+        keysToRemove.push(key);
+        const newColorIdKey = colorIdKey[0] + this.separationString + mapping.newId;
+        this.mappedCountedPartMap.set(newColorIdKey, (this.mappedCountedPartMap.get(newColorIdKey) ?? 0) + value);
+      }
+    }
+    for (let key in keysToRemove) {
+      this.mappedCountedPartMap.delete(key);
+    }
   }
 }

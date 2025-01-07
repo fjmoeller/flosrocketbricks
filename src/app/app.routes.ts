@@ -9,6 +9,7 @@ import { CollectionComponent } from './pages/collection/collection.component';
 import { OrbiterComponent } from './pages/orbiter/orbiter.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { Location } from '@angular/common';
+import {InstructionViewerComponent} from "./pages/instruction-viewer/instruction-viewer.component";
 import { BlogComponent } from './pages/blog/blog.component';
 
 const __stripTrailingSlash = (Location as any).stripTrailingSlash;
@@ -28,6 +29,9 @@ export const routes: Routes = [
   { path: 'start/.', component: StartComponent },
   { path: 'blogs/.', component: BlogOverviewComponent },
   { path: 'blogs/:id/:name/.', component: BlogComponent },
+  { path: 'instruction-viewer/.', component: InstructionViewerComponent },
+  { path: 'instruction-viewer/:id/:version/:file/.', component: InstructionViewerComponent },
+  { path: 'instruction-viewer/:id/:version/:file/:stepIndex/.', component: InstructionViewerComponent },
   { path: 'collections/.', component: CollectionOverviewComponent },
   { path: 'collection/:id/:name/.', component: CollectionComponent },
   { path: 'orbiter/.', component: OrbiterComponent },

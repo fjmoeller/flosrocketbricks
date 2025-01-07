@@ -56,6 +56,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   //TODO add reset view button???
   //TODO add small star onto metallic parts in the parts list as indicator
   //TODO make reminder that green parts can be of any color: in beginning at end and in steps if it's used, maybe also in the hover over thing?
+  //TODO dont show submodel indicator if it already has subsubmodels with steps
 
   moc?: Moc;
   file: File;

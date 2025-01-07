@@ -35,3 +35,8 @@ export class SpecificPartMapping {
         this.l = l;
     }
 }
+
+export class BricklinkRefactoredPart {
+  oldId!:string;
+  newId!:string;
+}

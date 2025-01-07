@@ -5,7 +5,8 @@ import {PartReference} from '../../model/ldrawParts';
 import {LdrToThreeService} from './ldr-to-three.service';
 import {LdrawColorService} from '../color/ldraw-color.service';
 import {SimpleLdrSubmodel, SimpleReference} from '../../model/simpleLdrawParts';
-import {PartMapping, SpecificPartMapping, PartMappingFix} from 'src/app/model/partMappings';
+import {PartMapping, SpecificPartMapping, PartMappingFix, BricklinkRefactoredPart} from 'src/app/model/partMappings';
+import bricklink_refactored_parts from '../../../assets/ldr/lists/bricklink_refactored_parts.json'
 import {environment} from "../../../environments/environment";
 
 @Injectable({
@@ -20,8 +21,6 @@ export class FileExportService {
   private countedPartMap = new Map<string, number>();
   private mappedCountedPartMap = new Map<string, number>();
 
-  private partMappings = new Map<string, { r: string, b: string }>();
-
   constructor(private ldrToThreeService: LdrToThreeService, private ldrawColorService: LdrawColorService) {
   }
 
@@ -34,8 +33,6 @@ export class FileExportService {
 
     const partList: PartMapping[] = await (await fetch("/assets/ldr/lists/partList.json")).json() as PartMapping[];
     const partListFix: PartMappingFix[] = await (await fetch("/assets/ldr/lists/partListFix.json")).json() as PartMappingFix[];
-
-    this.partMappings.clear();
 
     for (let countedPart of this.countedPartMap.keys()) {
       const colorIdKey = countedPart.split(this.separationString); //1sr part contains color, 2nd the id
@@ -67,8 +64,6 @@ export class FileExportService {
   }
 
   async getXml(url: string, placeholderColor: string): Promise<string> {
-    this.countedPartMap.clear();
-    this.mappedCountedPartMap.clear();
     await this.collectParts(url);
     await this.collectUsedPartsMappings(url, true);
 
@@ -84,34 +79,31 @@ export class FileExportService {
     }
     xml += "</INVENTORY>";
 
+    //this.fixBricklinkRefactoredParts();
+
     this.countedPartMap.clear();
-    this.partMappings.clear();
     this.mappedCountedPartMap.clear();
     return xml;
   }
 
   async getCsv(url: string, colorName: string): Promise<string> {
-    this.countedPartMap.clear();
-    this.mappedCountedPartMap.clear();
     await this.collectParts(url);
     await this.collectUsedPartsMappings(url, false);
 
-    const placeHolderColorcode = this.ldrawColorService.getLdrawColorIdByColorName(colorName);
+    const placeHolderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(colorName);
 
     let csv = "Part,Color,Quantity,Is Spare\n";
     for (let key of this.mappedCountedPartMap.keys()) {
       const colorIdKey = key.split(this.separationString);
       let color = "9999";
-      if (!this.replaceColor || placeHolderColorcode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
+      if (!this.replaceColor || placeHolderColorCode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
         color = "" + this.ldrawColorService.getRebrickableColorIdByLdrawColorId(colorIdKey[0], 9999);
       }
-
       csv += colorIdKey[1] + "," + color + "," + this.mappedCountedPartMap.get(key) + ",False\n";
     }
 
     this.countedPartMap.clear();
     this.mappedCountedPartMap.clear();
-    this.partMappings.clear();
     return csv;
   }
 
@@ -154,7 +146,7 @@ export class FileExportService {
         return await blob.text();
       }
     } catch (e) {
-      console.error("Error extracting ldr from io file!",e);
+      console.error("Error extracting ldr from io file!", e);
     }
     return "";
   }
@@ -204,5 +196,23 @@ export class FileExportService {
   private parseLineTypeOne(line: string): PartReference {
     const splittedLine = this.ldrToThreeService.splitter(line, " ", 14);
     return new PartReference(splittedLine[splittedLine.length - 1].split(".dat")[0], new Matrix4(), parseInt(splittedLine[1]), false);
+  }
+
+  private fixBricklinkRefactoredParts(): void {
+    const partMappings: BricklinkRefactoredPart[] = bricklink_refactored_parts as BricklinkRefactoredPart[];
+    const keysToRemove: string[] = [];
+    for (let key of this.mappedCountedPartMap.keys()) {
+      const colorIdKey = key.split(this.separationString); //1sr part contains color, 2nd the id
+      const value = this.mappedCountedPartMap.get(key);
+      const mapping = partMappings.find(v => v.oldId === colorIdKey[1]);
+      if (mapping && value !== undefined) {
+        keysToRemove.push(key);
+        const newColorIdKey = colorIdKey[0] + this.separationString + mapping.newId;
+        this.mappedCountedPartMap.set(newColorIdKey, (this.mappedCountedPartMap.get(newColorIdKey) ?? 0) + value);
+      }
+    }
+    for (let key in keysToRemove) {
+      this.mappedCountedPartMap.delete(key);
+    }
   }
 }

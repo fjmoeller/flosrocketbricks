@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { MetaService } from 'src/app/services/meta.service';
 
 @Component({
   standalone: true,
@@ -10,7 +10,7 @@ import { MetaServiceService } from 'src/app/services/meta-service.service';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor(private metaService: MetaServiceService) { }
+  constructor(private metaService: MetaService) { }
   ngOnInit(): void {
     this.metaService.setDefaultTags("Page Not Found - FlosRocketBricks", "https://flosrocketbricks.com/404");
   }

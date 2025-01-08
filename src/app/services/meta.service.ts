@@ -7,7 +7,7 @@ import { Blog } from '../model/blog';
 @Injectable({
   providedIn: 'root'
 })
-export class MetaServiceService {
+export class MetaService {
 
   constructor(@Inject(DOCUMENT) private dom: Document, private metaTagService: Meta, private titleService: Title) { }
 
@@ -60,14 +60,22 @@ export class MetaServiceService {
   }
 
   getPageMocLink(id: number, mocTitle: string): string {
-    return "/moc/" + id.toString() + "/" + mocTitle.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("").split(":").join("-").split("--").join("-") + "/";
+    return "/moc/" + this.getPageLink(id,mocTitle);
+  }
+
+  getPageBlogLink(blog: Blog): string {
+    return "/blogs/" + this.getPageLink(blog.id, blog.title);
   }
 
   getTotalMocLink(moc: Moc): string {
-    return "https://flosrocketbricks.com/moc/" + this.getPageLinks(moc.id, moc.title);
+    return "https://flosrocketbricks.com/moc/" + this.getPageLink(moc.id, moc.title);
   }
 
   getTotalBlogLink(blog: Blog): string {
-    return "https://flosrocketbricks.com/blog/" + this.getPageLinks(blog.id, blog.title);
+    return "https://flosrocketbricks.com/blog/" + this.getPageLink(blog.id, blog.title);
+  }
+
+  private getPageLink(id:number,title:string):string{
+    return id.toString() + "/" + title.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("").split(":").join("-").split("--").join("-") + "/";
   }
 }

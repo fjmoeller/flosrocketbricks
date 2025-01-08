@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Collection } from 'src/app/model/classes';
 import { CollectionGrabberService } from 'src/app/services/grabber/collection-grabber.service';
-import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { MetaService } from 'src/app/services/meta.service';
 
 @Component({
   standalone: true,
@@ -15,7 +15,7 @@ export class CollectionOverviewComponent implements OnInit {
 
   collections: Collection[] = [];
 
-  constructor(private collectionGrabberService: CollectionGrabberService, private metaService: MetaServiceService) { }
+  constructor(private collectionGrabberService: CollectionGrabberService, private metaService: MetaService) { }
 
   ngOnInit(): void {
     this.collections = this.collectionGrabberService.getAllCollections().sort((a: Collection, b: Collection) => b.name < a.name ? 1 : -1);

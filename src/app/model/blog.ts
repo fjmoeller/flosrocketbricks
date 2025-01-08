@@ -1,35 +1,22 @@
-export class Blog {
-    id: number;
-    title: string;
-    coverImage: string;
-    content: BlogElement[];
-    author: string;
-    createdAt: string;
-
-    constructor(id: number, title: string, coverImage: string, content: BlogElement[], author: string, createdAt: string) {
-        this.id = id;
-        this.title = title
-        this.coverImage = coverImage;
-        this.content = content;
-        this.author = author;
-        this.createdAt = createdAt;
-    }
+export interface Blog {
+  id: number;
+  title: string;
+  coverImage: string;
+  shortDescription: string;
+  content: BlogElement[];
+  author: string;
+  createdAt: string;
 }
 
-export class BlogElement {
-    title: string;
-    content: string;
-    blogElementType: BlogElementType;
-
-    constructor(title: string, content: string, blogElementType: BlogElementType) {
-        this.title = title
-        this.content = content;
-        this.blogElementType = blogElementType;
-    }
+export interface BlogElement {
+  title: string;
+  content: string[];
+  blogElementType: BlogElementType;
 }
 
 export enum BlogElementType {
-    IMAGE = 1,
-    TEXT = 0,
-    LINK = 2
+  IMAGE = 1,
+  TEXT_WITH_TITLE = 0,
+  LINK = 2,
+  TEXT_WITHOUT_TITLE = 3
 }

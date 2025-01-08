@@ -1,15 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {MocGrabberService} from 'src/app/services/grabber/moc-grabber.service';
 import {Collection, Moc} from '../../model/classes';
-import {MetaServiceService} from 'src/app/services/meta-service.service';
+import {MetaService} from 'src/app/services/meta.service';
 import {CollectionGrabberService} from 'src/app/services/grabber/collection-grabber.service';
 import {RouterLink} from '@angular/router';
 import {CardComponent} from 'src/app/components/card/card.component';
-import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   standalone: true,
-  imports: [CardComponent, RouterLink, NgOptimizedImage],
+  imports: [CardComponent, RouterLink],
   selector: 'app-start',
   templateUrl: './start.component.html',
   styleUrls: ['./start.component.sass']
@@ -20,7 +19,7 @@ export class StartComponent implements OnInit {
   newestUpdates: Moc[] = [];
   collections: Collection[] = [];
 
-  constructor(private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private collectionGrabberService: CollectionGrabberService) {
+  constructor(private metaService: MetaService, private mocGrabberService: MocGrabberService, private collectionGrabberService: CollectionGrabberService) {
   }
 
   ngOnInit(): void {

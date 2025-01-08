@@ -2,10 +2,9 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FrontTag, Moc } from '../../model/classes';
 import { ActivatedRoute } from '@angular/router';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
-import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { MetaService } from 'src/app/services/meta.service';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { FormsModule } from '@angular/forms';
-import { ViewportScroller } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -28,7 +27,7 @@ export class SearchComponent implements OnInit {
 
   mocs: Moc[] = [];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: any, private metaService: MetaService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParams

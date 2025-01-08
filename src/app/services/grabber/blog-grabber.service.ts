@@ -10,8 +10,7 @@ export class BlogGrabberService {
   private blogs!: Blog[];
 
   constructor() {
-    let parsedBlogs: Blog[] = blogs;
-    this.blogs = parsedBlogs;
+    this.blogs = blogs as Blog[];
   }
 
   getBlog(id: number): Blog | undefined {
@@ -20,9 +19,5 @@ export class BlogGrabberService {
 
   getAllBlogs(): Blog[]{
     return this.blogs;
-  }
-
-  getEmptyBlog(): Blog{
-    return new Blog(-1,"","",[],"","");
   }
 }

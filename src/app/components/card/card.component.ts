@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { MetaService } from 'src/app/services/meta.service';
 import { RouterLink} from '@angular/router';
 
 @Component({
@@ -21,7 +21,7 @@ export class CardComponent implements OnInit {
 
   link: string = "/";
 
-  constructor(private metaService: MetaServiceService) { }
+  constructor(private metaService: MetaService) { }
 
   ngOnInit(): void {
     this.link = this.metaService.getPageMocLink(this.id,this.mocName)+".";

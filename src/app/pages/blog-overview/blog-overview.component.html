@@ -1,6 +1,20 @@
-<div class="text-align: center" class="blog-container">
-    <div class="blog-element">
-        <h1 class="text-coloring">FlosRocketBlogs</h1>
-        <h2 class="text-coloring">Just me rambling about stuff.</h2>
+<div class="page-container">
+  <div class="blog-overview-container">
+    <div class="blog-overview-header">
+      <h1 class="text-coloring">FlosRocketBlogs</h1>
+      <h5 class="text-coloring">Just me rambling about some stuff :)</h5>
     </div>
+    <div class="blog-list">
+      @for (blog of blogs; track blog.id) {
+        <a class="blog-element" routerLink="{{getPageBlogLink(blog)}}.">
+          <div class="blog-element-header text-coloring">
+            <h3>{{ blog.id + 1}}. {{ blog.title }}</h3>
+          </div>
+          <div class="blog-element-description text-coloring">
+            <p>{{ blog.shortDescription }}</p>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
 </div>

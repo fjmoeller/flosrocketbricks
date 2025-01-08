@@ -2,29 +2,29 @@ import { Component, OnInit, Type } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Blog, BlogElementType } from 'src/app/model/blog';
 import { BlogGrabberService } from 'src/app/services/grabber/blog-grabber.service';
-import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { MetaService } from 'src/app/services/meta.service';
 import { BlogImageComponent } from './blog-image/blog-image.component';
 import { BlogTextComponent } from './blog-text/blog-text.component';
 import { BlogLinkComponent } from './blog-link/blog-link.component';
-import { AsyncPipe, NgComponentOutlet } from '@angular/common';
+import { NgComponentOutlet } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [NgComponentOutlet, AsyncPipe],
+  imports: [NgComponentOutlet],
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.sass']
 })
 export class BlogComponent implements OnInit {
 
-  blog: Blog = new Blog(-1, "", "", [], "", "");
+  blog!: Blog;
 
   blogContents: {
     component: Type<any>,
     inputs: Record<string, unknown>
   }[] = [];
 
-  constructor(private router: Router, private route: ActivatedRoute, private metaService: MetaServiceService, private blogGrabberService: BlogGrabberService) {
+  constructor(private router: Router, private route: ActivatedRoute, private metaService: MetaService, private blogGrabberService: BlogGrabberService) {
   }
 
   ngOnInit() {
@@ -51,7 +51,7 @@ export class BlogComponent implements OnInit {
         case BlogElementType.IMAGE:
           this.blogContents.push({ component: BlogImageComponent, inputs: { "content": blogElement.content, "title": blogElement.title } });
           break;
-        case BlogElementType.TEXT:
+        case BlogElementType.TEXT_WITH_TITLE:
           this.blogContents.push({ component: BlogTextComponent, inputs: { "content": blogElement.content, "title": blogElement.title } });
           break;
         case BlogElementType.LINK:

@@ -76,6 +76,6 @@ export class MetaService {
   }
 
   private getPageLink(id:number,title:string):string{
-    return id.toString() + "/" + title.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("").split(":").join("-").split("--").join("-") + "/";
+    return id.toString() + "/" + title.toLowerCase().split("/").join("-").split("'").join("-").split(" ").join("-").split(".").join("-").split("+").join("").split(":").join("-").split("--").join("-").split("!").join("") + "/";
   }
 }

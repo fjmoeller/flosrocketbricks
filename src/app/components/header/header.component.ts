@@ -1,13 +1,13 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import {RouterLink} from '@angular/router';
-import { CollectionGrabberService } from 'src/app/services/grabber/collection-grabber.service';
-import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
+import {DOCUMENT} from '@angular/common';
+import {Component, Inject, OnInit} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {RouterLink, RouterLinkActive} from '@angular/router';
+import {CollectionGrabberService} from 'src/app/services/grabber/collection-grabber.service';
+import {MocGrabberService} from 'src/app/services/grabber/moc-grabber.service';
 
 @Component({
   standalone: true,
-  imports: [RouterLink,FormsModule],
+  imports: [RouterLink, FormsModule, RouterLinkActive],
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass']
@@ -23,7 +23,9 @@ export class HeaderComponent implements OnInit {
   allSpacecrafts: string[] = [];
   allSpaceStations: string[] = [];
 
-  constructor(@Inject(DOCUMENT) document: Document, private mocGrabberService: MocGrabberService, private collectionGrabberService: CollectionGrabberService) { }
+  constructor(@Inject(DOCUMENT) document: Document, private mocGrabberService: MocGrabberService, private collectionGrabberService: CollectionGrabberService) {
+  }
+
   ngOnInit(): void {
     this.allCollections = this.collectionGrabberService.getAllCollections().map(col => col.cover);
     this.allRockets = this.mocGrabberService.getAllMocs().filter(moc => moc.type == "rocket").map(moc => moc.smallCoverImage);
@@ -57,11 +59,11 @@ export class HeaderComponent implements OnInit {
     document.documentElement.style.setProperty("--header-image-spacestation", "url('/" + randomSpaceStation + "')");
   }
 
-  triggerSearch(e: Event) {
+  triggerSearch(): void {
     document.getElementById("searchButton")?.click();
   }
 
-  clearSearch(){
+  clearSearch(): void {
     this.searchInput = "";
   }
 

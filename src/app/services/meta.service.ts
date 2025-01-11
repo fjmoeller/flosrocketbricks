@@ -65,7 +65,7 @@ export class MetaService {
   }
 
   getPageBlogLink(blog: Blog): string {
-    return "/blogs/" + this.getPageLink(blog.id, blog.title);
+    return "/blog/" + this.getPageLink(blog.id, blog.title);
   }
 
   getTotalMocLink(moc: Moc): string {

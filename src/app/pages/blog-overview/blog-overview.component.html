@@ -6,14 +6,17 @@
     </div>
     <div class="blog-list">
       @for (blog of blogs; track blog.id) {
-        <a class="blog-element" routerLink="{{getPageBlogLink(blog)}}.">
-          <div class="blog-element-header text-coloring">
-            <h3>{{ blog.id + 1}}. {{ blog.title }}</h3>
-          </div>
-          <div class="blog-element-description text-coloring">
-            <p>{{ blog.shortDescription }}</p>
-          </div>
-        </a>
+        <div class="blog-divider"></div>
+        <div class="blog-element">
+          <a style="text-decoration: none" routerLink="{{getPageBlogLink(blog)}}.">
+            <div class="blog-element-header text-coloring">
+              <h3>{{ blog.id + 1 }}. {{ blog.title }}</h3>
+            </div>
+            <div class="blog-element-description text-coloring">
+              <p class="m-0">{{ blog.shortDescription }}</p>
+            </div>
+          </a>
+        </div>
       }
     </div>
   </div>

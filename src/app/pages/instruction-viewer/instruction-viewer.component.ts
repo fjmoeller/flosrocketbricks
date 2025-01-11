@@ -28,7 +28,7 @@ import {ActivatedRoute} from "@angular/router";
 import {MocGrabberService} from "../../services/grabber/moc-grabber.service";
 import {Box3} from "three/src/math/Box3.js";
 import {File, Moc, Version} from "../../model/classes";
-import {MetaServiceService} from "../../services/meta-service.service";
+import {MetaService} from "../../services/meta.service";
 import {isPlatformBrowser, Location, NgStyle} from "@angular/common";
 import {InstructionDownloadComponent} from "../../components/instruction-download/instruction-download.component";
 import {InstructionCoverComponent} from "../../components/instruction-cover/instruction-cover.component";
@@ -116,7 +116,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   constructor(private location: Location, private instructionService: InstructionService,
               private route: ActivatedRoute, private mocGrabberService: MocGrabberService,
-              private metaService: MetaServiceService, private ldrawColorService: LdrawColorService,
+              private metaService: MetaService, private ldrawColorService: LdrawColorService,
               private instructionSettingsService: InstructionSettingsService, @Inject(PLATFORM_ID) private platform: Object) {
     this.currentStepModel = {
       stepPartsList: [],

@@ -1,0 +1,12 @@
+<div class="blog-container">
+    <div class="blog-element">
+        <img [src]="blog.coverImage" class="blog-header-image" alt="blog image">
+        <h1 class="text-coloring">{{blog.id + 1}}. {{blog.title}}</h1>
+        <span class="blog-header-info-text"><h5 class="text-coloring" style="margin-left: 5rem;">By {{blog.author}}&nbsp;&nbsp;&nbsp;&nbsp;Published at {{blog.createdAt}}</h5></span>
+    </div>
+    <div class="blog-element">
+        @for(content of blogContents;track content){
+        <ng-container *ngComponentOutlet="content.component;inputs: content.inputs;" />
+        }
+    </div>
+</div>

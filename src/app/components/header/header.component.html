@@ -3,7 +3,8 @@
     <div class="col-lg-9 justify-content-center mx-auto row">
       <div class="col-md-3 col-lg-3 px-0">
         <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
-          <img src="https://files.flosrocketbackend.com/images/logo_small.png" class="img-fluid logoimage" alt="FlosRocketBricks">
+          <img src="https://files.flosrocketbackend.com/images/logo_small.png" class="img-fluid logoimage"
+            alt="FlosRocketBricks">
         </a>
       </div>
       <div
@@ -16,43 +17,46 @@
         class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkRockets"
         (mouseenter)='setRandomRocket()'>
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/search/." rel="nofollow"
-          [queryParams]="{ type:'rocket' }" routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Rockets</a>
+          [queryParams]="{ type:'rocket' }" routerLinkActive="active" (click)="clearSearch()"
+          ariaCurrentWhenActive="page">Rockets</a>
       </div>
       <div
         class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkLaunchpads"
         (mouseenter)='setRandomLaunchpad()'>
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/search/." rel="nofollow"
-          [queryParams]="{ type:'launchpad' }" routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Launchpads</a>
+          [queryParams]="{ type:'launchpad' }" routerLinkActive="active" (click)="clearSearch()"
+          ariaCurrentWhenActive="page">Launchpads</a>
       </div>
       <div
         class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkSpacecraft"
         (mouseenter)='setRandomSpacecraft()'>
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/search/." rel="nofollow"
-          [queryParams]="{ type:'spacecraft' }" routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Spacecrafts</a>
+          [queryParams]="{ type:'spacecraft' }" routerLinkActive="active" (click)="clearSearch()"
+          ariaCurrentWhenActive="page">Spacecrafts</a>
       </div>
       <div
         class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkSpaceStation"
         (mouseenter)='setRandomSpacestation()'>
         <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/search/." rel="nofollow"
-          [queryParams]="{ type:'spacestation' }" routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Space
+          [queryParams]="{ type:'spacestation' }" routerLinkActive="active" (click)="clearSearch()"
+          ariaCurrentWhenActive="page">Space
           Stations</a>
       </div>
       <div
-        class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkOther"
-        (mouseenter)='setRandomOther()'>
-        <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/search/." rel="nofollow"
-          [queryParams]="{ type:'other' }" routerLinkActive="active" (click)="clearSearch()" ariaCurrentWhenActive="page">Other</a>
+        class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkBlogs">
+        <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/blog/." rel="nofollow"
+          routerLinkActive="active" ariaCurrentWhenActive="page">Blog</a>
       </div>
       <div
         class="col-3 col-xl px-0 mb-1 d-flex justify-content-center align-items-center headerLinkWrapper headerLinkAbout">
-        <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/about/." routerLinkActive="active" (click)="clearSearch()"
-          ariaCurrentWhenActive="page">About</a>
+        <a class="headerLink py-4 text-coloring rounded p-auto no-dec-a" routerLink="/about/." routerLinkActive="active"
+          (click)="clearSearch()" ariaCurrentWhenActive="page">About</a>
       </div>
     </div>
     <div class="col-lg-3 d-flex justify-content-center align-items-center py-3">
       <div class="input-group m-auto">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchInput"
-          name="search" (keydown.enter)="triggerSearch($event)">
+          name="search" (keydown.enter)="triggerSearch()">
         <button id="searchButton" routerLink="/search/." routerLinkActive="active" ariaCurrentWhenActive="page"
           [queryParams]="{q:searchInput}" class="btn headerSearchButton" type="submit">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"

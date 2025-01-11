@@ -2,7 +2,7 @@ import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2} from '@ang
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {Moc, Version} from '../../model/classes';
 import {MocGrabberService} from 'src/app/services/grabber/moc-grabber.service';
-import {MetaServiceService} from 'src/app/services/meta-service.service';
+import {MetaService} from 'src/app/services/meta.service';
 import {FileExportService} from 'src/app/services/file/file-export.service';
 import {CardComponent} from 'src/app/components/card/card.component';
 import {ViewerComponent} from 'src/app/components/viewer/viewer.component';
@@ -25,7 +25,7 @@ export class MocComponent implements OnInit, OnDestroy {
   showViewer: boolean = false;
   slideIndex: number = 0;
 
-  constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: any, private renderer: Renderer2, private router: Router, private metaService: MetaServiceService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
+  constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: any, private renderer: Renderer2, private router: Router, private metaService: MetaService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
   }
 

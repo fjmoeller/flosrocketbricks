@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "title": "A new feature: Online Instructions",
+    "shortDescription": "After a lot of work it is finally (mostly) done! Online instructions will ease instruction making for me and be a new cool feature for this site!",
+    "content": [
+      {
+        "content": [
+          "As some of you might have noticed already there is a new feature on this site that is available for some of the newly updated and added MOCs.",
+          "You can now view their instructions directly on the computer, but not in a pdf format, but instead in an (more or less) interactive format.",
+          "Meaning that you can turn the model at each step, allowing for a hopefully easy assembly, though I personally think that my normal pdf instructions probably were good enough for an easy assembly too :D.\n",
+          "For me this new feature means MUCH less work as the pdf instructions always take hours of work (depending on the size of the model of course).",
+          "When making the instructions for this viewer I only need to arrange the step order in which the parts get added in a nice way and don't have to worry at all about things like the camera rotation or anything that usually take a lot of time and for sure are not fun at all to do.\n",
+          "Of course if you (for some reason) still want pdf instructions for any of the MOCs, I will still make them for you!"
+        ],
+        "blogElementType": 3
+      }, {
+        "title": "This is the button you'll see when the online instructions are available for the MOC.",
+        "content": ["https://files.flosrocketbackend.com/blogs/1/instructions-button.jpg"],
+        "blogElementType": 1
+      }, {
+        "content": [
+          "There also are a lot of settings that can be toyed with. Everything from the background color to the movement speed of the camera.",
+          "Although I do recommend to not touch them (except for maybe the colors), as you can quickly destroy the usability of the instruction viewer...\n",
+          "Luckily there is a reset button ;)"
+          ],
+        "blogElementType": 3
+      }, {
+        "title": "How the instruction viewer itself looks like.",
+        "content": ["https://files.flosrocketbackend.com/blogs/1/instructions-example.jpg"],
+        "blogElementType": 1
+      }, {
+        "title": "The technical background",
+        "content": [
+          "The technical framework of this new feature is in some parts similar to the existing 3D viewer that was already present fro some MOCs, so I was able to copy quite some code.",
+          "\nHow it currently works is that when you first open the site the assemblies for each step get made all at once and then the one fitting the current step will just be picked out and displayed.",
+          "At first I thought that maybe assembling the step specific assembly as someone opens the step would be the way to do it, as I was suspecting that if I would do it all at once the initial delay would be too big when one enters the site.",
+          "But that problem didn't manifest and the initial delay is quite short, so all good :P.",
+          "\nLike it is with the 3D viewer, I don't have this feature enabled on every MOC, not even every new one.",
+          "Reasons may either be that I just haven't prepared it for the instructions, or a problem that occurred in the same way with the 3D viewer is that I used a brand new Lego piece whose model is not part of the ldraw library yet.",
+          "\nA feature that I thought quite a bit about during development was the auto rotation of the displayed parts and the camera.",
+          "I wanted to have it so that the model automatically turns to the newly added parts so that they are automatically visible and that the user doesn't have to turn the model themself.",
+          "How it works right now, is that the viewer just checks in which direction from the center point of the previously added parts the center point of the newly added parts is.",
+          "The camera then has a few predetermined positions and selects the closest one.",
+          "It quite simple and works well, but can, if the model is pretty complicated, not work in a few cases.",
+          "But since the user can just rotate the MOC themself, it should be fine.",
+          "What it does change, is that I need to be more careful with the order in which the parts get assembled, as it's quite easy for the camera to flip around if parts get added in different orders.",
+          "\nI would love to program this feature a different way some day, but it won't be that easy.",
+          "The idea would be to again have some predetermined positions of the camera and then render a lower quality image and detect from which angle the new parts in the step can be seen best from.",
+          "I would have to tinker around a lot with shaders for that to work and well I guess I can't be bothered to do that, so it'll probably stay the way it is right now :P."
+        ],
+        "blogElementType": 0
+      },
+      {
+        "title": "Future additions",
+        "content": [
+          "There are a few things which I am planning to add as new features for the instruction viewer in the future.",
+          "\nI want to improve the touch controls as they aren't as smooth as I want them yet, luckily the mouse controls are working fine already.",
+          "Many instructions from Lego and other companies have rotation indicator whenever the model should be rotated for the current step.",
+          "I am thinking about adding this as well, although it's not that high on my todo list.",
+          "Metallic parts should get a small indicator in the parts list that they are metallic as it's not directly visible that which color they have right now.",
+          "That's a feature that should be quite easy so add, so it should be coming more or less soon.",
+          "A big feature that I know some people want, is an option for outlining newly added parts.",
+          "This normally helps the user to identify the newly added parts on the picture",
+          "And although currently the new and old parts in the same step can already be differentiated, as the old parts are of faded colors, I do still will add on outline in the future.",
+          "\nWhen exactly I am going to add these features (if ever), that I don't know yet, you'll just have to wait and see :)."
+        ],
+        "blogElementType": 0
+      }
+    ],
+    "author": "SkySaac",
+    "createdAt": "2025-01-11"
+  },
+  {
+    "id": 0,
+    "title": "Now Available: FlosRocketBlog",
+    "shortDescription": "The newest feature on my website is now live! I'll talk about why it exists and what you can expect of it :)",
+    "content": [
+      {
+        "title": "Why this new feature exists",
+        "content": [
+          "So for quite some time now I thought about adding a place on this website where I could just talk about things regarding lego rockets and things I encountered while creating this website.",
+          "While I could have just gone to sites such as Medium.com or so where one can just create his blog posts, I kind of wanted to use my own site for it.",
+          "I mean having more stuff on this site is always nice right? So that's why I finally decided to add this feature."
+        ],
+        "blogElementType": 0
+      },
+      {
+        "title": "What to expect in the future",
+        "content": [
+          "When it comes to what you can expect on this blog in the future there are a few topics that I might be writing about.",
+          "Those topics will mainly be ones I care about and that at least in some sense fit to this website.",
+          "For example I might talk about the creation of Lego rockets and things related to it, such as the usage of websites that you are probably buying your bricks from like Bricklink.",
+          "I also might talk about new features that I (at least if I have the time to) want to add on this website in the feature, these blog posts might be more technical and won't have too much to do with Lego rockets themselves as just with this website.",
+          "Another thing might be spaceflight events I like to visit, such as the ESA Open Days at ESTEC in the Netherlands, which I visited a few times now.",
+          "\nI can't say how often I'll post blogs here, there might be months between them and I'll just write one whenever I find a topic to write about and have the time to.",
+          "The blogs also might differ in length, it's not like I really care about having books long texts on my website and I don't really want to force myself to write much.",
+          "\nWith that said I hope you'll enjoy this new feature!"
+        ],
+          "blogElementType": 0
+      }
+    ],
+    "author": "SkySaac",
+    "createdAt": "2025-01-11"
+  }
+]

@@ -49,13 +49,16 @@ export class BlogComponent implements OnInit {
     for (let blogElement of this.blog.content) {
       switch (blogElement.blogElementType) {
         case BlogElementType.IMAGE:
-          this.blogContents.push({ component: BlogImageComponent, inputs: { "content": blogElement.content, "title": blogElement.title } });
+          this.blogContents.push({ component: BlogImageComponent, inputs: { "imageLink": blogElement.content[0], "title": blogElement.title } });
           break;
         case BlogElementType.TEXT_WITH_TITLE:
           this.blogContents.push({ component: BlogTextComponent, inputs: { "content": blogElement.content, "title": blogElement.title } });
           break;
         case BlogElementType.LINK:
           this.blogContents.push({ component: BlogLinkComponent, inputs: { "content": blogElement.content, "title": blogElement.title } });
+          break;
+        case BlogElementType.TEXT_WITHOUT_TITLE:
+          this.blogContents.push({ component: BlogTextComponent, inputs: { "content": blogElement.content } });
           break;
       }
     }

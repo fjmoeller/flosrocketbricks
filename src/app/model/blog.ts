@@ -15,8 +15,8 @@ export interface BlogElement {
 }
 
 export enum BlogElementType {
-  IMAGE = 1,
   TEXT_WITH_TITLE = 0,
+  IMAGE = 1,
   LINK = 2,
   TEXT_WITHOUT_TITLE = 3
 }

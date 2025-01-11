@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './blog-image.component.sass'
 })
 export class BlogImageComponent {
-  @Input() content!: string;
+  @Input() imageLink!: string;
   @Input() title!: string;
 }

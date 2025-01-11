@@ -227,3 +227,5 @@
 /moc/222/saturn-ib/
 /about/
 /404/
+/blogs/0/now-available-on-flosrocketbricks-blogs/
+/blogs/1/a-new-feature-online-instructions/

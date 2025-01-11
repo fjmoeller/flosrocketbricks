@@ -28,6 +28,4 @@ export class BlogOverviewComponent implements OnInit {
   getPageBlogLink(blog: Blog): string {
     return this.metaService.getPageBlogLink(blog);
   }
-
-
 }

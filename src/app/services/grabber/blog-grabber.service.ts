@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import blogs from '../../../assets/blogs.json';
-import { Blog } from '../../model/blog';
+import {Blog} from '../../model/blog';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,11 @@ export class BlogGrabberService {
     return this.blogs.find(blog => blog.id == id);
   }
 
-  getAllBlogs(): Blog[]{
+  getAllBlogs(): Blog[] {
     return this.blogs;
+  }
+
+  getNewestBlog(): Blog {
+    return this.blogs.sort((a, b) => b.id - a.id)[0];
   }
 }

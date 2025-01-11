@@ -108,7 +108,6 @@ export class FileExportService {
   }
 
   private async collectParts(url: string): Promise<void> {
-    //TODO does it work without fetch url (the worker) now (for non bricksafe stuff)?
     const content = await fetch(environment.backendFetchUrl + url);
     const ldrFile = await this.extractLdrFile(content);
 
@@ -194,8 +193,8 @@ export class FileExportService {
   }
 
   private parseLineTypeOne(line: string): PartReference {
-    const splittedLine = this.ldrToThreeService.splitter(line, " ", 14);
-    return new PartReference(splittedLine[splittedLine.length - 1].split(".dat")[0], new Matrix4(), parseInt(splittedLine[1]), false);
+    const splitLine = this.ldrToThreeService.splitter(line, " ", 14);
+    return new PartReference(splitLine[splitLine.length - 1].split(".dat")[0], new Matrix4(), parseInt(splitLine[1]), false);
   }
 
   private fixBricklinkRefactoredParts(): void {

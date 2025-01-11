@@ -326,9 +326,12 @@ export class LdrToThreeService {
       else if (partName == "49803.dat")
         partGeometry.translate(0, -32, 0);
     }else if(viewerVersion === "V2"){
-      if(partName == "63965.dat"){
+      if(partName == "63965.dat")
         partGeometry.translate(0, 1.5, 0);
-      }
+      else if (partName == "5091.dat")
+        partGeometry.rotateY(Math.PI/2);
+      else if (partName == "5092.dat")
+        partGeometry.rotateY(Math.PI/2);
     }
   }
 

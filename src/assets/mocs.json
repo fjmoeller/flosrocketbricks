@@ -16423,7 +16423,7 @@
     "related": [
       195
     ],
-    "dimensions": "10.9x10.9x87.8cm",
+    "dimensions": "10.9x10.9x87.5cm",
     "links": [
       "https://en.wikipedia.org/wiki/New_Glenn",
       "https://www.blueorigin.com/new-glenn",
@@ -16437,13 +16437,29 @@
     "region": [
       "USA"
     ],
-    "parts": 2092,
+    "parts": 2325,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/usa/new-glenn/110-new-glenn-v4.0.jpg",
+    "smallCoverImage": "assets/mocImages/110/usa/new-glenn/110-new-glenn-v4.1.jpg",
     "regionExtra": "",
     "partsExtra": "A few parts aren't available by Lego in the correct colors (15712, 48336). You'll need a different supplier for these.",
     "internalColorExtra": "",
     "versions": [
+      {
+        "files": [
+          {
+            "name": "New_Glenn_V4.1.io",
+            "description": "The digital file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/V4.1/New_Glenn_V4.1.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V4.1",
+        "changelog": ""
+      },
       {
         "files": [
           {
@@ -16592,15 +16608,16 @@
     "type": "rocket",
     "designerExtra": "",
     "dateCreated": "2023-02-13",
-    "lastUpdate": "2025-01-05",
+    "lastUpdate": "2025-01-11",
     "difficulty": 3,
     "companyExtra": "",
     "pictures": [
-      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0_1.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0_2.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0_3.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0_4.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.0/New_Glenn_V4.0_5.jpg"
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/V4.1/New_Glenn_V4.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/V4.1/New_Glenn_V4.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/V4.1/New_Glenn_V4.1_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/V4.1/New_Glenn_V4.1_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/V4.1/New_Glenn_V4.1_5.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/V4.1/New_Glenn_V4.1_6.jpg"
     ]
   },
   {

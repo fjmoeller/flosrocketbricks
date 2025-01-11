@@ -23,6 +23,7 @@ export class BlogOverviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.blogs = this.blogService.getAllBlogs();
+    this.metaService.setDefaultTags("FlosRocketBlog - FlosRocketBricks", "https://flosrocketbricks.com/blog/");
   }
 
   getPageBlogLink(blog: Blog): string {

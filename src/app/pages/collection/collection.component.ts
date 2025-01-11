@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Collection, Moc } from 'src/app/model/classes';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
 import { CollectionGrabberService } from 'src/app/services/grabber/collection-grabber.service';
-import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { MetaService } from 'src/app/services/meta.service';
 import { ActivatedRoute } from '@angular/router';
 import { CardComponent } from 'src/app/components/card/card.component';
 
@@ -19,7 +19,7 @@ export class CollectionComponent implements OnInit {
 
   subCollectionMocs = new Map<number, Moc[]>;
 
-  constructor(private route: ActivatedRoute,private collectionGrabberService: CollectionGrabberService, private mocGrabberService: MocGrabberService, private metaService: MetaServiceService) {
+  constructor(private route: ActivatedRoute,private collectionGrabberService: CollectionGrabberService, private mocGrabberService: MocGrabberService, private metaService: MetaService) {
     this.collection = new Collection(-1, "", "", "", []);
   }
 

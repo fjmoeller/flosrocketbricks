@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FrontTag, Moc } from '../../model/classes';
 import { ActivatedRoute } from '@angular/router';
 import { MocGrabberService } from 'src/app/services/grabber/moc-grabber.service';
-import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { MetaService } from 'src/app/services/meta.service';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { FormsModule } from '@angular/forms';
 import { isPlatformBrowser } from '@angular/common';
@@ -27,7 +27,7 @@ export class SearchComponent implements OnInit {
 
   mocs: Moc[] = [];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any,private metaService: MetaServiceService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: any, private metaService: MetaService, private mocGrabberService: MocGrabberService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParams
@@ -35,21 +35,21 @@ export class SearchComponent implements OnInit {
         this.clearTags();
         if (params['q']) {
           this.searchInput = params['q'];
-        }else{
+        } else {
           this.searchInput = "";
         }
         if (params['type']) {
-          let ft: FrontTag | undefined = this.tagTypes.find(frontTag => frontTag.tagId == params['type']);
+          const ft: FrontTag | undefined = this.tagTypes.find(frontTag => frontTag.tagId == params['type']);
           if (ft)
             this.tagTypeChange(ft);
         }
         if (params['region']) {
-          let ft: FrontTag | undefined = this.tagRegions.find(frontTag => frontTag.tagId == params['region']);
+          const ft: FrontTag | undefined = this.tagRegions.find(frontTag => frontTag.tagId == params['region']);
           if (ft)
             this.tagRegionChange(ft);
         }
         if (params['scale']) {
-          let ft: FrontTag | undefined = this.tagScales.find(frontTag => frontTag.tagId == params['scale']);
+          const ft: FrontTag | undefined = this.tagScales.find(frontTag => frontTag.tagId == params['scale']);
           if (ft)
             this.tagScaleChange(ft);
         }

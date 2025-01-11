@@ -2,99 +2,139 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://flosrocketbricks.com/blog/0/now-available-on-flosrocketbricks-blogs/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/logo.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/blog/1/a-new-feature-online-instructions/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/logo.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/222/saturn-ib/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/380/usa/saturn/saturn-ib/380-saturn-ib-v1.0.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/380/usa/saturn/saturn-ib/380-saturn-ib-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/221/long-march-8a/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-8/long-march-8a/110-long-march-8a-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-8/long-march-8a/110-long-march-8a-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/220/long-march-12/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-12/110-long-march-12-v1.2.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-12/110-long-march-12-v1.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/219/phantom-express/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/phantom-express/110-phantom-express-v3.0.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/phantom-express/110-phantom-express-v3.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/218/space-shuttle-tail-cone/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/space-shuttle/tail-cone/110-space-shuttle-tail-cone-v1.2.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/space-shuttle/tail-cone/110-space-shuttle-tail-cone-v1.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/217/crew-dragon/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/40/usa/dragon/crew-dragon/40-crew-dragon-v1.0.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/40/usa/dragon/crew-dragon/40-crew-dragon-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/216/tale-of-energia-buran/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-energia-buran/tale-of-energia-buran-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-energia-buran/tale-of-energia-buran-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/215/need-a-ride-t-shirt/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/merch/need-a-ride/t-shirt/need-a-ride-t-shirt-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/no-scale/merch/need-a-ride/t-shirt/need-a-ride-t-shirt-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/214/long-march-6a/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-6/a/110-long-march-6a-v1.5.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-6/a/110-long-march-6a-v1.5.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/213/tale-of-Ariane-6-fm1-air/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/air/tale-of-ariane-6-fm1-air-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/air/tale-of-ariane-6-fm1-air-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/212/tale-of-Ariane-6-fm1-earth/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/earth/tale-of-ariane-6-fm1-earth-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/earth/tale-of-ariane-6-fm1-earth-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/211/tale-of-Ariane-6-fm1-water/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/water/tale-of-ariane-6-fm1-water-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/water/tale-of-ariane-6-fm1-water-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/210/tale-of-Ariane-6-fm1-fire/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/fire/tale-of-ariane-6-fm1-fire-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/elements/fire/tale-of-ariane-6-fm1-fire-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/209/ela-4-launchpad/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/ela-4/launchpad/110-ela-4-launchpad-v1.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/ela-4/launchpad/110-ela-4-launchpad-v1.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/208/tale-of-ariane-6-fm1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/tale-of-ariane-6-fm1-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-ariane-6-fm1/tale-of-ariane-6-fm1-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/207/tale-of-sts-130/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-sts-130/tale-of-sts-130-v1.0.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/tales/tale-of-sts-130/tale-of-sts-130-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -106,31 +146,39 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/205/falcon-9-block-5-earthcare/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/block-5/earthcare/110-falcon-9-block-5-earthcare-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/block-5/earthcare/110-falcon-9-block-5-earthcare-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/204/tiangong-2/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/tiangong/tiangong-2/110-tiangong-2-v1.1.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/tiangong/tiangong-2/110-tiangong-2-v1.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/203/tiangong-1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/tiangong/tiangong-1/110-tiangong-1-v1.2.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/tiangong/tiangong-1/110-tiangong-1-v1.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/202/nyx/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/germany/the-exploration-company/nyx/110-nyx-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/germany/the-exploration-company/nyx/110-nyx-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/201/grasshopper/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/grasshopper/110-grasshopper-v1.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/grasshopper/110-grasshopper-v1.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -148,25 +196,31 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/198/long-march-6c/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-6/c/110-long-march-6c-v1.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-6/c/110-long-march-6c-v1.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/197/saxavord-fredo-launchpad/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/germany/rfa/rfa-one/launchpad/110-saxavord-fredo-launchpad-v1.2.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/germany/rfa/rfa-one/launchpad/110-saxavord-fredo-launchpad-v1.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/196/nasa-worm-logo/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/nasa/logo/worm/nasa-worm-logo-v1.1.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/nasa/logo/worm/nasa-worm-logo-v1.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/195/blue-moon-mark-1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/blue-moon/mark-1/110-blue-moon-mark-1-v1.1.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/blue-moon/mark-1/110-blue-moon-mark-1-v1.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -214,7 +268,9 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/187/proton-k-kristal-module/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/proton/proton-k/mir/kristal/110-proton-mir-module-v2.0.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/ussr/proton/proton-k/mir/kristal/110-proton-mir-module-v2.0.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -238,25 +294,33 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/183/delta-ii-7925-gps-2r/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/7000/7925/gps-2r/110-delta-ii-7925-gps-2r-v2.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/7000/7925/gps-2r/110-delta-ii-7925-gps-2r-v2.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/182/delta-ii-6925-palapa-b2r/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/6000/6925/palapa-b2r/110-delta-ii-6925-palapa-b2r-v2.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/6000/6925/palapa-b2r/110-delta-ii-6925-palapa-b2r-v2.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/181/delta-ii-6925-gps-2/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/6000/6925/gps-2/110-delta-ii-6925-gps-2-v2.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/6000/6925/gps-2/110-delta-ii-6925-gps-2-v2.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/180/delta-ii-6920-rosat/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/6000/6920/rosat/110-delta-ii-6920-rosat-v2.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-ii/6000/6920/rosat/110-delta-ii-6920-rosat-v2.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -268,55 +332,65 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/178/vulcan-centaur-6l/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc6l/110-vulcan-centaur-6l-v3.2.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc6l/110-vulcan-centaur-6l-v3.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/177/vulcan-centaur-6s/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc6s/110-vulcan-centaur-6s-v3.2.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc6s/110-vulcan-centaur-6s-v3.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/176/vulcan-centaur-4l/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc4l/110-vulcan-centaur-4l-v3.2.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc4l/110-vulcan-centaur-4l-v3.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/175/vulcan-centaur-4s/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc4s/110-vulcan-centaur-4s-v3.2.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc4s/110-vulcan-centaur-4s-v3.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/174/vulcan-centaur-2l/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc2l/110-vulcan-centaur-2l-v3.2.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc2l/110-vulcan-centaur-2l-v3.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/173/vulcan-centaur-2s/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc2s/110-vulcan-centaur-2s-v3.2.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc2s/110-vulcan-centaur-2s-v3.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/172/vulcan-centaur-0l/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc0l/110-vulcan-centaur-0l-v3.2.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc0l/110-vulcan-centaur-0l-v3.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/171/vulcan-centaur-0s/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc0s/110-vulcan-centaur-0s-v3.2.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc0s/110-vulcan-centaur-0s-v3.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/170/energia-polyus/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/energia/energia-polyus/110-energia-polyus-v3.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/ussr/energia/energia-polyus/110-energia-polyus-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -328,37 +402,44 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/168/sohae-chollima-1-launchpad/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h-ii/h-iia/2040/110-h-iia-2040-v3.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h-ii/h-iia/2040/110-h-iia-2040-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/167/h-iia-2022/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h/h-ii/h-iia/2022/110-h-iia-2022-v3.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h/h-ii/h-iia/2022/110-h-iia-2022-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/166/h-iia-2020/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h/h-ii/h-iia/2020/110-h-iia-2020-v3.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h/h-ii/h-iia/2020/110-h-iia-2020-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/165/h-iia-2040/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h-ii/h-iia/2040/110-h-iia-2040-v3.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h-ii/h-iia/2040/110-h-iia-2040-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/164/h-iia-2024/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h-ii/h-iia/2024/110-h-iia-2024-v3.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/h-ii/h-iia/2024/110-h-iia-2024-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/163/cst-100-starliner/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/cst-100-starliner/110-cst-100-starliner-v2.2.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/cst-100-starliner/110-cst-100-starliner-v2.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -376,13 +457,16 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/160/epsilon/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/epsilon/epsilon-2/110-epsilon-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/epsilon/epsilon-2/110-epsilon-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/159/x-33-launchpad/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/venturestar/x-33/launchpad/110-x-33-launchpad-v1.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/venturestar/x-33/launchpad/110-x-33-launchpad-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -394,7 +478,8 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/157/dream-chaser/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/dream-chaser/110-dream-chaser-v2.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/dream-chaser/110-dream-chaser-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -406,43 +491,56 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/155/vostok-k-vostok-1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/vostok/vostok-k/vostok-1/110-vostok-k-vostok-1-v2.2.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/ussr/vostok/vostok-k/vostok-1/110-vostok-k-vostok-1-v2.2.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/154/long-march-9-2016-concept/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-9/2016-concept/110-long-march-9-2016-concept-v4.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-9/2016-concept/110-long-march-9-2016-concept-v4.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/153/proton-k-zond/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/proton/proton-k/zond/110-proton-k-zond-v1.3.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/ussr/proton/proton-k/zond/110-proton-k-zond-v1.3.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/152/zond-5/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/35/ussr/zond/zond-5/spacecraft/35-zond-5-v2.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/35/ussr/zond/zond-5/spacecraft/35-zond-5-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/151/falcon-heavy-em-1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-heavy/em-1/110-falcon-heavy-em-1-v2.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-heavy/em-1/110-falcon-heavy-em-1-v2.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/150/ait-250/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/ela-4/ait-250/110-ait-250-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/ela-4/ait-250/110-ait-250-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/149/ariane-64-susie/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/susie/110-ariane-64-susie-v2.7.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/susie/110-ariane-64-susie-v2.7.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -454,7 +552,8 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/147/ariane-62/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/350/europe/ariane/ariane-6/62/350-ariane-62-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/350/europe/ariane/ariane-6/62/350-ariane-62-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -472,7 +571,8 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/144/ariane-64/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/64/110-ariane-64-v3.4.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/64/110-ariane-64-v3.4.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -484,37 +584,47 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/142/arianespace-logo/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/arianegroup/logo/blacknwhite/arianespace-logo-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/no-scale/arianegroup/logo/blacknwhite/arianespace-logo-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/141/arianespace-logo/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/arianegroup/logo/arianespace-logo-v2.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/no-scale/arianegroup/logo/arianespace-logo-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/140/wenchang-lc-101-launchtable/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/wenchang/lc-101/lm-5-launchtable/110-wenchang-lc-101-launchtable-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/wenchang/lc-101/lm-5-launchtable/110-wenchang-lc-101-launchtable-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/139/firefly-alpha-flta002/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/firefly-alpha/flta002/110-firefly-alpha-flta002-v2.2.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/firefly-alpha/flta002/110-firefly-alpha-flta002-v2.2.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/138/firefly-alpha-flta001/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/firefly-alpha/flta001/110-firefly-alpha-flta001-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/firefly-alpha/flta001/110-firefly-alpha-flta001-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/137/aggregat-4/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/germany/aggregat/4/110-aggregat-4-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/germany/aggregat/4/110-aggregat-4-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -526,31 +636,39 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/135/long-march-5b/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-5/b/110-long-march-5b-v3.5.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-5/b/110-long-march-5b-v3.5.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/134/long-march-5/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-5/110-long-march-5-v3.5.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-5/110-long-march-5-v3.5.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/133/falcon-9-block-4/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/block-4/110-falcon-9-block-4-v1.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/block-4/110-falcon-9-block-4-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/132/falcon-9-1-0/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/1-0/110-falcon-9-1-0-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/1-0/110-falcon-9-1-0-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/131/dragon-reentry/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/dragon/reentry/110-dragon-reentry-v1.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/dragon/reentry/110-dragon-reentry-v1.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -562,55 +680,70 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/129/taiyuan-lc16/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-6/taiyuan-lc16/110-taiyuan-lc16-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-6/taiyuan-lc16/110-taiyuan-lc16-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/128/long-march-6/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-6/110-long-march-6-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-6/110-long-march-6-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/127/long-march-2f-tiangong/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2f/tiangong/110-long-march-2f-tiangong-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2f/tiangong/110-long-march-2f-tiangong-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/126/long-march-2f-shenzhou/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2f/shenzhou/110-long-march-2f-shenzhou-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2f/shenzhou/110-long-march-2f-shenzhou-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/125/kuaizhou-1-y2/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/kuaizhou/kuaizhou-1/kuaizhou-1/y2/110-kuaizhou-1-y2-v1.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/kuaizhou/kuaizhou-1/kuaizhou-1/y2/110-kuaizhou-1-y2-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/124/kuaizhou-1-y1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/ceres/ceres-1/y2/110-kuaizhou-1-y1-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/ceres/ceres-1/y2/110-kuaizhou-1-y1-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/123/kuaizhou-1a/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/kuaizhou/kuaizhou-1/kuaizhou-1/y1/110-kuaizhou-1a-v1.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/kuaizhou/kuaizhou-1/kuaizhou-1/y1/110-kuaizhou-1a-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/122/ceres-1-y2/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/ceres/ceres-1/y2/110-ceres-1-y2-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/ceres/ceres-1/y2/110-ceres-1-y2-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/121/ceres-1-y1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/ceres/ceres-1/y1/110-ceres-1-y1-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/ceres/ceres-1/y1/110-ceres-1-y1-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -622,43 +755,56 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/119/chang-e-3/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/chang-e/chang-e-3/110-chang-e-3-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/chang-e/chang-e-3/110-chang-e-3-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/118/long-march-2e/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2e/110-long-march-2e-v2.2.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2e/110-long-march-2e-v2.2.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/117/long-march-2d/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2d/110-long-march-2d-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2d/110-long-march-2d-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/116/long-march-2c/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4-gridfins/110-long-march-2c-v2.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4-gridfins/110-long-march-2c-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/115/long-march-2c/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/110-long-march-2c-v2.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/110-long-march-2c-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/114/long-march-2c/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs/110-long-march-2c-v2.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs/110-long-march-2c-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/113/long-march-2c/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2c/110-long-march-2c-v2.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-2/long-march-2c/110-long-march-2c-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -670,19 +816,24 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/111/falcon-9-block-5-euclid/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/block-5/euclid/110-falcon-9-block-5-euclid-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/falcon/falcon-9/block-5/euclid/110-falcon-9-block-5-euclid-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/110/cygnus-enhanced/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/cygnus/enhanced/radiators/110-cygnus-enhanced-v1.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/cygnus/enhanced/radiators/110-cygnus-enhanced-v1.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/109/cygnus-enhanced/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/cygnus/enhanced/110-cygnus-enhanced-v1.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/cygnus/enhanced/110-cygnus-enhanced-v1.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -694,37 +845,45 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/107/antares-230/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/antares/antares-230/plus/110-antares-230+-v1.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/antares/antares-230/plus/110-antares-230+-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/106/kuaizhou-11-transporter/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/kuaizhou/kuaizhou-11/transporter/110-kuaizhou-11-transporter-v1.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/kuaizhou/kuaizhou-11/transporter/110-kuaizhou-11-transporter-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/105/kuaizhou-11/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/kuaizhou/kuaizhou-11/110-kuaizhou-11-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/kuaizhou/kuaizhou-11/110-kuaizhou-11-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/104/gravity-1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/gravity/gravity-1/110-gravity-1-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/gravity/gravity-1/110-gravity-1-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/103/jielong-3/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/jielong/jielong-3/110-jielong-3-v3.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/jielong/jielong-3/110-jielong-3-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/102/delta-iii/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-iii/110-delta-iii-v2.4.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/delta/delta-iii/110-delta-iii-v2.4.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -736,19 +895,25 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/100/ariane-5-eca-va261/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/eca/va261/110-ariane-5-eca-va261-v1.9.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/eca/va261/110-ariane-5-eca-va261-v1.9.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/99/ariane-6-fm1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/62/fm1/110-ariane-62-fm1-v3.4.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/62/fm1/110-ariane-62-fm1-v3.4.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/98/ariane-6-2013-concept/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/concepts/2013/110-ariane-6-2013-concept-v1.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-6/concepts/2013/110-ariane-6-2013-concept-v1.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -760,25 +925,30 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/96/ela-3-cazes/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/ela-3/cazes/110-ela-3-cazes-v5.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/ela-3/cazes/110-ela-3-cazes-v5.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/95/zenit-2m/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ukraine/zenit/zenit-2/m/110-zenit-2m-v2.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ukraine/zenit/zenit-2/m/110-zenit-2m-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/94/chollima-1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/north-korea/chollima-1/110-chollima-1-v1.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/north-korea/chollima-1/110-chollima-1-v1.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/93/kslv-ii-nuri/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/south-korea/kslv-ii-nuri/110-kslv-ii-nuri-v3.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/south-korea/kslv-ii-nuri/110-kslv-ii-nuri-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -796,7 +966,8 @@
   <url>
     <loc>https://flosrocketbricks.com/collection/0/long-march/</loc>
     <image:image>
-      <image:loc>https://bricksafe.com/files/SkySaac/website/collection/long-march/Long_March_V2.png/640x512.png</image:loc>
+      <image:loc>https://bricksafe.com/files/SkySaac/website/collection/long-march/Long_March_V2.png/640x512.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -808,37 +979,44 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/92/ariane-44p/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44p/110-ariane-44p-v3.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44p/110-ariane-44p-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/91/ariane-44lp/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44lp/110-ariane-44lp-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44lp/110-ariane-44lp-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/90/ariane-44l/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44l/110-ariane-44l-v3.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44l/110-ariane-44l-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/89/ariane-42p/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/42p/110-ariane-42p-v3.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/42p/110-ariane-42p-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/88/ariane-42l/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/42l/110-ariane-42l-v3.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/42l/110-ariane-42l-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/87/ariane-40/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/40/110-ariane-40-v3.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/40/110-ariane-40-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -850,97 +1028,128 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/85/ela-3-launchtable/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/ela-3/launchtable/110-ela-3-launchtable-v2.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/ela-3/launchtable/110-ela-3-launchtable-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/84/ariane-5-eca-jwst/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/eca/jwst/110-ariane-5-eca-jwst-v2.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/eca/jwst/110-ariane-5-eca-jwst-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/83/long-march-3c-e/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/c-e/110-long-march-3c-e-v3.6.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/c-e/110-long-march-3c-e-v3.6.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/82/long-march-3b-e/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/b-e/110-long-march-3b-e-v3.7.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/b-e/110-long-march-3b-e-v3.7.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/81/long-march-3a/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/110-long-march-3a-v1.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/110-long-march-3a-v1.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/80/long-march-3/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/110-long-march-3-v1.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-3/110-long-march-3-v1.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/79/ariane-5g/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/g/110-ariane-5g-v2.2.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/g/110-ariane-5g-v2.2.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/78/atlas-v-401-jpss-2-loftid/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-jpss-2-loftid/110-atlas-v-401-jpss-2-loftid-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-jpss-2-loftid/110-atlas-v-401-jpss-2-loftid-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/77/atlas-v-411-solar-orbiter/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-411-solar-orbiter/110-atlas-v-411-solar-orbiter-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-411-solar-orbiter/110-atlas-v-411-solar-orbiter-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/76/atlas-v-401-lro-lcross/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-lro-lcross/110-atlas-v-401-lro-cross-v2.2.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-401-lro-lcross/110-atlas-v-401-lro-cross-v2.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/75/atlas-v-431/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/431/110-atlas-v-431-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/431/110-atlas-v-431-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/74/atlas-v-421/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/421/110-atlas-v-421-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/421/110-atlas-v-421-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/73/atlas-v-411/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/411/110-atlas-v-411-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/411/110-atlas-v-411-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/72/atlas-v-401/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/401/110-atlas-v-401-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-400/atlas-v-normal/401/110-atlas-v-401-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/71/vulcan-centaur-2s-peregrine/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc2s/peregrine/110-vulcan-centaur-2s-peregrine-v3.2.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/vulcan/vc2s/peregrine/110-vulcan-centaur-2s-peregrine-v3.2.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/70/peregrine-lander/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/astrobotic/peregrine-lander/110-peregrine-lander-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/astrobotic/peregrine-lander/110-peregrine-lander-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -958,7 +1167,9 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/67/energia-buran/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/energia/energia-buran/110-energia-buran-v2.7.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/ussr/energia/energia-buran/110-energia-buran-v2.7.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -970,49 +1181,63 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/65/zhuque-1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/zhuque/zhuque-1/110-zhuque-1-v1.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/zhuque/zhuque-1/110-zhuque-1-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/64/long-march-4a/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-4/long-march-4a/110-long-march-4a-v2.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-4/long-march-4a/110-long-march-4a-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/63/long-march-4c/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-4/long-march-4c/110-long-march-4c-v3.5.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-4/long-march-4c/110-long-march-4c-v3.5.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/62/long-march-8/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-8/long-march-8-2b/110-long-march-8-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-8/long-march-8-2b/110-long-march-8-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/61/long-march-8/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-8/long-march-8-0b/110-long-march-8-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-8/long-march-8-0b/110-long-march-8-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/60/long-march-7a/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-7/long-march-7a/110-long-march-7a-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-7/long-march-7a/110-long-march-7a-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/59/long-march-7/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-7/long-march-7/110-long-march-7-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-7/long-march-7/110-long-march-7-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/58/europa-1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/europa/europa-1/110-europa-1-v1.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/europa/europa-1/110-europa-1-v1.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -1022,9 +1247,10 @@
     </image:image>
   </url>
   <url>
-  <loc>https://flosrocketbricks.com/moc/56/diamant-bp4/</loc>
+    <loc>https://flosrocketbricks.com/moc/56/diamant-bp4/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/france/diamant/bp4/110-diamant-bp4-v2.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/france/diamant/bp4/110-diamant-bp4-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -1054,13 +1280,17 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/51/tiangong-space-station/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/tiangong/tiangong-space-station/110-tiangong-space-station-v1.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/tiangong/tiangong-space-station/110-tiangong-space-station-v1.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/50/lc-41-atlas-v-mobile-launch-platform/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/lc-41-atlas-v-transporter/110-lc-41-atlas-v-transporter-v3.3.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/lc-41-atlas-v-transporter/110-lc-41-atlas-v-transporter-v3.3.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -1078,25 +1308,32 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/47/titan-iii-23c/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/23c/110-titan-iii-23c-v3.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/23c/110-titan-iii-23c-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/46/titan-iii-commercial-intelsat/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/commercial/intelsat/110-titan-iii-commercial-intelsat-v3.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/commercial/intelsat/110-titan-iii-commercial-intelsat-v3.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/45/titan-iii-commercial-mars-observer/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/commercial/mars-observer/110-titan-iii-commercial-mars-observer-v3.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/commercial/mars-observer/110-titan-iii-commercial-mars-observer-v3.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/44/titan-iii-commercial-skynet-4a-and-jcsat-2/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/commercial/skynet-jcsat/110-titan-iii-commercial-skynet-4a-and-jcsat-2-v3.1.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/commercial/skynet-jcsat/110-titan-iii-commercial-skynet-4a-and-jcsat-2-v3.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -1114,91 +1351,120 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/41/titan-iiic-vela-11-and-12/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/vela-11-12/110-titan-iiic-vela-11-and-12-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/vela-11-12/110-titan-iiic-vela-11-and-12-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/40/titan-iiic-idcsp-8-to-15/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/idcsp-8-to-15/110-titan-iiic-idcsp-8-to-15-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/idcsp-8-to-15/110-titan-iiic-idcsp-8-to-15-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/39/titan-iiic-idcsp-and-ggts-2/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/idcsp-ggts-2/110-titan-iiic-idcsp-and-ggts-2-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/idcsp-ggts-2/110-titan-iiic-idcsp-and-ggts-2-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/38/titan-iiic-tacsat-1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/tacsat-1/110-titan-iiic-tacsat-1-v3.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/tacsat-1/110-titan-iiic-tacsat-1-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/37/titan-iiic/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/transtage/110-titan-iiic-v3.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/transtage/110-titan-iiic-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/36/soyuz-ms/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/russia/soyuz-spacecraft/soyuz-ms/110-soyuz-ms-v1.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/russia/soyuz-spacecraft/soyuz-ms/110-soyuz-ms-v1.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/35/atlas-v-hlv/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-heavy/110-atlas-v-heavy-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-heavy/110-atlas-v-heavy-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/34/atlas-v-n22-starliner/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-n22-starliner/110-atlas-v-n22-starliner-v2.4.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-n22-starliner/110-atlas-v-n22-starliner-v2.4.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/33/atlas-v-551/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/551/110-atlas-v-551-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/551/110-atlas-v-551-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/32/atlas-v-541/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/541/110-atlas-v-541-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/541/110-atlas-v-541-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/31/atlas-v-531/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/531/110-atlas-v-531-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/531/110-atlas-v-531-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/30/atlas-v-521/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/521/110-atlas-v-521-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/521/110-atlas-v-521-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/29/atlas-v-511/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/511/110-atlas-v-511-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/511/110-atlas-v-511-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/28/atlas-v-501/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/501/110-atlas-v-501-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-normal/501/110-atlas-v-501-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/27/ariane-5-eca-juice/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/eca/juice/110-ariane-5-eca-juice-v2.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/eca/juice/110-ariane-5-eca-juice-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -1228,7 +1494,8 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/22/titan-iiic-mol/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/mol/110-titan-iiic-mol-v3.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/c/mol/110-titan-iiic-mol-v3.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -1240,7 +1507,8 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/20/orion-with-icps/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/orion/icps/110-orion-with-icps-v2.1.jpg</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/orion/icps/110-orion-with-icps-v2.1.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -1258,13 +1526,17 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/17/ariane-5-eca/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/eca/normal/110-ariane-5-eca-v1.9.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-5/eca/normal/110-ariane-5-eca-v1.9.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/16/uchinoura-mu-pad/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/epsilon/launchpad/110-uchinoura-mu-pad-v3.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/japan/epsilon/launchpad/110-uchinoura-mu-pad-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -1276,31 +1548,39 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/14/atlas-v-551-juno/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/110-atlas-v-551-juno-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-551-juno/110-atlas-v-551-juno-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/13/atlas-v-541-mars-2020/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/110-atlas-v-541-mars-2020-v2.4.jpg</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/usa/atlas/atlas-v/atlas-v-500/atlas-v-541-mars-2020/110-atlas-v-541-mars-2020-v2.4.jpg
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/12/zhuque-2-y1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/zhuque/zhuque-2/110-zhuque-2-y1-v2.3.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/zhuque/zhuque-2/110-zhuque-2-y1-v2.3.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/11/soyuz-fg-progress/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/russia/soyuz/soyuz-progress/110-soyuz-progress-v2.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/russia/soyuz/soyuz-progress/110-soyuz-progress-v2.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/10/soyuz-fg-ms/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/russia/soyuz/soyuz-fg-ms/110-soyuz-fg-ms-v2.4.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/russia/soyuz/soyuz-fg-ms/110-soyuz-fg-ms-v2.4.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -1330,31 +1610,37 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/5/long-march-1b/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-1b/110-long-march-1b-v2.0.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/china/long-march/long-march-1b/110-long-march-1b-v2.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/4/ariane-3/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-3/110-ariane-3-v3.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-3/110-ariane-3-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/3/ariane-2/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-2/110-ariane-2-v3.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-2/110-ariane-2-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/2/ariane-1/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-1/110-ariane-1-v3.0.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-1/110-ariane-1-v3.0.png
+      </image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/1/energia-2/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/energia/energia-2/110-energia-2-v1.1.png</image:loc>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/ussr/energia/energia-2/110-energia-2-v1.1.png
+      </image:loc>
     </image:image>
   </url>
   <url>
@@ -1371,6 +1657,12 @@
   </url>
   <url>
     <loc>https://flosrocketbricks.com</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/logo.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/blog/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/logo.jpg</image:loc>
     </image:image>

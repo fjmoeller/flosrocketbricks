@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MetaServiceService } from 'src/app/services/meta-service.service';
+import { MetaService } from 'src/app/services/meta.service';
 import {RouterLink} from "@angular/router";
 
 @Component({
@@ -13,7 +13,7 @@ import {RouterLink} from "@angular/router";
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private metaService: MetaServiceService) { }
+  constructor(private metaService: MetaService) { }
 
   secretContent: string = "Click to reveal";
 

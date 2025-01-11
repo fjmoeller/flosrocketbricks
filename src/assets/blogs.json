@@ -6,8 +6,8 @@
     "content": [
       {
         "content": [
-          "As some of you might have noticed already, there is a new feature on this site, that is available for some of the newly updated and added MOCs.",
-          "You can view their instructions directly on the computer, but not in a pdf format, but instead in an (more or less) interactive format.",
+          "As some of you might have noticed already there is a new feature on this site that is available for some of the newly updated and added MOCs.",
+          "You can now view their instructions directly on the computer, but not in a pdf format, but instead in an (more or less) interactive format.",
           "Meaning that you can turn the model at each step, allowing for a hopefully easy assembly, though I personally think that my normal pdf instructions probably were good enough for an easy assembly too :D.\n",
           "For me this new feature means MUCH less work as the pdf instructions always take hours of work (depending on the size of the model of course).",
           "When making the instructions for this viewer I only need to arrange the step order in which the parts get added in a nice way and don't have to worry at all about things like the camera rotation or anything that usually take a lot of time and for sure are not fun at all to do.\n",
@@ -19,10 +19,6 @@
         "content": ["https://files.flosrocketbackend.com/blogs/1/instructions-button.jpg"],
         "blogElementType": 1
       }, {
-        "title": "How the instruction viewer itself looks like.",
-        "content": ["https://files.flosrocketbackend.com/blogs/1/instructions-example.jpg"],
-        "blogElementType": 1
-      }, {
         "content": [
           "There also are a lot of settings that can be toyed with. Everything from the background color to the movement speed of the camera.",
           "Although I do recommend to not touch them (except for maybe the colors), as you can quickly destroy the usability of the instruction viewer...\n",
@@ -30,21 +26,25 @@
           ],
         "blogElementType": 3
       }, {
+        "title": "How the instruction viewer itself looks like.",
+        "content": ["https://files.flosrocketbackend.com/blogs/1/instructions-example.jpg"],
+        "blogElementType": 1
+      }, {
         "title": "The technical background",
         "content": [
-          "The technical framework of this new feature is quite similar to the existing 3D viewer that was already present fro some MOCs.",
-          "How it currently works is that when you first open the site the assemblies for each step get made all at once and then the one fitting the current step will just be picked out and displayed.",
-          "At first I thought that maybe assembling every assembly as one opens a step would be the way to do it, as I was suspecting that if I would do it all at once the initial delay would be too big when one enters the site.",
+          "The technical framework of this new feature is in some parts similar to the existing 3D viewer that was already present fro some MOCs, so I was able to copy quite some code.",
+          "\nHow it currently works is that when you first open the site the assemblies for each step get made all at once and then the one fitting the current step will just be picked out and displayed.",
+          "At first I thought that maybe assembling the step specific assembly as someone opens the step would be the way to do it, as I was suspecting that if I would do it all at once the initial delay would be too big when one enters the site.",
           "But that problem didn't manifest and the initial delay is quite short, so all good :P.",
-          "\nLike it is with the 3D viewer, I don't have this feature enabled on every MOC, not even ever new one.",
-          "Reasons may either be that I just haven't prepared it for the instructions, or a problem that occurred in the same way with the 3D viewer is that I used a brand new Lego piece whose model hasn't been pushed to the ldraw library of parts yet.",
-          "\nA feature that I thought quite a bit about during development was the auto rotation if the assembly and camera.",
+          "\nLike it is with the 3D viewer, I don't have this feature enabled on every MOC, not even every new one.",
+          "Reasons may either be that I just haven't prepared it for the instructions, or a problem that occurred in the same way with the 3D viewer is that I used a brand new Lego piece whose model is not part of the ldraw library yet.",
+          "\nA feature that I thought quite a bit about during development was the auto rotation of the displayed parts and the camera.",
           "I wanted to have it so that the model automatically turns to the newly added parts so that they are automatically visible and that the user doesn't have to turn the model themself.",
           "How it works right now, is that the viewer just checks in which direction from the center point of the previously added parts the center point of the newly added parts is.",
           "The camera then has a few predetermined positions and selects the closest one.",
-          "It quite simple and works well, but can, if the model is pretty complicated, in some cases not work.",
+          "It quite simple and works well, but can, if the model is pretty complicated, not work in a few cases.",
           "But since the user can just rotate the MOC themself, it should be fine.",
-          "What it does change is that I need to be more careful with the order in which the parts get assembled, as it's quite easy for the camera to flip around.",
+          "What it does change, is that I need to be more careful with the order in which the parts get assembled, as it's quite easy for the camera to flip around if parts get added in different orders.",
           "\nI would love to program this feature a different way some day, but it won't be that easy.",
           "The idea would be to again have some predetermined positions of the camera and then render a lower quality image and detect from which angle the new parts in the step can be seen best from.",
           "I would have to tinker around a lot with shaders for that to work and well I guess I can't be bothered to do that, so it'll probably stay the way it is right now :P."
@@ -54,15 +54,16 @@
       {
         "title": "Future additions",
         "content": [
-          "There are a few things, which I am planning to add as new features for the instruction viewer in the future.\n",
-          "I want to improve the touch controls as they aren't as smooth as I want them yet, luckily the mouse controls are working fine already.",
+          "There are a few things which I am planning to add as new features for the instruction viewer in the future.",
+          "\nI want to improve the touch controls as they aren't as smooth as I want them yet, luckily the mouse controls are working fine already.",
           "Many instructions from Lego and other companies have rotation indicator whenever the model should be rotated for the current step.",
           "I am thinking about adding this as well, although it's not that high on my todo list.",
-          "Metallic parts should get a small indicator in the parts list that they are metallic.",
-          "That's a feature that should be quite easy so add.",
-          "A big feature that I have some people want is an option for outlining newly added parts.",
-          "That's a feature that is a feature is really want to add in the future, although currently the new and old parts in the same step can already differentiated, as the old parts are of faded colors.\n",
-          "When exactly I am going to add these features (if ever), that I don't know yet, we'll see."
+          "Metallic parts should get a small indicator in the parts list that they are metallic as it's not directly visible that which color they have right now.",
+          "That's a feature that should be quite easy so add, so it should be coming more or less soon.",
+          "A big feature that I know some people want, is an option for outlining newly added parts.",
+          "This normally helps the user to identify the newly added parts on the picture",
+          "And although currently the new and old parts in the same step can already be differentiated, as the old parts are of faded colors, I do still will add on outline in the future.",
+          "\nWhen exactly I am going to add these features (if ever), that I don't know yet, you'll just have to wait and see :)."
         ],
         "blogElementType": 0
       }
@@ -72,7 +73,7 @@
   },
   {
     "id": 0,
-    "title": "Now Available on FlosRocketBricks: Blogs",
+    "title": "Now Available: FlosRocketBlog",
     "shortDescription": "The newest feature on my website is now live! I'll talk about why it exists and what you can expect of it :)",
     "content": [
       {
@@ -94,7 +95,7 @@
           "Another thing might be spaceflight events I like to visit, such as the ESA Open Days at ESTEC in the Netherlands, which I visited a few times now.",
           "\nI can't say how often I'll post blogs here, there might be months between them and I'll just write one whenever I find a topic to write about and have the time to.",
           "The blogs also might differ in length, it's not like I really care about having books long texts on my website and I don't really want to force myself to write much.",
-          "\n\nWith that said I hope you'll enjoy this new feature!"
+          "\nWith that said I hope you'll enjoy this new feature!"
         ],
           "blogElementType": 0
       }

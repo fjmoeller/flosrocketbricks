@@ -1,4 +1,4 @@
-import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {Moc, Version} from '../../model/classes';
 import {MocGrabberService} from 'src/app/services/grabber/moc-grabber.service';
@@ -7,11 +7,13 @@ import {FileExportService} from 'src/app/services/file/file-export.service';
 import {CardComponent} from 'src/app/components/card/card.component';
 import {ViewerComponent} from 'src/app/components/viewer/viewer.component';
 import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ExportSettingsService} from "../../services/file/export-settings.service";
 
 
 @Component({
   standalone: true,
-  imports: [CardComponent, ViewerComponent, CommonModule, RouterLink],
+  imports: [CardComponent, ViewerComponent, CommonModule, RouterLink, ReactiveFormsModule, FormsModule],
   selector: 'app-moc',
   templateUrl: './moc.component.html',
   styleUrls: ['./moc.component.sass']
@@ -24,8 +26,12 @@ export class MocComponent implements OnInit, OnDestroy {
 
   showViewer: boolean = false;
   slideIndex: number = 0;
+  exportSettingsInput: string = "";
 
-  constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: any, private renderer: Renderer2, private router: Router, private metaService: MetaService, private route: ActivatedRoute, private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
+  constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: any,
+              private router: Router, private metaService: MetaService, private route: ActivatedRoute,
+              private mocGrabberService: MocGrabberService, private fileExportService: FileExportService,
+              private exportSettingsService: ExportSettingsService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
   }
 
@@ -44,7 +50,23 @@ export class MocComponent implements OnInit, OnDestroy {
       }
       if (isPlatformBrowser(this.platformId))
         window.scroll({top: 0, left: 0, behavior: "instant"});
+
     });
+    this.exportSettingsInput = this.exportSettingsService.getInstructionSettings();
+  }
+
+  saveExportSettings(): void {
+    if (this.exportSettingsInput) {
+      this.exportSettingsService.setInstructionSettings(this.exportSettingsInput);
+    } else {
+      this.exportSettingsService.setInstructionSettings(this.exportSettingsInput);
+    }
+  }
+
+  resetExportSettings(): void {
+    this.exportSettingsService.resetInstructionSettings();
+    this.exportSettingsInput = this.exportSettingsService.getInstructionSettings();
+    //TODO add link to used color ids (ldraw?)
   }
 
   changeSlide(n: number): void {
@@ -73,8 +95,8 @@ export class MocComponent implements OnInit, OnDestroy {
     window.URL.revokeObjectURL(a.href);
   }
 
-  async downloadCsv(filelink: string, filename: string) {
-    const data = await this.fileExportService.getCsv(filelink, this.moc.internalColor);
+  async downloadCsv(fileLink: string, filename: string) {
+    const data = await this.fileExportService.getCsv(fileLink, this.moc.internalColor);
     const blob = new Blob([data], {type: 'text/csv'});
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);
@@ -126,5 +148,4 @@ export class MocComponent implements OnInit, OnDestroy {
         return "Not Tested";
     }
   }
-
 }

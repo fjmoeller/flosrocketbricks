@@ -66,7 +66,6 @@ export class InstructionSettingsService {
     }
 
     private saveInstructionSettingsToLocalStorage(settings: InstructionSettings) {
-        localStorage.clear();
         localStorage.setItem(this.LOCALSTORAGE_KEY, JSON.stringify(settings));
     }
 

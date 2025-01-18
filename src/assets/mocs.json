@@ -5091,8 +5091,8 @@
           {
             "description": "The digital io file of the spacecraft",
             "type": "io",
-            "export": false,
-            "link": "https://files.flosrocketbackend.com/mocs/35/ussr/zond/zond-5/v2.3/Zond_Spacecraft_V2.3.io",
+            "export": true,
+            "link": "https://files.flosrocketbackend.com/mocs/35/ussr/zond/zond-5/v2.3/Zond_5_V2.3.io",
             "name": "Zond_Spacecraft_V2.3.io"
           }
         ],

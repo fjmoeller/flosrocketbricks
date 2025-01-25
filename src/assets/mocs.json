@@ -1,5 +1,70 @@
 [
   {
+    "title": "Gateway",
+    "id": 224,
+    "related": [],
+    "dimensions": "13.2x18.7x41cm",
+    "dimensionsExtra": "",
+    "links": [
+      "https://www.nasa.gov/mission/gateway/",
+      "https://www.nasa.gov/reference/gateway-about/",
+      "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/Gateway",
+      "https://en.wikipedia.org/wiki/Lunar_Gateway"
+    ],
+    "updateMessage": "",
+    "tags": [],
+    "altTitles": ["Lunar Gateway"],
+    "region": [
+      "USA"
+    ],
+    "parts": 874,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/usa/gateway/110-gateway-v1.1.jpg",
+    "regionExtra": "",
+    "partsExtra": "",
+    "internalColorExtra": "",
+    "versions": [
+      {
+        "files": [
+          {
+            "name": "Gateway_V1.1.io",
+            "description": "The digital file of the space station",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/gateway/v1.1/Gateway_V1.1.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V1.1",
+        "changelog": ""
+      }
+    ],
+    "typeExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "designer": "SkySaac",
+    "internalColor": "-",
+    "company": "",
+    "companyExtra": "",
+    "stability": -1,
+    "stabilityExtra": "I am not sure if this model is stable.",
+    "mocDescription": "This is a MOC of the gateway space station.",
+    "rocketDescription": "Gateway is part of the Artemis program. It is a space station planned to orbit the moon and to be used as a hub for lunar expeditions. It will be composed of modules by different nations.",
+    "type": "spacestation",
+    "designerExtra": "",
+    "dateCreated": "2025-01-23",
+    "lastUpdate": "2025-01-23",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/gateway/v1.1/Gateway_V1.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/gateway/v1.1/Gateway_V1.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/gateway/v1.1/Gateway_V1.1_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/gateway/v1.1/Gateway_V1.1_4.jpg"
+    ]
+  },
+  {
     "id": 223,
     "title": "New Glenn",
     "related": [

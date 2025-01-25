@@ -226,6 +226,7 @@
 /moc/221/long-march-8a/
 /moc/222/saturn-ib/
 /moc/223/new-glenn/
+/moc/224/gateway/
 /about/
 /404/
 /blog/

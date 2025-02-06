@@ -32,7 +32,7 @@ export class InstructionService {
   constructor(private ldrawColorService: LdrawColorService, private ldrToThreeService: LdrToThreeService) {
   }
 
-  async getInstructionModel(fileLink: string, instructionVersion: string, prevInterpolationColor?: Color, prevInterpolationPercentage?: number): Promise<InstructionModel> {
+  async getInstructionModel(fileLink: string, instructionVersion: string, prevInterpolationColor?: Color, prevInterpolationPercentage?: number, defaultAnyColor?: Color): Promise<InstructionModel> {
     if (prevInterpolationColor !== undefined) this.PREV_INTERPOLATION_COLOR = prevInterpolationColor;
     else this.PREV_INTERPOLATION_COLOR = this.DEFAULT_PREV_INTERPOLATION_COLOR;
     if (prevInterpolationPercentage !== undefined) this.PREV_INTERPOLATION_PERCENTAGE = prevInterpolationPercentage;
@@ -41,10 +41,10 @@ export class InstructionService {
     const fileName = fileLink.slice(0, fileLink.length - 2) + "ldr"
     const contents = await fetch(environment.backendFetchUrl + fileName);
 
-    return this.createInstructionModel(await contents.text(), instructionVersion);
+    return this.createInstructionModel(await contents.text(), instructionVersion, defaultAnyColor);
   }
 
-  private createInstructionModel(ldrFileContent: string, instructionVersion: string): InstructionModel {
+  private createInstructionModel(ldrFileContent: string, instructionVersion: string, defaultAnyColor?: Color): InstructionModel {
     const instructionModel: InstructionModel = {
       instructionSteps: [],
       parts: new Map<string, InstructionPart>(),
@@ -94,7 +94,7 @@ export class InstructionService {
         if (submodelLine.startsWith("1")) {
           const createdReference = this.ldrToThreeService.parseLineTypeOne(submodelLine, submodelLines[j - 1].includes("0 BFC INVERTNEXT"));
           stepReferences[stepCounter].push(createdReference);
-          this.createMaterialIfNotExists(createdReference.color, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap);
+          this.createMaterialIfNotExists(createdReference.color, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap, defaultAnyColor);
           if (!referenceNames.includes(createdReference.name))
             referenceNames.push(createdReference.name);
         } else if (submodelLine.startsWith("0 STEP")) {
@@ -124,7 +124,7 @@ export class InstructionService {
     const rawPartLines = ldrObjects[1].split("0 NOFILE");
     for (let i = 0; i < rawPartLines.length; i++) {
       const partLines = rawPartLines[i];
-      const parsedPart: LdrPart = this.parsePartLines(partLines, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap);
+      const parsedPart: LdrPart = this.parsePartLines(partLines, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap, defaultAnyColor);
       instructionModel.ldrData.allPartsMap.set(parsedPart.id, parsedPart);
       if (!referenceNames.includes(parsedPart.id)) continue; //if it's a subpart, then skip it
       const resolvedPart = this.resolvePart(parsedPart.id, instructionModel.ldrData.allPartsMap); //collects all vertices in the top part, so all subparts wil be resolved
@@ -368,7 +368,7 @@ export class InstructionService {
     return ldrPart;
   }
 
-  private parsePartLines(partText: string, colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>): LdrPart {
+  private parsePartLines(partText: string, colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>, defaultAnyColor?: Color): LdrPart {
     const partLines = partText.split("\n");
 
     let partId: string = "ERROR FLO";
@@ -388,7 +388,7 @@ export class InstructionService {
       if (partLine.startsWith("1")) { //line is a reference
         references.push(this.ldrToThreeService.parseLineTypeOne(partLine, invertNext));
         invertNext = false;
-        this.createMaterialIfNotExists(references[references.length - 1].color, colorToMaterialMap, colorToPrevMaterialMap);
+        this.createMaterialIfNotExists(references[references.length - 1].color, colorToMaterialMap, colorToPrevMaterialMap, defaultAnyColor);
       } else if (partLine.startsWith("0 FILE")) { //line is a part id
         partId = partLine.slice(7);
         invertNext = false;
@@ -406,7 +406,7 @@ export class InstructionService {
         else
           parsed = this.ldrToThreeService.parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW));
 
-        this.createMaterialIfNotExists(parsed.color, colorToMaterialMap, colorToPrevMaterialMap);
+        this.createMaterialIfNotExists(parsed.color, colorToMaterialMap, colorToPrevMaterialMap, defaultAnyColor);
         const partVertices = colorVertexMap.get(parsed.color);
 
         const vertexIndexMap = new Map<number, number>(); //maps the old index of the vertex to the position in the colorIndexMap
@@ -447,15 +447,15 @@ export class InstructionService {
     return new LdrPart(partId, partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
   }
 
-  private createMaterialIfNotExists(color: number, colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>): void {
+  private createMaterialIfNotExists(color: number, colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>, defaultAnyColor?: Color): void {
     if (!colorToMaterialMap.has(color) && color != 24 && color != 16 && color != -1 && color != -2) {
-      const matParams = this.ldrawColorService.resolveColorByLdrawColorId(color);
+      const matParams = this.ldrawColorService.resolveColorByLdrawColorId(color, defaultAnyColor);
       const material = new MeshStandardMaterial();
       material.flatShading = true;
       material.setValues(matParams);
       colorToMaterialMap.set(color, material);
 
-      const prevMatParams = this.ldrawColorService.resolveColorByLdrawColorId(color);
+      const prevMatParams = this.ldrawColorService.resolveColorByLdrawColorId(color, defaultAnyColor);
       const prevMaterial = material.clone();
       prevMaterial.color = prevMatParams.color.clone().lerp(this.PREV_INTERPOLATION_COLOR, this.PREV_INTERPOLATION_PERCENTAGE);
       colorToPrevMaterialMap.set(color, prevMaterial);

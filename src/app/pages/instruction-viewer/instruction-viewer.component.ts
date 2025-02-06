@@ -2,7 +2,7 @@ import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {
   AmbientLight, AxesHelper,
   BufferGeometry,
-  Clock,
+  Clock, Color,
   DirectionalLight,
   Group,
   Material,
@@ -174,7 +174,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.loadingFinished = false;
     if (this.file.instructions && isPlatformBrowser(this.platform)) {
       this.metaService.setDefaultTags(this.file.name + " Online Instructions - FlosRocketBricks", window.location.href);
-      this.instructionModel = await this.instructionService.getInstructionModel(this.file.link, this.file.instructions, this.instructionSettings.prevInterpolationColor, this.instructionSettings.prevInterpolationPercentage);
+      this.instructionModel = await this.instructionService.getInstructionModel(this.file.link, this.file.instructions, this.instructionSettings.prevInterpolationColor, this.instructionSettings.prevInterpolationPercentage, new Color(this.instructionSettings.defaultAnyColor) );
       this.collectElementReferences();
       this.createRenderer();
       this.createMainScene();

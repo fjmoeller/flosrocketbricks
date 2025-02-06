@@ -17,6 +17,14 @@ export class LdrawColorService {
     }
   }
 
+  getColorNames(): string[] {
+    return [...this.ldrColorList.values()].map(e => e.name);
+  }
+
+  getNonsenseColors(): string[] {
+    return ["Trans_Sticker","Electric_Contact_Copper","Electric_Contact_Alloy","Magnet","Edge_Colour","Main_Colour"];
+  }
+
   getLdrawColorIdByColorName(colorName: string): number {
     if (colorName === "-" || colorName === "") return -1;
     const noSpaceColorName = colorName.replace(" ", "_");
@@ -37,9 +45,9 @@ export class LdrawColorService {
       return "Any Color";
   }
 
-  resolveColorByLdrawColorId(id: number) {
+  resolveColorByLdrawColorId(id: number, defaultColor?: Color) {
     const ldrColor = this.ldrColorList.get(id);
-    const finalColor: Color = this.getHexColorFromLdrawColorId(id);
+    const finalColor: Color = this.getHexColorFromLdrawColorId(id, defaultColor);
     const opacity: number = ldrColor ? ldrColor.alpha / 255 : 1.0;
     const transparent: boolean = opacity < 0.999;
     const roughness = 0.8;
@@ -77,7 +85,7 @@ export class LdrawColorService {
     return {color: finalColor, opacity: opacity, roughness: roughness, transparent: transparent}
   }
 
-  getHexColorFromLdrawColorId(id: number): Color {
+  getHexColorFromLdrawColorId(id: number, defaultColor?: Color): Color {
     const ldrColor = this.ldrColorList.get(id);
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(ldrColor?.hex ?? "#fff000");
     if (ldrColor && result) {
@@ -88,6 +96,8 @@ export class LdrawColorService {
       }
       return new Color(res.r / 255, res.g / 255, res.b / 255);
     }
+    if (defaultColor)
+      return defaultColor;
     console.warn("Error finding color %d", id);
     return new Color("#f224d3");
   }

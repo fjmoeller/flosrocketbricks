@@ -108,6 +108,7 @@ export interface InstructionSettings {
   prevInterpolationColor: Color,
   prevInterpolationPercentage: number,
   enableOutline: boolean
+  defaultAnyColor: string
 }
 
 export enum AutoShowBottom {

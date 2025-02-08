@@ -1,3 +1,11 @@
-<div>
-    <a class="text-coloring" [href]="content">This is a link</a>
+<div class="blog-link">
+  @if (title) {
+    <h3 class="text-coloring" style="white-space: pre-wrap">{{ title }}</h3>
+  }
+  @for (link of content; track link) {
+    <div class="link-wrapper">
+      <a class="text-coloring" [href]="link.link">- {{ link.linkDescription }}</a>
+      <div class="domainPreview">({{ getDomainFromUrl(link.link) }})</div>
+    </div>
+  }
 </div>

@@ -8,20 +8,24 @@ import {SimpleLdrSubmodel, SimpleReference} from '../../model/simpleLdrawParts';
 import {PartMapping, SpecificPartMapping, PartMappingFix, BricklinkRefactoredPart} from 'src/app/model/partMappings';
 import bricklink_refactored_parts from '../../../assets/ldr/lists/bricklink_refactored_parts.json'
 import {environment} from "../../../environments/environment";
+import {ExportSettingsService} from "./export-settings.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileExportService {
 
-  private replaceColor: boolean = true;
-
   private separationString = "###";
+
+  private readonly DEFAULT_BRICKLINK_ANY_COLOR_ID = 0;
+  private readonly DEFAULT_REBRICKABLE_ANY_COLOR_ID = 9999;
+  private readonly DEFAULT_LDRAW_ANY_COLOR_ID = 499999;
 
   private countedPartMap = new Map<string, number>();
   private mappedCountedPartMap = new Map<string, number>();
 
-  constructor(private ldrToThreeService: LdrToThreeService, private ldrawColorService: LdrawColorService) {
+  constructor(private ldrToThreeService: LdrToThreeService, private ldrawColorService: LdrawColorService,
+              private exportSettingsService: ExportSettingsService) {
   }
 
   async collectUsedPartsMappings(url: string, isBr: boolean): Promise<void> {
@@ -69,21 +73,46 @@ export class FileExportService {
 
     const placeHolderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(placeholderColor);
 
+    const anyReplacementColor = this.exportSettingsService.getExportSettings();
+    if (anyReplacementColor !== "") {
+      const anyReplacementColorCode = this.ldrawColorService.getLdrawColorIdByColorName(anyReplacementColor);
+      this.replaceColors(anyReplacementColorCode, placeHolderColorCode);
+    }
+
     let xml = "<INVENTORY>\n";
     for (let key of this.mappedCountedPartMap.keys()) {
-      const colorIdKey = key.split(this.separationString); //1sr part contains color, 2nd the id
-      let color = "0";
-      if (!this.replaceColor || placeHolderColorCode != Number(colorIdKey[0])) //if the color is not the to be replaced one
-        color = "" + this.ldrawColorService.getBricklinkColorIdByLdrawColorId(colorIdKey[0], 0);
-      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + colorIdKey[1] + "</ITEMID>\n		<COLOR>" + color + "</COLOR>\n		<MINQTY>" + this.mappedCountedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
+      const colorIdKey = key.split(this.separationString); //1st part contains color, 2nd the id
+      const bricklinkColorId = this.ldrawColorService.getBricklinkColorIdByLdrawColorId(colorIdKey[0], this.DEFAULT_BRICKLINK_ANY_COLOR_ID);
+      xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + colorIdKey[1] + "</ITEMID>\n		<COLOR>" + bricklinkColorId + "</COLOR>\n		<MINQTY>" + this.mappedCountedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
     }
     xml += "</INVENTORY>";
-
-    //this.fixBricklinkRefactoredParts();
 
     this.countedPartMap.clear();
     this.mappedCountedPartMap.clear();
     return xml;
+  }
+
+  private replaceColors(anyReplacementColorCode: number, placeHolderColorCode: number): void {
+    let colorsToReplace = this.DEFAULT_LDRAW_ANY_COLOR_ID;
+    if (placeHolderColorCode !== null && placeHolderColorCode !== -1)
+      colorsToReplace = placeHolderColorCode;
+
+    const parts: [string, number][] = [...this.mappedCountedPartMap.entries()];
+
+    for (let i = 0; i < parts.length; i++) {
+      const colorIdKey = parts[i][0].split(this.separationString); //1st part contains color, 2nd the id
+      if (colorsToReplace === Number(colorIdKey[0])) {
+        this.mappedCountedPartMap.get(parts[i][0])
+        const newPartKey = anyReplacementColorCode + this.separationString + colorIdKey[1];
+        const existingPartEntry = this.mappedCountedPartMap.get(newPartKey);
+        if (existingPartEntry !== undefined) {
+          this.mappedCountedPartMap.set(newPartKey, parts[i][1] + existingPartEntry);
+        } else {
+          this.mappedCountedPartMap.set(newPartKey, parts[i][1]);
+        }
+        this.mappedCountedPartMap.delete(parts[i][0]);
+      }
+    }
   }
 
   async getCsv(url: string, colorName: string): Promise<string> {
@@ -92,14 +121,17 @@ export class FileExportService {
 
     const placeHolderColorCode = this.ldrawColorService.getLdrawColorIdByColorName(colorName);
 
+    const anyReplacementColor = this.exportSettingsService.getExportSettings();
+    if (anyReplacementColor !== "") {
+      const anyReplacementColorCode = this.ldrawColorService.getLdrawColorIdByColorName(anyReplacementColor);
+      this.replaceColors(anyReplacementColorCode, placeHolderColorCode);
+    }
+
     let csv = "Part,Color,Quantity,Is Spare\n";
     for (let key of this.mappedCountedPartMap.keys()) {
       const colorIdKey = key.split(this.separationString);
-      let color = "9999";
-      if (!this.replaceColor || placeHolderColorCode != Number(colorIdKey[0])) { //if the color is not the to be replaced one
-        color = "" + this.ldrawColorService.getRebrickableColorIdByLdrawColorId(colorIdKey[0], 9999);
-      }
-      csv += colorIdKey[1] + "," + color + "," + this.mappedCountedPartMap.get(key) + ",False\n";
+      const rebrickableColorId = this.ldrawColorService.getRebrickableColorIdByLdrawColorId(colorIdKey[0], this.DEFAULT_REBRICKABLE_ANY_COLOR_ID);
+      csv += colorIdKey[1] + "," + rebrickableColorId + "," + this.mappedCountedPartMap.get(key) + ",False\n";
     }
 
     this.countedPartMap.clear();

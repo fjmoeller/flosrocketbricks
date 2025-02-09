@@ -1,0 +1,13 @@
+<div id="selectContainer" class="input">
+  <div id="selectText" class="inputText" >
+    {{ selectedOption?.label }}
+  </div>
+  <div id="inputOptions" class="inputOptions">
+    <input class="inputSearch" [(ngModel)]="searchText" (ngModelChange)="searchTextChanged()" type="text" placeholder="Search">
+    @for (option of filteredSelectOption; track option) {
+      <div class="inputOption" (click)="optionSelected(option)" [ngClass]="{'inputOptionSelected': option.value === selectedOption?.value}">
+        {{ option.label }}
+      </div>
+    }
+  </div>
+</div>

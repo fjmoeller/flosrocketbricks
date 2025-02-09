@@ -59,6 +59,7 @@ export class InstructionSettingsComponent implements OnInit {
   prevInterpolationColor!: string;
   prevInterpolationPercentage!: number;
   enableOutline!: boolean;
+  defaultAnyColor!: string;
 
   constructor(private instructionSettingsService: InstructionSettingsService) {
   }
@@ -108,6 +109,7 @@ export class InstructionSettingsComponent implements OnInit {
     this.prevInterpolationColor = '#' + ('000000' + instructionSettings.prevInterpolationColor.getHex().toString(16)).slice(-6);
     this.prevInterpolationPercentage = instructionSettings.prevInterpolationPercentage;
     this.enableOutline = instructionSettings.enableOutline;
+    this.defaultAnyColor = instructionSettings.defaultAnyColor;
   }
 
   save(): void {
@@ -148,7 +150,8 @@ export class InstructionSettingsComponent implements OnInit {
       partListBgColor: this.partListBgColor,
       prevInterpolationColor: new Color(this.prevInterpolationColor),
       prevInterpolationPercentage: this.prevInterpolationPercentage,
-      enableOutline: this.enableOutline
+      enableOutline: this.enableOutline,
+      defaultAnyColor: this.defaultAnyColor
     };
 
     this.instructionSettingsService.setInstructionSettings(newSettings);

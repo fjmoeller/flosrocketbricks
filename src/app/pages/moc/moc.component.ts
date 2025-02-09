@@ -9,11 +9,13 @@ import {ViewerComponent} from 'src/app/components/viewer/viewer.component';
 import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ExportSettingsService} from "../../services/file/export-settings.service";
+import {SelectComponent} from "../../components/select/select.component";
+import {ExportSettingsComponent} from "../../components/export-settings/export-settings.component";
 
 
 @Component({
   standalone: true,
-  imports: [CardComponent, ViewerComponent, CommonModule, RouterLink, ReactiveFormsModule, FormsModule],
+  imports: [CardComponent, ViewerComponent, CommonModule, RouterLink, ReactiveFormsModule, FormsModule, ExportSettingsComponent],
   selector: 'app-moc',
   templateUrl: './moc.component.html',
   styleUrls: ['./moc.component.sass']
@@ -26,12 +28,10 @@ export class MocComponent implements OnInit, OnDestroy {
 
   showViewer: boolean = false;
   slideIndex: number = 0;
-  exportSettingsInput: string = "";
 
   constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: any,
               private router: Router, private metaService: MetaService, private route: ActivatedRoute,
-              private mocGrabberService: MocGrabberService, private fileExportService: FileExportService,
-              private exportSettingsService: ExportSettingsService) {
+              private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
     this.moc = this.mocGrabberService.getEmptyMoc();
   }
 
@@ -52,21 +52,6 @@ export class MocComponent implements OnInit, OnDestroy {
         window.scroll({top: 0, left: 0, behavior: "instant"});
 
     });
-    this.exportSettingsInput = this.exportSettingsService.getInstructionSettings();
-  }
-
-  saveExportSettings(): void {
-    if (this.exportSettingsInput) {
-      this.exportSettingsService.setInstructionSettings(this.exportSettingsInput);
-    } else {
-      this.exportSettingsService.setInstructionSettings(this.exportSettingsInput);
-    }
-  }
-
-  resetExportSettings(): void {
-    this.exportSettingsService.resetInstructionSettings();
-    this.exportSettingsInput = this.exportSettingsService.getInstructionSettings();
-    //TODO add link to used color ids (ldraw?)
   }
 
   changeSlide(n: number): void {
@@ -148,4 +133,5 @@ export class MocComponent implements OnInit, OnDestroy {
         return "Not Tested";
     }
   }
+
 }

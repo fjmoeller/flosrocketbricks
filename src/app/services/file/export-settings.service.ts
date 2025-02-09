@@ -20,39 +20,39 @@ export class ExportSettingsService {
     }
     this.isLocalStorageSupported = storageSupported;
     if (this.isLocalStorageSupported) {
-      this.settings = this.retrieveInstructionSettingsFromLocalStorage();
+      this.settings = this.retrieveExportSettingsFromLocalStorage();
     } else {
       this.settings = this.DEFAULT_PLACEHOLDER_EXPORT_COLOR;
     }
   }
 
-  getInstructionSettings(): string {
+  getExportSettings(): string {
     return this.settings;
   }
 
-  setInstructionSettings(settings: string) {
+  setExportSettings(settings: string) {
     if (this.isLocalStorageSupported) {
-      this.saveInstructionSettingsToLocalStorage(settings);
+      this.saveExportSettingsToLocalStorage(settings);
     }
     this.settings = settings;
   }
 
-  resetInstructionSettings() {
+  resetExportSettings() {
     if (this.isLocalStorageSupported) {
-      this.saveInstructionSettingsToLocalStorage(this.DEFAULT_PLACEHOLDER_EXPORT_COLOR);
+      this.saveExportSettingsToLocalStorage(this.DEFAULT_PLACEHOLDER_EXPORT_COLOR);
     }
     this.settings = this.DEFAULT_PLACEHOLDER_EXPORT_COLOR;
   }
 
-  private retrieveInstructionSettingsFromLocalStorage(): string {
+  private retrieveExportSettingsFromLocalStorage(): string {
     const saved = localStorage.getItem(this.LOCALSTORAGE_KEY);
-    if(saved && saved !== "")
-      return saved;
-    else
-      return this.DEFAULT_PLACEHOLDER_EXPORT_COLOR;
+    if(saved && JSON.parse(saved)!== "")
+      return JSON.parse(saved);
+
+    return this.DEFAULT_PLACEHOLDER_EXPORT_COLOR;
   }
 
-  private saveInstructionSettingsToLocalStorage(settings: string) {
+  private saveExportSettingsToLocalStorage(settings: string) {
     localStorage.setItem(this.LOCALSTORAGE_KEY, JSON.stringify(settings));
   }
 }

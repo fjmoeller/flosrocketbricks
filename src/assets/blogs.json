@@ -18,9 +18,9 @@
         "blogElementType": 0
       },
       {
-        "title": "TODO The placeholder colors I used in some of my older MOCs",
+        "title": "The placeholder colors I used in some of my older MOCs",
         "content": [
-          "https://files.flosrocketbackend.com/images/logo_small.png"
+          "https://files.flosrocketbackend.com/blogs/2/placeholderColors.jpg"
         ],
         "blogElementType": 1
       },
@@ -51,9 +51,9 @@
         "blogElementType": 0
       },
       {
-        "title": "TODO Left: How \"Any Color\" looks to you Right: How it looks when you have added the color to Studio",
+        "title": "Left: How \"Any Color\" looks to you Right: How it looks when you have added the color to Studio",
         "content": [
-          "https://files.flosrocketbackend.com/images/logo_small.png"
+          "https://files.flosrocketbackend.com/blogs/2/anyColorInStudio.jpg"
         ],
         "blogElementType": 1
       },
@@ -70,7 +70,7 @@
             "linkDescription": "The youtube tutorial I used"
           },
           {
-            "link": "",
+            "link": "https://files.flosrocketbackend.com/blogs/2/customColors.zip",
             "linkDescription": "The modified config files I use for Studio"
           }
         ],
@@ -88,9 +88,9 @@
         "blogElementType": 0
       },
       {
-        "title": "TODO The export settings are accessible below the download section",
+        "title": "The export settings are accessible below the download section",
         "content": [
-          "https://files.flosrocketbackend.com/images/logo_small.png"
+          "https://files.flosrocketbackend.com/blogs/2/exportSettings.jpg"
         ],
         "blogElementType": 1
       },

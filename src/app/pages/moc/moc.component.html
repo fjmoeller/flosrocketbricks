@@ -18,7 +18,8 @@
           {{ moc.title }}
         </h1>
       </div>
-      <img style="width:0;height:0" [src]="moc.smallCoverImage" [alt]="moc.title" [title]="moc.title">
+      <img style="width:0;height:0" [src]="moc.versions[selectedVersionIndex].smallCoverImage" [alt]="moc.title"
+           [title]="moc.title">
       <div class="container">
         @if (moc.type !== "merch") {
           <div class="row py-3">
@@ -138,7 +139,7 @@
               <div class="row justify-content-center popover-wrapper">
                 <strong>Dimensions:</strong>
 
-                <span>{{ moc.dimensions }} @if (moc.dimensionsExtra !== '') {
+                <span>{{ moc.versions[selectedVersionIndex].files[mainFileIndex].dimensions }} @if (moc.versions[selectedVersionIndex].files[mainFileIndex].dimensionsExtra !== '') {
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
                        class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -148,9 +149,10 @@
                 }
                             </span>
 
-                @if (moc.dimensionsExtra !== '') {
+                @if (moc.versions[selectedVersionIndex].files[mainFileIndex].dimensionsExtra !== '') {
                   <div class="popover-content">
-                    <p class="popover-content-text">{{ moc.dimensionsExtra }}</p>
+                    <p
+                      class="popover-content-text">{{ moc.versions[selectedVersionIndex].files[mainFileIndex].dimensionsExtra }}</p>
                   </div>
                 }
               </div>
@@ -165,9 +167,8 @@
               </div>
               <div class="row justify-content-center popover-wrapper">
                 <strong>Placeholder color:</strong>
-                <span>
-                                {{ moc.internalColor }}
-                  @if (moc.internalColorExtra !== '') {
+                <span>{{ moc.versions[selectedVersionIndex].files[mainFileIndex].internalColor }}
+                  @if (moc.versions[selectedVersionIndex].files[mainFileIndex].internalColorExtra !== '') {
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                          fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -175,10 +176,11 @@
                                       d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
                                 </svg>
                   }
-                            </span>
-                @if (moc.internalColorExtra !== '' && moc.internalColorExtra !== '-') {
+                </span>
+                @if (moc.versions[selectedVersionIndex].files[mainFileIndex].internalColorExtra !== '' && moc.versions[selectedVersionIndex].files[mainFileIndex].internalColorExtra !== '-') {
                   <div class="popover-content">
-                    <p class="popover-content-text">{{ moc.internalColorExtra }}</p>
+                    <p
+                      class="popover-content-text">{{ moc.versions[selectedVersionIndex].files[mainFileIndex].internalColorExtra }}</p>
                   </div>
                 }
               </div>
@@ -197,40 +199,40 @@
                 <strong>Build difficulty:</strong>
                 <div>
                   <svg
-                    [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2,'brick-1-color': moc.difficulty==1}"
+                    [ngClass]="{'brick-5-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==5,'brick-4-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==4,'brick-3-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==3,'brick-2-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==2,'brick-1-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==1}"
                     class="brick-default-color" width="16" height="16"
                     xmlns="http://www.w3.org/2000/svg">
                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
                   </svg>
                   <svg
-                    [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3,'brick-2-color': moc.difficulty==2}"
+                    [ngClass]="{'brick-5-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==5,'brick-4-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==4,'brick-3-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==3,'brick-2-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==2}"
                     class="brick-default-color" width="16" height="16"
                     xmlns="http://www.w3.org/2000/svg">
                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
                   </svg>
                   <svg
-                    [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4,'brick-3-color': moc.difficulty==3}"
+                    [ngClass]="{'brick-5-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==5,'brick-4-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==4,'brick-3-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==3}"
                     class="brick-default-color" width="16" height="16"
                     xmlns="http://www.w3.org/2000/svg">
                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
                   </svg>
-                  <svg [ngClass]="{'brick-5-color': moc.difficulty==5,'brick-4-color': moc.difficulty==4}"
+                  <svg [ngClass]="{'brick-5-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==5,'brick-4-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==4}"
                        class="brick-default-color" width="16" height="16"
                        xmlns="http://www.w3.org/2000/svg">
                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
                   </svg>
-                  <svg [ngClass]="{'brick-5-color': moc.difficulty==5}" class="brick-default-color"
+                  <svg [ngClass]="{'brick-5-color': moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty==5}" class="brick-default-color"
                        width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
                   </svg>
                 </div>
-                <span>{{ getDifficultyText(moc.difficulty) }}
-                  @if (moc.difficultyExtra !== '') {
+                <span>{{ getDifficultyText(moc.versions[selectedVersionIndex].files[mainFileIndex].difficulty) }}
+                  @if (moc.versions[selectedVersionIndex].files[mainFileIndex].difficultyExtra !== '') {
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                          fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -239,9 +241,9 @@
                                 </svg>
                   }
                             </span>
-                @if (moc.difficultyExtra !== '') {
+                @if (moc.versions[selectedVersionIndex].files[mainFileIndex].difficultyExtra !== '') {
                   <div class="popover-content">
-                    <p class="popover-content-text">{{ moc.difficultyExtra }}</p>
+                    <p class="popover-content-text">{{ moc.versions[selectedVersionIndex].files[mainFileIndex].difficultyExtra }}</p>
                   </div>
                 }
               </div>
@@ -260,40 +262,40 @@
                 <strong>Stability:</strong>
                 <div>
                   <svg
-                    [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2,'brick-1-color': moc.stability==1}"
+                    [ngClass]="{'brick-5-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==5,'brick-4-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==4,'brick-3-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==3,'brick-2-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==2,'brick-1-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==1}"
                     class="brick-default-color" width="16" height="16"
                     xmlns="http://www.w3.org/2000/svg">
                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
                   </svg>
                   <svg
-                    [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3,'brick-2-color': moc.stability==2}"
+                    [ngClass]="{'brick-5-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==5,'brick-4-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==4,'brick-3-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==3,'brick-2-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==2}"
                     class="brick-default-color" width="16" height="16"
                     xmlns="http://www.w3.org/2000/svg">
                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
                   </svg>
                   <svg
-                    [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4,'brick-3-color': moc.stability==3}"
+                    [ngClass]="{'brick-5-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==5,'brick-4-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==4,'brick-3-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==3}"
                     class="brick-default-color" width="16" height="16"
                     xmlns="http://www.w3.org/2000/svg">
                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
                   </svg>
-                  <svg [ngClass]="{'brick-5-color': moc.stability==5,'brick-4-color': moc.stability==4}"
+                  <svg [ngClass]="{'brick-5-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==5,'brick-4-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==4}"
                        class="brick-default-color" width="16" height="16"
                        xmlns="http://www.w3.org/2000/svg">
                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
                   </svg>
-                  <svg [ngClass]="{'brick-5-color': moc.stability==5}" class="brick-default-color"
+                  <svg [ngClass]="{'brick-5-color': moc.versions[selectedVersionIndex].files[mainFileIndex].stability==5}" class="brick-default-color"
                        width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                     <rect fill="currentcolor" width="70%" height="85%" x="15%" y="14%"/>
                     <rect fill="currentcolor" width="40%" height="15%" x="30%" y="0%"/>
                   </svg>
                 </div>
-                <span>{{ getStabilityText(moc.stability) }}
-                  @if (moc.stabilityExtra !== '') {
+                <span>{{ getStabilityText(moc.versions[selectedVersionIndex].files[mainFileIndex].stability) }}
+                  @if (moc.versions[selectedVersionIndex].files[mainFileIndex].stabilityExtra !== '') {
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                          fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -301,9 +303,9 @@
                                       d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
                                 </svg>
                   }
-                  @if (moc.stabilityExtra !== '' && moc.stabilityExtra !== '-') {
+                  @if (moc.versions[selectedVersionIndex].files[mainFileIndex].stabilityExtra !== '' && moc.versions[selectedVersionIndex].files[mainFileIndex].stabilityExtra !== '-') {
                     <div class="popover-content">
-                                    <p class="popover-content-text">{{ moc.stabilityExtra }}</p>
+                                    <p class="popover-content-text">{{ moc.versions[selectedVersionIndex].files[mainFileIndex].stabilityExtra }}</p>
                                 </div>
                   }
                             </span>
@@ -328,7 +330,7 @@
       }
       @if (showViewer) {
         <div class="text-coloring">
-          <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer" [placeHolderColor]="moc.internalColor"
+          <app-viewer [inputLink]="viewerLink" [showViewer]="showViewer" [placeHolderColor]="moc.versions[selectedVersionIndex].files[mainFileIndex].internalColor"
                       [viewerVersion]="viewerVersion">
           </app-viewer>
         </div>
@@ -490,7 +492,7 @@
                     @if (file.type === 'io' && file.export) {
                       <button title="Download Bricklink .xml part list" type="button"
                               class="btn inv-interact-button text-decoration-none text-align-center"
-                              style="margin-right:10px" (click)="downloadXml(file.link,file.name)">
+                              style="margin-right:10px" (click)="downloadXml(file)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
                              class="bi bi-filetype-xml" viewBox="0 0 16 16">
                           <path fill-rule="evenodd"
@@ -501,7 +503,7 @@
                     @if (file.type === 'io' && file.export) {
                       <button title="Download Rebrickable .csv part list" type="button"
                               class="btn inv-interact-button text-decoration-none text-align-center"
-                              style="margin-right:10px" (click)="downloadCsv(file.link,file.name)">
+                              style="margin-right:10px" (click)="downloadCsv(file)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
                              class="bi bi-filetype-csv" viewBox="0 0 16 16">
                           <path fill-rule="evenodd"
@@ -526,11 +528,14 @@
                 <h3>This and related Mocs</h3>
             </span>
         <div class="card-group">
-          <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
+          <app-card class="moc-card" [pic]="moc.versions[selectedVersionIndex].smallCoverImage" [name]="moc.title"
+                    [parts]="moc.versions[selectedVersionIndex].parts"
                     [id]="moc.id" [scale]="moc.scale" [followRel]="true">
           </app-card>
-          <app-card class="moc-card" *ngFor="let relatedMoc of relatedMocs" [pic]="relatedMoc.smallCoverImage"
-                    [name]="relatedMoc.title" [parts]="relatedMoc.parts" [type]="moc.type" [id]="relatedMoc.id"
+          <app-card class="moc-card" *ngFor="let relatedMoc of relatedMocs"
+                    [pic]="relatedMoc.versions[0].smallCoverImage"
+                    [name]="relatedMoc.title" [parts]="relatedMoc.versions[0].parts" [type]="moc.type"
+                    [id]="relatedMoc.id"
                     [scale]="relatedMoc.scale" [followRel]="true">
           </app-card>
         </div>

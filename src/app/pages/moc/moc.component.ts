@@ -1,6 +1,6 @@
 import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
-import {Moc, Version} from '../../model/classes';
+import {File, Moc, Version} from '../../model/classes';
 import {MocGrabberService} from 'src/app/services/grabber/moc-grabber.service';
 import {MetaService} from 'src/app/services/meta.service';
 import {FileExportService} from 'src/app/services/file/file-export.service';
@@ -8,8 +8,6 @@ import {CardComponent} from 'src/app/components/card/card.component';
 import {ViewerComponent} from 'src/app/components/viewer/viewer.component';
 import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ExportSettingsService} from "../../services/file/export-settings.service";
-import {SelectComponent} from "../../components/select/select.component";
 import {ExportSettingsComponent} from "../../components/export-settings/export-settings.component";
 
 
@@ -21,7 +19,9 @@ import {ExportSettingsComponent} from "../../components/export-settings/export-s
   styleUrls: ['./moc.component.sass']
 })
 export class MocComponent implements OnInit, OnDestroy {
-  moc: Moc;
+  moc!: Moc;
+  selectedVersionIndex: number = 0;
+  mainFileIndex: number = 0; //TODO for parts -> show range
   relatedMocs: Moc[] = [];
   viewerLink: string = "https://bricksafe.com/files/SkySaac/website/110/usa/stoke/v2.1/v2.1.io"; //default link
   viewerVersion: string = "V1";
@@ -32,7 +32,6 @@ export class MocComponent implements OnInit, OnDestroy {
   constructor(@Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) private platformId: any,
               private router: Router, private metaService: MetaService, private route: ActivatedRoute,
               private mocGrabberService: MocGrabberService, private fileExportService: FileExportService) {
-    this.moc = this.mocGrabberService.getEmptyMoc();
   }
 
   async ngOnInit() {
@@ -43,19 +42,18 @@ export class MocComponent implements OnInit, OnDestroy {
       if (foundMoc !== undefined) {
         this.moc = foundMoc;
         const scaleText: string = (this.moc.scale !== "-" && this.moc.scale !== "") ? (" 1:" + this.moc.scale + " ") : ("");
-        this.metaService.setAllTags(this.moc.title + scaleText + " - FlosRocketBricks", this.moc.mocDescription + " " + this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.smallCoverImage);
+        this.metaService.setAllTags(this.moc.title + scaleText + " - FlosRocketBricks", this.moc.mocDescription + " " + this.moc.rocketDescription, this.metaService.getTotalMocLink(this.moc), this.moc.versions[this.selectedVersionIndex].smallCoverImage);
         this.relatedMocs = this.mocGrabberService.getAllMocs().filter(relMoc => this.moc.related.includes(relMoc.id)).slice(0, 5);
       } else {
         this.router.navigate(['/404/']);
       }
       if (isPlatformBrowser(this.platformId))
         window.scroll({top: 0, left: 0, behavior: "instant"});
-
     });
   }
 
   changeSlide(n: number): void {
-    this.slideIndex = ((this.slideIndex + n) + this.moc.pictures.length) % this.moc.pictures.length;
+    this.slideIndex = ((this.slideIndex + n) + this.moc.versions[this.selectedVersionIndex].pictures.length) % this.moc.versions[this.selectedVersionIndex].pictures.length;
   }
 
   toggleViewer(url: string, version: string): void {
@@ -70,22 +68,22 @@ export class MocComponent implements OnInit, OnDestroy {
       this.document.getElementById("viewer")?.scrollIntoView(true);
   }
 
-  async downloadXml(fileLink: string, filename: string) {
-    const data = await this.fileExportService.getXml(fileLink, this.moc.internalColor);
+  async downloadXml(file: File) {
+    const data = await this.fileExportService.getXml(file.link, file.internalColor);
     const blob = new Blob([data], {type: 'application/xml'});
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);
-    a.download = filename.split(".io")[0] + ".xml";
+    a.download = file.name.split(".io")[0] + ".xml";
     a.click();
     window.URL.revokeObjectURL(a.href);
   }
 
-  async downloadCsv(fileLink: string, filename: string) {
-    const data = await this.fileExportService.getCsv(fileLink, this.moc.internalColor);
+  async downloadCsv(file: File) {
+    const data = await this.fileExportService.getCsv(file.link, file.internalColor);
     const blob = new Blob([data], {type: 'text/csv'});
     const a = document.createElement('a');
     a.href = window.URL.createObjectURL(blob);
-    a.download = filename.split(".io")[0] + ".csv";
+    a.download = file.name.split(".io")[0] + ".csv";
     a.click();
     window.URL.revokeObjectURL(a.href);
   }

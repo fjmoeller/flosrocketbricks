@@ -13,6 +13,14 @@
       <image:loc>https://flosrocketbricks.com/assets/logo.jpg</image:loc>
     </image:image>
   </url>
+
+  <url>
+    <loc>https://flosrocketbricks.com/moc/225/blue-moon-mk2/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/blue-moon/mk2/110-blue-moon-mk2-v3.2.jpg
+      </image:loc>
+    </image:image>
+  </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/224/gateway/</loc>
     <image:image>

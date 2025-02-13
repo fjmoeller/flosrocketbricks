@@ -227,6 +227,7 @@
 /moc/222/saturn-ib/
 /moc/223/new-glenn/
 /moc/224/gateway/
+/moc/225/blue-moon-mk2/
 /about/
 /404/
 /blog/

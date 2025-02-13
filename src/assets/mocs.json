@@ -1,5 +1,74 @@
 [
   {
+    "title": "Blue Moon MK2",
+    "id": 225,
+    "related": [
+      195
+    ],
+    "dimensions": "7.8x7.8x16.3cm",
+    "dimensionsExtra": "",
+    "links": [
+      "https://www.blueorigin.com/blue-moon",
+      "https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)"
+    ],
+    "updateMessage": "",
+    "tags": [],
+    "altTitles": [],
+    "region": [
+      "USA"
+    ],
+    "parts": 428,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/usa/blue-moon/mk2/110-blue-moon-mk2-v3.2.jpg",
+    "regionExtra": "",
+    "partsExtra": "",
+    "internalColorExtra": "",
+    "versions": [
+      {
+        "files": [
+          {
+            "name": "Blue_Moon_MK2_V3.2.io",
+            "description": "The digital file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk2/v3.2/Blue_Moon_MK2_V3.2.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V3.2",
+        "changelog": ""
+      }
+    ],
+    "typeExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "designer": "SkySaac",
+    "internalColor": "-",
+    "company": "Blue Origin",
+    "companyExtra": "",
+    "stability": -1,
+    "stabilityExtra": "",
+    "mocDescription": "This is a MOC of the Blue Moon MK2 lander. The radiators can be put up or down. The solar panels are included as extra parts and can be attached to the top.",
+    "rocketDescription": "Blue Origins Blue Moon MK2 lander is designed for lunar usage. It can transport crew to the surface of the moon and be refueled after usage. It is part of the Artemis program.",
+    "type": "spacecraft",
+    "designerExtra": "",
+    "dateCreated": "2025-02-13",
+    "lastUpdate": "2025-02-13",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk2/v3.2/Blue_Moon_MK2_V3.2_Moon.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk2/v3.2/Blue_Moon_MK2_V3.2_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk2/v3.2/Blue_Moon_MK2_V3.2_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk2/v3.2/Blue_Moon_MK2_V3.2_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk2/v3.2/Blue_Moon_MK2_V3.2_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk2/v3.2/Blue_Moon_MK2_V3.2_5.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk2/v3.2/Blue_Moon_MK2_V3.2_6.jpg"
+    ]
+  },
+  {
     "title": "Gateway",
     "id": 224,
     "related": [],
@@ -13,7 +82,9 @@
     ],
     "updateMessage": "",
     "tags": [],
-    "altTitles": ["Lunar Gateway"],
+    "altTitles": [
+      "Lunar Gateway"
+    ],
     "region": [
       "USA"
     ],
@@ -2011,7 +2082,8 @@
     "lastUpdate": "2024-04-08",
     "dateCreated": "2024-04-08",
     "related": [
-      8
+      8,
+      225
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Blue Moon Mark 1 lunar lander. It fits (without the antenna) into my New Glenns fairing.",
@@ -16568,7 +16640,8 @@
     "id": 8,
     "title": "New Glenn",
     "related": [
-      195,223
+      195,
+      223
     ],
     "dimensions": "10.9x10.9x87.5cm",
     "links": [

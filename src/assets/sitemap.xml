@@ -15,6 +15,27 @@
   </url>
 
   <url>
+    <loc>https://flosrocketbricks.com/moc/228/pegasus-xl/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/pegasus/pegasus-xl/110-pegasus-xl-v1.0.jpg
+      </image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/227/pegasus-h/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/pegasus/pegasus-h/110-pegasus-h-v1.0.jpg
+      </image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/226/pegasus/</loc>
+    <image:image>
+      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/pegasus/110-pegasus-v1.0.jpg
+      </image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/225/blue-moon-mk2/</loc>
     <image:image>
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/blue-moon/mk2/110-blue-moon-mk2-v3.2.jpg

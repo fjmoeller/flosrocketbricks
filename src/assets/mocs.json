@@ -1,5 +1,194 @@
 [
   {
+    "title": "Pegasus XL",
+    "id": 228,
+    "related": [
+      226,227
+    ],
+    "dimensions": "6.2x15.4x4cm",
+    "dimensionsExtra": "",
+    "links": [
+      "https://b14643.eu/Spacerockets_2/United_States_7/Pegasus/Description/Frame.htm",
+      "https://www.northropgrumman.com/space/pegasus-rocket"
+    ],
+    "updateMessage": "",
+    "tags": [],
+    "altTitles": [],
+    "region": [
+      "USA"
+    ],
+    "parts": 66,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/usa/pegasus/pegasus-xl/110-pegasus-xl-v1.0.jpg",
+    "regionExtra": "",
+    "partsExtra": "",
+    "internalColorExtra": "",
+    "versions": [
+      {
+        "files": [
+          {
+            "name": "Pegasus_XL_V1.0.io",
+            "description": "The digital file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/pegasus-xl/v1.0/Pegasus_XL_V1.0.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V1.0",
+        "changelog": ""
+      }
+    ],
+    "typeExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "designer": "SkySaac",
+    "internalColor": "-",
+    "company": "",
+    "companyExtra": "",
+    "stability": -1,
+    "stabilityExtra": "",
+    "mocDescription": "This is a MOC of the Pegasus XL rocket.",
+    "rocketDescription": "The Pegasus XL rocket is a small air launched rocket based on the Pegasus rocket. It is being launched using a L-1011 and launched a total of 35 times.",
+    "type": "rocket",
+    "designerExtra": "",
+    "dateCreated": "2025-02-21",
+    "lastUpdate": "2025-02-21",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/pegasus-xl/v1.0/Pegasus_XL_V1.0_1.jpg"
+    ]
+  },
+  {
+    "title": "Pegasus-H",
+    "id": 227,
+    "related": [
+      226,228
+    ],
+    "dimensions": "6.2x13.9x4cm",
+    "dimensionsExtra": "",
+    "links": [
+      "https://b14643.eu/Spacerockets_2/United_States_7/Pegasus/Description/Frame.htm",
+      "https://www.northropgrumman.com/space/pegasus-rocket"
+    ],
+    "updateMessage": "",
+    "tags": [],
+    "altTitles": [],
+    "region": [
+      "USA"
+    ],
+    "parts": 55,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/usa/pegasus/pegasus-h/110-pegasus-h-v1.0.jpg",
+    "regionExtra": "",
+    "partsExtra": "",
+    "internalColorExtra": "",
+    "versions": [
+      {
+        "files": [
+          {
+            "name": "Pegasus-H_V1.0.io",
+            "description": "The digital file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/pegasus-h/v1.0/Pegasus-H_V1.0.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V1.0",
+        "changelog": ""
+      }
+    ],
+    "typeExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "designer": "SkySaac",
+    "internalColor": "-",
+    "company": "",
+    "companyExtra": "",
+    "stability": -1,
+    "stabilityExtra": "",
+    "mocDescription": "This is a MOC of the Pegasus-H rocket.",
+    "rocketDescription": "The Pegasus-H rocket was a small air launched rocket very similar to the the Pegasus rocket. It was launched using a L-1011 and launched a total of four times.",
+    "type": "rocket",
+    "designerExtra": "",
+    "dateCreated": "2025-02-21",
+    "lastUpdate": "2025-02-21",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/pegasus-h/v1.0/Pegasus-H_V1.0_1.jpg"
+    ]
+  },
+  {
+    "title": "Pegasus",
+    "id": 226,
+    "related": [
+      227,228
+    ],
+    "dimensions": "6.2x13.9x3.1cm",
+    "dimensionsExtra": "",
+    "links": [
+      "https://b14643.eu/Spacerockets_2/United_States_7/Pegasus/Description/Frame.htm",
+      "https://www.northropgrumman.com/space/pegasus-rocket"
+    ],
+    "updateMessage": "",
+    "tags": [],
+    "altTitles": [],
+    "region": [
+      "USA"
+    ],
+    "parts": 50,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/usa/pegasus/110-pegasus-v1.0.jpg",
+    "regionExtra": "",
+    "partsExtra": "",
+    "internalColorExtra": "",
+    "versions": [
+      {
+        "files": [
+          {
+            "name": "Pegasus_V1.0.io",
+            "description": "The digital file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/v1.0/Pegasus_V1.0.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V1.0",
+        "changelog": ""
+      }
+    ],
+    "typeExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "designer": "SkySaac",
+    "internalColor": "-",
+    "company": "",
+    "companyExtra": "",
+    "stability": -1,
+    "stabilityExtra": "",
+    "mocDescription": "This is a MOC of the Pegasus rocket.",
+    "rocketDescription": "The Pegasus rocket was a small air launched rocket. It was launched using a B-52 and launched a total of six times.",
+    "type": "rocket",
+    "designerExtra": "",
+    "dateCreated": "2025-02-21",
+    "lastUpdate": "2025-02-21",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/v1.0/Pegasus_V1.0_1.jpg"
+    ]
+  },
+  {
     "title": "Blue Moon MK2",
     "id": 225,
     "related": [

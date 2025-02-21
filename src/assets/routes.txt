@@ -228,6 +228,9 @@
 /moc/223/new-glenn/
 /moc/224/gateway/
 /moc/225/blue-moon-mk2/
+/moc/226/pegasus/
+/moc/227/pegasus-h/
+/moc/228/pegasus-xl/
 /about/
 /404/
 /blog/

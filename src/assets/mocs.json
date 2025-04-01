@@ -5027,8 +5027,8 @@
           {
             "description": "The digital pdf instructions of the rocket",
             "type": "pdf",
-            "link": "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.1/X-33_V1.1.pdf",
-            "name": "X-33_V1.1.pdf"
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.1/X-33_V1.1_instructions.pdf",
+            "name": "X-33_V1.1_instructions.pdf"
           }
         ],
         "version": "V1.1"

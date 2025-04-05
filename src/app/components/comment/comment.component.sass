@@ -1,0 +1,29 @@
+.comment
+  border: 2px solid grey
+  padding: 0.5rem
+  border-radius: 1rem
+  margin: 0.5rem 0.5rem 0.5rem 0
+
+.comment-header
+  display: flex
+  justify-content: space-between
+
+.owner-badge
+  margin-left: 0.25rem
+  border: 1px solid grey
+  border-radius: 0.5rem
+  font-size: 0.75rem
+  padding: 0.2rem
+
+@keyframes shake
+  0%, 100%
+    transform: translateX(0)
+  25%
+    transform: translateX(-5px)
+  50%
+    transform: translateX(5px)
+  75%
+    transform: translateX(-5px)
+
+.shake
+  animation: shake 0.3s ease-in-out

@@ -11,6 +11,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { Location } from '@angular/common';
 import {InstructionViewerComponent} from "./pages/instruction-viewer/instruction-viewer.component";
 import { BlogComponent } from './pages/blog/blog.component';
+import {AdminComponent} from "./pages/admin/admin.component";
 
 const __stripTrailingSlash = (Location as any).stripTrailingSlash;
 
@@ -35,6 +36,7 @@ export const routes: Routes = [
   { path: 'collections/.', component: CollectionOverviewComponent },
   { path: 'collection/:id/:name/.', component: CollectionComponent },
   { path: 'orbiter/.', component: OrbiterComponent },
+  { path: 'admin/.', component: AdminComponent },
   { path: '404/.', component: NotFoundComponent },
   { path: '', component: StartComponent },
   { path: '**', redirectTo: '/start/.' }

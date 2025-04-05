@@ -1,0 +1,26 @@
+<div class="text-coloring main-content container-fluid pt-4">
+  <div class="row mx-4">
+    <h1>Chances are, that you should not see this my friend...</h1>
+    <h4>Well it's not like you can do anything without the password anyway :P</h4>
+    <div>
+      <form [formGroup]="form" (ngSubmit)="loadComments()" autocomplete="on">
+        <input name="password" autocomplete="admin-password" formControlName="adminPassword" type="password" placeholder="Admin password">
+        <button type="submit" class="btn inv-interact-button text-decoration-none text-align-center">
+          Save
+        </button>
+      </form>
+    </div>
+    <div style="display:flex;justify-content: center; border-left: 1px solid white; border-right: 1px solid white">
+      <div>
+        @for (comment of comments; track comment) {
+          <app-comment [comment]="comment.comment" [isOwned]="true"
+                       (deleteEmitter)="deleteComment($event,comment.target)"
+                       (editEmitter)="editComment($event)"></app-comment>
+        }
+        @if (comments.length === 0) {
+          Nothing is here :(
+        }
+      </div>
+    </div>
+  </div>
+</div>

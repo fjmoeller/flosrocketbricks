@@ -9,29 +9,57 @@
   </div>
 
   @if (!editEnabled) {
+    @if (reply === null) {
+      <!-- Comment is a reply to something that is no longer available. (Cause it was deleted I guess) -->
+        <!-- make cursive or some shit -->
+      <div style="border-left: 2px solid white">
+        <blockquote>
+          Comment no longer available.
+        </blockquote>
+      </div>
+    } @else if (reply !== undefined) {
+      <!-- Comment is a reply to something, show small preview of what is being replied to-->
+      <div style="border-left: 2px solid white; margin: 1rem; padding-left: 1rem">
+        <div class="comment-header">
+          <label><b>{{ reply.user }}</b>
+            @if (reply.user === "SkySaac") {
+              <b class="owner-badge">OWNER</b>
+            }
+          </label>
+          <label>{{ replyTime }}</label>
+        </div>
+        <div>
+          {{ replyText }}
+        </div>
+      </div>
+    }
     <div>
       {{ comment.content }}
     </div>
     <div style="margin-top: 1rem">
-      <button class="btn inv-interact-button text-decoration-none text-align-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-             class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
-          <path
-            d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
-        </svg>
-        Reply
-      </button>
-      @if (isOwned) {
-        <button (click)="enableEditing()" class="btn inv-interact-button text-decoration-none text-align-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
-               viewBox="0 0 16 16">
+      @if (!isAdminView) {
+        <button (click)="startReply()" class="btn inv-interact-button text-decoration-none text-align-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+               class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
             <path
-              d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-            <path fill-rule="evenodd"
-                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+              d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
           </svg>
-          Edit
+          Reply
         </button>
+        @if (isOwned) {
+          <button (click)="enableEditing()" class="btn inv-interact-button text-decoration-none text-align-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
+                 viewBox="0 0 16 16">
+              <path
+                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+              <path fill-rule="evenodd"
+                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+            </svg>
+            Edit
+          </button>
+        }
+      }
+      @if (isOwned) {
         <button (click)="deleteComment()" class="btn inv-interact-button text-decoration-none text-align-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill"
                viewBox="0 0 16 16">

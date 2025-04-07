@@ -2,6 +2,7 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} f
 import {CommentEditRequest, CommentView} from "../../model/comments";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgStyle} from "@angular/common";
+import {CommentService} from "../../services/comment.service";
 
 @Component({
   selector: 'app-comment',
@@ -17,7 +18,10 @@ import {NgStyle} from "@angular/common";
 export class CommentComponent implements OnInit {
 
   readonly MAX_COMMENT_LENGTH = 512;
+  readonly MAX_REPLY_LENGTH = 256;
 
+  @Output()
+  replyEmitter: EventEmitter<{ id: number, username: string }> = new EventEmitter();
   @Output()
   editEmitter: EventEmitter<CommentEditRequest> = new EventEmitter();
   @Output()
@@ -26,7 +30,11 @@ export class CommentComponent implements OnInit {
   @Input()
   comment!: CommentView;
   @Input()
+  reply: CommentView | null | undefined;
+  @Input()
   isOwned: boolean = false;
+  @Input()
+  isAdminView?: boolean;
 
   @ViewChild('commentEditElement')
   commentEditInputElement!: ElementRef;
@@ -36,9 +44,18 @@ export class CommentComponent implements OnInit {
   editText: string = "";
   editTextLength: number = 0;
 
+  replyText: string = "";
+  replyTime: string = "";
+
+  constructor(private commentService: CommentService) {
+  }
+
   ngOnInit(): void {
-    const date = new Date(this.comment.time * 1000);
-    this.time = date.toLocaleString([], {dateStyle: 'short', timeStyle: 'short'});
+    this.time = new Date(this.comment.time * 1000).toLocaleString([], {dateStyle: 'short', timeStyle: 'short'});
+    if (this.reply !== undefined && this.reply !== null && this.reply.content.length > this.MAX_REPLY_LENGTH) {
+      this.replyText = this.reply.content.substring(0, this.MAX_REPLY_LENGTH) + "...";
+      this.replyTime = new Date(this.reply.time * 1000).toLocaleString([], {dateStyle: 'short', timeStyle: 'short'});
+    }
   }
 
   enableEditing() {
@@ -52,12 +69,16 @@ export class CommentComponent implements OnInit {
   }
 
   confirmEditComment() {
-    const editRequest: CommentEditRequest = {
-      content: this.editText,
-      password: "", //will be set later
-      id: this.comment.id
-    };
-    this.editEmitter.emit(editRequest);
+    if (this.editText.length <= this.commentService.MAX_COMMENT_LENGTH) {
+      const editRequest: CommentEditRequest = {
+        content: this.editText,
+        password: "", //will be set later
+        id: this.comment.id
+      };
+      this.editEmitter.emit(editRequest);
+    } else {
+      this.shakeCommentInput();
+    }
   }
 
   deleteComment() {
@@ -68,7 +89,11 @@ export class CommentComponent implements OnInit {
     this.editTextLength = this.editText.length;
   }
 
-  private shakeCommentInput(): void { //TODO add for edits
+  startReply(): void {
+    this.replyEmitter.emit({id: this.comment.id, username: this.comment.user});
+  }
+
+  private shakeCommentInput(): void {
     this.commentEditInputElement.nativeElement.classList.add("shake");
     setTimeout(() => this.commentEditInputElement.nativeElement.classList.remove("shake"), 300);
   }

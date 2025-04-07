@@ -5,10 +5,11 @@ import { CollectionGrabberService } from 'src/app/services/grabber/collection-gr
 import { MetaService } from 'src/app/services/meta.service';
 import { ActivatedRoute } from '@angular/router';
 import { CardComponent } from 'src/app/components/card/card.component';
+import {CommentSectionComponent} from "../../components/comment-section/comment-section.component";
 
 @Component({
   standalone: true,
-  imports: [CardComponent],
+    imports: [CardComponent, CommentSectionComponent],
   selector: 'app-collection',
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.sass']

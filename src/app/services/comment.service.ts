@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
 import {
   CommentAdminView,
   CommentCreateRequest,
@@ -8,7 +8,8 @@ import {
   CommentView
 } from "../model/comments";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
+import {isPlatformBrowser} from "@angular/common";
 
 @Injectable({
   providedIn: 'root'
@@ -19,14 +20,26 @@ export class CommentService {
   private readonly COMMENT_BACKEND_ADMIN_PATH: string = "adminAll";
   private readonly LOCALSTORAGE_USERNAME_KEY: string = "comment-username";
 
-  readonly COMMENT_PASSWORD;
+  readonly MAX_USERNAME_LENGTH = 16;
+  readonly MAX_COMMENT_LENGTH = 512;
+  readonly MIN_SECONDS_BETWEEN_COMMENTS = 10;
 
-  constructor(private http: HttpClient) {
-    this.COMMENT_PASSWORD = this.getRandomPassword();
+  readonly COMMENT_PASSWORD: string;
+
+  private lastCommentCreationTime: number = 0;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: any, private http: HttpClient) {
+    this.COMMENT_PASSWORD = this.generateRandomPassword();
+  }
+
+  canPostComment(): boolean {
+    const breakTimeSeconds = this.MIN_SECONDS_BETWEEN_COMMENTS * 1000;
+    return Date.now() - this.lastCommentCreationTime > breakTimeSeconds;
   }
 
   createComment(target: string, creationRequest: CommentCreateRequest): Observable<CommentView> {
-    return this.http.post<CommentView>(this.COMMENT_BACKEND_URL + target, creationRequest);
+    return this.http.post<CommentView>(this.COMMENT_BACKEND_URL + target, creationRequest)
+      .pipe(tap(() => this.lastCommentCreationTime = Date.now()));
   }
 
   getComments(commentTargetKey: string): Observable<CommentView[]> {
@@ -39,7 +52,7 @@ export class CommentService {
       adminPassword: adminPassword
     });
     const url = this.COMMENT_BACKEND_URL + this.COMMENT_BACKEND_ADMIN_PATH;
-    return this.http.get<CommentAdminView[]>(url,{headers: httpHeaders});
+    return this.http.get<CommentAdminView[]>(url, {headers: httpHeaders});
   }
 
   deleteComment(target: string, deletionRequest: CommentDeleteRequest): Observable<any> {
@@ -54,7 +67,7 @@ export class CommentService {
     return this.http.put<CommentView>(this.COMMENT_BACKEND_URL + target, editingRequest);
   }
 
-  private getRandomPassword(): string {
+  private generateRandomPassword(): string {
     let result = "";
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     const charactersLength = characters.length;
@@ -65,6 +78,9 @@ export class CommentService {
   }
 
   loadUsername(): string {
+    if (!isPlatformBrowser(this.platformId)) {
+      return "";
+    }
     const savedUsername: string | null = localStorage.getItem(this.LOCALSTORAGE_USERNAME_KEY);
     if (savedUsername !== null)
       return savedUsername;

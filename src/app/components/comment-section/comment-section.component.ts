@@ -18,9 +18,9 @@ import {isPlatformBrowser, NgStyle} from "@angular/common";
 })
 export class CommentSectionComponent implements OnInit {
 
-  readonly MAX_USERNAME_LENGTH = 16;
-  readonly MAX_COMMENT_LENGTH = 512;
   readonly MAX_COMMENTS = 5;
+  MAX_COMMENT_LENGTH: number;
+  MAX_USERNAME_LENGTH: number;
 
   @Input()
   parentComponentType!: string;
@@ -32,6 +32,8 @@ export class CommentSectionComponent implements OnInit {
   commentInputElement!: ElementRef;
   @ViewChild('usernameInputElement')
   usernameInputElement!: ElementRef;
+  @ViewChild('sendCommentButtonElement')
+  sendCommentButtonElement!: ElementRef;
 
   usernameInput: string = "";
   commentInput: string = "";
@@ -39,13 +41,19 @@ export class CommentSectionComponent implements OnInit {
   usernameInputLength: number = 0;
   commentInputLength: number = 0;
 
-  hasLoaded: boolean = false;
+  tooManyCommentsTextActive: boolean = false;
+  haveCommentsLoaded: boolean = false;
+
+  activeReply: {id:number,username:string} | null = null;
 
   constructor(private commentService: CommentService, @Inject(PLATFORM_ID) private platformId: any) {
+    this.MAX_COMMENT_LENGTH = commentService.MAX_COMMENT_LENGTH;
+    this.MAX_USERNAME_LENGTH = commentService.MAX_USERNAME_LENGTH;
+
   }
 
-  shownComments: { comment: CommentView; owned: boolean }[] = [];
-  allComments: { comment: CommentView; owned: boolean }[] = [];
+  shownComments: { comment: CommentView; owned: boolean; reply?: CommentView | null }[] = [];
+  allComments: { comment: CommentView; owned: boolean; reply?: CommentView | null }[] = [];
 
   createdComments: { id: number; password: string }[] = [];
 
@@ -54,9 +62,9 @@ export class CommentSectionComponent implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting && !this.hasLoaded) {
+          if (entry.isIntersecting && !this.haveCommentsLoaded) {
             this.loadComments();
-            this.hasLoaded = true;
+            this.haveCommentsLoaded = true;
           }
         })
       })
@@ -64,9 +72,7 @@ export class CommentSectionComponent implements OnInit {
     }
 
     //TODO reply
-    //TODO use shakeCommentInput in comments.ts
     //TODO killswitch für GET und alles andere
-    //TODO in front and backend max comment creating (10 sec or so?) -> post
     //TODO add metadata when a key has been modified for the admin all fetch? or maybe a boolean that says that the comments have been checked -> if new one gets added uncheck aw man idk
   }
 
@@ -98,27 +104,58 @@ export class CommentSectionComponent implements OnInit {
               };
             }
           );
+        //add commentviews of replies to comment (if it is a reply to something)
+        for (let i = 0; i < this.allComments.length; i++) {
+          const currentComment = this.allComments[i];
+          if (currentComment.comment.reply !== undefined) {
+            //if this comment is a reply to another comment
+            const findComment = this.allComments.find(
+              c => c.comment.id === currentComment.comment.reply
+            );
+            if (findComment !== undefined) {
+              currentComment.reply = findComment.comment;
+            } else {
+              currentComment.reply = null;
+            }
+          }
+        }
         this.showSomeComments();
       }
     );
   }
 
   createComment(): void {
+    //username not valid
     if (this.usernameInput.trim() === "" || this.usernameInput.trim().toLowerCase() === "skysaac"
       || this.usernameInput.length > this.MAX_USERNAME_LENGTH) {
       this.shakeUsernameInput();
       return;
     }
 
+    //comment not valid
     if (this.commentInput.trim() === "" || this.usernameInput.length > this.MAX_COMMENT_LENGTH) {
       this.shakeCommentInput();
+      return;
+    }
+
+    //too many requests
+    if (!this.commentService.canPostComment()) {
+      this.tooManyCommentsTextActive = true;
+      this.shakeCommentButton();
+      setTimeout(() => {
+        this.tooManyCommentsTextActive = false;
+      }, 10000);
       return;
     }
 
     const newComment: CommentCreateRequest = {
       content: this.commentInput,
       password: this.commentService.COMMENT_PASSWORD,
-      user: this.usernameInput
+      user: this.usernameInput,
+    }
+
+    if(this.activeReply !== null) {
+      newComment["reply"]=this.activeReply.id;
     }
 
     this.commentService.saveUsername(newComment.user);
@@ -132,6 +169,7 @@ export class CommentSectionComponent implements OnInit {
             this.commentInputLength = 0;
             this.createdComments.push({id: comment.id, password: newComment.password});
             this.showSomeComments();
+            this.activeReply = null;
           }
       }
     )
@@ -140,8 +178,6 @@ export class CommentSectionComponent implements OnInit {
   editComment(editRequest: CommentEditRequest): void {
     //set password from list of created comments
     const createdComment = this.createdComments.find(createdComment => createdComment.id === editRequest.id);
-    console.log(this.createdComments);
-    console.log(editRequest);
     if (createdComment !== undefined) {
       editRequest.password = createdComment.password;
 
@@ -175,13 +211,28 @@ export class CommentSectionComponent implements OnInit {
     }
   }
 
+  replyComment(reply: { id: number, username: string }): void {
+    this.activeReply = reply;
+  }
+
+  cancelReply():void{
+    this.activeReply = null;
+  };
+
+  private shakeElement(ref: ElementRef) {
+    ref.nativeElement.classList.add("shake");
+    setTimeout(() => ref.nativeElement.classList.remove("shake"), 300);
+  }
+
   private shakeUsernameInput(): void {
-    this.usernameInputElement.nativeElement.classList.add("shake");
-    setTimeout(() => this.usernameInputElement.nativeElement.classList.remove("shake"), 300);
+    this.shakeElement(this.usernameInputElement);
   }
 
   private shakeCommentInput(): void {
-    this.commentInputElement.nativeElement.classList.add("shake");
-    setTimeout(() => this.commentInputElement.nativeElement.classList.remove("shake"), 300);
+    this.shakeElement(this.commentInputElement);
+  }
+
+  private shakeCommentButton(): void {
+    this.shakeElement(this.sendCommentButtonElement);
   }
 }

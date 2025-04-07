@@ -13,7 +13,7 @@
     <div style="display:flex;justify-content: center; border-left: 1px solid white; border-right: 1px solid white">
       <div>
         @for (comment of comments; track comment) {
-          <app-comment [comment]="comment.comment" [isOwned]="true"
+          <app-comment [comment]="comment.comment" [isOwned]="true" [isAdminView]="true"
                        (deleteEmitter)="deleteComment($event,comment.target)"
                        (editEmitter)="editComment($event)"></app-comment>
         }

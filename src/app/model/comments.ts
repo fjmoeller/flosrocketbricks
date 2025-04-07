@@ -3,14 +3,14 @@ export interface CommentView {
   user: string;
   content: string;
   time: number;
-  reply?: string;
+  reply?: number;
 }
 
 export interface CommentCreateRequest {
   user: string; //16 Zeichen [A-z0-9]
   password: string; //8 Zeichen [A-z0-9]
   content: string; //512 Zeichen?
-  reply?: string;
+  reply?: number;
 }
 
 export interface CommentEditRequest {

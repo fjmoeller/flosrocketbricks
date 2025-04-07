@@ -11,6 +11,14 @@
         <label style="padding-left: 0.5rem">
           <label [ngStyle]="{'color': usernameInputLength>MAX_USERNAME_LENGTH ? 'red' : 'inherit' }">
             {{ usernameInputLength }}</label>/{{ MAX_USERNAME_LENGTH }}</label>
+        @if (activeReply !== null) {
+          <label style="margin-left: 1rem">
+            Replying to <b>{{ activeReply.username }}</b>
+            <button style="margin-left: 1rem" class="btn inv-interact-button text-decoration-none text-align-center"
+                    (click)="cancelReply()">Cancel Reply
+            </button>
+          </label>
+        }
       </div>
       <div style="padding-bottom: 0.25rem">
       <textarea #commentInputElement placeholder="Share your thoughts..." [(ngModel)]="commentInput"
@@ -18,9 +26,15 @@
                 style="min-height: 3rem; padding: 0.25rem" cols="50"></textarea>
       </div>
       <div>
-        <button class="btn inv-interact-button text-decoration-none text-align-center" (click)="createComment()">Post
+        <button #sendCommentButtonElement class="btn inv-interact-button text-decoration-none text-align-center" (click)="createComment()">
+          Post
           Comment
         </button>
+        @if (tooManyCommentsTextActive) {
+          <label style="color:red; margin-left: 1rem; margin-right: 1rem">
+            Please wait a bit before posting another comment.
+          </label>
+        }
         <label style="padding-left: 0.5rem">
           <label [ngStyle]="{'color': commentInputLength>MAX_COMMENT_LENGTH ? 'red' : 'inherit' }">
             {{ commentInputLength }}</label>/{{ MAX_COMMENT_LENGTH }}</label>
@@ -28,8 +42,9 @@
     </div>
     <div>
       @for (shownComment of shownComments; track shownComment) {
-        <app-comment [comment]="shownComment.comment" [isOwned]="shownComment.owned"
-                     (deleteEmitter)="deleteComment($event)" (editEmitter)="editComment($event)"></app-comment>
+        <app-comment [comment]="shownComment.comment" [isOwned]="shownComment.owned" [reply]="shownComment.reply"
+                     (replyEmitter)="replyComment($event)" (deleteEmitter)="deleteComment($event)"
+                     (editEmitter)="editComment($event)"></app-comment>
       }
     </div>
     @if (shownComments.length === 0) {

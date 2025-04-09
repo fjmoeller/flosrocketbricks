@@ -1,4 +1,11 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild
+} from '@angular/core';
 import {CommentEditRequest, CommentView} from "../../model/comments";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgStyle} from "@angular/common";
@@ -15,7 +22,7 @@ import {CommentService} from "../../services/comment.service";
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.sass'
 })
-export class CommentComponent implements OnInit {
+export class CommentComponent{
 
   readonly MAX_COMMENT_LENGTH = 512;
   readonly MAX_REPLY_LENGTH = 256;
@@ -39,23 +46,15 @@ export class CommentComponent implements OnInit {
   @ViewChild('commentEditElement')
   commentEditInputElement!: ElementRef;
 
-  time: string = "";
   editEnabled: boolean = false;
   editText: string = "";
   editTextLength: number = 0;
 
-  replyText: string = "";
-  replyTime: string = "";
-
   constructor(private commentService: CommentService) {
   }
 
-  ngOnInit(): void {
-    this.time = new Date(this.comment.time * 1000).toLocaleString([], {dateStyle: 'short', timeStyle: 'short'});
-    if (this.reply !== undefined && this.reply !== null && this.reply.content.length > this.MAX_REPLY_LENGTH) {
-      this.replyText = this.reply.content.substring(0, this.MAX_REPLY_LENGTH) + "...";
-      this.replyTime = new Date(this.reply.time * 1000).toLocaleString([], {dateStyle: 'short', timeStyle: 'short'});
-    }
+  getDate(time :number){
+    return new Date(time * 1000).toLocaleString([], {dateStyle: 'short', timeStyle: 'short'})
   }
 
   enableEditing() {

@@ -44,7 +44,7 @@ export class CommentSectionComponent implements OnInit {
   tooManyCommentsTextActive: boolean = false;
   haveCommentsLoaded: boolean = false;
 
-  activeReply: {id:number,username:string} | null = null;
+  activeReply: { id: number, username: string } | null = null;
 
   constructor(private commentService: CommentService, @Inject(PLATFORM_ID) private platformId: any) {
     this.MAX_COMMENT_LENGTH = commentService.MAX_COMMENT_LENGTH;
@@ -71,7 +71,6 @@ export class CommentSectionComponent implements OnInit {
       observer.observe(document.getElementById("commentSectionWrapper")!)
     }
 
-    //TODO reply
     //TODO killswitch für GET und alles andere
     //TODO add metadata when a key has been modified for the admin all fetch? or maybe a boolean that says that the comments have been checked -> if new one gets added uncheck aw man idk
   }
@@ -95,6 +94,7 @@ export class CommentSectionComponent implements OnInit {
   loadComments(): void {
     this.commentService.getComments(this.parentComponentType + "-" + this.parentComponentId).subscribe(
       comments => {
+        //sort the list of comments and convert them to be viewable
         this.allComments = comments
           .sort((a: CommentView, b: CommentView) => b.time - a.time)
           .map(comment => {
@@ -154,8 +154,8 @@ export class CommentSectionComponent implements OnInit {
       user: this.usernameInput,
     }
 
-    if(this.activeReply !== null) {
-      newComment["reply"]=this.activeReply.id;
+    if (this.activeReply !== null) {
+      newComment["reply"] = this.activeReply.id;
     }
 
     this.commentService.saveUsername(newComment.user);
@@ -164,12 +164,25 @@ export class CommentSectionComponent implements OnInit {
       {
         next:
           comment => {
-            this.allComments.unshift({comment: comment, owned: true});
+            this.activeReply = null;
             this.commentInput = "";
             this.commentInputLength = 0;
             this.createdComments.push({id: comment.id, password: newComment.password});
+            const allCommentsElement: { comment: CommentView; owned: boolean; reply?: CommentView | null }
+              = {comment: comment, owned: true};
+            if (comment.reply !== undefined) {
+              //if this comment is a reply to another comment
+              const findComment = this.allComments.find(
+                c => c.comment.id === comment.reply
+              );
+              if (findComment !== undefined) {
+                allCommentsElement.reply = findComment.comment;
+              } else {
+                allCommentsElement.reply = null;
+              }
+            }
+            this.allComments.unshift(allCommentsElement);
             this.showSomeComments();
-            this.activeReply = null;
           }
       }
     )
@@ -215,7 +228,7 @@ export class CommentSectionComponent implements OnInit {
     this.activeReply = reply;
   }
 
-  cancelReply():void{
+  cancelReply(): void {
     this.activeReply = null;
   };
 

@@ -70,9 +70,6 @@ export class CommentSectionComponent implements OnInit {
       })
       observer.observe(document.getElementById("commentSectionWrapper")!)
     }
-
-    //TODO killswitch für GET und alles andere
-    //TODO add metadata when a key has been modified for the admin all fetch? or maybe a boolean that says that the comments have been checked -> if new one gets added uncheck aw man idk
   }
 
   usernameInputChanged(): void {

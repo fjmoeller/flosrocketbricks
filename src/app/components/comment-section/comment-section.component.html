@@ -23,7 +23,7 @@
       <div style="padding-bottom: 0.25rem">
       <textarea #commentInputElement placeholder="Share your thoughts..." [(ngModel)]="commentInput"
                 (input)="commentInputChanged()" rows="3"
-                style="min-height: 3rem; padding: 0.25rem" cols="50"></textarea>
+                style="min-height: 3rem; padding: 0.25rem;" class="w-100"></textarea>
       </div>
       <div>
         <button #sendCommentButtonElement class="btn inv-interact-button text-decoration-none text-align-center" (click)="createComment()">

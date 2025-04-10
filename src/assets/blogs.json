@@ -1,5 +1,48 @@
 [
   {
+    "id": 3,
+    "title": "Comments without signups",
+    "shortDescription": "You can now write comments under my MOCs, Blogs and Collections!",
+    "content": [
+      {
+        "title": "Just a short announcement",
+        "content": [
+          "So there is a new feature in town. You can now write comments on any of my MOCs, Blogs and Collections!",
+          "And I hope you'll like it.",
+          "You also don't need to sign up anywhere, you can just put your name and comment into the text fields and you're done!",
+          "As long as you don't reload the site you will be able to edit and delete your comments, just in case :)\n",
+          "I will actively moderate the comments, but of course I ask you to be nice and don't spam in there.",
+          "I keep the right to delete any comments if I think that they don't fit on my site, but of course valid criticism and things like that will stay online."
+        ],
+        "blogElementType": 0
+      },
+      {
+        "title": "The comment section on my X-33 with the first comments!",
+        "content": [
+          "https://files.flosrocketbackend.com/blogs/3/commentsection.jpg"
+        ],
+        "blogElementType": 1
+      },
+      {
+        "title": "Future additions",
+        "content": [
+          "Right now you can just add text in a comment and reply to others.",
+          "Possible features that I could implement in the future are fields for you to input links of images of the built MOCs, maybe add a checkbox if you have built the MOC and maybe even down/upvoting comments.",
+          "If you have any different features in mind that you'd like to see be sure to tell me!"
+        ],
+        "blogElementType": 0
+      },
+      {
+        "content": [
+          "And that's a wrap for this blog, short and simple, have a nice day :)"
+        ],
+        "blogElementType": 3
+      }
+    ],
+    "author": "SkySaac",
+    "createdAt": "2025-04-10"
+  },
+  {
     "id": 2,
     "title": "Upgrading placeholder colors",
     "shortDescription": "Newly added and updated MOCs will no longer use normal placeholder colors but instead use the \"Any Color\".",

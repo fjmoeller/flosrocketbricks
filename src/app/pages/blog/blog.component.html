@@ -9,7 +9,7 @@
       <ng-container *ngComponentOutlet="content.component;inputs: content.inputs;"/>
     }
   </div>
-  <div class="row m-4 text-coloring">
+  <div class="row m-4 text-coloring" style="max-width: 100%">
     <app-comment-section [parentComponentType]="'B'" [parentComponentId]="blog.id"></app-comment-section>
   </div>
 </div>

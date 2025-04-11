@@ -4986,7 +4986,7 @@
     ],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2025-04-01",
+    "lastUpdate": "2025-04-10",
     "dateCreated": "2023-11-05",
     "related": [
       159,
@@ -4997,7 +4997,7 @@
     "rocketDescription": "The X-33 was a proposed suborbital demonstrator for the VentureStare SSTO. Unlike VentureStar it was only supposed to fly suborbital trajectories. It was cancelled in the early 2000s.",
     "internalColor": "-",
     "scale": "110",
-    "parts": 521,
+    "parts": 522,
     "dimensions": "19.7x20.2x6.4cm",
     "stability": -1,
     "difficulty": -1,
@@ -5011,6 +5011,28 @@
       "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.0/X-33_V1.0_5.png"
     ],
     "versions": [
+      {
+        "changelog": "Add missing plate on right wing",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.2/X-33_V1.2.io",
+            "name": "X-33_V1.2.io"
+          },
+          {
+            "description": "The digital pdf instructions of the rocket",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/venturestar/x-33/v1.2/X-33_V1.2_instructions.pdf",
+            "name": "X-33_V1.2_instructions.pdf"
+          }
+        ],
+        "version": "V1.2"
+      },
       {
         "changelog": "",
         "versionExtra": "",

@@ -8,14 +8,13 @@ import {CardComponent} from 'src/app/components/card/card.component';
 import {ViewerComponent} from 'src/app/components/viewer/viewer.component';
 import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ExportSettingsService} from "../../services/file/export-settings.service";
-import {SelectComponent} from "../../components/select/select.component";
 import {ExportSettingsComponent} from "../../components/export-settings/export-settings.component";
+import {CommentSectionComponent} from "../../components/comment-section/comment-section.component";
 
 
 @Component({
   standalone: true,
-  imports: [CardComponent, ViewerComponent, CommonModule, RouterLink, ReactiveFormsModule, FormsModule, ExportSettingsComponent],
+  imports: [CardComponent, ViewerComponent, CommonModule, RouterLink, ReactiveFormsModule, FormsModule, ExportSettingsComponent, CommentSectionComponent],
   selector: 'app-moc',
   templateUrl: './moc.component.html',
   styleUrls: ['./moc.component.sass']

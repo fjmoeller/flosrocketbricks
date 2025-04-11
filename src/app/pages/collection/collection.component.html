@@ -1,39 +1,42 @@
 <div class="text-coloring container mb-5 pt-4">
-    <h1 class="py-2">
-        {{collection.name}}
-    </h1>
-    <p>
-        {{collection.description}}
-    </p>
-    @for(subcollection of collection.subCollections; track subcollection){
+  <h1 class="py-2">
+    {{ collection.name }}
+  </h1>
+  <p>
+    {{ collection.description }}
+  </p>
+  @for (subCollection of collection.subCollections; track subCollection) {
     <div class="border bordered-content rounded-3 mt-3 m-0 p-1"
-        id="{{subcollection.name.toLowerCase().split(' ').join('-')}}">
-        <button class="btn text-coloring w-100 justify-content-left d-flex question-expand-button" type="button"
-            data-bs-toggle="collapse" aria-expanded="false" [attr.data-bs-target]="'#file'+subcollection.id"
-            [attr.aria-controls]="'file'+subcollection.id">
-            <h3>
-                {{subcollection.name}}
-            </h3>
-            @if(subcollection.description !== ''){
-            <span class="p-2">
-                {{subcollection.description}}
+         id="{{subCollection.name.toLowerCase().split(' ').join('-')}}">
+      <button class="btn text-coloring w-100 justify-content-left d-flex question-expand-button" type="button"
+              data-bs-toggle="collapse" aria-expanded="false" [attr.data-bs-target]="'#file'+subCollection.id"
+              [attr.aria-controls]="'file'+subCollection.id">
+        <h3>
+          {{ subCollection.name }}
+        </h3>
+        @if (subCollection.description !== '') {
+          <span class="p-2">
+                {{ subCollection.description }}
             </span>
-            }
-        </button>
-        <div [id]="'file'+subcollection.id" class="accordion-collapse collapse show text-coloring subcollection-content"
-            [attr.aria-labelledby]="'heading'+subcollection.id">
-            <div class="accordion-body">
-                <div>
-                    <div class="card-group">
-                        @for(moc of subCollectionMocs.get(subcollection.id);track moc){
-                        <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
-                            [id]="moc.id" [scale]="moc.scale">
-                        </app-card>
-                        }
-                    </div>
-                </div>
+        }
+      </button>
+      <div [id]="'file'+subCollection.id" class="accordion-collapse collapse show text-coloring subcollection-content"
+           [attr.aria-labelledby]="'heading'+subCollection.id">
+        <div class="accordion-body">
+          <div>
+            <div class="card-group">
+              @for (moc of subCollectionMocs.get(subCollection.id); track moc) {
+                <app-card class="moc-card" [pic]="moc.smallCoverImage" [name]="moc.title" [parts]="moc.parts"
+                          [id]="moc.id" [scale]="moc.scale">
+                </app-card>
+              }
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    }
+  }
+  <div class="row m-4 text-coloring">
+    <app-comment-section [parentComponentType]="'C'" [parentComponentId]="collection.id"></app-comment-section>
+  </div>
 </div>

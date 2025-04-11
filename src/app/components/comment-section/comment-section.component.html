@@ -1,0 +1,61 @@
+<div id="commentSectionWrapper" class="comment-section-wrapper">
+  <div class="comment-section">
+  <span>
+    <h3>Comments</h3>
+  </span>
+    <div>
+      <div style="padding-bottom: 0.25rem">
+        <input #usernameInputElement style="width: 12em; padding:0.25rem" placeholder="Username"
+               [(ngModel)]="usernameInput"
+               (input)="usernameInputChanged()">
+        <label style="padding-left: 0.5rem">
+          <label [ngStyle]="{'color': usernameInputLength>MAX_USERNAME_LENGTH ? 'red' : 'inherit' }">
+            {{ usernameInputLength }}</label>/{{ MAX_USERNAME_LENGTH }}</label>
+        @if (activeReply !== null) {
+          <label style="margin-left: 1rem">
+            Replying to <b>{{ activeReply.username }}</b>
+            <button style="margin-left: 1rem" class="btn inv-interact-button text-decoration-none text-align-center"
+                    (click)="cancelReply()">Cancel Reply
+            </button>
+          </label>
+        }
+      </div>
+      <div style="padding-bottom: 0.25rem">
+      <textarea #commentInputElement placeholder="Share your thoughts..." [(ngModel)]="commentInput"
+                (input)="commentInputChanged()" rows="3"
+                style="min-height: 3rem; padding: 0.25rem;" class="w-100"></textarea>
+      </div>
+      <div>
+        <button #sendCommentButtonElement class="btn inv-interact-button text-decoration-none text-align-center" (click)="createComment()">
+          Post
+          Comment
+        </button>
+        @if (tooManyCommentsTextActive) {
+          <label style="color:red; margin-left: 1rem; margin-right: 1rem">
+            Please wait a bit before posting another comment.
+          </label>
+        }
+        <label style="padding-left: 0.5rem">
+          <label [ngStyle]="{'color': commentInputLength>MAX_COMMENT_LENGTH ? 'red' : 'inherit' }">
+            {{ commentInputLength }}</label>/{{ MAX_COMMENT_LENGTH }}</label>
+      </div>
+    </div>
+    <div>
+      @for (shownComment of shownComments; track shownComment) {
+        <app-comment [comment]="shownComment.comment" [isOwned]="shownComment.owned" [reply]="shownComment.reply"
+                     (replyEmitter)="replyComment($event)" (deleteEmitter)="deleteComment($event)"
+                     (editEmitter)="editComment($event)"></app-comment>
+      }
+    </div>
+    @if (shownComments.length === 0) {
+      <div>No comments found.</div>
+    }
+    @if (shownComments.length < allComments.length) {
+      <div>
+        <button class="btn inv-interact-button text-decoration-none text-align-center" (click)="showAllComments()">
+          Show all comments
+        </button>
+      </div>
+    }
+  </div>
+</div>

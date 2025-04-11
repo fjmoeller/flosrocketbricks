@@ -193,14 +193,11 @@ export class CommentSectionComponent implements OnInit {
 
       this.commentService.editComment(this.parentComponentType + "-" + this.parentComponentId, editRequest).subscribe({
         next: editedComment => {
-          const indexInShownList = this.shownComments.findIndex(comment => comment.comment.id === editRequest.id);
           const indexInAllList = this.allComments.findIndex(comment => comment.comment.id === editRequest.id);
-          if (indexInShownList >= 0) {
-            this.shownComments[indexInShownList] = {comment: editedComment, owned: true};
-          }
           if (indexInAllList >= 0) {
             this.allComments[indexInAllList] = {comment: editedComment, owned: true};
           }
+          this.showSomeComments();
         }
       });
     }

@@ -22,7 +22,7 @@ import {CommentService} from "../../services/comment.service";
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.sass'
 })
-export class CommentComponent{
+export class CommentComponent {
 
   readonly MAX_COMMENT_LENGTH = 512;
   readonly MAX_REPLY_LENGTH = 256;
@@ -50,16 +50,23 @@ export class CommentComponent{
   editText: string = "";
   editTextLength: number = 0;
 
+  confirmDeleteActive: boolean = false;
+
   constructor(private commentService: CommentService) {
   }
 
-  getDate(time :number){
+  setConfirmDeleteActive(value: boolean) {
+    this.confirmDeleteActive = value;
+  }
+
+  getDate(time: number) {
     return new Date(time * 1000).toLocaleString([], {dateStyle: 'short', timeStyle: 'short'})
   }
 
   enableEditing() {
     this.editText = this.comment.content;
     this.editEnabled = true;
+    this.confirmDeleteActive = false;
   }
 
   disableEditing() {
@@ -75,6 +82,7 @@ export class CommentComponent{
         id: this.comment.id
       };
       this.editEmitter.emit(editRequest);
+      this.confirmDeleteActive = false;
     } else {
       this.shakeCommentInput();
     }
@@ -90,6 +98,7 @@ export class CommentComponent{
 
   startReply(): void {
     this.replyEmitter.emit({id: this.comment.id, username: this.comment.user});
+    this.confirmDeleteActive = false;
   }
 
   private shakeCommentInput(): void {

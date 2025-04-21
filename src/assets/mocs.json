@@ -1,5 +1,89 @@
 [
   {
+    "title": "AN-225 Mriya",
+    "id": 229,
+    "related": [
+      18,68
+    ],
+    "dimensions": "81.2x76.5x17cm",
+    "dimensionsExtra": "",
+    "links": [],
+    "updateMessage": "This MOC is planned to get an update in the future",
+    "tags": [],
+    "altTitles": [],
+    "region": [
+      "USSR","Ukraine"
+    ],
+    "parts": 3451,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/ussr/antonov/an-225/110-an-225-mriya-v2.6.jpg",
+    "regionExtra": "",
+    "partsExtra": "",
+    "internalColorExtra": "",
+    "versions": [
+      {
+        "files": [
+          {
+            "name": "AN-225_V2.6.io",
+            "description": "The digital file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/An-225_V2.6.io"
+          },{
+            "name": "AN-225_V2.6_instructions.pdf",
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/AN-225_V2.6_instructions.pdf"
+          },{
+            "name": "MAKS_Mounting_System_V2.6.io",
+            "description": "The digital io file of the mounting system needed for the MAKS launch system",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/MAKS_Mounting_System_V2.6.io"
+          },{
+            "name": "Buran_Mounting_System_V2.6.io",
+            "description": "The digital io file for the mounting system for the Buran spacecraft",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/Buran_Mounting_System_V2.6.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V2.6",
+        "changelog": ""
+      }
+    ],
+    "typeExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "designer": "SkySaac",
+    "internalColor": "-",
+    "company": "Antonov",
+    "companyExtra": "",
+    "stability": -1,
+    "stabilityExtra": "",
+    "mocDescription": "This is a MOC of the AN-225 Mriya plane. It can either have its landing legs extended or not. It is also compatible with my Buran and MAKS MOCs. Both need special mounting systems in order to attach them to the plane.",
+    "rocketDescription": "The AN-225 Mriya was a soviet and later Ukrainian airplane by the company Antonov. It carried Buran and was planned to carry the MAKS spaceplane. It was destroyed during the Russian invasion of Ukraine in 2022.",
+    "type": "other",
+    "designerExtra": "",
+    "dateCreated": "2021-12-15",
+    "lastUpdate": "2025-04-21",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/An-225_V2.6_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/An-225_V2.6_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/An-225_V2.6_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/An-225_V2.6_7.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/An-225_V2.6_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/An-225_V2.6_5.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/An-225_V2.6_6.jpg"
+    ]
+  },
+  {
     "title": "Pegasus XL",
     "id": 228,
     "related": [

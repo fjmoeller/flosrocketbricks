@@ -231,6 +231,7 @@
 /moc/226/pegasus/
 /moc/227/pegasus-h/
 /moc/228/pegasus-xl/
+/moc/229/an-225-mriya/
 /about/
 /404/
 /blog/

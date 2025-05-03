@@ -3,7 +3,8 @@
     "title": "AN-225 Mriya",
     "id": 229,
     "related": [
-      18,68
+      18,
+      68
     ],
     "dimensions": "81.2x76.5x17cm",
     "dimensionsExtra": "",
@@ -12,7 +13,8 @@
     "tags": [],
     "altTitles": [],
     "region": [
-      "USSR","Ukraine"
+      "USSR",
+      "Ukraine"
     ],
     "parts": 3451,
     "fanPictures": [],
@@ -30,19 +32,22 @@
             "export": true,
             "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/An-225_V2.6.io"
-          },{
+          },
+          {
             "name": "AN-225_V2.6_instructions.pdf",
             "description": "The pdf instructions",
             "type": "pdf",
             "link": "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/AN-225_V2.6_instructions.pdf"
-          },{
+          },
+          {
             "name": "MAKS_Mounting_System_V2.6.io",
             "description": "The digital io file of the mounting system needed for the MAKS launch system",
             "type": "io",
             "export": true,
             "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/ussr/antonov/an-225/v2.6/MAKS_Mounting_System_V2.6.io"
-          },{
+          },
+          {
             "name": "Buran_Mounting_System_V2.6.io",
             "description": "The digital io file for the mounting system for the Buran spacecraft",
             "type": "io",
@@ -87,7 +92,8 @@
     "title": "Pegasus XL",
     "id": 228,
     "related": [
-      226,227
+      226,
+      227
     ],
     "dimensions": "6.2x15.4x4cm",
     "dimensionsExtra": "",
@@ -150,7 +156,8 @@
     "title": "Pegasus-H",
     "id": 227,
     "related": [
-      226,228
+      226,
+      228
     ],
     "dimensions": "6.2x13.9x4cm",
     "dimensionsExtra": "",
@@ -213,7 +220,8 @@
     "title": "Pegasus",
     "id": 226,
     "related": [
-      227,228
+      227,
+      228
     ],
     "dimensions": "6.2x13.9x3.1cm",
     "dimensionsExtra": "",
@@ -307,7 +315,8 @@
             "viewer": "V2",
             "instructions": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk2/v3.2/Blue_Moon_MK2_V3.2.io"
-          },{
+          },
+          {
             "name": "Blue_Moon_MK2_V3.2_instructions.pdf",
             "description": "The pdf instructions",
             "type": "pdf",
@@ -16997,6 +17006,12 @@
             "viewer": "V2",
             "instructions": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.2/New_Glenn_V4.2.io"
+          },
+          {
+            "name": "New_Glenn_V4.2_instructions.pdf",
+            "description": "The pdf instructions for the rocket",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/new-glenn/v4.2/New_Glenn_V4.2_instructions.pdf"
           }
         ],
         "versionExtra": "",

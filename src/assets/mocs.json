@@ -2932,7 +2932,8 @@
     "lastUpdate": "2024-01-01",
     "dateCreated": "2022-01-08",
     "related": [
-      97
+      97,
+      153
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Proton-K rocket with the fairing of MIRs Kristal module on top. The three stages of the rocket can be separated from one another. The fairing holds just a little bit of space inside for something to fit in, it's not much though.",
@@ -5468,7 +5469,9 @@
     "dateCreated": "2022-01-28",
     "related": [
       66,
-      152
+      152,
+      187,
+      97
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Proton-K rocket in the Zond confirguration. The first three stages of the rocket can be separated. The fourth stage is inside the cylinder on top of the third stage.",
@@ -9606,7 +9609,7 @@
     "difficultyExtra": "",
     "lastUpdate": "2025-05-04",
     "dateCreated": "2022-01-08",
-    "related": [],
+    "related": [153,178],
     "updateMessage": "",
     "region": [
       "Russia","USSR"

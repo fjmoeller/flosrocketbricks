@@ -9591,7 +9591,7 @@
     "type": "rocket",
     "dimensionsExtra": "",
     "typeExtra": "",
-    "internalColor": "Green",
+    "internalColor": "-",
     "internalColorExtra": "",
     "links": [
       "https://en.wikipedia.org/wiki/Proton-M"
@@ -9604,32 +9604,53 @@
     "companyExtra": "",
     "difficulty": -1,
     "difficultyExtra": "",
-    "lastUpdate": "2023-06-07",
+    "lastUpdate": "2025-05-04",
     "dateCreated": "2022-01-08",
     "related": [],
     "updateMessage": "",
     "region": [
-      "Russia"
+      "Russia","USSR"
     ],
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/russia/proton/m/110-proton-m-v2.0.png",
+    "smallCoverImage": "assets/mocImages/110/russia/proton/m/110-proton-m-v2.1.jpg",
     "dimensions": "7.2x7.1x52.3cm",
     "tags": [],
     "altTitles": [],
     "title": "Proton M",
-    "parts": 879,
+    "parts": 865,
     "partsExtra": "",
     "designer": "SkySaac",
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/russia/proton/m/v2.0/Proton_M_V2.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/russia/proton/m/v2.0/Proton_M_V2.0_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/russia/proton/m/v2.0/Proton_M_V2.0_3.png"
+      "https://files.flosrocketbackend.com/mocs/110/russia/proton/m/v2.1/Proton_M_V2.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/russia/proton/m/v2.1/Proton_M_V2.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/russia/proton/m/v2.1/Proton_M_V2.1_3.jpg"
     ],
     "versions": [
+      {
+        "changelog": "Improve nose cones on the radial fuel tanks",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/russia/proton/m/v2.1/Proton_M_V2.1.io",
+            "name": "Proton_M_V2.1.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/russia/proton/m/v2.1/Proton_M_V2.1_instructions.pdf",
+            "name": "Proton_M_V2.1_instructions.pdf"
+          }
+        ],
+        "version": "V2.1"
+      },
       {
         "changelog": "",
         "versionExtra": "",

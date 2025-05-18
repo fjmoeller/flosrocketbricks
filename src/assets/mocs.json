@@ -2620,7 +2620,7 @@
     "altTitles": [],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2024-04-28",
+    "lastUpdate": "2025-05-18",
     "dateCreated": "2024-02-29",
     "related": [
       197
@@ -2628,7 +2628,7 @@
     "updateMessage": "",
     "mocDescription": "This is a MOC of the RFA One rocket. The first two stages can be staged. The fairing holds some space for a small payload. There is a frosted and non-frosted variant of the rocket available.",
     "rocketDescription": "RFA One is a smallsat launcher by the German company Rocket Factory Augsburg. It has three stages and is able to lift 1300kg into SSO. It is currently planned to launch in Q4 2024.",
-    "internalColor": "Green",
+    "internalColor": "",
     "scale": "110",
     "parts": 167,
     "dimensions": "2.4x2.6x28.3cm",
@@ -2642,6 +2642,43 @@
       "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.2/RFA_One_V1.2_3.jpg"
     ],
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.4/RFA_One_V1.4.io",
+            "name": "RFA_One_V1.4.io"
+          },
+          {
+            "description": "The pdf instructions of the rocket",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.4/RFA_One_V1.4_instructions.pdf",
+            "name": "RFA_One_V1.4_instructions.pdf"
+          },
+          {
+            "description": "The digital io file of the frosted rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.4/RFA_One_Frosted_V14.io",
+            "name": "RFA_One_Frosted_V1.4.io"
+          },
+          {
+            "description": "The pdf instructions of the rocket",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/germany/rfa/rfa-one/v1.4/RFA_One_Frosted_V1.4_instructions.pdf",
+            "name": "RFA_One_Frosted_V1.4_instructions.pdf"
+          }
+        ],
+        "version": "V1.4"
+      },
       {
         "changelog": "",
         "versionExtra": "",

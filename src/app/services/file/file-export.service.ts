@@ -9,6 +9,7 @@ import {PartMapping, SpecificPartMapping, PartMappingFix, BricklinkRefactoredPar
 import bricklink_refactored_parts from '../../../assets/ldr/lists/bricklink_refactored_parts.json'
 import {environment} from "../../../environments/environment";
 import {ExportSettingsService} from "./export-settings.service";
+import {splitter} from "../../utils/ldrUtils";
 
 @Injectable({
   providedIn: 'root'
@@ -225,7 +226,7 @@ export class FileExportService {
   }
 
   private parseLineTypeOne(line: string): PartReference {
-    const splitLine = this.ldrToThreeService.splitter(line, " ", 14);
+    const splitLine = splitter(line, " ", 14);
     return new PartReference(splitLine[splitLine.length - 1].split(".dat")[0], new Matrix4(), parseInt(splitLine[1]), false);
   }
 

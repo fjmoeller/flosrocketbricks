@@ -230,7 +230,7 @@
     "id": 3,
     "name": "Ariane",
     "description": "The Ariane series features European orbital launch vehicles.",
-    "cover": "https://flosrocketbricks.com/assets/collections/3/ariane/Ariane_Family_V2.0.jpg",
+    "cover": "assets/collections/3/ariane/Ariane_Family_V2.0.jpg",
     "subCollections": [
       {
         "id": 0,

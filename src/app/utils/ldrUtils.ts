@@ -349,10 +349,72 @@ export function createLineGeometry(partName: string, vertices: Vector3[], instru
 export function bevelPart(ldrPart: LdrPart, bevelSize: number, bevelThreshold: number): void {
   for (let color in ldrPart.colorVertexMap.keys()) {
     //TODO
-    //do edgebevels for every vertex, split into two if angle big enough
-    //create new vertices and faces
-    //for each vertex save that it happened
+    const colorId = Number(color);
+    const origVertices = ldrPart.colorVertexMap.get(colorId)!;
+    const origFaces = ldrPart.colorIndexMap.get(colorId)!;
 
+    //collect edges and vertices
+    const edges: Map<string, [number, number, number[]]> = new Map(); // Kante -> [v1, v2, [faceIndices]]
+    const vertexEdges: Map<number, [number, number][]> = new Map(); // Vertex -> Liste von Kanten //TODO remove?
+    for (let i = 0; i < origFaces.length; i += 3) {
+      const face = [origFaces[i], origFaces[i + 1], origFaces[i + 2]];
+      const edgesOfFace = [
+        [face[0], face[1]],
+        [face[1], face[2]],
+        [face[2], face[0]],
+      ];
+
+      edgesOfFace.forEach(([v1, v2]) => {
+        const key = v1 < v2 ? `${v1}-${v2}` : `${v2}-${v1}`;
+        if (!edges.has(key)) {
+          edges.set(key, [v1, v2, []]);
+        }
+        edges.get(key)![2].push(i);
+      });
+
+      // Vertex-Kanten-Zuordnung
+      face.forEach(v => {
+        if (!vertexEdges.has(v)) vertexEdges.set(v, []);
+      });
+      edgesOfFace.forEach(([v1, v2]) => {
+        vertexEdges.get(v1)!.push([v1, v2]);
+        vertexEdges.get(v2)!.push([v1, v2]);
+      });
+    }
+
+    //find edges with angle > threshold
+    //const bevelEdges: [number, number][] = [];
+    const vertexMovements = new Map<number, [{ e: string, m1: Vector3, m2: Vector3 }]>(); //VertexIndex -> {edgeIndex,movement1,movement2}[]
+    for (const [, [v1, v2, faceIndices]] of edges) {
+      if (faceIndices.length === 2) {
+        const faceA = [
+          origVertices[origFaces[faceIndices[0]]],
+          origVertices[origFaces[faceIndices[0] + 1]],
+          origVertices[origFaces[faceIndices[0] + 2]],
+        ];
+        const faceB = [
+          origVertices[origFaces[faceIndices[1]]],
+          origVertices[origFaces[faceIndices[1] + 1]],
+          origVertices[origFaces[faceIndices[1] + 2]],
+        ];
+        const angle = getAngleBetweenFaces(faceA, faceB);
+        if (angle > bevelThreshold) {
+          vertexMovements
+          //bevelEdges.push([v1, v2]);
+          //füge vertexMovements v1 und v2 hinzu
+        }
+      }
+    }
+
+    //for each vertex -> if in vertexMovements
+    //create new vertices
+    //create new top face(s) if needed
+    //save new vertices in edge map: edge -> {newV1:vertex[],newV2:vertex[]}
+
+    //for edge in edge map
+    //create bevel face for all edges in there
+
+    /*
     const colorId = Number(color);
     const origVertices = ldrPart.colorVertexMap.get(colorId)!;
     const updatedVertices = origVertices.map(vertex => vertex.clone());
@@ -544,7 +606,7 @@ export function bevelPart(ldrPart: LdrPart, bevelSize: number, bevelThreshold: n
         }
       }
     }
-
+*/
     //TODO create new platforms from updatesVertexMap
 
     //TODO create bevel faces
@@ -553,6 +615,14 @@ export function bevelPart(ldrPart: LdrPart, bevelSize: number, bevelThreshold: n
 
   //TODO collect all edges that will be beveled and all that onwt
 }
+
+function getAngleBetweenFaces(faceA: Vector3[], faceB: Vector3[]): number {
+  const normalA = new Triangle(faceA[0], faceA[1], faceA[2]).getNormal(new Vector3()).normalize();
+  const normalB = new Triangle(faceB[0], faceB[1], faceB[2]).getNormal(new Vector3()).normalize();
+  const dot = normalA.dot(normalB);
+  return MathUtils.radToDeg(Math.acos(Math.max(-1, Math.min(1, dot))));
+}
+
 
 function findAdjacentFace(origIndices: number[], vertices: number[], excludeIndex: number): number {
   for (let indicesIndex = 0; indicesIndex < origIndices.length; indicesIndex += 3) {
@@ -566,7 +636,7 @@ function findAdjacentFace(origIndices: number[], vertices: number[], excludeInde
   return -1;
 }
 
-//todo add flatshading stuff
+//todo add flat shading stuff
 export function shrinkPart(ldrPart: LdrPart, gapSize: number, flatShading: boolean): void {
   //TODO remove
   gapSize = 0.5;
@@ -716,6 +786,7 @@ export function shrinkPartScale(ldrPart: LdrPart, gapSize: number): void {
   }));
   const neededX = maxX - minX - 2 * gapSize, neededY = maxY - minY - 2 * gapSize, neededZ = maxZ - minZ - 2 * gapSize;
   const currentX = maxX - minX, currentY = maxY - minY, currentZ = maxZ - minZ;
+
   const scaleX = neededX / currentX, scaleY = neededY / currentY, scaleZ = neededZ / currentZ;
 
   ldrPart.colorVertexMap.forEach(vertices => vertices.forEach(vertex => {

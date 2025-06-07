@@ -10,15 +10,13 @@ import {
   InstructionSubmodel, InstructionSubmodelReference, StepModel, StepPart
 } from "../../model/instructions";
 import {LdrPart, PartReference} from "../../model/ldrawParts";
-import {LdrToThreeService} from "./ldr-to-three.service";
-import * as BufferGeometryUtils from "three/examples/jsm/utils/BufferGeometryUtils.js";
 import {Box3} from "three/src/math/Box3.js";
 import {
   parseLineTypeFour,
   parseLineTypeThree,
   parseLineTypeOne,
   parseLineTypeTwo,
-  resolvePart, createLineGeometry, createBufferGeometry, shrinkPart, bevelPart, mergeVertices
+  resolvePart, createLineGeometry, createBufferGeometry, bevelPart, mergeVertices, shrinkPartScale
 } from "../../utils/ldrUtils";
 
 @Injectable({
@@ -34,7 +32,7 @@ export class InstructionService {
 
   private ENABLE_FLAT_SHADING: boolean = true;
   private ENABLE_SHRINKING: boolean = true;
-  private SHRINKING_GAP_SIZE: number = 0.01;
+  private SHRINKING_GAP_SIZE: number = 0.09;
   private ENABLE_BEVEL: boolean = false;
   private BEVEL_SIZE: number = 0.1;
   private BEVEL_THRESHOLD: number = 85;
@@ -150,7 +148,7 @@ export class InstructionService {
         mergeVertices(resolvedPart.colorIndexMap, resolvedPart.colorVertexMap, resolvedPart.colorLineVertexMap);
 
       if (this.ENABLE_SHRINKING)
-        shrinkPart(resolvedPart, this.SHRINKING_GAP_SIZE, this.ENABLE_FLAT_SHADING);
+        shrinkPartScale(resolvedPart, this.SHRINKING_GAP_SIZE);
 
       if (this.ENABLE_BEVEL)
         bevelPart(resolvedPart,this.BEVEL_SIZE, this.BEVEL_THRESHOLD);

@@ -354,8 +354,9 @@ export function bevelPart(ldrPart: LdrPart, bevelSize: number, bevelThreshold: n
     const origFaces = ldrPart.colorIndexMap.get(colorId)!;
 
     //collect edges and vertices
-    const edges: Map<string, [number, number, number[]]> = new Map(); // Kante -> [v1, v2, [faceIndices]]
-    const vertexEdges: Map<number, [number, number][]> = new Map(); // Vertex -> Liste von Kanten //TODO remove?
+    const edgeToVerticesFaces = new Map<string, [number, number, number[]]>(); // Kante -> [v1, v2, [faceIndices]]
+    const faceToVerticesEdges = new Map<number, [number, number, number, string[]]>(); //Faceindex -> [v1,v2,v3,string[]]
+    const vertexToEdges = new Map<number, string[]>(); // Vertex -> Liste von Kanten //TODO remove?
     for (let i = 0; i < origFaces.length; i += 3) {
       const face = [origFaces[i], origFaces[i + 1], origFaces[i + 2]];
       const edgesOfFace = [
@@ -364,28 +365,37 @@ export function bevelPart(ldrPart: LdrPart, bevelSize: number, bevelThreshold: n
         [face[2], face[0]],
       ];
 
+      //Face-Edges/Vertices-Zuordnung
+      faceToVerticesEdges.set(i,[origFaces[i], origFaces[i + 1], origFaces[i + 2],
+        edgesOfFace.map(([v1,v2]) => v1 < v2 ? `${v1}-${v2}` : `${v2}-${v1}`)]);
+
+      //Edge-Face/Vertices-Zuordnung
       edgesOfFace.forEach(([v1, v2]) => {
         const key = v1 < v2 ? `${v1}-${v2}` : `${v2}-${v1}`;
-        if (!edges.has(key)) {
-          edges.set(key, [v1, v2, []]);
+        if (!edgeToVerticesFaces.has(key)) {
+          edgeToVerticesFaces.set(key, [v1, v2, []]);
         }
-        edges.get(key)![2].push(i);
+        edgeToVerticesFaces.get(key)![2].push(i);
       });
 
       // Vertex-Kanten-Zuordnung
       face.forEach(v => {
-        if (!vertexEdges.has(v)) vertexEdges.set(v, []);
+        if (!vertexToEdges.has(v))
+          vertexToEdges.set(v, []);
       });
       edgesOfFace.forEach(([v1, v2]) => {
-        vertexEdges.get(v1)!.push([v1, v2]);
-        vertexEdges.get(v2)!.push([v1, v2]);
+        const key = v1 < v2 ? `${v1}-${v2}` : `${v2}-${v1}`;
+        if(!vertexToEdges.get(v1)!.includes(key))
+          vertexToEdges.get(v1)!.push(key);
+        if(!vertexToEdges.get(v2)!.includes(key))
+          vertexToEdges.get(v2)!.push(key);
       });
     }
 
     //find edges with angle > threshold
     //const bevelEdges: [number, number][] = [];
-    const vertexMovements = new Map<number, [{ e: string, m1: Vector3, m2: Vector3 }]>(); //VertexIndex -> {edgeIndex,movement1,movement2}[]
-    for (const [, [v1, v2, faceIndices]] of edges) {
+    const vertexToMovements = new Map<number, { e: string, m1: Vector3, m2: Vector3 }[]>(); //VertexIndex -> {edgeIndex,movement1,movement2}[]
+    for (const [edgeIndex, [v1, v2, faceIndices]] of edgeToVerticesFaces) {
       if (faceIndices.length === 2) {
         const faceA = [
           origVertices[origFaces[faceIndices[0]]],
@@ -399,221 +409,76 @@ export function bevelPart(ldrPart: LdrPart, bevelSize: number, bevelThreshold: n
         ];
         const angle = getAngleBetweenFaces(faceA, faceB);
         if (angle > bevelThreshold) {
-          vertexMovements
-          //bevelEdges.push([v1, v2]);
-          //füge vertexMovements v1 und v2 hinzu
+          //calculate movement that vertices do away from the original position in order to get new position
+          const faceAThirdVertex = origVertices[[origFaces[faceIndices[0]], origFaces[faceIndices[0] + 1], origFaces[faceIndices[0] + 2]].find(
+            vertex => vertex !== v1 && vertex != v2)!];
+          const faceBThirdVertex = origVertices[[origFaces[faceIndices[1]], origFaces[faceIndices[1] + 1], origFaces[faceIndices[1] + 2]].find(
+            vertex => vertex !== v1 && vertex != v2)!];
+          //where the edges point to
+          const v1e1 = origVertices[v1].clone().sub(faceAThirdVertex)
+          const v1e2 = origVertices[v1].clone().sub(faceBThirdVertex)
+          const v2e1 = origVertices[v2].clone().sub(faceAThirdVertex)
+          const v2e2 = origVertices[v2].clone().sub(faceBThirdVertex)
+
+          const avgFaceVector = new Triangle(faceA[0], faceA[1], faceA[2]).getNormal(new Vector3()).normalize().add(new Triangle(faceA[0], faceA[1], faceA[2]).getNormal(new Vector3()).normalize()).normalize();
+
+          //angles between mean vector of both faces and the edge
+          const v1a1 = getAngleBetweenVectors(avgFaceVector, v1e1);
+          const v1a2 = getAngleBetweenVectors(avgFaceVector, v1e2);
+          const v2a1 = getAngleBetweenVectors(avgFaceVector, v2e1);
+          const v2a2 = getAngleBetweenVectors(avgFaceVector, v2e2);
+
+          const v1m1Length = (bevelSize / 2) / (Math.sin(v1a1));
+          const v1m2Length = (bevelSize / 2) / (Math.sin(v1a2));
+          const v1m1 = v1e1.setLength(v1m1Length);
+          const v1m2 = v1e2.setLength(v1m2Length);
+
+          const v2m1Length = (bevelSize / 2) / (Math.sin(v2a1));
+          const v2m2Length = (bevelSize / 2) / (Math.sin(v2a2));
+          const v2m1 = v2e1.setLength(v2m1Length);
+          const v2m2 = v2e2.setLength(v2m2Length);
+
+          if (vertexToMovements.has(v1)) {
+            vertexToMovements.get(v1)!.push({e: edgeIndex, m1: v1m1, m2: v1m2});
+          } else {
+            vertexToMovements.set(v1, [{e: edgeIndex, m1: v1m1, m2: v1m2}]);
+          }
+          if (vertexToMovements.has(v2)) {
+            vertexToMovements.get(v2)!.push({e: edgeIndex, m1: v2m1, m2: v2m2});
+          } else {
+            vertexToMovements.set(v2, [{e: edgeIndex, m1: v2m1, m2: v2m2}]);
+          }
         }
       }
     }
 
+    const vertexMovedVertices = new Map<number,{e:string,f:[number,number],m:[number,number]}>(); //vertexIndex -> edge, index of faces, index of moved vertex
     //for each vertex -> if in vertexMovements
-    //create new vertices
-    //create new top face(s) if needed
-    //save new vertices in edge map: edge -> {newV1:vertex[],newV2:vertex[]}
-
-    //for edge in edge map
-    //create bevel face for all edges in there
-
-    /*
-    const colorId = Number(color);
-    const origVertices = ldrPart.colorVertexMap.get(colorId)!;
-    const updatedVertices = origVertices.map(vertex => vertex.clone());
-    const origIndices = ldrPart.colorIndexMap.get(colorId)!;
-    const updatedIndices = [...origIndices];
-    //origVertexIndex -> updatedVertexIndex, will be used for the platforms
-    const updatedVertexMap = new Map<number, number[]>();
-    //for original edge points (all edges) -> save new indices of points used on both sides of the edge, will be used for bevels
-    const updatedEdgesMap = new Map<number[], number[][]>();
-
-    for (let indicesIndex = 0; indicesIndex < origIndices.length; indicesIndex += 3) {
-      const edge1 = [indicesIndex, indicesIndex + 1];
-      const edge2 = [indicesIndex + 1, indicesIndex + 2];
-      const edge3 = [indicesIndex + 2, indicesIndex];
-
-      const adjacentFace1FirstIndex = findAdjacentFace(origIndices, edge1, indicesIndex);
-      const adjacentFace2FirstIndex = findAdjacentFace(origIndices, edge2, indicesIndex);
-      const adjacentFace3FirstIndex = findAdjacentFace(origIndices, edge3, indicesIndex);
-
-      const currentFaceNormal = new Triangle(origVertices[indicesIndex], origVertices[indicesIndex + 1], origVertices[indicesIndex + 2]).getNormal(new Vector3(0, 0, 0));
-      const adjacentFace1Normal = new Triangle(origVertices[adjacentFace1FirstIndex], origVertices[adjacentFace1FirstIndex + 1], origVertices[adjacentFace1FirstIndex + 2]).getNormal(new Vector3(0, 0, 0));
-      const adjacentFace2Normal = new Triangle(origVertices[adjacentFace2FirstIndex], origVertices[adjacentFace2FirstIndex + 1], origVertices[adjacentFace2FirstIndex + 2]).getNormal(new Vector3(0, 0, 0));
-      const adjacentFace3Normal = new Triangle(origVertices[adjacentFace3FirstIndex], origVertices[adjacentFace3FirstIndex + 1], origVertices[adjacentFace3FirstIndex + 2]).getNormal(new Vector3(0, 0, 0));
-
-      const edgeAngle1 = MathUtils.radToDeg(currentFaceNormal.angleTo(adjacentFace1Normal));
-      const edgeAngle2 = MathUtils.radToDeg(currentFaceNormal.angleTo(adjacentFace2Normal));
-      const edgeAngle3 = MathUtils.radToDeg(currentFaceNormal.angleTo(adjacentFace3Normal));
-
-      const moveVertex1By = new Vector3(0, 0, 0);
-      const moveVertex2By = new Vector3(0, 0, 0);
-      const moveVertex3By = new Vector3(0, 0, 0);
-
-      if (edgeAngle1 >= bevelThreshold) {
-        const adjacentLineVector1 = origVertices[indicesIndex + 2].clone().sub(origVertices[indicesIndex]);
-        const angleOnVertex1 = origVertices[indicesIndex + 1].clone().sub(origVertices[indicesIndex]).angleTo(adjacentLineVector1);
-        let moveByLengthOnVector1 = Math.sin(angleOnVertex1) * bevelSize / 2;
-        if (adjacentLineVector1.length() < moveByLengthOnVector1) {
-          console.warn("bevel is destroying face");
-          moveByLengthOnVector1 = adjacentLineVector1.length();
-        }
-        adjacentLineVector1.setLength(moveByLengthOnVector1);
-
-        const adjacentLineVector2 = origVertices[indicesIndex + 2].clone().sub(origVertices[indicesIndex + 1]);
-        const angleOnVertex2 = origVertices[indicesIndex].clone().sub(origVertices[indicesIndex + 1]).angleTo(adjacentLineVector2);
-        let moveByLengthOnVector2 = Math.sin(angleOnVertex2) * bevelSize / 2;
-        if (adjacentLineVector2.length() < moveByLengthOnVector2) {
-          console.warn("bevel is destroying face");
-          moveByLengthOnVector2 = adjacentLineVector2.length();
-        }
-        adjacentLineVector2.setLength(moveByLengthOnVector2);
-
-        moveVertex1By.add(adjacentLineVector1);
-        moveVertex2By.add(adjacentLineVector2);
-      }
-      if (edgeAngle2 >= bevelThreshold) {
-        const adjacentLineVector1 = origVertices[indicesIndex].clone().sub(origVertices[indicesIndex + 1]);
-        const angleOnVertex1 = origVertices[indicesIndex + 2].clone().sub(origVertices[indicesIndex + 1]).angleTo(adjacentLineVector1);
-        let moveByLengthOnVector1 = Math.sin(angleOnVertex1) * bevelSize / 2;
-        if (adjacentLineVector1.length() < moveByLengthOnVector1) {
-          console.warn("bevel is destroying face");
-          moveByLengthOnVector1 = adjacentLineVector1.length();
-        }
-        adjacentLineVector1.setLength(moveByLengthOnVector1);
-
-        const adjacentLineVector2 = origVertices[indicesIndex].clone().sub(origVertices[indicesIndex + 2]);
-        const angleOnVertex2 = origVertices[indicesIndex + 1].clone().sub(origVertices[indicesIndex + 2]).angleTo(adjacentLineVector2);
-        let moveByLengthOnVector2 = Math.sin(angleOnVertex2) * bevelSize / 2;
-        if (adjacentLineVector2.length() < moveByLengthOnVector2) {
-          console.warn("bevel is destroying face");
-          moveByLengthOnVector2 = adjacentLineVector2.length();
-        }
-        adjacentLineVector2.setLength(moveByLengthOnVector2);
-
-        moveVertex2By.add(adjacentLineVector1);
-        moveVertex3By.add(adjacentLineVector2);
-      }
-      if (edgeAngle3 >= bevelThreshold) {
-        const adjacentLineVector1 = origVertices[indicesIndex + 1].clone().sub(origVertices[indicesIndex + 2]);
-        const angleOnVertex1 = origVertices[indicesIndex].clone().sub(origVertices[indicesIndex + 2]).angleTo(adjacentLineVector1);
-        let moveByLengthOnVector1 = Math.sin(angleOnVertex1) * bevelSize / 2;
-        if (adjacentLineVector1.length() < moveByLengthOnVector1) {
-          console.warn("bevel is destroying face");
-          moveByLengthOnVector1 = adjacentLineVector1.length();
-        }
-        adjacentLineVector1.setLength(moveByLengthOnVector1);
-
-        const adjacentLineVector2 = origVertices[indicesIndex + 1].clone().sub(origVertices[indicesIndex]);
-        const angleOnVertex2 = origVertices[indicesIndex + 2].clone().sub(origVertices[indicesIndex]).angleTo(adjacentLineVector2);
-        let moveByLengthOnVector2 = Math.sin(angleOnVertex2) * bevelSize / 2;
-        if (adjacentLineVector2.length() < moveByLengthOnVector2) {
-          console.warn("bevel is destroying face");
-          moveByLengthOnVector2 = adjacentLineVector2.length();
-        }
-        adjacentLineVector2.setLength(moveByLengthOnVector2);
-
-        moveVertex3By.add(adjacentLineVector1);
-        moveVertex1By.add(adjacentLineVector2);
-      }
-
-      if (moveVertex1By.length() !== 0) {
-        const indexOfNewVertex = updatedVertices.push(origVertices[indicesIndex].clone().add(moveVertex1By)) - 1;
-        updatedIndices[indicesIndex] = indexOfNewVertex;
-        if (updatedVertexMap.has(indicesIndex))
-          updatedVertexMap.get(indicesIndex)?.push(indexOfNewVertex);
-        else
-          updatedVertexMap.set(indicesIndex, [indexOfNewVertex]);
-
-        //update adjacent not changing faces vertices
-        if (edgeAngle1 < bevelThreshold) {
-          //find vertex that fits this moved one
-          if (origIndices[adjacentFace1FirstIndex] === origIndices[indicesIndex]) {
-            updatedIndices[adjacentFace1FirstIndex] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace1FirstIndex + 1] === origIndices[indicesIndex]) {
-            updatedIndices[adjacentFace1FirstIndex + 1] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace1FirstIndex + 2] === origIndices[indicesIndex]) {
-            updatedIndices[adjacentFace1FirstIndex + 2] = indexOfNewVertex;
-          }
-        }
-        if (edgeAngle3 < bevelThreshold) {
-          //find vertex that fits this moved one
-          if (origIndices[adjacentFace3FirstIndex] === origIndices[indicesIndex]) {
-            updatedIndices[adjacentFace3FirstIndex] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace3FirstIndex + 1] === origIndices[indicesIndex]) {
-            updatedIndices[adjacentFace3FirstIndex + 1] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace3FirstIndex + 2] === origIndices[indicesIndex]) {
-            updatedIndices[adjacentFace3FirstIndex + 2] = indexOfNewVertex;
-          }
-        }
+    for (const [vertexIndex, edgeMovement] of vertexToMovements) {
+      const vertex = origVertices[vertexIndex];
+      const edgeMovements: { e: string, m1: Vector3, m2: Vector3 }[] = edgeMovement;
+      const allEdges = vertexToEdges.get(vertexIndex)!;
+      //TODO finde alle kanten zu diesem vertex
+      let nextEdgeIndex = -1
+      let isMovedVertex = true
+      let currentEdgeIndex = 0 //=edgeMovements[0]
+      while (!(nextEdgeIndex === 0 && isMovedVertex)) {
+        const edgeMovement = edgeMovements[currentEdgeIndex];
+        const edgeConnections = edgeToVerticesFaces.get(edgeMovement.e);
 
       }
-      if (moveVertex2By.length() !== 0) {
-        const indexOfNewVertex = updatedVertices.push(origVertices[indicesIndex + 1].clone().add(moveVertex2By)) - 1;
-        updatedIndices[indicesIndex + 1] = indexOfNewVertex;
-        if (updatedVertexMap.has(indicesIndex + 1))
-          updatedVertexMap.get(indicesIndex + 1)?.push(indexOfNewVertex);
-        else
-          updatedVertexMap.set(indicesIndex + 1, [indexOfNewVertex]);
 
-        //update adjacent not changing faces vertices
-        if (edgeAngle1 < bevelThreshold) {
-          //find vertex that fits this moved one
-          if (origIndices[adjacentFace1FirstIndex] === origIndices[indicesIndex + 1]) {
-            updatedIndices[adjacentFace1FirstIndex] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace1FirstIndex + 1] === origIndices[indicesIndex + 1]) {
-            updatedIndices[adjacentFace1FirstIndex + 1] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace1FirstIndex + 2] === origIndices[indicesIndex + 1]) {
-            updatedIndices[adjacentFace1FirstIndex + 2] = indexOfNewVertex;
-          }
-        }
-        if (edgeAngle2 < bevelThreshold) {
-          //find vertex that fits this moved one
-          if (origIndices[adjacentFace2FirstIndex] === origIndices[indicesIndex + 1]) {
-            updatedIndices[adjacentFace2FirstIndex] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace2FirstIndex + 1] === origIndices[indicesIndex + 1]) {
-            updatedIndices[adjacentFace2FirstIndex + 1] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace2FirstIndex + 2] === origIndices[indicesIndex + 1]) {
-            updatedIndices[adjacentFace2FirstIndex + 2] = indexOfNewVertex;
-          }
-        }
-      }
-      if (moveVertex3By.length() !== 0) {
-        const indexOfNewVertex = updatedVertices.push(origVertices[indicesIndex + 2].clone().add(moveVertex3By)) - 1;
-        updatedIndices[indicesIndex + 2] = indexOfNewVertex;
-        if (updatedVertexMap.has(indicesIndex + 2))
-          updatedVertexMap.get(indicesIndex + 2)?.push(indexOfNewVertex);
-        else
-          updatedVertexMap.set(indicesIndex + 2, [indexOfNewVertex]);
-
-        //update adjacent not changing faces vertices
-        if (edgeAngle3 < bevelThreshold) {
-          //find vertex that fits this moved one
-          if (origIndices[adjacentFace3FirstIndex] === origIndices[indicesIndex + 2]) {
-            updatedIndices[adjacentFace3FirstIndex] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace3FirstIndex + 1] === origIndices[indicesIndex + 2]) {
-            updatedIndices[adjacentFace3FirstIndex + 1] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace3FirstIndex + 2] === origIndices[indicesIndex + 2]) {
-            updatedIndices[adjacentFace3FirstIndex + 2] = indexOfNewVertex;
-          }
-        }
-        if (edgeAngle2 < bevelThreshold) {
-          //find vertex that fits this moved one
-          if (origIndices[adjacentFace2FirstIndex] === origIndices[indicesIndex + 2]) {
-            updatedIndices[adjacentFace2FirstIndex] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace2FirstIndex + 1] === origIndices[indicesIndex + 2]) {
-            updatedIndices[adjacentFace2FirstIndex + 1] = indexOfNewVertex;
-          } else if (origIndices[adjacentFace2FirstIndex + 2] === origIndices[indicesIndex + 2]) {
-            updatedIndices[adjacentFace2FirstIndex + 2] = indexOfNewVertex;
-          }
-        }
-      }
+      //TODO sortiere kanten iwie, sodass ne chain ergeben
+      //TODO finde anzahl neuer punkte raus
+      //TODO erstelle neue punkte
+      //TODO erstelle neue platform faces
+      //TODO pseichere iwie neue vertices for each edge sodass später bevelfaces gemacht werden können
     }
-*/
-    //TODO create new platforms from updatesVertexMap
 
-    //TODO create bevel faces
+    //TODO go through edges and create bevel faces
+
   }
   //TODO remove unused vertices
-
-  //TODO collect all edges that will be beveled and all that onwt
 }
 
 function getAngleBetweenFaces(faceA: Vector3[], faceB: Vector3[]): number {
@@ -623,6 +488,10 @@ function getAngleBetweenFaces(faceA: Vector3[], faceB: Vector3[]): number {
   return MathUtils.radToDeg(Math.acos(Math.max(-1, Math.min(1, dot))));
 }
 
+function getAngleBetweenVectors(v1: Vector3, v2: Vector3): number {
+  const dot = v1.dot(v2);
+  return MathUtils.radToDeg(Math.acos(Math.max(-1, Math.min(1, dot))));
+}
 
 function findAdjacentFace(origIndices: number[], vertices: number[], excludeIndex: number): number {
   for (let indicesIndex = 0; indicesIndex < origIndices.length; indicesIndex += 3) {
@@ -636,7 +505,7 @@ function findAdjacentFace(origIndices: number[], vertices: number[], excludeInde
   return -1;
 }
 
-//todo add flat shading stuff
+//todo remove
 export function shrinkPart(ldrPart: LdrPart, gapSize: number, flatShading: boolean): void {
   //TODO remove
   gapSize = 0.5;

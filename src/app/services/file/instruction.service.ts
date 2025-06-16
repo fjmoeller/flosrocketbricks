@@ -16,7 +16,13 @@ import {
   parseLineTypeThree,
   parseLineTypeOne,
   parseLineTypeTwo,
-  resolvePart, createLineGeometry, createBufferGeometry, bevelPart, mergeVertices, shrinkPartScale
+  resolvePart,
+  createLineGeometry,
+  createBufferGeometry,
+  bevelPart,
+  mergeVertices,
+  shrinkPartScale,
+  mergeLowAngleVertices
 } from "../../utils/ldrUtils";
 
 @Injectable({
@@ -30,13 +36,14 @@ export class InstructionService {
   private PREV_INTERPOLATION_COLOR = this.DEFAULT_PREV_INTERPOLATION_COLOR;
   private PREV_INTERPOLATION_PERCENTAGE: number = this.DEFAULT_PREV_INTERPOLATION_PERCENTAGE;
 
-  private ENABLE_FLAT_SHADING: boolean = true;
+  private ENABLE_FLAT_SHADING: boolean = false;
+  private MERGE_THRESHOLD: number = 40;
   private ENABLE_SHRINKING: boolean = true;
   private SHRINKING_GAP_SIZE: number = 0.09;
   private ENABLE_BEVEL: boolean = false;
   private BEVEL_SIZE: number = 0.1;
   private BEVEL_THRESHOLD: number = 85;
-  private ENABLE_PART_LINES: boolean = true;
+  private ENABLE_PART_LINES: boolean = false;
 
   //Because there are only two possible lineColors I just initialize them here :)
   private lineMaterials = [new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(71)}), new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(0)})];
@@ -146,6 +153,8 @@ export class InstructionService {
 
       if (this.ENABLE_FLAT_SHADING)
         mergeVertices(resolvedPart.colorIndexMap, resolvedPart.colorVertexMap, resolvedPart.colorLineVertexMap);
+      else
+        mergeLowAngleVertices(resolvedPart.colorIndexMap, resolvedPart.colorVertexMap, this.MERGE_THRESHOLD);
 
       if (this.ENABLE_SHRINKING)
         shrinkPartScale(resolvedPart, this.SHRINKING_GAP_SIZE);
@@ -340,7 +349,7 @@ export class InstructionService {
         if (partLine.startsWith("3"))
           parsed = parseLineTypeThree(partLine, (invertNext || isCW) && !(invertNext && isCW));
         else
-          parsed = parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW), false);
+          parsed = parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW));
 
         this.createMaterialIfNotExists(parsed.color, colorToMaterialMap, colorToPrevMaterialMap, defaultAnyColor);
         const partVertices = colorVertexMap.get(parsed.color);
@@ -351,7 +360,7 @@ export class InstructionService {
         if (partVertices)  //The current part already knows this color
           for (let i = 0; i < parsed.vertices.length; i++) {
             const found = partVertices.findIndex(p => p.equals(parsed.vertices[i]));
-            if (found != -1) //vertex already exists
+            if (found != -1 && this.ENABLE_FLAT_SHADING) //vertex already exists
               vertexIndexMap.set(i, found);
             else { //vertex doesnt exist yet
               partVertices.push(parsed.vertices[i]);
@@ -377,11 +386,10 @@ export class InstructionService {
         const parsed = parseLineTypeTwo(partLine);
         const entry = colorLineVertexMap.get(parsed.color) ?? [];
         colorLineVertexMap.set(parsed.color, entry.concat(parsed.points));
-        //TODO move this out?
+
         invertNext = false;
       }
     }
-
     return new LdrPart(partId, partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
   }
 
@@ -389,7 +397,7 @@ export class InstructionService {
     if (!colorToMaterialMap.has(color) && color != 24 && color != 16 && color != -1 && color != -2) {
       const matParams = this.ldrawColorService.resolveColorByLdrawColorId(color, defaultAnyColor);
       const material = new MeshStandardMaterial();
-      material.flatShading = true;
+      material.flatShading = this.ENABLE_FLAT_SHADING;
       material.setValues(matParams);
       colorToMaterialMap.set(color, material);
 

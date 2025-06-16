@@ -344,7 +344,7 @@ export class LdrToThreeService {
         if (partLine.startsWith("3"))
           parsed = parseLineTypeThree(partLine, (invertNext || isCW) && !(invertNext && isCW));
         else
-          parsed = parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW), false);
+          parsed = parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW));
 
         this.createMaterialIfNotExists(parsed.color);
         const partVertices = colorVertexMap.get(parsed.color);

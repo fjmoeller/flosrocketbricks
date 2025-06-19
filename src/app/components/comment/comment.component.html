@@ -28,13 +28,13 @@
           </label>
           <label>{{ getDate(reply.time) }}</label>
         </div>
-        <div>
-          {{ reply.content.substring(0, this.MAX_REPLY_LENGTH) + "..." }}
+        <div style="white-space: pre-line; overflow: hidden">
+          {{ fixCommentContent(reply.content).substring(0, this.MAX_REPLY_LENGTH) + "..." }}
         </div>
       </div>
     }
-    <div>
-      {{ comment.content }}
+    <div style="white-space: pre-line; overflow: hidden">
+      {{ fixCommentContent(comment.content) }}
     </div>
     <div style="margin-top: 1rem">
       @if (!isAdminView) {

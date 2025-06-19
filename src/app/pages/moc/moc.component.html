@@ -166,7 +166,11 @@
               <div class="row justify-content-center popover-wrapper">
                 <strong>Placeholder color:</strong>
                 <span>
-                                {{ moc.internalColor }}
+                  @if (moc.internalColor === "") {
+                    -
+                  } @else {
+                    {{ moc.internalColor }}
+                  }
                   @if (moc.internalColorExtra !== '') {
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                          fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">

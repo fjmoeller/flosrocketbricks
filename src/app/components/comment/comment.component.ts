@@ -74,6 +74,15 @@ export class CommentComponent {
     this.editEnabled = false;
   }
 
+  fixCommentContent(content:string): string {
+    return content.split("&amp;").join("&")
+      .split("&lt;").join("<")
+      .split("&gt;").join(">")
+      .split("&quot;").join('"')
+      .split("&#x27;").join("'")
+      .split("&#x2F;").join("/");
+  }
+
   confirmEditComment() {
     if (this.editText.length <= this.commentService.MAX_COMMENT_LENGTH) {
       const editRequest: CommentEditRequest = {

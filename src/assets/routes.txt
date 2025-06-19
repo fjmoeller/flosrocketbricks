@@ -232,8 +232,11 @@
 /moc/227/pegasus-h/
 /moc/228/pegasus-xl/
 /moc/229/an-225-mriya/
+/moc/230/yuanxingzhe-1-hopper/
 /about/
 /404/
 /blog/
 /blog/0/now-available-on-flosrocketbricks-blogs/
 /blog/1/a-new-feature-online-instructions/
+/blog/2/upgrading-placeholder-colors/
+/blog/3/comments-without-signups/

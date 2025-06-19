@@ -1,5 +1,67 @@
 [
   {
+    "id": 230,
+    "title": "Yuanxingzhe-1 Hopper",
+    "altTitles": [
+      "YXZ-1 Hopper"
+    ],
+    "related": [],
+    "dimensions": "5.6x5.6x25cm",
+    "dimensionsExtra": "",
+    "links": [
+      "https://spacenews.com/chinese-launch-startup-conducts-vertical-takeoff-and-splashdown-test/"
+    ],
+    "tags": [],
+    "region": [
+      "China"
+    ],
+    "updateMessage": "",
+    "parts": 315,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/yxz/1/hopper/110-yxz-1-hopper-v1.0.jpg",
+    "regionExtra": "",
+    "partsExtra": "",
+    "internalColorExtra": "",
+    "versions": [
+      {
+        "files": [
+          {
+            "name": "YXZ-1_Hopper_V1.0.i",
+            "description": "The digital file of the hopper",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/yxz/1/hopper/v1.0/YXZ-1_Hopper_V1.0.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V1.0",
+        "changelog": ""
+      }
+    ],
+    "typeExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "designer": "SkySaac",
+    "internalColor": "",
+    "company": "Sepoch",
+    "companyExtra": "",
+    "stability": -1,
+    "stabilityExtra": "",
+    "mocDescription": "This is a MOC of the YXZ-1 Hopper test vehicle.",
+    "rocketDescription": "The Yuanxingzhe-1 Hopper launched on the 29th of May 2025 reaching an altitude of 2.5 kilometers and afterwards landing in the sea. It is a single engine test vehicle by Sepoch also known as Space Epoch.",
+    "type": "other",
+    "designerExtra": "",
+    "dateCreated": "2025-06-02",
+    "lastUpdate": "2025-06-02",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/yxz/1/hopper/v1.0/YXZ-1_Hopper_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/yxz/1/hopper/v1.0/YXZ-1_Hopper_V1.0_2.jpg"
+    ]
+  },
+  {
     "title": "AN-225 Mriya",
     "id": 229,
     "related": [
@@ -9661,10 +9723,14 @@
     "difficultyExtra": "",
     "lastUpdate": "2025-05-04",
     "dateCreated": "2022-01-08",
-    "related": [153,178],
+    "related": [
+      153,
+      178
+    ],
     "updateMessage": "",
     "region": [
-      "Russia","USSR"
+      "Russia",
+      "USSR"
     ],
     "regionExtra": "",
     "scale": "110",

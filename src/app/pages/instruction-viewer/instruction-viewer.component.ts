@@ -748,6 +748,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         colorDiv.style.background = "linear-gradient(135deg," +
           "rgba(" + rgbColor + ",0.5) 0%,rgba(" + rgbColor + ",0.5) 45%, rgb(" + rgbColor + ") 50%,rgb(" + rgbColor + ") 100%)";
       } else {
+        console.log(color.name,color.hex);
         colorDiv.style.backgroundColor = color.hex;
       }
       colorDiv.style.height = '1.6em';

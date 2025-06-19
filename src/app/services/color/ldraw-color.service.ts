@@ -13,7 +13,7 @@ export class LdrawColorService {
   private anyColor: LdrColor;
 
   constructor() {
-    this.anyColor = new LdrColor("Any Color","05131D","000000",9999,255,"");
+    this.anyColor = new LdrColor("Any Color","#CD6298","000000",9999,255,"");
     for (let def of color_definitions) {
       this.ldrColorList.set(def.code, new LdrColor(def.name, def.hex, def.edge, def.code, def.alpha, def.material));
     }

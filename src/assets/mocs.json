@@ -12237,7 +12237,7 @@
             "description": "The digital io file",
             "type": "io",
             "export": true,
-            "viewer": "V1",
+            "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/ussr/energia/energia-buran/v2.7/Energia_Buran_V2.7_pub.io",
             "name": "Energia_Buran_V2.7_pub.io"
           },

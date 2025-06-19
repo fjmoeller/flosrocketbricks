@@ -7,7 +7,7 @@ import {
   Group,
   Material,
   Matrix3,
-  OrthographicCamera,
+  OrthographicCamera, PCFSoftShadowMap,
   Scene,
   Spherical,
   Vector3,
@@ -23,7 +23,7 @@ import {
   StepPart
 } from "../../model/instructions";
 import {InstructionService} from "../../services/file/instruction.service";
-import {LdrPart} from "../../model/ldrawParts";
+import {LdrColor, LdrPart} from "../../model/ldrawParts";
 import {ActivatedRoute} from "@angular/router";
 import {MocGrabberService} from "../../services/grabber/moc-grabber.service";
 import {Box3} from "three/src/math/Box3.js";
@@ -35,6 +35,9 @@ import {InstructionCoverComponent} from "../../components/instruction-cover/inst
 import {LdrawColorService} from "../../services/color/ldraw-color.service";
 import {InstructionSettingsComponent} from "../../components/instruction-settings/instruction-settings.component";
 import {InstructionSettingsService} from "../../services/viewer/instruction-settings.service";
+import {EffectComposer} from "three/examples/jsm/postprocessing/EffectComposer.js";
+import {RenderPass} from "three/examples/jsm/postprocessing/RenderPass.js";
+import {SSAOPass} from "three/examples/jsm/postprocessing/SSAOPass.js";
 
 @Component({
   selector: 'app-instruction-viewer',
@@ -68,6 +71,9 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   currentSubmodelAmount: number = 0;
   isStepPage: boolean = false;
 
+  private ENABLE_SHADOWS = false;
+  private ENABLE_SSAO: boolean = false;
+
   private isDragging: boolean[] = [];
   private isPanning: boolean = false;
   private scrollDelta: number[] = [];
@@ -92,7 +98,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   private submodelIndicatorWrapper!: HTMLDivElement;
   private submodelIndicatorContent!: HTMLDivElement;
 
-  private backgroundMainContent!: HTMLDivElement;
   private backgroundSubmodelIndicator!: HTMLDivElement;
   private backgroundPartlistContent!: HTMLDivElement;
 
@@ -109,6 +114,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   private renderer!: WebGLRenderer;
   private target: Vector3 = new Vector3(0, 0, 0);
   private submodelIndicatorGroup?: Group;
+  private cameraBox: Box3 = new Box3();
 
   readonly clock: Clock = new Clock();
 
@@ -174,8 +180,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.loadingFinished = false;
     if (this.file.instructions && isPlatformBrowser(this.platform)) {
       this.metaService.setDefaultTags(this.file.name + " Online Instructions - FlosRocketBricks", window.location.href);
-      this.instructionModel = await this.instructionService.getInstructionModel(this.file.link, this.file.instructions, this.instructionSettings.prevInterpolationColor, this.instructionSettings.prevInterpolationPercentage, new Color(this.instructionSettings.defaultAnyColor) );
-      this.collectElementReferences();
+      this.instructionModel = await this.instructionService.getInstructionModel(this.file.link, this.file.instructions, this.instructionSettings.prevInterpolationColor, this.instructionSettings.prevInterpolationPercentage, new Color(this.instructionSettings.defaultAnyColor));
+      this.initHtmlElementReferences();
       this.createRenderer();
       this.createMainScene();
       this.createAxesHelperScene();
@@ -192,7 +198,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.renderer?.forceContextLoss();
   }
 
-  private collectElementReferences(): void {
+  private initHtmlElementReferences(): void {
     this.instructionWrapper = document.getElementById('instruction-wrapper')! as HTMLDivElement;
 
     this.canvas = document.getElementById('canvas-viewer')! as HTMLCanvasElement;
@@ -204,7 +210,6 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.submodelIndicatorWrapper = document.getElementById("submodel-indicator-wrapper") as HTMLDivElement;
     this.submodelIndicatorContent = document.getElementById("submodel-indicator-content") as HTMLDivElement;
 
-    this.backgroundMainContent = document.getElementById("background-main-content") as HTMLDivElement;
     this.backgroundSubmodelIndicator = document.getElementById("background-submodel-indicator") as HTMLDivElement;
     this.backgroundPartlistContent = document.getElementById("background-partlist-content") as HTMLDivElement;
 
@@ -359,7 +364,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   private updateControls(camera: OrthographicCamera, cameraTarget: Vector3, cameraCoordinates: Spherical,
                          elementIndex: number, enablePan: boolean, zoomSpeed: number, minCameraZoom: number,
-                         maxCameraZoom: number, rotationSpeed: number): void {
+                         maxCameraZoom: number, rotationSpeed: number, boundingBox: Box3): void {
     //zooming in
     camera.zoom = Math.max(Math.min(camera.zoom - (this.scrollDelta[elementIndex] * zoomSpeed), minCameraZoom), maxCameraZoom);
     this.scrollDelta[elementIndex] = 0;
@@ -375,6 +380,23 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       }
       this.panDelta = [];
       cameraTarget.add(new Vector3(panningDeltaX * panSpeed, panningDeltaY * panSpeed, 0).applyMatrix3(new Matrix3().getNormalMatrix(camera.matrix)));
+
+      //dont allow the camera target to move out of the model
+      if (boundingBox) {
+        if (cameraTarget.x > boundingBox.max.x)
+          cameraTarget.x = boundingBox.max.x;
+        else if (cameraTarget.x < boundingBox.min.x)
+          cameraTarget.x = boundingBox.min.x;
+        if (cameraTarget.y > boundingBox.max.y)
+          cameraTarget.y = boundingBox.max.y;
+        else if (cameraTarget.y < boundingBox.min.y)
+          cameraTarget.y = boundingBox.min.y;
+        if (cameraTarget.z > boundingBox.max.z)
+          cameraTarget.z = boundingBox.max.z;
+        else if (cameraTarget.z < boundingBox.min.z)
+          cameraTarget.z = boundingBox.min.z;
+      }
+
     }
 
     //rotating & position
@@ -447,9 +469,9 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   private adjustCameraToModel(model: Group, camera: OrthographicCamera, htmlElement: HTMLElement,
                               defaultZoomFactor: number, minimalZoom: number) {
-    const cameraBox: Box3 = this.getCameraBox(model, camera);
-    const modelWidth: number = cameraBox.max.x - cameraBox.min.x;
-    const modelHeight: number = cameraBox.max.y - cameraBox.min.y;
+    this.cameraBox = this.getCameraBox(model, camera);
+    const modelWidth: number = this.cameraBox.max.x - this.cameraBox.min.x;
+    const modelHeight: number = this.cameraBox.max.y - this.cameraBox.min.y;
     const modelAspectRatio: number = modelWidth / modelHeight;
     const canvasAspectRatio: number = htmlElement.clientWidth / htmlElement.clientHeight;
 
@@ -481,18 +503,30 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setClearColor(this.instructionSettings.mainBgColor);
     this.renderer.autoClear = false;
+    if (this.ENABLE_SHADOWS) {
+      this.renderer.shadowMap.enabled = true;
+      this.renderer.shadowMap.type = PCFSoftShadowMap;
+    }
   }
 
   private createDefaultScene(): Scene {
     const scene = new Scene();
-    const pointLight = new DirectionalLight(0xffffff, 0.5);
-    pointLight.position.set(100, 100, -100);
-    scene.add(pointLight);
-    const pointLight2 = new DirectionalLight(0xffffff, 0.5);
-    pointLight2.position.set(-100, -100, 100);
-    scene.add(pointLight2);
-    const ambientLight = new AmbientLight(0xffffff, 0.8);
+    const ambientLight = new AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
+    const lights = [
+      [1, 1, 1],
+      [-1, 1, 1],
+      [1, 1, -1],
+      [-1, 1, -1],
+    ];
+
+    for (const [x, y, z] of lights) {
+      const dirLight = new DirectionalLight(0xffffff, 0.3);
+      dirLight.position.set(x, y, z).normalize();
+      if (this.ENABLE_SHADOWS)
+        dirLight.castShadow = true;
+      scene.add(dirLight);
+    }
     return scene;
   }
 
@@ -584,6 +618,10 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       this.adjustCameraToModel(this.currentStepModel.newPartsModel, this.mainCamera, this.mainContent, this.instructionSettings.autoZoomFactor, this.instructionSettings.minimalAutoZoom);
     }
 
+    const bbGroup = new Group();
+    bbGroup.add(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel)
+    this.mainScene.userData["bb"] = new Box3().setFromObject(bbGroup);
+
     this.mainScene.add(this.currentStepModel.newPartsModel, this.currentStepModel.prevPartsModel);
   }
 
@@ -619,8 +657,11 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       this.adjustCameraToModel(this.submodelIndicatorGroup, this.submodelIndicatorCamera, this.submodelIndicatorContent,
         this.instructionSettings.partListAutoZoomFactor, this.instructionSettings.partListMinimalAutoZoom);
 
+      this.submodelIndicatorScene.userData["bb"] = new Box3().setFromObject(this.submodelIndicatorGroup);
+
       this.submodelIndicatorScene.add(this.submodelIndicatorGroup);
     } else {
+      this.submodelIndicatorScene.userData["bb"] = null;
       this.submodelIndicatorWrapper.style.display = 'none';
       this.backgroundSubmodelIndicator.style.display = 'none';
       this.submodelIndicatorGroup = undefined;
@@ -631,7 +672,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     for (let i = 0; i < this.currentStepModel.stepPartsList.length; i++) {
 
       const stepPart: StepPart = this.currentStepModel.stepPartsList[i];
-      const colorName = this.ldrawColorService.getLdrawColorNameByColorId(stepPart.color).split('_').join(' ');
+      const color: LdrColor = this.ldrawColorService.getLdrawColorByColorId(stepPart.color);
       let partId = stepPart.partId;
       if (stepPart.partId.endsWith(".dat"))
         partId = stepPart.partId.slice(0, stepPart.partId.length - 4);
@@ -652,7 +693,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       toolTipDiv.style.color = 'white';
       toolTipDiv.style.backgroundColor = '#444';
       toolTipDiv.style.width = '15rem';
-      toolTipDiv.innerText = "LDraw-ID: " + partId + "\nName: " + stepPart.partName + "\nColor: " + colorName + "";
+      toolTipDiv.innerText = "LDraw-ID: " + partId + "\nName: " + stepPart.partName + "\nColor: " + color.name.split('_').join(' ') + "";
 
       partDiv.addEventListener('mouseenter', () => {
         toolTipDiv.style.visibility = 'visible';
@@ -669,17 +710,57 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       const sceneDiv: HTMLDivElement = document.createElement('div');
       sceneDiv.id = "partlist-element-scene-" + i;
       sceneDiv.style.touchAction = 'none';
-      sceneDiv.style.height = '100%';
+      sceneDiv.style.height = 'calc(100% - 1.6em)';
       sceneDiv.style.width = '6rem';
+
+      const bottomDiv: HTMLDivElement = document.createElement('div');
+      bottomDiv.style.position = 'absolute';
+      bottomDiv.style.bottom = '0';
+      bottomDiv.style.height = "fit-content";
+      bottomDiv.style.width = '100%';
+      bottomDiv.style.display = 'flex';
+      bottomDiv.style.alignItems = 'center';
 
       const amountDiv: HTMLHeadingElement = document.createElement('h4');
       amountDiv.innerText = stepPart.quantity + 'x';
-      amountDiv.style.position = 'absolute';
-      amountDiv.style.bottom = '0';
       amountDiv.style.marginBottom = '0';
+      amountDiv.style.width = "fit-content";
+
+      const colorDiv: HTMLDivElement = document.createElement('div');
+
+      if (color.material === "METAL") {
+        const rgbColor = this.hexToRgbString(color.hex);
+        colorDiv.style.background = "linear-gradient(135deg," +
+          "rgb(" + rgbColor + ") 5%, rgb(255, 255, 255) 15%, rgb(" + rgbColor + ") 30%, " +
+          "rgb(" + rgbColor + ") 70%, rgb(255, 255, 255) 85%, rgb(" + rgbColor + ") 95%)";
+      } else if (color.material === "PEARLESCENT") {
+        const rgbColor = this.hexToRgbString(color.hex);
+        colorDiv.style.background = "linear-gradient(135deg," +
+          "rgb(" + rgbColor + ") 5%, rgb(255, 255, 255) 15%, rgb(" + rgbColor + ") 30%)";
+      } else if (color.material === "CHROME") {
+        const rgbColor = this.hexToRgbString(color.hex);
+        colorDiv.style.background = "linear-gradient(135deg," +
+          "rgb(" + rgbColor + ") 5%, rgb(255, 255, 255) 15%, rgb(" + rgbColor + ") 30%, " +
+          "rgb(" + rgbColor + ") 40%, rgb(255, 255, 255) 50%, rgb(" + rgbColor + ") 60%, " +
+          "rgb(" + rgbColor + ") 70%, rgb(255, 255, 255) 85%, rgb(" + rgbColor + ") 95%)";
+      } else if (color.alpha !== 255) {
+        const rgbColor = this.hexToRgbString(color.hex);
+        colorDiv.style.background = "linear-gradient(135deg," +
+          "rgba(" + rgbColor + ",0.5) 0%,rgba(" + rgbColor + ",0.5) 45%, rgb(" + rgbColor + ") 50%,rgb(" + rgbColor + ") 100%)";
+      } else {
+        console.log(color.name,color.hex);
+        colorDiv.style.backgroundColor = color.hex;
+      }
+      colorDiv.style.height = '1.6em';
+      colorDiv.style.width = '0.5em';
+      colorDiv.style.marginRight = '2px';
+
+      bottomDiv.appendChild(colorDiv);
+      bottomDiv.appendChild(amountDiv);
+      partDiv.appendChild(bottomDiv);
       partDiv.appendChild(sceneDiv);
       partDiv.appendChild(toolTipDiv);
-      partDiv.appendChild(amountDiv);
+
       this.partListContent.appendChild(partDiv);
 
       this.registerListeners(sceneDiv, i + 2, false, false);
@@ -700,10 +781,9 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
       scene.add(camera);
 
       if (this.instructionSettings.enablePartListSmallPartScaling) {
-
         const cameraBox = this.getCameraBox(partGroup, camera);
         const modelWidth: number = cameraBox.max.x - cameraBox.min.x;
-        if (modelWidth < this.instructionSettings.partListSmallPartScalingThreshold) {
+        if (modelWidth < this.instructionSettings.partListSmallPartScalingThreshold && stepPart.quantity < 100) {
           sceneDiv.style.width = '3rem';
         }
       }
@@ -712,8 +792,14 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
       scene.userData["element"] = sceneDiv;
       scene.userData["camera"] = camera;
+      scene.userData["bb"] = new Box3().setFromObject(partGroup);
       this.partListScenes.push(scene);
     }
+  }
+
+  private hexToRgbString(hex: string) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? parseInt(result[1], 16) + "," + parseInt(result[2], 16) + "," + parseInt(result[3], 16) : "";
   }
 
   private getCameraBox(partGroup: Group, camera: OrthographicCamera): Box3 {
@@ -753,26 +839,20 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
   private startRenderLoop() {
 
-    /*const composer = new EffectComposer( this.renderer );
-    const renderPass = new RenderPass( this.mainScene, this.mainCamera );
-    composer.addPass( renderPass );
-    const outlinePass = new OutlinePass( new Vector2( window.innerWidth, window.innerHeight ), this.mainScene, this.mainCamera );
-    outlinePass.edgeStrength = 10;
-    outlinePass.edgeGlow =0;
-    outlinePass.edgeThickness = 4;
-    outlinePass.pulsePeriod = 0;
-    outlinePass.visibleEdgeColor.set( "#ffffff" );
-    outlinePass.hiddenEdgeColor.set( "#000000" );
-    outlinePass.selectedObjects = [this.currentStepModel.newPartsModel];
-    composer.addPass( outlinePass );
-    const effectFXAA = new ShaderPass(FXAAShader);
-    effectFXAA.uniforms['resolution'].value.set(1 / window.innerWidth, 1 / window.innerHeight);
-    effectFXAA.renderToScreen = true;
-    composer.addPass(effectFXAA);
-    composer.addPass(outlinePass);*/
-
     this.loadingFinished = true;
     this.renderingActive = true;
+
+    let composer: EffectComposer;
+    if (this.ENABLE_SSAO) {
+      composer = new EffectComposer(this.renderer);
+      composer.addPass(new RenderPass(this.mainScene, this.mainCamera));
+
+      const ssaoPass = new SSAOPass(this.mainScene, this.mainCamera, this.canvas.getBoundingClientRect().width, this.canvas.getBoundingClientRect().height);
+      ssaoPass.kernelRadius = 6;
+      ssaoPass.minDistance = 0.005;
+      ssaoPass.maxDistance = 0.1;
+      composer.addPass(ssaoPass);
+    }
 
     const update = () => {
       if (this.clock.getElapsedTime() > (1 / this.instructionSettings.maxFps) && this.loadingFinished) {
@@ -780,22 +860,21 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
 
         //MAIN SCENE
         this.updateControls(this.mainCamera, this.target, this.mainCameraPosition, 0, true,
-          this.instructionSettings.cameraZoomSpeed, this.instructionSettings.cameraMinZoom, this.instructionSettings.cameraMaxZoom, this.instructionSettings.cameraRotationSpeed);
+          this.instructionSettings.cameraZoomSpeed, this.instructionSettings.cameraMinZoom,
+          this.instructionSettings.cameraMaxZoom, this.instructionSettings.cameraRotationSpeed,
+          this.mainScene.userData["bb"]);
         // get its position relative to the page's viewport
         const mainRectElement = this.mainScene.userData["element"].getBoundingClientRect();
         const rectCanvas = this.canvas.getBoundingClientRect();
-        // this.renderer.setViewport(0, 0, rectElement.width, rectElement.height);
-        // this.renderer.setScissor(0, 0, rectElement.width, rectElement.height);
-        // this.renderer.clearColor();
-        // this.renderer.clearDepth();
         this.renderer.setViewport(0, rectCanvas.bottom - mainRectElement.bottom, mainRectElement.width, mainRectElement.height);
         this.renderer.setScissor(0, rectCanvas.bottom - mainRectElement.bottom, mainRectElement.width, mainRectElement.height);
         this.renderer.render(this.mainScene, this.mainScene.userData["camera"]);
-        //composer.render();
+        if (this.ENABLE_SSAO)
+          composer!.render();
 
         if (this.instructionSettings.enableAxisHelper && this.isStepPage) {
           //AXIS HELPER HERE
-          const axesRectElement = this.axesHelperContent.getBoundingClientRect(); //TODO also copy over newParts rotation?
+          const axesRectElement = this.axesHelperContent.getBoundingClientRect();
           const coords = this.mainCameraPosition.clone();
           coords.radius = 1;
           this.axesHelperCamera.position.setFromSpherical(coords);
@@ -808,16 +887,15 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         //SUBMODEL INDICATOR SCENE
         if (this.submodelIndicatorGroup && this.isStepPage) {
           this.updateControls(this.submodelIndicatorCamera, new Vector3(0, 0, 0), this.submodelIndicatorCameraCoordinates, 1, false,
-            this.instructionSettings.partListCameraZoomSpeed, this.instructionSettings.partListMinCameraZoom, this.instructionSettings.partListMaxCameraZoom, this.instructionSettings.partListCameraRotationSpeed);
-
-          const scene = this.submodelIndicatorScene;
+            this.instructionSettings.partListCameraZoomSpeed, this.instructionSettings.partListMinCameraZoom, this.instructionSettings.partListMaxCameraZoom,
+            this.instructionSettings.partListCameraRotationSpeed, this.submodelIndicatorScene.userData["bb"]);
 
           // get its position relative to the page's viewport
           const rectElement = this.submodelIndicatorContent.getBoundingClientRect();
 
           this.renderer.setViewport(rectElement.left - rectCanvas.left, rectCanvas.bottom - rectElement.bottom, rectElement.width, rectElement.height);
           this.renderer.setScissor(rectElement.left - rectCanvas.left, rectCanvas.bottom - rectElement.bottom, rectElement.width, rectElement.height);
-          this.renderer.render(scene, this.submodelIndicatorCamera);
+          this.renderer.render(this.submodelIndicatorScene, this.submodelIndicatorCamera);
         }
 
         //PART LIST SCENES
@@ -832,7 +910,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
           const top = rectCanvas.bottom - rectPartlistElement.bottom;
 
           this.updateControls(partListCamera, new Vector3(0, 0, 0), this.partListCameraCoordinates[i], i + 2, false,
-            this.instructionSettings.partListCameraZoomSpeed, this.instructionSettings.partListMinCameraZoom, this.instructionSettings.partListMaxCameraZoom, this.instructionSettings.partListCameraRotationSpeed);
+            this.instructionSettings.partListCameraZoomSpeed, this.instructionSettings.partListMinCameraZoom, this.instructionSettings.partListMaxCameraZoom,
+            this.instructionSettings.partListCameraRotationSpeed, partListScene.userData["bb"]);
 
           // set the viewport
           this.renderer.setViewport(left, top, rectPartlistElement.width, rectPartlistElement.height);

@@ -10,8 +10,10 @@ import color_definitions from '../../../assets/ldr/lists/color_definitions.json'
 export class LdrawColorService {
 
   private ldrColorList = new Map<number, LdrColor>;
+  private anyColor: LdrColor;
 
   constructor() {
+    this.anyColor = new LdrColor("Any Color","#CD6298","000000",9999,255,"");
     for (let def of color_definitions) {
       this.ldrColorList.set(def.code, new LdrColor(def.name, def.hex, def.edge, def.code, def.alpha, def.material));
     }
@@ -37,12 +39,8 @@ export class LdrawColorService {
     return -1;
   }
 
-  getLdrawColorNameByColorId(colorId: number): string {
-    const color = this.ldrColorList.get(colorId);
-    if (color)
-      return color.name;
-    else
-      return "Any Color";
+  getLdrawColorByColorId(colorId: number): LdrColor {
+    return this.ldrColorList.get(colorId) ?? this.anyColor;
   }
 
   resolveColorByLdrawColorId(id: number, defaultColor?: Color) {
@@ -65,9 +63,9 @@ export class LdrawColorService {
           };
         case "PEARLESCENT":
           return {
-            metalness: 0.3,
-            roughness: 0.4,
-            emissive: new Color(finalColor.r - 0.2, finalColor.g - 0.2, finalColor.b - 0.2),
+            metalness: 0.2,
+            roughness: 0.5,
+            emissive: new Color(0.05, 0.05, 0.05),
             color: finalColor,
             opacity: opacity,
             transparent: transparent

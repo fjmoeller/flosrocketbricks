@@ -3,7 +3,7 @@
     "id": 0,
     "name": "Long March",
     "description": "The Long March series of rockets is a Chinese family of orbital rocket systems.",
-    "cover": "https://bricksafe.com/files/SkySaac/website/collection/long-march/Long_March_V2.png/640x512.png",
+    "cover": "assets/collections/0/long-march/Long_March_Family_V1.0.png",
     "subCollections": [
       {
         "id": 0,
@@ -111,7 +111,7 @@
     "id": 1,
     "name": "Titan",
     "description": "The Titan series of rockets!",
-    "cover": "https://bricksafe.com/files/SkySaac/website/collection/titan/Titan_V1.png/640x512.png",
+    "cover": "assets/collections/1/titan/Titan_Family_V1.0.png",
     "subCollections": [
       {
         "id": 0,
@@ -162,7 +162,7 @@
     "id": 2,
     "name": "Atlas",
     "description": "The Atlas series has been used from the beginning of the space age until today.",
-    "cover": "https://bricksafe.com/files/SkySaac/website/collection/atlas/Atlas_V1.png/640x512.png",
+    "cover": "assets/collections/2/atlas/Atlas_FamilyV1.0.png",
     "subCollections": [
       {
         "id": 0,
@@ -230,7 +230,7 @@
     "id": 3,
     "name": "Ariane",
     "description": "The Ariane series features European orbital launch vehicles.",
-    "cover": "https://flosrocketbricks.com/assets/collections/3/ariane/Ariane_Family_V2.0.jpg",
+    "cover": "assets/collections/3/ariane/Ariane_Family_V2.0.jpg",
     "subCollections": [
       {
         "id": 0,

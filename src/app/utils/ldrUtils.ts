@@ -1,6 +1,6 @@
 //helper method to do splits where the rest is appended in the last field and doesnt get cut of
 import {LdrPart, PartReference} from "../model/ldrawParts";
-import {BufferGeometry, MathUtils, Matrix3, Matrix4, Plane, Triangle, Vector3} from "three";
+import {BufferGeometry, MathUtils, Matrix3, Matrix4, Triangle, Vector3} from "three";
 import * as BufferGeometryUtils from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
 export function adjustGeometryByVersion(viewerVersion: string, partName: string, partGeometry: BufferGeometry) {
@@ -130,6 +130,7 @@ export function parseLineTypeFour(line: string, invert: boolean) {
 }
 
 //Merges Vertices, but only if their colors fit together (i think)
+//TODO not finished
 export function mergeVertices(colorIndexMap: Map<number, number[]>, colorVertexMap: Map<number, Vector3[]>, colorLineVertexMap: Map<number, Vector3[]>) {
   for (let [color, indices] of colorIndexMap.entries()) {//for every color
 
@@ -208,102 +209,89 @@ export function mergeVertices(colorIndexMap: Map<number, number[]>, colorVertexM
   }
 }
 
+export function mergeLowAngleVertices(colorIndexMap: Map<number, number[]>, colorVertexMap: Map<number, Vector3[]>, angleThreshold: number, positionThreshold: number = 0.0001): void {
+  // Convert angle threshold to radians
 
-export function mergeLowAngleVertices(colorIndexMap: Map<number, number[]>, colorVertexMap: Map<number, Vector3[]>, angleThreshold: number) {
-  for (let [color, indices] of colorIndexMap.entries()) {//for every color
+
+  for (let [color, indices] of colorIndexMap.entries()) {
     const vertices = colorVertexMap.get(color)!;
 
-    const faceNormals: Map<number, Vector3> = new Map();
+    const vertexToFaces = new Map<number, number[]>(); // Map from vertex index to face indices
+    const faceNormals: Vector3[] = [];
     for (let i = 0; i < indices.length; i += 3) {
-      faceNormals.set(i, new Triangle(vertices[indices[i]], vertices[indices[i + 1]], vertices[indices[i + 2]]).getNormal(new Vector3()));
+      //v -> f
+      const faceIndices = [indices[i], indices[i + 1], indices[i + 2]];
+      for (const v of faceIndices) {
+        if (!vertexToFaces.has(v)) vertexToFaces.set(v, []);
+        vertexToFaces.get(v)!.push(Math.floor(i/3));
+      }
+
+      //f -> n
+      faceNormals.push(new Triangle(vertices[indices[i]],vertices[indices[i+1]],vertices[indices[i+2]]).getNormal(new Vector3()).normalize());
     }
 
-    const faceAdjacencyMap: Map<number, number[]> = new Map();
-    for (let i = 0; i < indices.length; i += 3) {
-      const i0 = indices[i], i1 = indices[i + 1], i2 = indices[i + 2];
-      const edges = [
-        [Math.min(i0, i1), Math.max(i0, i1)],
-        [Math.min(i1, i2), Math.max(i1, i2)],
-        [Math.min(i2, i0), Math.max(i2, i0)],
-      ];
-      for (const [e0, e1] of edges) {
-        if (!faceAdjacencyMap.has(i)) faceAdjacencyMap.set(i, []);
-        for (let j = 0; j < indices.length; j++) {
-          if (i === j) continue;
-          const j0 = indices[j], j1 = indices[j + 1], j2 = indices[j + 2];
-          const otherEdges = [
-            [Math.min(j0, j1), Math.max(j0, j1)],
-            [Math.min(j1, j2), Math.max(j1, j2)],
-            [Math.min(j2, j0), Math.max(j2, j0)],
-          ];
-          if (otherEdges.some(([je0, je1]) => je0 === e0 && je1 === e1)) {
-            faceAdjacencyMap.get(i)!.push(j);
+    //0,1,2,3,4,5,6,7...
+    const mergedIndices: number[] = [...Array(vertices.length).keys()];
+    const used = new Set<number>();
+
+    for (let i = 0; i < vertices.length; i++) {
+      if (used.has(i)) continue;
+
+      const vi = vertices[i];
+      for (let j = i + 1; j < vertices.length; j++) {
+        if (used.has(j)) continue;
+
+        const vj = vertices[j];
+        if (vi.distanceTo(vj) > positionThreshold) continue;
+
+        const facesI = vertexToFaces.get(i) || [];
+        const facesJ = vertexToFaces.get(j) || [];
+
+        let compatible = true;
+
+        for (const fi of facesI) {
+          for (const fj of facesJ) {
+            const angle = faceNormals[fi].angleTo(faceNormals[fj]) * (180 / Math.PI);
+            if (angle > angleThreshold) {
+              compatible = false;
+              break;
+            }
           }
+          if (!compatible) break;
+        }
+
+        if (compatible) {
+          mergedIndices[j] = i;
+          used.add(j);
         }
       }
     }
 
-    const vertexReplaceGroups: Map<number, number[]> = new Map();
-    const visitedFaces = new Set<number>();
-    for (let i = 0; i < indices.length; i += 3) {
-      if (visitedFaces.has(i)) continue;
-      const group: number[] = [i];
-      visitedFaces.add(i);
-      const queue: number[] = [i];
-
-      while (queue.length > 0) {
-        const faceId = queue.shift()!;
-        for (const neighboringFaceId of faceAdjacencyMap.get(faceId)!) {
-          if (visitedFaces.has(neighboringFaceId)) continue;
-          const angle = faceNormals.get(faceId)!.angleTo(faceNormals.get(neighboringFaceId)!);
-          if (angle <= angleThreshold) {
-            group.push(neighboringFaceId);
-            queue.push(neighboringFaceId);
-            visitedFaces.add(neighboringFaceId);
-          }
-        }
-      }
-
-      const vertexIndices = new Set<number>();
-      for (const faceIdx of group) {
-        vertexIndices.add(indices[faceIdx]);
-        vertexIndices.add(indices[faceIdx + 1]);
-        vertexIndices.add(indices[faceIdx + 2]);
-      }
-      vertexIndices.forEach(idx => {
-        if (!vertexReplaceGroups.has(idx)) vertexReplaceGroups.set(idx, []);
-        vertexReplaceGroups.get(idx)!.push(...group);
-      });
-    }
-
-
-    //replace indices
-    const replaceVertices: Map<number, number> = new Map(); //which vertex index to be replaced with what other vertex index
-    replaceVertices.forEach((replacement, deletion) => {
-      for (let i = 0; i < indices.length; i += 1) {
-        if (indices[i] === deletion) {
-          indices[i] = replacement;
-        }
+    const newVertexMap = new Map<number, number>();
+    const newVertices: Vector3[] = [];
+    mergedIndices.forEach((oldIndex, i) => {
+      const finalIndex = mergedIndices[oldIndex];
+      if (!newVertexMap.has(finalIndex)) {
+        newVertexMap.set(finalIndex, newVertices.length);
+        newVertices.push(vertices[finalIndex].clone());
       }
     });
 
-    //do indices[i]-- to remove other vertices
-    const unusedVertexIndices: number[] = [];
-    for (let removeVertexIndex of unusedVertexIndices) {
-      for (let i = 0; i < indices.length; i += 1) {
-        if (indices[i] > removeVertexIndex)
-          indices[i]--;
-      }
+    const newIndices: number[] = [];
+    for (let i = 0; i < indices.length; i++) {
+      const original = indices[i];
+      const merged = mergedIndices[original];
+      const mapped = newVertexMap.get(merged)!;
+      newIndices.push(mapped);
     }
 
-    //remove unused ones from vertices
-    colorVertexMap.set(color,vertices.filter(v => unusedVertexIndices.findIndex(unusedVertexIndex => vertices[unusedVertexIndex] === v) === -1));
+    colorIndexMap.set(color, newIndices);
+    colorVertexMap.set(color, newVertices);
   }
+
 }
 
-export function resolvePart(partName: string, allPartsMap: Map<String, LdrPart>, options: {
-  flatShading?: boolean
-}): LdrPart {
+export function resolvePart(partName: string, allPartsMap: Map<String, LdrPart>, options: { flatShading?: boolean }): LdrPart {
   const ldrPart = allPartsMap.get(partName);
   if (ldrPart && !ldrPart.isResolved) {
     //resolve Part
@@ -639,8 +627,6 @@ export function shrinkPartScale(ldrPart: LdrPart, gapSize: number): void {
       }
     })
   );
-  console.log("vertices", ldrPart.colorVertexMap);
-  console.log("faces", ldrPart.colorIndexMap);
   const neededX = maxX - minX - 2 * gapSize, neededY = maxY - minY - 2 * gapSize, neededZ = maxZ - minZ - 2 * gapSize;
   const currentX = maxX - minX, currentY = maxY - minY, currentZ = maxZ - minZ;
 

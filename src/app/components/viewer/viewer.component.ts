@@ -63,24 +63,21 @@ export class ViewerComponent implements OnInit {
     mocGroup.position.y += mocBB.getSize(new Vector3()).y / 2;
     scene.add(mocGroup);
 
-    const pointLight = new DirectionalLight(0xffffff, 0.5);
-    pointLight.position.set(100,100,-100);
-    if (this.ENABLE_SHADOWS) {
-      pointLight.castShadow = true;
-      pointLight.shadow.mapSize.width = 1024;
-      pointLight.shadow.mapSize.height = 1024;
-      pointLight.shadow.camera.near = 0.5;
-      pointLight.shadow.camera.far = 2000;
-      //const helper = new CameraHelper(pointLight.shadow.camera);
-      //scene.add(helper);
-    }
-    scene.add(pointLight);
-    const ambientLight = new AmbientLight(0xffffff, 0.8);
+    const ambientLight = new AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
-
-    //scene.add( new Box3Helper( new Box3().setFromObject(mocGroup), new Color(0xffff00) ) );
-    //const axesHelper = new AxesHelper( 5 );
-    //scene.add( axesHelper );
+    const lights = [
+      [1, 1, 1],
+      [-1, 1, 1],
+      [1, 1, -1],
+      [-1, 1, -1],
+    ];
+    for (const [x, y, z] of lights) {
+      const dirLight = new DirectionalLight(0xffffff, 0.3);
+      dirLight.position.set(x, y, z).normalize();
+      if (this.ENABLE_SHADOWS)
+        dirLight.castShadow = true;
+      scene.add(dirLight);
+    }
 
     const planeGeometry = new PlaneGeometry(200, 200, 50, 50);
     const planeMaterial = new MeshLambertMaterial({ color: 0x999999 });

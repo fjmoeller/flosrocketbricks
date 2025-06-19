@@ -15,16 +15,14 @@ import {
 } from 'three';
 import {LdrPart, LdrSubmodel, PartReference} from '../../model/ldrawParts';
 import {LdrawColorService} from '../color/ldraw-color.service';
-import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {environment} from "../../../environments/environment";
 import {
-  splitter,
   parseLineTypeThree,
   parseLineTypeTwo,
   parseLineTypeFour,
   parseLineTypeOne,
-  mergeVertices, adjustGeometryByVersion, resolvePart, createBufferGeometry, createLineGeometry
+  mergeVertices, resolvePart, createBufferGeometry, createLineGeometry, mergeLowAngleVertices
 } from "../../utils/ldrUtils";
 
 @Injectable({
@@ -34,8 +32,9 @@ export class LdrToThreeService {
 
   public readonly RENDER_PLACEHOLDER_COLORED_PARTS: boolean = false;
 
-  public ENABLE_FLAT_SHADING: boolean = true;
+  public ENABLE_FLAT_SHADING: boolean = false;
   public ENABLE_SHADOWS: boolean = false;
+  private MERGE_THRESHOLD: number = 39;
   public ENABLE_PART_LINES: boolean = true;
 
   private allPartsMap: Map<string, LdrPart> = new Map<string, LdrPart>();
@@ -270,6 +269,8 @@ export class LdrToThreeService {
 
         if (this.ENABLE_FLAT_SHADING)
           mergeVertices(resolvedPart.colorIndexMap, resolvedPart.colorVertexMap, resolvedPart.colorLineVertexMap);
+        else
+          mergeLowAngleVertices(resolvedPart.colorIndexMap, resolvedPart.colorVertexMap, this.MERGE_THRESHOLD);
 
         if (resolvedPart.colorVertexMap.size > 1) { //if part is multi color part -> will not have an instanced mesh created
           const colorGeometryMap = new Map<number, BufferGeometry>();

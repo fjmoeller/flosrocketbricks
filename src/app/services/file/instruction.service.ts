@@ -37,13 +37,14 @@ export class InstructionService {
   private PREV_INTERPOLATION_PERCENTAGE: number = this.DEFAULT_PREV_INTERPOLATION_PERCENTAGE;
 
   private ENABLE_FLAT_SHADING: boolean = false;
-  private MERGE_THRESHOLD: number = 40;
-  private ENABLE_SHRINKING: boolean = true;
-  private SHRINKING_GAP_SIZE: number = 0.09;
+  private MERGE_THRESHOLD: number = 39;
+  private ENABLE_SHRINKING: boolean = false;
+  private SHRINKING_GAP_SIZE: number = 0.1;
   private ENABLE_BEVEL: boolean = false;
   private BEVEL_SIZE: number = 0.1;
   private BEVEL_THRESHOLD: number = 85;
-  private ENABLE_PART_LINES: boolean = false;
+  private ENABLE_PART_LINES: boolean = true;
+  private ENABLE_SHADOWS: boolean = false;
 
   //Because there are only two possible lineColors I just initialize them here :)
   private lineMaterials = [new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(71)}), new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(0)})];
@@ -256,6 +257,12 @@ export class InstructionService {
                 const prevMaterial = instructionModel.ldrData.colorToPrevMaterialMap.get(color);
                 const mesh = new Mesh(geometry, material);
                 const prevMesh = new Mesh(geometry, prevMaterial);
+                if (this.ENABLE_SHADOWS) {
+                  mesh.castShadow = true;
+                  mesh.receiveShadow = true;
+                  prevMesh.castShadow = true;
+                  prevMesh.receiveShadow = true;
+                }
                 partGroup.add(mesh);
                 prevPartGroup.add(prevMesh);
               });
@@ -263,10 +270,16 @@ export class InstructionService {
               const geometry = instructionModel.ldrData.idToGeometryMap.get(partReference.name);
               const material = instructionModel.ldrData.colorToMaterialMap.get(partReference.color);
               const prevMaterial = instructionModel.ldrData.colorToPrevMaterialMap.get(partReference.color);
-              const partMesh = new Mesh(geometry, material);
-              const prevPartMesh = new Mesh(geometry, prevMaterial);
-              partGroup.add(partMesh);
-              prevPartGroup.add(prevPartMesh);
+              const mesh = new Mesh(geometry, material);
+              const prevMesh = new Mesh(geometry, prevMaterial);
+              if(this.ENABLE_SHADOWS){
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
+                prevMesh.castShadow = true;
+                prevMesh.receiveShadow = true;
+              }
+              partGroup.add(mesh);
+              prevPartGroup.add(prevMesh);
             }
             const lineGeometry = instructionModel.ldrData.idToLineGeometryMap.get(partReference.name);
             const lineMaterial = partReference.color === 0 ? this.lineMaterials[0] : this.lineMaterials[1];

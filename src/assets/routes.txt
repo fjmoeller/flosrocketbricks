@@ -233,6 +233,7 @@
 /moc/228/pegasus-xl/
 /moc/229/an-225-mriya/
 /moc/230/yuanxingzhe-1-hopper/
+/moc/231/stargazer/
 /about/
 /404/
 /blog/

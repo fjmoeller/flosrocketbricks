@@ -1,5 +1,77 @@
 [
   {
+    "id": 231,
+    "title": "Stargazer",
+    "altTitles": [
+      "L-1011 Tristar"
+    ],
+    "related": [228],
+    "dimensions": "42.4x49x16.5cm",
+    "dimensionsExtra": "",
+    "links": [
+    ],
+    "tags": [],
+    "region": [
+      "USA"
+    ],
+    "updateMessage": "",
+    "parts": 1889,
+    "partsExtra": "The stand has 180 parts.",
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/usa/pegasus/stargazer/110-stargazer-v1.0.jpg",
+    "regionExtra": "",
+    "internalColorExtra": "",
+    "versions": [
+      {
+        "files": [
+          {
+            "name": "Stargazer_V1.0.io",
+            "description": "The digital file of the plane",
+            "type": "io",
+            "export": true,
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/stargazer/v1.0/Stargazer_V1.0.io"
+          },
+          {
+            "name": "Stargazer_Stand_V1.0.io",
+            "description": "The digital file of the stand",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/stargazer/v1.0/Stargazer_Stand_V1.0.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V1.0",
+        "changelog": ""
+      }
+    ],
+    "typeExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "designer": "SkySaac",
+    "internalColor": "",
+    "company": "Orbital ATK",
+    "companyExtra": "Acquired by Lockheed Martin",
+    "stability": -1,
+    "stabilityExtra": "",
+    "mocDescription": "This is a MOC of the Stargazer airplane. It is compatible with my Pegasus-XL rocket (but does not include it), that can be attached on the bottom of it. There also is a stand available where they both can be displayed together (not attached to one another though). The landing gear can either be attached or taken of. The front landing gear attachment point has three extra parts to cover it up when the landing gear is not attached.",
+    "rocketDescription": "Stargazer is a L-1011 TriStar airplane by the Lockheed Corporation. It has three engines and is able to serve as the air launcher of the Pegasus-XL rocket. It is the only L-1011 TriStar that is still actively in service.",
+    "type": "other",
+    "designerExtra": "",
+    "dateCreated": "2025-07-05",
+    "lastUpdate": "2025-07-05",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/stargazer/v1.0/Stargazer_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/stargazer/v1.0/Stargazer_V1.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/stargazer/v1.0/Stargazer_V1.0_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/stargazer/v1.0/Stargazer_V1.0_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/stargazer/v1.0/Stargazer_V1.0_5.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/stargazer/v1.0/Stargazer_V1.0_6.jpg"
+    ]
+  },
+  {
     "id": 230,
     "title": "Yuanxingzhe-1 Hopper",
     "altTitles": [
@@ -155,7 +227,8 @@
     "id": 228,
     "related": [
       226,
-      227
+      227,
+      231
     ],
     "dimensions": "6.2x15.4x4cm",
     "dimensionsExtra": "",
@@ -169,13 +242,29 @@
     "region": [
       "USA"
     ],
-    "parts": 66,
+    "parts": 67,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/usa/pegasus/pegasus-xl/110-pegasus-xl-v1.0.jpg",
+    "smallCoverImage": "assets/mocImages/110/usa/pegasus/pegasus-xl/110-pegasus-xl-v1.1.jpg",
     "regionExtra": "",
     "partsExtra": "",
     "internalColorExtra": "",
     "versions": [
+      {
+        "files": [
+          {
+            "name": "Pegasus_XL_V1.1.io",
+            "description": "The digital file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/pegasus/pegasus-xl/v1.1/Pegasus_XL_V1.1.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V1.1",
+        "changelog": ""
+      },
       {
         "files": [
           {
@@ -207,7 +296,7 @@
     "type": "rocket",
     "designerExtra": "",
     "dateCreated": "2025-02-21",
-    "lastUpdate": "2025-02-21",
+    "lastUpdate": "2025-07-05",
     "difficulty": -1,
     "difficultyExtra": "",
     "pictures": [

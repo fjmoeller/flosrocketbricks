@@ -3189,7 +3189,7 @@
     "difficultyExtra": ""
   },
   {
-    "company": "",
+    "company": "Gilmour Space Technologies",
     "region": [
       "Australia"
     ],
@@ -3204,24 +3204,39 @@
     "altTitles": [],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2023-12-28",
+    "lastUpdate": "2025-07-29",
     "dateCreated": "2023-12-28",
     "related": [],
-    "updateMessage": "This MOC will get an update soon!",
-    "mocDescription": "This is a MOC of the Eris Block 1 rocket. The rocket can not be staged and has no space inside the payload fairing for anything to fit in.",
-    "rocketDescription": "Gilmourspace is an Australian space company developing the Eris Block 1 rocket, which is a small orbital rocket. It uses three stages which are hybrid fueled. It can launch up to 215 kg into SSO or 305 kg into LEO.",
-    "internalColor": "Dark Pink",
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Eris Block 1 rocket. The rocket can not be staged and has just a tiny bit of space inside the payload fairing for anything to fit in.",
+    "rocketDescription": "Gilmour Space Technologies is an Australian space company developing the Eris Block 1 rocket, which is a small orbital rocket. It uses three stages which are hybrid fueled. It can launch up to 215 kg into SSO or 305 kg into LEO.",
+    "internalColor": "",
     "scale": "110",
-    "parts": 102,
-    "dimensions": "2.1x2.1x22.4cm",
+    "parts": 95,
+    "dimensions": "2.2x2.1x22.4cm",
     "stability": -1,
     "difficulty": -1,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/australia/eris/110-eris-v1.0.jpg",
+    "smallCoverImage": "assets/mocImages/110/australia/eris/110-eris-v1.2.jpg",
     "pictures": [
-      "https://files.flosrocketbackend.com/mocs/110/australia/eris/v1.0/Eris_V1.0_1.jpg"
+      "https://files.flosrocketbackend.com/mocs/110/australia/eris/v1.2/Eris_V1.2.jpg"
     ],
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/australia/eris/v1.2/Eris_V1.2.io",
+            "name": "Eris_V1.2.io"
+          }
+        ],
+        "version": "V1.2"
+      },
       {
         "changelog": "",
         "versionExtra": "",

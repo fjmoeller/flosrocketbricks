@@ -42,20 +42,20 @@ export class MetaService {
     this.metaTagService.updateTag({property: 'og:description', content: shortDesc});
     this.metaTagService.updateTag({property: 'og:url', content: url});
     this.metaTagService.updateTag({property: 'og:type', content: "website"});
-    this.metaTagService.updateTag({property: 'og:image', content: "https://flosrocketbricks.com/" + image});
+    this.metaTagService.updateTag({property: 'og:image', content: image});
 
     this.metaTagService.updateTag({name: 'twitter:title', content: title});
     this.metaTagService.updateTag({name: 'twitter:description', content: desc});
     this.metaTagService.updateTag({name: 'twitter:url', content: url});
     this.metaTagService.updateTag({name: 'twitter:card', content: "summary_large_image"});
-    this.metaTagService.updateTag({name: 'twitter:image', content: "https://flosrocketbricks.com/" + image});
+    this.metaTagService.updateTag({name: 'twitter:image', content: image});
 
     this.updateCanonicalUrl(url);
   }
 
   setDefaultTags(title: string, url: string): void {
     let desc: string = "A website containing instructions and digital files of MOCs by me, completely for free!";
-    let image: string = "assets/logo.png";
+    let image: string = "https://flosrocketbricks.com/assets/logo.png";
 
     this.setAllTags(title, desc, url, image);
   }

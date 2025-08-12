@@ -42,7 +42,7 @@ export class BlogComponent implements OnInit {
     }
 
     this.blog = foundBlog;
-    this.metaService.setAllTags(this.blog.title + " - FlosRocketBricks", "FlosRocketBlog: " + this.blog.title + " by " + this.blog.author, this.metaService.getTotalBlogLink(this.blog), this.blog.coverImage);
+    this.metaService.setAllTags(this.blog.title + " - FlosRocketBricks", "FlosRocketBlog: " + this.blog.title + " by " + this.blog.author, this.metaService.getTotalBlogLink(this.blog), "https://flosrocketbricks.com/" + this.blog.coverImage);
     this.convertBlogContent();
   }
 

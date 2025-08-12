@@ -1,27 +1,28 @@
 <div class="moc-card card">
-    <a class="m-0 p-0 text-decoration-none" [routerLink]="[link]" routerLinkActive="active" ariaCurrentWhenActive="page"
-        [attr.rel]="followRel ? null:'nofollow'">
-        <img loading="lazy" src="{{coverPicture}}" class="card-img-top moc-card-image"
-            title="{{mocName}} MOC with a scale of {{scale}}" alt="{{scale}} {{mocName}}">
-        <div class="card-body">
-            <h5 class="card-title moc-card-title text-coloring">{{mocName}}</h5>
-            <div class="row">
-                @if(scale !== '' && scale !== '-'){
-                <div class="col mx-auto" alt="MOC scale">
-                    <h6 class="card-title text-center rounded stat-bg text-coloring text-coloring">1:{{scale}}</h6>
-                </div>
-                }
-                @if(type !== "merch"){
-                <div class="col mx-auto" alt="Part count">
-                    <h6 class="card-title text-center rounded stat-bg text-coloring text-coloring">{{parts}} Parts</h6>
-                </div>
-                }
-                @if(type === "merch"){
-                <div class="col mx-auto" alt="Merch">
-                    <h6 class="card-title text-center rounded stat-bg text-coloring text-coloring">Merch</h6>
-                </div>
-                }
-            </div>
-        </div>
-    </a>
+  <a class="m-0 p-0 text-decoration-none" [routerLink]="[link]" routerLinkActive="active" ariaCurrentWhenActive="page"
+     [attr.rel]="followRel ? null:'nofollow'">
+    <img loading="lazy" src="{{coverPicture}}" class="card-img-top moc-card-image"
+         title="{{title}} MOC with a scale of {{scale}}"
+         [alt]="title + ' - LEGO '+type+' Spaceflight MOC built from '+ parts +' Bricks, in scale 1:'+scale">>
+    <div class="card-body">
+      <h5 class="card-title moc-card-title text-coloring">{{ title }}</h5>
+      <div class="row">
+        @if (scale !== '' && scale !== '-') {
+          <div class="col mx-auto">
+            <h6 class="card-title text-center rounded stat-bg text-coloring text-coloring">1:{{ scale }}</h6>
+          </div>
+        }
+        @if (type !== "merch") {
+          <div class="col mx-auto">
+            <h6 class="card-title text-center rounded stat-bg text-coloring text-coloring">{{ parts }} Parts</h6>
+          </div>
+        }
+        @if (type === "merch") {
+          <div class="col mx-auto">
+            <h6 class="card-title text-center rounded stat-bg text-coloring text-coloring">Merch</h6>
+          </div>
+        }
+      </div>
+    </div>
+  </a>
 </div>

@@ -57,12 +57,15 @@ export class MocComponent implements OnInit, OnDestroy {
     this.slideIndex = ((this.slideIndex + n) + this.moc.pictures.length) % this.moc.pictures.length;
   }
 
-  toggleViewer(url: string, version: string): void {
+  toggleViewer(url: string, version?: string): void {
     if (this.viewerLink === url)
       this.showViewer = !this.showViewer;
     else {
       this.viewerLink = url;
-      this.viewerVersion = version;
+      if(version)
+        this.viewerVersion = version;
+      else
+        this.viewerVersion = "V1";
       this.showViewer = true;
     }
     if (this.showViewer)

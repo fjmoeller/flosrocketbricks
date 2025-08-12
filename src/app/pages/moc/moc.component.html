@@ -3,7 +3,8 @@
     <div class="slideshow-container col-md-7">
       @for (picture of moc.pictures; track picture; let index = $index) {
         <div [style.display]="(index===slideIndex) ? 'block' : 'none'">
-          <img [src]="picture" class="d-block w-100" [alt]="moc.title" [title]="moc.title">
+          <img [src]="picture" class="d-block w-100" [title]="moc.title+ ' by '+moc.designer"
+               [alt]="moc.title + ' - LEGO '+moc.type+' Spaceflight MOC built from '+ moc.parts +' Bricks, made by '+moc.designer">
         </div>
       }
       <div class="numbertext">{{ slideIndex + 1 }} / {{ moc.pictures.length }}</div>

@@ -7707,7 +7707,6 @@
           {
             "description": "The digital io file of the rocket",
             "type": "io",
-            "export": false,
             "viewer": "V1",
             "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2f/tiangong/v2.1/Long_March_2F_Tiangong_V2.1.io",
             "name": "Long_March_2F_Tiangong_V2.1.io"
@@ -13572,7 +13571,7 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
+            "export": true,
             "viewer": "V1",
             "link": "https://files.flosrocketbackend.com/mocs/110/china/tiangong/tiangong-space-station/v1.1/Tiangong_Space_Station_V1.1.io",
             "name": "Tiangong_Space_Station_V1.1.io"

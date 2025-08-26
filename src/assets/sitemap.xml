@@ -1391,9 +1391,21 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/51/tiangong-space-station/</loc>
     <image:image>
-      <image:loc>
-        https://flosrocketbricks.com/assets/mocImages/110/china/tiangong/tiangong-space-station/110-tiangong-space-station-v1.1.jpg
-      </image:loc>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/china/tiangong/tiangong-space-station/v1.1/Tiangong_Space_Station_V1.1_1.jpg</image:loc>
+      <image:title>LEGO MOC Stargazer in 1:110 Image 1</image:title>
+      <image:caption>Tiangong Space Station is a LEGO MOC of the type Space Station made out of 1333 bricks. It is made by SkySaac.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/china/tiangong/tiangong-space-station/v1.1/Tiangong_Space_Station_V1.1_2.jpg</image:loc>
+      <image:title>LEGO MOC Tiangong Space Station in 1:110 Image 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/china/tiangong/tiangong-space-station/v1.1/Tiangong_Space_Station_V1.1_3.jpg</image:loc>
+      <image:title>LEGO MOC Tiangong Space Station in 1:110 Image 3</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/china/tiangong/tiangong-space-station/v1.1/Tiangong_Space_Station_V1.1_4.jpg</image:loc>
+      <image:title>LEGO MOC Tiangong Space Station in 1:110 Image 4</image:title>
     </image:image>
   </url>
   <url>

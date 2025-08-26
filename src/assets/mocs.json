@@ -7708,6 +7708,7 @@
             "description": "The digital io file of the rocket",
             "type": "io",
             "viewer": "V1",
+            "export": false,
             "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2f/tiangong/v2.1/Long_March_2F_Tiangong_V2.1.io",
             "name": "Long_March_2F_Tiangong_V2.1.io"
           }

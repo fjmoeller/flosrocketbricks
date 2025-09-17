@@ -1,5 +1,65 @@
 [
   {
+    "id": 232,
+    "title": "Zhuque-3 first-stage propulsion system test",
+    "altTitles": [
+      "ZQ-3 first-stage propulsion system test",
+      "ZQ-3"
+    ],
+    "related": [],
+    "dimensions": "5.0x5.6x40.2cm",
+    "dimensionsExtra": "",
+    "links": ["https://www.nasaspaceflight.com/2025/07/china-roundup-070525/"],
+    "tags": [],
+    "region": [
+      "China"
+    ],
+    "updateMessage": "",
+    "parts": 676,
+    "partsExtra": "",
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/zhuque/zhuque-3/test-first-stage/110-zhuque-3-test-stage-v1.0.jpg",
+    "regionExtra": "",
+    "internalColorExtra": "",
+    "versions": [
+      {
+        "files": [
+          {
+            "name": "ZQ-3_Test_1st_Stage_V1.0.io",
+            "description": "The digital file of the test first stage",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-3/test-first-stage/V1.0/ZQ-3_Test_1st_Stage_V1.0.io"
+          }
+        ],
+        "versionExtra": "",
+        "version": "V1.0",
+        "changelog": ""
+      }
+    ],
+    "typeExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "designer": "SkySaac",
+    "internalColor": "",
+    "company": "Landspace",
+    "companyExtra": "",
+    "stability": -1,
+    "stabilityExtra": "",
+    "mocDescription": "This is a MOC of the test article of the first stage of the Zhuque-3 rocket. It has no special features.",
+    "rocketDescription": "The Zhuque-3 first-stage propulsion system test was used to test fire the ZQ-3 rocket.",
+    "type": "other",
+    "designerExtra": "",
+    "dateCreated": "2025-09-17",
+    "lastUpdate": "2025-09-17",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-3/test-first-stage/V1.0/ZQ-3_Test_1st_Stage_V1.0_1.jpg"
+    ]
+  },
+  {
     "id": 231,
     "title": "Stargazer",
     "altTitles": [
@@ -12515,8 +12575,8 @@
       "https://fr.wikipedia.org/wiki/Zhuque-1",
       "https://space.skyrocket.de/doc_lau/zhuque-1.htm"
     ],
-    "mocDescription": "This is a MOC of the Chinese Zhuque 1 rocket. The second stage can be seperated from the core stage and the third stage and the fairing can be seperated from the 2nd stage. The payload fairing holds no space for a payload.",
-    "rocketDescription": "The Zhuque 1 rocket (also known as ZQ-1) is a Chinese rocket by the company LandSpace. It has three stages, all of them being solid fueled. Its only launch in 2018 resulted in a failure.",
+    "mocDescription": "This is a MOC of the Chinese Zhuque-1 rocket. The second stage can be seperated from the core stage and the third stage and the fairing can be seperated from the 2nd stage. The payload fairing holds no space for a payload.",
+    "rocketDescription": "The Zhuque-1 rocket (also known as ZQ-1) is a Chinese rocket by the company LandSpace. It has three stages, all of them being solid fueled. Its only launch in 2018 resulted in a failure.",
     "company": "",
     "companyExtra": "",
     "difficulty": -1,
@@ -12544,7 +12604,7 @@
     ],
     "parts": 64,
     "partsExtra": "The rocket can be build completely out of Lego bricks, but it needs some printed parts.",
-    "title": "Zhuque 1",
+    "title": "Zhuque-1",
     "stability": -1,
     "stabilityExtra": "",
     "designer": "SkySaac",
@@ -16928,7 +16988,7 @@
     "related": [
       65
     ],
-    "title": "Zhuque 2 Y1",
+    "title": "Zhuque-2 Y1",
     "versions": [
       {
         "files": [
@@ -16946,7 +17006,7 @@
         "changelog": ""
       }
     ],
-    "mocDescription": "The Zhuque 2 is the first methane powered rocket that made an attempt to reach orbit in 2022. It failed on it's first flight.",
+    "mocDescription": "The Zhuque-2 is the first methane powered rocket that made an attempt to reach orbit in 2022. It failed on it's first flight.",
     "rocketDescription": "",
     "dimensions": "5x5x49cm",
     "regionExtra": "",

@@ -1,5 +1,69 @@
 [
   {
+    "id": 233,
+    "type": "spacecraft",
+    "dimensionsExtra": "",
+    "typeExtra": "",
+    "internalColor": "-",
+    "internalColorExtra": "",
+    "links": [
+      "https://space.skyrocket.de/doc_sdat/cygnus-pcm-ext.htm"
+    ],
+    "mocDescription": "This is a MOC of the Cygnus XL spacecraft. It has no special features.",
+    "rocketDescription": "The Cygnus XL spacecraft is an American spacecraft used to deliver cargo to the ISS.",
+    "stability": -1,
+    "stabilityExtra": "",
+    "company": "Northrop Grumman",
+    "companyExtra": "",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "lastUpdate": "2025-09-19",
+    "dateCreated": "2025-09-19",
+    "related": [
+      108,
+      109,
+      110
+    ],
+    "updateMessage": "",
+    "region": [
+      "USA"
+    ],
+    "regionExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "smallCoverImage": "assets/mocImages/110/usa/cygnus/xl/110-cygnus-xl-v1.0.jpg",
+    "dimensions": "6x10.5x4.5cm",
+    "tags": [],
+    "altTitles": [],
+    "title": "Cygnus XL",
+    "parts": 105,
+    "partsExtra": "",
+    "designer": "SkySaac",
+    "designerExtra": "",
+    "fanPictures": [],
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/cygnus/xl/v1.0/Cygnus_XL_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/cygnus/xl/v1.0/Cygnus_XL_V1.0_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/cygnus/xl/v1.0/Cygnus_XL_V1.0.io",
+            "name": "Cygnus_XL_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ]
+  },
+  {
     "id": 232,
     "title": "Zhuque-3 first-stage propulsion system test",
     "altTitles": [
@@ -8938,7 +9002,8 @@
     "dateCreated": "2023-08-02",
     "related": [
       108,
-      109
+      109,
+      233
     ],
     "updateMessage": "",
     "region": [
@@ -9000,7 +9065,8 @@
     "dateCreated": "2023-08-02",
     "related": [
       108,
-      110
+      110,
+      233
     ],
     "updateMessage": "",
     "region": [
@@ -9062,7 +9128,8 @@
     "dateCreated": "2023-08-02",
     "related": [
       109,
-      110
+      110,
+      233
     ],
     "updateMessage": "",
     "region": [

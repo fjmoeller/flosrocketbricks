@@ -235,6 +235,7 @@
 /moc/230/yuanxingzhe-1-hopper/
 /moc/231/stargazer/
 /moc/232/zhuque-3-first-stage-test-article/
+/moc/233/cygnus-xl/
 /about/
 /404/
 /blog/

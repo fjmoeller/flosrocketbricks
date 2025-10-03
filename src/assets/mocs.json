@@ -1,5 +1,69 @@
 [
   {
+    "id": 234,
+    "type": "rocket",
+    "dimensionsExtra": "",
+    "typeExtra": "",
+    "internalColor": "-",
+    "internalColorExtra": "",
+    "links": [
+      "https://rocketlabcorp.com/launch/neutron/"
+    ],
+    "mocDescription": "This is a MOC of the Cygnus XL spacecraft. It has no special features.",
+    "rocketDescription": "The Cygnus XL spacecraft is an American spacecraft used to deliver cargo to the ISS.",
+    "stability": -1,
+    "stabilityExtra": "",
+    "company": "Rocket Lab",
+    "companyExtra": "",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "lastUpdate": "2025-10-03",
+    "dateCreated": "2025-10-03",
+    "related": [],
+    "updateMessage": "",
+    "region": [
+      "USA"
+    ],
+    "regionExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "smallCoverImage": "assets/mocImages/110/usa/neutron/110-neutron-v1.0.jpg",
+    "dimensions": "9.3x9.3x40.2cm",
+    "tags": [],
+    "altTitles": [],
+    "title": "Neutron",
+    "parts": 1177,
+    "partsExtra": "",
+    "designer": "SkySaac",
+    "designerExtra": "",
+    "fanPictures": [],
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/neutron/v1.0/Neutron_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/neutron/v1.0/Neutron_V1.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/neutron/v1.0/Neutron_V1.0_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/neutron/v1.0/Neutron_V1.0_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/neutron/v1.0/Neutron_V1.0_5.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/neutron/v1.0/Neutron_V1.0_6.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/neutron/v1.0/Neutron_V1.0.io",
+            "name": "Neutron_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ]
+  },
+  {
     "id": 233,
     "type": "spacecraft",
     "dimensionsExtra": "",

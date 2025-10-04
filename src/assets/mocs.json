@@ -9,8 +9,8 @@
     "links": [
       "https://rocketlabcorp.com/launch/neutron/"
     ],
-    "mocDescription": "This is a MOC of the Cygnus XL spacecraft. It has no special features.",
-    "rocketDescription": "The Cygnus XL spacecraft is an American spacecraft used to deliver cargo to the ISS.",
+    "mocDescription": "This is a MOC of the Neutron rocket. It includes extendable landing legs and openable fairings that sta attached to the rocket. They can be opened to pull out the included 2nd stage. The rocket fits the whole 2nd stage as well as quite some payload space.",
+    "rocketDescription": "Neutron is an American orbital rocket by Rocket Lab that is planned to launch in 2025. The first stage will be fully reusable. The fairings attach to the first stage and the 2nd stage at launch is fully inside the 1st stage. The rocket is planned to use propulsive landing for reusing the 1st stage.",
     "stability": -1,
     "stabilityExtra": "",
     "company": "Rocket Lab",

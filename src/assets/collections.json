@@ -162,7 +162,7 @@
     "id": 2,
     "name": "Atlas",
     "description": "The Atlas series has been used from the beginning of the space age until today.",
-    "cover": "assets/collections/2/atlas/Atlas_FamilyV1.0.png",
+    "cover": "assets/collections/2/atlas/Atlas_Family_V1.0.png",
     "subCollections": [
       {
         "id": 0,

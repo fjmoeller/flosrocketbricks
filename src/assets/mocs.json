@@ -61,8 +61,8 @@
           {
             "description": "The digital pdf instructions",
             "type": "pdf",
-            "link": "https://files.flosrocketbackend.com/mocs/110/usa/neutron/v1.0/Neutron_V1.0_instructions.io",
-            "name": "Neutron_V1.0_instructions.io"
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/neutron/v1.0/Neutron_V1.0_instructions.pdf",
+            "name": "Neutron_V1.0_instructions.pdf"
           }
         ],
         "version": "V1.0"

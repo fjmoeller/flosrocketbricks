@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {CommentComponent} from "../../components/comment/comment.component";
 import {CommentAdminView, CommentDeleteAdminRequest, CommentEditRequest, CommentView} from "../../model/comments";
 import {CommentService} from "../../services/comment.service";
@@ -15,7 +15,7 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.sass'
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent{
 
   comments: { target: string; comment: CommentView }[] = [];
 
@@ -25,9 +25,6 @@ export class AdminComponent implements OnInit {
     this.form = new FormGroup({
       adminPassword: new FormControl(''),
     });
-  }
-
-  ngOnInit(): void {
   }
 
   loadComments(): void {
@@ -40,6 +37,9 @@ export class AdminComponent implements OnInit {
           }
         }
         this.comments = allComments.sort((a, b) => b.comment.time - a.comment.time);
+      },
+      error: err => {
+        console.log("Failed to load comments: "+err.message);
       }
     })
   }
@@ -60,9 +60,4 @@ export class AdminComponent implements OnInit {
   editComment(request: CommentEditRequest) {
     //lol no
   }
-
-  reply() {
-
-  }
-
 }

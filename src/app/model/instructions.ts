@@ -4,7 +4,7 @@ import {LdrPart, PartReference} from "./ldrawParts";
 export interface StepModel {
   newPartsModel: Group;
   prevPartsModel: Group;
-  parentSubmodelModel: Group | undefined;
+  parentSubmodelModel: Group | null;
   parentSubmodelAmount: number;
   stepPartsList: StepPart[];
 }

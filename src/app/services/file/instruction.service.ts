@@ -3,7 +3,6 @@ import {
   BufferGeometry, Color, Group, LineBasicMaterial, LineSegments, Material, Mesh,
   MeshStandardMaterial, Vector3
 } from "three";
-import {environment} from "../../../environments/environment";
 import {LdrawColorService} from "../color/ldraw-color.service";
 import {
   InstructionModel, InstructionPart, InstructionPartReference, InstructionStep,
@@ -24,6 +23,8 @@ import {
   shrinkPartScale,
   mergeLowAngleVertices
 } from "../../utils/ldrUtils";
+import JSZip from "jszip";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -60,10 +61,25 @@ export class InstructionService {
     if (prevInterpolationPercentage !== undefined) this.PREV_INTERPOLATION_PERCENTAGE = prevInterpolationPercentage;
     else this.PREV_INTERPOLATION_PERCENTAGE = this.DEFAULT_PREV_INTERPOLATION_PERCENTAGE;
 
-    const fileName = fileLink.slice(0, fileLink.length - 2) + "ldr"
-    const contents = await fetch(environment.backendFetchUrl + fileName);
+    let contents;
+    if (instructionVersion === "V1" || instructionVersion === "V2") {
+      const fileName = fileLink.slice(0, fileLink.length - 2) + "ldr"
+      contents = await (await fetch(environment.backendFetchUrl + fileName)).text();
+      //contents = await (await fetch("assets/Cygnus_XL_V1.0.ldr")).text();
+    } else {
+      const response = await fetch(environment.backendFetchUrl + fileLink);
+      //const response = await fetch("assets/Cygnus_XL_V1.0.io");
+      const arrayBuffer = await response.arrayBuffer();
+      const zip = await JSZip.loadAsync(arrayBuffer);
+      const file = zip.file('model2.ldr');
+      if (file) {
+        contents = await file.async('text');
+      } else {
+        contents = "";
+      }
+    }
 
-    return this.createInstructionModel(await contents.text(), instructionVersion, defaultAnyColor);
+    return this.createInstructionModel(contents, instructionVersion, defaultAnyColor);
   }
 
   private createInstructionModel(ldrFileContent: string, instructionVersion: string, defaultAnyColor?: Color): InstructionModel {
@@ -83,74 +99,84 @@ export class InstructionService {
     };
     let topSubmodel: string = "";
 
-    const ldrObjects = ldrFileContent.split("0 NOSUBMODEL"); //0 = submodels, 1 = parts
+    //Parsing parts and submodels
+    const allObjects = ldrFileContent.split("0 NOFILE");
+    const referenceNames: string[] = []; //a list of all the names of referenced parts and submodels
+    for (let objectIndex = 0; objectIndex < allObjects.length; objectIndex++) {
+      const objectLines = allObjects[objectIndex].split("\n");
 
-    if (ldrObjects.length != 2) {
-      console.error("Error: file is formated wrong, no submodel divider found: ", ldrObjects.length);
-      return instructionModel;
-    }
-
-    //Parsing submodels
-    const rawSubmodelLines = ldrObjects[0].split("0 NOFILE");
-    const referenceNames: string[] = []; //a list of all the names of referenced parts & submodels
-    for (let i = 0; i < rawSubmodelLines.length; i++) {
-      const submodelLines = rawSubmodelLines[i].split("\n");
-
-      //if it's literally empty then skip it
+      //if it's empty, then skip it
       let empty = true;
-      for (let j = 0; j < submodelLines.length; j++)
-        if (submodelLines[j].trim() != "") {
-          empty = false;
-          break;
-        }
+      for (let j = 0; j < objectLines.length && empty; j++)
+        empty = objectLines[j].trim() === "";
       if (empty) continue;
 
-      let submodelName: string = "";
-      const stepReferences: PartReference[][] = [];
-      stepReferences.push([]);
-      let stepCounter = 0;
+      //find out if it's a submodel or a part
+      let isSubmodel = true;
+      for (let j = 0; j < objectLines.length; j++)
+        if (objectLines[j].startsWith("0 FILE"))
+          isSubmodel = !objectLines[j].includes(".dat")
 
-      for (let j = 0; j < submodelLines.length; j++) {
-        let submodelLine = submodelLines[j];
-        if (submodelLine.endsWith("\r"))
-          submodelLine = submodelLine.slice(0, submodelLine.lastIndexOf("\r"));
-        if (submodelLine.startsWith("1")) {
-          const createdReference = parseLineTypeOne(submodelLine, submodelLines[j - 1].includes("0 BFC INVERTNEXT"));
-          stepReferences[stepCounter].push(createdReference);
-          this.createMaterialIfNotExists(createdReference.color, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap, defaultAnyColor);
-          if (!referenceNames.includes(createdReference.name))
-            referenceNames.push(createdReference.name);
-        } else if (submodelLine.startsWith("0 STEP")) {
-          stepCounter++;
-          stepReferences.push([]);
-        } else if (submodelLine.startsWith("0 FILE"))
-          submodelName = submodelLine.slice(7).toLowerCase();
-        else if (submodelLine.startsWith("0 Name:") && submodelName == "no name") //backup in case no name got set which can happen
-          submodelName = submodelLine.slice(9).toLowerCase();
+      if (isSubmodel) {
+        //parse as submodel
+        //if it's empty, then skip it
+        let empty = true;
+        for (let j = 0; j < objectLines.length; j++)
+          if (objectLines[j].trim() != "") {
+            empty = false;
+            break;
+          }
+        if (empty) continue;
+
+        let submodelName: string = "";
+        const stepReferences: PartReference[][] = [];
+        stepReferences.push([]);
+        let stepCounter = 0;
+
+        for (let j = 0; j < objectLines.length; j++) {
+          const submodelLine = objectLines[j].trim();
+          if (submodelLine.startsWith("1")) {
+            const createdReference = parseLineTypeOne(submodelLine, objectLines[j - 1].includes("0 BFC INVERTNEXT"));
+            stepReferences[stepCounter].push(createdReference);
+            this.createMaterialIfNotExists(createdReference.color, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap, defaultAnyColor);
+            if (!referenceNames.includes(createdReference.name))
+              referenceNames.push(createdReference.name);
+          } else if (submodelLine.startsWith("0 STEP")) {
+            stepCounter++;
+            stepReferences.push([]);
+          } else if (submodelLine.startsWith("0 FILE"))
+            submodelName = submodelLine.slice(7).toLowerCase();
+          else if (submodelLine.startsWith("0 Name:") && submodelName == "") //backup in case no name got set which can happen
+            submodelName = submodelLine.slice(9).toLowerCase();
+        }
+
+        //remove last step if it's completely empty
+        if (stepReferences.length > 0 && stepReferences[stepReferences.length - 1].length === 0)
+          stepReferences.pop();
+
+        instructionModel.submodels.set(submodelName, {
+          name: submodelName,
+          stepReferences: stepReferences,
+          group: new Group(),
+          prevGroup: new Group()
+        });
+
+        //remember which one the first submodel is
+        if (topSubmodel === "") topSubmodel = submodelName;
+
+      } else {
+        //parse as part
+        const parsedPart: LdrPart = this.parsePartLines(objectLines, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap, defaultAnyColor);
+        instructionModel.ldrData.allPartsMap.set(parsedPart.id, parsedPart);
       }
-      //remove last step if it's completely empty
-      if (stepReferences.length > 0 && stepReferences[stepReferences.length - 1].length === 0)
-        stepReferences.pop();
-
-      instructionModel.submodels.set(submodelName, {
-        name: submodelName,
-        stepReferences: stepReferences,
-        group: new Group(),
-        prevGroup: new Group()
-      });
-
-      //remember which one the first submodel is
-      if (topSubmodel === "") topSubmodel = submodelName;
     }
 
-    //Parsing parts
-    const rawPartLines = ldrObjects[1].split("0 NOFILE");
-    for (let i = 0; i < rawPartLines.length; i++) {
-      const partLines = rawPartLines[i];
-      const parsedPart: LdrPart = this.parsePartLines(partLines, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap, defaultAnyColor);
-      instructionModel.ldrData.allPartsMap.set(parsedPart.id, parsedPart);
-      if (!referenceNames.includes(parsedPart.id)) continue; //if it's a subpart, then skip it
-      const resolvedPart = resolvePart(parsedPart.id, instructionModel.ldrData.allPartsMap, {flatShading: this.ENABLE_FLAT_SHADING}); //collects all vertices in the top part, so all subparts wil be resolved
+    //resolve parts
+    for (let referencedName of referenceNames) {
+      if (!instructionModel.ldrData.allPartsMap.has(referencedName))
+        continue; //skip submodels, they will be resolved later
+
+      const resolvedPart = resolvePart(referencedName, instructionModel.ldrData.allPartsMap, {flatShading: this.ENABLE_FLAT_SHADING}); //collects all vertices in the top part, so all subparts wil be resolved
 
       if (this.ENABLE_FLAT_SHADING)
         mergeVertices(resolvedPart.colorIndexMap, resolvedPart.colorVertexMap, resolvedPart.colorLineVertexMap);
@@ -161,7 +187,7 @@ export class InstructionService {
         shrinkPartScale(resolvedPart, this.SHRINKING_GAP_SIZE);
 
       if (this.ENABLE_BEVEL)
-        bevelPart(resolvedPart,this.BEVEL_SIZE, this.BEVEL_THRESHOLD);
+        bevelPart(resolvedPart, this.BEVEL_SIZE, this.BEVEL_THRESHOLD);
 
       if (resolvedPart.colorVertexMap.size > 1) { //if part is multicolor part
         const colorGeometryMap = new Map<number, BufferGeometry>();
@@ -170,7 +196,7 @@ export class InstructionService {
           if (indices.length > 0)
             colorGeometryMap.set(color, createBufferGeometry(resolvedPart.id, vertices, indices, instructionVersion, this.ENABLE_FLAT_SHADING));
         });
-        instructionModel.ldrData.idToColorGeometryMap.set(parsedPart.id, colorGeometryMap);
+        instructionModel.ldrData.idToColorGeometryMap.set(referencedName, colorGeometryMap);
         for (let vertices of resolvedPart.colorLineVertexMap.values())
           instructionModel.ldrData.idToLineGeometryMap.set(resolvedPart.id, createLineGeometry(resolvedPart.id, vertices, instructionVersion, this.ENABLE_FLAT_SHADING));
       } else { //if part is single color part
@@ -178,6 +204,7 @@ export class InstructionService {
       }
     }
 
+    //resolve submodels
     const firstSubmodel = instructionModel.submodels.get(topSubmodel);
     if (firstSubmodel)
       this.collectPartRefs(firstSubmodel, instructionModel, 1);
@@ -272,7 +299,7 @@ export class InstructionService {
               const prevMaterial = instructionModel.ldrData.colorToPrevMaterialMap.get(partReference.color);
               const mesh = new Mesh(geometry, material);
               const prevMesh = new Mesh(geometry, prevMaterial);
-              if(this.ENABLE_SHADOWS){
+              if (this.ENABLE_SHADOWS) {
                 mesh.castShadow = true;
                 mesh.receiveShadow = true;
                 prevMesh.castShadow = true;
@@ -326,8 +353,7 @@ export class InstructionService {
     }
   }
 
-  private parsePartLines(partText: string, colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>, defaultAnyColor?: Color): LdrPart {
-    const partLines = partText.split("\n");
+  private parsePartLines(partLines: string[], colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>, defaultAnyColor?: Color): LdrPart {
 
     let partId: string = "ERROR FLO";
     let partName: string = "ERROR FLO";
@@ -340,9 +366,7 @@ export class InstructionService {
 
     //Go through all lines of text and parse them
     for (let partLineIndex = 0; partLineIndex < partLines.length; partLineIndex++) {
-      let partLine = partLines[partLineIndex]
-      if (partLine.endsWith("\r")) //removes annoying stuff
-        partLine = partLine.slice(0, partLine.lastIndexOf("\r"));
+      const partLine = partLines[partLineIndex].trim();
       if (partLine.startsWith("1")) { //line is a reference
         references.push(parseLineTypeOne(partLine, invertNext));
         invertNext = false;
@@ -394,8 +418,7 @@ export class InstructionService {
         colorIndexMap.set(parsed.color, partIndices.concat(collectedIndices));
 
         invertNext = false;
-      }
-      else if (partLine.startsWith("2") && this.ENABLE_PART_LINES) { //line is a line
+      } else if (partLine.startsWith("2") && this.ENABLE_PART_LINES) { //line is a line
         const parsed = parseLineTypeTwo(partLine);
         const entry = colorLineVertexMap.get(parsed.color) ?? [];
         colorLineVertexMap.set(parsed.color, entry.concat(parsed.points));
@@ -448,7 +471,7 @@ export class InstructionService {
       part.applyMatrix4(iPartReference.transformMatrix);
       newPartsGroup.add(part);
 
-      //create the partslist of all the parts added in this step
+      //create the part list of all the parts added in this step
       let found = false;
       for (let i = 0; i < stepPartsList.length; i++) {
         if (stepPartsList[i].partId === iPartReference.partId && stepPartsList[i].color === iPartReference.color) {
@@ -511,9 +534,9 @@ export class InstructionService {
     prevPartsGroup.scale.setScalar(0.044);
 
     //add the model of the parent submodel if this is the first step in said submodel
-    let parentSubmodel = undefined;
+    let parentSubmodel = null;
     if (currentStep.isFirstStepInSubmodel) {
-      parentSubmodel = instructionModel.submodels.get(currentStep.parentSubmodel)?.group;
+      parentSubmodel = instructionModel.submodels.get(currentStep.parentSubmodel)?.group || null;
     }
 
     stepPartsList.sort((a: StepPart, b: StepPart) => {
@@ -531,5 +554,55 @@ export class InstructionService {
       parentSubmodelModel: parentSubmodel,
       parentSubmodelAmount: currentStep.parentSubmodelAmount
     };
+  }
+
+  getFullModel(instructionModel: InstructionModel): Group {
+    const currentStep: InstructionStep = instructionModel.instructionSteps[instructionModel.instructionSteps.length - 1];
+    const partsGroup = new Group();
+
+    for (let i = 0; i < currentStep.newSubmodels.length; i++) {
+      const iSubReference = currentStep.newSubmodels[i];
+      const pSubmodel = instructionModel.submodels.get(iSubReference.submodelName);
+      if (pSubmodel) {
+        const submodel = pSubmodel.group.clone();
+        submodel.applyMatrix4(iSubReference.transformMatrix);
+        partsGroup.add(submodel);
+      }
+    }
+
+    for (let i = 0; i < currentStep.previousSubmodels.length; i++) {
+      const iSubReference = currentStep.previousSubmodels[i];
+      const pSubmodel = instructionModel.submodels.get(iSubReference.submodelName);
+      if (pSubmodel) {
+        const submodel = pSubmodel.group.clone();
+        submodel.applyMatrix4(iSubReference.transformMatrix);
+        partsGroup.add(submodel);
+      }
+    }
+
+    for (let i = 0; i < currentStep.previousParts.length; i++) {
+      const iPartReference = currentStep.previousParts[i];
+      const pPart = instructionModel.parts.get(iPartReference.color + "###" + iPartReference.partId);
+      if (pPart) {
+        const part = pPart.group.clone();
+        part.applyMatrix4(iPartReference.transformMatrix);
+        partsGroup.add(part);
+      }
+    }
+
+    for (let i = 0; i < currentStep.newParts.length; i++) {
+      const iPartReference = currentStep.newParts[i];
+      const pPart = instructionModel.parts.get(iPartReference.color + "###" + iPartReference.partId);
+      if (pPart) {
+        const part = pPart.group.clone();
+        part.applyMatrix4(iPartReference.transformMatrix);
+        partsGroup.add(part);
+      }
+    }
+
+    partsGroup.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
+    partsGroup.scale.setScalar(0.044);
+
+    return partsGroup;
   }
 }

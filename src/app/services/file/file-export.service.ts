@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Matrix4} from 'three';
 import * as zip from "@zip.js/zip.js";
 import {PartReference} from '../../model/ldrawParts';
-import {LdrToThreeService} from './ldr-to-three.service';
 import {LdrawColorService} from '../color/ldraw-color.service';
 import {SimpleLdrSubmodel, SimpleReference} from '../../model/simpleLdrawParts';
 import {PartMapping, SpecificPartMapping, PartMappingFix, BricklinkRefactoredPart} from 'src/app/model/partMappings';
@@ -25,15 +24,14 @@ export class FileExportService {
   private countedPartMap = new Map<string, number>();
   private mappedCountedPartMap = new Map<string, number>();
 
-  constructor(private ldrToThreeService: LdrToThreeService, private ldrawColorService: LdrawColorService,
-              private exportSettingsService: ExportSettingsService) {
+  constructor(private ldrawColorService: LdrawColorService, private exportSettingsService: ExportSettingsService) {
   }
 
   async collectUsedPartsMappings(url: string, isBr: boolean): Promise<void> {
 
     const fetchResult = await fetch(environment.backendFetchUrl + url + "_pm.json");
     let mocSpecificMappedParts: SpecificPartMapping[] = [];
-    if (fetchResult.status != 404)
+    if (fetchResult.status === 200)
       mocSpecificMappedParts = (await fetchResult.json()) as SpecificPartMapping[];
 
     const partList: PartMapping[] = await (await fetch("/assets/ldr/lists/partList.json")).json() as PartMapping[];

@@ -1,9 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { LdrToThreeService } from 'src/app/services/file/ldr-to-three.service';
-import { AmbientLight, BasicShadowMap, Box3, Clock, DirectionalLight, Group, Mesh, MeshLambertMaterial, PerspectiveCamera, PlaneGeometry, Scene, Vector3, WebGLRenderer } from 'three';
-import { CommonModule } from '@angular/common';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {Component, Input, OnInit} from '@angular/core';
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
+import {
+  AmbientLight,
+  BasicShadowMap,
+  Box3,
+  Clock,
+  DirectionalLight,
+  Group,
+  Mesh,
+  MeshLambertMaterial,
+  PerspectiveCamera,
+  PlaneGeometry,
+  Scene,
+  Vector3,
+  WebGLRenderer
+} from 'three';
+import {CommonModule} from '@angular/common';
+import {InstructionService} from "../../services/file/instruction.service";
 
 @Component({
   standalone: true,
@@ -26,13 +39,11 @@ export class ViewerComponent implements OnInit {
   @Input('viewerVersion')
   viewerVersion: string = "V1";
 
-  private dataCTSubject = new BehaviorSubject<number>(0);
-  computingTime: Observable<number> = this.dataCTSubject.asObservable();
+  /*private dataCTSubject = new BehaviorSubject<number>(0);
+  computingTime: Observable<number> = this.dataCTSubject.asObservable();*/
 
   //determines if the loading icon will be shown
   loadingFinished: boolean = true;
-
-  loadingText = this.ioFileService.loadingState;
 
   public ENABLE_SHADOWS: boolean = false;
 
@@ -40,7 +51,7 @@ export class ViewerComponent implements OnInit {
   // 60 fps
   private readonly INTERNAL: number = 1 / 60;
 
-  constructor(private ioFileService: LdrToThreeService) {
+  constructor(private instructionService: InstructionService) {
   }
 
   ngOnInit(): void {
@@ -50,17 +61,21 @@ export class ViewerComponent implements OnInit {
 
   async showViewerMoc() {
     this.loadingFinished = false;
-    const group: Group = await this.ioFileService.getModel(this.inputLink, this.placeHolderColor,this.viewerVersion);
+    let group: Group;
+
+      const model = await this.instructionService.getInstructionModel(this.inputLink, this.viewerVersion)
+      group = this.instructionService.getFullModel(model);
     this.createScene(group);
   }
 
   createScene(mocGroup: Group): void {
 
     const scene = new Scene();
-
-    mocGroup.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);
+    /*if(this.viewerVersion === "V1" || this.viewerVersion === "V2")
+      mocGroup.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);*/
     const mocBB = new Box3().setFromObject(mocGroup);
-    mocGroup.position.y += mocBB.getSize(new Vector3()).y / 2;
+    /*if(this.viewerVersion === "V1" || this.viewerVersion === "V2")
+      mocGroup.position.y += mocBB.getSize(new Vector3()).y / 2;*/
     scene.add(mocGroup);
 
     const ambientLight = new AmbientLight(0xffffff, 0.6);
@@ -80,7 +95,7 @@ export class ViewerComponent implements OnInit {
     }
 
     const planeGeometry = new PlaneGeometry(200, 200, 50, 50);
-    const planeMaterial = new MeshLambertMaterial({ color: 0x999999 });
+    const planeMaterial = new MeshLambertMaterial({color: 0x999999});
     const plane = new Mesh(planeGeometry, planeMaterial);
     plane.rotateX(-Math.PI / 2);
     if (this.ENABLE_SHADOWS)
@@ -109,7 +124,7 @@ export class ViewerComponent implements OnInit {
     camera.position.x = -50;
     scene.add(camera);
 
-    const renderer = new WebGLRenderer({ antialias: true, canvas: canvas });
+    const renderer = new WebGLRenderer({antialias: true, canvas: canvas});
     renderer.setClearColor(0x19212D, 1);
     if (this.ENABLE_SHADOWS) {
       renderer.shadowMap.enabled = true;
@@ -136,7 +151,7 @@ export class ViewerComponent implements OnInit {
     controls.minDistance = 5;
 
     const update = () => {
-      this.dataCTSubject.next(this.clock.getElapsedTime()); //TODO only when debug mode enabled
+      //this.dataCTSubject.next(this.clock.getElapsedTime()); //only when debug mode enabled
       if (this.clock.getElapsedTime() > this.INTERNAL) {
         controls.update();
         // Render

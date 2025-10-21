@@ -89,34 +89,38 @@ export class CommentSectionComponent implements OnInit {
   }
 
   loadComments(): void {
-    this.commentService.getComments(this.parentComponentType + "-" + this.parentComponentId).subscribe(
-      comments => {
-        //sort the list of comments and convert them to be viewable
-        this.allComments = comments
-          .sort((a: CommentView, b: CommentView) => b.time - a.time)
-          .map(comment => {
-              return {
-                comment: comment,
-                owned: !!this.createdComments.find(createdC => createdC.id === comment.id)
-              };
-            }
-          );
-        //add commentviews of replies to comment (if it is a reply to something)
-        for (let i = 0; i < this.allComments.length; i++) {
-          const currentComment = this.allComments[i];
-          if (currentComment.comment.reply !== undefined) {
-            //if this comment is a reply to another comment
-            const findComment = this.allComments.find(
-              c => c.comment.id === currentComment.comment.reply
+    this.commentService.getComments(this.parentComponentType + "-" + this.parentComponentId).subscribe({
+        next: comments => {
+          //sort the list of comments and convert them to be viewable
+          this.allComments = comments
+            .sort((a: CommentView, b: CommentView) => b.time - a.time)
+            .map(comment => {
+                return {
+                  comment: comment,
+                  owned: !!this.createdComments.find(createdC => createdC.id === comment.id)
+                };
+              }
             );
-            if (findComment !== undefined) {
-              currentComment.reply = findComment.comment;
-            } else {
-              currentComment.reply = null;
+          //add comment views of replies to comment (if it is a reply to something)
+          for (let i = 0; i < this.allComments.length; i++) {
+            const currentComment = this.allComments[i];
+            if (currentComment.comment.reply !== undefined) {
+              //if this comment is a reply to another comment
+              const findComment = this.allComments.find(
+                c => c.comment.id === currentComment.comment.reply
+              );
+              if (findComment !== undefined) {
+                currentComment.reply = findComment.comment;
+              } else {
+                currentComment.reply = null;
+              }
             }
           }
+          this.showSomeComments();
+        },
+        error: err => {
+          console.log("Failed to load comments: "+err.message);
         }
-        this.showSomeComments();
       }
     );
   }

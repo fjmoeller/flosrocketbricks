@@ -16,8 +16,7 @@ import {isPlatformBrowser} from "@angular/common";
 })
 export class CommentService {
 
-  private readonly COMMENT_BACKEND_URL: string = "https://comment.flos";
-  private readonly COMMENT_BACKEND_URL2: string = "rocketbackend.com/";
+  private readonly COMMENT_BACKEND_URL: string = "https://comment.flosrocketbackend.com/";
   private readonly COMMENT_BACKEND_ADMIN_PATH: string = "adminAll";
   private readonly LOCALSTORAGE_USERNAME_KEY: string = "comment-username";
 
@@ -39,12 +38,12 @@ export class CommentService {
   }
 
   createComment(target: string, creationRequest: CommentCreateRequest): Observable<CommentView> {
-    return this.http.post<CommentView>(this.COMMENT_BACKEND_URL + this.COMMENT_BACKEND_URL2 + target, creationRequest)
+    return this.http.post<CommentView>(this.COMMENT_BACKEND_URL + target, creationRequest)
       .pipe(tap(() => this.lastCommentCreationTime = Date.now()));
   }
 
   getComments(commentTargetKey: string): Observable<CommentView[]> {
-    const url = this.COMMENT_BACKEND_URL + this.COMMENT_BACKEND_URL2 + commentTargetKey;
+    const url = this.COMMENT_BACKEND_URL + commentTargetKey;
     return this.http.get<CommentView[]>(url);
   }
 
@@ -52,20 +51,20 @@ export class CommentService {
     const httpHeaders: HttpHeaders = new HttpHeaders({
       adminPassword: adminPassword
     });
-    const url = this.COMMENT_BACKEND_URL + this.COMMENT_BACKEND_URL2 + this.COMMENT_BACKEND_ADMIN_PATH;
+    const url = this.COMMENT_BACKEND_URL + this.COMMENT_BACKEND_ADMIN_PATH;
     return this.http.get<CommentAdminView[]>(url, {headers: httpHeaders});
   }
 
   deleteComment(target: string, deletionRequest: CommentDeleteRequest): Observable<any> {
-    return this.http.delete(this.COMMENT_BACKEND_URL + this.COMMENT_BACKEND_URL2 + target, {body: deletionRequest});
+    return this.http.delete(this.COMMENT_BACKEND_URL + target, {body: deletionRequest});
   }
 
   deleteCommentAdmin(target: string, deletionRequest: CommentDeleteAdminRequest): Observable<any> {
-    return this.http.delete(this.COMMENT_BACKEND_URL + this.COMMENT_BACKEND_URL2 + target, {body: deletionRequest});
+    return this.http.delete(this.COMMENT_BACKEND_URL + target, {body: deletionRequest});
   }
 
   editComment(target: string, editingRequest: CommentEditRequest): Observable<CommentView> {
-    return this.http.put<CommentView>(this.COMMENT_BACKEND_URL + this.COMMENT_BACKEND_URL2 + target, editingRequest);
+    return this.http.put<CommentView>(this.COMMENT_BACKEND_URL + target, editingRequest);
   }
 
   private generateRandomPassword(): string {

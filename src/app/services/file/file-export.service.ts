@@ -81,7 +81,7 @@ export class FileExportService {
     let xml = "<INVENTORY>\n";
     for (let key of this.mappedCountedPartMap.keys()) {
       const colorIdKey = key.split(this.separationString); //1st part contains color, 2nd the id
-      const bricklinkColorId = this.ldrawColorService.getBricklinkColorIdByLdrawColorId(colorIdKey[0], this.DEFAULT_BRICKLINK_ANY_COLOR_ID);
+      const bricklinkColorId = this.ldrawColorService.getBricklinkColorIdByLdrawColorId(Number(colorIdKey[0]), this.DEFAULT_BRICKLINK_ANY_COLOR_ID);
       xml += "	<ITEM>\n		<ITEMTYPE>P</ITEMTYPE>\n		<ITEMID>" + colorIdKey[1] + "</ITEMID>\n		<COLOR>" + bricklinkColorId + "</COLOR>\n		<MINQTY>" + this.mappedCountedPartMap.get(key) + "</MINQTY>\n	</ITEM>";
     }
     xml += "</INVENTORY>";
@@ -232,7 +232,7 @@ export class FileExportService {
     const partMappings: BricklinkRefactoredPart[] = bricklink_refactored_parts as BricklinkRefactoredPart[];
     const keysToRemove: string[] = [];
     for (let key of this.mappedCountedPartMap.keys()) {
-      const colorIdKey = key.split(this.separationString); //1sr part contains color, 2nd the id
+      const colorIdKey = key.split(this.separationString); //1st part contains color, 2nd the id
       const value = this.mappedCountedPartMap.get(key);
       const mapping = partMappings.find(v => v.oldId === colorIdKey[1]);
       if (mapping && value !== undefined) {

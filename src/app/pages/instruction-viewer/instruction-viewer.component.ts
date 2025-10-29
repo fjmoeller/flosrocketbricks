@@ -27,7 +27,7 @@ import {LdrColor, LdrPart} from "../../model/ldrawParts";
 import {ActivatedRoute} from "@angular/router";
 import {MocGrabberService} from "../../services/grabber/moc-grabber.service";
 import {Box3} from "three/src/math/Box3.js";
-import {File, Moc, Version} from "../../model/classes";
+import {MocFile, Moc, MocVersion} from "../../model/classes";
 import {MetaService} from "../../services/meta.service";
 import {isPlatformBrowser, Location, NgStyle} from "@angular/common";
 import {InstructionDownloadComponent} from "../../components/instruction-download/instruction-download.component";
@@ -62,8 +62,8 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
   //TODO dont show submodel indicator if it already has subsubmodels with steps
 
   moc?: Moc;
-  file: File;
-  version: Version;
+  file: MocFile;
+  version: MocVersion;
   loadingFinished: boolean = true;
   loadingText: string = "Loading...";
   renderingActive: boolean = false;
@@ -180,7 +180,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     this.loadingFinished = false;
     if (this.file.instructions && isPlatformBrowser(this.platform)) {
       this.metaService.setDefaultTags(this.file.name + " Online Instructions - FlosRocketBricks", window.location.href);
-      this.instructionModel = await this.instructionService.getInstructionModel(this.file.link, this.file.instructions, this.instructionSettings.prevInterpolationColor, this.instructionSettings.prevInterpolationPercentage, new Color(this.instructionSettings.defaultAnyColor));
+      this.instructionModel = await this.instructionService.getInstructionModel(this.file.link, this.file.instructions, new Color(this.instructionSettings.defaultAnyColor), this.instructionSettings.prevInterpolationColor, this.instructionSettings.prevInterpolationPercentage);
       this.initHtmlElementReferences();
       this.createRenderer();
       this.createMainScene();
@@ -434,7 +434,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
     }
 
     //fetch new step
-    this.currentStepModel = this.instructionService.getModelByStep(this.instructionModel, this.currentStepNumber - 1);
+    this.currentStepModel = this.instructionService.getModelByStep(this.instructionModel, this.currentStepNumber - 1, this.version.version);
     this.currentSubmodelAmount = this.currentStepModel.parentSubmodelAmount;
 
     //create the divs and scenes for the new parts of the part list
@@ -748,7 +748,7 @@ export class InstructionViewerComponent implements OnInit, OnDestroy {
         colorDiv.style.background = "linear-gradient(135deg," +
           "rgba(" + rgbColor + ",0.5) 0%,rgba(" + rgbColor + ",0.5) 45%, rgb(" + rgbColor + ") 50%,rgb(" + rgbColor + ") 100%)";
       } else {
-        console.log(color.name,color.hex);
+        console.log(color.name, color.hex);
         colorDiv.style.backgroundColor = color.hex;
       }
       colorDiv.style.height = '1.6em';

@@ -4,7 +4,7 @@ import {
   AmbientLight,
   BasicShadowMap,
   Box3,
-  Clock,
+  Clock, Color,
   DirectionalLight,
   Group,
   Mesh,
@@ -63,7 +63,7 @@ export class ViewerComponent implements OnInit {
     this.loadingFinished = false;
     let group: Group;
 
-      const model = await this.instructionService.getInstructionModel(this.inputLink, this.viewerVersion)
+      const model = await this.instructionService.getInstructionModel(this.inputLink, this.viewerVersion,new Color("#f224d3"))
       group = this.instructionService.getFullModel(model);
     this.createScene(group);
   }

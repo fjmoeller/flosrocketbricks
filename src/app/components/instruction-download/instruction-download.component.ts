@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {File} from "../../model/classes";
+import {MocFile} from "../../model/classes";
 import {FileExportService} from "../../services/file/file-export.service";
 
 @Component({
@@ -11,7 +11,7 @@ import {FileExportService} from "../../services/file/file-export.service";
 })
 export class InstructionDownloadComponent {
   @Input()
-  file: File;
+  file: MocFile;
 
   @Input()
   internalColor?: string;

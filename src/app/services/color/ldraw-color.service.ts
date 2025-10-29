@@ -10,10 +10,9 @@ import color_definitions from '../../../assets/ldr/lists/color_definitions.json'
 export class LdrawColorService {
 
   private ldrColorList = new Map<number, LdrColor>;
-  private anyColor: LdrColor;
+  private readonly anyColor: LdrColor = new LdrColor("Any Color", "#CD6298", "000000", 9999, 255, "");
 
   constructor() {
-    this.anyColor = new LdrColor("Any Color","#CD6298","000000",9999,255,"");
     for (let def of color_definitions) {
       this.ldrColorList.set(def.code, new LdrColor(def.name, def.hex, def.edge, def.code, def.alpha, def.material));
     }
@@ -24,7 +23,7 @@ export class LdrawColorService {
   }
 
   getNonsenseColors(): string[] {
-    return ["Trans_Sticker","Electric_Contact_Copper","Electric_Contact_Alloy","Magnet","Edge_Colour","Main_Colour"];
+    return ["Trans_Sticker", "Electric_Contact_Copper", "Electric_Contact_Alloy", "Magnet", "Edge_Colour", "Main_Colour"];
   }
 
   getLdrawColorIdByColorName(colorName: string): number {
@@ -96,28 +95,36 @@ export class LdrawColorService {
     }
     if (defaultColor)
       return defaultColor;
-    console.warn("Error finding color %d", id);
+    console.warn("Error finding color ldraw:%d", id);
     return new Color("#f224d3");
   }
 
-  getBricklinkColorIdByLdrawColorId(ldrawIdString: string, defaultColor: number): number {
-    const ldrawId = Number(ldrawIdString);
+  getBricklinkColorIdByLdrawColorId(ldrawId: number, defaultColor: number): number {
 
-    let foundColors = rebr_colors.filter(color => color.external_ids.LDraw?.ext_ids.includes(ldrawId));
+    const foundColors = rebr_colors.filter(color => color.external_ids.LDraw?.ext_ids.includes(ldrawId));
 
-    if (foundColors.length != 1)
-      console.warn("Error finding color %s", ldrawIdString);
+    if (foundColors.length != 1) {
+      console.log(foundColors);
+    }
 
     return foundColors[0]?.external_ids.BrickLink?.ext_ids[0] ?? defaultColor;
+  }
+
+  getLdrawColorIdByBricklinkColorId(brickLinkId: number): number {
+    const foundColors = rebr_colors.filter(color => color.external_ids.BrickLink?.ext_ids.includes(brickLinkId));
+
+    return (foundColors[0]?.external_ids.LDraw?.ext_ids[0]) ?? 9999;
   }
 
   getRebrickableColorIdByLdrawColorId(ldrawIdString: string, defaultColor: number): number {
     const ldrawId = Number(ldrawIdString);
 
-    let foundColors = rebr_colors.filter(color => color.external_ids.LDraw?.ext_ids.includes(ldrawId));
+    const foundColors = rebr_colors.filter(color => color.external_ids.LDraw?.ext_ids.includes(ldrawId));
 
-    if (foundColors.length != 1)
-      console.warn("Error finding color %s", ldrawIdString);
+    if (foundColors.length != 1) {
+      console.warn("Error finding color ldraw:%s", ldrawIdString);
+      console.log(foundColors);
+    }
 
     return foundColors[0]?.id ?? defaultColor;
   }

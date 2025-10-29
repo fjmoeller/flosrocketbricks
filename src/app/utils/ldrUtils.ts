@@ -50,22 +50,26 @@ export function splitter(input: string, separator: string, limit: number) {
 
 //This function parses a line type one, which is a reference to a part or a submodel in a ldr file
 export function parseLineTypeOne(line: string, invert: boolean): PartReference {
-  const splittedLine = splitter(line, " ", 14);
+  const splitLine = splitter(line, " ", 14);
   const transform = new Matrix4();
 
   const invertOrNo = new Matrix3();
-  invertOrNo.set(parseFloat(splittedLine[5]), parseFloat(splittedLine[6]), parseFloat(splittedLine[7]), parseFloat(splittedLine[8]), parseFloat(splittedLine[9]), parseFloat(splittedLine[10]), parseFloat(splittedLine[11]), parseFloat(splittedLine[12]), parseFloat(splittedLine[13]));
+  invertOrNo.set(parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7]), parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]), parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13]));
   if (invertOrNo.determinant() < 0)
     invert = !invert;
 
   transform.set(
-    parseFloat(splittedLine[5]), parseFloat(splittedLine[6]), parseFloat(splittedLine[7]), parseFloat(splittedLine[2]),
-    parseFloat(splittedLine[8]), parseFloat(splittedLine[9]), parseFloat(splittedLine[10]), parseFloat(splittedLine[3]),
-    parseFloat(splittedLine[11]), parseFloat(splittedLine[12]), parseFloat(splittedLine[13]), parseFloat(splittedLine[4]),
+    parseFloat(splitLine[5]), parseFloat(splitLine[6]), parseFloat(splitLine[7]), parseFloat(splitLine[2]),
+    parseFloat(splitLine[8]), parseFloat(splitLine[9]), parseFloat(splitLine[10]), parseFloat(splitLine[3]),
+    parseFloat(splitLine[11]), parseFloat(splitLine[12]), parseFloat(splitLine[13]), parseFloat(splitLine[4]),
     0, 0, 0, 1
   );
 
-  return new PartReference(splittedLine[splittedLine.length - 1], transform, parseInt(splittedLine[1]), invert);
+  const name = splitLine[splitLine.length - 1];
+  if(name.includes(" "))
+  console.log("found with space",name);
+
+  return new PartReference(splitLine[splitLine.length - 1], transform, parseInt(splitLine[1]), invert);
 }
 
 //This function parses a line type two, which is a line
@@ -223,11 +227,11 @@ export function mergeLowAngleVertices(colorIndexMap: Map<number, number[]>, colo
       const faceIndices = [indices[i], indices[i + 1], indices[i + 2]];
       for (const v of faceIndices) {
         if (!vertexToFaces.has(v)) vertexToFaces.set(v, []);
-        vertexToFaces.get(v)!.push(Math.floor(i/3));
+        vertexToFaces.get(v)!.push(Math.floor(i / 3));
       }
 
       //f -> n
-      faceNormals.push(new Triangle(vertices[indices[i]],vertices[indices[i+1]],vertices[indices[i+2]]).getNormal(new Vector3()).normalize());
+      faceNormals.push(new Triangle(vertices[indices[i]], vertices[indices[i + 1]], vertices[indices[i + 2]]).getNormal(new Vector3()).normalize());
     }
 
     //0,1,2,3,4,5,6,7...
@@ -291,16 +295,57 @@ export function mergeLowAngleVertices(colorIndexMap: Map<number, number[]>, colo
 
 }
 
-export function resolvePart(partName: string, allPartsMap: Map<String, LdrPart>, options: { flatShading?: boolean }): LdrPart {
+export function resolvePart(partName: string, allPartsMap: Map<String, LdrPart>, options: {
+  flatShading?: boolean
+}): LdrPart {
   const ldrPart = allPartsMap.get(partName);
   if (ldrPart && !ldrPart.isResolved) {
     //resolve Part
     for (let i = 0; i < ldrPart.references.length; i++) {
       const partReference = ldrPart.references[i];
 
-      const referencedPart = allPartsMap.get(partReference.name)
+      let referencedPart = allPartsMap.get(partReference.name);
+      let referencedPartName = partReference.name;
+
+      if (!referencedPart) {
+        const v1 = allPartsMap.get("48/" + referencedPartName);
+        const v2 = allPartsMap.get("8/" + referencedPartName);
+        if (v1 && !v2) {
+          //console.warn("48 reference missing on part", referencedPartName);
+          referencedPart = v1;
+          referencedPartName = "48/" + referencedPartName;
+        } else if (v2 && !v1) {
+          //console.warn("8 reference missing on part", referencedPartName);
+          referencedPart = v2;
+          referencedPartName = "8/" + referencedPartName;
+        } else {
+          //console.log("referenced part not found, checking different resolution", referencedPartName);
+          if (referencedPartName.startsWith("8/") || referencedPartName.startsWith("8\\")) {
+            const diffResPart = allPartsMap.get("48/" + referencedPartName.slice(2));
+            if (diffResPart) {
+              referencedPart = diffResPart;
+              referencedPartName = "48/" + referencedPartName.slice(2);
+              //console.log("part only exists in different resolution", referencedPartName);
+            } else {
+              console.warn("part missing in file", referencedPartName);
+            }
+          } else if (referencedPartName.startsWith("48/") || referencedPartName.startsWith("48\\")) {
+            const diffResPart = allPartsMap.get("8/" + referencedPartName.slice(3));
+            if (diffResPart) {
+              referencedPart = diffResPart;
+              referencedPartName = "8/" + referencedPartName.slice(3);
+              //console.log("part only exists in different resolution", referencedPartName);
+            } else {
+              console.warn("part missing in file", referencedPartName);
+            }
+          } else {
+            console.warn("part missing in file", referencedPartName);
+          }
+        }
+      }
+
       if (referencedPart) {
-        resolvePart(partReference.name, allPartsMap, options);
+        resolvePart(referencedPartName, allPartsMap, options);
 
         const colorVertexIndexMap = new Map<number, Map<number, number>>(); //each colors indices of vertices will be different so they need to be mapped to the actual ones
 

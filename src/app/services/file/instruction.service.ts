@@ -50,11 +50,12 @@ export class InstructionService {
   //Because there are only two possible lineColors I just initialize them here :)
   private lineMaterials = [new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(71)}), new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(0)})];
   private prevLineMaterials = [new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(71)}), new LineBasicMaterial({color: this.ldrawColorService.getHexColorFromLdrawColorId(0)})];
+  private ldrawColorsWithLightEdges: number[] = [0, 320, 272, 288, 308, 256]; //black, dark red
 
   constructor(private ldrawColorService: LdrawColorService) {
   }
 
-  async getInstructionModel(fileLink: string, instructionVersion: string, prevInterpolationColor?: Color, prevInterpolationPercentage?: number, defaultAnyColor?: Color): Promise<InstructionModel> {
+  async getInstructionModel(fileLink: string, instructionVersion: string, defaultAnyColor?: Color, prevInterpolationColor?: Color, prevInterpolationPercentage?: number): Promise<InstructionModel> {
     //load defaults from localstorage if existing
     if (prevInterpolationColor !== undefined) this.PREV_INTERPOLATION_COLOR = prevInterpolationColor;
     else this.PREV_INTERPOLATION_COLOR = this.DEFAULT_PREV_INTERPOLATION_COLOR;
@@ -65,10 +66,8 @@ export class InstructionService {
     if (instructionVersion === "V1" || instructionVersion === "V2") {
       const fileName = fileLink.slice(0, fileLink.length - 2) + "ldr"
       contents = await (await fetch(environment.backendFetchUrl + fileName)).text();
-      //contents = await (await fetch("assets/Cygnus_XL_V1.0.ldr")).text();
     } else {
       const response = await fetch(environment.backendFetchUrl + fileLink);
-      //const response = await fetch("assets/Cygnus_XL_V1.0.io");
       const arrayBuffer = await response.arrayBuffer();
       const zip = await JSZip.loadAsync(arrayBuffer);
       const file = zip.file('model2.ldr');
@@ -138,7 +137,7 @@ export class InstructionService {
           if (submodelLine.startsWith("1")) {
             const createdReference = parseLineTypeOne(submodelLine, objectLines[j - 1].includes("0 BFC INVERTNEXT"));
             stepReferences[stepCounter].push(createdReference);
-            this.createMaterialIfNotExists(createdReference.color, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap, defaultAnyColor);
+            this.createMaterialIfNotExists(createdReference.color, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap, instructionVersion, defaultAnyColor);
             if (!referenceNames.includes(createdReference.name))
               referenceNames.push(createdReference.name);
           } else if (submodelLine.startsWith("0 STEP")) {
@@ -166,8 +165,10 @@ export class InstructionService {
 
       } else {
         //parse as part
-        const parsedPart: LdrPart = this.parsePartLines(objectLines, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap, defaultAnyColor);
-        instructionModel.ldrData.allPartsMap.set(parsedPart.id, parsedPart);
+        const parsedParts: LdrPart[] = this.parsePartLines(objectLines, instructionModel.ldrData.colorToMaterialMap, instructionModel.ldrData.colorToPrevMaterialMap, instructionVersion, defaultAnyColor);
+        parsedParts.forEach(parsedPart => {
+          instructionModel.ldrData.allPartsMap.set(parsedPart.id, parsedPart);
+        });
       }
     }
 
@@ -207,7 +208,7 @@ export class InstructionService {
     //resolve submodels
     const firstSubmodel = instructionModel.submodels.get(topSubmodel);
     if (firstSubmodel)
-      this.collectPartRefs(firstSubmodel, instructionModel, 1);
+      this.collectPartRefs(firstSubmodel, instructionModel, 1, instructionVersion);
 
     return instructionModel;
   }
@@ -221,7 +222,7 @@ export class InstructionService {
     return count;
   }
 
-  private collectPartRefs(currentSubmodel: InstructionSubmodel, instructionModel: InstructionModel, submodelReferenceAmount: number): void {
+  private collectPartRefs(currentSubmodel: InstructionSubmodel, instructionModel: InstructionModel, submodelReferenceAmount: number, instructionVersion: string): void {
     //accumulate the submodels and parts used in this submodels steps
     const previousSubmodels: InstructionSubmodelReference[] = [];
     const previousParts: InstructionPartReference[] = [];
@@ -240,7 +241,7 @@ export class InstructionService {
         isFirstStepInSubmodel: isFirstStep
       };
       isFirstStep = false;
-      //add the previous parts to this steps prevPartslist (same with submodel)
+      //add the previous parts to this steps prevPartsList (same with submodel)
       instructionStep.previousParts.push(...previousParts);
       instructionStep.previousSubmodels.push(...previousSubmodels);
 
@@ -251,7 +252,7 @@ export class InstructionService {
         const referencedThing = instructionModel.submodels.get(partReference.name);
         if (referencedThing) { //If Submodel
           if (!thisStepsSubmodels.includes(partReference.name)) { //has not already been resolved in this step
-            this.collectPartRefs(referencedThing, instructionModel, this.countSubmodelAmount(partReference.name, partReferences));
+            this.collectPartRefs(referencedThing, instructionModel, this.countSubmodelAmount(partReference.name, partReferences), instructionVersion);
             thisStepsSubmodels.push(partReference.name);
           }
           //Add the submodel as reference into this step and add the group transformed into the parent submodel
@@ -309,7 +310,14 @@ export class InstructionService {
               prevPartGroup.add(prevMesh);
             }
             const lineGeometry = instructionModel.ldrData.idToLineGeometryMap.get(partReference.name);
-            const lineMaterial = partReference.color === 0 ? this.lineMaterials[0] : this.lineMaterials[1];
+            let lineMaterial;
+            if (instructionVersion === "V1" || instructionVersion === "V2") {
+              lineMaterial = this.ldrawColorsWithLightEdges.includes(partReference.color) ? this.lineMaterials[0] : this.lineMaterials[1];
+            } else {
+              lineMaterial = this.ldrawColorsWithLightEdges.map(bricklinkColorId =>
+                this.ldrawColorService.getBricklinkColorIdByLdrawColorId(bricklinkColorId, 9999))
+                .includes(partReference.color) ? this.lineMaterials[0] : this.lineMaterials[1];
+            }
             const prevLineMaterial = partReference.color === 0 ? this.prevLineMaterials[0] : this.prevLineMaterials[1];
             const lineMesh = new LineSegments(lineGeometry, lineMaterial);
             const prevLineMesh = new LineSegments(lineGeometry, prevLineMaterial);
@@ -353,10 +361,11 @@ export class InstructionService {
     }
   }
 
-  private parsePartLines(partLines: string[], colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>, defaultAnyColor?: Color): LdrPart {
+  private parsePartLines(partLines: string[], colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>, instructionVersion: string, defaultAnyColor?: Color): LdrPart[] {
 
     let partId: string = "ERROR FLO";
     let partName: string = "ERROR FLO";
+    let altPartId: string | null = null;
     const references: PartReference[] = [];
     let invertNext: boolean = false;
     const colorVertexMap = new Map<number, Vector3[]>();
@@ -370,9 +379,17 @@ export class InstructionService {
       if (partLine.startsWith("1")) { //line is a reference
         references.push(parseLineTypeOne(partLine, invertNext));
         invertNext = false;
-        this.createMaterialIfNotExists(references[references.length - 1].color, colorToMaterialMap, colorToPrevMaterialMap, defaultAnyColor);
+        this.createMaterialIfNotExists(references[references.length - 1].color, colorToMaterialMap, colorToPrevMaterialMap, instructionVersion, defaultAnyColor);
       } else if (partLine.startsWith("0 FILE")) { //line is a part id
         partId = partLine.slice(7);
+        invertNext = false;
+      } else if (partLine.startsWith("0 Name:")) { //line is a part id
+        altPartId = partLine.slice(8).trim();
+        while (altPartId.includes("\\")) {
+          altPartId = altPartId.replace("\\", "/");
+        }
+        if (!altPartId.endsWith(".dat"))
+          altPartId += ".dat";
         invertNext = false;
       } else if (partLine.startsWith("0 ") && partName === "ERROR FLO" && partId != "ERROR FLO") { //line is a part name
         partName = partLine.slice(2).trim().replace("  ", " ");
@@ -388,7 +405,7 @@ export class InstructionService {
         else
           parsed = parseLineTypeFour(partLine, (invertNext || isCW) && !(invertNext && isCW));
 
-        this.createMaterialIfNotExists(parsed.color, colorToMaterialMap, colorToPrevMaterialMap, defaultAnyColor);
+        this.createMaterialIfNotExists(parsed.color, colorToMaterialMap, colorToPrevMaterialMap, instructionVersion, defaultAnyColor);
         const partVertices = colorVertexMap.get(parsed.color);
 
         const vertexIndexMap = new Map<number, number>(); //maps the old index of the vertex to the position in the colorIndexMap
@@ -426,18 +443,27 @@ export class InstructionService {
         invertNext = false;
       }
     }
-    return new LdrPart(partId, partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references);
+    if (altPartId != null && altPartId !== partId) {
+      return [new LdrPart(altPartId, partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references),
+        new LdrPart(partId, partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references)];
+    }
+
+    return [new LdrPart(partId, partName, colorVertexMap, colorIndexMap, colorLineVertexMap, references)];
   }
 
-  private createMaterialIfNotExists(color: number, colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>, defaultAnyColor?: Color): void {
+  private createMaterialIfNotExists(color: number, colorToMaterialMap: Map<number, Material>, colorToPrevMaterialMap: Map<number, Material>, instructionVersion: string, defaultAnyColor?: Color): void {
     if (!colorToMaterialMap.has(color) && color != 24 && color != 16 && color != -1 && color != -2) {
-      const matParams = this.ldrawColorService.resolveColorByLdrawColorId(color, defaultAnyColor);
+      let ldrawColor: number | null = null;
+      if (instructionVersion !== "V1" && instructionVersion !== "V2")
+        ldrawColor = this.ldrawColorService.getLdrawColorIdByBricklinkColorId(color);
+
+      const matParams = this.ldrawColorService.resolveColorByLdrawColorId(ldrawColor ?? color, defaultAnyColor);
       const material = new MeshStandardMaterial();
       material.flatShading = this.ENABLE_FLAT_SHADING;
       material.setValues(matParams);
       colorToMaterialMap.set(color, material);
 
-      const prevMatParams = this.ldrawColorService.resolveColorByLdrawColorId(color, defaultAnyColor);
+      const prevMatParams = this.ldrawColorService.resolveColorByLdrawColorId(ldrawColor ?? color, defaultAnyColor);
       const prevMaterial = material.clone();
       prevMaterial.color = prevMatParams.color.clone().lerp(this.PREV_INTERPOLATION_COLOR, this.PREV_INTERPOLATION_PERCENTAGE);
       colorToPrevMaterialMap.set(color, prevMaterial);
@@ -456,7 +482,7 @@ export class InstructionService {
     });
   }
 
-  getModelByStep(instructionModel: InstructionModel, stepIndex: number): StepModel {
+  getModelByStep(instructionModel: InstructionModel, stepIndex: number, instructionVersion: string): StepModel {
     const currentStep: InstructionStep = instructionModel.instructionSteps[stepIndex];
     const newPartsGroup = new Group();
     const prevPartsGroup = new Group();
@@ -491,7 +517,7 @@ export class InstructionService {
         stepPartsList.push({
           model: pPart.group,
           partName: partName,
-          color: iPartReference.color,
+          color: (instructionVersion === "V1" || instructionVersion === "V2") ? iPartReference.color : this.ldrawColorService.getLdrawColorIdByBricklinkColorId(iPartReference.color),
           partId: iPartReference.partId,
           quantity: 1
         });

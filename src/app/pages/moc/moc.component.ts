@@ -1,6 +1,6 @@
 import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
-import {Moc, Version} from '../../model/classes';
+import {Moc, MocVersion} from '../../model/classes';
 import {MocGrabberService} from 'src/app/services/grabber/moc-grabber.service';
 import {MetaService} from 'src/app/services/meta.service';
 import {FileExportService} from 'src/app/services/file/file-export.service';
@@ -96,7 +96,7 @@ export class MocComponent implements OnInit, OnDestroy {
     this.showViewer = false;
   }
 
-  sortedVersions(versions: Version[] | undefined): Version[] {
+  sortedVersions(versions: MocVersion[] | undefined): MocVersion[] {
     if (!versions)
       return [];
     return versions.sort((a, b) => (a.version > b.version) ? -1 : ((b.version > a.version) ? 1 : 0));

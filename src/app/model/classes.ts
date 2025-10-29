@@ -1,4 +1,4 @@
-export class File {
+export class MocFile {
   link: string;
   name: string;
   description: string;
@@ -18,13 +18,13 @@ export class File {
   }
 }
 
-export class Version {
+export class MocVersion {
   version: string;
   versionExtra: string;
   changelog: string;
-  files: File[];
+  files: MocFile[];
 
-  constructor(version: string, versionExtra: string, changelog: string, files: File[]) {
+  constructor(version: string, versionExtra: string, changelog: string, files: MocFile[]) {
     this.version = version;
     this.versionExtra = versionExtra;
     this.changelog = changelog;
@@ -71,7 +71,7 @@ export class SubCollection {
 export class Moc {
   id: number;
   internalColor: string;
-  versions: Version[];
+  versions: MocVersion[];
   title: string;
   pictures: string[];
   parts: number;
@@ -106,13 +106,13 @@ export class Moc {
   regionExtra: string;
   typeExtra: string;
 
-  constructor(altTitles: string[], internalColor: string, type: string, region: string[], id: number, versions: Version[], title: string, pictures: string[],
-    parts: number, dimensions: string, scale: string, designer: string,
-    stability: number, difficulty: number, lastupdate: string, tags: string[],
-    mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],
-    dateCreated: string, scaleExtra: string, partsExtra: string, dimensionsExtra: string,
-    stabilityExtra: string, difficultyExtra: string, designerExtra: string, internalColorExtra: string,
-    company: string, updateMessage: string, links: string[], regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
+  constructor(altTitles: string[], internalColor: string, type: string, region: string[], id: number, versions: MocVersion[], title: string, pictures: string[],
+              parts: number, dimensions: string, scale: string, designer: string,
+              stability: number, difficulty: number, lastupdate: string, tags: string[],
+              mocDescription: string, related: number[], smallCoverImage: string, fanPictures: string[],
+              dateCreated: string, scaleExtra: string, partsExtra: string, dimensionsExtra: string,
+              stabilityExtra: string, difficultyExtra: string, designerExtra: string, internalColorExtra: string,
+              company: string, updateMessage: string, links: string[], regionExtra: string, typeExtra: string, rocketDescription: string, companyExtra: string) {
     this.region = region;
     this.altTitles = altTitles;
     this.type = type;

@@ -621,13 +621,6 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/160/epsilon/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/epsilon/epsilon-2/110-epsilon-v1.0.png
-      </image:loc>
-    </image:image>
-
-
-    <loc>https://flosrocketbricks.com/moc/160/epsilon/</loc>
-    <image:image>
       <image:loc>https://files.flosrocketbackend.com/mocs/110/japan/epsilon/epsilon-2/v1.1/Epsilon_Enhanced_V1.1_1.jpg
       </image:loc>
       <image:title>LEGO MOC Epsilon Enhanced in 1:110 Image 1</image:title>
@@ -1557,7 +1550,25 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/43/titan-iiie/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/usa/titan/iii/e/110-titan-iiie-v3.0.png</image:loc>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iii/e/v3.1/Titan_III_E_V3.1_1.jpg</image:loc>
+      <image:title>LEGO MOC Titan IIIE in 1:110 Image 1</image:title>
+      <image:caption>Titan IIIE is a LEGO MOC of the type Rocket made out of 822 bricks. It is made by SkySaac.
+      </image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iii/e/v3.1/Titan_III_E_V3.1_2.jpg
+      </image:loc>
+      <image:title>LEGO MOC Titan IIIE in 1:110 Image 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iii/e/v3.1/Titan_III_E_V3.1_3.jpg
+      </image:loc>
+      <image:title>LEGO MOC Titan IIIE in 1:110 Image 3</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iii/e/v3.1/Titan_III_E_V3.1_4.jpg
+      </image:loc>
+      <image:title>LEGO MOC Titan IIIE in 1:110 Image 4</image:title>
     </image:image>
   </url>
   <url>

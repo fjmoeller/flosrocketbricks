@@ -14487,16 +14487,16 @@
     "type": "rocket",
     "dimensionsExtra": "",
     "typeExtra": "",
-    "internalColor": "Dark Pink",
+    "internalColor": "",
     "links": [
       "https://en.wikipedia.org/wiki/Titan_IIIE"
     ],
-    "mocDescription": "This is a MOC of the Titan IIIE rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The fairing contains some space for a payload. The centaur upper stage does not fit inside though. It is available as an seperate MOC in the files section.",
+    "mocDescription": "This is a MOC of the Titan IIIE rocket. The boosters can be separated from the core stage and the second stage can be separated from the core stage. The fairing contains some space for a payload. The centaur upper stage does not fit inside though. It is available as an separate MOC in the files section.",
     "rocketDescription": "The Titan IIIE was an American expendable rocket. It was launched a total of 7 times between 1974 and 1977. Its notable payloads were the two Voyager spacecrafts.",
     "stabilityExtra": "",
     "company": "",
     "difficulty": -1,
-    "lastUpdate": "2023-04-07",
+    "lastUpdate": "2025-10-29",
     "dateCreated": "2023-04-07",
     "related": [],
     "updateMessage": "",
@@ -14504,16 +14504,16 @@
       "USA"
     ],
     "scale": "110",
-    "smallCoverImage": "assets/mocImages/110/usa/titan/iii/e/110-titan-iiie-v3.0.png",
+    "smallCoverImage": "assets/mocImages/110/usa/titan/iii/e/110-titan-iiie-v3.1.jpg",
     "internalColorExtra": "",
     "scaleExtra": "",
     "dimensions": "3.8x9.9x44.0cm",
     "tags": [],
     "altTitles": [],
-    "partsExtra": "",
+    "partsExtra": "The centaur upper stage is made out of 58 parts.",
     "title": "Titan IIIE",
     "regionExtra": "",
-    "parts": 816,
+    "parts": 822,
     "stability": -1,
     "difficultyExtra": "",
     "designerExtra": "",
@@ -14521,11 +14521,35 @@
     "designer": "SkySaac",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v3.0/Titan_III_E_V3.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v3.0/Titan_III_E_V3.0_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/usa/titan/iii/e/v3.0/Titan_III_E_V3.0_3.png"
+      "https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iii/e/v3.1/Titan_III_E_V3.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iii/e/v3.1/Titan_III_E_V3.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iii/e/v3.1/Titan_III_E_V3.1_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iii/e/v3.1/Titan_III_E_V3.1_4.jpg"
     ],
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iii/e/v3.1/Titan_III_E_V3.1.io",
+            "name": "Titan_III_E_V3.1.io"
+          },
+          {
+            "description": "The digital io file of the centaur upper stage",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/titan/titan-iii/e/v3.1/Titan_III_E_Centaur_V3.1.io",
+            "name": "Titan_III_E_Centaur_V3.1.io"
+          }
+        ],
+        "version": "V3.1"
+      },
       {
         "changelog": "Improved stability and added more details to the core and the boosters",
         "versionExtra": "",

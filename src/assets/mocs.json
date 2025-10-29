@@ -5351,7 +5351,7 @@
     ],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2023-11-07",
+    "lastUpdate": "2025-10-29",
     "dateCreated": "2023-11-07",
     "related": [
       16
@@ -5359,19 +5359,42 @@
     "updateMessage": "",
     "mocDescription": "The first two stages of the rocket can be separated from one another. The third stage is inside the payload fairing, which also holds a small amount of space for a payload.",
     "rocketDescription": "The Epsilon rocket is a Japanese solid fueled small orbital rocket. It is being launched from the pad that was before in use for the M-V rockets.",
-    "internalColor": "Green",
+    "internalColor": "",
     "scale": "110",
-    "parts": 175,
+    "parts": 179,
     "dimensions": "3.1x2.6x23.4cm",
     "stability": -1,
     "difficulty": -1,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/japan/epsilon/epsilon-2/110-epsilon-v1.0.png",
+    "smallCoverImage": "assets/mocImages/110/japan/epsilon/epsilon-2/110-epsilon-enhanced-v1.1.jpg",
     "pictures": [
-      "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/epsilon-2/v1.0/Enhanced_Epsilon_V1.0_1.png",
-      "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/epsilon-2/v1.0/Enhanced_Epsilon_V1.0_2.png"
+      "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/epsilon-2/v1.1/Epsilon_Enhanced_V1.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/epsilon-2/v1.1/Epsilon_Enhanced_V1.1_2.jpg"
     ],
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/epsilon-2/v1.1/Epsilon_Enhanced_V1.1.io",
+            "name": "Epsilon_Enhanced_V1.1.io"
+          },
+          {
+            "description": "The digital pdf instructions for the rocket",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/epsilon-2/v1.1/Epsilon_Enhanced_V1.1_instructions.pdf",
+            "name": "Epsilon_Enhanced_V1.1_instructions.pdf"
+          }
+        ],
+        "version": "V1.1"
+      },
       {
         "changelog": "",
         "versionExtra": "",
@@ -16670,7 +16693,7 @@
     "links": [],
     "internalColorExtra": "",
     "updateMessage": "",
-    "internalColor": "Bright Pink",
+    "internalColor": "",
     "regionExtra": "",
     "company": "",
     "dateCreated": "2023-02-28",
@@ -16685,14 +16708,37 @@
     "related": [
       160
     ],
-    "parts": 871,
+    "parts": 868,
     "id": 16,
-    "stability": -1,
-    "lastUpdate": "2024-01-05",
+    "stability": 3,
+    "lastUpdate": "2025-10-28",
     "difficultyExtra": "",
     "type": "launchpad",
     "partsExtra": "",
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "version": "V3.3",
+        "files": [
+          {
+            "description": "The digital io file",
+            "name": "Epsilon_Launchpad_V3.3.io",
+            "type": "io",
+            "export": true,
+            "instructions": "V2",
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/launchpad/v3.3/Epsilon_Launchpad_V3.3.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "name": "Epsilon_Launchpad_V3.3_instructions.pdf",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/launchpad/v3.3/Epsilon_Launchpad_V3.3_instructions.pdf"
+          }
+        ]
+      },
       {
         "changelog": "",
         "versionExtra": "",
@@ -16746,10 +16792,10 @@
     "title": "Uchinoura Mu Pad",
     "typeExtra": "",
     "designer": "SkySaac",
-    "smallCoverImage": "assets/mocImages/110/japan/epsilon/launchpad/110-uchinoura-mu-pad-v3.0.png",
+    "smallCoverImage": "assets/mocImages/110/japan/epsilon/launchpad/110-uchinoura-mu-pad-v3.3.jpg",
     "pictures": [
-      "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/launchpad/v3.0/Uchinoura_Mu_Pad_V3.0_1.png",
-      "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/launchpad/v3.0/Uchinoura_Mu_Pad_V3.0_2.png"
+      "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/launchpad/v3.3/Epsilon_Launchpad_V3.3_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/japan/epsilon/launchpad/v3.3/Epsilon_Launchpad_V3.3_2.jpg"
     ],
     "dimensions": "30.4x17.6x34cm",
     "tags": [],

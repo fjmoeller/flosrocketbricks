@@ -624,6 +624,22 @@
       <image:loc>https://flosrocketbricks.com/assets/mocImages/110/japan/epsilon/epsilon-2/110-epsilon-v1.0.png
       </image:loc>
     </image:image>
+
+
+    <loc>https://flosrocketbricks.com/moc/160/epsilon/</loc>
+    <image:image>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/japan/epsilon/epsilon-2/v1.1/Epsilon_Enhanced_V1.1_1.jpg
+      </image:loc>
+      <image:title>LEGO MOC Epsilon Enhanced in 1:110 Image 1</image:title>
+      <image:caption>Epsilon Enhanced is a LEGO MOC of the type Rocket made out of 179 bricks. It is made by SkySaac.
+      </image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/japan/epsilon/epsilon-2/v1.1/Epsilon_Enhanced_V1.1_2.jpg
+      </image:loc>
+      <image:title>LEGO MOC Epsilon Enhanced in 1:110 Image 2</image:title>
+    </image:image>
+
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/159/x-33-launchpad/</loc>
@@ -1751,9 +1767,16 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/16/uchinoura-mu-pad/</loc>
     <image:image>
-      <image:loc>
-        https://flosrocketbricks.com/assets/mocImages/110/japan/epsilon/launchpad/110-uchinoura-mu-pad-v3.0.png
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/japan/epsilon/launchpad/v3.3/Epsilon_Launchpad_V3.3_1.jpg
       </image:loc>
+      <image:title>LEGO MOC Uchinoura Mu Pad in 1:110 Image 1</image:title>
+      <image:caption>Uchinoura Mu Pad is a LEGO MOC of the type Launchpad made out of 868 bricks. It is made by SkySaac.
+      </image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/japan/epsilon/launchpad/v3.3/Epsilon_Launchpad_V3.3_2.jpg
+      </image:loc>
+      <image:title>LEGO MOC Uchinoura Mu Pad in 1:110 Image 2</image:title>
     </image:image>
   </url>
   <url>

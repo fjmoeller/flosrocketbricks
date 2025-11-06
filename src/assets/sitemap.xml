@@ -680,9 +680,16 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/153/proton-k-zond/</loc>
     <image:image>
-      <image:loc>
-        https://flosrocketbricks.com/assets/mocImages/110/ussr/proton/proton-k/zond/110-proton-k-zond-v1.3.png
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/ussr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3_1.jpg
       </image:loc>
+      <image:title>LEGO MOC Proton K Zond in 1:110 Image 1</image:title>
+      <image:caption>Proton K Zond is a LEGO MOC of the type Rocket made out of 814 bricks. It is made by SkySaac.
+      </image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://files.flosrocketbackend.com/mocs/110/ussr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3_2.jpg
+      </image:loc>
+      <image:title>LEGO MOC Proton K Zond in 1:110 Image 2</image:title>
     </image:image>
   </url>
   <url>

@@ -144,10 +144,11 @@ export class InstructionService {
           } else if (submodelLine.startsWith("0 STEP")) {
             stepCounter++;
             stepReferences.push([]);
-          } else if (submodelLine.startsWith("0 FILE"))
+          } else if (submodelLine.startsWith("0 FILE")) {
             submodelName = submodelLine.slice(7).toLowerCase();
-          else if (submodelLine.startsWith("0 Name:") && submodelName == "") //backup in case no name got set which can happen
+          } else if (submodelLine.startsWith("0 Name:") && submodelName === ""){ //backup in case no name got set which can happen
             submodelName = submodelLine.slice(9).toLowerCase();
+          }
         }
 
         //remove last step if it's completely empty

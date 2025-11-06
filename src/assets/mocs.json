@@ -5918,10 +5918,10 @@
     "stability": -1,
     "difficulty": -1,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/ussr/proton/proton-k/zond/110-proton-k-zond-v1.3.png",
+    "smallCoverImage": "assets/mocImages/110/ussr/proton/proton-k/zond/110-proton-k-zond-v1.3.jpg",
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/udssr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/udssr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3_2.png"
+      "https://files.flosrocketbackend.com/mocs/110/ussr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/ussr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3_2.jpg"
     ],
     "versions": [
       {
@@ -5932,8 +5932,8 @@
             "description": "The digital io file of the rocket",
             "type": "io",
             "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/udssr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3.io",
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/ussr/proton/k/zond/v1.3/Proton_K_Zond_5_V1.3.io",
             "name": "Proton_K_Zond_5_V1.3.io"
           }
         ],

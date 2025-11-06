@@ -74,6 +74,9 @@ export class ViewerComponent implements OnInit {
     /*if(this.viewerVersion === "V1" || this.viewerVersion === "V2")
       mocGroup.rotateOnWorldAxis(new Vector3(0, 0, 1), Math.PI);*/
     const mocBB = new Box3().setFromObject(mocGroup);
+
+    mocGroup.position.y = -mocBB.min.y;
+
     /*if(this.viewerVersion === "V1" || this.viewerVersion === "V2")
       mocGroup.position.y += mocBB.getSize(new Vector3()).y / 2;*/
     scene.add(mocGroup);

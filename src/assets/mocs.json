@@ -11104,8 +11104,8 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-3/c-e/110-long-march-3c-e-v3.6.png",
-    "internalColor": "Green",
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-3/c-e/110-long-march-3c-e-v3.6.jpg",
+    "internalColor": "",
     "internalColorExtra": "",
     "dimensions": "6.2x7.5x51.2cm",
     "dimensionsExtra": "",
@@ -11120,8 +11120,8 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/ce/v3.6/Long_March_3CE_V3.6_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/ce/v3.6/Long_March_3CE_V3.6_2.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-3/c-e/v3.6/Long_March_3CE_V3.6_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-3/c-e/v3.6/Long_March_3CE_V3.6_2.jpg"
     ],
     "versions": [
       {
@@ -11131,9 +11131,9 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/ce/v3.6/Long_March_3CE_V3.6.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-3/c-e/v3.6/Long_March_3CE_V3.6.io",
             "name": "Long_March_3CE_V3.6.io"
           }
         ],
@@ -11148,7 +11148,7 @@
     "links": [
       "https://en.wikipedia.org/wiki/Long_March_3B"
     ],
-    "mocDescription": "This is a MOC of the Long March 3B/E rocket. It has four seperatable boosters and a total of three stages. All of them can be seperated from each other. The fairing holds some space for a small payload.",
+    "mocDescription": "This is a MOC of the Long March 3B/E rocket. It has four separable boosters and a total of three stages. All of them can be seperated from each other. The fairing holds some space for a small payload.",
     "rocketDescription": "The Long March 3B/E rocket is a chinese orbital launcher. It has 4 boosters and 3 stages. It first launched in 2007 and has launched more than 75 times till then.",
     "company": "",
     "companyExtra": "",
@@ -11169,7 +11169,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-3/b-e/110-long-march-3b-e-v3.7.png",
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-3/b-e/110-long-march-3b-e-v3.7.jpg",
     "internalColor": "Green",
     "internalColorExtra": "",
     "dimensions": "10.7x10.7x51.2cm",
@@ -11185,8 +11185,8 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/be/v3.7/Long_March_3BE_V3.7_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/be/v3.7/Long_March_3BE_V3.7_2.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-3/b-e/v3.7/Long_March_3BE_V3.7_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-3/b-e/v3.7/Long_March_3BE_V3.7_2.jpg"
     ],
     "versions": [
       {
@@ -11196,9 +11196,9 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-3/be/v3.7/Long_March_3BE_V3.7.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-3/b-e/v3.7/Long_March_3BE_V3.7.io",
             "name": "Long_March_3BE_V3.7.io"
           }
         ],

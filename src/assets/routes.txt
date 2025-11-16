@@ -237,6 +237,7 @@
 /moc/232/zhuque-3-first-stage-test-article/
 /moc/233/cygnus-xl/
 /moc/234/neutron/
+/moc/235/zhuque-3/
 /about/
 /404/
 /blog/

@@ -1,5 +1,66 @@
 [
   {
+    "id": 235,
+    "type": "rocket",
+    "dimensionsExtra": "",
+    "typeExtra": "",
+    "internalColor": "-",
+    "internalColorExtra": "",
+    "links": [
+    ],
+    "mocDescription": "This is a MOC of the Zhuque-3 rocket. The second stage can be separated from the first stage. The fairing halves hold space for a payload. The landing legs on the ",
+    "rocketDescription": "Zhuque-3 is a partially reusable rocket by the Chinese company Landspace. It is planned to launch in 2025.",
+    "stability": -1,
+    "stabilityExtra": "",
+    "company": "Landspace",
+    "companyExtra": "",
+    "difficulty": -1,
+    "difficultyExtra": "",
+    "lastUpdate": "2025-11-16",
+    "dateCreated": "2025-11-16",
+    "related": [65,12],
+    "updateMessage": "",
+    "region": [
+      "China"
+    ],
+    "regionExtra": "",
+    "scale": "110",
+    "scaleExtra": "",
+    "smallCoverImage": "assets/mocImages/110/china/zhuque/zhuque-3/110-zhuque-3-v1.0.jpg",
+    "dimensions": "6.4x6.5x59.8cm",
+    "tags": [],
+    "altTitles": ["ZQ-3","ZQ3","Zhuque 3"],
+    "title": "Zhuque-3",
+    "parts": 1293,
+    "partsExtra": "",
+    "designer": "SkySaac",
+    "designerExtra": "",
+    "fanPictures": [],
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-3/v1.0/ZQ-3_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-3/v1.0/ZQ-3_V1.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-3/v1.0/ZQ-3_V1.0_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-3/v1.0/ZQ-3_V1.0_4.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-3/v1.0/Zhuque_3_V1.0.io",
+            "name": "Zhuque_3_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ]
+  },
+  {
     "id": 234,
     "type": "rocket",
     "dimensionsExtra": "",
@@ -12744,7 +12805,7 @@
     "lastUpdate": "2023-05-07",
     "dateCreated": "2023-05-07",
     "related": [
-      12
+      12,235
     ],
     "updateMessage": "",
     "region": [
@@ -17193,7 +17254,7 @@
     "company": "Landspace",
     "id": 12,
     "related": [
-      65
+      65,235
     ],
     "title": "Zhuque-2 Y1",
     "versions": [

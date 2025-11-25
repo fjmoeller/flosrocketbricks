@@ -21,7 +21,7 @@
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the H3-24W rocket. The four boosters can be separated from the core stage. The second stage can also be separated from the core stage. The payload fairings holds space for a payload.",
-    "rocketDescription": "The H-IIA 2022 rocket is a Japanese orbital rocket. The 2022 variant of the H-IIA rocket has two SRB-As and two SSBs. It first launched in 2005 with its latest launch happening in 2007.",
+    "rocketDescription": "The H3-24W rocket is a Japanese orbital launch vehicle. The fairings have a wider diameter than the L variants. It is being used to launch HTV-X into low earth orbit. It was first launched in 2025.",
     "internalColor": "",
     "scale": "110",
     "parts": 1355,
@@ -57,7 +57,7 @@
     "designerExtra": "",
     "internalColorExtra": "",
     "scaleExtra": "",
-    "partsExtra": "",
+    "partsExtra": "You need to cut the long white hoses to the correct lengths.",
     "dimensionsExtra": "",
     "stabilityExtra": "",
     "difficultyExtra": ""

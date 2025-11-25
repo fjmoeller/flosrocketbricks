@@ -1,6 +1,69 @@
 [
   {
     "company": "",
+    "region": [
+      "Japan"
+    ],
+    "links": [
+      "https://en.wikipedia.org/wiki/H3_(rocket)",
+      "https://global.jaxa.jp/projects/rockets/h3/"
+    ],
+    "type": "rocket",
+    "id": 237,
+    "title": "H3-24W",
+    "altTitles": [],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2025-11-25",
+    "dateCreated": "2025-11-25",
+    "related": [
+      101
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the H3-24W rocket. The four boosters can be separated from the core stage. The second stage can also be separated from the core stage. The payload fairings holds space for a payload.",
+    "rocketDescription": "The H-IIA 2022 rocket is a Japanese orbital rocket. The 2022 variant of the H-IIA rocket has two SRB-As and two SSBs. It first launched in 2005 with its latest launch happening in 2007.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 1355,
+    "dimensions": "9.6x9.6x57.3cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/japan/h/h-3/24w/110-h3-24w-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/japan/h/h3/24w/v1.0/H3-24W_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/japan/h/h3/24w/v1.0/H3-24W_V1.0_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/japan/h/h3/24w/v1.0/H3-24W_V1.0.io",
+            "name": "H-IIA 2022_V3.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "",
     "region": [],
     "links": [],
     "type": "merch",
@@ -92,7 +155,10 @@
     "difficultyExtra": "",
     "lastUpdate": "2025-11-16",
     "dateCreated": "2025-11-16",
-    "related": [65,12],
+    "related": [
+      65,
+      12
+    ],
     "updateMessage": "",
     "region": [
       "China"
@@ -103,7 +169,11 @@
     "smallCoverImage": "assets/mocImages/110/china/zhuque/zhuque-3/110-zhuque-3-v1.0.jpg",
     "dimensions": "6.4x6.5x59.8cm",
     "tags": [],
-    "altTitles": ["ZQ-3","ZQ3","Zhuque 3"],
+    "altTitles": [
+      "ZQ-3",
+      "ZQ3",
+      "Zhuque 3"
+    ],
     "title": "Zhuque-3",
     "parts": 1293,
     "partsExtra": "",
@@ -278,7 +348,9 @@
     "related": [],
     "dimensions": "5.0x5.6x40.2cm",
     "dimensionsExtra": "",
-    "links": ["https://www.nasaspaceflight.com/2025/07/china-roundup-070525/"],
+    "links": [
+      "https://www.nasaspaceflight.com/2025/07/china-roundup-070525/"
+    ],
     "tags": [],
     "region": [
       "China"
@@ -334,7 +406,9 @@
     "altTitles": [
       "L-1011 Tristar"
     ],
-    "related": [228],
+    "related": [
+      228
+    ],
     "dimensions": "42.4x49x16.5cm",
     "dimensionsExtra": "",
     "links": [
@@ -9818,7 +9892,9 @@
     "difficultyExtra": "",
     "lastUpdate": "2023-06-18",
     "dateCreated": "2023-06-18",
-    "related": [],
+    "related": [
+      237
+    ],
     "updateMessage": "",
     "region": [
       "Japan"
@@ -12879,7 +12955,8 @@
     "lastUpdate": "2023-05-07",
     "dateCreated": "2023-05-07",
     "related": [
-      12,235
+      12,
+      235
     ],
     "updateMessage": "",
     "region": [
@@ -17328,7 +17405,8 @@
     "company": "Landspace",
     "id": 12,
     "related": [
-      65,235
+      65,
+      235
     ],
     "title": "Zhuque-2 Y1",
     "versions": [

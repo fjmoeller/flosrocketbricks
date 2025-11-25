@@ -238,6 +238,7 @@
 /moc/233/cygnus-xl/
 /moc/234/neutron/
 /moc/235/zhuque-3/
+/moc/236/long-march-5b-sweater/
 /about/
 /404/
 /blog/

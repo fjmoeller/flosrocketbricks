@@ -1,5 +1,79 @@
 [
   {
+    "company": "",
+    "region": [],
+    "links": [],
+    "type": "merch",
+    "id": 236,
+    "title": "Long March 5B Sweater",
+    "altTitles": [
+      "Merch"
+    ],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2025-11-25",
+    "dateCreated": "2025-11-25",
+    "related": [],
+    "updateMessage": "",
+    "mocDescription": "This is a Long March 5B themed sweater/hoodie I made. The sleeves are themed after the boosters if the rocket. The backside has a Lego Long March 5B together with the logo of the CMS. The front only has the FlosRocketBricks logo on it.",
+    "rocketDescription": "",
+    "internalColor": "-",
+    "scale": "",
+    "parts": -1,
+    "dimensions": "",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/no-scale/merch/long-march-5b/hoodie/v1.0/long-march-5b-hoodie-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/no-scale/merch/long-march-5b/hoodie/v1.0/Long_March_5B_Rocket_Sweater.jpg",
+      "https://files.flosrocketbackend.com/mocs/no-scale/merch/long-march-5b/hoodie/v1.0/Real_Sweater_Backside.jpg",
+      "https://files.flosrocketbackend.com/mocs/no-scale/merch/long-march-5b/hoodie/v1.0/backside.png",
+      "https://files.flosrocketbackend.com/mocs/no-scale/merch/long-march-5b/hoodie/v1.0/sides.png",
+      "https://files.flosrocketbackend.com/mocs/no-scale/merch/long-march-5b/hoodie/v1.0/front.png"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "Long March 5B on the back",
+            "type": "png",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/no-scale/merch/long-march-5b/hoodie/v1.0/backside.png",
+            "name": "backV4.png"
+          },
+          {
+            "description": "FRB front logo",
+            "type": "png",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/no-scale/merch/long-march-5b/hoodie/v1.0/front.png",
+            "name": "FRB%20V1.png"
+          },
+          {
+            "description": "Image for the sleeves",
+            "type": "png",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/no-scale/merch/long-march-5b/hoodie/v1.0/sides.png",
+            "name": "sideV3.png"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
     "id": 235,
     "type": "rocket",
     "dimensionsExtra": "",

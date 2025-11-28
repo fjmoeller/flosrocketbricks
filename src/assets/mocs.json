@@ -7614,11 +7614,11 @@
     "stability": -1,
     "difficulty": -1,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-5/110-long-march-5-v3.5.png",
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-5/110-long-march-5-v3.5.jpg",
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5_3.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5_3.jpg"
     ],
     "versions": [
       {
@@ -7628,9 +7628,9 @@
           {
             "description": "The digital io file of the reentry diorama",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5.io",
             "name": "Long_March_5_V3.5.io"
           }
         ],
@@ -8202,8 +8202,8 @@
           {
             "description": "The digital io file of the rocket",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
+            "export": true,
+            "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2f/shenzhou/v2.1/Long_March_2F_Shenzhou_V2.1.io",
             "name": "Long_March_2F_Shenzhou_V2.1"
           }
@@ -8793,7 +8793,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2d/110-long-march-2d-v2.1.png",
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2d/110-long-march-2d-v2.1.jpg",
     "dimensions": "4.7x4.7x43.0cm",
     "tags": [],
     "altTitles": [
@@ -8809,10 +8809,10 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_3.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_4.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_4.jpg"
     ],
     "versions": [
       {
@@ -8822,25 +8822,25 @@
           {
             "description": "The digital io file of the rocket",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1.io",
             "name": "Long_March_2D_V2.1.io"
           },
           {
             "description": "The digital io file of the fairing variants",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_Fairings.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_Fairings.io",
             "name": "Long_March_2D_V2.1_Fairings.io"
           },
           {
             "description": "The digital io file of the upper stage variants",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_Upper_Stages.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_Upper_Stages.io",
             "name": "Long_March_2D_V2.1_Upper_Stages.io"
           }
         ],
@@ -8967,10 +8967,8 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0_3.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0_4.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0_1.jpg"
     ],
     "versions": [
       {
@@ -8980,17 +8978,17 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0.io",
             "name": "Long_March_2CS-4_V2.0.io"
           },
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_Fairings_V2.0.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_Fairings_V2.0.io",
             "name": "Long_March_2CS-4_Fairings_V2.0.io"
           }
         ],
@@ -9696,7 +9694,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/china/gravity/gravity-1/110-gravity-1-v1.0.png",
+    "smallCoverImage": "assets/mocImages/110/china/gravity/gravity-1/110-gravity-1-v1.0.jpg",
     "dimensions": "7.5x7.5x28.7cm",
     "tags": [],
     "altTitles": [],
@@ -9707,9 +9705,9 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/gravity/gravity-1/v1.0/Orienspace_1_V1.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/gravity/gravity-1/v1.0/Orienspace_1_V1.0_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/gravity/gravity-1/v1.0/Orienspace_1_V1.0_3.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/gravity/gravity-1/v1.0/Orienspace_1_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/gravity/gravity-1/v1.0/Orienspace_1_V1.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/gravity/gravity-1/v1.0/Orienspace_1_V1.0_3.jpg"
     ],
     "versions": [
       {
@@ -9719,8 +9717,9 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/gravity/gravity-1/v1.0/Gravity_1_V1.0.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/gravity/gravity-1/v1.0/Orienspace_1_V1.0.io",
             "name": "Gravity_1_V1.0.io"
           }
         ],
@@ -13203,7 +13202,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-8/long-march-8-2b/110-long-march-8-v3.1.png",
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-8/long-march-8-2b/110-long-march-8-v3.1.jpg",
     "internalColor": "Green",
     "internalColorExtra": "",
     "dimensions": "9.4x8.7x45.4cm",
@@ -13219,9 +13218,9 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1_3.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1_3.jpg"
     ],
     "versions": [
       {
@@ -13231,9 +13230,9 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1.io",
             "name": "Long_March_8_V3.1.io"
           }
         ],
@@ -13397,7 +13396,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-7/long-march-7/110-long-march-7-v3.1.png",
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-7/long-march-7/110-long-march-7-v3.1.jpg",
     "internalColor": "Green",
     "internalColorExtra": "",
     "dimensions": "9.1x9.1x48.6cm",
@@ -13413,9 +13412,9 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7/v3.1/Long_March_7_V3.1_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7/v3.1/Long_March_7_V3.1_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7/v3.1/Long_March_7_V3.1_3.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-7/v3.1/Long_March_7_V3.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-7/v3.1/Long_March_7_V3.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-7/v3.1/Long_March_7_V3.1_3.jpg"
     ],
     "versions": [
       {
@@ -13425,9 +13424,9 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-7/long-march-7/v3.1/Long_March_7_V3.1.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-7/v3.1/Long_March_7_V3.1.io",
             "name": "Long_March_7_V3.1.io"
           }
         ],
@@ -17397,7 +17396,7 @@
     "designer": "SkySaac",
     "typeExtra": "",
     "scale": "110",
-    "smallCoverImage": "assets/mocImages/110/china/zhuque/zhuque-2/y1/110-zhuque-2-y1-v2.3.png",
+    "smallCoverImage": "assets/mocImages/110/china/zhuque/zhuque-2/y1/110-zhuque-2-y1-v2.3.jpg",
     "type": "rocket",
     "dimensionsExtra": "",
     "fanPictures": [],
@@ -17413,12 +17412,12 @@
       {
         "files": [
           {
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/zhuque/zhuque-2/v2.3/V2.3.io",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-2/y-1/v2.3/Zhuque-2_Y1_V2.3.io",
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "name": "V2.3.io"
+            "export": true,
+            "viewer": "V2",
+            "name": "Zhuque-2_Y1_V2.3.io"
           }
         ],
         "versionExtra": "",
@@ -17442,11 +17441,11 @@
     "designerExtra": "",
     "stabilityExtra": "",
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/zhuque/zhuque-2/v2.3/V2.3_cover.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/zhuque/zhuque-2/v2.3/V2.3.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/zhuque/zhuque-2/v2.3/V2.3_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/zhuque/zhuque-2/v2.3/V2.3_3.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/zhuque/zhuque-2/v2.3/V2.3_4.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-2/y-1/v2.3/Zhuque-2_Y1_V2.3_cover.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-2/y-1/v2.3/Zhuque-2_Y1_V2.3_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-2/y-1/v2.3/Zhuque-2_Y1_V2.3_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-2/y-1/v2.3/Zhuque-2_Y1_V2.3_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-2/y-1/v2.3/Zhuque-2_Y1_V2.3_4.jpg"
     ],
     "stability": 4,
     "parts": 527,

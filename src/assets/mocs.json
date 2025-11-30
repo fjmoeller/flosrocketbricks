@@ -7626,7 +7626,14 @@
         "versionExtra": "",
         "files": [
           {
-            "description": "The digital io file of the reentry diorama",
+            "description": "The pdf instructions of the rocket",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-5/v3.5/Long_March_5_V3.5.pdf",
+            "name": "Long_March_5_V3.5.pdf"
+          },
+          {
+            "description": "The digital io file of the rocket",
             "type": "io",
             "export": true,
             "viewer": "V2",

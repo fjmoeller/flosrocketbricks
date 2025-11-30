@@ -8206,6 +8206,13 @@
             "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2f/shenzhou/v2.1/Long_March_2F_Shenzhou_V2.1.io",
             "name": "Long_March_2F_Shenzhou_V2.1"
+          },
+          {
+            "description": "The pdf instructions of the rocket",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2f/shenzhou/v2.1/Long_March_2F_Shenzhou_V2.1.pdf",
+            "name": "Long_March_2F_Shenzhou_V2.1.pdf"
           }
         ],
         "version": "V2.1"

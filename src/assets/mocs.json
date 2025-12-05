@@ -8838,8 +8838,16 @@
             "type": "io",
             "export": true,
             "viewer": "V2",
+            "instructions": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1.io",
             "name": "Long_March_2D_V2.1.io"
+          },
+          {
+            "description": "The pdf instructions of the rocket",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2d/v2.1/Long_March_2D_V2.1_instructions.pdf",
+            "name": "Long_March_2D_V2.1_instructions.pdf"
           },
           {
             "description": "The digital io file of the fairing variants",
@@ -8994,8 +9002,16 @@
             "type": "io",
             "export": true,
             "viewer": "V2",
+            "instructions": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0.io",
             "name": "Long_March_2CS-4_V2.0.io"
+          },
+          {
+            "description": "The pdf instructions of the rocket",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/v2.0/Long_March_2CS-4_V2.0_instructions.pdf",
+            "name": "Long_March_2CS-4_V2.0_instructions.pdf"
           },
           {
             "description": "The digital io file",

@@ -17447,7 +17447,15 @@
             "type": "io",
             "export": true,
             "viewer": "V2",
+            "instructions": "V2",
             "name": "Zhuque-2_Y1_V2.3.io"
+          },
+          {
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/zhuque/zhuque-2/y-1/v2.3/Zhuque-2_Y1_V2.3_instructions.pdf",
+            "description": "The pdf instructions of the rocket",
+            "type": "pdf",
+            "export": false,
+            "name": "Zhuque-2_Y1_V2.3_instructions.io"
           }
         ],
         "versionExtra": "",

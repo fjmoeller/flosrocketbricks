@@ -9751,6 +9751,12 @@
             "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/china/gravity/gravity-1/v1.0/Gravity_1_V1.0.io",
             "name": "Gravity_1_V1.0.io"
+          },
+          {
+            "description": "The digital pdf instructions",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/gravity/gravity-1/v1.0/Gravity_1_V1.0_instructions.pdf",
+            "name": "Gravity_1_V1.0_instructions.pdf"
           }
         ],
         "version": "V1.0"

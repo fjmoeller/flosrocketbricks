@@ -1,5 +1,68 @@
 [
   {
+    "company": "INNOSPACE",
+    "region": [
+      "South Korea"
+    ],
+    "links": [
+      "https://www.innospc.com/shop_add_page/index.htm?page_code=sub01_01_2"
+    ],
+    "type": "rocket",
+    "id": 239,
+    "title": "HANBIT-Nano LiMER",
+    "altTitles": [
+      "HANBIT-Nano LiMER"
+    ],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2025-12-19",
+    "dateCreated": "2025-12-19",
+    "related": [
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the HANBIT-Nano LiMER rocket. The second stage and first stage can be separated. There is a tiny space for a payload available.",
+    "rocketDescription": "The HANBIT-Nano LiMER rocket is a two stage hybrid rocket by the South Korean company INNOSPACE. The first launch is planned to be from brazil.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 61,
+    "dimensions": "1.6x1.6x19.7cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/south-korea/hanbit/nano/limer/110-hanbit-nano-limer-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/south-korea/hanbit/nano/limer/v1.0/HANBIT-Nano%20LiMER_V1.0.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/south-korea/hanbit/nano/limer/v1.0/HANBIT-Nano%20LiMER_V1.0_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/south-korea/hanbit/nano/limer/v1.0/HANBIT-Nano%20LiMER_V1.0.io",
+            "name": "HANBIT-Nano LiMER_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
     "company": "",
     "region": [
       "USA"
@@ -53,7 +116,7 @@
             "name": "SLS_B1_V1.3.io"
           }
         ],
-        "version": "V1.0"
+        "version": "V1.3"
       }
     ],
     "companyExtra": "",

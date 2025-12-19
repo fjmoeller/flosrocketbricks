@@ -240,6 +240,7 @@
 /moc/235/zhuque-3/
 /moc/236/long-march-5b-sweater/
 /moc/237/h3-24w/
+/moc/238/space-launch-system-block-1-artemis-1/
 /about/
 /404/
 /blog/

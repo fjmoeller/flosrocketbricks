@@ -2,6 +2,74 @@
   {
     "company": "",
     "region": [
+      "USA"
+    ],
+    "links": [
+      "https://en.wikipedia.org/wiki/Space_Launch_System"
+    ],
+    "type": "rocket",
+    "id": 238,
+    "title": "Space Launch System Block 1 Artemis 1",
+    "altTitles": [
+      "Artemis 1",
+      "SLS Block 1"
+    ],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2025-12-19",
+    "dateCreated": "2025-12-19",
+    "related": [
+      20,
+      162
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Space Launch System Block 1 rocket. The boosters can be taken of from the core stage. The ICPS upper stage is not attached ot the core stage. Orion is placed on top of the upper stage and can, just as the LES, be taken of.",
+    "rocketDescription": "The Space Launch System Block 1 rocket flew first on the Artemis 1 mission in 2022, flying the orion spacecraft onto a trajectory around the moon. It used two large solid rocket motors with a hydrogen core stage as well as upper stage.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 3998,
+    "dimensions": "17.4x21.4x88.8cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/usa/space-launch-system/block-1/artemis-1/110-space-launch-system-block-1-artemis-1-v1.3.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-1/v1.3/SLS_B1_V1.3_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-1/v1.3/SLS_B1_V1.3_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-1/v1.3/SLS_B1_V1.3_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-1/v1.3/SLS_B1_V1.3_4.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-1/v1.3/SLS_B1_V1.3.io",
+            "name": "SLS_B1_V1.3.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "With the small stand it's 89.8cm high.",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "",
+    "region": [
       "Japan"
     ],
     "links": [
@@ -45,7 +113,7 @@
             "export": true,
             "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/japan/h/h3/24w/v1.0/H3-24W_V1.0.io",
-            "name": "H-IIA 2022_V3.0.io"
+            "name": "H3-24W_V1.0.io"
           }
         ],
         "version": "V1.0"

@@ -13401,6 +13401,13 @@
             "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1.io",
             "name": "Long_March_8_V3.1.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-8/2b/v3.1/Long_March_8_V3.1_instructions.pdf",
+            "name": "Long_March_8_V3.1_instructions.pdf"
           }
         ],
         "version": "V3.1"
@@ -13595,6 +13602,12 @@
             "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-7/v3.1/Long_March_7_V3.1.io",
             "name": "Long_March_7_V3.1.io"
+          },{
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-7/v3.1/Long_March_7_V3.1_instructions.pdf",
+            "name": "Long_March_7_V3.1_instructions.pdf"
           }
         ],
         "version": "V3.1"

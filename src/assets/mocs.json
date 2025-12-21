@@ -8189,10 +8189,10 @@
     "stability": -1,
     "difficulty": -1,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-6/110-long-march-6-v2.1.png",
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-6/110-long-march-6-v2.1.jpg",
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/v2.1/Long_March_6_V2.1_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/v2.1/Long_March_6_V2.1_2.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-6/v2.1/Long_March_6_V2.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-6/v2.1/Long_March_6_V2.1_2.jpg"
     ],
     "versions": [
       {
@@ -8202,10 +8202,18 @@
           {
             "description": "The digital io file of the rocket",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-6/v2.1/Long_March_6_V2.1.io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-6/v2.1/Long_March_6_V2.1.io",
             "name": "Long_March_6_V2.1.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-6/v2.1/Long_March_6_V2.1_instructions.pdf",
+            "name": "Long_March_6_V2.1_instructions.pdf"
           }
         ],
         "version": "V2.1"
@@ -8521,10 +8529,10 @@
     "stability": -1,
     "difficulty": -1,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/china/kuaizhou/kuaizhou-1/kuaizhou-1a/110-kuaizhou-1a-v1.0.png",
+    "smallCoverImage": "assets/mocImages/110/china/kuaizhou/kuaizhou-1/kuaizhou-1a/110-kuaizhou-1a-v1.0.jpg",
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-1/kuaizhou-1a/v1.0/KZ-1A_V1.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-1/kuaizhou-1a/v1.0/KZ-1A_V1.0_2.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/kz/kz-1a/v1.0/KZ-1A_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/kz/kz-1a/v1.0/KZ-1A_V1.0_2.jpg"
     ],
     "versions": [
       {
@@ -8534,10 +8542,17 @@
           {
             "description": "The digital io file of the rocket",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-1/kuaizhou-1a/v1.0/KZ-1A_V1.0.io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/kz/kz-1a/v1.0/KZ-1A_V1.0.io",
             "name": "KZ-1A_V1.0.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/kz/kz-1a/v1.0/KZ-1A_V1.0_instructions.pdf",
+            "name": "KZ-1A_V1.0_instructions.pdf"
           }
         ],
         "version": "V1.0"
@@ -8714,7 +8729,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/china/ceres/ceres-1/110-ceres-1-v1.0.png",
+    "smallCoverImage": "assets/mocImages/110/china/ceres/ceres-1/110-ceres-1-v1.0.jpg",
     "dimensions": "1.6x1.6x17.4cm",
     "tags": [],
     "altTitles": [],
@@ -8725,8 +8740,8 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/v1.0/Ceres_1_V1.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/v1.0/Ceres_1_V1.0_2.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/ceres/ceres-1/v1.0/Ceres_1_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/ceres/ceres-1/v1.0/Ceres_1_V1.0_2.jpg"
     ],
     "versions": [
       {
@@ -8736,10 +8751,17 @@
           {
             "description": "The digital io file of the rocket",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/ceres/ceres-1/v1.0/Ceres_1_V1.0.io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/ceres/ceres-1/v1.0/Ceres_1_V1.0.io",
             "name": "Ceres_1_V1.0.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/ceres/ceres-1/v1.0/Ceres_1_V1.0_instructions.pdf",
+            "name": "Ceres_1_V1.0_instructions.pdf"
           }
         ],
         "version": "V1.0"
@@ -9793,7 +9815,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/china/kuaizhou/kuaizhou-11/110-kuaizhou-11-v1.0.png",
+    "smallCoverImage": "assets/mocImages/110/china/kuaizhou/kuaizhou-11/110-kuaizhou-11-v1.0.jpg",
     "dimensions": "5x5x25cm",
     "tags": [],
     "altTitles": [
@@ -9806,9 +9828,9 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-11/v1.0/KZ-11_V1.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-11/v1.0/KZ-11_V1.0_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-11/v1.0/KZ-11_V1.0_3.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/kz/kz-11/v1.0/KZ-11_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/kz/kz-11/v1.0/KZ-11_V1.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/kz/kz-11/v1.0/KZ-11_V1.0_3.jpg"
     ],
     "versions": [
       {
@@ -9818,9 +9840,17 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/kuaizhou/kuaizhou-11/v1.0/KZ-11_V1.0.io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/kz/kz-11/v1.0/KZ-11_V1.0.io",
             "name": "KZ-11_V1.0.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/kz/kz-11/v1.0/KZ-11_V1.0_instructions.pdf",
+            "name": "KZ-11_V1.0_instructions.pdf"
           }
         ],
         "version": "V1.0"
@@ -9922,7 +9952,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/china/jielong/jielong-3/110-jielong-3-v3.0.png",
+    "smallCoverImage": "assets/mocImages/110/china/jielong/jielong-3/110-jielong-3-v3.0.jpg",
     "dimensions": "3x3x28.5cm",
     "tags": [],
     "altTitles": [
@@ -9936,7 +9966,7 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/jielong/jielong-3/v3.0/Jielong_3_V3.0_1.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/jielong/jielong-3/v3.0/Jielong_3_V3.0_1.jpg"
     ],
     "versions": [
       {
@@ -9946,9 +9976,18 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/jielong/jielong-3/v3.0/Jielong_3_V3.0.io",
+            "export": true,
+            "viewer": "V2",
+            "instructions": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/jielong/jielong-3/v3.0/Jielong_3_V3.0.io",
             "name": "Jielong_3_V3.0.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/jielong/jielong-3/v1.0/Jielong_3_V3.0_instructions.pdf",
+            "name": "Jielong_3_V3.0_instructions.pdf"
           }
         ],
         "version": "V3.0"

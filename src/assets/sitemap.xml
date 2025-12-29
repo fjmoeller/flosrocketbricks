@@ -27,7 +27,6 @@
   </url>
 
 
-
   <url>
     <loc>https://flosrocketbricks.com/moc/239/hanbit-nano-limer/</loc>
     <image:image>
@@ -1587,20 +1586,34 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/56/diamant-bp4/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/france/diamant/bp4/110-diamant-bp4-v2.1.png
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/france/diamant/bp4/v2.1/Diamant_BP4_V2.1_1.jp
       </image:loc>
+      <image:title>LEGO MOC Diamant BP4 in 1:110 Image 1</image:title>
+      <image:caption>Diamant BP4 is a LEGO MOC of the type Rocket made out of 69 bricks. It is made by SkySaac.
+      </image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/55/diamant-b/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/france/diamant/b/110-diamant-b-v2.1.png</image:loc>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/france/diamant/b/v2.1/Diamant_B_V2.1_1.jp
+      </image:loc>
+      <image:title>LEGO MOC Diamant B in 1:110 Image 1</image:title>
+      <image:caption>Diamant B is a LEGO MOC of the type Rocket made out of 54 bricks. It is made by SkySaac.
+      </image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://flosrocketbricks.com/moc/54/diamant-a/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/france/diamant/a/110-diamant-a-v2.1.png</image:loc>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/france/diamant/a/v2.1/Diamant_A_V2.1_1.jp
+      </image:loc>
+      <image:title>LEGO MOC Diamant A in 1:110 Image 1</image:title>
+      <image:caption>Diamant A is a LEGO MOC of the type Rocket made out of 42 bricks. It is made by SkySaac.
+      </image:caption>
     </image:image>
   </url>
   <url>

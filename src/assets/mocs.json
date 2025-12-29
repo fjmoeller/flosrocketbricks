@@ -13817,7 +13817,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/france/diamant/bp4/110-diamant-bp4-v2.1.png",
+    "smallCoverImage": "assets/mocImages/110/france/diamant/bp4/110-diamant-bp4-v2.1.jpg",
     "internalColor": "-",
     "internalColorExtra": "",
     "dimensions": "2.7x2.7x19.5cm",
@@ -13825,7 +13825,7 @@
     "tags": [],
     "altTitles": [],
     "parts": 69,
-    "partsExtra": "The rocket can be build completely out of Lego bricks.",
+    "partsExtra": "",
     "title": "Diamant BP4",
     "stability": 5,
     "stabilityExtra": "",
@@ -13833,7 +13833,7 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/france/diamant/bp4/v2.1/Diamant_BP4_V2.1_1.png"
+      "https://files.flosrocketbackend.com/mocs/110/france/diamant/bp4/v2.1/Diamant_BP4_V2.1_1.jpg"
     ],
     "versions": [
       {
@@ -13843,9 +13843,9 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/france/diamant/bp4/v2.1/Diamant_BP4_V2.1.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/france/diamant/bp4/v2.1/Diamant_BP4_V2.1.io",
             "name": "Diamant_BP4_V2.1.io"
           }
         ],
@@ -13879,7 +13879,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/france/diamant/b/110-diamant-b-v2.1.png",
+    "smallCoverImage": "assets/mocImages/110/france/diamant/b/110-diamant-b-v2.1.jpg",
     "internalColor": "-",
     "internalColorExtra": "",
     "dimensions": "2.7x2.7x21.1cm",
@@ -13887,7 +13887,7 @@
     "tags": [],
     "altTitles": [],
     "parts": 54,
-    "partsExtra": "The rocket can be build completely out of Lego bricks.",
+    "partsExtra": "",
     "title": "Diamant B",
     "stability": 4,
     "stabilityExtra": "",
@@ -13895,7 +13895,7 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/france/diamant/b/v2.1/Diamant_B_V2.1_1.png"
+      "https://files.flosrocketbackend.com/mocs/110/france/diamant/b/v2.1/Diamant_B_V2.1_1.jpg"
     ],
     "versions": [
       {
@@ -13905,9 +13905,9 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/france/diamant/b/v2.1/Diamant_B_V2.1.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/france/diamant/b/v2.1/Diamant_B_V2.1.io",
             "name": "Diamant_B_V2.1.io"
           }
         ],
@@ -13941,7 +13941,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/france/diamant/a/110-diamant-a-v2.1.png",
+    "smallCoverImage": "assets/mocImages/110/france/diamant/a/110-diamant-a-v2.1.jpg",
     "internalColor": "-",
     "internalColorExtra": "",
     "dimensions": "2.7x2.7x17cm",
@@ -13949,7 +13949,7 @@
     "tags": [],
     "altTitles": [],
     "parts": 42,
-    "partsExtra": "The rocket can be build completely out of Lego bricks.",
+    "partsExtra": "",
     "title": "Diamant A",
     "stability": 4,
     "stabilityExtra": "",
@@ -13957,7 +13957,7 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/france/diamant/a/v2.1/Diamant_A_V2.1_1.png"
+      "https://files.flosrocketbackend.com/mocs/110/france/diamant/a/v2.1/Diamant_A_V2.1_1.jpg"
     ],
     "versions": [
       {
@@ -13967,9 +13967,9 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/france/diamant/a/v2.1/Diamant_A_V2.1.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/france/diamant/a/v2.1/Diamant_A_V2.1.io",
             "name": "Diamant_A_V2.1.io"
           }
         ],

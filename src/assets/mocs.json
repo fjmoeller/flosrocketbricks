@@ -19,6 +19,7 @@
     "lastUpdate": "2026-01-01",
     "dateCreated": "2026-01-01",
     "related": [
+      220
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Long March 12A rocket. The 2nd stage can be detached form the 1st stage. The payload fairings have space for a payload. The first stage can either be in ascend configuration or landing configuration with extended landing legs and grid fins.",
@@ -1406,7 +1407,9 @@
     "designer": "SkySaac",
     "lastUpdate": "2024-12-21",
     "dateCreated": "2024-12-21",
-    "related": [],
+    "related": [
+      240
+    ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Long March 12 rocket. The first two stages can be separated. the fairing halves can hold a payload and can be taken off from the fairing.",
     "rocketDescription": "The Long March 12 is a Chinese orbital rocket that was first launched in 2024. It has two stages and is 62 meters high. It can launch up to 12 tons into low earth orbit.",

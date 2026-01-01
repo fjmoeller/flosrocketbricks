@@ -1,5 +1,71 @@
 [
   {
+    "company": "",
+    "region": [
+      "China"
+    ],
+    "links": [
+      "https://en.wikipedia.org/wiki/Long_March_12A",
+      "https://nextspaceflight.com/rockets/308/"
+    ],
+    "type": "rocket",
+    "id": 240,
+    "title": "Long March 12A",
+    "altTitles": [
+      "LM-12A","CZ-12A"
+    ],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-01-01",
+    "dateCreated": "2026-01-01",
+    "related": [
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Long March 12A rocket. The 2nd stage can be detached form the 1st stage. The payload fairings have space for a payload. The first stage can either be in ascend configuration or landing configuration with extended landing legs and grid fins.",
+    "rocketDescription": "The Long March 12A rocket is a Chinese partially reusable rocket, that uses liquid methane and liquid oxygen for the first and second stage.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 919,
+    "dimensions": "6.1x6.1x64cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-12/a/110-long-march-12a-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/a/v1.0/Long_March_12A_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/a/v1.0/Long_March_12A_V1.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/a/v1.0/Long_March_12A_V1.0_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/a/v1.0/Long_March_12A_V1.0_4.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/a/v1.0/Long_March_12A_V1.0.io",
+            "name": "Long_March_12A_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
     "company": "INNOSPACE",
     "region": [
       "South Korea"

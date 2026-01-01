@@ -242,6 +242,7 @@
 /moc/237/h3-24w/
 /moc/238/space-launch-system-block-1-artemis-1/
 /moc/239/hanbit-nano-limer/
+/moc/240/long-march-12a/
 /about/
 /404/
 /blog/

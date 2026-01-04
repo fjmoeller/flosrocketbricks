@@ -3,7 +3,7 @@
     "id": 0,
     "name": "Long March",
     "description": "The Long March series of rockets is a Chinese family of orbital rocket systems.",
-    "cover": "assets/collections/0/long-march/Long_March_Family_V1.0.png",
+    "cover": "assets/collections/0/long-march/Long_March_Family_V1.1.jpg",
     "subCollections": [
       {
         "id": 0,
@@ -162,7 +162,7 @@
     "id": 2,
     "name": "Atlas",
     "description": "The Atlas series has been used from the beginning of the space age until today.",
-    "cover": "assets/collections/2/atlas/Atlas_Family_V1.0.png",
+    "cover": "assets/collections/2/atlas/Atlas_Family_V1.1.jpg",
     "subCollections": [
       {
         "id": 0,

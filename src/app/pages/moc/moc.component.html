@@ -3,7 +3,7 @@
     <div class="slideshow-container col-md-7">
       @for (picture of moc.pictures; track picture; let index = $index) {
         <div [style.display]="(index===slideIndex) ? 'block' : 'none'">
-          <img [src]="picture" class="d-block w-100" [title]="moc.title+ ' by '+moc.designer"
+          <img [src]="picture" class="d-block w-100" [title]="moc.title+ ' by '+moc.designer" style="aspect-ratio: 1 / 0.8;object-fit: contain;"
                [alt]="moc.title + ' - LEGO '+moc.type+' Spaceflight MOC built from '+ moc.parts +' Bricks, made by '+moc.designer">
         </div>
       }

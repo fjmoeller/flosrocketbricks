@@ -14,6 +14,7 @@
     "lastUpdate": "2026-01-03",
     "dateCreated": "2026-01-03",
     "related": [
+      205,133,132,111
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Falcon 9 Block 5 rocket. The two stages can be separated from one another. The payload fairing can split in two and has enough space for a payload. The first stage can either be in its ascend or landing configuration.",
@@ -213,7 +214,7 @@
       20,
       162
     ],
-    "updateMessage": "",
+    "updateMessage": "A few pieces are not connected to the boosters, I am working on a fix.",
     "mocDescription": "This is a MOC of the Space Launch System Block 1 rocket. The boosters can be taken of from the core stage. The ICPS upper stage is not attached ot the core stage. Orion is placed on top of the upper stage and can, just as the LES, be taken of.",
     "rocketDescription": "The Space Launch System Block 1 rocket flew first on the Artemis 1 mission in 2022, flying the orion spacecraft onto a trajectory around the moon. It used two large solid rocket motors with a hydrogen core stage as well as upper stage.",
     "internalColor": "",
@@ -2510,7 +2511,7 @@
     "lastUpdate": "2024-05-29",
     "dateCreated": "2024-05-29",
     "related": [
-      206
+      206,241
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Falcon 9 Block 5 rocket with the EarthCARE satellite as a payload. The first two stages can be separated from one another. The payload fairing can split in two and fits the EarthCARE satellite.",
@@ -7949,7 +7950,7 @@
     "lastUpdate": "2023-09-08",
     "dateCreated": "2023-09-08",
     "related": [
-      132
+      132,241
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Falcon 9 Block 4 rocket. The second stage and the first stage can be separated. The fairings holds enough space for a payload. The legs can be extended and with the extra parts the first stage can be displayed in its landed state. The gridfins can also be displayed extended.",
@@ -8020,7 +8021,8 @@
       130,
       131,
       133,
-      201
+      201,
+      241
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Falcon 9 1.0 rocket. The second stage and the first stage can be separated, they are only loosely connected. The Dragon spacecraft can also be separated from the upper stage.",
@@ -9545,7 +9547,7 @@
     "lastUpdate": "2023-08-05",
     "dateCreated": "2023-09-19",
     "related": [
-      112
+      112,241
     ],
     "updateMessage": "",
     "region": [

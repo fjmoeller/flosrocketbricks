@@ -4,7 +4,8 @@
     <h4>Well it's not like you can do anything without the password anyway :P</h4>
     <div>
       <form [formGroup]="form" (ngSubmit)="loadComments()" autocomplete="on">
-        <input name="password" autocomplete="admin-password" formControlName="adminPassword" type="password" placeholder="Admin password">
+        <input name="password" autocomplete="admin-password" formControlName="adminPassword" type="password"
+               placeholder="Admin password">
         <button type="submit" class="btn inv-interact-button text-decoration-none text-align-center">
           Save
         </button>
@@ -13,8 +14,8 @@
     <div style="display:flex;justify-content: center; border-left: 1px solid white; border-right: 1px solid white">
       <div>
         @for (comment of comments; track comment) {
-          <div>{{comment.target}}</div>
-          <app-comment [comment]="comment.comment" [isOwned]="true" [isAdminView]="true"
+          <a [href]="comment.href">{{ comment.target }}</a>
+          <app-comment [comment]="comment.comment" [isOwned]="true" [isAdminView]="true" [reply]="comment.reply"
                        (deleteEmitter)="deleteComment($event,comment.target)"
                        (editEmitter)="editComment($event)"></app-comment>
         }

@@ -12,6 +12,8 @@ import { Location } from '@angular/common';
 import {InstructionViewerComponent} from "./pages/instruction-viewer/instruction-viewer.component";
 import { BlogComponent } from './pages/blog/blog.component';
 import {AdminComponent} from "./pages/admin/admin.component";
+import {SuggestionsComponent} from "./pages/suggestions/suggestions.component";
+import {PrivacyPolicyComponent} from "./pages/privacy-policy/privacy-policy.component";
 
 const __stripTrailingSlash = (Location as any).stripTrailingSlash;
 
@@ -28,6 +30,8 @@ export const routes: Routes = [
   { path: 'about/.', component: AboutComponent },
   { path: 'search/.', component: SearchComponent },
   { path: 'start/.', component: StartComponent },
+  { path: 'suggestions/.', component: SuggestionsComponent },
+  { path: 'privacy-policy/.', component: PrivacyPolicyComponent },
   { path: 'blog/.', component: BlogOverviewComponent },
   { path: 'blog/:id/:name/.', component: BlogComponent },
   { path: 'instruction-viewer/.', component: InstructionViewerComponent },

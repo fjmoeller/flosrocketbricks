@@ -214,7 +214,7 @@
       20,
       162
     ],
-    "updateMessage": "A few pieces are not connected to the boosters, I am working on a fix.",
+    "updateMessage": "",
     "mocDescription": "This is a MOC of the Space Launch System Block 1 rocket. The boosters can be taken of from the core stage. The ICPS upper stage is not attached ot the core stage. Orion is placed on top of the upper stage and can, just as the LES, be taken of.",
     "rocketDescription": "The Space Launch System Block 1 rocket flew first on the Artemis 1 mission in 2022, flying the orion spacecraft onto a trajectory around the moon. It used two large solid rocket motors with a hydrogen core stage as well as upper stage.",
     "internalColor": "",

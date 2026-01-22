@@ -244,6 +244,7 @@
 /moc/239/hanbit-nano-limer/
 /moc/240/long-march-12a/
 /moc/241/falcon-9-block-5/
+/moc/242/space-launch-system-block-1-artemis-2/
 /about/
 /404/
 /blog/

@@ -1,5 +1,73 @@
 [
   {
+    "company": "",
+    "region": [
+      "USA"
+    ],
+    "links": [
+      "https://en.wikipedia.org/wiki/Space_Launch_System"
+    ],
+    "type": "rocket",
+    "id": 242,
+    "title": "Space Launch System Block 1 Artemis 2",
+    "altTitles": [
+      "Artemis 2",
+      "SLS Block 1"
+    ],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-01-22",
+    "dateCreated": "2026-01-22",
+    "related": [
+      20,
+      162,
+      238
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Space Launch System Block 1 rocket. The boosters can be taken of from the core stage. The ICPS upper stage is not attached ot the core stage. Orion is placed on top of the upper stage and can, just as the LES, be taken of.",
+    "rocketDescription": "The Space Launch System Block 1 rocket flew first on the Artemis 1 mission in 2022, flying the orion spacecraft onto a trajectory around the moon. It used two large solid rocket motors with a hydrogen core stage as well as upper stage.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 4177,
+    "dimensions": "17.4x21.4x88.8cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/usa/space-launch-system/block-1/artemis-2/110-space-launch-system-block-1-artemis-2-v1.4.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-2/v1.4/SLS_B1_Artemis_2_V1.4_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-2/v1.4/SLS_B1_Artemis_2_V1.4_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-2/v1.4/SLS_B1_Artemis_2_V1.4_3.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-2/v1.4/SLS_B1_Artemis_2_V1.4.io",
+            "name": "SLS_B1_Artemis_2_V1.4.io"
+          }
+        ],
+        "version": "V1.4"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "With the small stand it's 89.8cm high.",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
     "company": "SpaceX",
     "region": [
       "USA"
@@ -208,18 +276,19 @@
     ],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2025-12-19",
+    "lastUpdate": "2026-01-22",
     "dateCreated": "2025-12-19",
     "related": [
       20,
-      162
+      162,
+      242
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Space Launch System Block 1 rocket. The boosters can be taken of from the core stage. The ICPS upper stage is not attached ot the core stage. Orion is placed on top of the upper stage and can, just as the LES, be taken of.",
     "rocketDescription": "The Space Launch System Block 1 rocket flew first on the Artemis 1 mission in 2022, flying the orion spacecraft onto a trajectory around the moon. It used two large solid rocket motors with a hydrogen core stage as well as upper stage.",
     "internalColor": "",
     "scale": "110",
-    "parts": 4111,
+    "parts": 4129,
     "dimensions": "17.4x21.4x88.8cm",
     "stability": -1,
     "difficulty": -1,
@@ -232,6 +301,21 @@
       "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-1/v1.3/SLS_B1_V1.3_4.jpg"
     ],
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-2/v1.4/SLS_B1_Artemis_2_V1.4.io",
+            "name": "SLS_B1_Artemis_2_V1.4.io"
+          }
+        ],
+        "version": "V1.4"
+      },
       {
         "changelog": "",
         "versionExtra": "",

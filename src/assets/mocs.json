@@ -7,6 +7,67 @@
     "links": [
       "https://en.wikipedia.org/wiki/Space_Launch_System"
     ],
+    "type": "other",
+    "id": 243,
+    "title": "Tale of Artemis",
+    "altTitles": [],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-01-26",
+    "dateCreated": "2026-01-26",
+    "related": [
+      216,208,207
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC showing the Tale of Artemis. It fits together with all the other tale MOCs and official sets.",
+    "rocketDescription": "This Tale displays the Artemis logo as well as the Space Launch System in its Block 1 configuration.",
+    "internalColor": "",
+    "scale": "",
+    "parts": 290,
+    "dimensions": "3.2x9.6x14.7cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/no-scale/tales/tale-of-artemis/tale_of_artemis_v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-artemis/v1.0/Tale_of_Artemis_V1.0_1.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-artemis/v1.0/Tale_Of_Artemis_V1.0.io",
+            "name": "Tale_Of_Artemis_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "",
+    "region": [
+      "USA"
+    ],
+    "links": [
+      "https://en.wikipedia.org/wiki/Space_Launch_System"
+    ],
     "type": "rocket",
     "id": 242,
     "title": "Space Launch System Block 1 Artemis 2",

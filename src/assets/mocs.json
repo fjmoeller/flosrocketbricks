@@ -10854,7 +10854,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/ela-3/cazes/110-ela-3-cazes-v5.1.png",
+    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/ela-3/cazes/110-ela-3-cazes-v5.1.jpg",
     "dimensions": "27.2x50.4x47.7cm",
     "tags": [],
     "altTitles": [
@@ -10867,11 +10867,11 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_3.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_4.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_5.png"
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_5.jpg"
     ],
     "versions": [
       {
@@ -10881,16 +10881,16 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_pub.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1_pub.io",
             "name": "CAZES_V5.1_pub.io"
           },
           {
             "description": "The pdf instructions",
             "type": "pdf",
             "export": false,
-            "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1.pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/cazes/v5.1/CAZES_V5.1.pdf",
             "name": "CAZES_V5.1.pdf"
           }
         ],
@@ -11658,7 +11658,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/ela-3/launchtable/110-ela-3-launchtable-v2.0.png",
+    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/ela-3/launchtable/110-ela-3-launchtable-v2.0.jpg",
     "dimensions": "23.2x19.1x55.6cm",
     "tags": [],
     "altTitles": [
@@ -11672,12 +11672,12 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_3.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_4.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_5.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_6.png"
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/launchtable/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/launchtable/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/launchtable/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/launchtable/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/launchtable/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_5.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/launchtable/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_6.jpg"
     ],
     "versions": [
       {
@@ -11687,16 +11687,16 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_pub.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/launchtable/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_pub.io",
             "name": "ELA_3_Ariane_5_Launch_Table_V2.0_pub.io"
           },
           {
             "description": "The pdf instructions",
             "type": "pdf",
             "export": false,
-            "link": "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/ela-3/transporter/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_instructions.pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/ela-3/launchtable/v2.0/ELA_3_Ariane_5_Launch_Table_V2.0_instructions.pdf",
             "name": "ELA_3_Ariane_5_Launch_Table_V2.0_instructions.pdf"
           }
         ],

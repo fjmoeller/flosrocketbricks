@@ -2,6 +2,66 @@
   {
     "company": "",
     "region": [
+      "China"
+    ],
+    "links": [
+    ],
+    "type": "other",
+    "id": 244,
+    "title": "Mengzhou Tracked Recovery Ship",
+    "altTitles": [],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-02-06",
+    "dateCreated": "2026-02-06",
+    "related": [
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the tracked recovery ship being used for Mengzhou. It includes the Mengzhou capsule as seen in renders.",
+    "rocketDescription": "",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 636,
+    "dimensions": "21.7x9x11.7cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/mengzhou/tracked-recovery-ship/110-mengzhou_recovery_ship_v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/mengzhou/tracked-recovery-ship/v1.0/Mengzhou_Recovery_Ship_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/mengzhou/tracked-recovery-ship/v1.0/Mengzhou_Recovery_Ship_V1.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/mengzhou/tracked-recovery-ship/v1.0/Mengzhou_Recovery_Ship_V1.0_3.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/mengzhou/tracked-recovery-ship/v1.0/Mengzhou_Recovery_Ship_V1.0.io",
+            "name": "Mengzhou_Recovery_Ship_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "",
+    "region": [
       "USA"
     ],
     "links": [

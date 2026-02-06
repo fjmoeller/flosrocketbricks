@@ -246,6 +246,7 @@
 /moc/241/falcon-9-block-5/
 /moc/242/space-launch-system-block-1-artemis-2/
 /moc/243/tale-of-artemis/
+/moc/244/mengzhou-tracked-recovery-ship/
 /about/
 /404/
 /blog/

@@ -364,6 +364,12 @@
             "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/south-korea/hanbit/nano/limer/v1.0/HANBIT-Nano%20LiMER_V1.0.io",
             "name": "HANBIT-Nano LiMER_V1.0.io"
+          },
+          {
+            "description": "The digital pdf instructions",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/south-korea/hanbit/nano/limer/v1.0/HANBIT-Nano_LiMER_V1.0_instructions.pdf",
+            "name": "HANBIT-Nano_LiMER_V1.0_instructions.pdf"
           }
         ],
         "version": "V1.0"

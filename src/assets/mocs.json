@@ -6,6 +6,64 @@
     ],
     "links": [
     ],
+    "type": "rocket",
+    "id": 245,
+    "title": "Long March 10A Mengzhou IFA",
+    "altTitles": [],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-02-17",
+    "dateCreated": "2026-02-17",
+    "related": [
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Long March 10A rocket in its Mengzhou inflight abort test configuration.",
+    "rocketDescription": "This rocket was launched in 2026. The Mengzhou capsule successfully aborted and got recovered at sea. The booster landed successfully next to the landing barge on the water.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 1009,
+    "dimensions": "6.4x6.4x48.1cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-10/a/ifa/110-long-march-10a-mengzhou-ifa-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-10/a/ifa/v1.0/Long_March_10A_Mengzhou_IFA_V1.0_1.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-10/a/ifa/v1.0/Long_March_10A_Mengzhou_IFA_V1.0.io",
+            "name": "Long_March_10A_Mengzhou_IFA_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "",
+    "region": [
+      "China"
+    ],
+    "links": [
+    ],
     "type": "other",
     "id": 244,
     "title": "Mengzhou Tracked Recovery Ship",

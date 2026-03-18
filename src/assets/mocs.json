@@ -7353,6 +7353,12 @@
             "instructions": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v3.4/Ariane_64_V3.4.io",
             "name": "Ariane_64_V3.4.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/64/v3.4/Ariane_64_V3.4.pdf",
+            "name": "Ariane_64_V3.4.pdf"
           }
         ],
         "version": "V3.4"

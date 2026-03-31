@@ -197,19 +197,19 @@
     ],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2026-03-10",
+    "lastUpdate": "2026-03-31",
     "dateCreated": "2026-01-22",
     "related": [
       20,
       162,
       238
     ],
-    "updateMessage": "This rocket will get a very small update in the next two days.",
+    "updateMessage": "",
     "mocDescription": "This is a MOC of the Space Launch System Block 1 rocket. The boosters can be taken of from the core stage. The ICPS upper stage is not attached ot the core stage. Orion is placed on top of the upper stage and can, just as the LES, be taken of.",
     "rocketDescription": "The Space Launch System Block 1 rocket will fly four astronauts around the moon in 2026.",
     "internalColor": "",
     "scale": "110",
-    "parts": 4168,
+    "parts": 4126,
     "dimensions": "17.4x21.4x88.8cm",
     "stability": -1,
     "difficulty": -1,
@@ -256,6 +256,27 @@
           }
         ],
         "version": "V1.5"
+      },
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-2/v1.6/SLS_B1_Artemis_2_V1.6_instructions.io",
+            "name": "SLS_B1_Artemis_2_V1.6.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/space-launch-system/block-1/artemis-2/v1.6/SLS_B1_Artemis_2_V1.6_instructions.pdf",
+            "name": "SLS_B1_Artemis_2_V1.6_instructions.pdf"
+          }
+        ],
+        "version": "V1.6"
       }
     ],
     "companyExtra": "",

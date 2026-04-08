@@ -2,11 +2,11 @@ import {
   Component,
   ElementRef,
   EventEmitter,
-  Input,
+  Input, OnInit,
   Output,
   ViewChild
 } from '@angular/core';
-import {CommentEditRequest, CommentView} from "../../model/comments";
+import {ViewComment} from "../../model/comments";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgStyle} from "@angular/common";
 import {CommentService} from "../../services/comment.service";
@@ -22,7 +22,7 @@ import {CommentService} from "../../services/comment.service";
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.sass'
 })
-export class CommentComponent {
+export class CommentComponent implements OnInit{
 
   readonly MAX_COMMENT_LENGTH = 512;
   readonly MAX_REPLY_LENGTH = 256;
@@ -30,14 +30,17 @@ export class CommentComponent {
   @Output()
   replyEmitter: EventEmitter<{ id: number, username: string }> = new EventEmitter();
   @Output()
-  editEmitter: EventEmitter<CommentEditRequest> = new EventEmitter();
+  editEmitter: EventEmitter<{
+    content: string,
+    commentId: number,
+  }> = new EventEmitter();
   @Output()
   deleteEmitter: EventEmitter<number> = new EventEmitter();
 
   @Input()
-  comment!: CommentView;
+  comment!: ViewComment;
   @Input()
-  reply: CommentView | null | undefined;
+  reply: ViewComment | null | undefined;
   @Input()
   isOwned: boolean = false;
   @Input()
@@ -53,6 +56,9 @@ export class CommentComponent {
   confirmDeleteActive: boolean = false;
 
   constructor(private commentService: CommentService) {
+  }
+
+  ngOnInit() {
   }
 
   setConfirmDeleteActive(value: boolean) {
@@ -74,7 +80,7 @@ export class CommentComponent {
     this.editEnabled = false;
   }
 
-  fixCommentContent(content:string): string {
+  fixCommentContent(content: string): string {
     return content.split("&amp;").join("&")
       .split("&lt;").join("<")
       .split("&gt;").join(">")
@@ -85,10 +91,9 @@ export class CommentComponent {
 
   confirmEditComment() {
     if (this.editText.length <= this.commentService.MAX_COMMENT_LENGTH) {
-      const editRequest: CommentEditRequest = {
+      const editRequest = {
         content: this.editText,
-        password: "", //will be set later
-        id: this.comment.id
+        commentId: this.comment.commentId
       };
       this.editEmitter.emit(editRequest);
       this.confirmDeleteActive = false;
@@ -98,7 +103,7 @@ export class CommentComponent {
   }
 
   deleteComment() {
-    this.deleteEmitter.emit(this.comment.id);
+    this.deleteEmitter.emit(this.comment.commentId);
   }
 
   commentInputChanged(): void {
@@ -106,7 +111,7 @@ export class CommentComponent {
   }
 
   startReply(): void {
-    this.replyEmitter.emit({id: this.comment.id, username: this.comment.user});
+    this.replyEmitter.emit({id: this.comment.commentId, username: this.comment.username});
     this.confirmDeleteActive = false;
   }
 

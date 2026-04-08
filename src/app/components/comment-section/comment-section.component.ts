@@ -1,5 +1,5 @@
 import {Component, ElementRef, Inject, Input, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
-import {CommentCreateRequest, CommentEditRequest, CommentView} from "../../model/comments";
+import {ViewComment} from "../../model/comments";
 import {CommentService} from "../../services/comment.service";
 import {CommentComponent} from "../comment/comment.component";
 import {FormsModule} from "@angular/forms";
@@ -49,16 +49,13 @@ export class CommentSectionComponent implements OnInit {
   constructor(private commentService: CommentService, @Inject(PLATFORM_ID) private platformId: any) {
     this.MAX_COMMENT_LENGTH = commentService.MAX_COMMENT_LENGTH;
     this.MAX_USERNAME_LENGTH = commentService.MAX_USERNAME_LENGTH;
-
   }
 
-  shownComments: { comment: CommentView; owned: boolean; reply?: CommentView | null }[] = [];
-  allComments: { comment: CommentView; owned: boolean; reply?: CommentView | null }[] = [];
-
-  createdComments: { id: number; password: string }[] = [];
+  shownComments: { comment: ViewComment; reply: ViewComment | null }[] = [];
+  allComments: { comment: ViewComment; reply: ViewComment | null }[] = [];
 
   ngOnInit(): void {
-    this.usernameInput = this.commentService.loadUsername();
+    this.usernameInput = this.commentService.USER_NAME;
     if (isPlatformBrowser(this.platformId)) {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -89,37 +86,27 @@ export class CommentSectionComponent implements OnInit {
   }
 
   loadComments(): void {
-    this.commentService.getComments(this.parentComponentType + "-" + this.parentComponentId).subscribe({
+    this.commentService.getCommentsForMoc(this.parentComponentType + "-" + this.parentComponentId).subscribe({
         next: comments => {
           //sort the list of comments and convert them to be viewable
           this.allComments = comments
-            .sort((a: CommentView, b: CommentView) => b.time - a.time)
+            .sort((a: ViewComment, b: ViewComment) => b.time - a.time)
             .map(comment => {
                 return {
                   comment: comment,
-                  owned: !!this.createdComments.find(createdC => createdC.id === comment.id)
+                  reply:
+                    comment.replyCommentId ?
+                      comments.find(sC =>
+                        sC.commentId === comment.replyCommentId
+                      ) ?? null
+                      : null
                 };
               }
             );
-          //add comment views of replies to comment (if it is a reply to something)
-          for (let i = 0; i < this.allComments.length; i++) {
-            const currentComment = this.allComments[i];
-            if (currentComment.comment.reply !== undefined) {
-              //if this comment is a reply to another comment
-              const findComment = this.allComments.find(
-                c => c.comment.id === currentComment.comment.reply
-              );
-              if (findComment !== undefined) {
-                currentComment.reply = findComment.comment;
-              } else {
-                currentComment.reply = null;
-              }
-            }
-          }
           this.showSomeComments();
         },
         error: err => {
-          console.log("Failed to load comments: "+err.message);
+          console.log("Failed to load comments: " + err.message);
         }
       }
     );
@@ -149,32 +136,22 @@ export class CommentSectionComponent implements OnInit {
       return;
     }
 
-    const newComment: CommentCreateRequest = {
-      content: this.commentInput,
-      password: this.commentService.COMMENT_PASSWORD,
-      user: this.usernameInput,
-    }
+    const target = this.parentComponentType + "-" + this.parentComponentId;
 
-    if (this.activeReply !== null) {
-      newComment["reply"] = this.activeReply.id;
-    }
-
-    this.commentService.saveUsername(newComment.user);
-
-    this.commentService.createComment(this.parentComponentType + "-" + this.parentComponentId, newComment).subscribe(
+    this.commentService.createComment(target, this.usernameInput, this.commentInput,
+      this.activeReply ? this.activeReply.id : undefined).subscribe(
       {
         next:
           comment => {
             this.activeReply = null;
             this.commentInput = "";
             this.commentInputLength = 0;
-            this.createdComments.push({id: comment.id, password: newComment.password});
-            const allCommentsElement: { comment: CommentView; owned: boolean; reply?: CommentView | null }
-              = {comment: comment, owned: true};
-            if (comment.reply !== undefined) {
+            const allCommentsElement: { comment: ViewComment; reply: ViewComment | null }
+              = {comment: comment, reply: null};
+            if (comment.replyCommentId !== undefined) {
               //if this comment is a reply to another comment
               const findComment = this.allComments.find(
-                c => c.comment.id === comment.reply
+                c => c.comment.commentId === comment.replyCommentId
               );
               if (findComment !== undefined) {
                 allCommentsElement.reply = findComment.comment;
@@ -189,30 +166,24 @@ export class CommentSectionComponent implements OnInit {
     )
   }
 
-  editComment(editRequest: CommentEditRequest): void {
-    //set password from list of created comments
-    const createdComment = this.createdComments.find(createdComment => createdComment.id === editRequest.id);
-    if (createdComment !== undefined) {
-      editRequest.password = createdComment.password;
-
-      this.commentService.editComment(this.parentComponentType + "-" + this.parentComponentId, editRequest).subscribe({
-        next: editedComment => {
-          const indexInAllList = this.allComments.findIndex(comment => comment.comment.id === editRequest.id);
-          if (indexInAllList >= 0) {
-            this.allComments[indexInAllList] = {comment: editedComment, owned: true};
-          }
-          this.showSomeComments();
+  editComment(commentId:number,newContent:string): void {
+    this.commentService.editComment(this.parentComponentType + "-" + this.parentComponentId, commentId,newContent).subscribe({
+      next: editedComment => {
+        const indexInAllList = this.allComments.findIndex(comment => comment.comment.commentId === commentId);
+        if (indexInAllList >= 0) {
+          this.allComments[indexInAllList] = {comment: editedComment, reply:this.allComments[indexInAllList].reply};
         }
-      });
-    }
+        this.showSomeComments();
+      }
+    });
   }
 
   deleteComment(id: number): void {
-    const ownedComment = this.createdComments.find(c => c.id === id);
+    const ownedComment = this.allComments.find(c => c.comment.commentId === id);
     if (ownedComment !== undefined) {
-      this.commentService.deleteComment(this.parentComponentType + "-" + this.parentComponentId, ownedComment).subscribe({
+      this.commentService.deleteComment(this.parentComponentType + "-" + this.parentComponentId, id).subscribe({
         next: () => {
-          const indexInAllList = this.allComments.findIndex(comment => comment.comment.id === id);
+          const indexInAllList = this.allComments.findIndex(comment => comment.comment.commentId === id);
           if (indexInAllList >= 0) {
             this.allComments.splice(indexInAllList, 1);
           }

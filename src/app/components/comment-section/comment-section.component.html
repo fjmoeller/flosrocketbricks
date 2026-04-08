@@ -42,9 +42,9 @@
     </div>
     <div>
       @for (shownComment of shownComments; track shownComment) {
-        <app-comment [comment]="shownComment.comment" [isOwned]="shownComment.owned" [reply]="shownComment.reply"
+        <app-comment [comment]="shownComment.comment" [isOwned]="shownComment.comment.isOwned" [reply]="shownComment.reply"
                      (replyEmitter)="replyComment($event)" (deleteEmitter)="deleteComment($event)"
-                     (editEmitter)="editComment($event)"></app-comment>
+                     (editEmitter)="editComment($event.commentId,$event.content)"></app-comment>
       }
     </div>
     @if (shownComments.length === 0) {

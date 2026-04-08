@@ -1,7 +1,7 @@
 <div class="comment">
   <div class="comment-header">
-    <label><b>{{ comment.user }}</b>
-      @if (comment.user === "SkySaac") {
+    <label><b>{{ comment.username }}</b>
+      @if (comment.username === "SkySaac") {
         <b class="owner-badge">OWNER</b>
       }
     </label>
@@ -9,7 +9,7 @@
   </div>
 
   @if (!editEnabled) {
-    @if (reply === null) {
+    @if (!reply && comment.replyCommentId) {
       <!-- Comment is a reply to something that is no longer available. (Cause it was deleted I guess) -->
         <!-- make cursive or some shit -->
       <div style="border-left: 2px solid white">
@@ -17,12 +17,12 @@
           Comment no longer available.
         </blockquote>
       </div>
-    } @else if (reply !== undefined) {
+    } @else if (reply) {
       <!-- Comment is a reply to something, show small preview of what is being replied to-->
       <div style="border-left: 2px solid white; margin: 1rem; padding-left: 1rem">
         <div class="comment-header">
-          <label><b>{{ reply.user }}</b>
-            @if (reply.user === "SkySaac") {
+          <label><b>{{ reply.username }}</b>
+            @if (reply.username === "SkySaac") {
               <b class="owner-badge">OWNER</b>
             }
           </label>

@@ -1,37 +1,55 @@
-export interface CommentView {
-  id: number;
-  user: string;
+export interface ResponseComment {
+  commentId: number;
+  userId: number;
+  username: string;
   content: string;
   time: number;
-  reply?: number;
+  postKey: string; //eg. M-201 M-MOC B-Blog C-Collection
+  replySeen?: boolean | null;
+  replyCommentId?: number | null;
+}
+
+export interface ViewComment extends ResponseComment{
+  isOwned: boolean;
 }
 
 export interface CommentCreateRequest {
-  user: string; //16 Zeichen [A-z0-9]
-  password: string; //8 Zeichen [A-z0-9]
-  content: string; //512 Zeichen?
-  reply?: number;
+  userId: number;
+  username: string;
+  auth: string;
+  content: string;
+  replyCommentId?: number;
 }
 
 export interface CommentEditRequest {
-  password: string;
-  id: number;
+  commentId: number;
+  auth: string;
   content: string;
 }
 
 export interface CommentDeleteRequest {
-  password: string;
-  id: number;
+  commentId: number;
+  auth: string;
 }
 
 export interface CommentDeleteAdminRequest {
-  adminPassword: string;
-  id: number;
+  commentId: number;
 }
 
 export interface CommentAdminView {
   key: string;
-  value: CommentView[];
+  value: ViewComment[];
+}
+
+export interface CommentAdminResponse {
+  key: string;
+  value: ResponseComment[];
+}
+
+export interface CommentSeenRequest {
+  userId: number;
+  auth: string;
+  commentIds: number[];
 }
 
 /**

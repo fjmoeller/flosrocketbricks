@@ -17,7 +17,7 @@ import {isPlatformBrowser} from "@angular/common";
 export class CommentService {
 
   private readonly COMMENT_BACKEND_URL: string = "https://comment.flosrocketbackend.com/";
-  private readonly COMMENT_BACKEND_ADMIN_PATH: string = "all";
+  private readonly COMMENT_BACKEND_ADMIN_PATH: string = "adminAll";
   readonly LOCALSTORAGE_USERNAME_KEY: string = "comment-username";
   private readonly LOCALSTORAGE_USERID_KEY: string = "comment-userId-v1";
   private readonly LOCALSTORAGE_AUTH_KEY: string = "comment-userAuth-v1";

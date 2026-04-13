@@ -114,7 +114,7 @@ export class CommentSectionComponent implements OnInit {
 
   createComment(): void {
     //username not valid
-    if (this.usernameInput.trim() === "" || this.usernameInput.trim().toLowerCase() === "skysaac"
+    if (this.usernameInput.trim() === "" || this.usernameInput.trim().toLowerCase().includes("skysaac")
       || this.usernameInput.length > this.MAX_USERNAME_LENGTH) {
       this.shakeUsernameInput();
       return;

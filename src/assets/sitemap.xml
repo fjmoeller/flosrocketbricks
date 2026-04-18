@@ -27,23 +27,58 @@
   </url>
 
   <url>
+    <loc>https://flosrocketbricks.com/moc/247/nebula-1/</loc>
+    <image:image>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/china/nebula/1/y1/v1.0/Nebula-1_V1.0_1.jpg
+      </image:loc>
+      <image:title>LEGO MOC Nebula-1 in 1:110 Image 1</image:title>
+      <image:caption>Nebula-1 is a LEGO MOC of the type Rocket made out of 284 bricks. It is made by SkySaac.
+      </image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/china/nebula/1/y1/v1.0/Nebula-1_V1.0_2.jpg
+      </image:loc>
+      <image:title>LEGO MOC Nebula-1 in 1:110 Image 2</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/246/kinetica-2/</loc>
+    <image:image>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/china/kinetica/2/y1/Kinetica-2_V1.0_1.jpg
+      </image:loc>
+      <image:title>LEGO MOC Kinetica-2 in 1:110 Image 1</image:title>
+      <image:caption>Kinetica-2 is a LEGO MOC of the type Rocket made out of 1009 bricks. It is made by SkySaac.
+      </image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/china/kinetica/2/y1/Kinetica-2_V1.0_2.jpg
+      </image:loc>
+      <image:title>LEGO MOC Kinetica-2 in 1:110 Image 2</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/245/long-march-10a-mengzhou-ifa/</loc>
     <image:image>
       <image:loc>
         https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-10/a/ifa/v1.0/Long_March_10A_Mengzhou_IFA_V1.0_1.jpg
       </image:loc>
       <image:title>LEGO MOC Long March 10A Mengzhou IFA in 1:110 Image 1</image:title>
-      <image:caption>Long March 10A Mengzhou IFA is a LEGO MOC of the type Rocket made out of 1009 bricks. It
-        is made by SkySaac.
+      <image:caption>Long March 10A Mengzhou IFA is a LEGO MOC of the type Other made out of 1009 bricks. It is made by SkySaac.
       </image:caption>
     </image:image>
+  </url>
+  <url>
+    <loc>https://flosrocketbricks.com/moc/244/mengzhou-tracked-recovery-ship/</loc>
     <image:image>
       <image:loc>
         https://files.flosrocketbackend.com/mocs/110/china/mengzhou/tracked-recovery-ship/v1.0/Mengzhou_Recovery_Ship_V1.0_1.jpg
       </image:loc>
       <image:title>LEGO MOC Mengzhou Tracked Recovery Ship in 1:110 Image 1</image:title>
-      <image:caption>Mengzhou Tracked Recovery Ship is a LEGO MOC of the type Other made out of 636 bricks. It
-        is made by SkySaac.
+      <image:caption>Mengzhou Tracked Recovery Ship is a LEGO MOC of the type Other made out of 636 bricks. It is made by SkySaac.
       </image:caption>
     </image:image>
     <image:image>
@@ -66,8 +101,7 @@
         https://files.flosrocketbackend.com/mocs/no-scale/tales/tale-of-artemis/v1.0/Tale_of_Artemis_V1.0_1.jpg
       </image:loc>
       <image:title>LEGO MOC Tale of Artemis Image 1</image:title>
-      <image:caption>Tale of Artemis is a LEGO MOC of the type Other made out of 290 bricks. It
-        is made by SkySaac.
+      <image:caption>Tale of Artemis is a LEGO MOC of the type Other made out of 290 bricks. It is made by SkySaac.
       </image:caption>
     </image:image>
   </url>

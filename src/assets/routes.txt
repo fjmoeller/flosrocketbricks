@@ -248,6 +248,8 @@
 /moc/243/tale-of-artemis/
 /moc/244/mengzhou-tracked-recovery-ship/
 /moc/245/long-march-10a-mengzhou-ifa/
+/moc/246/kinetica-2/
+/moc/247/nebula-1/
 /about/
 /404/
 /blog/

@@ -7,6 +7,124 @@
     "links": [
     ],
     "type": "rocket",
+    "id": 247,
+    "title": "Nebula-1",
+    "altTitles": ["Xingyun-1","XY-1","Nebula-1 Y1"],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-04-18",
+    "dateCreated": "2026-04-18",
+    "related": [],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Nebula-1 rocket. The second stage can be separated and the payload fairings have space for a very small payload",
+    "rocketDescription": "The Nebula-1 rocket is a Chinese orbital rocket, who's first launch is expect to be in 2026.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 284,
+    "dimensions": "3.7x3.8x29.3cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/nebula/1/y1/v1.0/110-nebula-1-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/nebula/1/y1/v1.0/Nebula-1_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/nebula/1/y1/v1.0/Nebula-1_V1.0_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/nebula/1/y1/v1.0/Nebula-1_V1.0.io",
+            "name": "Nebula-1_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "",
+    "region": [
+      "China"
+    ],
+    "links": [
+    ],
+    "type": "rocket",
+    "id": 246,
+    "title": "Kinetica-2",
+    "altTitles": ["Lijian-2","LJ-2","Kinetica-2 Y1"],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-04-18",
+    "dateCreated": "2026-04-18",
+    "related": [],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Kinetica-2 (LJ-2) rocket. The second stage can be separated and the payload fairings have space for a small payload",
+    "rocketDescription": "The Kinetica-2 rocket was first launched in 2026 by the company CAS Space. It can lift up to 12 tons into low earth orbit.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 1043,
+    "dimensions": "10.1x5.1x47.2cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/kinetica/2/y1/110-kinetica-2-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/kinetica/2/y1/v1.0/Kinetica-2_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/kinetica/2/y1/v1.0/Kinetica-2_V1.0_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/kinetica/2/y1/v1.0/Kinetica-2_V1.0.io",
+            "name": "Kinetica-2_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "",
+    "region": [
+      "China"
+    ],
+    "links": [
+    ],
+    "type": "rocket",
     "id": 245,
     "title": "Long March 10A Mengzhou IFA",
     "altTitles": [],

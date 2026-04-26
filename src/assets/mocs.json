@@ -1,5 +1,67 @@
 [
   {
+    "company": "Avio",
+    "region": [
+      "Europe"
+    ],
+    "links": [
+      "https://www.avio.com/vega-c",
+      "https://en.wikipedia.org/wiki/Vega_C"
+    ],
+    "type": "rocket",
+    "id": 249,
+    "title": "Vega C",
+    "altTitles": [],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-04-26",
+    "dateCreated": "2026-04-26",
+    "related": [],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Vega C rocket. The first 3 stages can be separated from one another and the payload fairing holds some space for a non included payload.",
+    "rocketDescription": "The Vega rocket is a European rocket manufactured and launched by Avio from French Guiana.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 230,
+    "dimensions": "3.7x3.6x31.5cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/europe/vega/c/110-vega-c-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/europe/vega/c/v1.0/Vega_C_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/vega/c/v1.0/Vega_C_V1.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/vega/c/v1.0/Vega_C_V1.0_3.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/vega/c/v1.0/Vega_C_V1.0.io",
+            "name": "Vega_C_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
     "company": "Space Pioneer",
     "region": [
       "China"

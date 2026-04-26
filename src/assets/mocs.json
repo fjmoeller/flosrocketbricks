@@ -1667,7 +1667,7 @@
     ],
     "updateMessage": "",
     "tags": [],
-    "altTitles": [],
+    "altTitles": ["Blue Moon Mark 2"],
     "region": [
       "USA"
     ],
@@ -3759,11 +3759,11 @@
     "id": 195,
     "title": "Blue Moon Mark 1",
     "altTitles": [
-      "MK1"
+      "Blue Moon MK1"
     ],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2024-04-08",
+    "lastUpdate": "2026-04-26",
     "dateCreated": "2024-04-08",
     "related": [
       8,
@@ -3772,20 +3772,34 @@
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Blue Moon Mark 1 lunar lander. It fits (without the antenna) into my New Glenns fairing.",
     "rocketDescription": "The Blue Moon Mark 1 (also called MK1) is a one way lunar lander by Blue Origin that can deliver up to three tons to the lunar surface. It is supposed to be launched using New Glenn.",
-    "internalColor": "Green",
+    "internalColor": "",
     "scale": "110",
-    "parts": 139,
-    "dimensions": "5.9x6.3x7.9cm",
+    "parts": 149,
+    "dimensions": "7.1x7.1x7.6cm",
     "stability": -1,
     "difficulty": -1,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/usa/blue-moon/mark-1/110-blue-moon-mark-1-v1.1.jpg",
+    "smallCoverImage": "assets/mocImages/110/usa/blue-moon/mark-1/110-blue-moon-mark-1-v1.2.jpg",
     "pictures": [
-      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.1/MK1_V1.1_1.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.1/MK1_V1.1_2.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.1/MK1_V1.1_3.jpg"
+      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.2/MK1_V1.2_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.2/MK1_V1.2_2.jpg"
     ],
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the ladner",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/blue-moon/mk1/v1.2/MK1_V1.2.io",
+            "name": "MK1_V1.2.io"
+          }
+        ],
+        "version": "V1.2"
+      },
       {
         "changelog": "",
         "versionExtra": "",

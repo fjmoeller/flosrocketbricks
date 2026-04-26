@@ -959,7 +959,12 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/156/vega/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/vega/110-vega-v1.1.png</image:loc>
+      <image:loc>
+        https://flosrocketbricks.com/assets/mocImages/110/europe/vega/110-vega-v1.2.jpg
+      </image:loc>
+      <image:title>LEGO MOC Vega in 1:110 Image 1</image:title>
+      <image:caption>Vega is a LEGO MOC of the type Rocket made out of 143 bricks. It is made by SkySaac.
+      </image:caption>
     </image:image>
   </url>
   <url>

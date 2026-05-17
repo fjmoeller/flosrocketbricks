@@ -252,6 +252,7 @@
 /moc/247/nebula-1/
 /moc/248/tianlong-3/
 /moc/249/vega-c/
+/moc/250/kinetica-1/
 /about/
 /404/
 /blog/

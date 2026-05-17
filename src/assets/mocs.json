@@ -1,5 +1,64 @@
 [
   {
+    "company": "CAS Space",
+    "region": [
+      "China"
+    ],
+    "links": [
+    ],
+    "type": "rocket",
+    "id": 250,
+    "title": "Kinetica-1",
+    "altTitles": ["Lijian-1","LJ-1"],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-05-17",
+    "dateCreated": "2026-05-17",
+    "related": [],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Kinetica-1 (LJ-1) rocket. The second stage can be separated from the first stage.",
+    "rocketDescription": "The Kinetica-1 rocket was first launched in 2022 by the company CAS Space. It can lift up to 2 tons into low earth orbit.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 227,
+    "dimensions": "2.4x2.4x26.9cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/kinetica/1/110-kinetica-1-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/kinetica/1/v1.0/Kinetica-1_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/kinetica/1/v1.0/Kinetica-1_V1.0_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/kinetica/1/v1.0/Kinetica-1_V1.0.io",
+            "name": "Kinetica-1_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
     "company": "Avio",
     "region": [
       "Europe"

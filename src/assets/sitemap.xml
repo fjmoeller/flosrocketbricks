@@ -27,6 +27,35 @@
   </url>
 
   <url>
+    <loc>https://flosrocketbricks.com/moc/251/crew-dragon/</loc>
+    <image:image>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_1.jpg
+      </image:loc>
+      <image:title>LEGO MOC Crew Dragon in 1:110 Image 1</image:title>
+      <image:caption>Crew Dragon is a LEGO MOC of the type Spacecraft made out of 90 bricks. It is made by SkySaac.
+      </image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_2.jpg
+      </image:loc>
+      <image:title>LEGO MOC Crew Dragon in 1:110 Image 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_3.jpg
+      </image:loc>
+      <image:title>LEGO MOC Crew Dragon in 1:110 Image 3</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_4.jpg
+      </image:loc>
+      <image:title>LEGO MOC Crew Dragon in 1:110 Image 4</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flosrocketbricks.com/moc/250/kinetica-1/</loc>
     <image:image>
       <image:loc>

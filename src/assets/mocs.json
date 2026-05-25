@@ -1,5 +1,90 @@
 [
   {
+    "company": "SpaceX",
+    "region": [
+      "USA"
+    ],
+    "links": [
+      "https://en.wikipedia.org/wiki/SpaceX_Dragon_2",
+      "https://www.spacex.com/vehicles/dragon",
+      "https://space.skyrocket.de/doc_sdat/dragon-v2.htm"
+    ],
+    "type": "spacecraft",
+    "id": 251,
+    "title": "Crew Dragon",
+    "altTitles": [
+      "Dragon 2"
+    ],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-05-25",
+    "dateCreated": "2026-05-25",
+    "related": [
+      217,
+      130
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Crew Dragon spacecraft. It exists in the normal variant. A capsule only variant, without the trunk and in a docking variant, where the nosecone that hides the docking mechanism has been opened.",
+    "rocketDescription": "The Crew Dragon spacecraft is a partially reusable crewed LEO spacecraft by SpaceX. It is able to carry up to 4 humans to space and back. It's being launched on Falcon 9 rockets.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 90,
+    "dimensions": "4.8x4.8x7.5cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/usa/dragon/crew/110-crew-dragon-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0_4.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the spacecraft",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0.io",
+            "name": "Crew_Dragon_V1.0.io"
+          },
+          {
+            "description": "The digital io file of the capsule only variant",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_Capsule_V1.0.io",
+            "name": "Crew_Dragon_Capsule_V1.0.io"
+          },
+          {
+            "description": "The digital io file of the docking variant",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_Docking_V1.0.io",
+            "name": "Crew_Dragon_Docking_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "The capsule only variant has 39 parts and the docking variant has 92 parts.",
+    "dimensionsExtra": "The capsule only variant is 3.5x3.5x4.8cm and the docking variant is 4.8x4.8x8.8cm.",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
     "company": "CAS Space",
     "region": [
       "China"
@@ -2285,7 +2370,7 @@
     "designer": "SkySaac",
     "lastUpdate": "2024-10-20",
     "dateCreated": "2024-10-20",
-    "related": [],
+    "related": [251],
     "updateMessage": "",
     "mocDescription": "This is a MOC of SpaceXs Crew Dragon. The capsule and trunk can be separated. The nosecone can be closed, but can also fit the docking adapter or alternatively the cupola which are included. The inside has four seats althought they do not fit minifigures and the capsule can not be opened up to see them.",
     "rocketDescription": "Crew Dragon is SpaceXs commercial crewed capsule that can lift up to four people into LEO and birng them back. It first flew with crew in 2020.",
@@ -8830,7 +8915,7 @@
     "lastUpdate": "2023-09-05",
     "dateCreated": "2023-09-05",
     "related": [
-      131
+      131,251
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Dragon spacecraft. The solar panels can be turned 360°.",

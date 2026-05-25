@@ -49,7 +49,6 @@
             "description": "The digital io file of the spacecraft",
             "type": "io",
             "export": true,
-            "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_V1.0.io",
             "name": "Crew_Dragon_V1.0.io"
           },
@@ -57,7 +56,6 @@
             "description": "The digital io file of the capsule only variant",
             "type": "io",
             "export": true,
-            "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_Capsule_V1.0.io",
             "name": "Crew_Dragon_Capsule_V1.0.io"
           },
@@ -65,7 +63,6 @@
             "description": "The digital io file of the docking variant",
             "type": "io",
             "export": true,
-            "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/usa/dragon/crew-dragon/v1.0/Crew_Dragon_Docking_V1.0.io",
             "name": "Crew_Dragon_Docking_V1.0.io"
           }

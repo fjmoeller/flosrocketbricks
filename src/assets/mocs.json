@@ -17216,7 +17216,7 @@
     "type": "rocket",
     "dimensionsExtra": "",
     "typeExtra": "",
-    "internalColor": "Dark Pink",
+    "internalColor": "",
     "links": [
       "https://www.esa.int/Science_Exploration/Space_Science/Juice",
       "https://en.wikipedia.org/wiki/Ariane_5",
@@ -17227,7 +17227,7 @@
     "stabilityExtra": "",
     "company": "ArianeGroup",
     "difficulty": 4,
-    "lastUpdate": "2023-03-29",
+    "lastUpdate": "2026-06-03",
     "dateCreated": "2023-03-29",
     "related": [
       17,
@@ -17242,7 +17242,7 @@
       "Europe"
     ],
     "scale": "110",
-    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/eca/juice/110-ariane-5-eca-juice-v2.0.png",
+    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/eca/juice/110-ariane-5-eca-juice-v2.1.jpg",
     "internalColorExtra": "",
     "scaleExtra": "",
     "dimensions": "5.9x11.2x49.3cm",
@@ -17259,13 +17259,28 @@
     "designer": "SkySaac, MoppeW40k",
     "fanPictures": [],
     "pictures": [
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_1.png",
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_2.png",
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_3.png",
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_4.png",
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/5/eca/juice/v2.0/Ariane_5_ECA_JUICE_V2.0_5.png"
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/juice/v2.1/Ariane_5_ECA_JUICE_V2.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/juice/v2.1/Ariane_5_ECA_JUICE_V2.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/juice/v2.1/Ariane_5_ECA_JUICE_V2.1_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/juice/v2.1/Ariane_5_ECA_JUICE_V2.1_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/juice/v2.1/Ariane_5_ECA_JUICE_V2.1_5.jpg"
     ],
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/juice/v2.1/Ariane_5_ECA_JUICE_V2.1_pub.io",
+            "name": "Ariane_5_ECA_JUICE_V2.1_pub.io"
+          }
+        ],
+        "version": "V2.1"
+      },
       {
         "changelog": "",
         "versionExtra": "",

@@ -12307,7 +12307,7 @@
     "type": "rocket",
     "dimensionsExtra": "",
     "typeExtra": "",
-    "internalColor": "Dark Pink",
+    "internalColor": "",
     "links": [
       "https://en.wikipedia.org/wiki/Ariane_5",
       "https://space.skyrocket.de/doc_lau/ariane-5.htm"
@@ -12317,7 +12317,7 @@
     "stabilityExtra": "",
     "company": "ArianeGroup",
     "difficulty": 4,
-    "lastUpdate": "2023-05-29",
+    "lastUpdate": "2026-06-04",
     "dateCreated": "2021-11-26",
     "related": [
       17,
@@ -12332,7 +12332,7 @@
       "Europe"
     ],
     "scale": "110",
-    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/eca/jwst/110-ariane-5-eca-jwst-v2.0.png",
+    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-5/eca/jwst/110-ariane-5-eca-jwst-v2.1.jpg",
     "internalColorExtra": "",
     "scaleExtra": "",
     "dimensions": "5.9x11.8x49.3cm",
@@ -12349,13 +12349,35 @@
     "designer": "SkySaac, MoppeW40k",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_2.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_3.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_4.png",
-      "https://bricksafe.com/files/SkySaac/website/110/europe/ariane/ariane-5/eca/jwst/v2.0/Ariane_5_JWST_V2.0_5.png"
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/jwst/v2.1/Ariane_5_JWST_V2.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/jwst/v2.1/Ariane_5_JWST_V2.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/jwst/v2.1/Ariane_5_JWST_V2.1_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/jwst/v2.1/Ariane_5_JWST_V2.1_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/jwst/v2.1/Ariane_5_JWST_V2.1_5.jpg"
     ],
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/jwst/v2.1/Ariane_5_JWST_V2.1_pub.io",
+            "name": "Ariane_5_JWST_V2.1_pub.io"
+          },
+          {
+            "description": "The pdf instructions",
+            "type": "pdf",
+            "export": false,
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-5/jwst/v2.1/Ariane_5_JWST_V2.1_instructions.pdf",
+            "name": "Ariane_5_JWST_V2.1_instructions.pdf"
+          }
+        ],
+        "version": "V2.1"
+      },
       {
         "changelog": "",
         "versionExtra": "",

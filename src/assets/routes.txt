@@ -255,6 +255,8 @@
 /moc/250/kinetica-1/
 /moc/251/crew-dragon/
 /moc/252/griffin-with-flip/
+/moc/253/ariane-64/
+/moc/254/bepicolombo/
 /about/
 /404/
 /blog/

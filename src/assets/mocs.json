@@ -5,6 +5,67 @@
       "Europe"
     ],
     "links": [
+      "https://bricksat.onlineweb.shop/",
+      "https://www.youtube.com/watch?v=YSI2nHpelJA"
+    ],
+    "type": "spacecraft",
+    "id": 255,
+    "title": "CRISTAL",
+    "altTitles": ["Copernicus Polar Ice and Snow Topography Altimeter"],
+    "tags": [],
+    "designer": "SkySaac, BrickSat",
+    "lastUpdate": "2026-06-28",
+    "dateCreated": "2026-06-28",
+    "related": [],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the CRISTAL spacecraft. It sits on an adjustable stand made by BrickSat.",
+    "rocketDescription": "CRISTAL is an ESA mission succeeding CryoSat-2. It is planned to be launched in 2028.",
+    "internalColor": "",
+    "scale": "56",
+    "parts": 140,
+    "dimensions": "10.6x6.7x16.1cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/56/europe/cristal/56-cristal-v1.2.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/56/europe/cristal/v1.2/CRISTAL_V1.2_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/56/europe/cristal/v1.2/CRISTAL_V1.2_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the spacecraft",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/56/europe/cristal/v1.2/CRISTAL_V1.2.io",
+            "name": "CRISTAL_V1.2.io"
+          }
+        ],
+        "version": "V1.2"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "ESA",
+    "region": [
+      "Europe"
+    ],
+    "links": [
     ],
     "type": "spacecraft",
     "id": 254,

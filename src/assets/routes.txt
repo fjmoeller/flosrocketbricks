@@ -257,6 +257,7 @@
 /moc/252/griffin-with-flip/
 /moc/253/ariane-64/
 /moc/254/bepicolombo/
+/moc/255/cristal/
 /about/
 /404/
 /blog/

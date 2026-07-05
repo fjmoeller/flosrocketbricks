@@ -1,5 +1,71 @@
 [
   {
+    "company": "",
+    "region": [
+      "China"
+    ],
+    "links": [
+    ],
+    "type": "rocket",
+    "id": 256,
+    "title": "Long March 12B",
+    "altTitles": [
+      "LM-12B",
+      "CZ-12B"
+    ],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-07-05",
+    "dateCreated": "2026-07-05",
+    "related": [
+      220,
+      240
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Long March 12B rocket. The second stage it not attached directly to the first stage. The landing legs of the first stage can be extended to show the first stage in its landed state. The payload fairing splits in two and holds some space for a payload.",
+    "rocketDescription": "The Long March 12B is a partial reusable Chinese orbital rocket. It first flew in June 2026.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 1133,
+    "dimensions": "7.4x7.4x64.9cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-12/b/110-long-march-12b-v1.1.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/b/v1.1/Long_March_12B_V1.1_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/b/v1.1/Long_March_12B_V1.1_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/b/v1.1/Long_March_12B_V1.1_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/b/v1.1/Long_March_12B_V1.1_4.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-12/b/v1.1/Long_March_12B_V1.1.io",
+            "name": "Long_March_12B_V1.1.io"
+          }
+        ],
+        "version": "V1.1"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
     "company": "ESA",
     "region": [
       "Europe"
@@ -11,7 +77,9 @@
     "type": "spacecraft",
     "id": 255,
     "title": "CRISTAL",
-    "altTitles": ["Copernicus Polar Ice and Snow Topography Altimeter"],
+    "altTitles": [
+      "Copernicus Polar Ice and Snow Topography Altimeter"
+    ],
     "tags": [],
     "designer": "SkySaac, BrickSat",
     "lastUpdate": "2026-06-28",
@@ -70,7 +138,9 @@
     "type": "spacecraft",
     "id": 254,
     "title": "BepiColombo",
-    "altTitles": ["Bepi Colombo"],
+    "altTitles": [
+      "Bepi Colombo"
+    ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2026-06-27",
@@ -129,12 +199,16 @@
     "type": "rocket",
     "id": 253,
     "title": "Ariane 64",
-    "altTitles": ["Ariane 64 P160C"],
+    "altTitles": [
+      "Ariane 64 P160C"
+    ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2026-06-27",
     "dateCreated": "2026-06-27",
-    "related": [144],
+    "related": [
+      144
+    ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Ariane 6 rocket in its 64 configuration, with 160C boosters and a large payload fairing. The boosters and the second stage can be separated from the core stage. Further the payload fairings can be separated form the upper stage and hold space for a potential payload.",
     "rocketDescription": "The Ariane 6 rocket is an orbital rocket by Arianegroup. It has four solid boosters and a hydrolox core and upper stage. The 64 variant has four boosters.",
@@ -331,12 +405,17 @@
     "type": "rocket",
     "id": 250,
     "title": "Kinetica-1",
-    "altTitles": ["Lijian-1","LJ-1"],
+    "altTitles": [
+      "Lijian-1",
+      "LJ-1"
+    ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2026-05-17",
     "dateCreated": "2026-05-17",
-    "related": [246],
+    "related": [
+      246
+    ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Kinetica-1 (LJ-1) rocket. The second stage can be separated from the first stage.",
     "rocketDescription": "The Kinetica-1 rocket was first launched in 2022 by the company CAS Space. It can lift up to 2 tons into low earth orbit.",
@@ -452,7 +531,10 @@
     "type": "rocket",
     "id": 248,
     "title": "Tianlong-3",
-    "altTitles": ["TL-3 Y1","Heavenly Dragon 3"],
+    "altTitles": [
+      "TL-3 Y1",
+      "Heavenly Dragon 3"
+    ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2026-04-25",
@@ -511,7 +593,11 @@
     "type": "rocket",
     "id": 247,
     "title": "Nebula-1",
-    "altTitles": ["Xingyun-1","XY-1","Nebula-1 Y1"],
+    "altTitles": [
+      "Xingyun-1",
+      "XY-1",
+      "Nebula-1 Y1"
+    ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2026-04-18",
@@ -570,12 +656,18 @@
     "type": "rocket",
     "id": 246,
     "title": "Kinetica-2",
-    "altTitles": ["Lijian-2","LJ-2","Kinetica-2 Y1"],
+    "altTitles": [
+      "Lijian-2",
+      "LJ-2",
+      "Kinetica-2 Y1"
+    ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2026-04-18",
     "dateCreated": "2026-04-18",
-    "related": [250],
+    "related": [
+      250
+    ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Kinetica-2 (LJ-2) rocket. The second stage can be separated and the payload fairings have space for a small payload",
     "rocketDescription": "The Kinetica-2 rocket was first launched in 2026 by the company CAS Space. It can lift up to 12 tons into low earth orbit.",
@@ -756,7 +848,9 @@
     "lastUpdate": "2026-01-26",
     "dateCreated": "2026-01-26",
     "related": [
-      216,208,207
+      216,
+      208,
+      207
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC showing the Tale of Artemis. It fits together with all the other tale MOCs and official sets.",
@@ -925,7 +1019,10 @@
     "lastUpdate": "2026-01-03",
     "dateCreated": "2026-01-03",
     "related": [
-      205,133,132,111
+      205,
+      133,
+      132,
+      111
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Falcon 9 Block 5 rocket. The two stages can be separated from one another. The payload fairing can split in two and has enough space for a payload. The first stage can either be in its ascend or landing configuration.",
@@ -985,14 +1082,16 @@
     "id": 240,
     "title": "Long March 12A",
     "altTitles": [
-      "LM-12A","CZ-12A"
+      "LM-12A",
+      "CZ-12A"
     ],
     "tags": [],
     "designer": "SkySaac",
     "lastUpdate": "2026-01-01",
     "dateCreated": "2026-01-01",
     "related": [
-      220
+      220,
+      256
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Long March 12A rocket. The 2nd stage can be detached form the 1st stage. The payload fairings have space for a payload. The first stage can either be in ascend configuration or landing configuration with extended landing legs and grid fins.",
@@ -2048,7 +2147,9 @@
     ],
     "updateMessage": "",
     "tags": [],
-    "altTitles": ["Blue Moon Mark 2"],
+    "altTitles": [
+      "Blue Moon Mark 2"
+    ],
     "region": [
       "USA"
     ],
@@ -2403,7 +2504,8 @@
     "lastUpdate": "2024-12-21",
     "dateCreated": "2024-12-21",
     "related": [
-      240
+      240,
+      256
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Long March 12 rocket. The first two stages can be separated. the fairing halves can hold a payload and can be taken off from the fairing.",
@@ -2607,7 +2709,9 @@
     "designer": "SkySaac",
     "lastUpdate": "2024-10-20",
     "dateCreated": "2024-10-20",
-    "related": [251],
+    "related": [
+      251
+    ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of SpaceXs Crew Dragon. The capsule and trunk can be separated. The nosecone can be closed, but can also fit the docking adapter or alternatively the cupola which are included. The inside has four seats althought they do not fit minifigures and the capsule can not be opened up to see them.",
     "rocketDescription": "Crew Dragon is SpaceXs commercial crewed capsule that can lift up to four people into LEO and birng them back. It first flew with crew in 2020.",
@@ -3444,7 +3548,8 @@
     "lastUpdate": "2024-05-29",
     "dateCreated": "2024-05-29",
     "related": [
-      206,241
+      206,
+      241
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Falcon 9 Block 5 rocket with the EarthCARE satellite as a payload. The first two stages can be separated from one another. The payload fairing can split in two and fits the EarthCARE satellite.",
@@ -8933,7 +9038,8 @@
     "lastUpdate": "2023-09-08",
     "dateCreated": "2023-09-08",
     "related": [
-      132,241
+      132,
+      241
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Falcon 9 Block 4 rocket. The second stage and the first stage can be separated. The fairings holds enough space for a payload. The legs can be extended and with the extra parts the first stage can be displayed in its landed state. The gridfins can also be displayed extended.",
@@ -9152,7 +9258,8 @@
     "lastUpdate": "2023-09-05",
     "dateCreated": "2023-09-05",
     "related": [
-      131,251
+      131,
+      251
     ],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Dragon spacecraft. The solar panels can be turned 360°.",
@@ -10530,7 +10637,8 @@
     "lastUpdate": "2023-08-05",
     "dateCreated": "2023-09-19",
     "related": [
-      112,241
+      112,
+      241
     ],
     "updateMessage": "",
     "region": [
@@ -14791,7 +14899,8 @@
             "viewer": "V2",
             "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-7/v3.1/Long_March_7_V3.1.io",
             "name": "Long_March_7_V3.1.io"
-          },{
+          },
+          {
             "description": "The pdf instructions",
             "type": "pdf",
             "export": false,

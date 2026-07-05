@@ -258,6 +258,7 @@
 /moc/253/ariane-64/
 /moc/254/bepicolombo/
 /moc/255/cristal/
+/moc/256/long-march-12b/
 /about/
 /404/
 /blog/

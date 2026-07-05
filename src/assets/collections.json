@@ -110,7 +110,7 @@
         "name": "Long March 12",
         "description": "",
         "mocs": [
-          220,240
+          220,240,256
         ]
       }
     ]

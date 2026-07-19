@@ -1,5 +1,65 @@
 [
   {
+    "company": "Skyroot Aerospace",
+    "region": [
+      "India"
+    ],
+    "links": [
+      "https://www.skyroot.in/"
+    ],
+    "type": "rocket",
+    "id": 257,
+    "title": "Vikram-1",
+    "altTitles": [
+    ],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-07-19",
+    "dateCreated": "2026-07-19",
+    "related": [],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Vikram-1 rocket. All four stages can be separated. The payload fairing holds space for a ver tiny payload.",
+    "rocketDescription": "The Vikram-1 is a private Indian orbital rocket. It was first launched in July 2026, reaching orbit successfully on its first attempt.",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 80,
+    "dimensions": "2.3x2.3x20.2cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/india/vikram/1/110-vikram-1-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/india/vikram/1/v1.0/Vikram-1_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/india/vikram/1/v1.0/Vikram-1_V1.0_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "link": "https://files.flosrocketbackend.com/mocs/110/india/vikram/1/v1.0/Vikram-1_V1.0.io",
+            "name": "Vikram-1_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
     "company": "",
     "region": [
       "China"

@@ -259,6 +259,7 @@
 /moc/254/bepicolombo/
 /moc/255/cristal/
 /moc/256/long-march-12b/
+/moc/257/vikram-1/
 /about/
 /404/
 /blog/

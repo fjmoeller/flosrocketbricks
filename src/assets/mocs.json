@@ -295,7 +295,7 @@
     "rocketDescription": "The Ariane 6 rocket is an orbital rocket by Arianegroup. It has four solid boosters and a hydrolox core and upper stage. The 64 variant has four boosters.",
     "internalColor": "",
     "scale": "110",
-    "parts": 1633,
+    "parts": 1653,
     "dimensions": "11.2x10.9x57.6cm",
     "stability": -1,
     "difficulty": -1,
@@ -307,6 +307,21 @@
       "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.0/Ariane_64_V1.0_3.jpg"
     ],
     "versions": [
+      {
+        "changelog": "Fix half attached boosters",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.2/Ariane_64_V1.2.io",
+            "name": "Ariane_64_V1.2.io"
+          }
+        ],
+        "version": "V1.2"
+      },
       {
         "changelog": "",
         "versionExtra": "",

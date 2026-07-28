@@ -260,6 +260,7 @@
 /moc/255/cristal/
 /moc/256/long-march-12b/
 /moc/257/vikram-1/
+/moc/258/long-march-10b/
 /about/
 /404/
 /blog/

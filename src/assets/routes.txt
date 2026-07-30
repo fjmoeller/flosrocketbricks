@@ -3,7 +3,7 @@
 /moc/2/ariane-1/
 /moc/3/ariane-2/
 /moc/4/ariane-3/
-/moc/5/long-march-1b/
+/moc/5/long-march-1/
 /moc/6/madv/
 /moc/7/alpaca/
 /moc/8/new-glenn/

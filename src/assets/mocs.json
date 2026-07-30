@@ -19767,7 +19767,7 @@
     "companyExtra": "",
     "partsExtra": "",
     "regionExtra": "",
-    "mocDescription": "The Long March 1B rocket was the first Chinese rocket that launched a satellite into orbit in 1970. It only flew two times in total.",
+    "mocDescription": "The Long March 1 rocket was the first Chinese rocket that launched a satellite into orbit in 1970. It only flew two times in total.",
     "rocketDescription": "",
     "versions": [
       {
@@ -19779,10 +19779,10 @@
             "description": "The pdf instructions",
             "type": "pdf",
             "export": false,
-            "name": "Long March 1B V1.pdf"
+            "name": "Long March 1 V1.pdf"
           },
           {
-            "name": "Long March 1B V1.io",
+            "name": "Long March 1 V1.io",
             "type": "io",
             "export": false,
             "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long--march-1b/v1/V1.io",
@@ -19801,11 +19801,11 @@
             "description": "The pdf instructions",
             "type": "pdf",
             "export": false,
-            "name": "Long March 1B V2.pdf"
+            "name": "Long March 1 V2.pdf"
           },
           {
             "description": "The digital io file",
-            "name": "Long March 1B V2.io",
+            "name": "Long March 1 V2.io",
             "type": "io",
             "export": false,
             "viewer": "V1",
@@ -19821,7 +19821,7 @@
     "stabilityExtra": "",
     "fanPictures": [],
     "typeExtra": "",
-    "title": "Long March 1B",
+    "title": "Long March 1",
     "lastUpdate": "2023-03-06",
     "region": [
       "China"

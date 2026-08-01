@@ -10451,7 +10451,7 @@
     "regionExtra": "",
     "scale": "110",
     "scaleExtra": "",
-    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4-gridfins/110-long-march-2c-v2.0.png",
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4-gridfins/110-long-march-2c-v2.0.jpg",
     "dimensions": "4.5x4.5x36.5cm",
     "tags": [],
     "altTitles": [
@@ -10467,8 +10467,8 @@
     "designerExtra": "",
     "fanPictures": [],
     "pictures": [
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4-gridfins/v2.0/Long_March_2CS-4_Recover_V2.0_1.png",
-      "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4-gridfins/v2.0/Long_March_2CS-4_Recover_V2.0_2.png"
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/gridfins/v2.0/Long_March_2CS-4_Recover_V2.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/gridfins/v2.0/Long_March_2CS-4_Recover_V2.0_2.jpg"
     ],
     "versions": [
       {
@@ -10478,9 +10478,9 @@
           {
             "description": "The digital io file",
             "type": "io",
-            "export": false,
-            "viewer": "V1",
-            "link": "https://bricksafe.com/files/SkySaac/website/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4-gridfins/v2.0/Long_March_2CS-4_Recover_V2.0.io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/long-march-2c/long-march-2cs-4/gridfins/v2.0/Long_March_2CS-4_Recover_V2.0.io",
             "name": "Long_March_2CS-4_Recover_V2.0.io"
           }
         ],

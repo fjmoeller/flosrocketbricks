@@ -8190,13 +8190,13 @@
     "altTitles": [],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2024-05-05",
+    "lastUpdate": "2026-08-15",
     "dateCreated": "2023-10-03",
     "related": [],
     "updateMessage": "",
     "mocDescription": "This is a MOC of the Sputnik rocket as was used to launch Sputnik 1.",
     "rocketDescription": "Sputnik was a R-7 rocket carrying the Sputnik 1 satellite, which was the first satellite to orbit the earth.",
-    "internalColor": "Green",
+    "internalColor": "",
     "scale": "110",
     "parts": 593,
     "dimensions": "9.3x9.3x26.4cm",
@@ -8209,6 +8209,21 @@
       "https://files.flosrocketbackend.com/mocs/110/ussr/sputnik/rocket/v1.3/R7_Sputnik_V1.3_2.jpg"
     ],
     "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/ussr/sputnik/rocket/v1.4/R7_Sputnik_V1.4.io",
+            "name": "R7_Sputnik_V1.4.io"
+          }
+        ],
+        "version": "V1.4"
+      },
       {
         "changelog": "",
         "versionExtra": "",

@@ -21,6 +21,10 @@ export function adjustGeometryByVersion(viewerVersion: string, partName: string,
       partGeometry.rotateY(Math.PI / 2);
     else if (partName == "5092.dat")
       partGeometry.rotateY(Math.PI / 2);
+    else if (partName == "7068.dat"){
+      partGeometry.translate(-10, 5, 10);
+      partGeometry.rotateX(Math.PI);
+    }
   }
 }
 

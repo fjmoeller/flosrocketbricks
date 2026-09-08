@@ -7,6 +7,139 @@
     "links": [
     ],
     "type": "rocket",
+    "id": 260,
+    "title": "Feng Bao 1",
+    "altTitles": [
+      "FB-1"
+    ],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-09-08",
+    "dateCreated": "2026-09-08",
+    "related": [
+      259,
+      113,
+      114,
+      115,
+      116
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Feng Bao 1 rocket. The two stages can be separated.",
+    "rocketDescription": "The Feng Bao 1 rocket is a Chinese orbital rocket. It first successfully flew in 1975. It is an extremely similar rocket to the Long March 2",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 290,
+    "dimensions": "3.1x3.1x31.6cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/feng-bao-1/110-feng-bao-1-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/feng-bao-1/v1.0/Feng_Bao_1_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/feng-bao-1/v1.0/Feng_Bao_1_V1.0_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/feng-bao-1/v1.0/Feng_Bao_1_V1.0.io",
+            "name": "Feng_Bao_1_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "",
+    "region": [
+      "China"
+    ],
+    "links": [
+    ],
+    "type": "rocket",
+    "id": 259,
+    "title": "Long March 2",
+    "altTitles": [
+      "CZ-2", "LM-2", "Long March 2A", "LM-2A", "CZ-2A"
+    ],
+    "tags": [],
+    "designer": "SkySaac",
+    "lastUpdate": "2026-09-08",
+    "dateCreated": "2026-09-08",
+    "related": [
+      260,
+      113,
+      114,
+      115,
+      116
+    ],
+    "updateMessage": "",
+    "mocDescription": "This is a MOC of the Long March 2 rocket. The two stages can be separated.",
+    "rocketDescription": "The Long March 2 rocket is a Chinese orbital rocket. It first successfully flew in 1975. It is an extremely similar rocket to the Feng Bao 1",
+    "internalColor": "",
+    "scale": "110",
+    "parts": 293,
+    "dimensions": "3.6x3.2x29.5cm",
+    "stability": -1,
+    "difficulty": -1,
+    "fanPictures": [],
+    "smallCoverImage": "assets/mocImages/110/china/long-march/long-march-2/110-long-march-2-v1.0.jpg",
+    "pictures": [
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/v1.0/Long_March_2_V1.0_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/v1.0/Long_March_2_V1.0_2.jpg"
+    ],
+    "versions": [
+      {
+        "changelog": "",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "link": "https://files.flosrocketbackend.com/mocs/110/china/long-march/long-march-2/v1.0/Long_March_2_V1.0.io",
+            "name": "Long_March_2_V1.0.io"
+          }
+        ],
+        "version": "V1.0"
+      }
+    ],
+    "companyExtra": "",
+    "regionExtra": "",
+    "typeExtra": "",
+    "designerExtra": "",
+    "internalColorExtra": "",
+    "scaleExtra": "",
+    "partsExtra": "",
+    "dimensionsExtra": "",
+    "stabilityExtra": "",
+    "difficultyExtra": ""
+  },
+  {
+    "company": "",
+    "region": [
+      "China"
+    ],
+    "links": [
+    ],
+    "type": "rocket",
     "id": 258,
     "title": "Long March 10B",
     "altTitles": [
@@ -10472,7 +10605,9 @@
     "related": [
       113,
       114,
-      115
+      115,
+      259,
+      260
     ],
     "updateMessage": "",
     "region": [
@@ -10542,7 +10677,9 @@
     "related": [
       113,
       114,
-      116
+      116,
+      259,
+      260
     ],
     "updateMessage": "",
     "region": [
@@ -10628,7 +10765,9 @@
     "related": [
       113,
       115,
-      116
+      116,
+      259,
+      260
     ],
     "updateMessage": "",
     "region": [
@@ -10698,7 +10837,9 @@
     "related": [
       114,
       115,
-      116
+      116,
+      259,
+      260
     ],
     "updateMessage": "",
     "region": [

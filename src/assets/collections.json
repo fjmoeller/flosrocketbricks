@@ -18,6 +18,8 @@
         "name": "Long March 2",
         "description": "The Long March 2 series of rockets features a wide variety of rockets. From medium sized launch vehicles to crewed ones.",
         "mocs": [
+          260,
+          259,
           113,
           114,
           115,

@@ -261,6 +261,8 @@
 /moc/256/long-march-12b/
 /moc/257/vikram-1/
 /moc/258/long-march-10b/
+/moc/259/long-march-2/
+/moc/260/feng-bao-1/
 /about/
 /404/
 /blog/

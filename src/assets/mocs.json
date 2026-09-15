@@ -9005,8 +9005,8 @@
     "scale": "110",
     "parts": 63,
     "dimensions": "3x3x12.5cm",
-    "stability": -1,
-    "difficulty": -1,
+    "stability": 5,
+    "difficulty": 4,
     "fanPictures": [],
     "smallCoverImage": "assets/mocImages/110/germany/aggregat/4/110-aggregat-4-v1.0.png",
     "pictures": [

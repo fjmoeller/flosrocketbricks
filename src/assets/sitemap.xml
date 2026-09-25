@@ -1799,8 +1799,18 @@
   <url>
     <loc>https://flosrocketbricks.com/moc/90/ariane-44l/</loc>
     <image:image>
-      <image:loc>https://flosrocketbricks.com/assets/mocImages/110/europe/ariane/ariane-4/44l/110-ariane-44l-v3.1.png
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-4/44l/v3.2/Ariane_44L_V3.2_1.jpg
       </image:loc>
+      <image:title>LEGO MOC Ariane 44L in 1:110 Image 1</image:title>
+      <image:caption>Ariane 44L is a LEGO MOC of the type Rocket made out of 779 bricks. It is made by SkySaac.
+      </image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>
+        https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-4/44l/v3.2/Ariane_44L_V3.2_2.jpg
+      </image:loc>
+      <image:title>LEGO MOC Ariane 44L in 1:110 Image 2</image:title>
     </image:image>
   </url>
   <url>

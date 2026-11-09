@@ -558,7 +558,7 @@
     ],
     "tags": [],
     "designer": "SkySaac",
-    "lastUpdate": "2026-07-20",
+    "lastUpdate": "2026-11-10",
     "dateCreated": "2026-06-27",
     "related": [
       144
@@ -568,18 +568,35 @@
     "rocketDescription": "The Ariane 6 rocket is an orbital rocket by Arianegroup. It has four solid boosters and a hydrolox core and upper stage. The 64 variant has four boosters.",
     "internalColor": "",
     "scale": "110",
-    "parts": 1653,
+    "parts": 1682,
     "dimensions": "11.2x10.9x57.6cm",
     "stability": -1,
     "difficulty": -1,
     "fanPictures": [],
-    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/64/p160c/110-ariane-64-p160c-v1.0.jpg",
+    "smallCoverImage": "assets/mocImages/110/europe/ariane/ariane-6/64/p160c/110-ariane-64-p160c-v1.3.jpg",
     "pictures": [
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.0/Ariane_64_V1.0_1.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.0/Ariane_64_V1.0_2.jpg",
-      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.0/Ariane_64_V1.0_3.jpg"
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.3/Ariane_64_V1.3_1.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.3/Ariane_64_V1.3_2.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.3/Ariane_64_V1.3_3.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.3/Ariane_64_V1.3_4.jpg",
+      "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.3/Ariane_64_V1.3_5.jpg"
     ],
     "versions": [
+      {
+        "changelog": "Improve booster attachements",
+        "versionExtra": "",
+        "files": [
+          {
+            "description": "The digital io file of the rocket",
+            "type": "io",
+            "export": true,
+            "viewer": "V2",
+            "link": "https://files.flosrocketbackend.com/mocs/110/europe/ariane/ariane-6/p160c/v1.3/Ariane_64_V1.3.io",
+            "name": "Ariane_64_V1.3.io"
+          }
+        ],
+        "version": "V1.3"
+      },
       {
         "changelog": "Fix half attached boosters",
         "versionExtra": "",
